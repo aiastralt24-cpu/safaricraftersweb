@@ -1,0 +1,21 @@
+.category-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  margin-bottom: 56px;
+}
+
+.category-rail span {
+  border-bottom: var(--rule-fine);
+  padding: 10px 0 12px;
+  color: var(--brass);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.listing-grid {
+  align-items: start;
+  gap: 56px 34px;
+}

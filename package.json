@@ -1,0 +1,35 @@
+{
+  "name": "safari-crafters",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "studio": "sanity dev",
+    "sanity:seed": "node scripts/seed-sanity.mjs"
+  },
+  "dependencies": {
+    "@sanity/client": "^7.22.0",
+    "@sanity/vision": "^5.23.0",
+    "lucide-react": "^0.468.0",
+    "next": "16.2.4",
+    "next-sanity": "^12.4.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "sanity": "^5.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "16.2.4",
+    "typescript": "^5.7.2"
+  },
+  "overrides": {
+    "postcss": "8.5.13"
+  }
+}

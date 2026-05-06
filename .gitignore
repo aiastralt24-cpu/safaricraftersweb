@@ -1,0 +1,14 @@
+.next/
+node_modules/
+.playwright-cli/
+tsconfig.tsbuildinfo
+
+.env
+.env.local
+.env.*.local
+
+output/
+*.log
+.DS_Store
+
+public/assets/cms/

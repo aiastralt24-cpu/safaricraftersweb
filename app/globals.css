@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /* Safari Crafters brand palette */
+  --night: #100d0a;
+  --night-deep: #0f0c09;
+  --night-warm: #1d1711;
+  --bone: #f4f0e8;
+  --ivory: #e7dfcf;
+  --cream: #f5f1e8;
+  --paper: #fbfaf6;
+  --ink: #11100e;
+  --espresso: #14100c;
+  --soil: #17120d;
+  --charcoal: #3a342c;
+  --mute: #7b7468;
+  --forest: #172216;
+  --sal: #3f5138;
+  --brass: #9e7738;
+  --brass-light: #d3ad69;
+  --copper: #7c3f24;
+  --white: #ffffff;
+  --overlay: rgba(var(--rgb-ink), 0.58);
+  --rgb-night: 16, 13, 10;
+  --rgb-ink: 17, 16, 14;
+  --rgb-soil: 23, 18, 13;
+  --rgb-espresso: 20, 16, 12;
+  --rgb-brass: 158, 119, 56;
+  --rgb-brass-light: 211, 173, 105;
+  --rgb-copper: 124, 63, 36;
+  --rgb-bone: 244, 240, 232;
+  --rgb-paper: 251, 250, 246;
+  --rgb-white: 255, 255, 255;
+  --rgb-black: 0, 0, 0;
+  --max: 1200px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --rule-fine: 0.5px solid rgba(var(--rgb-brass), 0.26);
+  --rule-fine-light: 0.5px solid rgba(var(--rgb-brass-light), 0.26);
+  --font-display: "Cormorant Garamond", "Canela", "Reckless Neue", Georgia, "Times New Roman", serif;
+  --font-body: Inter, "Suisse Int'l", "Neue Haas Grotesk Text", "Avenir Next", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(var(--rgb-ink), 0.02), rgba(var(--rgb-ink), 0)),
+    var(--bone);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.74;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: var(--brass);
+  color: var(--white);
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  transform: translateY(-120%);
+  background: var(--ink);
+  color: var(--white);
+  padding: 10px 14px;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.serif {
+  font-family: var(--font-display);
+}
+
+.container {
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 128px 0;
+}
+
+.section-tight {
+  padding: 72px 0;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-size: clamp(3.45rem, 7.2vw, 7rem);
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 0.92;
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.8vw, 6rem);
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 0.98;
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 4.2vw, 4.65rem);
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.05;
+}
+
+.h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.72rem, 2.65vw, 2.7rem);
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.intro {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 2.12rem);
+  line-height: 1.48;
+  color: var(--charcoal);
+}
+
+.eyebrow {
+  color: var(--brass);
+  font-family: var(--font-body);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.muted {
+  color: var(--mute);
+}
+
+.brass-link {
+  color: var(--brass);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 10px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  border: var(--rule-fine);
+  padding: 13px 24px;
+  color: var(--brass);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: background 500ms var(--ease), color 500ms var(--ease), border-color 500ms var(--ease), transform 500ms var(--ease);
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--brass);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.button-solid {
+  background: var(--brass);
+  color: var(--white);
+}
+
+.button-solid:hover,
+.button-solid:focus-visible {
+  background: var(--forest);
+  border-color: var(--forest);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 4px;
+}
+
+.image-frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--charcoal);
+}
+
+.image-frame::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(var(--rgb-ink), 0), rgba(var(--rgb-ink), 0.2)),
+    radial-gradient(circle at 50% 30%, rgba(var(--rgb-brass-light), 0.1), transparent 58%);
+  mix-blend-mode: multiply;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.78) contrast(1.04) brightness(0.9);
+  transition: transform 700ms var(--ease), filter 700ms var(--ease);
+}
+
+.image-frame:hover img {
+  transform: scale(1.028);
+  filter: saturate(0.9) contrast(1.06) brightness(0.94);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.band-dark {
+  background: var(--forest);
+  color: var(--bone);
+}
+
+.band-ivory {
+  background: var(--paper);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: reveal 780ms var(--ease) both;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .container {
+    width: min(100% - 28px, var(--max));
+  }
+
+  .section {
+    padding: 78px 0;
+  }
+
+  .section-tight {
+    padding: 54px 0;
+  }
+
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}

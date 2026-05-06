@@ -1,0 +1,29 @@
+.editorial-card {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.editorial-card-image {
+  aspect-ratio: 3 / 4;
+  margin-bottom: 12px;
+}
+
+.editorial-card h2,
+.editorial-card p {
+  margin: 0;
+}
+
+.editorial-card > p:not(.eyebrow) {
+  color: var(--charcoal);
+  font-size: 0.95rem;
+  line-height: 1.84;
+}
+
+.editorial-card .h3 {
+  font-size: clamp(1.58rem, 2.25vw, 2.25rem);
+}
+
+.editorial-card .brass-link {
+  margin-top: 4px;
+}
