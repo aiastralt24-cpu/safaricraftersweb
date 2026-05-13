@@ -6,32 +6,50 @@ import { destinations } from "@/lib/data";
 import "../forms.css";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Contact Safari Crafters for private safari planning and photo expedition enquiries."
+  title: "Contact Us",
+  description: "A direct line to Safari Crafters for private safari planning, photo expeditions and specialist-led travel conversations."
 };
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
-        title="Speak to Safari Crafters."
-        copy="Tell us the species, landscape or journey rhythm calling you, and a specialist will shape the next step with care."
+        title="Begin the conversation."
+        copy="A discreet point of contact for private safari planning, photographic departures and rare route conversations."
         image={destinations[4].image}
-        meta="Contact"
+        meta="Contact Us"
       />
       <section className="section">
         <div className="container form-grid">
-          <div>
-            <p className="eyebrow">Direct enquiry</p>
-            <h2 className="h2">Tell us where the journey begins.</h2>
+          <div className="contact-copy">
+            <p className="eyebrow">Direct contact</p>
+            <h2 className="h2">Tell us what is taking shape.</h2>
             <p>
-              Share a short note about where you want to travel, who is coming,
-              preferred months, and the wildlife or photography moments you hope for.
-              We will respond with a considered route rather than a generic package.
+              Share the broad outline for now: destination, season, travellers, photography
+              priorities or whether you would rather begin with a blank page.
             </p>
-            <Link className="whatsapp-link" href="https://wa.me/910000000000">
-              <MessageCircle size={18} /> WhatsApp Safari Crafters
-            </Link>
+            <p>
+              We prefer a short, clear brief over a crowded form. A specialist will take it
+              forward with care.
+            </p>
+            <div className="contact-links">
+              <Link className="whatsapp-link" href="https://wa.me/910000000000">
+                <MessageCircle size={18} /> WhatsApp Safari Crafters
+              </Link>
+              <Link className="whatsapp-link" href="mailto:hello@safaricrafters.com">
+                hello@safaricrafters.com
+              </Link>
+            </div>
+            <div className="contact-notes" aria-label="Contact page notes">
+              <div>
+                <span className="eyebrow">Enquiries</span>
+                <p>Private journeys, family travel, photo expeditions and specialist planning.</p>
+              </div>
+              <div>
+                <span className="eyebrow">Response</span>
+                <p>Quiet, considered and personal rather than automated.</p>
+              </div>
+            </div>
           </div>
           <form className="contact-form" action="/api/enquiry" method="post">
             <input type="hidden" name="source" value="contact" />
@@ -48,11 +66,23 @@ export default function ContactPage() {
               <input name="phone" />
             </label>
             <label>
+              Travel window
+              <input name="travelWindow" placeholder="Month, season or flexible" />
+            </label>
+            <label>
+              Interest
+              <input name="interest" placeholder="Journeys, destinations, photo expeditions or aviation" />
+            </label>
+            <label>
               Message
-              <textarea name="message" required />
+              <textarea
+                name="message"
+                placeholder="A few lines on where you want to go, who is travelling and what kind of safari you have in mind."
+                required
+              />
             </label>
             <button className="button button-solid" type="submit">
-              Send Enquiry
+              Send Brief
             </button>
           </form>
         </div>

@@ -35,6 +35,20 @@
   min-width: 0;
 }
 
+.header-link {
+  color: rgba(var(--rgb-bone), 0.76);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: color 360ms var(--ease), opacity 360ms var(--ease);
+}
+
+.header-link:hover,
+.header-link:focus-visible {
+  color: var(--brass-light);
+}
+
 .header-cta {
   border: var(--rule-fine-light);
   padding: 12px 18px;
@@ -280,8 +294,10 @@
   object-position: center;
   opacity: 0;
   filter: saturate(0.72) contrast(1.08) brightness(0.82);
-  transform: scale(1.018);
-  transition: opacity 760ms var(--ease), transform 1100ms var(--ease);
+  transform: scale(1.008);
+  backface-visibility: hidden;
+  will-change: opacity, transform;
+  transition: opacity 960ms var(--ease), transform 1400ms var(--ease), filter 960ms var(--ease);
 }
 
 .site-full-menu-image img[src*="bandhavgarg"],
@@ -289,9 +305,14 @@
   object-position: 58% center;
 }
 
+.site-full-menu-image img[src*="jawai-leopard-portrait"] {
+  object-position: 58% center;
+}
+
 .site-full-menu-image img.is-active {
   opacity: 1;
   transform: scale(1);
+  filter: saturate(0.78) contrast(1.06) brightness(0.88);
 }
 
 .site-full-menu-footer {
@@ -348,6 +369,7 @@
     width: 62px;
   }
 
+  .header-link,
   .header-cta {
     display: none;
   }

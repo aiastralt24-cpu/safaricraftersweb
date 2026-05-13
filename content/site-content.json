@@ -24,6 +24,10 @@
     {
       "href": "/about",
       "label": "About"
+    },
+    {
+      "href": "/contact",
+      "label": "Contact Us"
     }
   ],
   "journeyCategories": [
@@ -2089,15 +2093,15 @@
       "homepageMeta": "October to March",
       "intro": "Cradled by the Aravalli ranges, Jawai stands as a paradise for leopards and a testament to coexistence. Here, the wild does not overpower the pastoral; instead, the two exist in quiet accord. Celebrated as the Land of Leopards, the region is marked by shepherd trails, old temples, and an untamed landscape that feels profoundly ancient.\n\nHere, within the granite hills, feline grace reigns supreme, measured, assured, and watchful, creating an experience that is immersive, intimate, and unmistakably timeless. The 300 solitary hills of Jawai form nature’s tapestry of intricate beauty, an invisible circulatory system sustaining leopard dreams.\n\nHere, leopards live with an innate pride, unapologetic in their grace, a prodigious expression of beauty and stealth, thriving in quiet harmony with sapiens.\n\nPart of the ancient Aravalli range, Jawai’s geology tells a deeper story: granite formations shaped by volcanic activity nearly 760,000 years ago, alongside the far older Sirohi Group, born some 850 million years ago amid tectonic upheaval.\n\nWhere hills rise from the earth and mirror-like waters hold the vast Rajasthani sky, leopards move through ancient caves, flamingos wade serene reservoirs, and shepherds and temples complete a landscape of rare, poised majesty.",
       "image": {
-        "src": "/assets/safari-crafters/jawai-74614ca9.jpg",
-        "alt": "Jawai",
-        "credit": "Safari Crafters archive"
+        "src": "/assets/safari-crafters/jawai-leopards-pair.JPG",
+        "alt": "Two leopards on granite in Jawai",
+        "credit": "Safari Crafters"
       },
       "gallery": [
         {
-          "src": "/assets/safari-crafters/17-1-b7497a11.jpg",
-          "alt": "Jawai gallery image 1",
-          "credit": "Safari Crafters archive"
+          "src": "/assets/safari-crafters/jawai-leopard-portrait.JPG",
+          "alt": "Leopard at a cave mouth in Jawai",
+          "credit": "Safari Crafters"
         },
         {
           "src": "/assets/safari-crafters/jawai-1-59110608.jpg",

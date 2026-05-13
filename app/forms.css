@@ -8,11 +8,25 @@
   margin: 10px 0 18px;
 }
 
+.contact-copy {
+  max-width: 36rem;
+}
+
+.contact-copy p {
+  max-width: 31rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+}
+
 .whatsapp-link {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-top: 22px;
   border: var(--rule-fine);
   padding: 12px 16px;
   color: var(--brass);
@@ -20,6 +34,27 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+}
+
+.contact-notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: var(--rule-fine);
+}
+
+.contact-notes div {
+  display: grid;
+  gap: 8px;
+}
+
+.contact-notes p {
+  margin: 0;
+  color: rgba(var(--rgb-charcoal), 0.72);
+  font-size: 0.98rem;
+  line-height: 1.7;
 }
 
 .contact-form {
@@ -49,6 +84,11 @@
 
 .contact-form textarea {
   min-height: 150px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(var(--rgb-charcoal), 0.45);
 }
 
 .plan-page {
@@ -89,6 +129,10 @@
   .form-grid {
     grid-template-columns: 1fr;
     gap: 38px;
+  }
+
+  .contact-notes {
+    grid-template-columns: 1fr;
   }
 
   .plan-page {

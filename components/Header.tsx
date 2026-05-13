@@ -61,6 +61,13 @@ const menuItems = [
     href: "/about",
     copy: "Founder story, specialist authority and the conservation philosophy behind each route.",
     image: specialists[0]?.image ?? heroJourney.image
+  },
+  {
+    key: "contact",
+    label: "Contact Us",
+    href: "/contact",
+    copy: "A direct line for private safari planning, photo expeditions and specialist-led route conversations.",
+    image: featuredDestination.image
   }
 ];
 
@@ -78,6 +85,8 @@ export function Header() {
 
   useEffect(() => {
     if (!open) return;
+
+    setActiveMenuKey(menuItems[0].key);
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
@@ -97,6 +106,9 @@ export function Header() {
       <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
         <BrandMark className="wordmark" />
         <div className="header-spacer" aria-hidden="true" />
+        <Link className="header-link" href="/contact">
+          Contact Us
+        </Link>
         <Link className="header-cta" href="/plan">
           Plan a Journey
         </Link>
@@ -138,8 +150,6 @@ export function Header() {
                 data-active={activeMenuKey === item.key ? "true" : undefined}
                 onClick={() => setOpen(false)}
                 onFocus={() => setActiveMenuKey(item.key)}
-                onMouseEnter={() => setActiveMenuKey(item.key)}
-                onMouseMove={() => setActiveMenuKey(item.key)}
                 onPointerEnter={() => setActiveMenuKey(item.key)}
               >
                 <span>{String(index + 1).padStart(2, "0")}</span>
