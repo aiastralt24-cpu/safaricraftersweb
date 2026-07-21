@@ -24,6 +24,30 @@
   font-size: clamp(1.58rem, 2.25vw, 2.25rem);
 }
 
+.editorial-card .h3 a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
 .editorial-card .brass-link {
   margin-top: 4px;
+}
+
+.destination-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.destination-card-tags span {
+  border: var(--rule-fine);
+  padding: 5px 8px;
+  color: var(--brass);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }

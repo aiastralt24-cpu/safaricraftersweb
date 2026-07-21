@@ -55,15 +55,15 @@ export default function ContactPage() {
             <input type="hidden" name="source" value="contact" />
             <label>
               Name
-              <input name="name" required />
+              <input name="name" autoComplete="name" required />
             </label>
             <label>
               Email
-              <input name="email" type="email" required />
+              <input name="email" type="email" inputMode="email" autoComplete="email" required />
             </label>
             <label>
               Phone
-              <input name="phone" />
+              <input name="phone" type="tel" inputMode="tel" autoComplete="tel" />
             </label>
             <label>
               Travel window

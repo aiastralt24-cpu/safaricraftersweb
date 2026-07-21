@@ -71,5 +71,12 @@ const docs = [
 const transaction = client.transaction();
 for (const doc of docs) transaction.createOrReplace(doc);
 
-await transaction.commit();
-console.log(`Seeded ${docs.length} Sanity documents into ${projectId}/${dataset}.`);
+try {
+  await transaction.commit();
+  console.log(`Seeded ${docs.length} Sanity documents into ${projectId}/${dataset}.`);
+} catch (error) {
+  const message = error instanceof Error ? error.message : String(error);
+  const code = error && typeof error === "object" && "code" in error ? ` (${error.code})` : "";
+  console.error(`Failed to seed Sanity${code}: ${message}`);
+  process.exit(1);
+}

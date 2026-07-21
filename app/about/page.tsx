@@ -10,9 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const kairav = specialists.find((specialist) => specialist.name.includes("Kairav")) ?? specialists[0];
-  const gaurav = specialists.find((specialist) => specialist.name.includes("Gaurav")) ?? specialists[1];
-
   return (
     <>
       <PageHero
@@ -47,15 +44,22 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="section band-ivory simple">
-        <div className="container simple-grid">
-          <div>
+        <div className="container founder-leadership">
+          <div className="founder-leadership-heading">
             <p className="eyebrow">Founder and field leadership</p>
-            <h2 className="h2">Kairav Engineer and Gaurav Ramnarayanan give the brand its field authority.</h2>
+            <h2 className="h2">Field authority is not claimed. It is earned in silence.</h2>
+            <figure className="founder-quote">
+              <blockquote>
+                The forest does not reveal itself to urgency. It reveals itself to people
+                who know how to wait, listen and move with respect.
+              </blockquote>
+              <figcaption>Kairav Engineer and Gaurav Ramnarayanan</figcaption>
+            </figure>
           </div>
           <div className="founder-profiles founder-portraits">
             <article>
               <div className="founder-portrait image-frame">
-                <img src={kairav.image.src} alt={kairav.image.alt || "Kairav Engineer"} />
+                <img src="/assets/founders/kairav-engineer.jpg" alt="Kairav Engineer in Safari Crafters field gear" />
               </div>
               <div>
                 <p className="eyebrow">Kairav Engineer</p>
@@ -78,7 +82,7 @@ export default function AboutPage() {
             </article>
             <article>
               <div className="founder-portrait image-frame">
-                <img src={gaurav.image.src} alt={gaurav.image.alt || "Gaurav Ramnarayanan"} />
+                <img src="/assets/founders/gaurav-ramnarayanan.jpg" alt="Gaurav Ramnarayanan in the field at sunset" />
               </div>
               <div>
                 <p className="eyebrow">Gaurav Ramnarayanan</p>

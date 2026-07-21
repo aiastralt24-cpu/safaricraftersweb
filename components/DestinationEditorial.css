@@ -1,0 +1,146 @@
+.atlas-country-grid,
+.destination-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(56px, 8vw, 112px) clamp(28px, 4vw, 64px);
+}
+
+.atlas-country,
+.destination-editorial-card {
+  display: grid;
+  align-content: start;
+  gap: 24px;
+}
+
+.atlas-country.is-featured,
+.destination-editorial-card.is-wide {
+  grid-column: span 2;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.7fr);
+  gap: clamp(30px, 5vw, 72px);
+  align-items: end;
+}
+
+.atlas-country.is-textual,
+.destination-editorial-card.is-textual {
+  display: flex;
+  min-height: clamp(220px, 22vw, 320px);
+  align-items: flex-end;
+  border-top: var(--rule-fine);
+  border-bottom: var(--rule-fine);
+  padding: clamp(34px, 5vw, 68px) 0;
+}
+
+.atlas-country.is-textual.is-featured,
+.destination-editorial-card.is-textual.is-wide {
+  grid-column: auto;
+}
+
+.atlas-country-image,
+.destination-editorial-image {
+  position: relative;
+  display: block;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.atlas-country.is-featured .atlas-country-image,
+.destination-editorial-card.is-wide .destination-editorial-image {
+  aspect-ratio: 16 / 9;
+}
+
+.atlas-country-image img,
+.destination-editorial-image img {
+  object-fit: cover;
+  filter: saturate(0.82) contrast(1.03);
+  transition: transform 700ms var(--ease), filter 700ms var(--ease);
+}
+
+.atlas-country-image:hover img,
+.atlas-country-image:focus-visible img,
+.destination-editorial-image:hover img,
+.destination-editorial-image:focus-visible img {
+  transform: scale(1.018);
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.atlas-country-copy,
+.destination-editorial-card > div {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.atlas-country-copy p,
+.destination-editorial-card > div > p {
+  margin: 0;
+  color: var(--brass);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.atlas-country-copy h3,
+.destination-editorial-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 4.6rem);
+  font-weight: 300;
+  line-height: 0.96;
+}
+
+.atlas-country-copy h3 a,
+.destination-editorial-card h3 a {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+}
+
+.atlas-country:not(.is-featured) .atlas-country-copy h3,
+.destination-editorial-card:not(.is-wide) h3 {
+  font-size: clamp(2rem, 3.1vw, 3.35rem);
+}
+
+.atlas-country-copy span,
+.destination-editorial-card > div > span {
+  max-width: 52ch;
+  color: var(--mute);
+  line-height: 1.72;
+}
+
+.atlas-country-link {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 44px;
+  align-items: center;
+  border-bottom: var(--rule-fine);
+  color: var(--brass);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .atlas-country-grid,
+  .destination-editorial-grid,
+  .atlas-country.is-featured,
+  .destination-editorial-card.is-wide {
+    grid-template-columns: 1fr;
+  }
+
+  .atlas-country.is-featured,
+  .destination-editorial-card.is-wide {
+    grid-column: auto;
+  }
+
+  .atlas-country-image,
+  .atlas-country.is-featured .atlas-country-image,
+  .destination-editorial-image,
+  .destination-editorial-card.is-wide .destination-editorial-image {
+    aspect-ratio: 4 / 3;
+  }
+}

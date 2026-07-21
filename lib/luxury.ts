@@ -66,7 +66,7 @@ export const luxuryProof = [
 export const atelierPillars = [
   {
     title: "Private planning",
-    copy: "Every enquiry becomes a considered brief: pace, privacy, lodge style, sightings priority and who is travelling."
+    copy: "Every enquiry becomes a considered brief: pace, privacy, lodge style, sighting priorities and traveller preferences."
   },
   {
     title: "Field intelligence",

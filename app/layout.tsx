@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
+import { organizationSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: {
@@ -17,8 +19,18 @@ export const metadata: Metadata = {
       "Private safari journeys, photo expeditions and editorial field notes shaped by named specialists.",
     url: "https://safaricrafters.com",
     siteName: "Safari Crafters",
-    type: "website"
-  }
+    type: "website",
+    images: [{ url: "/assets/safari-crafters/ranthambhore-84d7a5a3.jpg", width: 1200, height: 630, alt: "Tiger country with Safari Crafters" }]
+  },
+  twitter: { card: "summary_large_image", title: "Safari Crafters", description: "Private, photography-led safari journeys." },
+  alternates: { canonical: "/" }
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#142015"
 };
 
 export default function RootLayout({
@@ -29,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <JsonLd data={organizationSchema()} />
         <a className="skip-link" href="#main">
           Skip to main content
         </a>

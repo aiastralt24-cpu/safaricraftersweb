@@ -12,3 +12,4 @@ output/
 .DS_Store
 
 public/assets/cms/
+.vercel

@@ -34,30 +34,90 @@
 
 .founder-profiles {
   display: grid;
-  gap: 44px;
+  gap: 34px;
+}
+
+.founder-leadership {
+  display: grid;
+  gap: 58px;
+}
+
+.founder-leadership-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.68fr);
+  gap: clamp(32px, 6vw, 84px);
+  align-items: end;
+}
+
+.founder-leadership-heading h2 {
+  grid-column: 1;
+  max-width: 760px;
+}
+
+.founder-quote {
+  align-self: stretch;
+  display: grid;
+  align-content: end;
+  margin: 0;
+  border-left: 1px solid rgba(158, 119, 56, 0.24);
+  padding-left: clamp(26px, 4vw, 52px);
+}
+
+.founder-quote blockquote {
+  margin: 0;
+  color: var(--charcoal);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.2vw, 2.35rem);
+  font-style: italic;
+  line-height: 1.22;
+}
+
+.founder-quote figcaption {
+  margin-top: 24px;
+  color: var(--brass);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .founder-profiles article {
   display: grid;
-  gap: 28px;
   border-top: var(--rule-fine);
-  padding-top: 30px;
+  padding-top: 34px;
 }
 
 .founder-portraits article {
-  grid-template-columns: minmax(170px, 0.38fr) minmax(0, 1fr);
-  align-items: start;
+  grid-template-columns: minmax(320px, 0.48fr) minmax(0, 0.92fr);
+  gap: clamp(36px, 6vw, 86px);
+  align-items: center;
+}
+
+.founder-portraits article:nth-child(even) {
+  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.48fr);
+}
+
+.founder-portraits article:nth-child(even) .founder-portrait {
+  order: 2;
 }
 
 .founder-portrait {
-  aspect-ratio: 4 / 5;
-  min-height: 280px;
+  aspect-ratio: 4 / 5.25;
+  min-height: 520px;
 }
 
 .founder-portrait img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.founder-portraits article:first-child .founder-portrait img {
+  object-position: 58% 42%;
+}
+
+.founder-portraits article:nth-child(2) .founder-portrait img {
+  object-position: 50% 38%;
 }
 
 .founder-profiles h3 {
@@ -71,6 +131,7 @@
 
 .founder-profiles p {
   margin: 0 0 18px;
+  max-width: 720px;
 }
 
 .specialist-list {
@@ -127,10 +188,26 @@
 
 @media (max-width: 860px) {
   .simple-grid,
+  .founder-leadership-heading,
   .founder-portraits article,
+  .founder-portraits article:nth-child(even),
   .specialist-list article,
   .conservation-proof-grid {
     grid-template-columns: 1fr;
+  }
+
+  .founder-portraits article:nth-child(even) .founder-portrait {
+    order: 0;
+  }
+
+  .founder-portrait {
+    min-height: 420px;
+  }
+
+  .founder-quote {
+    border-left: 0;
+    border-top: 1px solid rgba(158, 119, 56, 0.24);
+    padding: 26px 0 0;
   }
 
   .conservation-proof-grid article {

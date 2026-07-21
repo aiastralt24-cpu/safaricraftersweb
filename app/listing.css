@@ -19,3 +19,213 @@
   align-items: start;
   gap: 56px 34px;
 }
+
+.journey-listing-section {
+  display: grid;
+  gap: 34px;
+  margin-top: 82px;
+}
+
+.journey-listing-header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.72fr);
+  gap: clamp(24px, 4vw, 58px);
+  align-items: end;
+  border-top: var(--rule-fine);
+  padding-top: 28px;
+}
+
+.journey-listing-header h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 4.6rem);
+  font-weight: 300;
+  line-height: 0.96;
+}
+
+.journey-listing-header p {
+  margin: 0;
+  color: var(--mute);
+  line-height: 1.78;
+}
+
+.atlas-page {
+  display: grid;
+  gap: clamp(88px, 11vw, 156px);
+}
+
+.atlas-region-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px clamp(22px, 4vw, 54px);
+  border-top: var(--rule-fine);
+  border-bottom: var(--rule-fine);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.atlas-region-nav a {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+  transition: color 240ms var(--ease);
+}
+
+.atlas-region-nav a:hover,
+.atlas-region-nav a:focus-visible { color: var(--brass); }
+
+.atlas-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.72fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: end;
+}
+
+.atlas-intro h2,
+.atlas-intro p {
+  margin: 0;
+}
+
+.atlas-intro .eyebrow {
+  grid-column: 1 / -1;
+}
+
+.atlas-intro > p:not(.eyebrow) {
+  color: var(--mute);
+  font-size: 1.02rem;
+  line-height: 1.82;
+}
+
+.atlas-section {
+  display: grid;
+  gap: clamp(48px, 6vw, 88px);
+}
+
+.atlas-section-header {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 0.7fr) minmax(260px, 1fr);
+  gap: 28px;
+  align-items: end;
+  border-top: var(--rule-fine);
+  padding-top: 28px;
+}
+
+.atlas-section-header span {
+  color: var(--brass);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.atlas-section-header h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5vw, 5.8rem);
+  font-weight: 300;
+  line-height: 0.92;
+}
+
+.atlas-section-header p {
+  margin: 0;
+  color: var(--mute);
+  line-height: 1.72;
+}
+
+.atlas-country-index {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1.45fr);
+  gap: clamp(28px, 5vw, 72px);
+  border-top: var(--rule-fine);
+  padding-top: 24px;
+}
+
+.atlas-country-index > p {
+  margin: 0;
+  color: var(--brass);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.atlas-country-index > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(28px, 4vw, 64px);
+}
+
+.atlas-country-index a {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: var(--rule-fine);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  transition: color 240ms var(--ease);
+}
+
+.atlas-country-index a:hover,
+.atlas-country-index a:focus-visible {
+  color: var(--brass);
+}
+
+.atlas-country-index svg {
+  flex: 0 0 auto;
+}
+
+.atlas-closing {
+  display: grid;
+  justify-items: start;
+  border-top: var(--rule-fine);
+  padding-top: clamp(46px, 7vw, 88px);
+}
+
+.atlas-closing h2 {
+  max-width: 820px;
+  margin: 18px 0 24px;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 300;
+  line-height: 0.92;
+}
+
+.atlas-closing > p:not(.eyebrow) {
+  max-width: 610px;
+  margin: 0 0 34px;
+  color: var(--mute);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 860px) {
+  .journey-listing-header,
+  .atlas-intro,
+  .atlas-section-header,
+  .atlas-country-index {
+    grid-template-columns: 1fr;
+  }
+
+  .atlas-region-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .atlas-region-nav::-webkit-scrollbar { display: none; }
+  .atlas-region-nav a { flex: 0 0 auto; }
+}
+
+@media (max-width: 560px) {
+  .atlas-country-index > div {
+    grid-template-columns: 1fr;
+  }
+}

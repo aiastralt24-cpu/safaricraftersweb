@@ -2,9 +2,13 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { EditorialProse } from "@/components/EditorialProse";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { getJourney, journeys } from "@/lib/data";
 import { getJourneyIntelligence } from "@/lib/luxury";
+import { getJourneyFaqs, journeySeo } from "@/lib/content-intelligence";
+import { breadcrumbSchema, faqSchema, journeySchema, siteUrl } from "@/lib/structured-data";
 import "../../detail.css";
 
 type Props = {
@@ -19,9 +23,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const journey = getJourney(slug);
   if (!journey) return {};
+  const seo = journeySeo(journey);
   return {
-    title: journey.title,
-    description: journey.description
+    ...seo,
+    alternates: { canonical: `/journeys/${journey.slug}` },
+    openGraph: { ...seo, url: `${siteUrl}/journeys/${journey.slug}`, images: [{ url: journey.image.src, alt: journey.image.alt }] }
   };
 }
 
@@ -30,15 +36,25 @@ export default async function JourneyDetailPage({ params }: Props) {
   const journey = getJourney(slug);
   if (!journey) notFound();
   const intelligence = getJourneyIntelligence(journey);
+  const faqs = getJourneyFaqs(journey);
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Journeys", path: "/journeys" },
+    { name: journey.title, path: `/journeys/${journey.slug}` }
+  ];
 
   return (
     <>
+      <JsonLd data={journeySchema(journey)} />
+      <JsonLd data={breadcrumbSchema(breadcrumbs)} />
+      <JsonLd data={faqSchema(faqs)} />
       <PageHero
         title={journey.title}
         copy={journey.description}
         image={journey.image}
         meta={`${journey.duration} · ${journey.region}`}
       />
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Journeys", href: "/journeys" }, { label: journey.title }]} />
       <article className="section detail">
         <div className="container detail-grid">
           <div>
@@ -98,6 +114,14 @@ export default async function JourneyDetailPage({ params }: Props) {
             <div>
               <dt>Photography</dt>
               <dd>{intelligence.photography}</dd>
+            </div>
+            <div>
+              <dt>Journey style</dt>
+              <dd>{journey.style || journey.category}</dd>
+            </div>
+            <div>
+              <dt>Pace</dt>
+              <dd>{journey.pace || "Unhurried, with the final rhythm shaped around field conditions and guest comfort."}</dd>
             </div>
           </dl>
         </div>
@@ -165,11 +189,24 @@ export default async function JourneyDetailPage({ params }: Props) {
             </div>
           </div>
         ) : null}
+        <section className="container faq-section">
+          <p className="eyebrow">Private journey questions</p>
+          <h2 className="h2">Before we refine the route</h2>
+          <div>
+            {faqs.map((faq) => (
+              <details key={faq.question}>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+          <p className="content-reviewed">Journey information reviewed {journey.seo?.reviewedAt || "July 2026"}.</p>
+        </section>
         <div className="container specialist-callout">
           <p className="eyebrow">Specialist recommendation</p>
           <h2 className="h2">This journey is shaped with {journey.specialist}.</h2>
           <Link className="button button-solid" href={`/plan?journey=${journey.slug}`}>
-            Plan This Journey
+            Refine This Journey
           </Link>
         </div>
       </article>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ImageAsset } from "@/lib/data";
 import "./PageHero.css";
 
@@ -11,7 +12,7 @@ type PageHeroProps = {
 export function PageHero({ title, copy, image, meta }: PageHeroProps) {
   return (
     <section className="page-hero">
-      <img src={image.src} alt={image.alt} />
+      <Image src={image.src} alt={image.alt} fill priority sizes="100vw" />
       <div className="page-hero-scrim" />
       <div className="container page-hero-content reveal">
         {meta ? <p className="page-hero-meta">{meta}</p> : null}

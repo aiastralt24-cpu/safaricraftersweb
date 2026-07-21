@@ -59,7 +59,7 @@
   line-height: 1.2;
 }
 
-.planner h1 {
+.planner-card > h2 {
   max-width: 620px;
   margin: 18px 0 clamp(28px, 3.8vw, 46px);
 }
@@ -72,14 +72,26 @@
 }
 
 .planner-dots button {
-  width: clamp(22px, 2.4vw, 34px);
-  height: 2px;
-  border: var(--rule-fine);
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border: 0;
   background: transparent;
   padding: 0;
 }
 
-.planner-dots .active {
+.planner-dots button::before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: rgba(var(--rgb-brass), 0.28);
+  transform: translateY(-50%);
+}
+
+.planner-dots .active::before {
   background: var(--brass);
 }
 
@@ -91,16 +103,66 @@
   gap: 14px;
 }
 
+.region-choice-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.region-choice-grid .choice:last-child {
+  grid-column: 1 / -1;
+}
+
 .choice,
 .chip {
+  position: relative;
   min-height: 76px;
-  border: 0;
-  border-top: 0.5px solid rgba(var(--rgb-ink), 0.18);
-  background: rgba(var(--rgb-bone), 0.34);
+  border: 0.5px solid rgba(var(--rgb-brass), 0.28);
+  background:
+    linear-gradient(180deg, rgba(var(--rgb-white), 0.46), rgba(var(--rgb-bone), 0.38)),
+    rgba(var(--rgb-bone), 0.34);
+  box-shadow: 0 18px 42px rgba(var(--rgb-ink), 0.06);
   color: var(--ink);
-  padding: 20px 0;
+  cursor: pointer;
+  padding: 22px 48px 22px 22px;
   text-align: left;
-  transition: border-color 300ms var(--ease), color 300ms var(--ease);
+  transition:
+    background 300ms var(--ease),
+    border-color 300ms var(--ease),
+    box-shadow 300ms var(--ease),
+    color 300ms var(--ease),
+    transform 300ms var(--ease);
+}
+
+.choice::after,
+.chip::after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 9px;
+  height: 9px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  opacity: 0.72;
+  transform: rotate(45deg);
+  transition: opacity 300ms var(--ease), transform 300ms var(--ease);
+}
+
+.choice:hover,
+.choice:focus-visible,
+.chip:hover,
+.chip:focus-visible {
+  border-color: rgba(var(--rgb-brass), 0.72);
+  box-shadow: 0 24px 54px rgba(var(--rgb-ink), 0.11);
+  color: var(--brass);
+  transform: translateY(-2px);
+}
+
+.choice:hover::after,
+.choice:focus-visible::after,
+.chip:hover::after,
+.chip:focus-visible::after {
+  opacity: 1;
+  transform: translateX(4px) rotate(45deg);
 }
 
 .choice span {
@@ -122,10 +184,30 @@
   line-height: 1.08;
 }
 
-.selected {
-  border-color: var(--brass);
-  background: transparent;
+.choice.selected,
+.chip.selected {
+  border-color: rgba(var(--rgb-brass), 0.86);
+  background:
+    linear-gradient(180deg, rgba(var(--rgb-brass), 0.18), rgba(var(--rgb-brass), 0.08)),
+    rgba(var(--rgb-paper), 0.72);
+  box-shadow: inset 0 0 0 1px rgba(var(--rgb-brass), 0.28), 0 22px 54px rgba(var(--rgb-ink), 0.1);
   color: var(--brass);
+}
+
+.choice.selected::before,
+.chip.selected::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  bottom: 16px;
+  width: 34px;
+  height: 2px;
+  background: var(--brass);
+}
+
+.chip.selected::before {
+  width: 24px;
+  bottom: 14px;
 }
 
 .field-grid {
@@ -154,6 +236,7 @@
 
 .field-grid input,
 .field-grid textarea,
+.field-grid select,
 .field-row select,
 .quiet-notes textarea {
   width: 100%;
@@ -161,7 +244,32 @@
   background: rgba(var(--rgb-bone), 0.58);
   color: var(--ink);
   padding: 12px 14px;
+  font-size: 1rem;
 }
+
+.field-grid input[type="range"] {
+  min-height: 44px;
+  padding: 0;
+  accent-color: var(--brass);
+}
+
+.planner-select { margin-top: 24px; }
+
+.consent-field {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  margin-top: 24px;
+  color: var(--charcoal);
+  font-size: 0.86rem;
+  line-height: 1.6;
+  min-height: 44px;
+}
+
+.consent-field input { width: 24px; height: 24px; margin: 2px 0 0; accent-color: var(--brass); }
+.planner-error { margin: 20px 0 0; color: #8b2f25; }
+.enquiry-reference { color: var(--brass); font-weight: 700; }
 
 .field-grid textarea {
   min-height: 130px;
@@ -195,8 +303,11 @@
 }
 
 .planner-actions button:disabled {
-  visibility: hidden;
+  opacity: 0.36;
+  cursor: not-allowed;
 }
+
+.planner-actions button:first-child:disabled { visibility: hidden; }
 
 .planner-success {
   text-align: center;
@@ -218,12 +329,29 @@
 
   .planner-note,
   .planner-card {
-    padding: 28px;
+    padding: 26px 22px;
   }
 
   .choice-grid,
   .chip-grid,
   .field-grid {
     grid-template-columns: 1fr;
+  }
+
+  .region-choice-grid .choice:last-child {
+    grid-column: auto;
+  }
+
+  .planner-shell {
+    min-height: 0;
+  }
+
+  .planner-note {
+    min-height: 190px;
+  }
+
+  .planner-card > h2 {
+    margin-top: 14px;
+    margin-bottom: 26px;
   }
 }

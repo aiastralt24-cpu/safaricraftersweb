@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/studio/", "/portal/"]
+      disallow: ["/api/", "/admin/", "/studio/", "/portal/", "/search"]
     },
     sitemap: "https://safaricrafters.com/sitemap.xml"
   };

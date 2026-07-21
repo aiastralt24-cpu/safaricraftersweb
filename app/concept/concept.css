@@ -23,6 +23,7 @@ body:has(.concept-page) .site-header {
 
 .concept-hero {
   position: relative;
+  height: 100vh;
   height: 100dvh;
   min-height: 640px;
   overflow: hidden;
@@ -58,7 +59,7 @@ body:has(.concept-page) .site-header {
   align-items: center;
   gap: 28px;
   width: 100%;
-  padding: 28px clamp(20px, 5vw, 72px);
+  padding: calc(28px + env(safe-area-inset-top, 0px)) max(clamp(20px, 5vw, 72px), env(safe-area-inset-right, 0px)) 28px max(clamp(20px, 5vw, 72px), env(safe-area-inset-left, 0px));
   background: transparent;
   transition: background 360ms var(--ease), border-color 360ms var(--ease), padding 360ms var(--ease), backdrop-filter 360ms var(--ease);
 }
@@ -104,7 +105,15 @@ body:has(.concept-page) .site-header {
 .concept-text-link,
 .concept-spread-note a,
 .concept-choice-row a {
-  transition: color 360ms var(--ease), border-color 360ms var(--ease), background 360ms var(--ease), transform 360ms var(--ease);
+  transition: color 360ms var(--ease), border-color 360ms var(--ease), background 360ms var(--ease), box-shadow 360ms var(--ease), transform 360ms var(--ease);
+}
+
+.concept-text-link,
+.concept-spread-note a,
+.concept-field-notes-header > a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
 }
 
 .concept-nav-links a:hover,
@@ -132,14 +141,16 @@ body:has(.concept-page) .site-header {
 .concept-choice-row a:focus-visible {
   background: var(--brass);
   border-color: var(--brass);
+  box-shadow: 0 22px 52px rgba(var(--rgb-ink), 0.13);
   color: white;
+  transform: translateY(-2px);
 }
 
 .concept-menu-button {
   display: inline-flex;
   width: 48px;
   min-width: 48px;
-  height: 42px;
+  height: 48px;
   align-items: center;
   justify-content: center;
   border: 0.5px solid rgba(var(--rgb-bone), 0.42);
@@ -162,7 +173,8 @@ body:has(.concept-page) .site-header {
   inset: 0;
   z-index: 1100;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  height: 100dvh;
   max-width: none;
   max-height: none;
   margin: 0;
@@ -406,15 +418,19 @@ body:has(.concept-page) .site-header {
 .concept-full-menu-grid:has([data-menu-item="destinations"]:hover) [data-menu-image],
 .concept-full-menu-grid:has([data-menu-item="photo-expeditions"]:hover) [data-menu-image],
 .concept-full-menu-grid:has([data-menu-item="journal"]:hover) [data-menu-image],
+.concept-full-menu-grid:has([data-menu-item="reviews"]:hover) [data-menu-image],
 .concept-full-menu-grid:has([data-menu-item="conservation-commitment"]:hover) [data-menu-image],
 .concept-full-menu-grid:has([data-menu-item="private-aviation"]:hover) [data-menu-image],
+.concept-full-menu-grid:has([data-menu-item="store"]:hover) [data-menu-image],
 .concept-full-menu-grid:has([data-menu-item="about"]:hover) [data-menu-image],
 .concept-full-menu-grid:has([data-menu-item="journeys"]:focus-visible) [data-menu-image],
 .concept-full-menu-grid:has([data-menu-item="destinations"]:focus-visible) [data-menu-image],
 .concept-full-menu-grid:has([data-menu-item="photo-expeditions"]:focus-visible) [data-menu-image],
 .concept-full-menu-grid:has([data-menu-item="journal"]:focus-visible) [data-menu-image],
+.concept-full-menu-grid:has([data-menu-item="reviews"]:focus-visible) [data-menu-image],
 .concept-full-menu-grid:has([data-menu-item="conservation-commitment"]:focus-visible) [data-menu-image],
 .concept-full-menu-grid:has([data-menu-item="private-aviation"]:focus-visible) [data-menu-image],
+.concept-full-menu-grid:has([data-menu-item="store"]:focus-visible) [data-menu-image],
 .concept-full-menu-grid:has([data-menu-item="about"]:focus-visible) [data-menu-image] {
   opacity: 0;
 }
@@ -423,15 +439,19 @@ body:has(.concept-page) .site-header {
 .concept-full-menu-grid:has([data-menu-item="destinations"]:hover) [data-menu-image="destinations"],
 .concept-full-menu-grid:has([data-menu-item="photo-expeditions"]:hover) [data-menu-image="photo-expeditions"],
 .concept-full-menu-grid:has([data-menu-item="journal"]:hover) [data-menu-image="journal"],
+.concept-full-menu-grid:has([data-menu-item="reviews"]:hover) [data-menu-image="reviews"],
 .concept-full-menu-grid:has([data-menu-item="conservation-commitment"]:hover) [data-menu-image="conservation-commitment"],
 .concept-full-menu-grid:has([data-menu-item="private-aviation"]:hover) [data-menu-image="private-aviation"],
+.concept-full-menu-grid:has([data-menu-item="store"]:hover) [data-menu-image="store"],
 .concept-full-menu-grid:has([data-menu-item="about"]:hover) [data-menu-image="about"],
 .concept-full-menu-grid:has([data-menu-item="journeys"]:focus-visible) [data-menu-image="journeys"],
 .concept-full-menu-grid:has([data-menu-item="destinations"]:focus-visible) [data-menu-image="destinations"],
 .concept-full-menu-grid:has([data-menu-item="photo-expeditions"]:focus-visible) [data-menu-image="photo-expeditions"],
 .concept-full-menu-grid:has([data-menu-item="journal"]:focus-visible) [data-menu-image="journal"],
+.concept-full-menu-grid:has([data-menu-item="reviews"]:focus-visible) [data-menu-image="reviews"],
 .concept-full-menu-grid:has([data-menu-item="conservation-commitment"]:focus-visible) [data-menu-image="conservation-commitment"],
 .concept-full-menu-grid:has([data-menu-item="private-aviation"]:focus-visible) [data-menu-image="private-aviation"],
+.concept-full-menu-grid:has([data-menu-item="store"]:focus-visible) [data-menu-image="store"],
 .concept-full-menu-grid:has([data-menu-item="about"]:focus-visible) [data-menu-image="about"] {
   opacity: 1;
 }
@@ -655,6 +675,126 @@ body:has(.concept-page) .site-header {
   color: rgba(var(--rgb-espresso), 0.62);
   font-size: var(--concept-body);
   line-height: 1.82;
+}
+
+.concept-guest-notes {
+  display: block;
+  padding: clamp(88px, 9vw, 132px) clamp(40px, 8vw, 160px);
+  background: var(--paper);
+  color: var(--espresso);
+}
+
+.concept-guest-notes-heading {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.65fr) minmax(440px, 1fr);
+  gap: clamp(40px, 8vw, 140px);
+  align-items: end;
+  margin-bottom: clamp(54px, 7vw, 104px);
+}
+
+.concept-guest-notes-heading > div {
+  display: grid;
+  gap: 12px;
+}
+
+.concept-guest-notes-heading p {
+  margin: 0;
+  color: var(--brass);
+  font-size: var(--concept-cta);
+  font-weight: 700;
+  letter-spacing: var(--concept-label-tracking);
+  text-transform: uppercase;
+}
+
+.concept-guest-notes-heading span {
+  color: rgba(var(--rgb-espresso), 0.5);
+  font-size: var(--concept-body-sm);
+}
+
+.concept-guest-notes h2 {
+  margin: 0;
+  max-width: 760px;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 5.2vw, 6.5rem);
+  font-weight: 300;
+  line-height: 0.98;
+}
+
+.concept-guest-note-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+  gap: clamp(52px, 9vw, 156px);
+  align-items: end;
+  border-top: 1px solid rgba(var(--rgb-espresso), 0.16);
+  border-bottom: 1px solid rgba(var(--rgb-espresso), 0.16);
+  padding: clamp(58px, 8vw, 120px) 0;
+}
+
+.concept-guest-note-feature blockquote {
+  max-width: 19ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4.4vw, 5.2rem);
+  font-weight: 300;
+  line-height: 1.04;
+}
+
+.concept-guest-note-details {
+  display: grid;
+  gap: 34px;
+}
+
+.concept-guest-note-details > div {
+  display: grid;
+  gap: 7px;
+  border-top: 1px solid rgba(var(--rgb-espresso), 0.16);
+  padding-top: 16px;
+}
+
+.concept-guest-note-details span {
+  color: var(--brass);
+  font-size: var(--concept-cta);
+  font-weight: 700;
+  letter-spacing: var(--concept-label-tracking);
+  text-transform: uppercase;
+}
+
+.concept-guest-note-details strong,
+.concept-guest-note-details small {
+  font-size: var(--concept-body-sm);
+  font-weight: 400;
+}
+
+.concept-guest-note-details strong {
+  color: var(--espresso);
+}
+
+.concept-guest-note-details small {
+  color: rgba(var(--rgb-espresso), 0.58);
+}
+
+.concept-guest-notes-link {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 44px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  border-bottom: 1px solid rgba(var(--rgb-espresso), 0.3);
+  color: var(--espresso);
+  font-size: var(--concept-cta);
+  font-weight: 700;
+  letter-spacing: var(--concept-label-tracking);
+  text-transform: uppercase;
+}
+
+.concept-guest-notes-link svg {
+  transition: transform 300ms var(--ease);
+}
+
+.concept-guest-notes-link:hover svg,
+.concept-guest-notes-link:focus-visible svg {
+  transform: translate(3px, -3px);
 }
 
 .concept-menu-section {
@@ -1048,14 +1188,42 @@ body:has(.concept-page) .site-header {
 }
 
 .concept-choice-row a {
-  border: var(--rule-fine);
-  padding: 15px 12px;
+  position: relative;
+  display: flex;
+  min-height: 62px;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid rgba(var(--rgb-brass), 0.32);
+  background:
+    linear-gradient(180deg, rgba(var(--rgb-white), 0.5), rgba(var(--rgb-paper), 0.32)),
+    rgba(var(--rgb-paper), 0.45);
+  box-shadow: 0 16px 38px rgba(var(--rgb-ink), 0.055);
+  padding: 18px 44px 18px 18px;
   text-align: center;
   color: var(--soil);
   font-size: var(--concept-cta);
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+}
+
+.concept-choice-row a::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  width: 9px;
+  height: 9px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  opacity: 0.68;
+  transform: rotate(45deg);
+  transition: opacity 360ms var(--ease), transform 360ms var(--ease);
+}
+
+.concept-choice-row a:hover::after,
+.concept-choice-row a:focus-visible::after {
+  opacity: 1;
+  transform: translateX(4px) rotate(45deg);
 }
 
 .concept-concierge-card > span {
@@ -1116,16 +1284,32 @@ body:has(.concept-page) .site-header {
   .concept-species-section,
   .concept-field-notes-grid,
   .concept-atelier,
+  .concept-guest-notes,
   .concept-concierge {
     grid-template-columns: 1fr;
   }
 
-  .concept-atelier {
+  .concept-atelier,
+  .concept-guest-notes {
     padding: 86px 28px;
   }
 
+  .concept-guest-notes-heading,
   .concept-atelier-grid {
     grid-template-columns: 1fr;
+  }
+
+  .concept-guest-notes-heading {
+    gap: 28px;
+  }
+
+  .concept-guest-note-feature {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .concept-guest-note-feature blockquote {
+    font-size: clamp(2.35rem, 8vw, 4rem);
   }
 
   .concept-atelier-grid article,
@@ -1143,13 +1327,25 @@ body:has(.concept-page) .site-header {
 }
 
 @media (max-width: 720px) {
+  .concept-hero {
+    min-height: 100svh;
+  }
+
+  .concept-hero-line,
+  .concept-hero-line-main,
+  .concept-hero-line-sub,
+  .concept-hero-line-accent {
+    animation: none;
+    will-change: auto;
+  }
+
   .concept-hero-nav {
     gap: 14px;
-    padding: 18px 20px;
+    padding: calc(18px + env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) 18px max(20px, env(safe-area-inset-left, 0px));
   }
 
   .concept-hero-nav.is-scrolled {
-    padding: 12px 18px;
+    padding: calc(12px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 12px max(18px, env(safe-area-inset-left, 0px));
   }
 
   .concept-hero-nav .concept-brandmark {
@@ -1206,7 +1402,7 @@ body:has(.concept-page) .site-header {
 
   .concept-full-menu-top {
     min-height: 70px;
-    padding: 12px 16px;
+    padding: calc(12px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 12px max(16px, env(safe-area-inset-left, 0px));
   }
 
   .concept-full-menu-top .concept-brandmark {
@@ -1215,7 +1411,8 @@ body:has(.concept-page) .site-header {
   }
 
   .concept-menu-close {
-    min-height: 42px;
+    min-width: 44px;
+    min-height: 44px;
     padding: 10px 12px;
     font-size: 0.62rem;
   }

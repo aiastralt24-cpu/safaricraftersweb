@@ -1,16 +1,49 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Camera, Compass, Menu, MoveRight, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BrandMark } from "@/components/BrandMark";
-import { destinations, expeditions, journal, journeys, specialists } from "@/lib/data";
+import type { ImageAsset } from "@/lib/data";
+import { destinations, expeditions, journal, journeys, specialists, testimonials } from "@/lib/data";
 
 const heroJourney = journeys[0];
 const featuredDestination = destinations.find((item) => item.slug === "jawai") ?? destinations[0];
-const tigerDestination = destinations.find((item) => item.slug === "bandhavgarh") ?? destinations[0];
 const photoExpedition = expeditions[0];
 const fieldNotes = journal.slice(0, 3);
+const featuredGuestNote = testimonials[0];
+const showHomepageGuestNotes = false;
+
+const journalMenuImage: ImageAsset = {
+  src: "/assets/safari-crafters/dsc8123-789x1024-1f0b8c48.jpg",
+  alt: "Tiger walking toward the camera",
+  credit: "Safari Crafters archive"
+};
+
+const conservationMenuImage: ImageAsset = {
+  src: "/assets/safari-crafters/gallery-1-23-scaled-7f473b1f.jpg",
+  alt: "Red panda on a branch",
+  credit: "Safari Crafters archive"
+};
+
+const privateAviationMenuImage: ImageAsset = {
+  src: "/assets/safari-crafters/amer-fort-original-scaled-31b56cd7.jpg",
+  alt: "Amer Fort in Jaipur",
+  credit: "Safari Crafters archive"
+};
+
+const storeMenuImage: ImageAsset = {
+  src: "/assets/store/ghosts-of-the-granite-hills-book.jpg",
+  alt: "Ghosts of the Granite Hills red clothbound collector's photobook on granite stone",
+  credit: "Safari Crafters archive"
+};
+
+const reviewsMenuImage: ImageAsset = {
+  src: "/assets/safari-crafters/gallery-1-23-scaled-7f473b1f.jpg",
+  alt: "Red panda on a branch",
+  credit: "Safari Crafters archive"
+};
 
 const heroLines = [
   {
@@ -67,21 +100,35 @@ const menuItems = [
     label: "The Journal",
     href: "/journal",
     copy: "Field notes, conservation intelligence and photographic essays from the wild.",
-    image: tigerDestination.image
+    image: journalMenuImage
+  },
+  {
+    key: "reviews",
+    label: "Guest Notes",
+    href: "/reviews",
+    copy: "Quiet proof from private travellers, families and photographers who trusted the brief.",
+    image: reviewsMenuImage
   },
   {
     key: "conservation-commitment",
     label: "Conservation Commitment",
     href: "/conservation-commitment",
     copy: "How Safari Crafters gives back through Astral Foundation without asking guests for donations.",
-    image: tigerDestination.image
+    image: conservationMenuImage
   },
   {
     key: "private-aviation",
     label: "Private Aviation",
     href: "/private-aviation",
     copy: "Company-owned private jets shaping rare, seamless safari circuits across India.",
-    image: heroJourney.image
+    image: privateAviationMenuImage
+  },
+  {
+    key: "store",
+    label: "Store",
+    href: "/store",
+    copy: "Collector's editions, field books and photographic works from Safari Crafters.",
+    image: storeMenuImage
   },
   {
     key: "about",
@@ -97,9 +144,25 @@ export function ConceptExperience() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [activeHeroLine, setActiveHeroLine] = useState(0);
+  const [canPlayHeroVideo, setCanPlayHeroVideo] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const connection = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const desktop = window.matchMedia("(min-width: 768px)").matches;
+    const constrained = connection?.saveData || ["slow-2g", "2g"].includes(connection?.effectiveType || "");
+    setCanPlayHeroVideo(desktop && !reducedMotion && !constrained);
+  }, []);
+
+  useEffect(() => {
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(max-width: 720px)").matches
+    ) {
       return;
     }
 
@@ -130,18 +193,43 @@ export function ConceptExperience() {
       return;
     }
 
+    const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsMenuOpen(false);
+        return;
       }
+
+      if (event.key !== "Tab" || !menuRef.current) return;
+      const focusable = Array.from(menuRef.current.querySelectorAll<HTMLElement>(focusableSelector)).filter(
+        (element) => element.getClientRects().length > 0
+      );
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      if (!first || !last) return;
+      const currentIndex = focusable.indexOf(document.activeElement as HTMLElement);
+      const nextIndex = event.shiftKey
+        ? (currentIndex <= 0 ? focusable.length - 1 : currentIndex - 1)
+        : (currentIndex < 0 || currentIndex === focusable.length - 1 ? 0 : currentIndex + 1);
+      event.preventDefault();
+      focusable[nextIndex].focus();
+    };
+
+    const onFocusIn = (event: FocusEvent) => {
+      if (menuRef.current?.contains(event.target as Node)) return;
+      menuRef.current?.querySelector<HTMLElement>(".concept-menu-close")?.focus();
     };
 
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKeyDown);
+    document.addEventListener("focusin", onFocusIn);
+    requestAnimationFrame(() => menuRef.current?.querySelector<HTMLElement>(".concept-menu-close")?.focus());
 
     return () => {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("focusin", onFocusIn);
+      menuButtonRef.current?.focus();
     };
   }, [isMenuOpen]);
 
@@ -157,6 +245,7 @@ export function ConceptExperience() {
           Plan a Journey
         </Link>
         <button
+          ref={menuButtonRef}
           className="concept-menu-button"
           type="button"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -168,17 +257,28 @@ export function ConceptExperience() {
         </button>
       </div>
       <section className="concept-hero" aria-label="Safari Crafters luxury concept">
-        <video
-          className="concept-hero-media"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={heroJourney.image.src}
-          aria-label={heroJourney.image.alt}
-        >
-          <source src="/assets/safari-crafters/safari-crafters.mp4" type="video/mp4" />
-        </video>
+        <Image
+          className="concept-hero-media concept-hero-poster"
+          src={heroJourney.image.src}
+          alt={heroJourney.image.alt}
+          fill
+          priority
+          sizes="100vw"
+        />
+        {canPlayHeroVideo ? (
+          <video
+            className="concept-hero-media"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={heroJourney.image.src}
+            aria-label={heroJourney.image.alt}
+          >
+            <source src="/assets/safari-crafters/safari-crafters.mp4" type="video/mp4" />
+          </video>
+        ) : null}
         <div className="concept-hero-shade" />
         <div className="concept-hero-grid">
           <div className="concept-hero-copy">
@@ -205,9 +305,12 @@ export function ConceptExperience() {
       </section>
 
       <div
+        ref={menuRef}
         className={isMenuOpen ? "concept-full-menu is-open" : "concept-full-menu"}
         id="concept-full-menu"
         aria-hidden={!isMenuOpen}
+        aria-modal={isMenuOpen ? "true" : undefined}
+        role="dialog"
       >
         <div className="concept-full-menu-top">
           <BrandMark className="concept-brandmark" />
@@ -248,9 +351,12 @@ export function ConceptExperience() {
           <aside className="concept-full-menu-image">
             <div className="concept-full-menu-image-stack" aria-hidden="true">
               {menuItems.map((item) => (
-                <img
+                <Image
                   src={item.image.src}
                   alt=""
+                  width={1200}
+                  height={1600}
+                  sizes="40vw"
                   className={activeMenuKey === item.key ? "is-active" : ""}
                   data-menu-image={item.key}
                   key={item.key}
@@ -278,7 +384,7 @@ export function ConceptExperience() {
             <h3>Private planning</h3>
             <p>
               Every enquiry becomes a considered brief: pace, privacy, lodge style,
-              sightings priority and who is travelling.
+              sighting priorities and traveller preferences.
             </p>
           </article>
           <article>
@@ -305,9 +411,43 @@ export function ConceptExperience() {
         </div>
       </section>
 
+      {showHomepageGuestNotes ? <section className="concept-guest-notes" aria-label="Guest notes">
+        <div className="concept-guest-notes-heading">
+          <div>
+            <p>Guest Notes</p>
+            <span>A private journey, remembered</span>
+          </div>
+          <h2>What remains after the journey.</h2>
+        </div>
+        <article className="concept-guest-note-feature">
+          <blockquote>“{featuredGuestNote.quote}”</blockquote>
+          <div className="concept-guest-note-details">
+            <div>
+              <span>Guest</span>
+              <strong>{featuredGuestNote.guestType ?? featuredGuestNote.name}</strong>
+              <small>{featuredGuestNote.city}</small>
+            </div>
+            <div>
+              <span>Journey composed</span>
+              <strong>{featuredGuestNote.trip}</strong>
+              <small>{featuredGuestNote.travelled}</small>
+            </div>
+          </div>
+        </article>
+        <Link className="concept-guest-notes-link" href="/reviews">
+          Read guest notes <ArrowUpRight size={17} strokeWidth={1.4} />
+        </Link>
+      </section> : null}
+
       <section className="concept-species-section">
         <div className="concept-species-image">
-          <img src={featuredDestination.image.src} alt={featuredDestination.image.alt} />
+          <Image
+            src={featuredDestination.image.src}
+            alt={featuredDestination.image.alt}
+            width={1600}
+            height={1200}
+            sizes="(max-width: 760px) 100vw, 55vw"
+          />
         </div>
         <div className="concept-species-copy">
           <p>Species-led storytelling</p>
@@ -347,7 +487,13 @@ export function ConceptExperience() {
           {fieldNotes.map((article) => (
             <Link className="concept-field-note" href={`/journal/${article.slug}`} key={article.slug}>
               <div>
-                <img src={article.image.src} alt={article.image.alt} />
+                <Image
+                  src={article.image.src}
+                  alt={article.image.alt}
+                  width={1200}
+                  height={900}
+                  sizes="(max-width: 760px) 100vw, 33vw"
+                />
               </div>
               <p>{article.category} · {article.readTime}</p>
               <h3>{article.title}</h3>
@@ -363,7 +509,13 @@ export function ConceptExperience() {
           <span>{photoExpedition.bestMonths} / {photoExpedition.groupSize}</span>
         </div>
         <div className="concept-spread-image">
-          <img src={photoExpedition.image.src} alt={photoExpedition.image.alt} />
+          <Image
+            src={photoExpedition.image.src}
+            alt={photoExpedition.image.alt}
+            width={1600}
+            height={1200}
+            sizes="(max-width: 760px) 100vw, 60vw"
+          />
         </div>
         <div className="concept-spread-note">
           <Camera size={22} />
@@ -391,7 +543,7 @@ export function ConceptExperience() {
             <Link href="/plan">Surprise me</Link>
           </div>
           <span>
-            A quiet first brief. No package catalogue.
+            A quiet first brief. Never a package catalogue.
           </span>
         </div>
       </section>

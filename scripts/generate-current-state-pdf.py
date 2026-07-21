@@ -83,7 +83,7 @@ def cover_page(canvas, doc):
     canvas.saveState()
     canvas.setFillColor(NIGHT_DEEP)
     canvas.rect(0, 0, PAGE_W, PAGE_H, stroke=0, fill=1)
-    hero = asset("public/assets/safari-crafters/big-cats-of-india-22c9331f.jpg")
+    hero = asset("public/assets/safari-crafters/ranthambhore-84d7a5a3.jpg")
     canvas.drawImage(hero, PAGE_W * 0.42, 0, PAGE_W * 0.58, PAGE_H, preserveAspectRatio=False, mask="auto")
     canvas.setFillColor(colors.Color(NIGHT.red, NIGHT.green, NIGHT.blue, alpha=0.62))
     canvas.rect(PAGE_W * 0.42, 0, PAGE_W * 0.58, PAGE_H, stroke=0, fill=1)

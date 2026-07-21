@@ -80,6 +80,7 @@
   background: var(--bone);
   color: var(--ink);
   padding: 12px 14px;
+  font-size: 1rem;
 }
 
 .contact-form textarea {
@@ -93,6 +94,7 @@
 
 .plan-page {
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 150px 0 90px;
   background:
     linear-gradient(180deg, rgba(var(--rgb-ink), 0.62), rgba(var(--rgb-ink), 0.12) 38%, var(--bone) 72%),
@@ -138,5 +140,9 @@
   .plan-page {
     padding-top: 120px;
     background-attachment: scroll;
+  }
+
+  .contact-form {
+    padding: 24px 20px;
   }
 }

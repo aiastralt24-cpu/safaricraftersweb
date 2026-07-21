@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Destination, Expedition, ImageAsset, JournalArticle, Journey } from "@/lib/data";
+import { CountryAtlas, Destination, Expedition, ImageAsset, JournalArticle, Journey } from "@/lib/data";
 import "./Cards.css";
 
 export function EditorialCard({
@@ -20,7 +21,7 @@ export function EditorialCard({
   return (
     <article className="editorial-card">
       <Link href={href} className="image-frame editorial-card-image">
-        <img src={image.src} alt={image.alt} loading="lazy" />
+        <Image src={image.src} alt={image.alt} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" />
       </Link>
       <p className="eyebrow">{meta}</p>
       <h2 className="h3">
@@ -39,24 +40,62 @@ export function JourneyCard({ journey }: { journey: Journey }) {
     <EditorialCard
       href={`/journeys/${journey.slug}`}
       image={journey.image}
-      meta={`${journey.category} · ${journey.duration}`}
+      meta={`${journey.category} · ${journey.duration} · ${journey.bestMonths}`}
       title={journey.title}
       copy={journey.description}
-      cta="Plan this journey"
+      cta="Refine this journey"
     />
   );
 }
 
 export function DestinationCard({ destination }: { destination: Destination }) {
   return (
-    <EditorialCard
-      href={`/destinations/${destination.slug}`}
-      image={destination.image}
-      meta={destination.region}
-      title={destination.title}
-      copy={destination.description}
-      cta="Explore destination"
-    />
+    <article className="editorial-card destination-card">
+      <Link href={`/destinations/${destination.slug}`} className="image-frame editorial-card-image">
+        <Image src={destination.image.src} alt={destination.image.alt} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+      </Link>
+      <p className="eyebrow">{destination.country} · {destination.status === "rich" ? "Guide" : "Concierge brief"}</p>
+      <h2 className="h3">
+        <Link href={`/destinations/${destination.slug}`}>{destination.title}</Link>
+      </h2>
+      <p>{destination.description}</p>
+      {destination.bestFor?.length ? (
+        <div className="destination-card-tags" aria-label={`Best for ${destination.title}`}>
+          {destination.bestFor.slice(0, 3).map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+      ) : null}
+      <Link className="brass-link" href={`/destinations/${destination.slug}`}>
+        {destination.status === "rich" ? "Explore destination" : "Begin a private brief"}
+      </Link>
+    </article>
+  );
+}
+
+export function CountryCard({ country }: { country: CountryAtlas }) {
+  const richCount = country.destinations.filter((destination) => destination.status === "rich").length;
+
+  return (
+    <article className="editorial-card destination-card">
+      <Link href={`/destinations/${country.slug}`} className="image-frame editorial-card-image">
+        <Image src={country.image.src} alt={country.image.alt} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+      </Link>
+      <p className="eyebrow">
+        {country.continent === "Arctic" ? "Arctic / Other" : country.continent} · {country.destinations.length} places
+      </p>
+      <h2 className="h3">
+        <Link href={`/destinations/${country.slug}`}>{country.title}</Link>
+      </h2>
+      <p>{country.description}</p>
+      <div className="destination-card-tags" aria-label={`${country.title} atlas summary`}>
+        <span>{richCount} guides</span>
+        <span>{country.destinations.length - richCount} briefs</span>
+      </div>
+      <Link className="brass-link" href={`/destinations/${country.slug}`}>
+        Enter country atlas
+      </Link>
+    </article>
   );
 }
 
