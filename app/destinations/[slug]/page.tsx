@@ -7,7 +7,7 @@ import { DestinationEditorialCard } from "@/components/DestinationEditorial";
 import { JsonLd } from "@/components/JsonLd";
 import { IndiaCountryPage } from "@/components/IndiaCountryPage";
 import { PageHero } from "@/components/PageHero";
-import { destinations, getCountryAtlas, getCountryBySlug, getDestination } from "@/lib/data";
+import { destinations, expeditions, getCountryAtlas, getCountryBySlug, getDestination } from "@/lib/data";
 import { getFieldIntelligence } from "@/lib/luxury";
 import { destinationSeo, getDestinationFaqs, getDestinationPairings, getRelatedJourneys } from "@/lib/content-intelligence";
 import { breadcrumbSchema, destinationSchema, faqSchema, siteUrl } from "@/lib/structured-data";
@@ -58,6 +58,9 @@ export default async function DestinationDetailPage({ params }: Props) {
   const faqs = getDestinationFaqs(destination);
   const pairings = getDestinationPairings(destination);
   const relatedJourneys = getRelatedJourneys(destination);
+  const relatedExpeditions = expeditions.filter((expedition) =>
+    destination.expeditions.some((title) => title.toLowerCase() === expedition.title.toLowerCase())
+  );
   const breadcrumbs = [
     { name: "Home", path: "/" },
     { name: "Destinations", path: "/destinations" },
@@ -82,6 +85,7 @@ export default async function DestinationDetailPage({ params }: Props) {
         faqs={faqs}
         pairings={pairings}
         relatedJourneys={relatedJourneys}
+        relatedExpeditions={relatedExpeditions}
       />
     </>
   );

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import type { Destination, DestinationPairing, FAQItem, Journey } from "@/lib/data";
+import type { Destination, DestinationPairing, Expedition, FAQItem, Journey } from "@/lib/data";
 import { getDestination, specialists } from "@/lib/data";
 import type { FieldIntelligence } from "@/lib/luxury";
 import { EditorialProse } from "@/components/EditorialProse";
@@ -13,15 +13,22 @@ type Props = {
   faqs: FAQItem[];
   pairings: DestinationPairing[];
   relatedJourneys: Journey[];
+  relatedExpeditions?: Expedition[];
 };
 
-export function DestinationDossier({ destination, intelligence, faqs, pairings, relatedJourneys }: Props) {
+export function DestinationDossier({ destination, intelligence, faqs, pairings, relatedJourneys, relatedExpeditions = [] }: Props) {
   const isConcierge = destination.status === "concierge";
   const gallery = destination.gallery.length ? destination.gallery : [destination.image];
   const specialist = destination.continent === "India" ? specialists[0] : specialists[1];
   const specialistPortrait = destination.continent === "India"
     ? "/assets/founders/kairav-engineer.jpg"
     : "/assets/founders/gaurav-ramnarayanan.jpg";
+  const specialistExpertise = destination.continent === "Arctic"
+    ? "Photography-led polar expeditions, small-ship planning and responsible wildlife observation"
+    : specialist.expertise;
+  const specialistMoment = destination.continent === "Arctic"
+    ? "In the High Arctic, good planning protects room for weather, light and wildlife to determine the day."
+    : specialist.moment;
 
   return (
     <article className="destination-dossier">
@@ -120,6 +127,27 @@ export function DestinationDossier({ destination, intelligence, faqs, pairings, 
         </section>
       ) : null}
 
+      {relatedExpeditions.length ? (
+        <section className="container destination-journeys">
+          <div className="destination-section-heading">
+            <p className="eyebrow">Photography-led expedition</p>
+            <h2>Go further into {destination.title}.</h2>
+          </div>
+          <div className="destination-journey-grid">
+            {relatedExpeditions.slice(0, 3).map((expedition) => (
+              <article key={expedition.slug}>
+                <Link className="destination-journey-image" href={`/photo-expeditions/${expedition.slug}`}>
+                  <Image src={expedition.image.src} alt={expedition.image.alt} fill sizes="(max-width: 760px) 100vw, 33vw" />
+                </Link>
+                <p>{expedition.skill} · Future dates on request</p>
+                <h3><Link href={`/photo-expeditions/${expedition.slug}`}>{expedition.title}</Link></h3>
+                <Link className="destination-inline-link" href={`/photo-expeditions/${expedition.slug}`}>Explore the expedition <ArrowUpRight size={15} /></Link>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {pairings.length ? (
         <section className="container destination-pairings">
           <div className="destination-section-heading">
@@ -182,8 +210,8 @@ export function DestinationDossier({ destination, intelligence, faqs, pairings, 
         <div className="destination-specialist-copy">
           <p className="eyebrow">Your private brief</p>
           <h2>Shape {destination.title} with {specialist.name}.</h2>
-          <p>{specialist.expertise}</p>
-          <span>{specialist.moment}</span>
+          <p>{specialistExpertise}</p>
+          <span>{specialistMoment}</span>
           <Link className="button button-solid" href={`/plan?destination=${destination.slug}&specialist=${encodeURIComponent(specialist.name)}`}>
             Begin with {specialist.name.split(" ")[0]}
           </Link>
