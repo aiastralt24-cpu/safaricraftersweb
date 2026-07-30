@@ -1182,29 +1182,48 @@ body:has(.concept-page) .site-header {
 
 .concept-choice-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
   margin: 34px 0 24px;
 }
 
+.concept-choice-row a:last-child {
+  grid-column: 1 / -1;
+}
+
 .concept-choice-row a {
   position: relative;
-  display: flex;
-  min-height: 62px;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  min-height: 96px;
+  align-content: center;
+  gap: 8px;
   border: 0.5px solid rgba(var(--rgb-brass), 0.32);
   background:
     linear-gradient(180deg, rgba(var(--rgb-white), 0.5), rgba(var(--rgb-paper), 0.32)),
     rgba(var(--rgb-paper), 0.45);
   box-shadow: 0 16px 38px rgba(var(--rgb-ink), 0.055);
   padding: 18px 44px 18px 18px;
-  text-align: center;
+  text-align: left;
   color: var(--soil);
   font-size: var(--concept-cta);
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+}
+
+.concept-choice-row a small {
+  max-width: 30ch;
+  color: rgba(var(--rgb-soil), 0.58);
+  font-size: 0.67rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.45;
+  text-transform: none;
+}
+
+.concept-choice-row a:hover small,
+.concept-choice-row a:focus-visible small {
+  color: rgba(var(--rgb-white), 0.8);
 }
 
 .concept-choice-row a::after {
@@ -1353,7 +1372,17 @@ body:has(.concept-page) .site-header {
   }
 
   .concept-nav-cta {
-    display: none;
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    padding: 9px 11px;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
+  }
+
+  .concept-hero-media {
+    object-position: 62% center;
   }
 
   .concept-hero-grid {
@@ -1372,6 +1401,10 @@ body:has(.concept-page) .site-header {
   .concept-species-facts,
   .concept-choice-row {
     grid-template-columns: 1fr;
+  }
+
+  .concept-choice-row a:last-child {
+    grid-column: auto;
   }
 
   .concept-field-notes-header {

@@ -538,9 +538,26 @@ export function ConceptExperience() {
           <p>Begin with one quiet question.</p>
           <h3>Where should the wild find you first?</h3>
           <div className="concept-choice-row">
-            <Link href="/plan?region=india">India</Link>
-            <Link href="/plan?region=africa">Africa</Link>
-            <Link href="/plan">Surprise me</Link>
+            <Link href="/plan?region=India">
+              <span>India</span>
+              <small>Tigers · Leopards · Himalaya</small>
+            </Link>
+            <Link href="/plan?region=Africa">
+              <span>Africa</span>
+              <small>Savannah · Primates · Private conservancies</small>
+            </Link>
+            <Link href="/plan?region=The%20Americas">
+              <span>The Americas</span>
+              <small>Jaguars · Rainforest · Northern wilderness</small>
+            </Link>
+            <Link href="/plan?region=Arctic%20%26%20Beyond">
+              <span>Arctic &amp; Beyond</span>
+              <small>Polar wildlife · Expedition cruising</small>
+            </Link>
+            <Link href="/plan?region=Surprise%20me">
+              <span>Surprise me</span>
+              <small>Let our specialists choose the right geography</small>
+            </Link>
           </div>
           <span>
             A quiet first brief. Never a package catalogue.
