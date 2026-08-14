@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://safaricrafters.com",
     siteName: "Safari Crafters",
     type: "website",
-    images: [{ url: "/assets/safari-crafters/ranthambhore-84d7a5a3.jpg", width: 1200, height: 630, alt: "Tiger country with Safari Crafters" }]
+    images: [{ url: "/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png", width: 1261, height: 1261, alt: "Tiger family walking through Ranthambhore" }]
   },
   twitter: { card: "summary_large_image", title: "Safari Crafters", description: "Private, photography-led safari journeys." },
   alternates: { canonical: "/" }
@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body>
         <JsonLd data={organizationSchema()} />
         <a className="skip-link" href="#main">

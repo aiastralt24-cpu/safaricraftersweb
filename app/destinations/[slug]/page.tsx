@@ -9,6 +9,7 @@ import { IndiaCountryPage } from "@/components/IndiaCountryPage";
 import { PageHero } from "@/components/PageHero";
 import { destinations, expeditions, getCountryAtlas, getCountryBySlug, getDestination } from "@/lib/data";
 import { getFieldIntelligence } from "@/lib/luxury";
+import { isApprovedEditorialImage } from "@/lib/media";
 import { destinationSeo, getDestinationFaqs, getDestinationPairings, getRelatedJourneys } from "@/lib/content-intelligence";
 import { breadcrumbSchema, destinationSchema, faqSchema, siteUrl } from "@/lib/structured-data";
 import "../../detail.css";
@@ -37,10 +38,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const destination = getDestination(slug);
   if (!destination) return {};
   const seo = destinationSeo(destination);
+  const galleryHero = destination.gallery.find((image, index) => index > 0 && isApprovedEditorialImage(image))
+    || destination.gallery.find(isApprovedEditorialImage);
+  const socialImage = galleryHero || destination.image;
+  const socialImageUseCount = destinations.filter((item) => item.image.src === socialImage.src).length;
+  const hasAccurateSocialImage = isApprovedEditorialImage(socialImage) && (Boolean(galleryHero) || socialImageUseCount === 1);
   return {
     ...seo,
     alternates: { canonical: `/destinations/${destination.slug}` },
-    openGraph: { ...seo, url: `${siteUrl}/destinations/${destination.slug}`, images: [{ url: destination.image.src, alt: destination.image.alt }] }
+    openGraph: {
+      ...seo,
+      url: `${siteUrl}/destinations/${destination.slug}`,
+      ...(hasAccurateSocialImage ? { images: [{ url: socialImage.src, alt: socialImage.alt }] } : {})
+    }
   };
 }
 
@@ -54,6 +64,11 @@ export default async function DestinationDetailPage({ params }: Props) {
 
   const destination = getDestination(slug);
   if (!destination) notFound();
+  const galleryHero = destination.gallery.find((image, index) => index > 0 && isApprovedEditorialImage(image))
+    || destination.gallery.find(isApprovedEditorialImage);
+  const heroImage = galleryHero || destination.image;
+  const heroImageUseCount = destinations.filter((item) => item.image.src === heroImage.src).length;
+  const showHeroImage = isApprovedEditorialImage(heroImage) && (Boolean(galleryHero) || heroImageUseCount === 1);
   const intelligence = getFieldIntelligence(destination);
   const faqs = getDestinationFaqs(destination);
   const pairings = getDestinationPairings(destination);
@@ -75,8 +90,11 @@ export default async function DestinationDetailPage({ params }: Props) {
       <PageHero
         title={destination.title}
         copy={destination.description}
-        image={destination.image}
-        meta={destination.region}
+        image={heroImage}
+        meta={[destination.country, destination.continent === "Arctic" ? "Arctic / Other" : destination.continent]
+          .filter((value, index, values) => values.indexOf(value) === index)
+          .join(" · ")}
+        showImage={showHeroImage}
       />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Destinations", href: "/destinations" }, { label: destination.title }]} />
       <DestinationDossier
@@ -93,13 +111,18 @@ export default async function DestinationDetailPage({ params }: Props) {
 
 function CountryDestinationPage({ country }: { country: NonNullable<ReturnType<typeof getCountryBySlug>> }) {
   const imageCounts = new Map(country.destinations.map((destination) => [destination.image.src, country.destinations.filter((item) => item.image.src === destination.image.src).length]));
+  const countryGalleryHero = country.destinations.flatMap((destination) => destination.gallery).find(isApprovedEditorialImage);
+  const countryHeroImage = countryGalleryHero || country.image;
+  const countryHeroUseCount = destinations.filter((destination) => destination.image.src === countryHeroImage.src).length;
+  const showCountryHeroImage = isApprovedEditorialImage(countryHeroImage) && (Boolean(countryGalleryHero) || countryHeroUseCount === 1);
   return (
     <>
       <PageHero
         title={country.title}
         copy={country.description}
-        image={country.image}
+        image={countryHeroImage}
         meta={`${country.continent === "Arctic" ? "Arctic / Other" : country.continent} · Country atlas`}
+        showImage={showCountryHeroImage}
       />
       <section className="section atlas-page">
         <div className="container atlas-intro">
@@ -122,7 +145,7 @@ function CountryDestinationPage({ country }: { country: NonNullable<ReturnType<t
                 key={destination.slug}
                 destination={destination}
                 index={index}
-                showImage={destination.gallery.length > 0 || (imageCounts.get(destination.image.src) || 0) === 1}
+                showImage={destination.gallery.some(isApprovedEditorialImage) || (isApprovedEditorialImage(destination.image) && (imageCounts.get(destination.image.src) || 0) === 1)}
               />
             ))}
           </div>

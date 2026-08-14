@@ -21,6 +21,11 @@ export default function AdminPage() {
           </Link>
         </div>
         <div className="admin-grid admin-deprecated-grid">
+          <section className="admin-panel admin-enquiry-panel">
+            <h2>Guest enquiries</h2>
+            <p>Review private journey briefs, contact details and assigned specialists.</p>
+            <Link className="button" href="/admin/enquiries">Open enquiry inbox</Link>
+          </section>
           <section className="admin-panel">
             <h2>What moved to Sanity</h2>
             <p>Homepage, journeys, destinations, photo expeditions, journal, specialists, testimonials and hero media.</p>

@@ -21,7 +21,8 @@ export async function POST(request: Request) {
   try {
     await Promise.all([
       storeEnquiry(enquiryId, specialist, enquiry),
-      notifyReservations(enquiryId, specialist, enquiry)
+      notifyReservations(enquiryId, specialist, enquiry),
+      sendGuestConfirmation(enquiryId, specialist, enquiry)
     ]);
   } catch {
     return NextResponse.json(
@@ -85,6 +86,38 @@ async function notifyReservations(enquiryId: string, specialist: string, enquiry
     })
   });
   if (!response.ok) throw new Error("Enquiry notification failed.");
+}
+
+async function sendGuestConfirmation(enquiryId: string, specialist: string, enquiry: EnquiryPayload) {
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.ENQUIRY_FROM_EMAIL;
+  if (!apiKey || !from) throw new Error("Enquiry email is not configured.");
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+      "Idempotency-Key": `${enquiryId}-guest`
+    },
+    body: JSON.stringify({
+      from,
+      to: [enquiry.email],
+      subject: `${enquiryId} · Your Safari Crafters brief`,
+      text: [
+        `Dear ${enquiry.name},`,
+        "",
+        "Your private travel brief has reached Safari Crafters.",
+        `Reference: ${enquiryId}`,
+        `Journey: ${enquiry.sourceLabel || enquiry.region}`,
+        `Specialist: ${specialist}`,
+        "",
+        "A specialist will review the season, access and field priorities before responding with considered next steps.",
+        "",
+        "Safari Crafters"
+      ].join("\n")
+    })
+  });
+  if (!response.ok) throw new Error("Guest confirmation failed.");
 }
 
 function formatBrief(enquiryId: string, specialist: string, enquiry: EnquiryPayload) {

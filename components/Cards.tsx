@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CountryAtlas, Destination, Expedition, ImageAsset, JournalArticle, Journey } from "@/lib/data";
+import { isApprovedEditorialImage } from "@/lib/media";
 import "./Cards.css";
 
 export function EditorialCard({
@@ -49,11 +50,12 @@ export function JourneyCard({ journey }: { journey: Journey }) {
 }
 
 export function DestinationCard({ destination }: { destination: Destination }) {
+  const showImage = isApprovedEditorialImage(destination.image);
   return (
-    <article className="editorial-card destination-card">
-      <Link href={`/destinations/${destination.slug}`} className="image-frame editorial-card-image">
+    <article className={`editorial-card destination-card${showImage ? "" : " is-textual"}`}>
+      {showImage ? <Link href={`/destinations/${destination.slug}`} className="image-frame editorial-card-image">
         <Image src={destination.image.src} alt={destination.image.alt} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" />
-      </Link>
+      </Link> : null}
       <p className="eyebrow">{destination.country} · {destination.status === "rich" ? "Guide" : "Concierge brief"}</p>
       <h2 className="h3">
         <Link href={`/destinations/${destination.slug}`}>{destination.title}</Link>
@@ -100,11 +102,14 @@ export function CountryCard({ country }: { country: CountryAtlas }) {
 }
 
 export function ExpeditionCard({ expedition }: { expedition: Expedition }) {
+  const parsedDeparture = expedition.date ? new Date(expedition.date) : null;
+  const hasCurrentDeparture = Boolean(parsedDeparture && !Number.isNaN(parsedDeparture.valueOf()) && parsedDeparture >= new Date());
+  const departureLabel = hasCurrentDeparture && expedition.date ? expedition.date : "New dates being finalised";
   return (
     <EditorialCard
       href={`/photo-expeditions/${expedition.slug}`}
       image={expedition.image}
-      meta={`${expedition.skill} · ${expedition.groupSize}`}
+      meta={`${expedition.duration || "Specialist departure"} · ${departureLabel}`}
       title={expedition.title}
       copy={expedition.description}
       cta="Join a photo expedition"

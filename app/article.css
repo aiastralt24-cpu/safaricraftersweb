@@ -92,6 +92,20 @@
 }
 
 @media (max-width: 680px) {
+  .article-hero {
+    min-height: 78svh;
+  }
+
+  .article-hero-content {
+    padding: 154px 0 64px;
+  }
+
+  .article-hero-content h1 {
+    max-width: 9.5ch;
+    font-size: clamp(2.7rem, 11vw, 4rem);
+    line-height: 0.94;
+  }
+
   .article-gallery {
     grid-template-columns: 1fr;
   }

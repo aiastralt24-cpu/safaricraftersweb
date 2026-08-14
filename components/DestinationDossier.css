@@ -187,6 +187,11 @@
   margin-top: clamp(96px, 12vw, 176px);
 }
 
+.destination-wildlife.is-textual {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: end;
+}
+
 .destination-wildlife-image {
   position: relative;
   min-height: min(68vw, 760px);
@@ -349,6 +354,15 @@
 .destination-specialist-copy > p:not(.eyebrow) { margin: 30px 0 0; color: rgba(var(--rgb-bone), 0.82); font-size: 1.02rem; line-height: 1.75; }
 .destination-specialist-copy > span { margin-top: 22px; color: rgba(var(--rgb-bone), 0.6); font-family: var(--font-display); font-size: 1.2rem; line-height: 1.6; }
 .destination-specialist-copy .button { width: fit-content; margin-top: 34px; }
+.destination-specialist-textual {
+  display: block;
+  min-height: 0;
+  padding: clamp(72px, 10vw, 136px) max(20px, calc((100vw - var(--max)) / 2));
+  background:
+    radial-gradient(circle at 78% 22%, rgba(var(--rgb-brass-light), 0.12), transparent 34%),
+    var(--forest);
+}
+.destination-specialist-textual .destination-specialist-copy { max-width: 820px; padding: 0; }
 
 @media (max-width: 900px) {
   .destination-opening,
@@ -391,7 +405,7 @@
   .destination-visual-frame.frame-1,
   .destination-visual-frame.frame-4,
   .destination-visual-frame.frame-5 { grid-column: auto; min-height: 0; aspect-ratio: 4 / 3; }
-  .destination-visual-frame.frame-1 { aspect-ratio: 3 / 4; }
+  .destination-visual-frame.frame-1 { aspect-ratio: 4 / 3; }
   .destination-rhythm-notes article { grid-template-columns: 38px minmax(0, 1fr); }
   .destination-wildlife-image { min-height: 0; aspect-ratio: 4 / 5; }
   .destination-journey-grid,

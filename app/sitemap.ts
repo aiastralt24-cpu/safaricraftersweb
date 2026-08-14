@@ -26,6 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...journeys.map((item) => ({ url: `${base}/journeys/${item.slug}`, lastModified: new Date(item.seo?.reviewedAt || contentReviewed) })),
     ...destinations.map((item) => ({ url: `${base}/destinations/${item.slug}`, lastModified: new Date(item.seo?.reviewedAt || contentReviewed) })),
     ...expeditions.map((item) => ({ url: `${base}/photo-expeditions/${item.slug}`, lastModified: contentReviewed })),
-    ...journal.map((item) => ({ url: `${base}/journal/${item.slug}`, lastModified: contentReviewed }))
+    ...journal.map((item) => ({ url: `${base}/journal/${item.slug}`, lastModified: new Date(item.date) }))
   ];
 }

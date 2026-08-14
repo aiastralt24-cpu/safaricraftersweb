@@ -14,7 +14,7 @@ export default function AboutPage() {
     <>
       <PageHero
         title="Founded in the field."
-        copy="Safari Crafters is led by people who have spent years reading forests, waiting in leopard hills, working with conservation landscapes and shaping journeys where patience is treated as a luxury."
+        copy="Founded in 2018, Safari Crafters curates immersive wildlife and photography journeys guided by professionals who understand wildlife and refined hospitality."
         image={specialists[0].image}
         meta="About"
       />
@@ -22,20 +22,18 @@ export default function AboutPage() {
         <div className="container simple-grid">
           <div>
             <p className="eyebrow">Our story</p>
-            <h2 className="h2">The route begins with people who know what the land asks of you.</h2>
+            <h2 className="h2">Immersive wildlife and photography journeys, crafted with intent.</h2>
           </div>
           <div>
             <p>
-              Safari Crafters curates immersive, intimate and exclusive safari experiences
-              across the world's celebrated wild frontiers, from India's tiger forests and
-              leopard hills to the Pantanal, Kenya, Svalbard and high Himalayan snow leopard
-              country.
+              Safari Crafters was founded in 2018 and shaped by a passion for wildlife. The
+              company curates immersive wildlife and photography journeys that place travellers
+              close to nature in its unfiltered form.
             </p>
             <p>
-              The work is intentionally personal: trusted naturalists, refined wilderness
-              stays, careful routing, and enough field time for a place to reveal itself
-              honestly. Every journey is shaped with the restraint of people who understand
-              that the wild does not perform on command.
+              Each itinerary is designed around the traveller's expectations, preferred
+              accommodation and the natural rhythm of the wilderness, while leaving room for
+              unscripted moments shaped by light, silence, patience and presence.
             </p>
             <Link className="button button-solid" href="/specialists">
               Meet the Specialists
@@ -47,14 +45,7 @@ export default function AboutPage() {
         <div className="container founder-leadership">
           <div className="founder-leadership-heading">
             <p className="eyebrow">Founder and field leadership</p>
-            <h2 className="h2">Field authority is not claimed. It is earned in silence.</h2>
-            <figure className="founder-quote">
-              <blockquote>
-                The forest does not reveal itself to urgency. It reveals itself to people
-                who know how to wait, listen and move with respect.
-              </blockquote>
-              <figcaption>Kairav Engineer and Gaurav Ramnarayanan</figcaption>
-            </figure>
+            <h2 className="h2">The people behind Safari Crafters.</h2>
           </div>
           <div className="founder-profiles founder-portraits">
             <article>
@@ -65,18 +56,16 @@ export default function AboutPage() {
                 <p className="eyebrow">Kairav Engineer</p>
                 <h3>Founder</h3>
                 <p>
-                  Kairav Engineer founded Safari Crafters from a lifelong relationship with
-                  wilderness, photography and conservation. His perspective is not built from
-                  boardroom travel language; it comes from time in forests, from watching how
-                  landscapes change with pressure, and from understanding that luxury travel
-                  can protect a place only when it is designed with sensitivity.
+                  Kairav Engineer is an Executive Director at Astral Limited, an author, and a
+                  wildlife photographer. His long-term work in landscapes such as Ranthambore
+                  and Jawai is shaped by years of observation and an evolving understanding of
+                  animal behaviour.
                 </p>
                 <p>
-                  His conservation work through the Astral Foundation, including support for
-                  habitats around Ranthambore, Jawai and other wildlife landscapes, gives Safari
-                  Crafters a deeper responsibility than arranging beautiful safaris. The aim is
-                  to create journeys that feel rare for the guest and respectful for the land,
-                  the guides and the communities who keep these places alive.
+                  His conservation work includes habitat strengthening, water restoration,
+                  anti-poaching preparedness and improved infrastructure for forest guards in
+                  landscapes including Ranthambore, Bandhavgarh, Pench, Satpura, Kanha and
+                  Kaziranga.
                 </p>
               </div>
             </article>
@@ -88,16 +77,16 @@ export default function AboutPage() {
                 <p className="eyebrow">Gaurav Ramnarayanan</p>
                 <h3>Chief Operating Officer</h3>
                 <p>
-                  Gaurav Ramnarayanan brings the discipline of a wildlife photographer and the
-                  precision of an operator to Safari Crafters. He understands the quiet mechanics
-                  behind a great sighting: the right gate, the right guide, the right season, and
-                  the grace to wait when the forest asks for silence.
+                  Introduced to photography at age three through a camera gifted by his father,
+                  Gaurav Ramnarayanan spent much of his childhood near a tiger reserve in South
+                  India. He has travelled extensively across India and around the world,
+                  documenting wildlife, cultures and environments.
                 </p>
                 <p>
-                  His role is central to the photography-led journeys and private field
-                  experiences, where guests need more than access. They need rhythm, mentorship,
-                  safety, sharp logistics and someone who knows when a moment should be pursued,
-                  and when it should simply be witnessed.
+                  As Chief Operating Officer, he translates this experience into carefully
+                  curated journeys that balance operational excellence with authenticity. He is
+                  the recipient of five international photography awards from institutions in
+                  the United Kingdom and the United States.
                 </p>
               </div>
             </article>

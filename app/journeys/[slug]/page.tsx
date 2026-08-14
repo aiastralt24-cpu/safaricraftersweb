@@ -5,6 +5,8 @@ import { EditorialProse } from "@/components/EditorialProse";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
+import { MediaGallery } from "@/components/MediaGallery";
+import { Itinerary } from "@/components/Itinerary";
 import { getJourney, journeys } from "@/lib/data";
 import { getJourneyIntelligence } from "@/lib/luxury";
 import { getJourneyFaqs, journeySeo } from "@/lib/content-intelligence";
@@ -35,6 +37,9 @@ export default async function JourneyDetailPage({ params }: Props) {
   const { slug } = await params;
   const journey = getJourney(slug);
   if (!journey) notFound();
+  const heroImage = journey.gallery.find((image, index) => index > 0 && image.src !== journey.image.src)
+    || journey.gallery.find((image) => image.src !== journey.image.src)
+    || journey.image;
   const intelligence = getJourneyIntelligence(journey);
   const faqs = getJourneyFaqs(journey);
   const breadcrumbs = [
@@ -51,7 +56,7 @@ export default async function JourneyDetailPage({ params }: Props) {
       <PageHero
         title={journey.title}
         copy={journey.description}
-        image={journey.image}
+        image={heroImage}
         meta={`${journey.duration} · ${journey.region}`}
       />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Journeys", href: "/journeys" }, { label: journey.title }]} />
@@ -87,6 +92,7 @@ export default async function JourneyDetailPage({ params }: Props) {
               <dt>From</dt>
               <dd>{journey.price}</dd>
             </dl>
+            <Link className="at-glance-action" href={`/plan?journey=${journey.slug}`}>Refine this private journey</Link>
           </aside>
         </div>
         <div className="container luxury-brief">
@@ -126,7 +132,7 @@ export default async function JourneyDetailPage({ params }: Props) {
           </dl>
         </div>
         {journey.highlights.length ? (
-          <div className="container detail-section">
+          <div className="container detail-section detail-highlights">
             <p className="eyebrow">Highlights</p>
             <ul className="highlight-list">
               {journey.highlights.map((highlight) => (
@@ -136,25 +142,13 @@ export default async function JourneyDetailPage({ params }: Props) {
           </div>
         ) : null}
         {journey.body?.length ? (
-          <div className="container detail-copy">
+          <div className="container detail-copy detail-editorial-copy">
             {journey.body.slice(0, 3).map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
         ) : null}
-        <div className="container timeline">
-          <h2 className="h2">Day by day</h2>
-          {journey.days.map((day, index) => (
-            <section key={day.title} className="timeline-item">
-              <span className="serif">{String(index + 1).padStart(2, "0")}</span>
-              <div>
-                <h3 className="h3">{day.title}</h3>
-                <p>{day.copy}</p>
-                {day.stay ? <p className="muted">Stay: {day.stay}</p> : null}
-              </div>
-            </section>
-          ))}
-        </div>
+        <Itinerary days={journey.days} />
         {journey.inclusions?.length || journey.exclusions?.length ? (
           <div className="container split-lists">
             {journey.inclusions?.length ? (
@@ -180,13 +174,9 @@ export default async function JourneyDetailPage({ params }: Props) {
           </div>
         ) : null}
         {journey.gallery.length ? (
-          <div className="container detail-section">
+          <div className="container detail-section detail-gallery">
             <p className="eyebrow">Gallery</p>
-            <div className="gallery-grid">
-              {journey.gallery.slice(0, 9).map((image) => (
-                <img key={image.src} src={image.src} alt={image.alt} loading="lazy" />
-              ))}
-            </div>
+            <MediaGallery images={journey.gallery.filter((image) => image.src !== heroImage.src)} label={`${journey.title} gallery`} />
           </div>
         ) : null}
         <section className="container faq-section">

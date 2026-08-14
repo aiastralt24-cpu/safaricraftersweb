@@ -4,6 +4,16 @@ export type ImageAsset = {
   src: string;
   alt: string;
   credit: string;
+  focalPoint?: string;
+};
+
+export type EditorialVideo = {
+  mp4: string;
+  webm?: string;
+  poster: ImageAsset;
+  title: string;
+  caption?: string;
+  transcript?: string;
 };
 
 export type DayPlan = {
@@ -50,6 +60,7 @@ export type Journey = {
   intro: string;
   image: ImageAsset;
   gallery: ImageAsset[];
+  video?: EditorialVideo;
   highlights: string[];
   route?: string;
   locations?: string[];
@@ -92,6 +103,7 @@ export type Destination = {
   intro: string;
   image: ImageAsset;
   gallery: ImageAsset[];
+  video?: EditorialVideo;
   highlights: string[];
   journeys: string[];
   expeditions: string[];
@@ -122,6 +134,7 @@ export type Expedition = {
   category: string;
   skill: string;
   groupSize: string;
+  duration?: string;
   bestMonths: string;
   species: string;
   equipment: string;
@@ -129,6 +142,7 @@ export type Expedition = {
   intro: string;
   image: ImageAsset;
   gallery: ImageAsset[];
+  video?: EditorialVideo;
   mentor: string;
   guide?: string;
   date?: string;
@@ -153,6 +167,7 @@ export type JournalArticle = {
   quote: string;
   image: ImageAsset;
   gallery: ImageAsset[];
+  video?: EditorialVideo;
 };
 
 export type Specialist = {
@@ -162,6 +177,7 @@ export type Specialist = {
   bio: string;
   moment: string;
   image: ImageAsset;
+  video?: EditorialVideo;
 };
 
 export type Testimonial = {
@@ -178,6 +194,7 @@ export type Testimonial = {
   arranged?: string;
   verified?: boolean;
   consented?: boolean;
+  video?: EditorialVideo;
 };
 
 export type EnquiryPayload = {

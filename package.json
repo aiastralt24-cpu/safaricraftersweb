@@ -9,6 +9,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "audit:content": "node scripts/audit-content.mjs",
+    "audit:media": "node scripts/audit-media.mjs",
     "audit:mobile": "PLAYWRIGHT_PORT=7800 playwright test tests/mobile-audit.spec.ts --project=chromium",
     "test:responsive": "PLAYWRIGHT_PORT=7800 playwright test tests/mobile-audit.spec.ts",
     "studio": "sanity dev",

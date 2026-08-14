@@ -37,7 +37,11 @@ test("planner survives keyboard-sized viewport and orientation change", async ({
   });
 
   await page.goto("/plan?region=India");
-  for (let step = 0; step < 4; step += 1) await page.getByRole("button", { name: "Continue" }).tap();
+  await page.getByRole("button", { name: "Continue" }).tap();
+  await page.getByRole("button", { name: "Continue" }).tap();
+  await page.getByRole("button", { name: "Tigers", exact: true }).tap();
+  await page.getByRole("button", { name: "Continue" }).tap();
+  await page.getByRole("button", { name: "Continue" }).tap();
 
   const name = page.getByLabel("Name");
   await name.tap();
@@ -55,6 +59,66 @@ test("planner survives keyboard-sized viewport and orientation change", async ({
   await submit.dblclick();
   await expect(page.getByText("Your brief has been received.")).toBeVisible();
   await expect(page.getByText(/SC-MOBILE-TEST/)).toBeVisible();
+});
+
+test("destination search and gallery lightbox remain usable on mobile", async ({ page }) => {
+  await page.goto("/destinations");
+  await page.getByRole("textbox", { name: "Search" }).fill("polar bear");
+  await expect(page.getByText("3 destinations")).toBeVisible();
+  await expect(page.getByRole("link", { name: /Svalbard Norway/ })).toBeVisible();
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+
+  await page.goto("/journeys/big-cats-of-india");
+  const gallery = page.locator(".gallery-trigger");
+  await expect(gallery).toHaveCount(9);
+  await gallery.first().tap();
+  const lightbox = page.getByRole("dialog", { name: /image viewer/ });
+  await expect(lightbox).toBeVisible();
+  await expect(page.getByRole("button", { name: "Close image viewer" })).toBeFocused();
+  await expect(page.locator("main")).toHaveAttribute("aria-hidden", "true");
+  await page.keyboard.press("Escape");
+  await expect(lightbox).toBeHidden();
+  await expect(page.locator("main")).not.toHaveAttribute("aria-hidden", "true");
+});
+
+test("destination briefs never render explicitly temporary photography", async ({ page }) => {
+  await page.goto("/destinations/rajaji");
+  await expect(page.locator(".page-hero")).toHaveClass(/page-hero-textual/);
+  await expect(page.locator('img[alt^="Temporary"]')).toHaveCount(0);
+  await expect(page.locator(".destination-visual-story")).toHaveCount(0);
+  await expect(page.locator(".destination-wildlife")).toHaveClass(/is-textual/);
+
+  await page.goto("/destinations/svalbard");
+  await expect(page.locator(".page-hero > img")).toHaveAttribute("src", /svalbard-35761b50/);
+  await expect(page.locator(".destination-visual-story")).toBeVisible();
+});
+
+test("planner disables elapsed months in the current year", async ({ page }) => {
+  await page.goto("/plan?region=India");
+  await page.getByRole("button", { name: "Continue" }).tap();
+  await page.getByRole("button", { name: "Continue" }).tap();
+  await page.getByRole("button", { name: "Tigers", exact: true }).tap();
+  await page.getByRole("button", { name: "Continue" }).tap();
+  const elapsedMonthCount = new Date().getMonth();
+  await expect(page.locator(".chip:disabled")).toHaveCount(elapsedMonthCount);
+});
+
+test("contact brief uses the enquiry pipeline and shows a reference", async ({ page }) => {
+  let submittedPayload: Record<string, unknown> | undefined;
+  await page.route("**/api/enquiry", async (route) => {
+    submittedPayload = route.request().postDataJSON();
+    await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ ok: true, enquiryId: "SC-CONTACT-TEST", specialist: "Safari Crafters" }) });
+  });
+  await page.goto("/contact");
+  await page.getByLabel("Name", { exact: true }).fill("Field Traveller");
+  await page.getByLabel("Email", { exact: true }).fill("field@example.com");
+  await page.getByLabel("Message", { exact: true }).fill("A private Svalbard conversation.");
+  await page.getByLabel(/I consent to Safari Crafters/).check();
+  await page.getByRole("button", { name: "Send Brief" }).tap();
+  await expect(page.getByText("Your brief has been received.")).toBeVisible();
+  await expect(page.getByText(/SC-CONTACT-TEST/)).toBeVisible();
+  expect(submittedPayload?.source).toBe("planner");
+  expect(submittedPayload?.sourceType).toBe("contact");
 });
 
 test("mobile home remains stable through rapid taps, back navigation, and refresh", async ({ page }) => {

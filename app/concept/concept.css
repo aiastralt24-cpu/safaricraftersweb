@@ -235,7 +235,8 @@ body:has(.concept-page) .site-header {
 .concept-full-menu-list {
   grid-area: list;
   display: grid;
-  align-content: center;
+  grid-auto-rows: minmax(58px, 1fr);
+  align-content: stretch;
   min-width: 0;
   height: 100%;
   max-width: 780px;
@@ -280,22 +281,12 @@ body:has(.concept-page) .site-header {
 .concept-full-menu-row h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 2.42vw, 3rem);
+  font-size: clamp(2rem, min(3.1vw, 5svh), 3.4rem);
   font-weight: 300;
   letter-spacing: 0;
   line-height: 1;
   text-wrap: balance;
   transition: color 420ms var(--ease), transform 520ms var(--ease);
-}
-
-.concept-full-menu-row p {
-  max-width: 48ch;
-  margin: 5px 0 0;
-  color: rgba(var(--rgb-bone), 0.38);
-  font-size: 0.7rem;
-  font-weight: 300;
-  line-height: 1.38;
-  transition: color 420ms var(--ease);
 }
 
 .concept-full-menu-list:hover .concept-full-menu-row {
@@ -322,12 +313,6 @@ body:has(.concept-page) .site-header {
 .concept-full-menu-row[data-active="true"] h2 {
   color: var(--brass-light);
   transform: translateX(8px);
-}
-
-.concept-full-menu-row:hover p,
-.concept-full-menu-row:focus-visible p,
-.concept-full-menu-row[data-active="true"] p {
-  color: rgba(var(--rgb-bone), 0.62);
 }
 
 .concept-full-menu-row svg {
@@ -1283,6 +1268,16 @@ body:has(.concept-page) .site-header {
     display: contents;
   }
 
+  .concept-full-menu-list {
+    width: 100%;
+    max-width: none;
+    grid-auto-rows: minmax(68px, 1fr);
+  }
+
+  .concept-full-menu-row h2 {
+    font-size: clamp(2.2rem, min(5vw, 5svh), 3.35rem);
+  }
+
   .concept-menu-index {
     min-height: auto;
     flex-direction: row;
@@ -1455,6 +1450,7 @@ body:has(.concept-page) .site-header {
   }
 
   .concept-full-menu-list {
+    grid-auto-rows: minmax(64px, 1fr);
     padding: 18px 22px;
   }
 
@@ -1477,12 +1473,6 @@ body:has(.concept-page) .site-header {
 
   .concept-full-menu-row > span {
     font-size: 0.62rem;
-  }
-
-  .concept-full-menu-row p {
-    margin-top: 6px;
-    font-size: 0.78rem;
-    line-height: 1.4;
   }
 
   .concept-full-menu-footer {

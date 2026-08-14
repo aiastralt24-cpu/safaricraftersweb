@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { CountryEditorialCard } from "@/components/DestinationEditorial";
 import { PageHero } from "@/components/PageHero";
+import { DestinationFinder } from "@/components/DestinationFinder";
 import { destinationContinents, destinations, getCountriesByContinent } from "@/lib/data";
 import "../listing.css";
 
@@ -69,13 +70,7 @@ export default function DestinationsPage() {
             landscapes we know, guided by what you hope to witness and how you want to travel.
           </p>
         </div>
-        <nav className="container atlas-region-nav" aria-label="Destination regions">
-          {destinationContinents.map((continent) => (
-            <Link href={`#${continent.toLowerCase()}`} key={continent}>
-              {atlasChapters[continent].title}
-            </Link>
-          ))}
-        </nav>
+        <DestinationFinder destinations={destinations} />
         {destinationContinents.map((continent) => {
           const countries = getCountriesByContinent(continent);
           const chapter = atlasChapters[continent];

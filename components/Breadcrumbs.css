@@ -1,0 +1,7 @@
+.breadcrumbs { padding-top: 22px; }
+.breadcrumbs ol { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; color: var(--charcoal); font-size: .76rem; font-weight: 500; }
+.breadcrumbs li { display: inline-flex; align-items: center; }
+.breadcrumbs li:not(:last-child)::after { content: "/"; margin-left: 8px; color: var(--brass); }
+.breadcrumbs a, .breadcrumbs [aria-current="page"] { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; }
+.breadcrumbs a:hover, .breadcrumbs a:focus-visible { color: var(--brass); }
+.breadcrumbs [aria-current="page"] { color: var(--ink); font-weight: 700; }

@@ -32,6 +32,20 @@ const heroMedia = defineType({
   ]
 });
 
+const editorialVideo = defineType({
+  name: "editorialVideo",
+  title: "Editorial video",
+  type: "object",
+  fields: [
+    defineField({ name: "mp4", title: "MP4 URL", type: "url", validation: (rule) => rule.required() }),
+    defineField({ name: "webm", title: "WebM URL", type: "url" }),
+    defineField({ name: "poster", title: "Poster image", type: "imageAsset", validation: (rule) => rule.required() }),
+    defineField({ name: "title", title: "Accessible title", type: "string", validation: (rule) => rule.required() }),
+    defineField({ name: "caption", title: "Visible caption", type: "text", rows: 2 }),
+    defineField({ name: "transcript", title: "Transcript", type: "text", rows: 8 })
+  ]
+});
+
 const dayPlan = defineType({
   name: "dayPlan",
   title: "Day plan",
@@ -128,6 +142,7 @@ const destination = defineType({
     defineField({ name: "intro", title: "Intro", type: "text" }),
     defineField({ name: "image", title: "Hero image", type: "imageAsset" }),
     defineField({ name: "gallery", title: "Gallery", type: "array", of: [defineArrayMember({ type: "imageAsset" })] }),
+    defineField({ name: "video", title: "Destination film", type: "editorialVideo" }),
     defineField({ name: "fieldIntelligence", title: "Field intelligence", type: "fieldIntelligence" })
     ,defineField({ name: "habitat", title: "Habitats", type: "text" })
     ,defineField({ name: "idealStay", title: "Ideal stay", type: "string" })
@@ -158,6 +173,7 @@ const journey = defineType({
     defineField({ name: "intro", title: "Intro", type: "text" }),
     defineField({ name: "image", title: "Hero image", type: "imageAsset" }),
     defineField({ name: "gallery", title: "Gallery", type: "array", of: [defineArrayMember({ type: "imageAsset" })] }),
+    defineField({ name: "video", title: "Journey film", type: "editorialVideo" }),
     defineField({ name: "highlights", title: "Highlights", type: "array", of: [defineArrayMember({ type: "string" })] }),
     defineField({ name: "days", title: "Day by day", type: "array", of: [defineArrayMember({ type: "dayPlan" })] })
     ,defineField({ name: "style", title: "Journey style", type: "string" })
@@ -187,6 +203,7 @@ const expedition = defineType({
     defineField({ name: "intro", title: "Intro", type: "text" }),
     defineField({ name: "image", title: "Hero image", type: "imageAsset" }),
     defineField({ name: "gallery", title: "Gallery", type: "array", of: [defineArrayMember({ type: "imageAsset" })] }),
+    defineField({ name: "video", title: "Expedition film", type: "editorialVideo" }),
     defineField({ name: "days", title: "Day by day", type: "array", of: [defineArrayMember({ type: "dayPlan" })] })
   ]
 });
@@ -204,6 +221,7 @@ const journalArticle = defineType({
     defineField({ name: "description", title: "Description", type: "text" }),
     defineField({ name: "body", title: "Body", type: "array", of: [defineArrayMember({ type: "text" })] }),
     defineField({ name: "image", title: "Hero image", type: "imageAsset" })
+    ,defineField({ name: "video", title: "Article film", type: "editorialVideo" })
   ]
 });
 
@@ -218,6 +236,7 @@ const specialist = defineType({
     defineField({ name: "bio", title: "Bio", type: "text" }),
     defineField({ name: "moment", title: "Field note", type: "text" }),
     defineField({ name: "image", title: "Portrait/image", type: "imageAsset" })
+    ,defineField({ name: "video", title: "Specialist film", type: "editorialVideo" })
   ]
 });
 
@@ -239,12 +258,14 @@ const testimonial = defineType({
     ,defineField({ name: "arranged", title: "What we arranged", type: "text" })
     ,defineField({ name: "verified", title: "Verified wording", type: "boolean", initialValue: false })
     ,defineField({ name: "consented", title: "Publication consent recorded", type: "boolean", initialValue: false })
+    ,defineField({ name: "video", title: "Guest film", type: "editorialVideo", hidden: ({ parent }) => !parent?.consented })
   ]
 });
 
 export const schemaTypes = [
   imageAsset,
   heroMedia,
+  editorialVideo,
   dayPlan,
   fieldIntelligence,
   faqItem,

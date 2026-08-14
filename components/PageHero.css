@@ -9,6 +9,14 @@
   color: var(--white);
 }
 
+.page-hero-textual {
+  min-height: 58vh;
+  min-height: 58svh;
+  background: radial-gradient(circle at 78% 24%, rgba(var(--rgb-brass), 0.13), transparent 31%), var(--ink);
+}
+
+.page-hero-textual .page-hero-scrim { display: none; }
+
 .page-hero > img {
   position: absolute;
   inset: 0;

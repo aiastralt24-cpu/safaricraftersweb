@@ -44,13 +44,12 @@
 
 .founder-leadership-heading {
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.68fr);
+  grid-template-columns: minmax(0, 820px);
   gap: clamp(32px, 6vw, 84px);
   align-items: end;
 }
 
 .founder-leadership-heading h2 {
-  grid-column: 1;
   max-width: 760px;
 }
 
@@ -136,24 +135,64 @@
 
 .specialist-list {
   display: grid;
-  gap: 84px;
+  gap: clamp(72px, 10vw, 132px);
 }
 
 .specialist-list article {
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 64px;
+  grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+  gap: clamp(40px, 7vw, 88px);
   align-items: center;
+  padding-top: 34px;
+  border-top: var(--rule-fine);
 }
 
 .specialist-list .image-frame {
   aspect-ratio: 3 / 4;
 }
 
+.specialist-list article:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(280px, 380px); }
+.specialist-list article:nth-child(even) .image-frame { order: 2; }
+.specialist-list article > div:last-child { max-width: 760px; }
+
 .specialist-list h2,
 .specialist-list p {
   margin: 0 0 14px;
 }
+
+.specialist-list blockquote {
+  max-width: 720px;
+  margin: 26px 0;
+  border-left: 1px solid var(--brass);
+  padding-left: 24px;
+  color: var(--charcoal);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.specialist-work {
+  display: grid;
+  max-width: 720px;
+  margin: 30px 0;
+  border-top: var(--rule-fine);
+}
+
+.specialist-work .eyebrow { margin: 18px 0 8px; }
+
+.specialist-work a {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  border-bottom: var(--rule-fine);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.specialist-work a:hover,
+.specialist-work a:focus-visible { color: var(--brass); }
 
 .conservation-proof {
   background: var(--paper);
@@ -195,6 +234,8 @@
   .conservation-proof-grid {
     grid-template-columns: 1fr;
   }
+
+  .specialist-list article:nth-child(even) .image-frame { order: 0; }
 
   .founder-portraits article:nth-child(even) .founder-portrait {
     order: 0;

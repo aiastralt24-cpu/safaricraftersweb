@@ -3,9 +3,16 @@ create table if not exists public.safari_enquiries (
   enquiry_id text not null unique,
   specialist text not null,
   source text not null,
+  status text not null default 'new' check (status in ('new', 'contacted', 'qualified', 'closed')),
   payload jsonb not null,
-  created_at timestamptz not null default now()
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
 );
+
+alter table public.safari_enquiries add column if not exists status text not null default 'new';
+alter table public.safari_enquiries add column if not exists updated_at timestamptz not null default now();
+create index if not exists safari_enquiries_created_at_idx on public.safari_enquiries (created_at desc);
+create index if not exists safari_enquiries_status_idx on public.safari_enquiries (status);
 
 alter table public.safari_enquiries enable row level security;
 

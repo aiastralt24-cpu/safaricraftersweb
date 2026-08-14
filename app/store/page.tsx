@@ -2,152 +2,212 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import { productSchema } from "@/lib/structured-data";
+import StoreMotion from "./StoreMotion";
+import StoreGallery from "./StoreGallery";
 import "./store.css";
-
-const bookImage = {
-  src: "/assets/store/ghosts-of-the-granite-hills-book.jpg",
-  alt: "Ghosts of the Granite Hills red clothbound collector's photobook on granite stone"
-};
 
 const storeProductHref =
   "https://www.store.safaricrafters.com/products/the-ghosts-of-the-granite-hills";
 
-const editionDetails = [
-  ["Edition", "2,000 signed and numbered copies"],
-  ["Extent", "396-page clothbound hardcover"],
-  ["Price", "₹3,300"],
-  ["Subject", "Jawai, leopards and the culture of coexistence"]
-];
-
-const objectDetails = [
-  "Deep red clothbound collector's edition",
-  "Photographic study of Jawai's granite hills and leopards",
-  "Foreword by Jonathan and Angela Scott",
-  "Suited to private libraries, galleries and institutions"
-];
-
-const makers = [
-  ["Kairav Engineer", "Author and photographer"],
-  ["Safari Crafters", "Exclusive seller and publisher"],
-  ["Jonathan and Angela Scott", "Foreword"]
+const fieldNotes = [
+  {
+    src: "/assets/store/ghosts-book-leopard-family.webp",
+    alt: "Open Ghosts of the Granite Hills book showing a leopard family across a photographic spread",
+    title: "Kinship",
+    copy: "A mother and her young hold the granite as both refuge and inheritance."
+  },
+  {
+    src: "/assets/store/ghosts-book-leopard-in-grass.webp",
+    alt: "Open Ghosts of the Granite Hills book showing a leopard moving through green grass",
+    title: "Passage",
+    copy: "Between thorn forest and village fields, the leopard moves without announcing itself."
+  },
+  {
+    src: "/assets/store/ghosts-book-open-spread.webp",
+    alt: "Open Ghosts of the Granite Hills book displaying a full-page leopard portrait",
+    title: "Presence",
+    copy: "Not a visitor to this country, but an ancient and watchful resident."
+  }
 ];
 
 export const metadata: Metadata = {
-  title: "Store",
+  title: "Ghosts of the Granite Hills | Safari Crafters Store",
   description:
-    "Ghosts of the Granite Hills, a signed collector's photobook by Kairav Engineer, published by Safari Crafters."
+    "A decade in the making, Ghosts of the Granite Hills is Kairav Engineer's 396-page natural history of Jawai, its leopards and their shared habitat.",
+  alternates: { canonical: "/store" },
+  openGraph: {
+    title: "Ghosts of the Granite Hills",
+    description: "A decade of fieldwork devoted to the leopards, habitat and inhabitants of Jawai.",
+    images: ["/assets/store/ghosts-book-cover.webp"]
+  }
 };
+
+function AcquireEdition({
+  className = "",
+  label = "Purchase the book"
+}: {
+  className?: string;
+  label?: string;
+}) {
+  return (
+    <Link className={`store-acquire ${className}`.trim()} href={storeProductHref}>
+      <span>{label}</span>
+      <ArrowUpRight size={15} aria-hidden="true" />
+    </Link>
+  );
+}
 
 export default function StorePage() {
   return (
     <>
-      <section className="store-hero" aria-label="Ghosts of the Granite Hills collector's edition">
+      <JsonLd data={productSchema()} />
+      <StoreMotion />
+
+      <section className="store-hero" aria-labelledby="store-title">
         <div className="container store-hero-grid">
           <div className="store-hero-copy">
-            <p className="eyebrow">Safari Crafters Store</p>
-            <h1>Ghosts of the Granite Hills</h1>
-            <p className="store-hero-intro">
-              A signed collector's photobook by Kairav Engineer, published by Safari Crafters,
-              studying Jawai's granite hills, its leopards and the rare culture of coexistence
-              that holds them together.
+            <p className="store-kicker">Jawai · Rajasthan</p>
+            <h1 id="store-title">
+              A wild landscape,
+              <span>held in print.</span>
+            </h1>
+            <p className="store-byline">
+              Ghosts of the Granite Hills,
+              <br />
+              A photographic work by
+              <br />
+              Kairav{"\u00A0"}Engineer
             </p>
-            <div className="store-actions">
-              <Link className="button button-solid" href={storeProductHref}>
-                Buy From Official Store
-              </Link>
-              <span>Available only through the official Safari Crafters Store.</span>
+            <p className="store-hero-intro">
+              A decade of fieldwork distilled into 396 pages of natural{"\u00A0"}history, tracing the
+              leopards of Jawai, their granite habitat and the lives unfolding around them.
+            </p>
+            <div className="store-hero-action">
+              <AcquireEdition label="Purchase the book" />
+              <a className="store-preview-link" href="#book-preview">View inside the book</a>
+            </div>
+            <div className="store-hero-facts" aria-label="Book price and edition">
+              <p><span>Price</span><strong>₹3,300</strong></p>
+              <p><span>Edition</span><strong>Limited to 2,000 copies</strong></p>
             </div>
           </div>
+
           <figure className="store-hero-media">
-            <Image
-              src={bookImage.src}
-              alt={bookImage.alt}
-              width={1600}
-              height={1193}
-              priority
-              sizes="(max-width: 920px) 100vw, 52vw"
-            />
-            <figcaption>Edition of 2,000 · Signed and numbered · ₹3,300</figcaption>
+            <div className="store-image-frame">
+              <Image
+                src="/assets/store/ghosts-book-cover.webp"
+                alt="Red clothbound Ghosts of the Granite Hills collector's book displayed in an interior"
+                width={1800}
+                height={2400}
+                priority
+                sizes="(max-width: 920px) 100vw, 46vw"
+              />
+            </div>
+            <figcaption>A decade in the making</figcaption>
           </figure>
         </div>
       </section>
 
-      <section className="section store-edition">
-        <div className="container store-split">
+      <section className="store-purchase-notes" aria-label="Edition and purchase information">
+        <div className="container">
+          <dl>
+            <div><dt>Edition</dt><dd>Signed and individually numbered</dd></div>
+            <div><dt>Format</dt><dd>396-page clothbound hardcover</dd></div>
+            <div><dt>Delivery</dt><dd>Options and charges confirmed at checkout</dd></div>
+            <div><dt>Assistance</dt><dd><Link href="/contact">Ask about delivery</Link></dd></div>
+          </dl>
+          <p>The acquisition link continues to the official Safari Crafters store to complete the order securely.</p>
+        </div>
+      </section>
+
+      <section className="store-introduction" aria-labelledby="jawai-title">
+        <div className="container store-introduction-grid">
+          <p className="store-section-label" data-reveal="rise">The land</p>
+          <div className="store-introduction-copy">
+            <p className="store-kicker" data-reveal="rise">Jawai, Western India</p>
+            <h2 id="jawai-title" data-reveal="words">Where the stone remembers.</h2>
+            <div className="store-prose store-introduction-prose" data-reveal="rise">
+              <p>
+                In Jawai, the earth rises in great shoulders of granite, older than the Himalaya,
+                burnished by wind, heat and time. Rabari herders lead their animals beneath these
+                hills as their families have done for generations. Above them, in caves split by
+                the sun, leopards wait for evening.
+              </p>
+              <p>
+                There are few places where the lives of people and predators remain so closely
+                entwined. Over ten years, Kairav Engineer studied not only the leopard, but the
+                terrain, seasons, prey and pastoral communities that shape its world. The result is
+                a portrait of an entire living habitat rather than a single species in isolation.
+              </p>
+            </div>
+            <blockquote data-reveal="rise">
+              “The leopard is not hidden here. It is simply living at a rhythm the hurried eye can no longer see.”
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section className="store-field" id="book-preview" aria-labelledby="field-title">
+        <div className="container store-field-heading">
+          <p className="store-section-label store-section-label-light" data-reveal="rise">The lives within</p>
           <div>
-            <p className="eyebrow">Collector's Edition</p>
-            <h2 className="h2">A finite work for people who collect with patience.</h2>
+            <p className="store-kicker" data-reveal="rise">Ten years in the field</p>
+            <h2 id="field-title" data-reveal="words">A landscape observed in full.</h2>
           </div>
-          <div className="store-detail-panel">
-            {editionDetails.map(([label, value]) => (
-              <div key={label}>
-                <span>{label}</span>
-                <strong>{value}</strong>
-              </div>
-            ))}
+        </div>
+
+        <StoreGallery images={fieldNotes} />
+      </section>
+
+      <section className="store-making" aria-labelledby="making-title">
+        <div className="container store-making-grid">
+          <figure data-reveal="image">
+            <div className="store-making-image">
+              <Image
+                src="/assets/store/ghosts-book-interior-lounge.webp"
+                alt="Open Ghosts of the Granite Hills book displayed on a marble table in a quiet lounge"
+                width={1800}
+                height={2400}
+                loading="lazy"
+                sizes="(max-width: 920px) 100vw, 52vw"
+              />
+            </div>
+          </figure>
+          <div className="store-making-copy">
+            <p className="store-section-label" data-reveal="rise">The book</p>
+            <p className="store-kicker" data-reveal="rise">Research, observation, natural history</p>
+            <h2 id="making-title" data-reveal="words">396 pages of a living world.</h2>
+            <div className="store-prose" data-reveal="rise">
+              <p>
+                Across a decade, Kairav Engineer followed Jawai through seasons of dust, monsoon
+                green and long amber evenings. Patient field observation reveals the leopard in
+                context: among granite caves, prey, people and the rhythms that sustain them all.
+              </p>
+              <p>
+                Bound in deep red cloth, the volume carries a foreword by wildlife filmmakers
+                Jonathan and Angela Scott. It is both a photographic monograph and a deeply
+                researched record of one of India’s most remarkable shared landscapes.
+              </p>
+            </div>
+            <dl className="store-edition-details" data-reveal="rise">
+              <div><dt>Author</dt><dd>Kairav Engineer</dd></div>
+              <div><dt>Format</dt><dd>396-page clothbound hardcover</dd></div>
+              <div><dt>Edition</dt><dd>Limited edition of 2,000</dd></div>
+              <div><dt>Foreword</dt><dd>Jonathan &amp; Angela Scott</dd></div>
+            </dl>
+            <AcquireEdition className="store-making-cta" label="Acquire a signed copy" />
           </div>
         </div>
       </section>
 
-      <section className="section store-book">
-        <div className="container store-book-grid">
-          <div className="store-book-copy">
-            <p className="eyebrow">The Book</p>
-            <h2 className="h2">Jawai is not explained by spectacle. It is revealed by restraint.</h2>
-            <p>
-              The book follows the granite country of Jawai with the same patience required in the
-              field: slow observation, respect for local rhythm and attention to the quiet relationship
-              between leopards, stone and pastoral life.
-            </p>
-            <p>
-              It is intended less as a travel souvenir and more as a permanent object: a photographic
-              record for homes, archives, private libraries and institutions that understand wilderness
-              as culture, not scenery.
-            </p>
-          </div>
-          <div className="store-object-list" aria-label="Object details">
-            {objectDetails.map((item, index) => (
-              <article key={item}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <p>{item}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section store-makers">
-        <div className="container store-makers-grid">
-          <div>
-            <p className="eyebrow">Provenance</p>
-            <h2 className="h2">Authored in the field. Published with quiet intent.</h2>
-          </div>
-          <div className="store-makers-list">
-            {makers.map(([name, role], index) => (
-              <article key={name}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3>{name}</h3>
-                  <p>{role}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section store-request" aria-label="Purchase through Safari Crafters">
-        <div className="container store-request-card">
-          <p className="eyebrow">Exclusive Store Release</p>
-          <h2>Available directly through Safari Crafters.</h2>
-          <p>
-            Ghosts of the Granite Hills is sold exclusively through the official Safari Crafters
-            Store, where guests and collectors can view the product listing and complete their
-            purchase securely.
-          </p>
-          <Link className="button button-solid" href={storeProductHref}>
-            Buy From Official Store <ArrowUpRight size={15} />
-          </Link>
+      <section className="store-final" aria-labelledby="final-title">
+        <div className="container store-final-inner" data-reveal="rise">
+          <p className="store-kicker">Ghosts of the Granite Hills</p>
+          <h2 id="final-title">A decade in the field, bound in one volume.</h2>
+          <p className="store-final-note">396 pages · Clothbound hardcover · ₹3,300</p>
+          <AcquireEdition label="Order your edition" />
         </div>
       </section>
     </>

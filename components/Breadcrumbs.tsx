@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "./Breadcrumbs.css";
 
 export function Breadcrumbs({ items }: { items: { label: string; href?: string }[] }) {
   return (

@@ -92,17 +92,18 @@ textarea {
 
 .skip-link {
   position: fixed;
-  top: 12px;
+  top: 0;
   left: 12px;
-  z-index: 100;
-  transform: translateY(-120%);
+  z-index: 2000;
+  transform: translateY(-100%);
   background: var(--ink);
   color: var(--white);
   padding: 10px 14px;
+  transition: transform 180ms ease;
 }
 
-.skip-link:focus {
-  transform: translateY(0);
+.skip-link:focus-visible {
+  transform: translateY(12px);
 }
 
 .serif {
@@ -115,7 +116,7 @@ textarea {
 }
 
 .section {
-  padding: 128px 0;
+  padding: clamp(76px, 9vw, 116px) 0;
 }
 
 .section-tight {
@@ -140,7 +141,7 @@ textarea {
 
 .h2 {
   font-family: var(--font-display);
-  font-size: clamp(2.35rem, 4.2vw, 4.65rem);
+  font-size: clamp(2.25rem, 3.6vw, 4rem);
   font-weight: 300;
   letter-spacing: 0;
   line-height: 1.05;
@@ -156,15 +157,16 @@ textarea {
 
 .intro {
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2vw, 2.12rem);
-  line-height: 1.48;
+  max-width: 68ch;
+  font-size: clamp(1.22rem, 1.6vw, 1.7rem);
+  line-height: 1.58;
   color: var(--charcoal);
 }
 
 .eyebrow {
   color: var(--brass);
   font-family: var(--font-body);
-  font-size: 0.64rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.22em;
   line-height: 1.2;

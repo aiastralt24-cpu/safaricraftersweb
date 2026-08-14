@@ -14,6 +14,7 @@ const heroJourney = journeys[0];
 const featuredDestination = destinations.find((item) => item.slug === "jawai") ?? destinations[0];
 const tigerDestination = destinations.find((item) => item.slug === "bandhavgarh") ?? destinations[0];
 const photoExpedition = expeditions[0];
+const storeProductHref = "https://www.store.safaricrafters.com/products/the-ghosts-of-the-granite-hills";
 
 const journalMenuImage: ImageAsset = {
   src: "/assets/safari-crafters/dsc8123-789x1024-1f0b8c48.jpg",
@@ -56,70 +57,60 @@ const menuItems = [
     key: "journeys",
     label: "Journeys",
     href: "/journeys",
-    copy: "Private safaris signed by specialists, paced around wildlife rather than hotel nights.",
     image: heroJourney.image
   },
   {
     key: "destinations",
     label: "Destinations",
     href: "/destinations",
-    copy: "A curated atlas of forests, wetlands, deserts and big-cat country.",
     image: featuredDestination.image
   },
   {
     key: "photo-expeditions",
     label: "Photo Expeditions",
     href: "/photo-expeditions",
-    copy: "Field-led departures for photographers who want patience, access and mentorship.",
     image: photoExpedition.image
   },
   {
     key: "journal",
     label: "The Journal",
     href: "/journal",
-    copy: "Field notes, conservation intelligence and photographic essays from the wild.",
     image: journalMenuImage
   },
   {
     key: "reviews",
     label: "Guest Notes",
     href: "/reviews",
-    copy: "Quiet proof from private travellers, families and photographers who trusted the brief.",
     image: reviewsMenuImage
   },
   {
     key: "conservation-commitment",
     label: "Conservation Commitment",
     href: "/conservation-commitment",
-    copy: "How Safari Crafters gives back through Astral Foundation without asking guests for donations.",
     image: conservationMenuImage
   },
   {
     key: "private-aviation",
     label: "Private Aviation",
     href: "/private-aviation",
-    copy: "Company-owned private jets shaping rare, seamless safari circuits across India.",
     image: privateAviationMenuImage
   },
   {
     key: "store",
     label: "Store",
     href: "/store",
-    copy: "Collector's editions, field books and photographic works from Safari Crafters.",
     image: storeMenuImage
   },
   {
     key: "about",
     label: "About",
     href: "/about",
-    copy: "Founder story, specialist authority and the conservation philosophy behind each route.",
     image: specialists[0]?.image ?? heroJourney.image
   },
   {
     key: "contact",
     label: "Contact Us",
     href: "/contact",
-    copy: "A direct line for private safari planning, photo expeditions and specialist-led route conversations.",
     image: contactMenuImage
   }
 ];
@@ -154,6 +145,7 @@ export function Header() {
   const isKnownRoute =
     pathname === "/" || knownRoutePrefixes.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
   const useSolidHeader = scrolled || !isKnownRoute;
+  const isStore = pathname === "/store";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -215,8 +207,8 @@ export function Header() {
         <Link className="header-link" href="/contact">
           Contact Us
         </Link>
-        <Link className="header-cta" href="/plan">
-          Plan a Journey
+        <Link className="header-cta" href={isStore ? storeProductHref : "/plan"}>
+          {isStore ? "Purchase Book" : "Plan a Journey"}
         </Link>
         <button
           ref={menuButtonRef}
@@ -263,10 +255,7 @@ export function Header() {
                 onPointerEnter={() => setActiveMenuKey(item.key)}
               >
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h2>{item.label}</h2>
-                  <p>{item.copy}</p>
-                </div>
+                <h2>{item.label}</h2>
                 <MoveRight size={24} />
               </Link>
             ))}

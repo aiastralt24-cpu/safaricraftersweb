@@ -1,7 +1,9 @@
 .editorial-card {
   display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
   align-content: start;
   gap: 14px;
+  height: 100%;
 }
 
 .editorial-card-image {

@@ -87,6 +87,21 @@
   min-height: 150px;
 }
 
+.contact-consent {
+  grid-template-columns: 22px minmax(0, 1fr) !important;
+  min-height: 44px;
+  align-items: start;
+  font-weight: 400 !important;
+  letter-spacing: normal !important;
+  line-height: 1.5;
+  text-transform: none !important;
+}
+
+.contact-consent input { width: 18px; min-height: 18px; height: 18px; margin: 2px 0 0; padding: 0; accent-color: var(--brass); }
+.contact-form-success { align-content: center; min-height: 420px; color: var(--ink); }
+.contact-form-success h2 { margin: 4px 0; font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; }
+.contact-form-success p { margin: 0; }
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: rgba(var(--rgb-charcoal), 0.45);
@@ -98,7 +113,7 @@
   padding: 150px 0 90px;
   background:
     linear-gradient(180deg, rgba(var(--rgb-ink), 0.62), rgba(var(--rgb-ink), 0.12) 38%, var(--bone) 72%),
-    url("/assets/safari-crafters/ranthambhore-84d7a5a3.jpg") center/cover fixed;
+    url("/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png") center/cover fixed;
 }
 
 .plan-intro {

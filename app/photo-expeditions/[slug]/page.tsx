@@ -3,6 +3,11 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { EditorialProse } from "@/components/EditorialProse";
 import { PageHero } from "@/components/PageHero";
+import { MediaGallery } from "@/components/MediaGallery";
+import { Itinerary } from "@/components/Itinerary";
+import { ExpeditionEnquiry } from "@/components/ExpeditionEnquiry";
+import { JsonLd } from "@/components/JsonLd";
+import { expeditionSchema } from "@/lib/structured-data";
 import { expeditions, getExpedition } from "@/lib/data";
 import "../../detail.css";
 
@@ -28,13 +33,21 @@ export default async function ExpeditionDetailPage({ params }: Props) {
   const { slug } = await params;
   const expedition = getExpedition(slug);
   if (!expedition) notFound();
+  const heroImage = expedition.gallery.find((image, index) => index > 0 && image.src !== expedition.image.src)
+    || expedition.gallery.find((image) => image.src !== expedition.image.src)
+    || expedition.image;
+  const parsedDeparture = expedition.date ? new Date(expedition.date) : null;
+  const departure = parsedDeparture && !Number.isNaN(parsedDeparture.valueOf()) && parsedDeparture >= new Date()
+    ? expedition.date
+    : undefined;
 
   return (
     <>
+      <JsonLd data={expeditionSchema(expedition)} />
       <PageHero
         title={expedition.title}
         copy={expedition.description}
-        image={expedition.image}
+        image={heroImage}
         meta={expedition.category}
       />
       <article className="section detail">
@@ -46,12 +59,14 @@ export default async function ExpeditionDetailPage({ params }: Props) {
           <aside className="at-glance">
             <h2>At a glance</h2>
             <dl>
-              {expedition.date ? (
+              <dt>Duration</dt>
+              <dd>{expedition.duration || `${expedition.days.length} days`}</dd>
+              {departure ? (
                 <>
                   <dt>Departure</dt>
-                  <dd>{expedition.date}</dd>
+                  <dd>{departure}</dd>
                 </>
-              ) : null}
+              ) : <><dt>Departure</dt><dd>New dates being finalised</dd></>}
               {expedition.route ? (
                 <>
                   <dt>Route</dt>
@@ -61,9 +76,9 @@ export default async function ExpeditionDetailPage({ params }: Props) {
               <dt>Skill level</dt>
               <dd>{expedition.skill}</dd>
               <dt>Group size</dt>
-              <dd>{expedition.groupSize}</dd>
+              <dd>{departure ? expedition.groupSize : "Small group · availability on request"}</dd>
               <dt>Best months</dt>
-              <dd>{expedition.bestMonths}</dd>
+              <dd>{expedition.bestMonths === expedition.date && !departure ? "New season being confirmed" : expedition.bestMonths}</dd>
               <dt>Species focus</dt>
               <dd>{expedition.species}</dd>
               <dt>Equipment</dt>
@@ -75,10 +90,11 @@ export default async function ExpeditionDetailPage({ params }: Props) {
                 </>
               ) : null}
             </dl>
+            <Link className="at-glance-action" href="#expedition-enquiry">Ask about this departure</Link>
           </aside>
         </div>
         {expedition.highlights.length ? (
-          <div className="container detail-section">
+          <div className="container detail-section detail-highlights">
             <p className="eyebrow">Highlights</p>
             <ul className="highlight-list">
               {expedition.highlights.map((highlight) => (
@@ -87,25 +103,21 @@ export default async function ExpeditionDetailPage({ params }: Props) {
             </ul>
           </div>
         ) : null}
+        <ExpeditionEnquiry
+          title={expedition.title}
+          slug={expedition.slug}
+          departure={departure}
+          mentor={expedition.mentor}
+          region={expedition.category}
+        />
         {expedition.body?.length ? (
-          <div className="container detail-copy">
+          <div className="container detail-copy detail-editorial-copy">
             {expedition.body.slice(0, 3).map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
         ) : null}
-        <div className="container timeline">
-          <h2 className="h2">Expedition rhythm</h2>
-          {expedition.days.map((day, index) => (
-            <section key={day.title} className="timeline-item">
-              <span className="serif">{String(index + 1).padStart(2, "0")}</span>
-              <div>
-                <h3 className="h3">{day.title}</h3>
-                <p>{day.copy}</p>
-              </div>
-            </section>
-          ))}
-        </div>
+        <Itinerary days={expedition.days} title="Expedition rhythm" />
         {expedition.inclusions?.length || expedition.exclusions?.length ? (
           <div className="container split-lists">
             {expedition.inclusions?.length ? (
@@ -131,13 +143,9 @@ export default async function ExpeditionDetailPage({ params }: Props) {
           </div>
         ) : null}
         {expedition.gallery.length ? (
-          <div className="container detail-section">
+          <div className="container detail-section detail-gallery">
             <p className="eyebrow">Gallery</p>
-            <div className="gallery-grid">
-              {expedition.gallery.slice(0, 9).map((image) => (
-                <img key={image.src} src={image.src} alt={image.alt} loading="lazy" />
-              ))}
-            </div>
+            <MediaGallery images={expedition.gallery.filter((image) => image.src !== heroImage.src)} label={`${expedition.title} gallery`} />
           </div>
         ) : null}
         <div className="container specialist-callout">

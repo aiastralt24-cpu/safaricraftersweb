@@ -23,6 +23,10 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 const occasions = ["A private escape", "Family time", "Photography", "A celebration", "Conservation interest"];
 const accommodationStyles = ["Quiet luxury", "Classic safari camps", "Design-led lodges", "A considered mix"];
 const investmentRanges = ["Prefer to discuss", "US$8k-15k", "US$15k-30k", "US$30k+ per person"];
+const today = new Date();
+const currentYear = today.getFullYear();
+const currentMonthIndex = today.getMonth();
+const defaultTravelMonth = months[Math.min(currentMonthIndex + 2, 11)];
 
 type PlannerInitialContext = {
   sourceLabel?: string;
@@ -42,13 +46,14 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [enquiryResult, setEnquiryResult] = useState<{ enquiryId: string; specialist: string } | null>(null);
   const [form, setForm] = useState({
     region: initialRegion,
     types: initialContext?.types || ["Private"],
     experiences: initialExperiences,
-    months: ["Mar"],
-    year: "2026",
+    months: [defaultTravelMonth],
+    year: String(currentYear),
     nights: "7",
     travellers: "2",
     name: "",
@@ -100,6 +105,7 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
     if (submitting) return;
     setSubmitting(true);
     setSubmitError("");
+    setFieldErrors({});
     try {
       const response = await fetch("/api/enquiry", {
         method: "POST",
@@ -107,7 +113,10 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
         body: JSON.stringify({ source: "planner", sourceLabel: initialContext?.sourceLabel, ...form })
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "We could not send your brief. Please try again.");
+      if (!response.ok) {
+        if (result.fields) setFieldErrors(result.fields);
+        throw new Error(result.error || "We could not send your brief. Please try again.");
+      }
       setEnquiryResult({ enquiryId: result.enquiryId, specialist: result.specialist });
       setSubmitted(true);
     } catch (error) {
@@ -216,16 +225,28 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
 
           {step === 3 ? (
             <>
-              <ChipGroup values={months} selected={form.months} onToggle={(value) => toggle("months", value)} />
+              <ChipGroup
+                values={months}
+                selected={form.months}
+                disabledValues={form.year === String(currentYear) ? months.slice(0, currentMonthIndex) : []}
+                onToggle={(value) => toggle("months", value)}
+              />
               <div className="field-grid planner-compact-fields">
                 <label>
                   Year
                   <select
                     value={form.year}
-                    onChange={(event) => setForm((current) => ({ ...current, year: event.target.value }))}
+                    onChange={(event) => setForm((current) => ({
+                      ...current,
+                      year: event.target.value,
+                      months: event.target.value === String(currentYear)
+                        ? current.months.filter((month) => months.indexOf(month) >= currentMonthIndex)
+                        : current.months
+                    }))}
                   >
-                    <option>2026</option>
-                    <option>2027</option>
+                    <option>{currentYear}</option>
+                    <option>{currentYear + 1}</option>
+                    <option>{currentYear + 2}</option>
                     <option>Flexible</option>
                   </select>
                 </label>
@@ -284,8 +305,11 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
                   name="name"
                   autoComplete="name"
                   value={form.name}
+                  aria-invalid={Boolean(fieldErrors.name)}
+                  aria-describedby={fieldErrors.name ? "planner-name-error" : undefined}
                   onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))}
                 />
+                {fieldErrors.name ? <span className="field-error" id="planner-name-error">{fieldErrors.name}</span> : null}
               </label>
               <label>
                 Email
@@ -296,8 +320,11 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
                   inputMode="email"
                   autoComplete="email"
                   value={form.email}
+                  aria-invalid={Boolean(fieldErrors.email)}
+                  aria-describedby={fieldErrors.email ? "planner-email-error" : undefined}
                   onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
                 />
+                {fieldErrors.email ? <span className="field-error" id="planner-email-error">{fieldErrors.email}</span> : null}
               </label>
               <label>
                 Phone / WhatsApp
@@ -342,9 +369,10 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
               <p>{form.occasion} · {form.accommodation} · {form.flexibility}</p>
               <p>{form.investment} · Contact by {form.contactPreference}</p>
               <label className="consent-field">
-                <input type="checkbox" checked={form.consent} onChange={(event) => setForm((current) => ({ ...current, consent: event.target.checked }))} />
+                <input type="checkbox" checked={form.consent} aria-invalid={Boolean(fieldErrors.consent)} aria-describedby={fieldErrors.consent ? "planner-consent-error" : undefined} onChange={(event) => setForm((current) => ({ ...current, consent: event.target.checked }))} />
                 <span>I consent to Safari Crafters using these details to respond to this private travel brief.</span>
               </label>
+              {fieldErrors.consent ? <span className="field-error" id="planner-consent-error">{fieldErrors.consent}</span> : null}
             </div>
           ) : null}
 
@@ -373,10 +401,12 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
 function ChipGroup({
   values,
   selected,
+  disabledValues = [],
   onToggle
 }: {
   values: string[];
   selected: string[];
+  disabledValues?: string[];
   onToggle: (value: string) => void;
 }) {
   return (
@@ -387,6 +417,7 @@ function ChipGroup({
           type="button"
           className={selected.includes(value) ? "chip selected" : "chip"}
           aria-pressed={selected.includes(value)}
+          disabled={disabledValues.includes(value)}
           onClick={() => onToggle(value)}
         >
           {value}

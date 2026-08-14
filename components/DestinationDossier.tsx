@@ -2,9 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Destination, DestinationPairing, Expedition, FAQItem, Journey } from "@/lib/data";
-import { getDestination, specialists } from "@/lib/data";
+import { getDestination } from "@/lib/data";
 import type { FieldIntelligence } from "@/lib/luxury";
+import { isApprovedEditorialImage } from "@/lib/media";
 import { EditorialProse } from "@/components/EditorialProse";
+import { MediaGallery } from "@/components/MediaGallery";
 import "./DestinationDossier.css";
 
 type Props = {
@@ -16,19 +18,31 @@ type Props = {
   relatedExpeditions?: Expedition[];
 };
 
+const preferredFieldImages: Record<string, string> = {
+  ranthambhore: "/assets/safari-crafters/gallery-1-4-36bf1cbd.jpg",
+  "spiti-valley": "/assets/safari-crafters/gallery-1-6-scaled-3cc0d563.jpg",
+  bandhavgarh: "/assets/safari-crafters/gallery-6-8-scaled-4b3cd8ba.jpg",
+  kanha: "/assets/safari-crafters/gallery-4-9-scaled-e430583e.jpg",
+  panna: "/assets/safari-crafters/gallery-7-10-scaled-11e6dbd2.jpg",
+  kaziranga: "/assets/safari-crafters/gallery-4-12-7f229eee.jpg",
+  uganda: "/assets/safari-crafters/gallery-1-14-fa4d3962.jpg",
+  chile: "/assets/safari-crafters/gallery-4-11-scaled-adcc3b24.jpg",
+  gir: "/assets/safari-crafters/gallery-2-6-47d03ed0.jpg"
+};
+
 export function DestinationDossier({ destination, intelligence, faqs, pairings, relatedJourneys, relatedExpeditions = [] }: Props) {
   const isConcierge = destination.status === "concierge";
-  const gallery = destination.gallery.length ? destination.gallery : [destination.image];
-  const specialist = destination.continent === "India" ? specialists[0] : specialists[1];
-  const specialistPortrait = destination.continent === "India"
-    ? "/assets/founders/kairav-engineer.jpg"
-    : "/assets/founders/gaurav-ramnarayanan.jpg";
-  const specialistExpertise = destination.continent === "Arctic"
-    ? "Photography-led polar expeditions, small-ship planning and responsible wildlife observation"
-    : specialist.expertise;
-  const specialistMoment = destination.continent === "Arctic"
-    ? "In the High Arctic, good planning protects room for weather, light and wildlife to determine the day."
-    : specialist.moment;
+  const sourceGallery = [...new Map(
+    [...destination.gallery, destination.image]
+      .filter(isApprovedEditorialImage)
+      .map((image) => [image.src, image])
+  ).values()];
+  const preferredFieldImage = preferredFieldImages[destination.slug];
+  const gallery = preferredFieldImage
+    ? [...sourceGallery].sort((left, right) => Number(right.src === preferredFieldImage) - Number(left.src === preferredFieldImage))
+    : sourceGallery;
+  const hasVisualStory = gallery.length >= 3;
+  const fieldImage = hasVisualStory ? (gallery[5] || gallery[1]) : undefined;
 
   return (
     <article className="destination-dossier">
@@ -55,25 +69,13 @@ export function DestinationDossier({ destination, intelligence, faqs, pairings, 
         </section>
       ) : null}
 
-      <section className="destination-visual-story" aria-label={`${destination.title} photographic story`}>
+      {hasVisualStory ? <section className="destination-visual-story" aria-label={`${destination.title} photographic story`}>
         <div className="container destination-visual-heading">
           <p className="eyebrow">In the field</p>
           <h2>{destination.title}, in its own light.</h2>
         </div>
-        <div className="destination-visual-grid">
-          {gallery.slice(0, 5).map((image, index) => (
-            <figure className={`destination-visual-frame frame-${index + 1}`} key={`${image.src}-${index}`}>
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes={index === 0 ? "100vw" : "(max-width: 760px) 100vw, 50vw"}
-              />
-              {image.credit ? <figcaption>{image.credit}</figcaption> : null}
-            </figure>
-          ))}
-        </div>
-      </section>
+        <MediaGallery images={gallery.slice(0, 5)} label={`${destination.title} photographic story`} variant="story" />
+      </section> : null}
 
       <section className="container destination-rhythm">
         <div className="destination-rhythm-heading">
@@ -88,15 +90,16 @@ export function DestinationDossier({ destination, intelligence, faqs, pairings, 
         </div>
       </section>
 
-      <section className="container destination-wildlife">
-        <div className="destination-wildlife-image">
+      <section className={`container destination-wildlife${fieldImage ? "" : " is-textual"}`}>
+        {fieldImage ? <div className="destination-wildlife-image">
           <Image
-            src={(gallery[5] || gallery[1] || destination.image).src}
-            alt={(gallery[5] || gallery[1] || destination.image).alt}
+            src={fieldImage.src}
+            alt={fieldImage.alt}
             fill
             sizes="(max-width: 760px) 100vw, 52vw"
+            style={{ objectPosition: fieldImage.focalPoint || "center" }}
           />
-        </div>
+        </div> : null}
         <div className="destination-wildlife-copy">
           <p className="eyebrow">Wildlife, honestly framed</p>
           <h2>What defines the encounter.</h2>
@@ -137,7 +140,13 @@ export function DestinationDossier({ destination, intelligence, faqs, pairings, 
             {relatedExpeditions.slice(0, 3).map((expedition) => (
               <article key={expedition.slug}>
                 <Link className="destination-journey-image" href={`/photo-expeditions/${expedition.slug}`}>
-                  <Image src={expedition.image.src} alt={expedition.image.alt} fill sizes="(max-width: 760px) 100vw, 33vw" />
+                  <Image
+                    src={expedition.image.src}
+                    alt={expedition.image.alt}
+                    fill
+                    sizes="(max-width: 760px) 100vw, 33vw"
+                    style={{ objectPosition: expedition.image.focalPoint || "center" }}
+                  />
                 </Link>
                 <p>{expedition.skill} · Future dates on request</p>
                 <h3><Link href={`/photo-expeditions/${expedition.slug}`}>{expedition.title}</Link></h3>
@@ -160,9 +169,10 @@ export function DestinationDossier({ destination, intelligence, faqs, pairings, 
               const pairingImageCount = pairedDestination
                 ? pairings.filter((item) => getDestination(item.slug)?.image.src === pairedDestination.image.src).length
                 : 0;
+              const showPairingImage = Boolean(pairedDestination && isApprovedEditorialImage(pairedDestination.image) && pairingImageCount === 1);
               return (
-                <article className={pairingImageCount === 1 ? "has-image" : "is-textual"} key={pairing.slug}>
-                  {pairedDestination && pairingImageCount === 1 ? (
+                <article className={showPairingImage ? "has-image" : "is-textual"} key={pairing.slug}>
+                  {showPairingImage && pairedDestination ? (
                     <Link className="destination-pairing-image" href={`/destinations/${pairing.slug}`}>
                       <Image src={pairedDestination.image.src} alt={pairedDestination.image.alt} fill sizes="(max-width: 760px) 100vw, 33vw" />
                     </Link>
@@ -203,17 +213,13 @@ export function DestinationDossier({ destination, intelligence, faqs, pairings, 
         ) : null}
       </section>
 
-      <section className="destination-specialist">
-        <div className="destination-specialist-image">
-          <Image src={specialistPortrait} alt={`${specialist.name}, ${specialist.role} at Safari Crafters`} fill sizes="(max-width: 760px) 100vw, 42vw" />
-        </div>
+      <section className="destination-specialist destination-specialist-textual">
         <div className="destination-specialist-copy">
           <p className="eyebrow">Your private brief</p>
-          <h2>Shape {destination.title} with {specialist.name}.</h2>
-          <p>{specialistExpertise}</p>
-          <span>{specialistMoment}</span>
-          <Link className="button button-solid" href={`/plan?destination=${destination.slug}&specialist=${encodeURIComponent(specialist.name)}`}>
-            Begin with {specialist.name.split(" ")[0]}
+          <h2>Plan {destination.title} with Safari Crafters.</h2>
+          <p>Each itinerary is designed around your expectations, preferred accommodation and the natural rhythm of each day in the wilderness.</p>
+          <Link className="button button-solid" href={`/plan?destination=${destination.slug}`}>
+            Begin planning
           </Link>
         </div>
       </section>
