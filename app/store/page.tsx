@@ -151,9 +151,9 @@ export default function StorePage() {
                 above them, leopards wait in sun-split caves for evening.
               </p>
               <p>
-                Over ten years, Kairav Engineer followed the whole living system—not only its
-                leopards, but its terrain, seasons, prey and pastoral communities. The book is a
-                portrait of coexistence shaped slowly, and observed with patience.
+                Over ten years, Kairav Engineer followed the whole living system, studying not
+                only its leopards, but its terrain, seasons, prey and pastoral communities. The
+                book is a portrait of coexistence shaped slowly, and observed with patience.
               </p>
             </div>
           </div>
@@ -164,8 +164,8 @@ export default function StorePage() {
                 “Jawai is a rare equilibrium where granite hills, wildlife and human presence
                 coexist. The leopards here symbolise balance; they are quiet, assured and deeply
                 rooted in their terrain. Jawai, to me, mirrors the deeper character of India, with
-                its inimitable resilience and restraint. This book is a record of that harmony—a
-                visual and emotional documentation of a place where the human is part of the
+                its inimitable resilience and restraint. This book is a record of that harmony. It
+                is a visual and emotional documentation of a place where the human is part of the
                 more-than-human world, without insisting on dominance. Through these pages, I
                 share Jawai as it truly is to me: an unforced and timeless tale of nature.”
               </p>
