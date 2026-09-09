@@ -198,13 +198,13 @@ export function getFieldIntelligence(destination: Destination) {
 export function getJourneyIntelligence(journey: Journey): JourneyIntelligence {
   const route = journey.route || journey.destinations.join(" · ");
   return {
-    idealFor: journey.category.toLowerCase().includes("photo")
+    idealFor: journey.idealGuest || (journey.category.toLowerCase().includes("photo")
       ? "Photographers and returning safari travellers who value patience, light and specialist field craft."
-      : "Private travellers, families or assistants seeking a route shaped around wildlife depth and comfort.",
-    transfers: route
+      : "Private travellers, families or assistants seeking a route shaped around wildlife depth and comfort."),
+    transfers: journey.accessApproach || (route
       ? `Private transfers and air routing are planned around ${route}, with buffers where terrain or permits demand it.`
-      : "Transfers are planned privately, with air routing considered when it protects time and comfort.",
-    comfort:
+      : "Transfers are planned privately, with air routing considered when it protects time and comfort."),
+    comfort: journey.accommodation ||
       "Lodges are selected for access, privacy, naturalist quality, food, rest time and the ability to keep the day unhurried.",
     wildlifeExpectation:
       "Sightings are never guaranteed. The route is designed to increase meaningful time in the right habitat, with honest guidance before departure.",

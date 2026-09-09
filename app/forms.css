@@ -30,9 +30,9 @@
   border: var(--rule-fine);
   padding: 12px 16px;
   color: var(--brass);
-  font-size: 0.68rem;
+  font-size: var(--type-cta);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
@@ -68,7 +68,7 @@
   display: grid;
   gap: 8px;
   color: var(--charcoal);
-  font-size: 0.78rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -129,7 +129,7 @@
 .plan-intro h1 {
   max-width: 880px;
   margin: 0 auto;
-  font-size: clamp(4rem, 7vw, 8rem);
+  font-size: var(--type-display);
   line-height: 0.94;
   text-wrap: balance;
 }

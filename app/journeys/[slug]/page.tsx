@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { EditorialProse } from "@/components/EditorialProse";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
-import { PageHero } from "@/components/PageHero";
 import { MediaGallery } from "@/components/MediaGallery";
 import { Itinerary } from "@/components/Itinerary";
 import { getJourney, journeys } from "@/lib/data";
@@ -53,17 +53,44 @@ export default async function JourneyDetailPage({ params }: Props) {
       <JsonLd data={journeySchema(journey)} />
       <JsonLd data={breadcrumbSchema(breadcrumbs)} />
       <JsonLd data={faqSchema(faqs)} />
-      <PageHero
-        title={journey.title}
-        copy={journey.description}
-        image={heroImage}
-        meta={`${journey.duration} · ${journey.region}`}
-      />
+      <section className="journey-detail-hero">
+        <Image
+          src={heroImage.src}
+          alt={heroImage.alt}
+          fill
+          priority
+          loading="eager"
+          sizes="100vw"
+          style={{ objectPosition: heroImage.focalPoint || "center" }}
+        />
+        <div className="journey-detail-hero-shade" />
+        <div className="container journey-detail-hero-content">
+          <p className="eyebrow">Private journey · {journey.region}</p>
+          <h1>{journey.title}</h1>
+          <p className="journey-detail-dek">{journey.description}</p>
+        </div>
+        <dl className="container journey-hero-ledger">
+          <div><dt>Duration</dt><dd>{journey.duration}</dd></div>
+          <div><dt>Route</dt><dd>{journey.route || journey.region}</dd></div>
+          <div><dt>Best season</dt><dd>{journey.bestMonths}</dd></div>
+          <div><dt>Travel style</dt><dd>{journey.style || journey.category}</dd></div>
+        </dl>
+      </section>
+      <nav className="journey-chapters" aria-label="Journey chapters">
+        <div className="container">
+          <Link href="/journeys">All journeys</Link>
+          <a href="#overview">The journey</a>
+          <a href="#itinerary">Day by day</a>
+          <a href="#gallery">Field notes</a>
+          <a href="#enquire">Begin planning</a>
+        </div>
+      </nav>
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Journeys", href: "/journeys" }, { label: journey.title }]} />
-      <article className="section detail">
-        <div className="container detail-grid">
+      <article className="section detail journey-detail" id="overview">
+        <div className="container journey-opening">
           <div>
-            <p className="eyebrow">{journey.category}</p>
+            <p className="eyebrow">The journey</p>
+            {journey.tagline ? <h2 className="journey-signature-line">{journey.tagline}</h2> : null}
             <EditorialProse text={journey.intro} className="intro editorial-prose" />
           </div>
           <aside className="at-glance">
@@ -89,16 +116,33 @@ export default async function JourneyDetailPage({ params }: Props) {
               ) : null}
               <dt>Difficulty</dt>
               <dd>{journey.difficulty}</dd>
-              <dt>From</dt>
+              <dt>Indicative investment</dt>
               <dd>{journey.price}</dd>
             </dl>
             <Link className="at-glance-action" href={`/plan?journey=${journey.slug}`}>Refine this private journey</Link>
           </aside>
         </div>
+        {journey.highlights.length ? (
+          <section className="container journey-promise" aria-labelledby="journey-promise-title">
+            <header>
+              <p className="eyebrow">What defines this journey</p>
+              <h2 className="h2" id="journey-promise-title">A route designed for depth, not haste.</h2>
+            </header>
+            <div>
+              <p>{journey.highlights[0]}</p>
+              {journey.wildlifeFocus ? (
+                <dl>
+                  <dt>In focus</dt>
+                  <dd>{journey.wildlifeFocus}</dd>
+                </dl>
+              ) : null}
+            </div>
+          </section>
+        ) : null}
         <div className="container luxury-brief">
           <section>
             <p className="eyebrow">Private brief</p>
-            <h2 className="h2">Built around the guest, not a fixed departure.</h2>
+            <h2 className="h2">Everything is considered before anything is confirmed.</h2>
           </section>
           <dl>
             <div>
@@ -131,24 +175,20 @@ export default async function JourneyDetailPage({ params }: Props) {
             </div>
           </dl>
         </div>
-        {journey.highlights.length ? (
-          <div className="container detail-section detail-highlights">
-            <p className="eyebrow">Highlights</p>
-            <ul className="highlight-list">
-              {journey.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
+        {journey.body && journey.body.length > 3 ? (
+          <section className="container journey-worlds" aria-labelledby="journey-worlds-title">
+            <header>
+              <p className="eyebrow">The worlds within</p>
+              <h2 className="h2" id="journey-worlds-title">Each landscape changes the story.</h2>
+            </header>
+            <div>
+              {journey.body.slice(3).map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
               ))}
-            </ul>
-          </div>
+            </div>
+          </section>
         ) : null}
-        {journey.body?.length ? (
-          <div className="container detail-copy detail-editorial-copy">
-            {journey.body.slice(0, 3).map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-        ) : null}
-        <Itinerary days={journey.days} />
+        <div id="itinerary"><Itinerary days={journey.days} /></div>
         {journey.inclusions?.length || journey.exclusions?.length ? (
           <div className="container split-lists">
             {journey.inclusions?.length ? (
@@ -174,7 +214,7 @@ export default async function JourneyDetailPage({ params }: Props) {
           </div>
         ) : null}
         {journey.gallery.length ? (
-          <div className="container detail-section detail-gallery">
+          <div className="container detail-section detail-gallery" id="gallery">
             <p className="eyebrow">Gallery</p>
             <MediaGallery images={journey.gallery.filter((image) => image.src !== heroImage.src)} label={`${journey.title} gallery`} />
           </div>
@@ -192,7 +232,7 @@ export default async function JourneyDetailPage({ params }: Props) {
           </div>
           <p className="content-reviewed">Journey information reviewed {journey.seo?.reviewedAt || "July 2026"}.</p>
         </section>
-        <div className="container specialist-callout">
+        <div className="container specialist-callout" id="enquire">
           <p className="eyebrow">Specialist recommendation</p>
           <h2 className="h2">This journey is shaped with {journey.specialist}.</h2>
           <Link className="button button-solid" href={`/plan?journey=${journey.slug}`}>

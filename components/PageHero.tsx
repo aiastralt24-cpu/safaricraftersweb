@@ -9,11 +9,12 @@ type PageHeroProps = {
   meta?: string;
   focalPoint?: string;
   showImage?: boolean;
+  variant?: "default" | "destination";
 };
 
-export function PageHero({ title, copy, image, meta, focalPoint, showImage = true }: PageHeroProps) {
+export function PageHero({ title, copy, image, meta, focalPoint, showImage = true, variant = "default" }: PageHeroProps) {
   return (
-    <section className={`page-hero${showImage ? "" : " page-hero-textual"}`}>
+    <section className={`page-hero${showImage ? "" : " page-hero-textual"}${variant === "destination" ? " page-hero-destination" : ""}`}>
       {showImage ? <Image
         src={image.src}
         alt={image.alt}

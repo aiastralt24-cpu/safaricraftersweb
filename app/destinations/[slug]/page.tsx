@@ -1,13 +1,12 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { DestinationDossier } from "@/components/DestinationDossier";
 import { DestinationEditorialCard } from "@/components/DestinationEditorial";
 import { JsonLd } from "@/components/JsonLd";
-import { IndiaCountryPage } from "@/components/IndiaCountryPage";
 import { PageHero } from "@/components/PageHero";
-import { destinations, expeditions, getCountryAtlas, getCountryBySlug, getDestination } from "@/lib/data";
+import { RegionalAtlasPage } from "@/components/RegionalAtlasPage";
+import { destinations, expeditions, getCountryAtlas, getCountryBySlug, getDestination, getRegionalAtlas, getRegionalAtlases } from "@/lib/data";
 import { getFieldIntelligence } from "@/lib/luxury";
 import { isApprovedEditorialImage } from "@/lib/media";
 import { destinationSeo, getDestinationFaqs, getDestinationPairings, getRelatedJourneys } from "@/lib/content-intelligence";
@@ -22,11 +21,20 @@ type Props = {
 export function generateStaticParams() {
   const destinationParams = destinations.map((destination) => ({ slug: destination.slug }));
   const countryParams = getCountryAtlas().map((country) => ({ slug: country.slug }));
-  return [...countryParams, ...destinationParams];
+  const atlasParams = getRegionalAtlases().map((atlas) => ({ slug: atlas.slug }));
+  return Array.from(new Map([...atlasParams, ...countryParams, ...destinationParams].map((item) => [item.slug, item])).values());
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  const atlas = getRegionalAtlas(slug);
+  if (atlas) {
+    return {
+      title: atlas.title,
+      description: atlas.heroCopy,
+      alternates: { canonical: `/destinations/${atlas.slug}` }
+    };
+  }
   const country = getCountryBySlug(slug);
   if (country) {
     return {
@@ -56,9 +64,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DestinationDetailPage({ params }: Props) {
   const { slug } = await params;
+  const atlas = getRegionalAtlas(slug);
+  if (atlas) return <RegionalAtlasPage atlas={atlas} />;
   const country = getCountryBySlug(slug);
   if (country) {
-    if (country.slug === "india") return <IndiaCountryPage country={country} />;
     return <CountryDestinationPage country={country} />;
   }
 
@@ -67,8 +76,6 @@ export default async function DestinationDetailPage({ params }: Props) {
   const galleryHero = destination.gallery.find((image, index) => index > 0 && isApprovedEditorialImage(image))
     || destination.gallery.find(isApprovedEditorialImage);
   const heroImage = galleryHero || destination.image;
-  const heroImageUseCount = destinations.filter((item) => item.image.src === heroImage.src).length;
-  const showHeroImage = isApprovedEditorialImage(heroImage) && (Boolean(galleryHero) || heroImageUseCount === 1);
   const intelligence = getFieldIntelligence(destination);
   const faqs = getDestinationFaqs(destination);
   const pairings = getDestinationPairings(destination);
@@ -94,9 +101,9 @@ export default async function DestinationDetailPage({ params }: Props) {
         meta={[destination.country, destination.continent === "Arctic" ? "Arctic / Other" : destination.continent]
           .filter((value, index, values) => values.indexOf(value) === index)
           .join(" · ")}
-        showImage={showHeroImage}
+        showImage
+        variant="destination"
       />
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Destinations", href: "/destinations" }, { label: destination.title }]} />
       <DestinationDossier
         destination={destination}
         intelligence={intelligence}

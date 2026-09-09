@@ -1,7 +1,7 @@
 import { Metadata } from "next";
-import { JournalCard } from "@/components/Cards";
 import { PageHero } from "@/components/PageHero";
 import { journal, journalCategories } from "@/lib/data";
+import { JournalIndex } from "./JournalIndex";
 import "../listing.css";
 
 export const metadata: Metadata = {
@@ -19,16 +19,7 @@ export default function JournalPage() {
         meta="Field Notes · Photography · Conservation"
       />
       <section className="section">
-        <div className="container category-rail">
-          {journalCategories.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
-        </div>
-        <div className="container grid-3 listing-grid">
-          {journal.map((article) => (
-            <JournalCard key={article.slug} article={article} />
-          ))}
-        </div>
+        <JournalIndex articles={journal} categories={journalCategories} />
       </section>
     </>
   );

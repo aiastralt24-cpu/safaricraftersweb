@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Menu, MoveRight, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 import { BrandMark } from "@/components/BrandMark";
 import type { ImageAsset } from "@/lib/data";
 import { destinations, expeditions, journeys, specialists } from "@/lib/data";
@@ -139,6 +140,8 @@ export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [activeMenuKey, setActiveMenuKey] = useState(menuItems[0].key);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -146,13 +149,35 @@ export function Header() {
     pathname === "/" || knownRoutePrefixes.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
   const useSolidHeader = scrolled || !isKnownRoute;
   const isStore = pathname === "/store";
+  const sectionLabel = menuItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`))?.label
+    ?? (pathname.startsWith("/plan") ? "Private journey planning" : "Safari Crafters");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let previousY = window.scrollY;
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+        const delta = currentY - previousY;
+        const scrollable = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        setScrolled(currentY > 24);
+        setScrollProgress(Math.min(100, Math.max(0, (currentY / scrollable) * 100)));
+        if (currentY < 80) setVisible(true);
+        else if (Math.abs(delta) > 6) setVisible(delta < 0);
+        previousY = currentY;
+        ticking = false;
+      });
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (open) setVisible(true);
+  }, [open]);
 
   useEffect(() => {
     if (!open) return;
@@ -201,12 +226,12 @@ export function Header() {
 
   return (
     <>
-      <header className={`site-header${useSolidHeader ? " is-scrolled" : ""}`}>
+      <header
+        className={`site-header${useSolidHeader ? " is-scrolled" : ""}${visible ? "" : " is-hidden"}`}
+        style={{ "--header-progress": `${scrollProgress}%` } as CSSProperties}
+      >
         <BrandMark className="wordmark" />
-        <div className="header-spacer" aria-hidden="true" />
-        <Link className="header-link" href="/contact">
-          Contact Us
-        </Link>
+        <span className="header-context" aria-live="polite">{sectionLabel}</span>
         <Link className="header-cta" href={isStore ? storeProductHref : "/plan"}>
           {isStore ? "Purchase Book" : "Plan a Journey"}
         </Link>

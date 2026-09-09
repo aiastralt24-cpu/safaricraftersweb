@@ -11,7 +11,7 @@ export function MediaGallery({ images, label = "Gallery", variant = "grid" }: { 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerRefs = useRef<Array<HTMLButtonElement | null>>([]);
-  const visibleImages = images.slice(0, 9);
+  const visibleImages = images.slice(0, variant === "story" ? 12 : 9);
 
   useEffect(() => {
     if (activeIndex === null) return;
@@ -63,7 +63,7 @@ export function MediaGallery({ images, label = "Gallery", variant = "grid" }: { 
   if (!visibleImages.length) return null;
   return (
     <>
-      <div className={variant === "story" ? "gallery-grid destination-story-gallery" : "gallery-grid"} aria-label={label}>
+      <div className={`${variant === "story" ? "gallery-grid destination-story-gallery" : "gallery-grid"} gallery-count-${visibleImages.length}`} aria-label={label}>
         {visibleImages.map((image, index) => (
           <button
             className={`gallery-trigger${variant === "story" ? ` destination-story-frame frame-${index + 1}` : ""}`}
@@ -79,11 +79,11 @@ export function MediaGallery({ images, label = "Gallery", variant = "grid" }: { 
         ))}
       </div>
       {activeIndex !== null ? createPortal((
-        <div className="media-lightbox" role="dialog" aria-modal="true" aria-label={`${label} image viewer`}>
+        <div className="media-lightbox" role="dialog" aria-modal="true" aria-label={`${label} image viewer`} onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
           <button ref={closeButtonRef} className="media-lightbox-close" type="button" onClick={close} aria-label="Close image viewer"><X aria-hidden="true" size={22} /><span>Close</span></button>
           {visibleImages.length > 1 ? <button className="media-lightbox-previous" type="button" onClick={() => move(-1)} aria-label="Previous image"><ChevronLeft aria-hidden="true" size={28} /></button> : null}
           <figure>
-            <div className="media-lightbox-image"><img src={visibleImages[activeIndex].src} alt={visibleImages[activeIndex].alt} loading="eager" decoding="async" /></div>
+            <div className="media-lightbox-image"><img key={visibleImages[activeIndex].src} src={visibleImages[activeIndex].src} alt={visibleImages[activeIndex].alt} loading="eager" decoding="async" /></div>
             <figcaption><p>{visibleImages[activeIndex].alt}</p><span>{visibleImages[activeIndex].credit} · {activeIndex + 1} / {visibleImages.length}</span></figcaption>
           </figure>
           {visibleImages.length > 1 ? <button className="media-lightbox-next" type="button" onClick={() => move(1)} aria-label="Next image"><ChevronRight aria-hidden="true" size={28} /></button> : null}

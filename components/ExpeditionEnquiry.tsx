@@ -72,18 +72,24 @@ export function ExpeditionEnquiry({ title, slug, departure, mentor, region }: Pr
   return (
     <section className="expedition-enquiry" id="expedition-enquiry">
       <div className="expedition-enquiry-intro">
-        <p className="eyebrow">Selected departure</p>
-        <h2 className="h2">Ask about this expedition.</h2>
-        <p>{departure ? `${departure} · ` : ""}Led by {mentor}. We only need the essentials to begin.</p>
+        <p className="expedition-enquiry-kicker">Selected expedition</p>
+        <h2>Request this<br />departure.</h2>
+        <p>Share the essentials and our expedition team will reply with availability and the next steps.</p>
+        <dl className="expedition-selection" aria-label="Selected expedition details">
+          <div><dt>Expedition</dt><dd>{title}</dd></div>
+          <div><dt>Region</dt><dd>{region}</dd></div>
+          {departure ? <div><dt>Departure</dt><dd>{departure}</dd></div> : null}
+          <div><dt>Led by</dt><dd>{mentor}</dd></div>
+        </dl>
       </div>
       <form onSubmit={submit}>
         <label>Name<input name="name" autoComplete="name" required /></label>
         <label>Email<input name="email" type="email" inputMode="email" autoComplete="email" required /></label>
-        <label>Travellers<select name="travellers" defaultValue="1">{[1,2,3,4,5,6,7,8].map((count) => <option key={count}>{count}</option>)}</select></label>
+        <label className="expedition-travellers">Travellers<select name="travellers" defaultValue="1">{[1,2,3,4,5,6,7,8].map((count) => <option key={count}>{count}</option>)}</select></label>
         <label className="wide">Question or note <span>(optional)</span><textarea name="notes" rows={3} /></label>
         <label className="wide expedition-consent"><input name="consent" type="checkbox" required /><span>I consent to Safari Crafters using these details to respond to this expedition enquiry.</span></label>
         {error ? <p className="wide planner-error" role="alert">{error}</p> : null}
-        <button className="button button-solid" type="submit" disabled={submitting}>{submitting ? "Sending…" : "Ask about this departure"}</button>
+        <button className="wide expedition-submit" type="submit" disabled={submitting}><span>{submitting ? "Sending…" : "Ask about this departure"}</span><span aria-hidden="true">↗</span></button>
       </form>
     </section>
   );

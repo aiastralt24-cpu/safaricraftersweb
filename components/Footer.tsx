@@ -1,36 +1,46 @@
 import Link from "next/link";
-import { Instagram, Mail, MessageCircle } from "lucide-react";
+import { Facebook, Instagram, Mail, MessageCircle } from "lucide-react";
 import { BrandMark } from "@/components/BrandMark";
-import { navItems } from "@/lib/data";
 import "./Footer.css";
 
-const footerJourneyLinks = [
-  { label: "Signature Safari Routes", href: "/journeys/big-cats-of-india" },
-  { label: "Private India Safaris", href: "/journeys/heart-of-the-wildcentral-indias-six-park-safari" },
-  { label: "High Himalaya", href: "/journeys/where-sky-meets-earthladakh-realm-of-the-snow-leopard" },
-  { label: "Big Cat Journeys", href: "/journeys/whiskers-stripes-and-roarssafari-adventures-with-indias-big-cats" },
-  { label: "Heritage and Wildlife", href: "/journeys/history-majesty-the-wildgolden-triangle-safari" }
+const exploreLinks = [
+  { label: "Destinations", href: "/destinations" },
+  { label: "Journeys", href: "/journeys" },
+  { label: "The Journal", href: "/journal" },
+  { label: "About", href: "/about" }
 ];
 
-const footerJournalLinks = [
-  { label: "Low-Angle Photography", href: "/journal/achieving-low-angle-on-a-wildlife-safari" },
-  { label: "Safari Booking Windows", href: "/journal/booking-wildlife-safaris-how-early-is-not-too-late" },
-  { label: "The Leopard’s India", href: "/journal/indias-silent-sovereign-the-leopard-and-the-art-of-living" },
-  { label: "Rebari & Jawai", href: "/journal/living-by-old-ways-the-rebari-reverence-for-nature" },
-  { label: "Snow Leopard Packing", href: "/journal/what-to-pack-for-a-snow-leopard-safari" }
+const atlasLinks = [
+  { label: "India Atlas", href: "/destinations/india" },
+  { label: "Africa Atlas", href: "/destinations/africa" },
+  { label: "Americas Atlas", href: "/destinations/americas" },
+  { label: "Arctic & Beyond", href: "/destinations/arctic-beyond" }
 ];
 
-const footerDestinationLinks = [
-  { label: "India Atlas", href: "/destinations#india" },
-  { label: "Africa Atlas", href: "/destinations#africa" },
-  { label: "Americas Atlas", href: "/destinations#americas" },
+const travelStyleLinks = [
+  { label: "Private Journeys", href: "/journeys" },
+  { label: "Photo Expeditions", href: "/photo-expeditions" },
+  { label: "Private Jet Safaris", href: "/private-aviation" },
+  { label: "Conservation", href: "/conservation-commitment" }
+];
+
+const companyLinks = [
+  { label: "Begin Planning", href: "/plan" },
+  { label: "Our Specialists", href: "/specialists" },
   { label: "Guest Notes", href: "/reviews" },
-  { label: "Begin Planning", href: "/plan" }
+  { label: "Contact Us", href: "/contact" }
 ];
 
 export function Footer() {
   return (
     <footer className="footer">
+      <div className="container footer-journey-cta">
+        <div>
+          <p className="eyebrow">A journey of your own</p>
+          <h2>Begin with a conversation.</h2>
+        </div>
+        <Link href="/plan">Begin a Private Journey <span aria-hidden="true">↗</span></Link>
+      </div>
       <div className="container footer-grid">
         <div>
           <BrandMark className="footer-wordmark" />
@@ -45,38 +55,51 @@ export function Footer() {
             <Link href="/contact" aria-label="WhatsApp Safari Crafters">
               <MessageCircle size={18} />
             </Link>
-            <Link href="/journal" aria-label="Safari Crafters Instagram stories">
+            <a
+              href="https://www.instagram.com/safaricrafters/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Safari Crafters on Instagram (opens in a new tab)"
+            >
               <Instagram size={18} />
-            </Link>
+            </a>
+            <a
+              href="https://www.facebook.com/safaricrafters/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Safari Crafters on Facebook (opens in a new tab)"
+            >
+              <Facebook size={18} />
+            </a>
           </div>
         </div>
         <div>
           <h2>Explore</h2>
-          {navItems.map((item) => (
+          {exploreLinks.map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
             </Link>
           ))}
         </div>
         <div>
-          <h2>Journeys</h2>
-          {footerJourneyLinks.map((item) => (
+          <h2>Regional Atlases</h2>
+          {atlasLinks.map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
             </Link>
           ))}
         </div>
         <div>
-          <h2>Destinations</h2>
-          {footerDestinationLinks.map((item) => (
+          <h2>Travel Styles</h2>
+          {travelStyleLinks.map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
             </Link>
           ))}
         </div>
         <div>
-          <h2>The Journal</h2>
-          {footerJournalLinks.map((item) => (
+          <h2>Plan &amp; Company</h2>
+          {companyLinks.map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
             </Link>

@@ -42,9 +42,9 @@
 .guest-note-card > p {
   margin: 0;
   color: var(--brass);
-  font-size: 0.64rem;
+  font-size: var(--type-label);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
 }
 
@@ -73,7 +73,7 @@
 
 .guest-note-card dt {
   color: var(--mute);
-  font-size: 0.58rem;
+  font-size: var(--type-label);
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -92,7 +92,7 @@
   margin-top: 20px;
   border-bottom: 1px solid rgba(var(--rgb-brass), 0.5);
   color: var(--brass);
-  font-size: 0.7rem;
+  font-size: var(--type-cta);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;

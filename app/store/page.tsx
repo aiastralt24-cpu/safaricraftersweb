@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { productSchema } from "@/lib/structured-data";
 import StoreMotion from "./StoreMotion";
 import StoreGallery from "./StoreGallery";
+import InternationalOrder from "./InternationalOrder";
 import "./store.css";
 
 const storeProductHref =
@@ -85,7 +86,10 @@ export default function StorePage() {
               leopards of Jawai, their granite habitat and the lives unfolding around them.
             </p>
             <div className="store-hero-action">
-              <AcquireEdition label="Purchase the book" />
+              <div className="store-purchase-actions">
+                <AcquireEdition label="Purchase the book" />
+                <InternationalOrder />
+              </div>
               <a className="store-preview-link" href="#book-preview">View inside the book</a>
             </div>
             <div className="store-hero-facts" aria-label="Book price and edition">

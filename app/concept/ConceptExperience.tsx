@@ -2,18 +2,129 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Camera, Compass, Menu, MoveRight, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Menu, MoveRight, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrandMark } from "@/components/BrandMark";
 import type { ImageAsset } from "@/lib/data";
-import { destinations, expeditions, journal, journeys, specialists, testimonials } from "@/lib/data";
+import { destinations, expeditions, journeys, specialists, testimonials } from "@/lib/data";
 
 const heroJourney = journeys[0];
 const featuredDestination = destinations.find((item) => item.slug === "jawai") ?? destinations[0];
 const photoExpedition = expeditions[0];
-const fieldNotes = journal.slice(0, 3);
 const featuredGuestNote = testimonials[0];
 const showHomepageGuestNotes = false;
+const showHomepagePrivateAviation = true;
+const showHomepageWildestPlaces = false;
+const showHomepageConservation = false;
+const showHomepagePhotographicWorlds = false;
+const showHomepageSpeciesIndex = false;
+const showHomepageSpeciesEditorial = false;
+
+const homepageJourneySlugs = [
+  "big-cats-of-india",
+  "heart-of-the-wildcentral-indias-six-park-safari",
+  "trail-of-the-himalayan-firefox-a-red-panda-rhino-expedition"
+];
+
+const homepageJourneys = homepageJourneySlugs
+  .map((slug) => journeys.find((journey) => journey.slug === slug))
+  .filter((journey): journey is (typeof journeys)[number] => Boolean(journey));
+
+const homepageJourneyRailMeta: Record<string, string> = {
+  "big-cats-of-india": "India · 21 days",
+  "heart-of-the-wildcentral-indias-six-park-safari": "Central India · 22 days",
+  "trail-of-the-himalayan-firefox-a-red-panda-rhino-expedition": "Northeast India · 12 days"
+};
+
+const destinationStoryCopy: Record<string, { headline: string; description: string; landscape: string }> = {
+  jawai: {
+    headline: "Granite, leopards and silence after dusk.",
+    description: "A landscape of ancient rock and quiet valleys where leopards move unseen. Days unfold slowly; evenings belong to the wild.",
+    landscape: "Granite hills, seasonal rivers, thornveld and rural hamlets shape both wildlife and human stories."
+  },
+  ranthambhore: {
+    headline: "Tigers beneath a forest of forgotten walls.",
+    description: "Lakes, dry woodland and the weathered ramparts of a hill fort create one of India’s most layered wildlife stages.",
+    landscape: "Ancient ruins, open lakes, forest tracks and rocky escarpments give every drive a cinematic sense of place."
+  },
+  "spiti-valley": {
+    headline: "Snow leopards at the edge of the sky.",
+    description: "High-altitude valleys reward patience with distant movement, immense scale and the quiet drama of winter tracking.",
+    landscape: "Cold desert, snowbound ridges, remote villages and vast Himalayan horizons define the experience."
+  },
+  singalila: {
+    headline: "Red pandas within the cloud forest.",
+    description: "Moss, bamboo and shifting mountain mist turn every careful step through Singalila into an intimate forest encounter.",
+    landscape: "Temperate forest, rhododendron slopes and high ridgelines create a close, atmospheric wildlife setting."
+  },
+  bandhavgarh: {
+    headline: "Tiger country, written in sal and stone.",
+    description: "Dense forest opens into meadows and old pathways, revealing a landscape shaped equally by wildlife and history.",
+    landscape: "Sal woodland, grassland clearings, rocky plateaus and ancient caves form a compact, richly textured reserve."
+  },
+  kanha: {
+    headline: "Meadows, barasingha and the long forest light.",
+    description: "Kanha’s broad grasslands and sal forests invite unhurried observation, from rare deer to patient predator tracking.",
+    landscape: "Open maidans, forest corridors, streams and gentle plateaus create generous environmental compositions."
+  }
+};
+
+const speciesStoryMeta: Record<string, { name: string; story: string; behaviour: string }> = {
+  jawai: {
+    name: "Leopard",
+    story: "Elusive, adaptable and remarkably at ease among Jawai’s granite outcrops, the leopard is revealed through tracks, silhouettes and patient observation rather than hurried sightings.",
+    behaviour: "Rock-dwelling leopards"
+  },
+  ranthambhore: {
+    name: "Bengal Tiger",
+    story: "The Bengal tiger moves between lakes, dry forest and ancient ruins with an authority that transforms every alarm call, track and pause into part of a larger story.",
+    behaviour: "Territory and waterhole behaviour"
+  },
+  "spiti-valley": {
+    name: "Snow Leopard",
+    story: "Built for altitude and almost invisible against the mountains, the snow leopard asks for slow tracking, distant observation and an appreciation of the entire Himalayan ecosystem.",
+    behaviour: "Winter movement and tracking"
+  },
+  singalila: {
+    name: "Red Panda",
+    story: "A quiet specialist of bamboo and cloud forest, the red panda rewards careful walking and close attention to feeding signs, canopy movement and changing mountain light.",
+    behaviour: "Canopy movement and feeding"
+  },
+  bandhavgarh: {
+    name: "Tiger",
+    story: "In Bandhavgarh’s compact mosaic of sal forest, meadow and stone, tigers can be understood as individuals—through territories, family histories and changing seasonal routines.",
+    behaviour: "Individual territories and family lines"
+  },
+  kanha: {
+    name: "Barasingha",
+    story: "Kanha’s hard-ground barasingha is a conservation story written across open meadows: graceful herds, seasonal courtship and the recovery of a species once close to extinction.",
+    behaviour: "Herd life and conservation recovery"
+  }
+};
+
+const destinationStories = ["jawai", "ranthambhore", "spiti-valley", "singalila", "bandhavgarh", "kanha"]
+  .map((slug) => destinations.find((destination) => destination.slug === slug))
+  .filter((destination): destination is (typeof destinations)[number] => Boolean(destination));
+
+const homepageSpeciesStories = ["jawai", "bandhavgarh", "singalila"]
+  .map((slug) => destinationStories.find((destination) => destination.slug === slug))
+  .filter((destination): destination is (typeof destinations)[number] => Boolean(destination));
+
+const expeditionRegions: Record<string, string> = {
+  "kanha-wildlife-photography-expedition": "India",
+  "laikipia-black-leopard-expedition": "Africa",
+  "svalbard-expedition": "Polar",
+  "the-pantanal-wetlands": "South America"
+};
+
+const expeditionLocations: Record<string, string> = {
+  "kanha-wildlife-photography-expedition": "Kanha, India",
+  "laikipia-black-leopard-expedition": "Laikipia, Kenya",
+  "svalbard-expedition": "Svalbard, Norway",
+  "the-pantanal-wetlands": "Pantanal, Brazil"
+};
 
 const journalMenuImage: ImageAsset = {
   src: "/assets/safari-crafters/dsc8123-789x1024-1f0b8c48.jpg",
@@ -146,10 +257,36 @@ export function ConceptExperience() {
   const [activeMenuKey, setActiveMenuKey] = useState(menuItems[0].key);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [isNavVisible, setIsNavVisible] = useState(true);
+  const [navSection, setNavSection] = useState("The wild, considered");
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [activeHeroLine, setActiveHeroLine] = useState(0);
+  const [activeDestinationIndex, setActiveDestinationIndex] = useState(0);
+  const [activeJourneySlug, setActiveJourneySlug] = useState(homepageJourneys.at(-1)?.slug ?? homepageJourneys[0]?.slug ?? "");
+  const [expeditionFilter, setExpeditionFilter] = useState("India");
+  const [activeExpeditionSlug, setActiveExpeditionSlug] = useState(expeditions[0].slug);
+  const [featuredDepartureSlug, setFeaturedDepartureSlug] = useState(expeditions[0].slug);
   const [canPlayHeroVideo, setCanPlayHeroVideo] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const lastScrollYRef = useRef(0);
+  const activeDestination = destinationStories[activeDestinationIndex];
+  const activeDestinationStory = destinationStoryCopy[activeDestination.slug];
+  const activeSpeciesStory = speciesStoryMeta[activeDestination.slug];
+  const filteredExpeditions = expeditionFilter === "All"
+    ? expeditions
+    : expeditions.filter((expedition) => expeditionRegions[expedition.slug] === expeditionFilter);
+  const activeExpedition = filteredExpeditions.find((expedition) => expedition.slug === activeExpeditionSlug) ?? filteredExpeditions[0];
+  const featuredDeparture = expeditions.find((expedition) => expedition.slug === featuredDepartureSlug) ?? expeditions[0];
+  const activeJourney = homepageJourneys.find((journey) => journey.slug === activeJourneySlug) ?? homepageJourneys[0];
+
+  const showPreviousDestination = () => {
+    setActiveDestinationIndex((current) => (current - 1 + destinationStories.length) % destinationStories.length);
+  };
+
+  const showNextDestination = () => {
+    setActiveDestinationIndex((current) => (current + 1) % destinationStories.length);
+  };
 
   useEffect(() => {
     const connection = (navigator as Navigator & {
@@ -180,7 +317,26 @@ export function ConceptExperience() {
 
   useEffect(() => {
     const onScroll = () => {
-      setHasScrolled(window.scrollY > 24);
+      const nextY = Math.max(window.scrollY, 0);
+      const previousY = lastScrollYRef.current;
+      const delta = nextY - previousY;
+
+      setHasScrolled(nextY > 56);
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(scrollable > 0 ? Math.min(100, Math.round((nextY / scrollable) * 100)) : 0);
+
+      if (nextY < 96 || isMenuOpen) {
+        setIsNavVisible(true);
+      } else if (Math.abs(delta) > 6) {
+        setIsNavVisible(delta < 0);
+      }
+
+      const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-nav-label]"));
+      const current = sections.reduce<HTMLElement | null>((match, section) => {
+        return section.getBoundingClientRect().top <= 180 ? section : match;
+      }, null);
+      setNavSection(current?.dataset.navLabel ?? "The wild, considered");
+      lastScrollYRef.current = nextY;
     };
 
     onScroll();
@@ -188,6 +344,66 @@ export function ConceptExperience() {
 
     return () => {
       window.removeEventListener("scroll", onScroll);
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const revealItems = Array.from(document.querySelectorAll<HTMLElement>("[data-concept-reveal]"));
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        (entry.target as HTMLElement).classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -10%", threshold: 0.08 });
+
+    revealItems.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+    const media = gsap.matchMedia();
+    const context = gsap.context(() => {
+      const buildExpansions = (scale: number, scrub: number, start: string) => {
+        gsap.utils.toArray<HTMLElement>("[data-scroll-expand]").forEach((frame) => {
+          gsap.fromTo(frame,
+            { scale, borderRadius: "18px", transformOrigin: "50% 50%" },
+            {
+              scale: 1,
+              borderRadius: "4px",
+              ease: "none",
+              scrollTrigger: {
+                trigger: frame,
+                start,
+                end: "top 22%",
+                scrub,
+                invalidateOnRefresh: true
+              }
+            }
+          );
+        });
+      };
+
+      media.add("(min-width: 721px)", () => buildExpansions(0.94, 1.05, "top 92%"));
+      media.add("(max-width: 720px)", () => buildExpansions(0.975, 0.65, "top 94%"));
+    });
+
+    const refresh = () => ScrollTrigger.refresh();
+    document.fonts?.ready.then(refresh);
+    window.addEventListener("load", refresh, { once: true });
+
+    return () => {
+      window.removeEventListener("load", refresh);
+      media.revert();
+      context.revert();
     };
   }, []);
 
@@ -239,11 +455,12 @@ export function ConceptExperience() {
   return (
     <div className="concept-page">
       <div
-        className={hasScrolled ? "concept-hero-nav is-scrolled" : "concept-hero-nav"}
+        className={`concept-hero-nav${hasScrolled ? " is-scrolled" : ""}${isNavVisible ? "" : " is-hidden"}`}
+        style={{ "--nav-progress": `${scrollProgress}%` } as React.CSSProperties}
         aria-label="Concept navigation preview"
       >
         <BrandMark className="concept-brandmark" />
-        <div className="concept-nav-spacer" aria-hidden="true" />
+        <span className="concept-nav-context" aria-live="polite">{navSection}</span>
         <Link className="concept-nav-cta" href="/plan">
           Plan a Journey
         </Link>
@@ -259,7 +476,7 @@ export function ConceptExperience() {
           <Menu size={18} />
         </button>
       </div>
-      <section className="concept-hero" aria-label="Safari Crafters luxury concept">
+      <section className="concept-hero" aria-label="Safari Crafters luxury concept" data-nav-label="The wild, considered">
         <Image
           className="concept-hero-media concept-hero-poster"
           src={heroJourney.image.src}
@@ -372,45 +589,125 @@ export function ConceptExperience() {
         </div>
       </div>
 
-      <section className="concept-atelier" aria-label="Private Safari Atelier">
-        <div className="concept-atelier-copy">
-          <p>The Atelier</p>
-          <h2>
-            Safari Crafters is built for travellers who want the wild interpreted with
-            patience, naturalist depth and quiet luxury.
-          </h2>
+      <section className="concept-story-proof" aria-labelledby="homepage-story-title" data-nav-label="Our story">
+        <div className="concept-story-proof-intro">
+          <div>
+            <p>Our story</p>
+            <h2 id="homepage-story-title">Informed <em>by</em> intention,<br />guided <em>by</em> experience.</h2>
+          </div>
+          <div className="concept-story-proof-copy">
+            <p>
+              Safari Crafters brings together wildlife knowledge, photography and
+              thoughtful travel planning—working with trusted naturalists and local
+              partners across the places in which we operate.
+            </p>
+            <Link href="/about">Discover our story <ArrowRight size={16} strokeWidth={1.25} /></Link>
+          </div>
         </div>
-        <div className="concept-atelier-grid">
-          <article>
-            <h3>Private planning</h3>
+        <aside className="concept-legacy-ledger" aria-label="Safari Crafters experience">
+          <p>Our experience, measured quietly</p>
+          <dl>
+            <div>
+              <dt>75+</dt>
+              <dd>Years of combined expertise</dd>
+            </div>
+            <div>
+              <dt>24+</dt>
+              <dd>Countries across our network</dd>
+            </div>
+            <div>
+              <dt>6,000+</dt>
+              <dd>Guests hosted</dd>
+            </div>
+            <div>
+              <dt>450+</dt>
+              <dd>Journeys privately crafted</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section className="concept-journey-types" id="ways-to-journey" aria-labelledby="journey-types-title" data-nav-label="Ways to journey">
+        <h2 id="journey-types-title">
+          Give your dream journeys<br />
+          wings <em>and</em> paws.
+        </h2>
+        <div className="concept-journey-types-grid">
+          <article data-concept-reveal>
+            <Image
+              src="/assets/safari-crafters/golden-triangle-ae04a20e.jpg"
+              alt="A private wildlife journey through India"
+              width={900}
+              height={600}
+              sizes="(max-width: 720px) 100vw, 33vw"
+            />
+            <h3>Private<br />wildlife journeys</h3>
             <p>
-              Every enquiry becomes a considered brief: pace, privacy, lodge style,
-              sighting priorities and traveller preferences.
+              Tailored itineraries across India and select wildlife destinations across
+              the world, designed around your interests, season, and preferred duration
+              and pace.
             </p>
+            <Link href="/journeys">Explore</Link>
           </article>
-          <article>
-            <h3>Field intelligence</h3>
+          <article data-concept-reveal>
+            <Image
+              src="/assets/safari-crafters/laipikia-001e24e7.jpg"
+              alt="A black leopard photographed on a guided safari"
+              width={900}
+              height={600}
+              sizes="(max-width: 720px) 100vw, 33vw"
+            />
+            <h3>Guided<br />bespoke safaris</h3>
             <p>
-              Specialists account for zones, gates, permits, transfer timing,
-              naturalist quality and seasonal animal movement.
+              All the goodness of our private wildlife journeys, with the added benefit
+              of a professional <em>Safari Crafters</em> guide for the ultimate informed
+              experience.
             </p>
+            <Link href="/destinations">Explore</Link>
           </article>
-          <article>
-            <h3>Seamless comfort</h3>
+          <article data-concept-reveal>
+            <Image
+              src="/assets/safari-crafters/the-pantanal-wetlands-af117fe5.jpg"
+              alt="A jaguar photographed during a specialist expedition"
+              width={900}
+              height={600}
+              sizes="(max-width: 720px) 100vw, 33vw"
+            />
+            <h3>Scheduled<br />photo expeditions</h3>
             <p>
-              Lodges, vehicles, rest time, meals and arrival logistics are planned so
-              the wilderness feels immersive, not chaotic.
+              Fixed-date, specialist-led group departures for photographers who want
+              time in the field, expert guidance and the pursuit of a clear photographic
+              purpose.
             </p>
-          </article>
-          <article>
-            <h3>Purposeful access</h3>
-            <p>
-              Journeys are shaped around ethical viewing, low-crowd windows,
-              specialist guides and conservation-aware operators.
-            </p>
+            <Link href="/photo-expeditions">Explore</Link>
           </article>
         </div>
       </section>
+
+      {showHomepageWildestPlaces ? <section className="concept-wildest-places" aria-labelledby="wildest-places-title" data-nav-label="The world’s wildest places">
+        <h2 id="wildest-places-title">
+          From India <em>to</em><br />
+          <em>the</em> world&apos;s<br />
+          wildest places.
+        </h2>
+        <div className="concept-wildest-places-copy">
+          <p>
+            A wildlife experience relies heavily on choices. Where you stay matters. So
+            does the reserve, the season, the safari zone, the guide, the timing of each
+            drive and the amount of time you spend in the field. These details can make
+            or mar your trip.
+          </p>
+          <p>
+            We bring together our experts&apos; combined wildlife knowledge, photography
+            experience and detailed travel planning to make the right decisions for you,
+            with thought and care.
+          </p>
+          <p>
+            We do not begin with a package and fit you into it. We begin with you,
+            understand what you want from your journey and build everything around you.
+          </p>
+        </div>
+      </section> : null}
 
       {showHomepageGuestNotes ? <section className="concept-guest-notes" aria-label="Guest notes">
         <div className="concept-guest-notes-heading">
@@ -440,131 +737,282 @@ export function ConceptExperience() {
         </Link>
       </section> : null}
 
-      <section className="concept-species-section">
-        <div className="concept-species-image">
-          <Image
-            src={featuredDestination.image.src}
-            alt={featuredDestination.image.alt}
-            width={1600}
-            height={1200}
-            sizes="(max-width: 760px) 100vw, 55vw"
-          />
+      {activeJourney ? <div className="concept-journey-feature-shell">
+      <header className="concept-journey-collection-header">
+        <div>
+          <p>Private journey collection</p>
+          <h2 id="private-journey-collection-title">Journeys, composed around you.</h2>
         </div>
-        <div className="concept-species-copy">
-          <p>Species-led storytelling</p>
-          <h2>{featuredDestination.title}: granite, leopards and silence after dusk.</h2>
-          <p>
-            Destination pages can open around one memorable animal, landscape or
-            field moment, then guide the guest into seasons, lodges, specialists and
-            photographic opportunities.
-          </p>
-          <div className="concept-species-facts">
-            <div>
-              <span>Best window</span>
-              <strong>{featuredDestination.bestMonths}</strong>
-            </div>
-            <div>
-              <span>Photography</span>
-              <strong>{featuredDestination.photography}</strong>
-            </div>
+        <Link className="concept-text-link" href="/journeys">
+          View all journeys <ArrowUpRight size={15} />
+        </Link>
+      </header>
+      <section className="concept-journey-feature" aria-labelledby="homepage-journey-title" data-nav-label="Private journeys" data-scroll-expand>
+        <figure className="concept-journey-feature-frame">
+          <Image
+            key={activeJourney.slug}
+            className="concept-journey-feature-image"
+            src={activeJourney.image.src}
+            alt={activeJourney.image.alt}
+            fill
+            sizes="(max-width: 760px) 100vw, 66vw"
+          />
+        </figure>
+
+        <article className="concept-journey-feature-copy" aria-live="polite">
+          <h2 id="homepage-journey-title">{activeJourney.title}</h2>
+          <p className="concept-journey-feature-route">{activeJourney.route || activeJourney.region}</p>
+          <small>{activeJourney.duration}</small>
+          <p className="concept-journey-feature-description">{activeJourney.description}</p>
+          <Link href={`/journeys/${activeJourney.slug}`}>
+            Enter this journey <ArrowRight size={18} strokeWidth={1.25} />
+          </Link>
+        </article>
+
+        <nav className="concept-journey-feature-index" aria-label="Select a private journey">
+          {homepageJourneys.map((journey) => (
+            <button
+              className={journey.slug === activeJourney.slug ? "is-active" : ""}
+              type="button"
+              aria-current={journey.slug === activeJourney.slug ? "true" : undefined}
+              onClick={() => setActiveJourneySlug(journey.slug)}
+              onMouseEnter={() => setActiveJourneySlug(journey.slug)}
+              onFocus={() => setActiveJourneySlug(journey.slug)}
+              key={journey.slug}
+            >
+              <span>{journey.title}</span>
+              <small>{homepageJourneyRailMeta[journey.slug] ?? `${journey.region} · ${journey.duration}`}</small>
+            </button>
+          ))}
+        </nav>
+      </section>
+      </div> : null}
+
+      {showHomepageSpeciesEditorial ? <section className="concept-species-editorial" aria-labelledby="species-chapter-title" data-nav-label="Species stories">
+        <header className="concept-species-editorial-header">
+          <div>
+            <p>Species-led storytelling</p>
+            <h2 id="species-chapter-title">Follow the animal.<br />Understand its world.</h2>
           </div>
-          <Link className="concept-text-link" href={`/destinations/${featuredDestination.slug}`}>
-            Enter the destination <ArrowUpRight size={15} />
+          <p>
+            These journeys begin with behaviour rather than a checklist—returning to the
+            same landscape long enough to recognise individuals, patterns and change.
+          </p>
+        </header>
+        <div className="concept-species-stories">
+          {homepageSpeciesStories.map((destination) => {
+            const species = speciesStoryMeta[destination.slug];
+            return (
+              <article className="concept-species-story" key={destination.slug}>
+                <Link className="concept-species-story-image" href={`/destinations/${destination.slug}`}>
+                  <Image
+                    src={destination.image.src}
+                    alt={destination.image.alt}
+                    fill
+                    sizes="(max-width: 720px) 100vw, 33vw"
+                  />
+                </Link>
+                <div className="concept-species-story-copy">
+                  <p>{destination.title}, India</p>
+                  <h3>{species.name}</h3>
+                  <span>{species.behaviour}</span>
+                  <Link href={`/destinations/${destination.slug}`}>
+                    Enter the story <ArrowRight size={16} strokeWidth={1.25} />
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section> : null}
+
+      {showHomepagePhotographicWorlds ? <section className="concept-journey-cinema" aria-labelledby="kanha-cinema-title" data-nav-label="Private journeys">
+        <aside className="concept-cinema-rail" aria-label={`${expeditionLocations[activeExpedition.slug]} expedition`}>
+          <span>Safari Crafters</span>
+          <h2 id="kanha-cinema-title">{expeditionLocations[activeExpedition.slug].split(",")[0]}</h2>
+          <small>Photographic worlds</small>
+        </aside>
+        <nav className="concept-cinema-filters" aria-label="Choose a photographic world">
+          <span>Choose a photographic world</span>
+          {["India", "Africa", "Polar", "South America"].map((filter) => (
+            <button
+              className={filter === expeditionFilter ? "is-active" : ""}
+              type="button"
+              aria-pressed={filter === expeditionFilter}
+              onClick={() => {
+                setExpeditionFilter(filter);
+                const first = expeditions.find((item) => expeditionRegions[item.slug] === filter);
+                if (first) setActiveExpeditionSlug(first.slug);
+              }}
+              key={filter}
+            >{filter}</button>
+          ))}
+        </nav>
+        <figure className="concept-cinema-frame">
+          <Image
+            key={activeExpedition.slug}
+            src={activeExpedition.image.src}
+            alt={activeExpedition.image.alt}
+            fill
+            sizes="(max-width: 760px) 100vw, 88vw"
+          />
+          <figcaption>Signature Photo Expedition · {expeditionFilter}</figcaption>
+        </figure>
+        <div className="concept-cinema-ledger">
+          <dl>
+            <div><dt>Departure</dt><dd>{activeExpedition.date ?? activeExpedition.bestMonths}</dd></div>
+            <div><dt>Duration</dt><dd>{activeExpedition.duration ?? "By private arrangement"}</dd></div>
+            <div><dt>In focus</dt><dd>{activeExpedition.slug === photoExpedition.slug ? "7 wildlife safaris" : activeExpedition.species}</dd></div>
+          </dl>
+          <Link href={`/photo-expeditions/${activeExpedition.slug}`}>
+            View the expedition <ArrowRight size={17} strokeWidth={1.2} />
           </Link>
         </div>
-      </section>
+      </section> : null}
 
-      <section className="concept-field-notes" aria-label="From the field this week">
+      {showHomepagePrivateAviation ? <section className="concept-private-aviation" aria-labelledby="private-aviation-title" data-nav-label="Private jet safaris">
+        <div className="concept-private-aviation-header">
+          <div>
+            <p className="concept-private-aviation-eyebrow">Private Jet Safaris</p>
+            <h2 id="private-aviation-title">The wild, without the distance between.</h2>
+          </div>
+          <Link className="concept-text-link" href="/private-aviation">
+            Explore private jet safaris <ArrowUpRight size={15} />
+          </Link>
+        </div>
+        <figure className="concept-private-aviation-image" data-scroll-expand>
+          <Image
+            src="/assets/kairamya/private-aviation-hero.jpg"
+            alt="Safari Crafters private aircraft and crew prepared for a remote safari journey"
+            fill
+            sizes="100vw"
+          />
+        </figure>
+        <div className="concept-private-aviation-story">
+          <div className="concept-private-aviation-benefits">
+            <article>
+              <span>Private aircraft</span>
+              <p>A dedicated aircraft and itinerary shaped around your own rhythm.</p>
+            </article>
+            <article>
+              <span>Remote wilderness</span>
+              <p>Reach exceptional landscapes that conventional connections make difficult.</p>
+            </article>
+            <article>
+              <span>Seamless routing</span>
+              <p>Move from runway to wilderness with every transfer quietly considered.</p>
+            </article>
+          </div>
+        </div>
+      </section> : null}
+
+      <section className="concept-field-notes concept-expedition-calendar" aria-labelledby="expedition-calendar-title" data-nav-label="Photo expeditions">
         <div className="concept-field-notes-header">
           <div>
-            <p>From the field · this week</p>
-            <h2>Notes our guides sent in.</h2>
+            <p>Photographic expeditions</p>
+            <h2 id="expedition-calendar-title">The next private departures.</h2>
           </div>
-          <Link className="concept-text-link" href="/journal">
-            The Journal <ArrowUpRight size={15} />
+          <Link className="concept-text-link" href="/photo-expeditions">
+            View all expeditions <ArrowUpRight size={15} />
           </Link>
         </div>
-        <div className="concept-field-notes-grid">
-          {fieldNotes.map((article) => (
-            <Link className="concept-field-note" href={`/journal/${article.slug}`} key={article.slug}>
-              <div>
-                <Image
-                  src={article.image.src}
-                  alt={article.image.alt}
-                  width={1200}
-                  height={900}
-                  sizes="(max-width: 760px) 100vw, 33vw"
-                />
-              </div>
-              <p>{article.category} · {article.readTime}</p>
-              <h3>{article.title}</h3>
+        <div className="concept-departure-salon" data-concept-reveal>
+          <figure className="concept-departure-salon-image" data-scroll-expand>
+            <Image
+              key={featuredDeparture.slug}
+              src={featuredDeparture.image.src}
+              alt={featuredDeparture.image.alt}
+              fill
+              sizes="(max-width: 760px) 100vw, 78vw"
+            />
+          </figure>
+
+          <article className="concept-departure-dossier" aria-live="polite">
+            <p>The next departure</p>
+            <h3>{featuredDeparture.title}</h3>
+            <dl>
+              <div><dt>Destination</dt><dd>{expeditionLocations[featuredDeparture.slug]}</dd></div>
+              <div><dt>Dates</dt><dd>{featuredDeparture.date ?? featuredDeparture.bestMonths}</dd></div>
+              <div><dt>Duration</dt><dd>{featuredDeparture.duration ?? "By private arrangement"}</dd></div>
+            </dl>
+            <Link href={`/photo-expeditions/${featuredDeparture.slug}`}>
+              Request expedition details <ArrowRight size={17} strokeWidth={1.25} />
             </Link>
+          </article>
+        </div>
+
+        <nav className="concept-departure-index" aria-label="Choose a photographic expedition">
+          {expeditions.map((expedition) => (
+            <button
+              className={expedition.slug === featuredDeparture.slug ? "is-active" : ""}
+              type="button"
+              aria-pressed={expedition.slug === featuredDeparture.slug}
+              onClick={() => setFeaturedDepartureSlug(expedition.slug)}
+              key={expedition.slug}
+            >
+              <span>{expeditionLocations[expedition.slug].split(",")[0]}</span>
+              <small>{expedition.date ?? expedition.bestMonths}</small>
+            </button>
           ))}
+        </nav>
+        <div className="concept-expedition-enquiry">
+          <p>Looking for a different date or a privately crafted departure?</p>
+          <Link href="/plan">Enquire privately <ArrowRight size={16} /></Link>
         </div>
       </section>
 
-      <section className="concept-journey-spread">
-        <div className="concept-spread-copy">
-          <p>Photo Expedition · Seasonal Departure</p>
-          <h2>{photoExpedition.title}</h2>
-          <span>{photoExpedition.bestMonths} / {photoExpedition.groupSize}</span>
-        </div>
-        <div className="concept-spread-image">
-          <Image
-            src={photoExpedition.image.src}
-            alt={photoExpedition.image.alt}
-            width={1600}
-            height={1200}
-            sizes="(max-width: 760px) 100vw, 60vw"
-          />
-        </div>
-        <div className="concept-spread-note">
-          <Camera size={22} />
-          <p>
-            Photo Expeditions should feel like signed field commissions: mentor,
-            species, equipment, access and portfolio intent visible before the CTA.
-          </p>
-          <Link href={`/photo-expeditions/${photoExpedition.slug}`}>
-            View expedition
+      {showHomepageConservation ? <section className="concept-conservation-statement" aria-labelledby="conservation-statement-title" data-nav-label="Our responsibility">
+        <h2 id="conservation-statement-title">
+          We practise<br />
+          <em>and</em> support<br />
+          responsible<br />
+          tourism.
+        </h2>
+        <div className="concept-conservation-copy">
+          <p>Wildlife travel comes with a responsibility to the wild places and the wildlife that make these journeys even possible.</p>
+          <p>We favour responsible viewing, experienced local partners and conservation-aware operators. Through our wider conservation work and the Astral Foundation, we also support practical initiatives in wildlife landscapes across India.</p>
+          <p>We believe responsible travel should be part of good planning. It is not an optional extra but the very foundation of our ethos.</p>
+          <Link href="/conservation-commitment">
+            Explore our commitment <ArrowRight size={16} strokeWidth={1.25} />
           </Link>
         </div>
-      </section>
+      </section> : null}
 
-      <section className="concept-concierge">
+      <section className="concept-concierge" data-nav-label="Begin your journey" data-concept-reveal>
         <div>
-          <Compass size={28} />
-          <h2>A planner that behaves like a private concierge.</h2>
+          <h2>Ready when<br />you are.</h2>
         </div>
         <div className="concept-concierge-card">
-          <p>Begin with one quiet question.</p>
-          <h3>Where should the wild find you first?</h3>
+          <h3>Where would you like <em>to</em> begin?</h3>
           <div className="concept-choice-row">
             <Link href="/plan?region=India">
               <span>India</span>
-              <small>Tigers · Leopards · Himalaya</small>
+              <small>Big Cats · Charismatic Wildlife · Birds · Himalaya · Forests · Archaeology · Ancient Culture</small>
             </Link>
             <Link href="/plan?region=Africa">
               <span>Africa</span>
-              <small>Savannah · Primates · Private conservancies</small>
+              <small>Big Cats · Megafauna · Savannah · Private Conservancies · Primates</small>
             </Link>
-            <Link href="/plan?region=The%20Americas">
-              <span>The Americas</span>
-              <small>Jaguars · Rainforest · Northern wilderness</small>
+            <Link href="/plan?region=South%20%26%20Central%20America">
+              <span>South &amp; Central America</span>
+              <small>Jaguar · Puma · Rainforests · Birds · Wetlands</small>
             </Link>
             <Link href="/plan?region=Arctic%20%26%20Beyond">
               <span>Arctic &amp; Beyond</span>
-              <small>Polar wildlife · Expedition cruising</small>
+              <small>High Arctic · Polar Wildlife · Tundra · Expedition Cruising</small>
             </Link>
             <Link href="/plan?region=Surprise%20me">
               <span>Surprise me</span>
               <small>Let our specialists choose the right geography</small>
             </Link>
+            <Link className="concept-choice-contact" href="/contact">
+              <span>Speak with a specialist</span>
+              <small>Begin with a private conversation</small>
+            </Link>
           </div>
-          <span>
-            A quiet first brief. Never a package catalogue.
-          </span>
         </div>
       </section>
+
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { ConceptExperience } from "./ConceptExperience";
 import "./concept.css";
+import "./concept-harmony.css";
 
 export const metadata = {
   title: "Luxury Safari Concept",

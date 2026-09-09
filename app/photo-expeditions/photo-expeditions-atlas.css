@@ -1,0 +1,52 @@
+.expedition-atlas-selector {
+  grid-template-columns: repeat(4, auto) 1fr;
+}
+
+.expedition-atlas-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(28px, 3.5vw, 52px);
+}
+
+.expedition-atlas-card h3 {
+  font-size: clamp(2rem, 2.45vw, 3rem);
+}
+
+.expedition-atlas-card .journey-atlas-card-route {
+  -webkit-line-clamp: 2;
+}
+
+.expedition-atlas-facts {
+  grid-template-columns: .72fr 1fr 1fr;
+  gap: 10px;
+}
+
+.expedition-atlas-facts span:last-child {
+  letter-spacing: .06em;
+}
+
+@media (max-width: 1120px) {
+  .expedition-atlas-selector {
+    grid-template-columns: repeat(2, auto) 1fr;
+  }
+
+  .expedition-atlas-selector > span {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+
+  .expedition-atlas-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .expedition-atlas-selector {
+    display: flex;
+  }
+
+  .expedition-atlas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expedition-atlas-facts {
+    grid-template-columns: .72fr 1fr 1fr;
+  }
+}

@@ -6,6 +6,11 @@ import { useMemo, useState } from "react";
 import type { Destination } from "@/lib/data";
 import "./DestinationFinder.css";
 
+function destinationPreview(text: string, wordLimit = 22) {
+  const words = text.trim().split(/\s+/);
+  return words.length > wordLimit ? `${words.slice(0, wordLimit).join(" ")}…` : text;
+}
+
 export function DestinationFinder({ destinations }: { destinations: Destination[] }) {
   const [query, setQuery] = useState("");
   const [continent, setContinent] = useState("All regions");
@@ -57,7 +62,7 @@ export function DestinationFinder({ destinations }: { destinations: Destination[
           {filtered.length ? filtered.map((destination) => (
             <Link href={`/destinations/${destination.slug}`} key={destination.slug}>
               <span><strong>{destination.title}</strong><small>{destination.country} · {destination.bestMonths}</small></span>
-              <span>{destination.wildlife}</span>
+              <span>{destinationPreview(destination.wildlife)}</span>
             </Link>
           )) : <p>No exact match. Try another region, season or species, or ask us to recommend one.</p>}
         </div>

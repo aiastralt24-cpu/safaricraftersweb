@@ -10,7 +10,7 @@
 
 .simple p:not(.eyebrow) {
   color: var(--charcoal);
-  font-size: 1.02rem;
+  font-size: var(--type-body);
   line-height: 1.9;
 }
 
@@ -20,9 +20,9 @@
   gap: 8px;
   width: fit-content;
   color: var(--brass);
-  font-size: 0.74rem;
+  font-size: var(--type-cta);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   transition: color 260ms ease;
 }
@@ -74,7 +74,7 @@
 .founder-quote figcaption {
   margin-top: 24px;
   color: var(--brass);
-  font-size: 0.66rem;
+  font-size: var(--type-label);
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -123,7 +123,7 @@
   margin: 8px 0 18px;
   color: var(--ink);
   font-family: var(--font-display);
-  font-size: clamp(1.65rem, 2.8vw, 2.7rem);
+  font-size: var(--type-h3);
   font-weight: 300;
   line-height: 1.12;
 }

@@ -1,0 +1,63 @@
+/* One section-heading grammar across private journeys, private aviation and expeditions. */
+.concept-expedition-calendar .concept-field-notes-header,
+.concept-private-aviation-header {
+  width: min(var(--concept-canvas), 100%);
+}
+
+.concept-private-aviation-header {
+  display: flex;
+  margin: 0 auto clamp(54px, 6vw, 82px);
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  color: var(--soil);
+}
+
+.concept-private-aviation-header > div { min-width: 0; }
+
+.concept-private-aviation-eyebrow {
+  width: auto;
+  margin: 0 0 14px;
+  color: var(--brass);
+  font-family: var(--font-body);
+  font-size: var(--concept-label);
+  font-weight: 700;
+  letter-spacing: var(--concept-label-tracking);
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.concept-private-aviation-header h2 {
+  max-width: 900px;
+  margin: 0;
+  color: var(--soil);
+  font-family: var(--font-display);
+  font-size: var(--concept-section-title);
+  font-weight: 300;
+  letter-spacing: -.025em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.concept-private-aviation-header > a { flex: 0 0 auto; }
+
+.concept-private-aviation-story {
+  display: block;
+  padding-top: clamp(36px, 4vw, 56px);
+}
+
+.concept-private-aviation-benefits { width: 100%; }
+
+@media (max-width: 760px) {
+  .concept-private-aviation-header {
+    margin-bottom: 34px;
+    align-items: start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .concept-private-aviation-header h2 {
+    font-size: var(--type-h2);
+    line-height: .98;
+  }
+}

@@ -1,139 +1,96 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { PageHero } from "@/components/PageHero";
-import { destinations } from "@/lib/data";
-import "../simple.css";
+import Image from "next/image";
+import { ConservationMotion } from "./ConservationMotion";
+import "./conservation-commitment.css";
 
-const heroImage = destinations.find((item) => item.slug === "bandhavgarh")?.image ?? destinations[0].image;
+const records = [
+  { place: "Ranthambhore · Water infrastructure", title: "Water where the forest needs it.", copy: "At Aamaghati, a hub-and-spoke pipeline system uses solar power to feed a freshwater point inside a non-tourism area of Ranthambhore Tiger Reserve—supporting wildlife beyond the familiar safari circuit.", image: "/assets/conservation/solar-water-infrastructure.jpg", alt: "Astral Foundation field team beside a solar-powered water point in Ranthambhore" },
+  { place: "National Chambal Sanctuary · Research", title: "Knowledge built in the field.", copy: "Astral Foundation supported the Gharial Ecology Project, helping researchers monitor more than 45 radio-tagged gharials across over 400 kilometres of protected river habitat in Rajasthan, Madhya Pradesh and Uttar Pradesh.", image: "/assets/conservation/gharial-field-research.jpg", alt: "A field researcher monitoring gharial activity beside the Chambal River" },
+  { place: "Ranthambhore · Dry-season water", title: "Following water uphill.", copy: "In Ranthambhore’s elevated Rann area, solar pumps and HDPE pipelines move water from Khemchakund to terrain more than 450 metres higher. The system helps retain prey and predators within the landscape through the driest months.", image: "/assets/conservation/wildlife-water-restoration.jpg", alt: "Astral Foundation workers installing a wildlife water pipeline beside a forest water point" },
+  { place: "Ranthambhore · Forest protection", title: "Mobility for the front line.", copy: "Four patrol vehicles were provided to the Forest Department at Ranthambhore Tiger Reserve, strengthening everyday monitoring, wildlife protection and the response to human–wildlife conflict across the reserve.", image: "/assets/conservation/forest-patrol-vehicles.jpg", alt: "Forest Department patrol vehicles provided for Ranthambhore Tiger Reserve" }
+];
+
+const impact = [
+  ["10+", "years supporting forest conservation and climate resilience"],
+  ["20+", "protected parks and key wildlife landscapes across India"],
+  ["30,000+", "hectares improved through renewable energy and infrastructure"],
+  ["500+ kW", "of green power installed through Project GreenWater"],
+  ["250+ km", "of solar-powered water distribution inside tiger reserves"],
+  ["800+", "solar-powered water bodies restored across forest habitats"],
+  ["100M+ L", "of rainwater harvested annually through sustainable systems"],
+  ["4,000+", "forest guards supported across more than 700 camps"]
+];
 
 export const metadata: Metadata = {
   title: "Conservation Commitment",
-  description:
-    "Safari Crafters' conservation commitment through Astral Foundation: practical wildlife support without donation-led guest appeals."
+  description: "Safari Crafters and Astral Foundation support practical field infrastructure, habitat care, wildlife research and communities around India's wild landscapes.",
+  alternates: { canonical: "/conservation-commitment" },
+  openGraph: { title: "Conservation, carried quietly", description: "Practical support for wild landscapes through Astral Foundation.", images: ["/assets/destinations/ranthambhore/ranthambhore-02.jpg"] }
 };
 
 export default function ConservationCommitmentPage() {
-  return (
-    <>
-      <PageHero
-        title="Conservation, quietly."
-        meta="Through Astral Foundation"
-        copy="No guest donations. Just field support, habitat care and long-view responsibility."
-        image={heroImage}
-      />
-      <section className="section simple">
-        <div className="container simple-grid">
-          <div>
-            <p className="eyebrow">Giving back to nature</p>
-            <h2 className="h2">A responsibility carried beyond the journey.</h2>
-          </div>
-          <div>
-            <p>
-              Safari Crafters’ conservation work is shaped through Astral Foundation,
-              with a focus on practical support rather than public fundraising. The
-              intention is simple: strengthen the landscapes we travel through and
-              honour the people who protect them every day.
-            </p>
-            <p>
-              The work spans field infrastructure, freshwater support, solar and
-              battery initiatives, electric mobility, camera-trap documentation,
-              habitat and grassland care, community development, skill training and
-              research-led support for species such as leopards and Eurasian otters.
-            </p>
+  return <div className="conservation-page">
+    <ConservationMotion />
+    <section className="conservation-hero" aria-labelledby="conservation-title">
+      <Image src="/assets/destinations/ranthambhore/ranthambhore-02.jpg" alt="Bengal tiger beside a lake in Ranthambhore" fill priority sizes="100vw" />
+      <div className="conservation-hero-shade" />
+      <div className="container conservation-hero-copy">
+        <p className="conservation-eyebrow">Safari Crafters × Astral Foundation</p>
+        <h1 id="conservation-title">Conservation,<br /><em>carried quietly.</em></h1>
+        <p>Practical support for the landscapes we travel through and the people who protect them.</p>
+      </div>
+      <p className="conservation-credit">Safari Crafters archive · Ranthambhore</p>
+    </section>
+
+    <section className="conservation-intro conservation-section">
+      <div className="container conservation-intro-grid" data-conservation-reveal>
+        <p className="conservation-index">Our position</p>
+        <div>
+          <h2>A responsibility that<br />continues beyond the journey.</h2>
+          <div className="conservation-intro-copy">
+            <p>Safari Crafters supports conservation through Astral Foundation as an ongoing commitment, funded independently and never presented as an obligation to our guests.</p>
+            <p>The focus is practical and long-term: strengthening field capacity, caring for habitat, supporting research and investing in the communities that share these wildlife landscapes.</p>
           </div>
         </div>
-      </section>
-      <section className="section simple">
-        <div className="container founder-profiles">
-          <article>
-            <p className="eyebrow">Field support</p>
-            <h3>Helping forest teams work with better tools, access and resilience.</h3>
-            <p>
-              Conservation often depends on unglamorous details: vehicles, water,
-              power, monitoring equipment and support systems that allow protection
-              work to continue in difficult terrain and changing seasons.
-            </p>
-          </article>
-          <article>
-            <p className="eyebrow">Community development</p>
-            <h3>Backing the human landscapes around protected wilderness.</h3>
-            <p>
-              Long-term wildlife protection is inseparable from local communities.
-              Skill training, development initiatives and thoughtful support around
-              wilderness regions help conservation become a shared future, not an
-              isolated idea.
-            </p>
-          </article>
-          <article>
-            <p className="eyebrow">Research and habitat</p>
-            <h3>Supporting the patient work behind responsible wildlife knowledge.</h3>
-            <p>
-              Camera trapping, species studies and habitat care help deepen the
-              understanding of wild populations and the places they depend on.
-              This is the quiet science behind better field decisions.
-            </p>
-          </article>
-          <Link className="text-link" href="/plan">
-            Plan a conservation-aware journey <ArrowUpRight size={15} />
-          </Link>
-        </div>
-      </section>
-      <section className="section simple conservation-proof">
-        <div className="container simple-grid">
-          <div>
-            <p className="eyebrow">Astral Foundation in the field</p>
-            <h2 className="h2">Practical conservation, already put to work.</h2>
+      </div>
+    </section>
+
+    <section className="conservation-impact" aria-labelledby="impact-title">
+      <div className="container conservation-impact-heading" data-conservation-reveal>
+        <p className="conservation-eyebrow">A decade in the field</p>
+        <h2 id="impact-title">The measure of<br />long-term work.</h2>
+        <p>Figures published by Astral Foundation across its forest conservation and climate-resilience programmes in India.</p>
+      </div>
+      <dl className="container conservation-impact-grid">
+        {impact.map(([value, label]) => <div key={value} data-conservation-reveal><dt>{value}</dt><dd>{label}</dd></div>)}
+      </dl>
+    </section>
+
+    <section className="conservation-records conservation-section" aria-labelledby="field-record-title">
+      <div className="container conservation-record-heading" data-conservation-reveal>
+        <div><p className="conservation-eyebrow">The field record</p><h2 id="field-record-title">Where support<br />becomes useful.</h2></div>
+        <p>The work is often quiet by nature: infrastructure, training, monitoring and habitat care. Its value lies in what it enables over time.</p>
+      </div>
+      <div className="container conservation-record-list">
+        {records.map((record) => <article className="conservation-record" key={record.title} data-conservation-reveal>
+          <figure data-conservation-expand><Image src={record.image} alt={record.alt} fill sizes="(max-width: 860px) 100vw, 46vw" /></figure>
+          <div className="conservation-record-copy">
+            <div className="conservation-record-meta"><span>{record.place}</span></div>
+            <h3>{record.title}</h3><p>{record.copy}</p>
           </div>
-          <div>
-            <p>
-              Through Astral Foundation, support has moved into the everyday needs
-              of wild landscapes: the quiet infrastructure, research, training and
-              community work that rarely appears in a safari photograph, but often
-              decides how well a landscape is protected.
-            </p>
-          </div>
+        </article>)}
+      </div>
+      <div className="container conservation-footprint" data-conservation-reveal>
+        <p className="conservation-eyebrow">A national footprint</p>
+        <h2>From tiger reserves<br />to migration corridors.</h2>
+        <div className="conservation-footprint-grid">
+          <p><strong>North & west</strong><span>Ranthambhore · Sariska · Jhalana · Kutch · Gir · Kashmir markhor landscape</span></p>
+          <p><strong>Central India</strong><span>Panna · Kanha · Pench · Bandhavgarh · Satpura · Gandhisagar</span></p>
+          <p><strong>South & east</strong><span>Nagarhole · Bandipur · BRT · Sathyamangalam · Meghamalai · Brahmaputra landscape</span></p>
         </div>
-        <div className="container conservation-proof-grid">
-          <article>
-            <p className="eyebrow">Ranthambhore region</p>
-            <h3>Community, skills and field infrastructure.</h3>
-            <p>
-              Work referenced in the foundation material includes skill training,
-              community development, Vikas Kendra support, field vehicles,
-              freshwater initiatives, battery support for chowkis and solar-backed
-              infrastructure.
-            </p>
-          </article>
-          <article>
-            <p className="eyebrow">Wildlife research</p>
-            <h3>Camera traps, leopards and Eurasian otters.</h3>
-            <p>
-              The conservation record includes camera-trap documentation, a study
-              on leopard population, Eurasian otter field imagery and the release
-              of a tagged Eurasian otter back into the wild.
-            </p>
-          </article>
-          <article>
-            <p className="eyebrow">Cleaner field movement</p>
-            <h3>Electric mobility and lower-impact support.</h3>
-            <p>
-              Electric vehicle support appears as part of the foundation's field
-              work, helping conservation teams move through sensitive landscapes
-              with a quieter, more responsible footprint.
-            </p>
-          </article>
-          <article>
-            <p className="eyebrow">Habitat care</p>
-            <h3>Grasslands, Panna and Kanha landscapes.</h3>
-            <p>
-              The material also references grassland work and landscape support
-              connected to Panna and Kanha, including areas such as Pathan Jhiriya,
-              Kariwa, Jamun Tola and Madhhwa Dadar.
-            </p>
-          </article>
-        </div>
-      </section>
-    </>
-  );
+        <p className="conservation-species"><strong>Species supported through these programmes</strong><span>Asian elephant, tiger, lion, caracal, one-horned rhinoceros, markhor, otter, leopard, fishing cat, sloth bear, gharial, vulture, wolf, golden jackal, deer and great hornbill.</span></p>
+      </div>
+    </section>
+
+  </div>;
 }

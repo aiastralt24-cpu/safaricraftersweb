@@ -8,7 +8,7 @@ import { Itinerary } from "@/components/Itinerary";
 import { ExpeditionEnquiry } from "@/components/ExpeditionEnquiry";
 import { JsonLd } from "@/components/JsonLd";
 import { expeditionSchema } from "@/lib/structured-data";
-import { expeditions, getExpedition } from "@/lib/data";
+import { expeditions, getDestination, getExpedition } from "@/lib/data";
 import "../../detail.css";
 
 type Props = {
@@ -36,6 +36,17 @@ export default async function ExpeditionDetailPage({ params }: Props) {
   const heroImage = expedition.gallery.find((image, index) => index > 0 && image.src !== expedition.image.src)
     || expedition.gallery.find((image) => image.src !== expedition.image.src)
     || expedition.image;
+  const destinationGallery = expedition.slug === "kanha-wildlife-photography-expedition"
+    ? getDestination("kanha")?.gallery ?? []
+    : [];
+  const seenImages = new Set<string>();
+  const visualGallery = [expedition.image, ...expedition.gallery, ...destinationGallery]
+    .filter((image) => image.src !== heroImage.src)
+    .filter((image) => {
+      if (seenImages.has(image.src)) return false;
+      seenImages.add(image.src);
+      return true;
+    });
   const parsedDeparture = expedition.date ? new Date(expedition.date) : null;
   const departure = parsedDeparture && !Number.isNaN(parsedDeparture.valueOf()) && parsedDeparture >= new Date()
     ? expedition.date
@@ -50,11 +61,14 @@ export default async function ExpeditionDetailPage({ params }: Props) {
         image={heroImage}
         meta={expedition.category}
       />
-      <article className="section detail">
+      <article className="section detail expedition-detail">
         <div className="container detail-grid">
           <div>
             <p className="eyebrow">Photographer-led</p>
-            <EditorialProse text={expedition.intro} className="intro editorial-prose" />
+            <EditorialProse
+              text={[expedition.intro, ...(expedition.body?.slice(0, 3) ?? [])].join("\n\n")}
+              className="intro editorial-prose"
+            />
           </div>
           <aside className="at-glance">
             <h2>At a glance</h2>
@@ -103,20 +117,6 @@ export default async function ExpeditionDetailPage({ params }: Props) {
             </ul>
           </div>
         ) : null}
-        <ExpeditionEnquiry
-          title={expedition.title}
-          slug={expedition.slug}
-          departure={departure}
-          mentor={expedition.mentor}
-          region={expedition.category}
-        />
-        {expedition.body?.length ? (
-          <div className="container detail-copy detail-editorial-copy">
-            {expedition.body.slice(0, 3).map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-        ) : null}
         <Itinerary days={expedition.days} title="Expedition rhythm" />
         {expedition.inclusions?.length || expedition.exclusions?.length ? (
           <div className="container split-lists">
@@ -142,19 +142,25 @@ export default async function ExpeditionDetailPage({ params }: Props) {
             ) : null}
           </div>
         ) : null}
-        {expedition.gallery.length ? (
-          <div className="container detail-section detail-gallery">
-            <p className="eyebrow">Gallery</p>
-            <MediaGallery images={expedition.gallery.filter((image) => image.src !== heroImage.src)} label={`${expedition.title} gallery`} />
-          </div>
+        {visualGallery.length ? (
+          <section className="container detail-section detail-gallery expedition-field-notes" aria-labelledby="expedition-field-notes-title">
+            <header>
+              <div>
+                <p className="eyebrow">Field notes in photographs</p>
+                <h2 className="h2" id="expedition-field-notes-title">A fuller record of the expedition.</h2>
+              </div>
+              <p>Wildlife encounters sit within a larger story of weather, terrain, patience and place.</p>
+            </header>
+            <MediaGallery images={visualGallery} label={`${expedition.title} complete photographic journal`} variant="story" />
+          </section>
         ) : null}
-        <div className="container specialist-callout">
-          <p className="eyebrow">Photo-led safari</p>
-          <h2 className="h2">Join this expedition with {expedition.mentor}.</h2>
-          <Link className="button button-solid" href={`/plan?expedition=${expedition.slug}`}>
-            Join a Photo Expedition
-          </Link>
-        </div>
+        <ExpeditionEnquiry
+          title={expedition.title}
+          slug={expedition.slug}
+          departure={departure}
+          mentor={expedition.mentor}
+          region={expedition.category}
+        />
       </article>
     </>
   );
