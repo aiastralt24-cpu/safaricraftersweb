@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { ArrowUpRight, Check, X } from "lucide-react";
 
 export default function InternationalOrder() {
@@ -8,8 +9,11 @@ export default function InternationalOrder() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [reference, setReference] = useState("");
+  const [mounted, setMounted] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
   const openerRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (!open) return;
@@ -91,7 +95,7 @@ export default function InternationalOrder() {
         </button>
       </div>
 
-      {open ? (
+      {mounted && open ? createPortal(
         <div className="store-international-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
           <section className="store-international-dialog" role="dialog" aria-modal="true" aria-labelledby="international-order-title">
             <button ref={closeRef} className="store-dialog-close" type="button" onClick={close} aria-label="Close international order form"><X aria-hidden="true" size={20} /></button>
@@ -117,7 +121,8 @@ export default function InternationalOrder() {
               </form>
             )}
           </section>
-        </div>
+        </div>,
+        document.body
       ) : null}
     </>
   );
