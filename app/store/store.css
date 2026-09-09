@@ -251,15 +251,16 @@
 
 .store-introduction-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.88fr);
-  gap: clamp(46px, 7vw, 108px);
-  align-items: center;
+  grid-template-columns: minmax(0, 1.16fr) minmax(380px, 0.84fr);
+  gap: clamp(52px, 7vw, 112px);
+  align-items: start;
 }
 
 .store-introduction-media {
   position: relative;
   aspect-ratio: 5 / 4;
   margin: 0;
+  border-radius: 18px;
   overflow: hidden;
   background: #171915;
 }
@@ -326,9 +327,12 @@
 }
 
 .store-introduction h2 {
-  max-width: 8ch;
-  font-size: clamp(3.5rem, 5.6vw, 6.5rem);
+  max-width: 10ch;
+  font-size: clamp(3.5rem, 4.6vw, 5.75rem);
 }
+
+.store-introduction h2 span { display: block; }
+.store-introduction h2 span:first-child { white-space: nowrap; }
 
 .store-prose {
   display: grid;
@@ -766,8 +770,20 @@
 
   .store-introduction-media {
     aspect-ratio: 4 / 3;
-    margin-inline: -14px;
+    margin-inline: 0;
   }
+
+  .store-introduction h2 {
+    font-size: clamp(2.8rem, 12.5vw, 3.75rem);
+  }
+
+  .store-introduction-grid { gap: 0; }
+  .store-introduction-copy { display: contents; }
+  .store-introduction-copy .store-kicker { order: 1; }
+  .store-introduction-copy h2 { order: 2; }
+  .store-introduction-media { order: 3; margin-top: 38px; }
+  .store-introduction-prose { order: 4; margin-top: 38px; }
+  .store-introduction blockquote { order: 5; }
 
   .store-introduction-media figcaption { right: 14px; bottom: 12px; left: 14px; }
 

@@ -140,19 +140,20 @@ export default function StorePage() {
           </figure>
           <div className="store-introduction-copy">
             <p className="store-kicker" data-reveal="rise">Jawai, Western India</p>
-            <h2 id="jawai-title" data-reveal="words">Where the stone remembers.</h2>
+            <h2 id="jawai-title" data-reveal="words">
+              <span>Where the stone</span>
+              <span>remembers.</span>
+            </h2>
             <div className="store-prose store-introduction-prose" data-reveal="rise">
               <p>
-                In Jawai, the earth rises in great shoulders of granite, older than the Himalaya,
-                burnished by wind, heat and time. Rabari herders lead their animals beneath these
-                hills as their families have done for generations. Above them, in caves split by
-                the sun, leopards wait for evening.
+                Jawai rises in ancient shoulders of granite, burnished by heat, wind and time.
+                Rabari herders move beneath these hills as their families have for generations;
+                above them, leopards wait in sun-split caves for evening.
               </p>
               <p>
-                There are few places where the lives of people and predators remain so closely
-                entwined. Over ten years, Kairav Engineer studied not only the leopard, but the
-                terrain, seasons, prey and pastoral communities that shape its world. The result is
-                a portrait of an entire living habitat rather than a single species in isolation.
+                Over ten years, Kairav Engineer followed the whole living system—not only its
+                leopards, but its terrain, seasons, prey and pastoral communities. The book is a
+                portrait of coexistence shaped slowly, and observed with patience.
               </p>
             </div>
             <blockquote data-reveal="rise">
