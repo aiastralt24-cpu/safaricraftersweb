@@ -765,7 +765,7 @@ export function ConceptExperience() {
           <small>{activeJourney.duration}</small>
           <p className="concept-journey-feature-description">{activeJourney.description}</p>
           <Link href={`/journeys/${activeJourney.slug}`}>
-            Enter this journey <ArrowRight size={18} strokeWidth={1.25} />
+            Explore the journey <ArrowRight size={18} strokeWidth={1.25} />
           </Link>
         </article>
 

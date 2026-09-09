@@ -19,14 +19,21 @@
 .conservation-impact-heading .conservation-eyebrow { grid-column:1/-1; margin-bottom:10px; }
 .conservation-impact-heading h2,.conservation-footprint h2 { margin:0; font-family:var(--font-display); font-size:var(--type-h2); font-weight:300; letter-spacing:-.04em; line-height:.94; }
 .conservation-impact-heading>p:last-child { max-width:43ch; margin:0; color:var(--mute); line-height:1.7; }
-.conservation-impact-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:clamp(60px,8vw,108px); border-top:1px solid rgba(var(--rgb-ink),.2); border-left:1px solid rgba(var(--rgb-ink),.2); }
-.conservation-impact-grid div { display:flex; min-height:190px; flex-direction:column; justify-content:space-between; gap:32px; padding:clamp(24px,2.6vw,38px); border-right:1px solid rgba(var(--rgb-ink),.2); border-bottom:1px solid rgba(var(--rgb-ink),.2); }
-.conservation-impact-grid dt { color:var(--c-brass); font-family:var(--font-display); font-size:clamp(2.5rem,3.2vw,4rem); font-weight:300; letter-spacing:-.04em; line-height:1; white-space:nowrap; }
-.conservation-impact-grid dd { max-width:26ch; margin:0; color:#55574f; font-size:var(--type-small); line-height:1.6; }
+.conservation-impact-layers { margin-top:clamp(54px,7vw,92px); }
+.conservation-impact-primary,.conservation-impact-secondary { display:grid; margin:0; border-top:1px solid rgba(var(--rgb-ink),.2); border-left:1px solid rgba(var(--rgb-ink),.2); }
+.conservation-impact-primary { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.conservation-impact-secondary { grid-template-columns:repeat(5,minmax(0,1fr)); border-top:0; }
+.conservation-impact-primary div,.conservation-impact-secondary div { display:flex; flex-direction:column; justify-content:space-between; border-right:1px solid rgba(var(--rgb-ink),.2); border-bottom:1px solid rgba(var(--rgb-ink),.2); }
+.conservation-impact-primary div { min-height:210px; gap:34px; padding:clamp(26px,3vw,44px); }
+.conservation-impact-secondary div { min-height:142px; gap:22px; padding:clamp(20px,2vw,28px); }
+.conservation-impact-primary dt,.conservation-impact-secondary dt { color:var(--c-brass); font-family:var(--font-display); font-weight:300; letter-spacing:-.04em; line-height:1; white-space:nowrap; }
+.conservation-impact-primary dt { font-size:clamp(3rem,4vw,5rem); }
+.conservation-impact-secondary dt { font-size:clamp(1.8rem,2.4vw,2.7rem); }
+.conservation-impact-primary dd,.conservation-impact-secondary dd { max-width:28ch; margin:0; color:#4f514a; font-size:var(--type-small); line-height:1.6; }
 .conservation-records { background:var(--c-forest); color:var(--bone); }
 .conservation-record-heading { display:grid; grid-template-columns:minmax(0,1fr) minmax(300px,.55fr); gap:clamp(48px,8vw,128px); align-items:end; margin-bottom:clamp(70px,9vw,130px); }
 .conservation-record-heading h2 { margin-top:18px; color:var(--bone); }
-.conservation-record-heading>p { max-width:46ch; margin:0; color:rgba(var(--rgb-bone),.66); line-height:1.75; }
+.conservation-record-heading>p { max-width:46ch; margin:0; color:rgba(var(--rgb-bone),.76); line-height:1.7; }
 .conservation-record-list { display:grid; gap:clamp(82px,11vw,170px); }
 .conservation-record { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(340px,.7fr); gap:clamp(44px,8vw,126px); align-items:center; }
 .conservation-record:nth-child(even) { grid-template-columns:minmax(340px,.7fr) minmax(0,1.08fr); }
@@ -39,7 +46,7 @@
 .conservation-record-copy { max-width:590px; }
 .conservation-record-meta { display:flex; gap:24px; border-top:1px solid rgba(var(--rgb-bone),.22); padding-top:16px; color:var(--brass-light); font-size:var(--type-label); font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
 .conservation-record h3 { margin:32px 0 24px; font-family:var(--font-display); font-size:var(--type-h3); font-weight:300; letter-spacing:-.025em; line-height:1; }
-.conservation-record-copy>p { max-width:50ch; margin:0; color:rgba(var(--rgb-bone),.68); line-height:1.75; }
+.conservation-record-copy>p { max-width:50ch; margin:0; color:rgba(var(--rgb-bone),.76); line-height:1.7; }
 .conservation-footprint { margin-top:clamp(110px,15vw,220px); border-top:1px solid rgba(var(--rgb-bone),.22); padding-top:28px; }
 .conservation-footprint h2 { max-width:760px; margin-top:18px; color:var(--bone); }
 .conservation-footprint-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:clamp(52px,7vw,90px); border-top:1px solid rgba(var(--rgb-bone),.18); }
@@ -47,10 +54,10 @@
 .conservation-footprint-grid p:first-child { padding-left:0; }
 .conservation-footprint-grid p:last-child { border-right:0; }
 .conservation-footprint-grid strong,.conservation-species strong { color:var(--brass-light); font-size:var(--type-label); letter-spacing:.14em; text-transform:uppercase; }
-.conservation-footprint-grid span,.conservation-species span { color:rgba(var(--rgb-bone),.68); font-size:var(--type-small); line-height:1.72; }
+.conservation-footprint-grid span,.conservation-species span { color:rgba(var(--rgb-bone),.76); font-size:var(--type-small); line-height:1.7; }
 .conservation-species { display:grid; grid-template-columns:.38fr 1fr; gap:clamp(30px,6vw,92px); margin:0; border-top:1px solid rgba(var(--rgb-bone),.18); border-bottom:1px solid rgba(var(--rgb-bone),.18); padding:32px 0; }
 @keyframes c-hero-in { from { opacity:.55; transform:scale(1.035); } to { opacity:1; transform:none; } }
-@media (prefers-reduced-motion:no-preference) { [data-conservation-reveal] { opacity:0; transform:translateY(26px); transition:opacity 720ms cubic-bezier(.2,0,0,1),transform 720ms cubic-bezier(.2,0,0,1); } [data-conservation-reveal][data-conservation-visible="true"] { opacity:1; transform:none; } }
-@media (max-width:900px) { .conservation-intro-grid,.conservation-impact-heading,.conservation-record-heading,.conservation-record,.conservation-record:nth-child(even) { grid-template-columns:1fr; } .conservation-impact-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .conservation-record:nth-child(even) figure,.conservation-record:nth-child(even) .conservation-record-copy { grid-column:auto; grid-row:auto; } .conservation-record:nth-child(even) figure { order:0; } .conservation-record:nth-child(even) .conservation-record-copy { order:1; } .conservation-record-copy { max-width:720px; } }
-@media (max-width:620px) { .conservation-hero { min-height:78svh; } .conservation-hero>img { object-position:62% center; } .conservation-hero-copy { padding-top:150px; padding-bottom:68px; } .conservation-hero h1 { font-size:clamp(3.5rem,14vw,4.8rem); } .conservation-credit { display:none; } .conservation-intro-copy,.conservation-impact-grid,.conservation-footprint-grid,.conservation-species { grid-template-columns:1fr; } .conservation-impact-grid div { min-height:160px; } .conservation-record-heading { margin-bottom:62px; } .conservation-record-list { gap:80px; } .conservation-record figure { aspect-ratio:4/3; } .conservation-record-meta { align-items:flex-start; } .conservation-footprint-grid p,.conservation-footprint-grid p:first-child { border-right:0; border-bottom:1px solid rgba(var(--rgb-bone),.18); padding:26px 0; } .conservation-species { gap:18px; } }
+@media (prefers-reduced-motion:no-preference) { [data-conservation-reveal] { opacity:0; transform:translateY(16px); transition:opacity 520ms cubic-bezier(.2,0,0,1),transform 520ms cubic-bezier(.2,0,0,1); } [data-conservation-reveal][data-conservation-visible="true"] { opacity:1; transform:none; } }
+@media (max-width:900px) { .conservation-intro-grid,.conservation-impact-heading,.conservation-record-heading,.conservation-record,.conservation-record:nth-child(even) { grid-template-columns:1fr; } .conservation-impact-primary { grid-template-columns:repeat(3,minmax(0,1fr)); } .conservation-impact-secondary { grid-template-columns:repeat(2,minmax(0,1fr)); border-top:0; } .conservation-record:nth-child(even) figure,.conservation-record:nth-child(even) .conservation-record-copy { grid-column:auto; grid-row:auto; } .conservation-record:nth-child(even) figure { order:0; } .conservation-record:nth-child(even) .conservation-record-copy { order:1; } .conservation-record-copy { max-width:720px; } }
+@media (max-width:620px) { .conservation-hero { min-height:78svh; } .conservation-hero>img { object-position:62% center; } .conservation-hero-copy { padding-top:150px; padding-bottom:68px; } .conservation-hero h1 { font-size:clamp(3.5rem,14vw,4.8rem); } .conservation-credit { display:none; } .conservation-intro-copy,.conservation-impact-primary,.conservation-impact-secondary,.conservation-footprint-grid,.conservation-species { grid-template-columns:1fr; } .conservation-impact-primary div { min-height:150px; gap:24px; } .conservation-impact-secondary { border-left:0; } .conservation-impact-secondary div { min-height:auto; display:grid; grid-template-columns:128px minmax(0,1fr); gap:18px; align-items:center; padding:20px 0; border-right:0; } .conservation-impact-secondary dt { font-size:1.85rem; } .conservation-record-heading { margin-bottom:62px; } .conservation-record-list { gap:80px; } .conservation-record figure { aspect-ratio:4/3; } .conservation-record-meta { align-items:flex-start; } .conservation-footprint-grid p,.conservation-footprint-grid p:first-child { border-right:0; border-bottom:1px solid rgba(var(--rgb-bone),.18); padding:26px 0; } .conservation-species { gap:18px; } }
 @media (prefers-reduced-motion:reduce) { .conservation-hero>img,.conservation-record figure img { animation:none; transition:none; } [data-conservation-expand] { transform:none !important; border-radius:10px !important; will-change:auto; } }

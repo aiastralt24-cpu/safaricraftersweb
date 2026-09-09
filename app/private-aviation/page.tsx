@@ -38,7 +38,7 @@ export default function PrivateAviationPage() {
         <div className="container aviation-hero-copy">
           <div>
             <p className="eyebrow">Safari Crafters × Kairamya Air</p>
-            <h1>Private flight.<br /><em>Wild arrival.</em></h1>
+            <h1>Private flight.{" "}<br /><em>Wild arrival.</em></h1>
           </div>
           <div className="aviation-hero-aside">
             <p>Considered air access for remote landscapes—shaped around the safari, never the other way around.</p>
@@ -79,7 +79,7 @@ export default function PrivateAviationPage() {
               more of each day spent where you came to be.
             </p>
             <Link className="aviation-link" href="/plan?experience=private-aviation">
-              Discuss your journey <ArrowUpRight size={16} strokeWidth={1.5} />
+              Begin planning <ArrowUpRight size={16} strokeWidth={1.5} />
             </Link>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function PrivateAviationPage() {
           <div className="aviation-section-heading" data-aviation-reveal>
             <div>
               <p className="eyebrow">Built around the safari</p>
-              <h2>More time where<br />the wild is.</h2>
+              <h2>Air access that<br />earns its place.</h2>
             </div>
             <p>Private air access earns its place when it protects time in the field—linking distant wildlife regions without sacrificing the game drives, light and seasonal encounters that shape the journey.</p>
           </div>
@@ -174,7 +174,7 @@ export default function PrivateAviationPage() {
           <p className="eyebrow">The journey comes first</p>
           <h2>Tell us where you want to spend your time.</h2>
           <p>We will consider whether air access genuinely improves the route and include it only when it earns its place.</p>
-          <Link href="/plan?experience=private-aviation">Begin your private journey <ArrowUpRight size={17} strokeWidth={1.5} /></Link>
+          <Link href="/plan?experience=private-aviation">Begin planning <ArrowUpRight size={17} strokeWidth={1.5} /></Link>
         </div>
       </section>
     </main>

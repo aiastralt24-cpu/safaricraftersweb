@@ -486,6 +486,19 @@
 }
 
 @media (max-width: 560px) {
+  .category-rail {
+    flex-wrap: nowrap;
+    gap: 22px;
+    margin-bottom: 38px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .category-rail::-webkit-scrollbar { display: none; }
+  .category-rail button { flex: 0 0 auto; scroll-snap-align: start; }
+
   .atlas-country-index > div {
     grid-template-columns: 1fr;
   }

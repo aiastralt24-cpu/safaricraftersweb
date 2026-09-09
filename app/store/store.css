@@ -1,6 +1,8 @@
 .store-hero,
 .store-purchase-notes,
+.store-introduction,
 .store-field,
+.store-making,
 .store-quote,
 .store-final {
   --store-ivory: #f1ede4;
@@ -249,8 +251,34 @@
 
 .store-introduction-grid {
   display: grid;
-  grid-template-columns: 0.35fr 1fr;
-  gap: clamp(48px, 8vw, 120px);
+  grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.88fr);
+  gap: clamp(46px, 7vw, 108px);
+  align-items: center;
+}
+
+.store-introduction-media {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  margin: 0;
+  overflow: hidden;
+  background: #171915;
+}
+
+.store-introduction-media img {
+  object-fit: cover;
+  object-position: 58% center;
+  filter: saturate(.78) contrast(1.06) brightness(.86);
+}
+
+.store-introduction-media figcaption {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  left: 18px;
+  z-index: 1;
+  color: rgba(241, 237, 228, .76);
+  font-size: var(--type-small);
+  letter-spacing: .08em;
 }
 
 .store-section-label {
@@ -276,7 +304,7 @@
 }
 
 .store-introduction-copy {
-  max-width: 900px;
+  max-width: 650px;
 }
 
 .store-introduction h2,
@@ -297,6 +325,11 @@
   color: #171915;
 }
 
+.store-introduction h2 {
+  max-width: 8ch;
+  font-size: clamp(3.5rem, 5.6vw, 6.5rem);
+}
+
 .store-prose {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -304,6 +337,12 @@
   margin-top: clamp(38px, 5vw, 62px);
   padding-top: 25px;
   border-top: 1px solid rgba(23, 25, 21, 0.17);
+}
+
+.store-introduction-prose {
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: clamp(30px, 4vw, 46px);
 }
 
 .store-prose p {
@@ -314,17 +353,17 @@
 }
 
 .store-introduction blockquote {
-  max-width: 760px;
-  margin: 52px 0 0;
-  padding-left: 28px;
+  max-width: 18ch;
+  margin: 38px 0 0;
+  padding-left: 22px;
   border-left: 2px solid var(--store-brass);
   color: #30322d;
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3vw, 2.8rem);
-  line-height: 1.08;
+  font-size: clamp(1.55rem, 2.2vw, 2.2rem);
+  line-height: 1.12;
 }
 
-.store-prose p:first-child::first-letter {
+.store-making .store-prose p:first-child::first-letter {
   float: left;
   margin: 7px 10px 0 0;
   color: #171915;
@@ -661,6 +700,10 @@
     gap: 48px;
   }
 
+  .store-introduction-media {
+    aspect-ratio: 16 / 10;
+  }
+
   .store-section-label { max-width: 300px; }
 
   .store-prose {
@@ -720,6 +763,13 @@
   .store-final h2 {
     font-size: clamp(3rem, 14vw, 4.5rem);
   }
+
+  .store-introduction-media {
+    aspect-ratio: 4 / 3;
+    margin-inline: -14px;
+  }
+
+  .store-introduction-media figcaption { right: 14px; bottom: 12px; left: 14px; }
 
   .store-field-grid {
     grid-template-columns: 1fr;

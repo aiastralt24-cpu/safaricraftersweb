@@ -66,7 +66,7 @@ export default async function ExpeditionDetailPage({ params }: Props) {
           <div>
             <p className="eyebrow">Photographer-led</p>
             <EditorialProse
-              text={[expedition.intro, ...(expedition.body?.slice(0, 3) ?? [])].join("\n\n")}
+              text={expedition.intro}
               className="intro editorial-prose"
             />
           </div>

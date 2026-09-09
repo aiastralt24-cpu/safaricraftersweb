@@ -119,7 +119,7 @@ export default async function JourneyDetailPage({ params }: Props) {
               <dt>Indicative investment</dt>
               <dd>{journey.price}</dd>
             </dl>
-            <Link className="at-glance-action" href={`/plan?journey=${journey.slug}`}>Refine this private journey</Link>
+            <Link className="at-glance-action" href={`/plan?journey=${journey.slug}`}>Shape this journey</Link>
           </aside>
         </div>
         {journey.highlights.length ? (
@@ -236,7 +236,7 @@ export default async function JourneyDetailPage({ params }: Props) {
           <p className="eyebrow">Specialist recommendation</p>
           <h2 className="h2">This journey is shaped with {journey.specialist}.</h2>
           <Link className="button button-solid" href={`/plan?journey=${journey.slug}`}>
-            Refine This Journey
+            Begin planning
           </Link>
         </div>
       </article>

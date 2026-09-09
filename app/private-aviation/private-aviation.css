@@ -79,7 +79,7 @@
 @keyframes aviation-hero-arrive { from { opacity: .45; transform: scale(1.025); } to { opacity: 1; transform: scale(1); } }
 @keyframes aviation-route-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @media (prefers-reduced-motion: no-preference) {
-  [data-aviation-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 620ms cubic-bezier(.2,0,0,1), transform 620ms cubic-bezier(.2,0,0,1); }
+  [data-aviation-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 520ms cubic-bezier(.2,0,0,1), transform 520ms cubic-bezier(.2,0,0,1); }
   [data-aviation-reveal][data-aviation-visible="true"] { opacity: 1; transform: none; }
 }
 @media (max-width: 900px) {
@@ -99,7 +99,7 @@
 @media (max-width: 600px) {
   .aviation-hero { padding-right: 16px; padding-left: 16px; }
   .aviation-hero-copy { padding-top: 64px; padding-bottom: 52px; }
-  .aviation-hero-copy h1 { font-size: clamp(3.7rem, 18vw, 5.2rem); }
+  .aviation-hero-copy h1 { max-width: 7.4ch; font-size: clamp(3.25rem, 15vw, 4.5rem); line-height: .92; }
   .aviation-hero-aside { border-left: 0; border-top: 1px solid rgba(var(--rgb-brass-light), .48); padding: 24px 0 0; }
   .aviation-hero-aside a, .aviation-cta a { width: 100%; justify-content: space-between; }
   .aviation-hero-image { aspect-ratio: 4 / 3; }

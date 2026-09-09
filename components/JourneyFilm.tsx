@@ -143,7 +143,7 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
               <div><dt>Best season</dt><dd>{activeJourney.bestMonths}</dd></div>
             </dl>
             <p className="journey-atlas-description">{activeJourney.description}</p>
-            <Link href={`/journeys/${activeJourney.slug}`}>Enter this journey <ArrowRight size={17} strokeWidth={1.25} /></Link>
+            <Link href={`/journeys/${activeJourney.slug}`}>Explore the journey <ArrowRight size={17} strokeWidth={1.25} /></Link>
           </div>
         </article>
 

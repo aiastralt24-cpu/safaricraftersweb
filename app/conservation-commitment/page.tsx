@@ -36,7 +36,7 @@ export default function ConservationCommitmentPage() {
       <div className="conservation-hero-shade" />
       <div className="container conservation-hero-copy">
         <p className="conservation-eyebrow">Safari Crafters × Astral Foundation</p>
-        <h1 id="conservation-title">Conservation,<br /><em>carried quietly.</em></h1>
+        <h1 id="conservation-title">Conservation,{" "}<br /><em>carried quietly.</em></h1>
         <p>Practical support for the landscapes we travel through and the people who protect them.</p>
       </div>
       <p className="conservation-credit">Safari Crafters archive · Ranthambhore</p>
@@ -61,9 +61,14 @@ export default function ConservationCommitmentPage() {
         <h2 id="impact-title">The measure of<br />long-term work.</h2>
         <p>Figures published by Astral Foundation across its forest conservation and climate-resilience programmes in India.</p>
       </div>
-      <dl className="container conservation-impact-grid">
-        {impact.map(([value, label]) => <div key={value} data-conservation-reveal><dt>{value}</dt><dd>{label}</dd></div>)}
-      </dl>
+      <div className="container conservation-impact-layers">
+        <dl className="conservation-impact-primary" aria-label="Headline conservation outcomes" data-conservation-reveal>
+          {impact.slice(0, 3).map(([value, label]) => <div key={value}><dt>{value}</dt><dd>{label}</dd></div>)}
+        </dl>
+        <dl className="conservation-impact-secondary" aria-label="Additional conservation outcomes" data-conservation-reveal>
+          {impact.slice(3).map(([value, label]) => <div key={value}><dt>{value}</dt><dd>{label}</dd></div>)}
+        </dl>
+      </div>
     </section>
 
     <section className="conservation-records conservation-section" aria-labelledby="field-record-title">

@@ -71,7 +71,7 @@ export default function StorePage() {
           <div className="store-hero-copy">
             <p className="store-kicker">Jawai · Rajasthan</p>
             <h1 id="store-title">
-              A wild landscape,
+              A wild landscape,{" "}
               <span>held in print.</span>
             </h1>
             <p className="store-byline">
@@ -128,7 +128,16 @@ export default function StorePage() {
 
       <section className="store-introduction" aria-labelledby="jawai-title">
         <div className="container store-introduction-grid">
-          <p className="store-section-label" data-reveal="rise">The land</p>
+          <figure className="store-introduction-media" data-reveal="image">
+            <Image
+              src="/assets/destinations/jawai/jawai-01.jpg"
+              alt="Two leopards silhouetted on Jawai's granite hills beneath a full moon"
+              fill
+              loading="lazy"
+              sizes="(max-width: 920px) 100vw, 52vw"
+            />
+            <figcaption>Jawai · The granite hills after dusk</figcaption>
+          </figure>
           <div className="store-introduction-copy">
             <p className="store-kicker" data-reveal="rise">Jawai, Western India</p>
             <h2 id="jawai-title" data-reveal="words">Where the stone remembers.</h2>
@@ -147,7 +156,7 @@ export default function StorePage() {
               </p>
             </div>
             <blockquote data-reveal="rise">
-              “The leopard is not hidden here. It is simply living at a rhythm the hurried eye can no longer see.”
+              “The leopard is not hidden here. It moves at the rhythm of the land.”
             </blockquote>
           </div>
         </div>
