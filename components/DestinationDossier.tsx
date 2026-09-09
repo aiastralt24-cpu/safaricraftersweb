@@ -66,7 +66,7 @@ export function DestinationDossier({ destination, intelligence, faqs, pairings }
     </div></section>
 
     <section className="container destination-faq-section"><div><p className="eyebrow">Good to know</p><h2>Question, meet answer.</h2></div><div className="destination-faqs">
-      {faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}
+      {faqs.map((faq) => <details key={faq.question} name="destination-faq"><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}
     </div></section>
 
     {!dedicatedCombos.length && pairings.length ? <section className="container destination-pairings"><header className="destination-editorial-heading"><p className="eyebrow">Keep exploring</p><h2><span>Places in the same</span><span>conversation.</span></h2><p className="destination-pairings-intro">Extend the journey through landscapes that share a natural rhythm, wildlife story or sense of place.</p></header><div className="destination-card-grid">

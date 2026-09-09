@@ -224,7 +224,7 @@ export default async function JourneyDetailPage({ params }: Props) {
           <h2 className="h2">Before we refine the route</h2>
           <div>
             {faqs.map((faq) => (
-              <details key={faq.question}>
+              <details key={faq.question} name="journey-faq">
                 <summary>{faq.question}</summary>
                 <p>{faq.answer}</p>
               </details>
