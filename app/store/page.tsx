@@ -156,10 +156,25 @@ export default function StorePage() {
                 portrait of coexistence shaped slowly, and observed with patience.
               </p>
             </div>
-            <blockquote data-reveal="rise">
-              “The leopard is not hidden here. It moves at the rhythm of the land.”
-            </blockquote>
           </div>
+          <figure className="store-author-note" data-reveal="rise">
+            <figcaption>A note from the author</figcaption>
+            <blockquote>
+              <p>
+                “Jawai is a rare equilibrium where granite hills, wildlife and human presence
+                coexist. The leopards here symbolise balance; they are quiet, assured and deeply
+                rooted in their terrain. Jawai, to me, mirrors the deeper character of India, with
+                its inimitable resilience and restraint. This book is a record of that harmony—a
+                visual and emotional documentation of a place where the human is part of the
+                more-than-human world, without insisting on dominance. Through these pages, I
+                share Jawai as it truly is to me: an unforced and timeless tale of nature.”
+              </p>
+              <footer>
+                <cite>Kairav Engineer</cite>
+                <span>Author and Founder of Safari Crafters</span>
+              </footer>
+            </blockquote>
+          </figure>
         </div>
       </section>
 
