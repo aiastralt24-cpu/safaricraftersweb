@@ -265,6 +265,11 @@
   background: #171915;
 }
 
+[data-store-expand] {
+  transform-origin: 50% 50%;
+  will-change: transform, border-radius;
+}
+
 .store-introduction-media img {
   object-fit: cover;
   object-position: 58% center;
@@ -870,5 +875,11 @@
     opacity: 1;
     transform: none;
     clip-path: none;
+  }
+
+  [data-store-expand] {
+    transform: none !important;
+    border-radius: 18px !important;
+    will-change: auto;
   }
 }

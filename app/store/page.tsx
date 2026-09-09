@@ -128,7 +128,7 @@ export default function StorePage() {
 
       <section className="store-introduction" aria-labelledby="jawai-title">
         <div className="container store-introduction-grid">
-          <figure className="store-introduction-media" data-reveal="image">
+          <figure className="store-introduction-media" data-reveal="image" data-store-expand>
             <Image
               src="/assets/destinations/jawai/jawai-01.jpg"
               alt="Two leopards silhouetted on Jawai's granite hills beneath a full moon"
@@ -193,7 +193,7 @@ export default function StorePage() {
       <section className="store-making" aria-labelledby="making-title">
         <div className="container store-making-grid">
           <figure data-reveal="image">
-            <div className="store-making-image">
+            <div className="store-making-image" data-store-expand>
               <Image
                 src="/assets/store/ghosts-book-interior-lounge.webp"
                 alt="Open Ghosts of the Granite Hills book displayed on a marble table in a quiet lounge"
