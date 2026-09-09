@@ -158,21 +158,32 @@ export default function StorePage() {
             </div>
           </div>
           <figure className="store-author-note" data-reveal="rise">
-            <figcaption>A note from the author</figcaption>
+            <figcaption>
+              <span>A note from the author</span>
+              <span>Jawai · Rajasthan</span>
+            </figcaption>
             <blockquote>
-              <p>
+              <p className="store-author-note-lead">
                 “Jawai is a rare equilibrium where granite hills, wildlife and human presence
-                coexist. The leopards here symbolise balance; they are quiet, assured and deeply
-                rooted in their terrain. Jawai, to me, mirrors the deeper character of India, with
-                its inimitable resilience and restraint. This book is a record of that harmony. It
-                is a visual and emotional documentation of a place where the human is part of the
-                more-than-human world, without insisting on dominance. Through these pages, I
-                share Jawai as it truly is to me: an unforced and timeless tale of nature.”
+                coexist.
               </p>
-              <footer>
-                <cite>Kairav Engineer</cite>
-                <span>Author and Founder of Safari Crafters</span>
-              </footer>
+              <div className="store-author-note-reflection">
+                <p>
+                  The leopards here symbolise balance; they are quiet, assured and deeply rooted
+                  in their terrain. Jawai, to me, mirrors the deeper character of India, with its
+                  inimitable resilience and restraint.
+                </p>
+                <p>
+                  This book is a record of that harmony. It is a visual and emotional documentation
+                  of a place where the human is part of the more-than-human world, without insisting
+                  on dominance. Through these pages, I share Jawai as it truly is to me: an unforced
+                  and timeless tale of nature.”
+                </p>
+                <footer>
+                  <cite>Kairav Engineer</cite>
+                  <span>Author and Founder of Safari Crafters</span>
+                </footer>
+              </div>
             </blockquote>
           </figure>
         </div>
