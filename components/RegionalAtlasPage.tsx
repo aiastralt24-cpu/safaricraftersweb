@@ -30,6 +30,10 @@ export function RegionalAtlasPage({ atlas }: { atlas: RegionalAtlas }) {
   const countries = getCountriesByAtlas(atlas.slug);
   const heroDestination = getDestination(atlas.heroDestinationSlug) || regionDestinations[0] || destinations[0];
   const featured = atlas.featuredDestinationSlugs.map(getDestination).filter(Boolean) as Destination[];
+  const themeDestinations = Array.from(new Set(atlas.themes.flatMap((theme) => theme.destinationSlugs)))
+    .map(getDestination)
+    .filter(Boolean) as Destination[];
+  const themeDestinationColumns = themeDestinations.length >= 7 ? 4 : Math.min(3, themeDestinations.length);
   const destinationTitles = new Set(regionDestinations.map((item) => item.title.toLowerCase()));
   const relatedJourneys = journeys.filter((journey) => journey.destinations.some((name) => destinationTitles.has(name.toLowerCase())));
   const relatedExpeditions = expeditions.filter((expedition) => regionDestinations.some((destination) =>
@@ -60,22 +64,27 @@ export function RegionalAtlasPage({ atlas }: { atlas: RegionalAtlas }) {
                   <p>{theme.label}</p>
                   <h3>{theme.title}</h3>
                   <span>{theme.copy}</span>
-                  <div className="regional-atlas-theme-links">
-                    <span>Explore destinations</span>
-                    {theme.destinationSlugs.map((slug) => {
-                      const destination = getDestination(slug);
-                      return destination ? (
-                        <Link key={slug} href={`/destinations/${slug}`}>
-                          {destination.title}
-                          <ArrowUpRight size={15} strokeWidth={1.4} aria-hidden="true" />
-                        </Link>
-                      ) : null;
-                    })}
-                  </div>
                 </article>
               );
             })}
           </div>
+          <nav className="regional-atlas-theme-directory" aria-labelledby={`${atlas.slug}-theme-destinations`} data-atlas-reveal>
+            <div className="regional-atlas-theme-directory-heading">
+              <p className="eyebrow" id={`${atlas.slug}-theme-destinations`}>Explore destinations</p>
+              <span>{themeDestinations.length} field-led places</span>
+            </div>
+            <div
+              className="regional-atlas-theme-links"
+              style={{ "--atlas-destination-columns": themeDestinationColumns } as CSSProperties}
+            >
+              {themeDestinations.map((destination) => (
+                <Link key={destination.slug} href={`/destinations/${destination.slug}`}>
+                  <span>{destination.title}</span>
+                  <ArrowUpRight size={17} strokeWidth={1.4} aria-hidden="true" />
+                </Link>
+              ))}
+            </div>
+          </nav>
         </section>
 
         <section className="container regional-atlas-section" aria-labelledby={`${atlas.slug}-featured`}>
