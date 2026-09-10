@@ -18,6 +18,7 @@
 .privacy-document p { margin:0 0 24px; }
 .privacy-document ul { display:grid; gap:8px; margin:18px 0 30px; padding-left:22px; }
 .privacy-document a { color:var(--ink); border-bottom:1px solid var(--brass); }
+@media (max-width:1024px) { .privacy-document a[href^="mailto:"] { display:inline-flex; min-height:44px; align-items:center; vertical-align:middle; } }
 .privacy-data-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); margin:46px 0 58px; border-top:1px solid rgba(var(--rgb-ink),.17); border-left:1px solid rgba(var(--rgb-ink),.17); }
 .privacy-data-grid>div { min-height:210px; padding:clamp(24px,3vw,40px); border-right:1px solid rgba(var(--rgb-ink),.17); border-bottom:1px solid rgba(var(--rgb-ink),.17); }
 .privacy-data-grid h3 { margin:0 0 18px; font-size:clamp(1.35rem,1.65vw,1.75rem); }

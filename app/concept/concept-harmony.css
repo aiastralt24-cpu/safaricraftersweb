@@ -48,6 +48,38 @@
 
 .concept-private-aviation-benefits { width: 100%; }
 
+/* Keep the expedition dossier secondary to the photograph. */
+.concept-expedition-calendar .concept-departure-dossier {
+  width: min(380px, 33%);
+  min-height: min(450px, calc(100% - 92px));
+  padding: clamp(32px, 3.1vw, 46px);
+}
+
+.concept-expedition-calendar .concept-departure-dossier > p {
+  margin-bottom: 18px;
+}
+
+.concept-expedition-calendar .concept-departure-dossier h3 {
+  margin-bottom: 24px;
+  font-size: clamp(2.15rem, 1.65rem + 1.15vw, 2.75rem);
+  line-height: 1;
+}
+
+.concept-expedition-calendar .concept-departure-dossier dl {
+  margin-bottom: 26px;
+}
+
+.concept-expedition-calendar .concept-departure-dossier dl > div {
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 16px;
+  padding: 11px 0;
+}
+
+.concept-expedition-calendar .concept-departure-dossier > a {
+  min-height: 50px;
+  padding: 0 18px;
+}
+
 @media (max-width: 760px) {
   .concept-private-aviation-header {
     margin-bottom: 34px;
@@ -59,5 +91,126 @@
   .concept-private-aviation-header h2 {
     font-size: var(--type-h2);
     line-height: .98;
+  }
+}
+
+/* Final mobile collection composition. Kept in the harmony layer so it wins
+   over the legacy rail rules in concept.css without changing desktop layouts. */
+.concept-journey-feature-index .concept-journey-next,
+.concept-departure-index .concept-departure-next { display: none; }
+
+@media (max-width: 720px) {
+  .concept-journey-feature-frame {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .concept-journey-feature-index,
+  .concept-departure-index {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 78px;
+    overflow: hidden;
+    scroll-snap-type: none;
+  }
+
+  .concept-journey-feature-index button:not(.is-active):not(.concept-journey-next),
+  .concept-departure-index button:not(.is-active):not(.concept-departure-next) {
+    display: none;
+  }
+
+  .concept-journey-feature-index button.is-active,
+  .concept-departure-index button.is-active {
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    min-height: 104px;
+    padding: 18px 20px;
+  }
+
+  .concept-journey-feature-index .concept-journey-next,
+  .concept-departure-index .concept-departure-next {
+    display: flex;
+    width: 78px;
+    min-width: 0;
+    min-height: 104px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-left: 1px solid rgba(var(--rgb-soil), .16);
+    padding: 12px 8px;
+    color: var(--brass-dark);
+  }
+
+  .concept-journey-feature-index .concept-journey-next span,
+  .concept-departure-index .concept-departure-next span {
+    font-family: var(--font-body);
+    font-size: .58rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .concept-journey-feature-index .concept-journey-next::before,
+  .concept-departure-index .concept-departure-next::after {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .concept-departure-salon {
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--paper);
+  }
+
+  .concept-departure-salon-image {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 0;
+  }
+
+  .concept-expedition-calendar .concept-departure-dossier {
+    width: 100%;
+    min-height: 0;
+    border-radius: 0;
+    padding: 28px 22px 30px;
+  }
+
+  .concept-expedition-calendar .concept-departure-dossier h3 {
+    margin-bottom: 22px;
+    font-size: clamp(2.15rem, 9.2vw, 2.8rem);
+    line-height: .98;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 980px) {
+  .concept-expedition-calendar .concept-departure-dossier {
+    width: min(360px, 42%);
+    min-height: min(450px, calc(100% - 72px));
+    padding: 30px;
+  }
+
+  .concept-expedition-calendar .concept-departure-dossier h3 {
+    font-size: clamp(2.15rem, 4.2vw, 2.55rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .concept-journey-feature-index,
+  .concept-departure-index {
+    grid-template-columns: minmax(0, 1fr) 68px;
+  }
+
+  .concept-journey-feature-index .concept-journey-next,
+  .concept-departure-index .concept-departure-next {
+    width: 68px;
+  }
+
+  .concept-journey-feature-index .concept-journey-next span,
+  .concept-departure-index .concept-departure-next span {
+    display: none;
   }
 }

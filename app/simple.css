@@ -44,13 +44,22 @@
 
 .founder-leadership-heading {
   display: grid;
-  grid-template-columns: minmax(0, 820px);
-  gap: clamp(32px, 6vw, 84px);
+  grid-template-columns: minmax(0, 760px) minmax(260px, 0.7fr);
+  gap: clamp(36px, 7vw, 96px);
   align-items: end;
 }
 
 .founder-leadership-heading h2 {
   max-width: 760px;
+  margin: 8px 0 0;
+}
+
+.about-leadership-intro {
+  max-width: 500px;
+  margin: 0;
+  color: var(--charcoal);
+  font-size: var(--type-body-lg);
+  line-height: 1.7;
 }
 
 .founder-quote {
@@ -119,6 +128,15 @@
   object-position: 50% 38%;
 }
 
+.founder-portrait-trikansh {
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+}
+
+.founder-portrait-trikansh img {
+  object-position: 50% 45%;
+}
+
 .founder-profiles h3 {
   margin: 8px 0 18px;
   color: var(--ink);
@@ -131,6 +149,80 @@
 .founder-profiles p {
   margin: 0 0 18px;
   max-width: 720px;
+}
+
+.about-principles {
+  background: var(--forest);
+  color: var(--bone);
+}
+
+.about-principles-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(52px, 8vw, 118px);
+  align-items: start;
+}
+
+.about-principles-heading {
+  position: sticky;
+  top: 112px;
+}
+
+.about-principles-heading h2 {
+  max-width: 8ch;
+  margin: 12px 0 28px;
+  color: var(--bone);
+}
+
+.about-principles-heading > p:last-child {
+  max-width: 37ch;
+  margin: 0;
+  color: rgba(var(--rgb-bone), 0.68);
+  font-size: var(--type-body-lg);
+  line-height: 1.75;
+}
+
+.about-principles-list {
+  border-top: var(--rule-fine-light);
+}
+
+.about-principles-list article {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: clamp(22px, 3vw, 42px);
+  border-bottom: var(--rule-fine-light);
+  padding: clamp(34px, 4vw, 54px) 0;
+}
+
+.about-principles-list article > span {
+  padding-top: 5px;
+  color: var(--brass-light);
+  font-size: var(--type-label);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.about-principles-list h3 {
+  max-width: 15ch;
+  margin: 10px 0 20px;
+  color: var(--bone);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.4rem + 2vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.04;
+}
+
+.about-principles-list article p:not(.eyebrow) {
+  max-width: 58ch;
+  margin: 0;
+  color: rgba(var(--rgb-bone), 0.7);
+  font-size: var(--type-body);
+  line-height: 1.8;
+}
+
+.about-principles .brass-link {
+  margin-top: 24px;
+  color: var(--brass-light);
 }
 
 .specialist-list {
@@ -231,7 +323,8 @@
   .founder-portraits article,
   .founder-portraits article:nth-child(even),
   .specialist-list article,
-  .conservation-proof-grid {
+  .conservation-proof-grid,
+  .about-principles-grid {
     grid-template-columns: 1fr;
   }
 
@@ -243,6 +336,18 @@
 
   .founder-portrait {
     min-height: 420px;
+  }
+
+  .founder-portrait-trikansh {
+    min-height: 0;
+  }
+
+  .about-principles-heading {
+    position: static;
+  }
+
+  .about-principles-heading h2 {
+    max-width: 10ch;
   }
 
   .founder-quote {
@@ -259,5 +364,33 @@
 
   .conservation-proof-grid article:last-child {
     border-bottom: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .founder-leadership {
+    gap: 42px;
+  }
+
+  .founder-portraits {
+    gap: 58px;
+  }
+
+  .founder-profiles article {
+    padding-top: 24px;
+  }
+
+  .founder-portrait {
+    min-height: 0;
+    aspect-ratio: 4 / 4.8;
+  }
+
+  .founder-portrait-trikansh {
+    aspect-ratio: 1 / 1;
+  }
+
+  .about-principles-list article {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 16px;
   }
 }

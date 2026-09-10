@@ -224,7 +224,7 @@ const menuItems = [
   },
   {
     key: "guided-bespoke-safaris",
-    label: "Guided Bespoke Safaris",
+    label: "Bespoke Safaris",
     href: "/guided-bespoke-safaris",
     image: guidedSafariMenuImage
   },
@@ -242,7 +242,7 @@ const menuItems = [
   },
   {
     key: "conservation-commitment",
-    label: "Conservation Commitment",
+    label: "Conservation",
     href: "/conservation-commitment",
     image: conservationMenuImage
   },
@@ -298,6 +298,10 @@ export function ConceptExperience() {
   const activeExpedition = filteredExpeditions.find((expedition) => expedition.slug === activeExpeditionSlug) ?? filteredExpeditions[0];
   const featuredDeparture = expeditions.find((expedition) => expedition.slug === featuredDepartureSlug) ?? expeditions[0];
   const activeJourney = homepageJourneys.find((journey) => journey.slug === activeJourneySlug) ?? homepageJourneys[0];
+  const activeJourneyIndex = Math.max(0, homepageJourneys.findIndex((journey) => journey.slug === activeJourney?.slug));
+  const nextJourney = homepageJourneys[(activeJourneyIndex + 1) % homepageJourneys.length];
+  const featuredDepartureIndex = Math.max(0, expeditions.findIndex((expedition) => expedition.slug === featuredDeparture.slug));
+  const nextFeaturedDeparture = expeditions[(featuredDepartureIndex + 1) % expeditions.length];
 
   const showPreviousDestination = () => {
     setActiveDestinationIndex((current) => (current - 1 + destinationStories.length) % destinationStories.length);
@@ -312,9 +316,8 @@ export function ConceptExperience() {
       connection?: { saveData?: boolean; effectiveType?: string };
     }).connection;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const desktop = window.matchMedia("(min-width: 768px)").matches;
     const constrained = connection?.saveData || ["slow-2g", "2g"].includes(connection?.effectiveType || "");
-    setCanPlayHeroVideo(desktop && !reducedMotion && !constrained);
+    setCanPlayHeroVideo(!reducedMotion && !constrained);
   }, []);
 
   useEffect(() => {
@@ -516,6 +519,11 @@ export function ConceptExperience() {
             poster={heroJourney.image.src}
             aria-label={heroJourney.image.alt}
           >
+            <source
+              src="/assets/safari-crafters/safari-crafters-mobile.mp4"
+              media="(max-width: 767px)"
+              type="video/mp4"
+            />
             <source src="/assets/safari-crafters/safari-crafters.mp4" type="video/mp4" />
           </video>
         ) : null}
@@ -775,6 +783,7 @@ export function ConceptExperience() {
             alt={activeJourney.image.alt}
             fill
             sizes="(max-width: 760px) 100vw, 66vw"
+            style={{ objectPosition: activeJourney.image.focalPoint || "center" }}
           />
         </figure>
 
@@ -803,6 +812,17 @@ export function ConceptExperience() {
               <small>{homepageJourneyRailMeta[journey.slug] ?? `${journey.region} · ${journey.duration}`}</small>
             </button>
           ))}
+          {nextJourney ? (
+            <button
+              className="concept-journey-next"
+              type="button"
+              aria-label={`Next journey: ${nextJourney.title}`}
+              onClick={() => setActiveJourneySlug(nextJourney.slug)}
+            >
+              <span>Next</span>
+              <ArrowRight size={17} strokeWidth={1.4} aria-hidden="true" />
+            </button>
+          ) : null}
         </nav>
       </section>
       </div> : null}
@@ -947,6 +967,7 @@ export function ConceptExperience() {
               alt={featuredDeparture.image.alt}
               fill
               sizes="(max-width: 760px) 100vw, 78vw"
+              style={{ objectPosition: featuredDeparture.image.focalPoint || "center" }}
             />
           </figure>
 
@@ -977,6 +998,17 @@ export function ConceptExperience() {
               <small>{expedition.date ?? expedition.bestMonths}</small>
             </button>
           ))}
+          {nextFeaturedDeparture ? (
+            <button
+              className="concept-departure-next"
+              type="button"
+              aria-label={`Next expedition: ${nextFeaturedDeparture.title}`}
+              onClick={() => setFeaturedDepartureSlug(nextFeaturedDeparture.slug)}
+            >
+              <span>Next</span>
+              <ArrowRight size={17} strokeWidth={1.4} aria-hidden="true" />
+            </button>
+          ) : null}
         </nav>
         <div className="concept-expedition-enquiry">
           <p>Looking for a different date or a privately crafted departure?</p>

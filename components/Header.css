@@ -417,6 +417,7 @@
 
 @media (max-width: 720px) {
   .site-header {
+    grid-template-columns: auto 1fr auto;
     gap: 14px;
     padding: calc(18px + env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) 18px max(20px, env(safe-area-inset-left, 0px));
   }
@@ -430,6 +431,10 @@
   }
 
   .header-link {
+    display: none;
+  }
+
+  .header-context {
     display: none;
   }
 

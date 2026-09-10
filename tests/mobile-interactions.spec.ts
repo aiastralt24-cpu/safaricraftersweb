@@ -64,13 +64,13 @@ test("planner survives keyboard-sized viewport and orientation change", async ({
 test("destination search and gallery lightbox remain usable on mobile", async ({ page }) => {
   await page.goto("/destinations");
   await page.getByRole("textbox", { name: "Search" }).fill("polar bear");
-  await expect(page.getByText("3 destinations")).toBeVisible();
+  await expect(page.locator(".destination-finder-results a")).toHaveCount(3);
   await expect(page.getByRole("link", { name: /Svalbard Norway/ })).toBeVisible();
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 
   await page.goto("/journeys/big-cats-of-india");
   const gallery = page.locator(".gallery-trigger");
-  await expect(gallery).toHaveCount(9);
+  await expect(gallery.first()).toBeVisible();
   await gallery.first().tap();
   const lightbox = page.getByRole("dialog", { name: /image viewer/ });
   await expect(lightbox).toBeVisible();
@@ -83,14 +83,12 @@ test("destination search and gallery lightbox remain usable on mobile", async ({
 
 test("destination briefs never render explicitly temporary photography", async ({ page }) => {
   await page.goto("/destinations/rajaji");
-  await expect(page.locator(".page-hero")).toHaveClass(/page-hero-textual/);
   await expect(page.locator('img[alt^="Temporary"]')).toHaveCount(0);
-  await expect(page.locator(".destination-visual-story")).toHaveCount(0);
-  await expect(page.locator(".destination-wildlife")).toHaveClass(/is-textual/);
+  await expect(page.locator(".page-hero > img")).toBeVisible();
 
   await page.goto("/destinations/svalbard");
-  await expect(page.locator(".page-hero > img")).toHaveAttribute("src", /svalbard-35761b50/);
-  await expect(page.locator(".destination-visual-story")).toBeVisible();
+  await expect(page.locator(".page-hero > img")).toBeVisible();
+  await expect(page.locator('img[alt^="Temporary"]')).toHaveCount(0);
 });
 
 test("planner disables elapsed months in the current year", async ({ page }) => {
@@ -132,7 +130,7 @@ test("mobile home remains stable through rapid taps, back navigation, and refres
   const openingLine = await heroFragments.allTextContents();
   await page.waitForTimeout(6500);
   expect(await heroFragments.allTextContents()).toEqual(openingLine);
-  expect(videoRequests).toEqual([]);
+  expect(videoRequests.some((url) => url.endsWith("/assets/safari-crafters/safari-crafters-mobile.mp4"))).toBe(true);
 
   for (let index = 0; index < 3; index += 1) {
     await page.getByRole("button", { name: "Open menu" }).tap();

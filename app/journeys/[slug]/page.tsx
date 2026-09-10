@@ -91,7 +91,7 @@ export default async function JourneyDetailPage({ params }: Props) {
           <div>
             <p className="eyebrow">The journey</p>
             {journey.tagline ? <h2 className="journey-signature-line">{journey.tagline}</h2> : null}
-            <EditorialProse text={journey.intro} className="intro editorial-prose" />
+            <EditorialProse text={journey.intro} className="intro editorial-prose" collapsible />
           </div>
           <aside className="at-glance">
             <h2>At a glance</h2>

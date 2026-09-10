@@ -6,6 +6,7 @@ import { getDedicatedDestinationCombos, getDestination } from "@/lib/data";
 import type { FieldIntelligence } from "@/lib/luxury";
 import { isApprovedEditorialImage } from "@/lib/media";
 import { EditorialProse } from "@/components/EditorialProse";
+import { ExpandableText } from "@/components/ExpandableText";
 import { MediaGallery } from "@/components/MediaGallery";
 import { DestinationMotion } from "@/components/DestinationMotion";
 import { DestinationFieldNotes } from "@/components/DestinationFieldNotes";
@@ -36,7 +37,7 @@ export function DestinationDossier({ destination, intelligence, faqs, pairings }
   return <article className="destination-dossier">
     <DestinationMotion />
     <dl className="destination-facts" aria-label={`${destination.title} essentials`}>
-      <Essential label="Best for" value={destination.bestFor.join(" · ")} />
+      <Essential label="Best for" value={destination.bestFor.join(" · ")} collapsible />
       <Essential label="Best months" value={destination.bestMonths} />
       <Essential label="Ideal duration" value={destination.idealStay || intelligence.idealStay} />
       <Essential label="Getting there" value={destination.gateway || intelligence.airport} />
@@ -44,7 +45,7 @@ export function DestinationDossier({ destination, intelligence, faqs, pairings }
 
     <section className="container destination-opening">
       <div><p className="eyebrow">Introducing {destination.title}</p><h2>{destination.editorial?.openingHeadline || "A landscape with no need to perform."}</h2></div>
-      <EditorialProse text={destination.intro} className="destination-opening-prose" />
+      <EditorialProse text={destination.intro} className="destination-opening-prose" collapsible />
     </section>
 
     <DestinationFieldNotes destination={destination.title} notes={chapters} />
@@ -102,5 +103,7 @@ function DestinationCombos({ destination, combos }: { destination: Destination; 
   </section>;
 }
 
-function Essential({ label, value }: { label: string; value: string }) { return <div><dt>{label}</dt><dd>{value}</dd></div>; }
+function Essential({ label, value, collapsible = false }: { label: string; value: string; collapsible?: boolean }) {
+  return <div><dt>{label}</dt><dd>{collapsible ? <ExpandableText desktopLines={5} mobileLines={4}>{value}</ExpandableText> : value}</dd></div>;
+}
 function RelatedCard({ href, image, meta, title }: { href: string; image: ImageAsset; meta: string; title: string }) { return <article className="destination-related-card"><Link className="destination-related-image" href={href}><Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 100vw, 33vw" /></Link><p>{meta}</p><h3><Link href={href}>{title}</Link></h3></article>; }

@@ -68,6 +68,7 @@ export default async function ExpeditionDetailPage({ params }: Props) {
             <EditorialProse
               text={expedition.intro}
               className="intro editorial-prose"
+              collapsible
             />
           </div>
           <aside className="at-glance">

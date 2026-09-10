@@ -1,0 +1,65 @@
+.root {
+  --expandable-lines: var(--expandable-desktop-lines, 7);
+  min-width: 0;
+}
+
+.content {
+  overflow: hidden;
+  max-height: calc(var(--expandable-lines) * 1lh);
+  transition: max-height 460ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.content.expanded {
+  max-height: var(--expandable-content-height);
+}
+
+.content.unclamped {
+  max-height: none;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 9px;
+  margin-top: 12px;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  padding: 0 0 3px;
+  background: transparent;
+  color: var(--brass-dark);
+  cursor: pointer;
+  font: inherit;
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.button svg {
+  flex: 0 0 auto;
+  transition: transform 320ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.button[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.button:hover,
+.button:focus-visible {
+  color: var(--soil);
+}
+
+@media (max-width: 700px) {
+  .root {
+    --expandable-lines: var(--expandable-mobile-lines, 5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content,
+  .button svg {
+    transition: none;
+  }
+}

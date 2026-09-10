@@ -744,6 +744,14 @@ body:has(.concept-page) .site-header {
   color: var(--espresso);
 }
 
+@media (max-width: 1024px) {
+  .concept-journey-types-grid a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+}
+
 .concept-legacy-ledger {
   margin-top: clamp(58px, 5.5vw, 92px);
   border-top: 1px solid rgba(var(--rgb-brass), 0.34);
@@ -2436,6 +2444,14 @@ body:has(.concept-page) .site-header {
 }
 
 @media (max-width: 720px) {
+  .concept-full-menu {
+    grid-template-areas:
+      "header"
+      "list";
+    grid-template-rows: auto minmax(0, 1fr);
+    overflow: hidden;
+  }
+
   .concept-journey-spread {
     gap: 34px;
     padding: 76px 20px 82px;
@@ -2607,8 +2623,13 @@ body:has(.concept-page) .site-header {
   }
 
   .concept-full-menu-list {
-    grid-auto-rows: minmax(64px, 1fr);
-    padding: 18px 22px;
+    grid-auto-rows: auto;
+    align-content: start;
+    height: auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 10px 20px max(22px, env(safe-area-inset-bottom, 0px));
   }
 
   .concept-menu-row svg,
@@ -2618,14 +2639,15 @@ body:has(.concept-page) .site-header {
 
   .concept-menu-row h3,
   .concept-full-menu-row h2 {
-    font-size: clamp(1.72rem, 8.8vw, 2.6rem);
-    line-height: 0.98;
+    font-size: clamp(1.58rem, 7.8vw, 2.15rem);
+    line-height: 1;
   }
 
   .concept-full-menu-row {
     grid-template-columns: 30px minmax(0, 1fr);
     gap: 12px;
-    padding: 12px 0;
+    min-height: 62px;
+    padding: 10px 0;
   }
 
   .concept-full-menu-row > span {

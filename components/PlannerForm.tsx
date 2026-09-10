@@ -103,6 +103,26 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (submitting) return;
+
+    const firstInvalidStep = requiredStepValidity.findIndex((valid) => !valid);
+    if (firstInvalidStep !== -1) {
+      setStep(firstInvalidStep);
+      setSubmitError("Please complete this step before sending your private brief.");
+      if (firstInvalidStep === 4) {
+        setFieldErrors({
+          ...(!form.name.trim() ? { name: "Please enter your name." } : {}),
+          ...(!/\S+@\S+\.\S+/.test(form.email) ? { email: "Please enter a valid email address." } : {})
+        });
+      }
+      return;
+    }
+
+    if (!form.consent) {
+      setFieldErrors({ consent: "Please confirm your consent before sending the brief." });
+      setSubmitError("");
+      return;
+    }
+
     setSubmitting(true);
     setSubmitError("");
     setFieldErrors({});
@@ -126,14 +146,22 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
     }
   }
 
-  const stepValid = [
+  const requiredStepValidity = [
     Boolean(form.region),
     form.types.length > 0 && Boolean(form.occasion),
     form.experiences.length > 0,
     form.months.length > 0 && Boolean(form.year),
-    Boolean(form.name.trim()) && /\S+@\S+\.\S+/.test(form.email),
-    form.consent
-  ][step];
+    Boolean(form.name.trim()) && /\S+@\S+\.\S+/.test(form.email)
+  ];
+  const allRequiredStepsValid = requiredStepValidity.every(Boolean);
+  const stepValid = step === steps.length - 1
+    ? allRequiredStepsValid && form.consent
+    : requiredStepValidity[step];
+
+  function canNavigateToStep(index: number) {
+    if (index <= step) return true;
+    return requiredStepValidity.slice(0, index).every(Boolean);
+  }
 
   if (submitted) {
     return (
@@ -159,8 +187,10 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
               <button
                 key={item}
                 type="button"
-                aria-label={item}
-                className={index === step ? "active" : ""}
+                aria-label={`Go to ${item}`}
+                aria-current={index === step ? "step" : undefined}
+                className={`${index === step ? "active" : ""}${index < steps.length - 1 && requiredStepValidity[index] ? " completed" : ""}`.trim()}
+                disabled={!canNavigateToStep(index)}
                 onClick={() => setStep(index)}
               />
             ))}
@@ -359,15 +389,42 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
 
           {step === 5 ? (
             <div className="review">
-              <p>
-                <strong>{form.region}</strong> · {form.types.join(", ")}
-              </p>
-              <p>{form.experiences.join(", ")}</p>
-              <p>
-                {form.months.join(", ")} {form.year} · {form.nights}+ nights · {form.travellers} guests
-              </p>
-              <p>{form.occasion} · {form.accommodation} · {form.flexibility}</p>
-              <p>{form.investment} · Contact by {form.contactPreference}</p>
+              <dl className="review-grid">
+                <div>
+                  <dt>Destination</dt>
+                  <dd>{form.region}</dd>
+                </div>
+                <div>
+                  <dt>Journey</dt>
+                  <dd>{form.types.join(", ")} · {form.occasion}</dd>
+                </div>
+                <div>
+                  <dt>Wildlife and interests</dt>
+                  <dd>{form.experiences.join(", ")}</dd>
+                </div>
+                <div>
+                  <dt>Timing</dt>
+                  <dd>{form.months.join(", ")} {form.year} · {form.nights}+ nights · {form.travellers} guests</dd>
+                </div>
+                <div>
+                  <dt>Stay and flexibility</dt>
+                  <dd>{form.accommodation} · {form.flexibility}</dd>
+                </div>
+                <div>
+                  <dt>Investment</dt>
+                  <dd>{form.investment}</dd>
+                </div>
+                <div className="review-contact">
+                  <dt>Contact details</dt>
+                  <dd>
+                    <strong>{form.name}</strong>
+                    <span>{form.email}</span>
+                    {form.phone ? <span>{form.phone}</span> : null}
+                    {form.city ? <span>{form.city}</span> : null}
+                    <span>Preferred contact: {form.contactPreference}</span>
+                  </dd>
+                </div>
+              </dl>
               <label className="consent-field">
                 <input type="checkbox" checked={form.consent} aria-invalid={Boolean(fieldErrors.consent)} aria-describedby={fieldErrors.consent ? "planner-consent-error" : undefined} onChange={(event) => setForm((current) => ({ ...current, consent: event.target.checked }))} />
                 <span>I consent to Safari Crafters using these details to respond to this private travel brief.</span>

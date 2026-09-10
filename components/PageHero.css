@@ -102,5 +102,27 @@
   }
 
   .page-hero-destination { min-height: 78svh; }
-  .page-hero-destination .page-hero-content h1 { font-size: clamp(4rem, 20vw, 6rem); }
+
+  .page-hero-destination .page-hero-content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 150px 20px 84px;
+  }
+
+  .page-hero-destination .page-hero-content h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2.85rem, 14vw, 4.1rem);
+    letter-spacing: -.04em;
+    line-height: .94;
+    overflow-wrap: anywhere;
+  }
+
+  .page-hero-destination .page-hero-content p:last-child {
+    width: 100%;
+    max-width: 32ch;
+    margin-top: 20px;
+    font-size: clamp(1rem, 4.4vw, 1.125rem);
+    line-height: 1.5;
+  }
 }

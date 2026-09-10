@@ -80,7 +80,7 @@ const menuItems = [
   },
   {
     key: "guided-bespoke-safaris",
-    label: "Guided Bespoke Safaris",
+    label: "Bespoke Safaris",
     href: "/guided-bespoke-safaris",
     image: guidedSafariMenuImage
   },
@@ -98,7 +98,7 @@ const menuItems = [
   },
   {
     key: "conservation-commitment",
-    label: "Conservation Commitment",
+    label: "Conservation",
     href: "/conservation-commitment",
     image: conservationMenuImage
   },

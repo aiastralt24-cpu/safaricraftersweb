@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 import type { ImageAsset } from "@/lib/data";
+import { ExpandableText } from "@/components/ExpandableText";
 
 export type DestinationFieldNote = {
   label: string;
@@ -11,21 +12,13 @@ export type DestinationFieldNote = {
   image: ImageAsset;
 };
 
-function excerpt(text: string, wordLimit = 58) {
-  const words = text.trim().split(/\s+/);
-  return words.length > wordLimit ? `${words.slice(0, wordLimit).join(" ")}…` : text;
-}
-
 export function DestinationFieldNotes({ destination, notes }: { destination: string; notes: DestinationFieldNote[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [expanded, setExpanded] = useState(false);
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const active = notes[activeIndex];
-  const isLong = active.copy.trim().split(/\s+/).length > 58;
 
   function selectNote(index: number) {
     setActiveIndex(index);
-    setExpanded(false);
   }
 
   function moveTab(index: number, key: string) {
@@ -72,14 +65,13 @@ export function DestinationFieldNotes({ destination, notes }: { destination: str
           id={`field-note-panel-${activeIndex}`}
           role="tabpanel"
           aria-labelledby={`field-note-tab-${activeIndex}`}
-          key={`${active.label}-${expanded}`}
+          key={active.label}
         >
           <p className="eyebrow">{active.label}</p>
           <h3>{active.title}</h3>
-          <p>{expanded ? active.copy : excerpt(active.copy)}</p>
-          {isLong ? <button type="button" className="destination-field-note-more" onClick={() => setExpanded((value) => !value)} aria-expanded={expanded}>
-            {expanded ? "Show less" : "Read the full note"}
-          </button> : null}
+          <ExpandableText desktopLines={6} mobileLines={5}>
+            <p>{active.copy}</p>
+          </ExpandableText>
         </article>
       </div>
     </div>

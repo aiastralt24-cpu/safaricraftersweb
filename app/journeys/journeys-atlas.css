@@ -329,6 +329,14 @@
   -webkit-line-clamp: 2;
 }
 .journey-atlas-card h3 a { color: inherit; }
+
+@media (max-width: 1024px) {
+  .journey-atlas-card h3 a {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+  }
+}
 .journey-atlas-card-facts {
   display: grid;
   margin-top: 18px;
