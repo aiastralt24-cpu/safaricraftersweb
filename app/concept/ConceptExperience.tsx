@@ -169,6 +169,12 @@ const contactMenuImage: ImageAsset = {
   credit: "Safari Crafters archive"
 };
 
+const guidedSafariMenuImage: ImageAsset = {
+  src: "/assets/safari-crafters/laipikia-001e24e7.jpg",
+  alt: "Black leopard walking through Laikipia",
+  credit: "Safari Crafters archive"
+};
+
 const heroLines = [
   {
     lead: "In pursuit",
@@ -215,6 +221,12 @@ const menuItems = [
     label: "Photo Expeditions",
     href: "/photo-expeditions",
     image: photoExpedition.image
+  },
+  {
+    key: "guided-bespoke-safaris",
+    label: "Guided Bespoke Safaris",
+    href: "/guided-bespoke-safaris",
+    image: guidedSafariMenuImage
   },
   {
     key: "journal",
@@ -670,7 +682,7 @@ export function ConceptExperience() {
               of a professional <em>Safari Crafters</em> guide for the ultimate informed
               experience.
             </p>
-            <Link href="/destinations">Explore</Link>
+            <Link href="/guided-bespoke-safaris">Explore</Link>
           </article>
           <article data-concept-reveal>
             <Image

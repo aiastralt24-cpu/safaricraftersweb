@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/concept",
     "/conservation-commitment",
     "/private-aviation",
+    "/guided-bespoke-safaris",
     "/search",
     "/about",
     "/specialists",

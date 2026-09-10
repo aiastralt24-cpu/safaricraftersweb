@@ -19,6 +19,7 @@ const atlasLinks = [
 
 const travelStyleLinks = [
   { label: "Private Journeys", href: "/journeys" },
+  { label: "Guided Bespoke Safaris", href: "/guided-bespoke-safaris" },
   { label: "Photo Expeditions", href: "/photo-expeditions" },
   { label: "Private Jet Safaris", href: "/private-aviation" },
   { label: "Conservation", href: "/conservation-commitment" }

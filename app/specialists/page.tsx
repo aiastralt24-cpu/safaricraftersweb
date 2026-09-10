@@ -12,9 +12,11 @@ export const metadata: Metadata = {
 };
 
 export default function SpecialistsPage() {
+  const visibleSpecialists = specialists.filter((specialist) => specialist.name !== "Kairav Engineer");
+
   return (
     <>
-      {specialists.filter((specialist) => specialist.name !== "Safari Crafters Field Team").map((specialist) => <JsonLd key={specialist.name} data={personSchema(specialist)} />)}
+      {visibleSpecialists.filter((specialist) => specialist.name !== "Safari Crafters Field Team").map((specialist) => <JsonLd key={specialist.name} data={personSchema(specialist)} />)}
       <PageHero
         title="Named specialists, not anonymous enquiry desks."
         copy="Each journey is shaped by a person who understands the landscape, the season and the guest's reason for travelling."
@@ -23,7 +25,7 @@ export default function SpecialistsPage() {
       />
       <section className="section">
         <div className="container specialist-list">
-          {specialists.map((specialist) => (
+          {visibleSpecialists.map((specialist) => (
             <article key={specialist.name}>
               <div className="image-frame">
                 <img src={specialist.image.src} alt={specialist.image.alt} loading="lazy" />

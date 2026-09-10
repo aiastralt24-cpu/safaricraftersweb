@@ -16,6 +16,7 @@ type PlanPageProps = {
     expedition?: string;
     region?: string;
     specialist?: string;
+    guided?: string;
   }>;
 };
 
@@ -68,8 +69,18 @@ function contextualExperiences(value: string, region: string) {
   return ["Cultural immersion"];
 }
 
-function getInitialContext(params: { journey?: string; destination?: string; expedition?: string; region?: string; specialist?: string }) {
+function getInitialContext(params: { journey?: string; destination?: string; expedition?: string; region?: string; specialist?: string; guided?: string }) {
   const requestedRegion = plannerRegion(params.region);
+  if (params.guided === "true") {
+    return {
+      sourceLabel: "Guided Bespoke Safari",
+      region: requestedRegion || "Surprise me",
+      types: ["Private"],
+      experiences: requestedRegion ? contextualExperiences("wildlife photography", requestedRegion) : [],
+      notes: "I would like to add a dedicated Safari Crafters guide to my private journey.",
+      specialist: params.specialist || "Auto-route"
+    };
+  }
   if (params.journey) {
     const journey = getJourney(params.journey);
     if (journey) {
