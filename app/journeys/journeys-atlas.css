@@ -381,18 +381,16 @@
   .journey-atlas-hero-copy > span { max-width: 28ch; font-size: 1rem; line-height: 1.5; }
   .journey-atlas-collection { padding-right: 20px; padding-bottom: 96px; padding-left: 20px; }
   .journey-atlas-filters {
-    display: flex;
+    display: grid;
     min-height: 0;
-    margin: 0 -20px;
-    padding: 24px 20px;
-    overflow-x: auto;
-    gap: 24px;
-    scrollbar-width: none;
+    margin: 0;
+    padding: 18px 0 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
   }
-  .journey-atlas-filters::-webkit-scrollbar { display: none; }
-  .journey-atlas-filters button { flex: 0 0 auto; }
-  .journey-atlas-filters button::after { bottom: -4px; }
-  .journey-atlas-filters > span { display: none; }
+  .journey-atlas-filters button { min-height: 52px; padding: 0 2px; text-align: left; }
+  .journey-atlas-filters button::after { bottom: 0; }
+  .journey-atlas-filters > span { display: block; grid-column: 1 / -1; grid-row: auto; justify-self: start; margin-top: 12px; }
   .journey-atlas-feature { margin-top: 34px; grid-template-columns: 1fr; }
   .journey-atlas-feature-image { min-height: 350px; }
   .journey-atlas-feature-copy { padding: 36px 24px 40px; }

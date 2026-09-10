@@ -126,6 +126,13 @@ const expeditionLocations: Record<string, string> = {
   "the-pantanal-wetlands": "Pantanal, Brazil"
 };
 
+const expeditionDossierSides: Record<string, "left" | "right"> = {
+  "kanha-wildlife-photography-expedition": "right",
+  "laikipia-black-leopard-expedition": "left",
+  "the-pantanal-wetlands": "right",
+  "svalbard-expedition": "left"
+};
+
 const journalMenuImage: ImageAsset = {
   src: "/assets/safari-crafters/dsc8123-789x1024-1f0b8c48.jpg",
   alt: "Tiger walking toward the camera",
@@ -916,7 +923,11 @@ export function ConceptExperience() {
             View all expeditions <ArrowUpRight size={15} />
           </Link>
         </div>
-        <div className="concept-departure-salon" data-concept-reveal>
+        <div
+          className="concept-departure-salon"
+          data-concept-reveal
+          data-dossier-side={expeditionDossierSides[featuredDeparture.slug] ?? "right"}
+        >
           <figure className="concept-departure-salon-image" data-scroll-expand>
             <Image
               key={featuredDeparture.slug}

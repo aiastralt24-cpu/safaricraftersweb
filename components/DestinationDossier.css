@@ -99,11 +99,12 @@
 .destination-related-image { position: relative; display: block; aspect-ratio: 4/3; overflow: hidden; background: var(--ink); }
 .destination-related-card>p { margin: 20px 0 10px; }
 .destination-related-card h3 { margin: 0; font-family: var(--font-display); font-size: clamp(1.8rem,3vw,3.2rem); font-weight: 300; line-height: 1; }
+.destination-related-card h3 a { display: inline-flex; min-height: 44px; align-items: center; }
 .destination-plan { padding: clamp(90px,12vw,170px) 0; background: var(--forest); color: var(--bone); }
 .destination-plan-inner { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(360px,.9fr); gap: clamp(50px,10vw,150px); align-items: end; }
 .destination-plan h2 { color: var(--bone); font-size: clamp(3.3rem,6vw,6.5rem); }
 .destination-plan-inner>div:last-child { color: rgba(var(--rgb-bone),.72); font-size: 1.05rem; line-height: 1.8; }
-.destination-plan-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; padding-bottom: 9px; border-bottom: 1px solid var(--brass-light); color: var(--brass-light); font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.destination-plan-link { display: inline-flex; min-height:44px; align-items: center; gap: 10px; margin-top: 20px; border-bottom: 1px solid var(--brass-light); color: var(--brass-light); font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
 .destination-faq-section { display: grid; grid-template-columns: minmax(280px,.75fr) minmax(0,1.25fr); gap: clamp(54px,10vw,150px); padding-top: clamp(110px,13vw,180px); padding-bottom: clamp(110px,13vw,180px); }
 .destination-faq-section h2 { font-size: clamp(3.1rem,5vw,5.2rem); }
 .destination-faqs { border-top: var(--rule-fine); }

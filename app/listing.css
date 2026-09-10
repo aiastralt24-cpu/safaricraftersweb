@@ -487,17 +487,15 @@
 
 @media (max-width: 560px) {
   .category-rail {
-    flex-wrap: nowrap;
-    gap: 22px;
-    margin-bottom: 38px;
-    overflow-x: auto;
-    padding-bottom: 2px;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
+    margin-bottom: 30px;
   }
 
-  .category-rail::-webkit-scrollbar { display: none; }
-  .category-rail button { flex: 0 0 auto; scroll-snap-align: start; }
+  .category-rail button { width: 100%; min-height: 52px; padding-inline: 2px; text-align: left; }
+  .category-rail button:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .journal-result-count { margin-top: -14px; }
 
   .atlas-country-index > div {
     grid-template-columns: 1fr;

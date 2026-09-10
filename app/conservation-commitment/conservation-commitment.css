@@ -14,12 +14,12 @@
 .conservation-intro h2,.conservation-record-heading h2 { max-width:900px; margin:0; font-family:var(--font-display); font-size:var(--type-h2); font-weight:300; letter-spacing:-.04em; line-height:.94; }
 .conservation-intro-copy { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(28px,5vw,74px); margin-top:clamp(44px,6vw,82px); }
 .conservation-intro-copy p { max-width:54ch; margin:0; color:var(--mute); font-size:var(--type-body); line-height:1.78; }
-.conservation-impact { padding:clamp(82px,9vw,132px) 0; border-top:1px solid rgba(var(--rgb-ink),.16); background:#ded5c5; }
+.conservation-impact { padding:clamp(72px,7.2vw,108px) 0; border-top:1px solid rgba(var(--rgb-ink),.16); background:#ded5c5; }
 .conservation-impact-heading { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(320px,.55fr); gap:clamp(30px,6vw,96px); align-items:end; }
 .conservation-impact-heading .conservation-eyebrow { grid-column:1/-1; margin-bottom:10px; }
 .conservation-impact-heading h2,.conservation-footprint h2 { margin:0; font-family:var(--font-display); font-size:var(--type-h2); font-weight:300; letter-spacing:-.04em; line-height:.94; }
 .conservation-impact-heading>p:last-child { max-width:43ch; margin:0; color:var(--mute); line-height:1.7; }
-.conservation-impact-layers { margin-top:clamp(54px,7vw,92px); }
+.conservation-impact-layers { margin-top:clamp(46px,5.4vw,72px); }
 .conservation-impact-primary,.conservation-impact-secondary { display:grid; margin:0; border-top:1px solid rgba(var(--rgb-ink),.2); border-left:1px solid rgba(var(--rgb-ink),.2); }
 .conservation-impact-primary { grid-template-columns:repeat(3,minmax(0,1fr)); }
 .conservation-impact-secondary { grid-template-columns:repeat(5,minmax(0,1fr)); border-top:0; }
@@ -29,7 +29,7 @@
 .conservation-impact-primary dt,.conservation-impact-secondary dt { color:var(--c-brass); font-family:var(--font-display); font-weight:300; letter-spacing:-.04em; line-height:1; white-space:nowrap; }
 .conservation-impact-primary dt { font-size:clamp(3rem,4vw,5rem); }
 .conservation-impact-secondary dt { font-size:clamp(1.8rem,2.4vw,2.7rem); }
-.conservation-impact-primary dd,.conservation-impact-secondary dd { max-width:28ch; margin:0; color:#4f514a; font-size:var(--type-small); line-height:1.6; }
+.conservation-impact-primary dd,.conservation-impact-secondary dd { max-width:30ch; margin:0; color:#4f514a; font-size:clamp(.9rem,1vw,1rem); line-height:1.62; }
 .conservation-records { background:var(--c-forest); color:var(--bone); }
 .conservation-record-heading { display:grid; grid-template-columns:minmax(0,1fr) minmax(300px,.55fr); gap:clamp(48px,8vw,128px); align-items:end; margin-bottom:clamp(70px,9vw,130px); }
 .conservation-record-heading h2 { margin-top:18px; color:var(--bone); }

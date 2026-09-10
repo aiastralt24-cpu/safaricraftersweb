@@ -147,7 +147,8 @@ export function Header() {
   const menuRef = useRef<HTMLDivElement>(null);
   const isKnownRoute =
     pathname === "/" || knownRoutePrefixes.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
-  const useSolidHeader = scrolled || !isKnownRoute;
+  const hasLightOpening = pathname.startsWith("/search") || pathname.startsWith("/legal");
+  const useSolidHeader = scrolled || !isKnownRoute || hasLightOpening;
   const isStore = pathname === "/store";
   const sectionLabel = menuItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`))?.label
     ?? (pathname.startsWith("/plan") ? "Private journey planning" : "Safari Crafters");

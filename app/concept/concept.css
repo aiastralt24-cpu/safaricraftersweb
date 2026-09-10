@@ -3884,6 +3884,11 @@ body:has(.concept-page) .site-header {
   transform: translateY(-50%);
 }
 
+.concept-departure-salon[data-dossier-side="left"] .concept-departure-dossier {
+  right: auto;
+  left: clamp(24px, 3vw, 48px);
+}
+
 .concept-departure-dossier > p {
   margin: 0 0 24px;
   color: var(--brass);
