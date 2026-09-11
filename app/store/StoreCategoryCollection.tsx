@@ -31,7 +31,7 @@ export default function StoreCategoryCollection({ category }: { category: StoreC
             <h2 id={`${category.slug}-collection-title`}>{category.collectionHeading}</h2>
           </header>
 
-          <div className="store-product-grid">
+          <div className={`store-product-grid${category.products.length === 1 ? " is-single" : ""}`}>
             {category.products.map((product) => (
               <article className="store-product-card" key={product.slug} data-reveal="rise">
                 <Link className="store-product-card-media" href={`/store/${category.slug}/${product.slug}`} aria-label={`View ${product.title}`}>

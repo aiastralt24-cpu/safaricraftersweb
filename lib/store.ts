@@ -5,8 +5,13 @@ export type StoreProduct = {
   description: string;
   price: string;
   format: string;
+  featured?: boolean;
   purchaseHref?: string;
   image: {
+    src: string;
+    alt: string;
+  };
+  featureImage?: {
     src: string;
     alt: string;
   };
@@ -48,10 +53,15 @@ export const storeCategories: StoreCategory[] = [
           "A decade of fieldwork distilled into 396 pages, tracing the leopards of Jawai, their granite habitat and the lives unfolding around them.",
         price: "₹3,300",
         format: "396-page clothbound hardcover",
+        featured: true,
         purchaseHref: "https://www.store.safaricrafters.com/products/the-ghosts-of-the-granite-hills",
         image: {
           src: "/assets/store/ghosts-book-cover.webp",
           alt: "Red clothbound Ghosts of the Granite Hills book displayed in an interior"
+        },
+        featureImage: {
+          src: "/assets/store/ghosts-of-the-granite-hills-lifestyle.jpg",
+          alt: "Ghosts of the Granite Hills book arranged beside a quiet fireside"
         }
       }
     ]
@@ -64,4 +74,15 @@ export function getStoreCategory(slug: string) {
 
 export function getStoreProduct(categorySlug: string, productSlug: string) {
   return getStoreCategory(categorySlug)?.products.find((product) => product.slug === productSlug);
+}
+
+export function getFeaturedStoreProduct() {
+  for (const category of storeCategories) {
+    const product = category.products.find((item) => item.featured);
+    if (product) return { category, product };
+  }
+
+  const category = storeCategories.find((item) => item.products.length > 0);
+  const product = category?.products[0];
+  return category && product ? { category, product } : undefined;
 }

@@ -97,9 +97,9 @@ export default function StorePage() {
               </div>
               <a className="store-preview-link" href="#book-preview">View inside the book</a>
             </div>
-            <div className="store-hero-facts" aria-label="Book price and edition">
+            <div className="store-hero-facts" aria-label="Book price and format">
               <p><span>Price</span><strong>₹3,300</strong></p>
-              <p><span>Edition</span><strong>Limited to 2,000 copies</strong></p>
+              <p><span>Format</span><strong>Clothbound hardcover</strong></p>
             </div>
           </div>
 
@@ -119,10 +119,10 @@ export default function StorePage() {
         </div>
       </section>
 
-      <section className="store-purchase-notes" aria-label="Edition and purchase information">
+      <section className="store-purchase-notes" aria-label="Book and purchase information">
         <div className="container">
           <dl>
-            <div><dt>Edition</dt><dd>Limited edition of 2,000 copies</dd></div>
+            <div><dt>Pages</dt><dd>396 pages</dd></div>
             <div><dt>Format</dt><dd>396-page clothbound hardcover</dd></div>
             <div><dt>Delivery</dt><dd>Options and charges confirmed at checkout</dd></div>
             <div><dt>Assistance</dt><dd><Link href="/contact">Ask about delivery</Link></dd></div>
@@ -239,7 +239,7 @@ export default function StorePage() {
             <dl className="store-edition-details" data-reveal="rise">
               <div><dt>Author</dt><dd>Kairav Engineer</dd></div>
               <div><dt>Format</dt><dd>396-page clothbound hardcover</dd></div>
-              <div><dt>Edition</dt><dd>Limited edition of 2,000</dd></div>
+              <div><dt>Photography</dt><dd>More than 350 photographs</dd></div>
               <div><dt>Foreword</dt><dd>Jonathan &amp; Angela Scott</dd></div>
             </dl>
             <AcquireEdition className="store-making-cta" label="Purchase the book" />

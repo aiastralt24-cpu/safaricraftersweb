@@ -15,8 +15,6 @@ const heroJourney = journeys[0];
 const featuredDestination = destinations.find((item) => item.slug === "jawai") ?? destinations[0];
 const tigerDestination = destinations.find((item) => item.slug === "bandhavgarh") ?? destinations[0];
 const photoExpedition = expeditions[0];
-const storeProductHref = "https://www.store.safaricrafters.com/products/the-ghosts-of-the-granite-hills";
-
 const journalMenuImage: ImageAsset = {
   src: "/assets/safari-crafters/dsc8123-789x1024-1f0b8c48.jpg",
   alt: "Tiger walking toward the camera",
@@ -37,7 +35,7 @@ const privateAviationMenuImage: ImageAsset = {
 
 const storeMenuImage: ImageAsset = {
   src: "/assets/store/ghosts-of-the-granite-hills-book.jpg",
-  alt: "Ghosts of the Granite Hills red clothbound collector's photobook on granite stone",
+  alt: "Ghosts of the Granite Hills red clothbound photographic book on granite stone",
   credit: "Safari Crafters archive"
 };
 
@@ -163,7 +161,6 @@ export function Header() {
   const hasLightOpening = pathname.startsWith("/search") || pathname.startsWith("/legal");
   const useSolidHeader = scrolled || !isKnownRoute || hasLightOpening;
   const isStore = pathname === "/store" || pathname.startsWith("/store/");
-  const isStoreProduct = pathname.startsWith("/store/books/");
   const sectionLabel = menuItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`))?.label
     ?? (pathname.startsWith("/plan") ? "Private journey planning" : "Safari Crafters");
 
@@ -247,8 +244,8 @@ export function Header() {
       >
         <BrandMark className="wordmark" />
         <span className="header-context" aria-live="polite">{sectionLabel}</span>
-        <Link className="header-cta" href={isStoreProduct ? storeProductHref : isStore ? "/store/books" : "/plan"}>
-          {isStoreProduct ? "Purchase Book" : isStore ? "Browse Books" : "Plan a Journey"}
+        <Link className="header-cta" href={isStore ? "/store#store-categories" : "/plan"}>
+          {isStore ? "Browse Store" : "Plan a Journey"}
         </Link>
         <button
           ref={menuButtonRef}

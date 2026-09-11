@@ -153,7 +153,7 @@ const privateAviationMenuImage: ImageAsset = {
 
 const storeMenuImage: ImageAsset = {
   src: "/assets/store/ghosts-of-the-granite-hills-book.jpg",
-  alt: "Ghosts of the Granite Hills red clothbound collector's photobook on granite stone",
+  alt: "Ghosts of the Granite Hills red clothbound photographic book on granite stone",
   credit: "Safari Crafters archive"
 };
 
