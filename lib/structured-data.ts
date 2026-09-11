@@ -128,6 +128,7 @@ export function productSchema() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Ghosts of the Granite Hills",
+    url: `${siteUrl}/store/books/ghosts-of-the-granite-hills`,
     description: "A decade in the making, Kairav Engineer's 396-page photographic natural history traces the leopards, habitat and inhabitants of Jawai.",
     image: `${siteUrl}/assets/store/ghosts-book-cover.webp`,
     brand: { "@type": "Brand", name: "Safari Crafters" },

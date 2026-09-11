@@ -162,7 +162,8 @@ export function Header() {
     pathname === "/" || knownRoutePrefixes.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
   const hasLightOpening = pathname.startsWith("/search") || pathname.startsWith("/legal");
   const useSolidHeader = scrolled || !isKnownRoute || hasLightOpening;
-  const isStore = pathname === "/store";
+  const isStore = pathname === "/store" || pathname.startsWith("/store/");
+  const isStoreProduct = pathname.startsWith("/store/books/");
   const sectionLabel = menuItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`))?.label
     ?? (pathname.startsWith("/plan") ? "Private journey planning" : "Safari Crafters");
 
@@ -246,8 +247,8 @@ export function Header() {
       >
         <BrandMark className="wordmark" />
         <span className="header-context" aria-live="polite">{sectionLabel}</span>
-        <Link className="header-cta" href={isStore ? storeProductHref : "/plan"}>
-          {isStore ? "Purchase Book" : "Plan a Journey"}
+        <Link className="header-cta" href={isStoreProduct ? storeProductHref : isStore ? "/store/books" : "/plan"}>
+          {isStoreProduct ? "Purchase Book" : isStore ? "Browse Books" : "Plan a Journey"}
         </Link>
         <button
           ref={menuButtonRef}
