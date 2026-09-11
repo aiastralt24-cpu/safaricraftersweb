@@ -32,14 +32,15 @@ export default function StoreCategoryCollection({ category }: { category: StoreC
           </header>
 
           <div className={`store-product-grid${category.products.length === 1 ? " is-single" : ""}`}>
-            {category.products.map((product) => (
+            {category.products.map((product, index) => (
               <article className="store-product-card" key={product.slug} data-reveal="rise">
                 <Link className="store-product-card-media" href={`/store/${category.slug}/${product.slug}`} aria-label={`View ${product.title}`}>
                   <Image
                     src={product.image.src}
                     alt={product.image.alt}
                     fill
-                    loading="lazy"
+                    priority={index === 0}
+                    loading={index === 0 ? undefined : "lazy"}
                     sizes="(max-width: 720px) 100vw, 42vw"
                   />
                 </Link>
