@@ -23,6 +23,80 @@
   color: var(--store-ink);
 }
 
+.store-generic-product {
+  min-height: 100svh;
+  padding: 150px 0 90px;
+  background: var(--store-night);
+  color: var(--store-ivory);
+}
+
+.store-generic-product-grid {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.84fr) minmax(0, 1.16fr);
+  gap: clamp(52px, 9vw, 142px);
+  align-items: center;
+}
+
+.store-generic-product-media {
+  position: relative;
+  width: min(100%, 620px);
+  aspect-ratio: 3 / 4;
+  margin: 0;
+  overflow: hidden;
+  background: #26251f;
+}
+
+.store-generic-product-media img {
+  object-fit: cover;
+}
+
+.store-generic-product-copy {
+  max-width: 720px;
+}
+
+.store-generic-product-copy h1 {
+  margin: 26px 0 0;
+  color: var(--store-ivory);
+  font-family: var(--font-display);
+  font-size: var(--type-display);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+
+.store-generic-product-copy > p:not(.store-kicker) {
+  max-width: 52ch;
+  margin: 30px 0 0;
+  color: rgba(241, 237, 228, 0.72);
+  font-size: 1.04rem;
+  line-height: 1.72;
+}
+
+.store-generic-product-copy dl {
+  margin: 34px 0 0;
+  border-top: 1px solid rgba(241, 237, 228, 0.16);
+}
+
+.store-generic-product-copy dl div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(241, 237, 228, 0.16);
+}
+
+.store-generic-product-copy dt {
+  color: rgba(241, 237, 228, 0.54);
+  font-size: var(--type-label);
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.store-generic-product-copy dd {
+  margin: 0;
+}
+
 .store-breadcrumb {
   display: flex;
   gap: 10px;
@@ -1148,6 +1222,15 @@
 }
 
 @media (max-width: 920px) {
+  .store-generic-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .store-generic-product-media {
+    width: min(100%, 620px);
+    aspect-ratio: 4 / 3;
+  }
+
   .store-collection-hero {
     min-height: auto;
     padding: 122px 0 70px;
@@ -1242,6 +1325,19 @@
 }
 
 @media (max-width: 640px) {
+  .store-generic-product {
+    padding: 124px 0 72px;
+  }
+
+  .store-generic-product-copy h1 {
+    font-size: clamp(3.4rem, 16vw, 5rem);
+  }
+
+  .store-generic-product-copy dl div {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
   .store-collection-hero h1,
   .store-category-hero h1 {
     font-size: clamp(3.8rem, 18vw, 5.3rem);

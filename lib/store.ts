@@ -5,6 +5,7 @@ export type StoreProduct = {
   description: string;
   price: string;
   format: string;
+  purchaseHref?: string;
   image: {
     src: string;
     alt: string;
@@ -43,6 +44,7 @@ export const storeCategories: StoreCategory[] = [
           "A decade of fieldwork distilled into 396 pages, tracing the leopards of Jawai, their granite habitat and the lives unfolding around them.",
         price: "₹3,300",
         format: "396-page clothbound hardcover",
+        purchaseHref: "https://www.store.safaricrafters.com/products/the-ghosts-of-the-granite-hills",
         image: {
           src: "/assets/store/ghosts-book-cover.webp",
           alt: "Red clothbound Ghosts of the Granite Hills book displayed in an interior"
