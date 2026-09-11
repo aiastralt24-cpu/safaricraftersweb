@@ -27,8 +27,8 @@ export default function StoreCategoryCollection({ category }: { category: StoreC
       <section className="store-product-index" aria-labelledby={`${category.slug}-collection-title`}>
         <div className="container">
           <header className="store-product-index-heading" data-reveal="rise">
-            <p className="store-section-label">Available {category.title.toLowerCase()}</p>
-            <h2 id={`${category.slug}-collection-title`}>The {category.title.toLowerCase()} collection.</h2>
+            <p className="store-section-label">{category.availableLabel}</p>
+            <h2 id={`${category.slug}-collection-title`}>{category.collectionHeading}</h2>
           </header>
 
           <div className="store-product-grid">

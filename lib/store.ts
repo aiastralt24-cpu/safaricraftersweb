@@ -17,6 +17,8 @@ export type StoreCategory = {
   title: string;
   eyebrow: string;
   description: string;
+  availableLabel: string;
+  collectionHeading: string;
   image: {
     src: string;
     alt: string;
@@ -31,6 +33,8 @@ export const storeCategories: StoreCategory[] = [
     eyebrow: "Field editions",
     description:
       "Photographic works shaped by long observation, patient fieldcraft and the landscapes that hold each story.",
+    availableLabel: "Available titles",
+    collectionHeading: "The book collection.",
     image: {
       src: "/assets/store/ghosts-of-the-granite-hills-book.jpg",
       alt: "Ghosts of the Granite Hills clothbound book resting on granite"
