@@ -206,6 +206,7 @@ export function ConceptExperience() {
   const [activeExpeditionSlug, setActiveExpeditionSlug] = useState(expeditions[0].slug);
   const [featuredDepartureSlug, setFeaturedDepartureSlug] = useState(expeditions[0].slug);
   const [canPlayHeroVideo, setCanPlayHeroVideo] = useState(false);
+  const [isHeroVideoReady, setIsHeroVideoReady] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const lastScrollYRef = useRef(0);
@@ -413,7 +414,7 @@ export function ConceptExperience() {
         />
         {canPlayHeroVideo ? (
           <video
-            className="concept-hero-media"
+            className={isHeroVideoReady ? "concept-hero-media concept-hero-video is-ready" : "concept-hero-media concept-hero-video"}
             autoPlay
             muted
             loop
@@ -421,6 +422,8 @@ export function ConceptExperience() {
             preload="metadata"
             poster={heroJourney.image.src}
             aria-label={heroJourney.image.alt}
+            onCanPlay={() => setIsHeroVideoReady(true)}
+            onError={() => setCanPlayHeroVideo(false)}
           >
             <source
               src="/assets/safari-crafters/safari-crafters-mobile.mp4"

@@ -95,6 +95,10 @@
 }
 
 /* Simplified homepage hierarchy approved in the cross-device content audit. */
+.concept-hero-poster { z-index: 0; }
+.concept-hero-video { z-index: 0; opacity: 0; transition: opacity 520ms ease; }
+.concept-hero-video.is-ready { opacity: 1; }
+
 .concept-hero-summary {
   max-width: 58ch;
   margin: 24px 0 0 !important;
@@ -186,6 +190,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .concept-hero-video { display: none; }
   .concept-hero-actions a,
   .concept-region-links a { transition: none; }
 }
