@@ -7,11 +7,11 @@ import { useMemo, useState } from "react";
 export type SearchItem = {
   title: string;
   href: string;
-  type: "Journey" | "Destination" | "Photo Expedition" | "Journal";
+  type: "Journey" | "Destination" | "Photo Expedition" | "Journal" | "Store";
   detail?: string;
 };
 
-const categories = ["All", "Journey", "Destination", "Photo Expedition", "Journal"] as const;
+const categories = ["All", "Journey", "Destination", "Photo Expedition", "Journal", "Store"] as const;
 type SearchCategory = (typeof categories)[number];
 
 const categoryLabels: Record<SearchCategory, string> = {
@@ -19,7 +19,8 @@ const categoryLabels: Record<SearchCategory, string> = {
   Journey: "Journeys",
   Destination: "Destinations",
   "Photo Expedition": "Photo expeditions",
-  Journal: "Journal"
+  Journal: "Journal",
+  Store: "Store"
 };
 
 const initialVisible = 6;

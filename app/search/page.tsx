@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 import { destinations, expeditions, journal, journeys } from "@/lib/data";
+import { storeCategories } from "@/lib/store";
 import { SearchIndex, type SearchItem } from "./SearchIndex";
 import "./search.css";
 
 export const metadata: Metadata = {
   title: "Search",
-  description: "Search Safari Crafters journeys, destinations, photo expeditions and journal stories.",
+  description: "Search Safari Crafters journeys, destinations, departures, journal stories and store products.",
   alternates: { canonical: "/search" }
 };
 
@@ -14,7 +15,13 @@ export default function SearchPage() {
     ...journeys.map((item) => ({ title: item.title, href: `/journeys/${item.slug}`, type: "Journey" as const, detail: item.region })),
     ...destinations.map((item) => ({ title: item.title, href: `/destinations/${item.slug}`, type: "Destination" as const, detail: item.country })),
     ...expeditions.map((item) => ({ title: item.title, href: `/photo-expeditions/${item.slug}`, type: "Photo Expedition" as const, detail: item.category })),
-    ...journal.map((item) => ({ title: item.title, href: `/journal/${item.slug}`, type: "Journal" as const, detail: item.category }))
+    ...journal.map((item) => ({ title: item.title, href: `/journal/${item.slug}`, type: "Journal" as const, detail: item.category })),
+    ...storeCategories.flatMap((category) => category.products.map((item) => ({
+      title: item.title,
+      href: `/store/${category.slug}/${item.slug}`,
+      type: "Store" as const,
+      detail: category.title
+    })))
   ];
 
   return (

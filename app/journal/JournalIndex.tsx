@@ -10,6 +10,7 @@ export function JournalIndex({ articles, categories }: { articles: JournalArticl
   );
   const filters = ["All stories", ...availableCategories];
   const [activeCategory, setActiveCategory] = useState(filters[0]);
+  const [visibleCount, setVisibleCount] = useState(6);
   const visibleArticles = useMemo(
     () => activeCategory === "All stories"
       ? articles
@@ -25,7 +26,7 @@ export function JournalIndex({ articles, categories }: { articles: JournalArticl
             className={activeCategory === item ? "is-active" : ""}
             type="button"
             aria-pressed={activeCategory === item}
-            onClick={() => setActiveCategory(item)}
+            onClick={() => { setActiveCategory(item); setVisibleCount(6); }}
             key={item}
           >
             {item}
@@ -36,10 +37,17 @@ export function JournalIndex({ articles, categories }: { articles: JournalArticl
         {visibleArticles.length} {visibleArticles.length === 1 ? "story" : "stories"} · {activeCategory}
       </p>
       <div className="container grid-3 listing-grid">
-        {visibleArticles.map((article) => (
+        {visibleArticles.slice(0, visibleCount).map((article) => (
           <JournalCard key={article.slug} article={article} />
         ))}
       </div>
+      {visibleArticles.length > visibleCount ? (
+        <div className="container journal-load-more">
+          <button className="button" type="button" onClick={() => setVisibleCount((count) => count + 6)}>
+            Load more stories
+          </button>
+        </div>
+      ) : null}
     </>
   );
 }

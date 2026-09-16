@@ -14,9 +14,9 @@ const heroJourney = journeys[0];
 const featuredDestination = destinations.find((item) => item.slug === "jawai") ?? destinations[0];
 const photoExpedition = expeditions[0];
 const featuredGuestNote = testimonials[0];
-const showHomepageGuestNotes = false;
-const showHomepagePrivateAviation = true;
-const showHomepageWildestPlaces = false;
+const showHomepageGuestNotes = true;
+const showHomepagePrivateAviation = false;
+const showHomepageWildestPlaces = true;
 const showHomepageConservation = false;
 const showHomepagePhotographicWorlds = false;
 const showHomepageSpeciesIndex = false;
@@ -139,69 +139,11 @@ const journalMenuImage: ImageAsset = {
   credit: "Safari Crafters archive"
 };
 
-const conservationMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/gallery-1-23-scaled-7f473b1f.jpg",
-  alt: "Red panda on a branch",
-  credit: "Safari Crafters archive"
-};
-
-const privateAviationMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/amer-fort-original-scaled-31b56cd7.jpg",
-  alt: "Amer Fort in Jaipur",
-  credit: "Safari Crafters archive"
-};
-
-const storeMenuImage: ImageAsset = {
-  src: "/assets/store/ghosts-of-the-granite-hills-book.jpg",
-  alt: "Ghosts of the Granite Hills red clothbound photographic book on granite stone",
-  credit: "Safari Crafters archive"
-};
-
-const reviewsMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/gallery-1-23-scaled-7f473b1f.jpg",
-  alt: "Red panda on a branch",
-  credit: "Safari Crafters archive"
-};
-
-const contactMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/dsc8320-a71ff184.jpg",
-  alt: "Rabari elder in Jawai",
-  credit: "Safari Crafters archive"
-};
-
 const guidedSafariMenuImage: ImageAsset = {
   src: "/assets/safari-crafters/laipikia-001e24e7.jpg",
   alt: "Black leopard walking through Laikipia",
   credit: "Safari Crafters archive"
 };
-
-const heroLines = [
-  {
-    lead: "In pursuit",
-    rest: "of",
-    accent: "Stillness."
-  },
-  {
-    lead: "Where rare moments",
-    rest: "unfold",
-    accent: "Beautifully."
-  },
-  {
-    lead: "For sightings",
-    rest: "few ever",
-    accent: "Frame."
-  },
-  {
-    lead: "Luxury beyond",
-    rest: "the",
-    accent: "Trail."
-  },
-  {
-    lead: "Crafted for",
-    rest: "rare",
-    accent: "Encounters."
-  }
-];
 
 const menuItems = [
   {
@@ -217,59 +159,38 @@ const menuItems = [
     image: featuredDestination.image
   },
   {
-    key: "photo-expeditions",
-    label: "Photo Expeditions",
-    href: "/photo-expeditions",
+    key: "scheduled-departures",
+    label: "Scheduled Departures",
+    href: "/scheduled-departures",
     image: photoExpedition.image
   },
   {
     key: "guided-bespoke-safaris",
-    label: "Bespoke Safaris",
+    label: "Travel With A Private Guide",
     href: "/guided-bespoke-safaris",
     image: guidedSafariMenuImage
   },
   {
     key: "journal",
-    label: "The Journal",
+    label: "Journal",
     href: "/journal",
     image: journalMenuImage
-  },
-  {
-    key: "reviews",
-    label: "Guest Notes",
-    href: "/reviews",
-    image: reviewsMenuImage
-  },
-  {
-    key: "conservation-commitment",
-    label: "Conservation",
-    href: "/conservation-commitment",
-    image: conservationMenuImage
-  },
-  {
-    key: "private-aviation",
-    label: "Private Aviation",
-    href: "/private-aviation",
-    image: privateAviationMenuImage
-  },
-  {
-    key: "store",
-    label: "Store",
-    href: "/store",
-    image: storeMenuImage
   },
   {
     key: "about",
     label: "About",
     href: "/about",
     image: specialists[0]?.image ?? heroJourney.image
-  },
-  {
-    key: "contact",
-    label: "Contact Us",
-    href: "/contact",
-    image: contactMenuImage
   }
+];
+
+const utilityLinks = [
+  { label: "Photo Expeditions", href: "/photo-expeditions" },
+  { label: "Guest Notes", href: "/reviews" },
+  { label: "Conservation", href: "/conservation-commitment" },
+  { label: "Private Aviation", href: "/private-aviation" },
+  { label: "Store", href: "/store" },
+  { label: "Contact", href: "/contact" }
 ];
 
 export function ConceptExperience() {
@@ -279,7 +200,6 @@ export function ConceptExperience() {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [navSection, setNavSection] = useState("The wild, considered");
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [activeHeroLine, setActiveHeroLine] = useState(0);
   const [activeDestinationIndex, setActiveDestinationIndex] = useState(0);
   const [activeJourneySlug, setActiveJourneySlug] = useState(homepageJourneys.at(-1)?.slug ?? homepageJourneys[0]?.slug ?? "");
   const [expeditionFilter, setExpeditionFilter] = useState("India");
@@ -318,23 +238,6 @@ export function ConceptExperience() {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const constrained = connection?.saveData || ["slow-2g", "2g"].includes(connection?.effectiveType || "");
     setCanPlayHeroVideo(!reducedMotion && !constrained);
-  }, []);
-
-  useEffect(() => {
-    if (
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-      window.matchMedia("(max-width: 720px)").matches
-    ) {
-      return;
-    }
-
-    const interval = window.setInterval(() => {
-      setActiveHeroLine((current) => (current + 1) % heroLines.length);
-    }, 6200);
-
-    return () => {
-      window.clearInterval(interval);
-    };
   }, []);
 
   useEffect(() => {
@@ -530,16 +433,17 @@ export function ConceptExperience() {
         <div className="concept-hero-shade" />
         <div className="concept-hero-grid">
           <div className="concept-hero-copy">
-            <h1
-              key={heroLines[activeHeroLine].accent}
-              className="concept-hero-line"
-            >
-              <span className="concept-hero-line-main">{heroLines[activeHeroLine].lead}</span>
-              <br />
-              <span className="concept-hero-line-sub">{heroLines[activeHeroLine].rest}</span>
-              {" "}
-              <span className="concept-hero-line-accent">{heroLines[activeHeroLine].accent}</span>
+            <p className="concept-hero-kicker">Private and small-group safaris</p>
+            <h1 className="concept-hero-line">
+              Wildlife journeys,<br /><span className="concept-hero-line-accent">shaped in the field.</span>
             </h1>
+            <p className="concept-hero-summary">
+              Tailor-made safaris, hosted departures and specialist photography journeys across India and the world&apos;s great wildlife landscapes.
+            </p>
+            <div className="concept-hero-actions">
+              <Link href="#ways-to-journey">Find your journey</Link>
+              <Link href="/scheduled-departures">View scheduled departures</Link>
+            </div>
           </div>
           <div className="concept-hero-dossier" hidden>
             <span>Featured route</span>
@@ -610,8 +514,10 @@ export function ConceptExperience() {
             </div>
           </aside>
           <div className="concept-full-menu-footer">
-            <span>Tiger season / November to May</span>
-            <Link href="/plan">Plan a private safari</Link>
+            <nav aria-label="More from Safari Crafters">
+              {utilityLinks.map((item) => <Link href={item.href} key={item.href} onClick={() => setIsMenuOpen(false)}>{item.label}</Link>)}
+            </nav>
+            <Link href="/plan" onClick={() => setIsMenuOpen(false)}>Plan a Safari</Link>
           </div>
         </div>
       </div>
@@ -656,8 +562,8 @@ export function ConceptExperience() {
 
       <section className="concept-journey-types" id="ways-to-journey" aria-labelledby="journey-types-title" data-nav-label="Ways to journey">
         <h2 id="journey-types-title">
-          Give your dream journeys<br />
-          wings <em>and</em> paws.
+          Choose how you<br />
+          want <em>to</em> travel.
         </h2>
         <div className="concept-journey-types-grid">
           <article data-concept-reveal>
@@ -668,13 +574,13 @@ export function ConceptExperience() {
               height={600}
               sizes="(max-width: 720px) 100vw, 33vw"
             />
-            <h3>Private<br />wildlife journeys</h3>
+            <h3>Private<br />tailor-made journeys</h3>
             <p>
               Tailored itineraries across India and select wildlife destinations across
               the world, designed around your interests, season, and preferred duration
               and pace.
             </p>
-            <Link href="/journeys">Explore</Link>
+            <Link href="/journeys">View private journeys</Link>
           </article>
           <article data-concept-reveal>
             <Image
@@ -684,13 +590,12 @@ export function ConceptExperience() {
               height={600}
               sizes="(max-width: 720px) 100vw, 33vw"
             />
-            <h3>Guided<br />bespoke safaris</h3>
+            <h3>Hosted<br />small-group safaris</h3>
             <p>
-              All the goodness of our private wildlife journeys, with the added benefit
-              of a professional <em>Safari Crafters</em> guide for the ultimate informed
-              experience.
+              Fixed-date, host-led journeys for travellers who value informed field access,
+              a carefully selected group and a shared safari rhythm.
             </p>
-            <Link href="/guided-bespoke-safaris">Explore</Link>
+            <Link href="/scheduled-departures">View departures</Link>
           </article>
           <article data-concept-reveal>
             <Image
@@ -706,33 +611,21 @@ export function ConceptExperience() {
               time in the field, expert guidance and the pursuit of a clear photographic
               purpose.
             </p>
-            <Link href="/photo-expeditions">Explore</Link>
+            <Link href="/photo-expeditions">View photo expeditions</Link>
           </article>
         </div>
       </section>
 
       {showHomepageWildestPlaces ? <section className="concept-wildest-places" aria-labelledby="wildest-places-title" data-nav-label="The world’s wildest places">
         <h2 id="wildest-places-title">
-          From India <em>to</em><br />
-          <em>the</em> world&apos;s<br />
-          wildest places.
+          Enter through<br />
+          <em>the</em> landscape.
         </h2>
-        <div className="concept-wildest-places-copy">
-          <p>
-            A wildlife experience relies heavily on choices. Where you stay matters. So
-            does the reserve, the season, the safari zone, the guide, the timing of each
-            drive and the amount of time you spend in the field. These details can make
-            or mar your trip.
-          </p>
-          <p>
-            We bring together our experts&apos; combined wildlife knowledge, photography
-            experience and detailed travel planning to make the right decisions for you,
-            with thought and care.
-          </p>
-          <p>
-            We do not begin with a package and fit you into it. We begin with you,
-            understand what you want from your journey and build everything around you.
-          </p>
+        <div className="concept-wildest-places-copy concept-region-links">
+          <Link href="/destinations/india"><strong>India</strong><span>Tigers, leopards and the Himalaya · October to May</span></Link>
+          <Link href="/destinations/africa"><strong>Africa</strong><span>Big cats, primates and private conservancies · Year-round</span></Link>
+          <Link href="/destinations/americas"><strong>The Americas</strong><span>Jaguars, rainforest and wetlands · Seasonal</span></Link>
+          <Link href="/destinations/arctic-beyond"><strong>Arctic &amp; Beyond</strong><span>Polar wildlife and expedition cruising · April to September</span></Link>
         </div>
       </section> : null}
 

@@ -134,12 +134,25 @@
   text-wrap: balance;
 }
 
-.plan-intro p:last-child {
+.plan-intro .plan-intro-copy {
   max-width: 360px;
   margin-top: 14px;
   color: rgba(var(--rgb-white), 0.68);
   font-size: 0.98rem;
   line-height: 1.45;
+}
+
+.plan-intro .plan-specialist-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-top: 12px;
+  border-bottom: 1px solid rgba(var(--rgb-white), 0.55);
+  color: var(--white);
+  font-size: var(--type-cta);
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 860px) {

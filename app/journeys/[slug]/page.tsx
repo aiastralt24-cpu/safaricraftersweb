@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { MediaGallery } from "@/components/MediaGallery";
 import { Itinerary } from "@/components/Itinerary";
+import { ExpandableText } from "@/components/ExpandableText";
 import { getJourney, journeys } from "@/lib/data";
 import { getJourneyIntelligence } from "@/lib/luxury";
 import { getJourneyFaqs, journeySeo } from "@/lib/content-intelligence";
@@ -181,35 +182,35 @@ export default async function JourneyDetailPage({ params }: Props) {
               <p className="eyebrow">The worlds within</p>
               <h2 className="h2" id="journey-worlds-title">Each landscape changes the story.</h2>
             </header>
-            <div>
+            <ExpandableText desktopLines={8} mobileLines={5}>
               {journey.body.slice(3).map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
-            </div>
+            </ExpandableText>
           </section>
         ) : null}
         <div id="itinerary"><Itinerary days={journey.days} /></div>
         {journey.inclusions?.length || journey.exclusions?.length ? (
           <div className="container split-lists">
             {journey.inclusions?.length ? (
-              <section>
-                <h2 className="h3">Inclusions</h2>
+              <details open>
+                <summary className="h3">Inclusions</summary>
                 <ul>
                   {journey.inclusions.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
-              </section>
+              </details>
             ) : null}
             {journey.exclusions?.length ? (
-              <section>
-                <h2 className="h3">Exclusions</h2>
+              <details>
+                <summary className="h3">Exclusions</summary>
                 <ul>
                   {journey.exclusions.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
-              </section>
+              </details>
             ) : null}
           </div>
         ) : null}

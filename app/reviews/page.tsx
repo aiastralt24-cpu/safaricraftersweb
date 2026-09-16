@@ -64,7 +64,7 @@ export default function ReviewsPage() {
         <div className="container guest-notes-cta">
           <h2 className="h2">Begin a journey worth remembering well.</h2>
           <Link className="button button-solid" href="/plan">
-            Begin a Private Brief
+            Plan a Safari
           </Link>
         </div>
       </section>

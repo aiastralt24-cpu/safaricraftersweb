@@ -116,10 +116,10 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
   return (
     <main className="journey-atlas" aria-label="Private journey collection" ref={atlasRef}>
       <PageHero
-        title="Journeys, composed."
-        copy="Private journeys shaped around your interests, season and preferred pace."
+        title="Private tailor-made journeys."
+        copy="Starting points for a private safari shaped around your wildlife interests, season, preferred duration and pace."
         image={heroJourney.image}
-        meta="Private journey collection"
+        meta="Private and customisable"
       />
 
       <section className="journey-atlas-collection" id="journey-collection" aria-labelledby="journey-collection-title">
@@ -143,7 +143,7 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
               <div><dt>Best season</dt><dd>{activeJourney.bestMonths}</dd></div>
             </dl>
             <p className="journey-atlas-description">{activeJourney.description}</p>
-            <Link href={`/journeys/${activeJourney.slug}`}>Explore the journey <ArrowRight size={17} strokeWidth={1.25} /></Link>
+            <Link href={`/journeys/${activeJourney.slug}`}>View journey <ArrowRight size={17} strokeWidth={1.25} /></Link>
           </div>
         </article>
 
@@ -160,12 +160,12 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
               </button>
               <div className="journey-atlas-card-copy">
                 <h3><Link href={`/journeys/${journey.slug}`}>{journey.title}</Link></h3>
-                <p className="journey-atlas-card-route">{journey.region}</p>
-                <div className="journey-atlas-card-facts">
-                  <span>{cleanDuration(journey.duration)}</span>
-                  <span>{journey.bestMonths}</span>
-                  <span>Customisable</span>
-                </div>
+                <p className="journey-atlas-card-route">{journey.route || journey.region}</p>
+                <dl className="journey-atlas-card-facts">
+                  <div><dt>Duration</dt><dd>{cleanDuration(journey.duration)}</dd></div>
+                  <div><dt>Best season</dt><dd>{journey.bestMonths}</dd></div>
+                  <div><dt>Format</dt><dd>Private · Customisable</dd></div>
+                </dl>
               </div>
             </article>
           ))}

@@ -5,7 +5,7 @@ import "../listing.css";
 import "./journeys-atlas.css";
 
 export const metadata: Metadata = {
-  title: "Private Safari Journey Blueprints",
+  title: "Private Tailor-Made Safari Journeys",
   description: "Private safari journey blueprints for India and Africa, refined around wildlife, season, photography, comfort and unhurried pacing.",
   alternates: { canonical: "/journeys" }
 };

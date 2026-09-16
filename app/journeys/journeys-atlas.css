@@ -346,17 +346,25 @@
   gap: 14px;
   min-height: 66px;
 }
-.journey-atlas-card-facts span {
+.journey-atlas-card-facts div { min-width: 0; }
+.journey-atlas-card-facts dt {
+  margin-bottom: 5px;
+  color: rgba(var(--rgb-soil), .45);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.journey-atlas-card-facts dd {
+  margin: 0;
   color: rgba(var(--rgb-soil), .58);
   font-size: .76rem;
   line-height: 1.45;
 }
-.journey-atlas-card-facts span:first-child,
-.journey-atlas-card-facts span:last-child {
+.journey-atlas-card-facts div:first-child dd,
+.journey-atlas-card-facts div:last-child dd {
   color: var(--brass-dark);
   font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
 }
 .journey-atlas-empty {
   margin: 80px 0 0;

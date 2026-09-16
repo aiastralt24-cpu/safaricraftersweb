@@ -24,6 +24,22 @@
   letter-spacing: .06em;
 }
 
+.expedition-atlas-qualifiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 14px 0 0;
+  color: var(--mute);
+  font-size: var(--type-small);
+  line-height: 1.5;
+}
+
+.expedition-atlas-qualifiers span + span::before {
+  margin-right: 18px;
+  color: var(--brass);
+  content: "·";
+}
+
 @media (max-width: 1120px) {
   .expedition-atlas-selector {
     grid-template-columns: repeat(2, auto) 1fr;

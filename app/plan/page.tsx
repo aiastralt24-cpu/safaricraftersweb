@@ -1,11 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { PlannerForm } from "@/components/PlannerForm";
 import { getDestination, getExpedition, getJourney } from "@/lib/data";
 import "../forms.css";
 
 export const metadata: Metadata = {
-  title: "Plan a Private Safari",
-  description: "Share a discreet private safari brief with Safari Crafters and receive a considered response from a wildlife travel specialist.",
+  title: "Plan a Safari",
+  description: "Share a concise safari brief for a private journey, hosted small-group safari or specialist photo expedition.",
   alternates: { canonical: "/plan" }
 };
 
@@ -17,6 +18,7 @@ type PlanPageProps = {
     region?: string;
     specialist?: string;
     guided?: string;
+    travel?: string;
   }>;
 };
 
@@ -27,9 +29,10 @@ export default async function PlanPage({ searchParams }: PlanPageProps) {
   return (
     <section className="plan-page">
       <div className="container plan-intro">
-        <p className="eyebrow">Private safari brief</p>
-        <h1 className="display">Begin quietly.</h1>
-        <p>Private, precise, specialist-led.</p>
+        <p className="eyebrow">Safari brief</p>
+        <h1 className="display">Begin with how you want to travel.</h1>
+        <p className="plan-intro-copy">About two minutes. Your answers are preserved as you move through the brief.</p>
+        <Link className="plan-specialist-link" href="/contact">Prefer to speak with a specialist?</Link>
       </div>
       <PlannerForm initialContext={initialContext} />
     </section>
@@ -69,13 +72,23 @@ function contextualExperiences(value: string, region: string) {
   return ["Cultural immersion"];
 }
 
-function getInitialContext(params: { journey?: string; destination?: string; expedition?: string; region?: string; specialist?: string; guided?: string }) {
+function getInitialContext(params: { journey?: string; destination?: string; expedition?: string; region?: string; specialist?: string; guided?: string; travel?: string }) {
   const requestedRegion = plannerRegion(params.region);
+  if (params.travel === "hosted-small-group") {
+    return {
+      sourceLabel: "Hosted Small-Group Safaris",
+      region: requestedRegion || "Surprise me",
+      types: ["Hosted Small Group"],
+      experiences: [],
+      notes: "I would like to hear about upcoming hosted small-group safaris.",
+      specialist: params.specialist || "Auto-route"
+    };
+  }
   if (params.guided === "true") {
     return {
-      sourceLabel: "Guided Bespoke Safari",
+      sourceLabel: "Travel With a Private Guide",
       region: requestedRegion || "Surprise me",
-      types: ["Private"],
+      types: ["Private Tailor-Made"],
       experiences: requestedRegion ? contextualExperiences("wildlife photography", requestedRegion) : [],
       notes: "I would like to add a dedicated Safari Crafters guide to my private journey.",
       specialist: params.specialist || "Auto-route"
@@ -88,7 +101,7 @@ function getInitialContext(params: { journey?: string; destination?: string; exp
       return {
         sourceLabel: journey.title,
         region,
-        types: [journey.category.includes("Ultra") ? "Ultra-Luxury" : "Private"],
+        types: ["Private Tailor-Made"],
         experiences: contextualExperiences(`${journey.title} ${journey.wildlifeFocus}`, region),
         notes: `I am interested in ${journey.title}.`,
         specialist: params.specialist || journey.specialist.split(" ")[0]
@@ -102,7 +115,7 @@ function getInitialContext(params: { journey?: string; destination?: string; exp
       return {
         sourceLabel: destination.title,
         region: plannerRegion(destination.continent) || requestedRegion || "Surprise me",
-        types: ["Private"],
+        types: ["Private Tailor-Made"],
         experiences: destinationExperiences(destination),
         notes: destination.status === "concierge"
           ? `I am interested in a private brief for ${destination.title}.`
@@ -119,7 +132,7 @@ function getInitialContext(params: { journey?: string; destination?: string; exp
       return {
         sourceLabel: expedition.title,
         region,
-        types: ["Photo-led"],
+        types: ["Photo Expedition"],
         experiences: contextualExperiences(`${expedition.title} ${expedition.species}`, region),
         notes: `I am interested in ${expedition.title}.`,
         specialist: params.specialist || expedition.mentor.split(" ")[0]

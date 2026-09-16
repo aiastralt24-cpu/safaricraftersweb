@@ -606,7 +606,8 @@
 }
 
 .highlight-list li,
-.split-lists section {
+.split-lists section,
+.split-lists details {
   background: var(--paper);
   border: var(--rule-fine);
   padding: 28px;
@@ -649,9 +650,15 @@
   gap: 24px;
 }
 
-.split-lists h2 {
+.split-lists h2,
+.split-lists summary {
   margin: 0 0 18px;
 }
+
+.split-lists summary { cursor: pointer; list-style: none; }
+.split-lists summary::-webkit-details-marker { display: none; }
+.split-lists summary::after { float: right; color: var(--brass); content: "+"; }
+.split-lists details[open] summary::after { content: "−"; }
 
 .split-lists ul {
   display: grid;

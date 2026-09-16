@@ -33,8 +33,14 @@ export default function ContactPage() {
               forward with care.
             </p>
             <div className="contact-links">
+              <Link className="whatsapp-link" href="/plan">
+                Plan a Safari
+              </Link>
               <Link className="whatsapp-link" href="mailto:hello@safaricrafters.com">
-                hello@safaricrafters.com
+                General Contact
+              </Link>
+              <Link className="whatsapp-link" href="mailto:hello@safaricrafters.com?subject=Existing%20Safari%20Crafters%20booking">
+                Existing Booking
               </Link>
             </div>
             <div className="contact-notes" aria-label="Contact page notes">
@@ -44,7 +50,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <span className="eyebrow">Response</span>
-                <p>Quiet, considered and personal rather than automated.</p>
+                <p>A specialist usually replies within one working day.</p>
               </div>
             </div>
           </div>

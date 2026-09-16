@@ -108,6 +108,9 @@ export function PhotoExpeditionFilm({ expeditions }: { expeditions: Expedition[]
             <dl>
               <div><dt>Duration</dt><dd>{active.duration || `${active.days.length} days`}</dd></div>
               <div><dt>Departure</dt><dd>{departure(active)}</dd></div>
+              <div><dt>Group</dt><dd>{active.groupSize}</dd></div>
+              <div><dt>Leader</dt><dd>{active.mentor}</dd></div>
+              <div><dt>Level</dt><dd>{active.skill}</dd></div>
             </dl>
             <p className="journey-atlas-description">{active.description}</p>
             <Link href={`/photo-expeditions/${active.slug}`}>View this expedition <ArrowRight size={17} strokeWidth={1.25} /></Link>
@@ -133,6 +136,10 @@ export function PhotoExpeditionFilm({ expeditions }: { expeditions: Expedition[]
                   <span>{departure(expedition)}</span>
                   <span>{expedition.groupSize}</span>
                 </div>
+                <p className="expedition-atlas-qualifiers">
+                  <span>Led by {expedition.mentor}</span>
+                  <span>{expedition.skill}</span>
+                </p>
               </div>
             </article>
           ))}

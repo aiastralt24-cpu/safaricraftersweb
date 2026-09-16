@@ -11,7 +11,7 @@ const regions = [
   { name: "Arctic & Beyond", copy: "Expeditionary travel at the edge of the map" },
   { name: "Surprise me", copy: "Let our specialists recommend the right geography" }
 ];
-const journeyTypes = ["Private", "Family", "Conservation", "Ultra-Luxury", "Small Group", "Photo-led"];
+const journeyTypes = ["Private Tailor-Made", "Hosted Small Group", "Photo Expedition", "Not Sure"];
 const experiencesByRegion: Record<string, string[]> = {
   India: ["Tigers", "Leopards", "Birdlife", "Photography hides", "Walking safaris", "Cultural immersion", "Conservation work", "Family-friendly camps"],
   Africa: ["Big Cats of Africa", "Great apes", "Birdlife", "Photography hides", "Walking safaris", "Cultural immersion", "Conservation work", "Family-friendly camps"],
@@ -50,7 +50,7 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
   const [enquiryResult, setEnquiryResult] = useState<{ enquiryId: string; specialist: string } | null>(null);
   const [form, setForm] = useState({
     region: initialRegion,
-    types: initialContext?.types || ["Private"],
+    types: initialContext?.types || [],
     experiences: initialExperiences,
     months: [defaultTravelMonth],
     year: String(currentYear),
@@ -72,8 +72,8 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
 
   const steps = useMemo(
     () => [
+      "How would you like to travel?",
       "Where shall we begin?",
-      "What kind of journey?",
       "What should the wild hold?",
       "When and how long?",
       "Your details",
@@ -100,6 +100,10 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
     }));
   }
 
+  function selectJourneyType(value: string) {
+    setForm((current) => ({ ...current, types: [value] }));
+  }
+
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (submitting) return;
@@ -107,7 +111,7 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
     const firstInvalidStep = requiredStepValidity.findIndex((valid) => !valid);
     if (firstInvalidStep !== -1) {
       setStep(firstInvalidStep);
-      setSubmitError("Please complete this step before sending your private brief.");
+      setSubmitError("Please complete this step before sending your safari brief.");
       if (firstInvalidStep === 4) {
         setFieldErrors({
           ...(!form.name.trim() ? { name: "Please enter your name." } : {}),
@@ -147,8 +151,8 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
   }
 
   const requiredStepValidity = [
-    Boolean(form.region),
     form.types.length > 0 && Boolean(form.occasion),
+    Boolean(form.region),
     form.experiences.length > 0,
     form.months.length > 0 && Boolean(form.year),
     Boolean(form.name.trim()) && /\S+@\S+\.\S+/.test(form.email)
@@ -169,7 +173,7 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
         <Check size={36} />
         <h2 className="h2">Your brief has been received.</h2>
         <p>{enquiryResult?.specialist || "A Safari Crafters specialist"} will respond with considered next steps.</p>
-        {enquiryResult?.enquiryId ? <p className="enquiry-reference">Private brief reference: {enquiryResult.enquiryId}</p> : null}
+        {enquiryResult?.enquiryId ? <p className="enquiry-reference">Safari brief reference: {enquiryResult.enquiryId}</p> : null}
       </section>
     );
   }
@@ -179,8 +183,8 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
       <div className="planner-shell">
         <aside className="planner-note" aria-label="Planner context">
           <div>
-            <p className="eyebrow">Private concierge</p>
-            <h2 className="serif">Private safari concierge.</h2>
+            <p className="eyebrow">Safari concierge</p>
+            <h2 className="serif">One brief, routed to the right specialist.</h2>
           </div>
           <div className="planner-dots" aria-label={`Step ${step + 1} of ${steps.length}`}>
             {steps.map((item, index) => (
@@ -207,6 +211,18 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
           <h2 className="h2">{steps[step]}</h2>
 
           {step === 0 ? (
+            <>
+              <ChipGroup values={journeyTypes} selected={form.types} onToggle={selectJourneyType} />
+              <label className="field-row planner-select">
+                Travel occasion
+                <select value={form.occasion} onChange={(event) => setForm((current) => ({ ...current, occasion: event.target.value }))}>
+                  {occasions.map((occasion) => <option key={occasion}>{occasion}</option>)}
+                </select>
+              </label>
+            </>
+          ) : null}
+
+          {step === 1 ? (
             <div className="choice-grid region-choice-grid">
               {regions.map((region) => (
                 <button
@@ -223,18 +239,6 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
             </div>
           ) : null}
 
-          {step === 1 ? (
-            <>
-              <ChipGroup values={journeyTypes} selected={form.types} onToggle={(value) => toggle("types", value)} />
-              <label className="field-row planner-select">
-                Travel occasion
-                <select value={form.occasion} onChange={(event) => setForm((current) => ({ ...current, occasion: event.target.value }))}>
-                  {occasions.map((occasion) => <option key={occasion}>{occasion}</option>)}
-                </select>
-              </label>
-            </>
-          ) : null}
-
           {step === 2 ? (
             <>
               <ChipGroup
@@ -243,7 +247,7 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
                 onToggle={(value) => toggle("experiences", value)}
               />
               <label className="wide quiet-notes">
-                Private brief
+                Safari brief
                 <textarea
                   value={form.notes}
                   placeholder="Wildlife priorities, privacy needs, lodge style, aviation, family requirements or anything we should know."
@@ -427,7 +431,7 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
               </dl>
               <label className="consent-field">
                 <input type="checkbox" checked={form.consent} aria-invalid={Boolean(fieldErrors.consent)} aria-describedby={fieldErrors.consent ? "planner-consent-error" : undefined} onChange={(event) => setForm((current) => ({ ...current, consent: event.target.checked }))} />
-                <span>I consent to Safari Crafters using these details to respond to this private travel brief.</span>
+                <span>I consent to Safari Crafters using these details to respond to this safari brief.</span>
               </label>
               {fieldErrors.consent ? <span className="field-error" id="planner-consent-error">{fieldErrors.consent}</span> : null}
             </div>
