@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/journeys",
     "/destinations",
     "/photo-expeditions",
-    "/scheduled-departures",
     "/journal",
     "/reviews",
     "/store",

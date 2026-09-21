@@ -13,10 +13,41 @@ import "./Header.css";
 
 const heroJourney = journeys[0];
 const featuredDestination = destinations.find((item) => item.slug === "jawai") ?? destinations[0];
+const tigerDestination = destinations.find((item) => item.slug === "bandhavgarh") ?? destinations[0];
 const photoExpedition = expeditions[0];
 const journalMenuImage: ImageAsset = {
   src: "/assets/safari-crafters/dsc8123-789x1024-1f0b8c48.jpg",
   alt: "Tiger walking toward the camera",
+  credit: "Safari Crafters archive"
+};
+
+const conservationMenuImage: ImageAsset = {
+  src: "/assets/safari-crafters/gallery-1-23-scaled-7f473b1f.jpg",
+  alt: "Red panda on a branch",
+  credit: "Safari Crafters archive"
+};
+
+const privateAviationMenuImage: ImageAsset = {
+  src: "/assets/safari-crafters/amer-fort-original-scaled-31b56cd7.jpg",
+  alt: "Amer Fort in Jaipur",
+  credit: "Safari Crafters archive"
+};
+
+const storeMenuImage: ImageAsset = {
+  src: "/assets/store/ghosts-of-the-granite-hills-book.jpg",
+  alt: "Ghosts of the Granite Hills red clothbound photographic book on granite stone",
+  credit: "Safari Crafters archive"
+};
+
+const contactMenuImage: ImageAsset = {
+  src: "/assets/safari-crafters/dsc8320-a71ff184.jpg",
+  alt: "Rabari elder in Jawai",
+  credit: "Safari Crafters archive"
+};
+
+const reviewsMenuImage: ImageAsset = {
+  src: "/assets/safari-crafters/gallery-1-23-scaled-7f473b1f.jpg",
+  alt: "Red panda on a branch",
   credit: "Safari Crafters archive"
 };
 
@@ -40,38 +71,59 @@ const menuItems = [
     image: featuredDestination.image
   },
   {
-    key: "scheduled-departures",
-    label: "Scheduled Departures",
-    href: "/scheduled-departures",
+    key: "photo-expeditions",
+    label: "Photo Expeditions",
+    href: "/photo-expeditions",
     image: photoExpedition.image
   },
   {
     key: "guided-bespoke-safaris",
-    label: "Travel With A Private Guide",
+    label: "Bespoke Safaris",
     href: "/guided-bespoke-safaris",
     image: guidedSafariMenuImage
   },
   {
     key: "journal",
-    label: "Journal",
+    label: "The Journal",
     href: "/journal",
     image: journalMenuImage
+  },
+  {
+    key: "reviews",
+    label: "Guest Notes",
+    href: "/reviews",
+    image: reviewsMenuImage
+  },
+  {
+    key: "conservation-commitment",
+    label: "Conservation",
+    href: "/conservation-commitment",
+    image: conservationMenuImage
+  },
+  {
+    key: "private-aviation",
+    label: "Private Aviation",
+    href: "/private-aviation",
+    image: privateAviationMenuImage
+  },
+  {
+    key: "store",
+    label: "Store",
+    href: "/store",
+    image: storeMenuImage
   },
   {
     key: "about",
     label: "About",
     href: "/about",
     image: specialists[0]?.image ?? heroJourney.image
+  },
+  {
+    key: "contact",
+    label: "Contact Us",
+    href: "/contact",
+    image: contactMenuImage
   }
-];
-
-const utilityLinks = [
-  { label: "Photo Expeditions", href: "/photo-expeditions" },
-  { label: "Guest Notes", href: "/reviews" },
-  { label: "Conservation", href: "/conservation-commitment" },
-  { label: "Private Aviation", href: "/private-aviation" },
-  { label: "Store", href: "/store" },
-  { label: "Contact", href: "/contact" }
 ];
 
 const knownRoutePrefixes = [
@@ -90,7 +142,6 @@ const knownRoutePrefixes = [
   "/private-aviation",
   "/reviews",
   "/search",
-  "/scheduled-departures",
   "/specialists",
   "/store",
   "/studio"
@@ -111,8 +162,7 @@ export function Header() {
   const useSolidHeader = scrolled || !isKnownRoute || hasLightOpening;
   const isStore = pathname === "/store" || pathname.startsWith("/store/");
   const sectionLabel = menuItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`))?.label
-    ?? utilityLinks.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`))?.label
-    ?? (pathname.startsWith("/plan") ? "Safari planning" : "Safari Crafters");
+    ?? (pathname.startsWith("/plan") ? "Private journey planning" : "Safari Crafters");
 
   useEffect(() => {
     let previousY = window.scrollY;
@@ -263,12 +313,8 @@ export function Header() {
             </div>
           </aside>
           <div className="site-full-menu-footer">
-            <nav aria-label="More from Safari Crafters">
-              {utilityLinks.map((item) => (
-                <Link href={item.href} key={item.href} onClick={() => setOpen(false)}>{item.label}</Link>
-              ))}
-            </nav>
-            <Link href="/plan" onClick={() => setOpen(false)}>Plan a Safari</Link>
+            <span>Tiger season / November to May</span>
+            <Link href="/plan">Plan a private safari</Link>
           </div>
         </div>
       </div>

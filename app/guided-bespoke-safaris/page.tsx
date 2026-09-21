@@ -9,11 +9,11 @@ import "./guided-bespoke-safaris.css";
 const showSpecialistsCta = false;
 
 export const metadata: Metadata = {
-  title: "Travel With a Private Guide",
+  title: "Guided Bespoke Safaris",
   description: "Add an experienced Safari Crafters guide to a private wildlife journey for deeper field knowledge, thoughtful pacing and photographic guidance.",
   alternates: { canonical: "/guided-bespoke-safaris" },
   openGraph: {
-    title: "Travel With a Private Guide | Safari Crafters",
+    title: "Guided Bespoke Safaris | Safari Crafters",
     description: "Private wildlife journeys shaped by field knowledge, thoughtful pacing and a dedicated Safari Crafters guide.",
     images: [{
       url: "/assets/safari-crafters/laipikia-001e24e7.jpg",
@@ -55,7 +55,7 @@ export default function GuidedBespokeSafarisPage() {
 
       <section className="guided-hero" aria-labelledby="guided-hero-title">
         <div className="guided-hero-copy">
-          <p className="eyebrow">Travel with a private guide</p>
+          <p className="eyebrow">Guided bespoke safaris</p>
           <h1 id="guided-hero-title">The field,<br /><em>read with you.</em></h1>
           <p>
             Add a professional Safari Crafters guide to your private wildlife journey for

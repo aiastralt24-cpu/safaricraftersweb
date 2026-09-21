@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { ExpandableText } from "@/components/ExpandableText";
 import { AboutMotion } from "./AboutMotion";
 import "../simple.css";
 
@@ -70,20 +69,18 @@ export default function AboutPage() {
               <div>
                 <p className="eyebrow">Kairav Engineer</p>
                 <h3>Founder</h3>
-                <ExpandableText desktopLines={7} mobileLines={5}>
-                  <p>
-                    Kairav Engineer is an Executive Director at Astral Limited, an author, and a
-                    wildlife photographer. His long-term work in landscapes such as Ranthambore
-                    and Jawai is shaped by years of observation and an evolving understanding of
-                    animal behaviour.
-                  </p>
-                  <p>
-                    His conservation work includes habitat strengthening, water restoration,
-                    anti-poaching preparedness and improved infrastructure for forest guards in
-                    landscapes including Ranthambore, Bandhavgarh, Pench, Satpura, Kanha and
-                    Kaziranga.
-                  </p>
-                </ExpandableText>
+                <p>
+                  Kairav Engineer is an Executive Director at Astral Limited, an author, and a
+                  wildlife photographer. His long-term work in landscapes such as Ranthambore
+                  and Jawai is shaped by years of observation and an evolving understanding of
+                  animal behaviour.
+                </p>
+                <p>
+                  His conservation work includes habitat strengthening, water restoration,
+                  anti-poaching preparedness and improved infrastructure for forest guards in
+                  landscapes including Ranthambore, Bandhavgarh, Pench, Satpura, Kanha and
+                  Kaziranga.
+                </p>
               </div>
             </article>
             <article data-about-profile>
@@ -93,20 +90,18 @@ export default function AboutPage() {
               <div>
                 <p className="eyebrow">Gaurav Ramnarayanan</p>
                 <h3>Chief Operating Officer</h3>
-                <ExpandableText desktopLines={7} mobileLines={5}>
-                  <p>
-                    Introduced to photography at age three through a camera gifted by his father,
-                    Gaurav Ramnarayanan spent much of his childhood near a tiger reserve in South
-                    India. He has travelled extensively across India and around the world,
-                    documenting wildlife, cultures and environments.
-                  </p>
-                  <p>
-                    As Chief Operating Officer, he translates this experience into carefully
-                    curated journeys that balance operational excellence with authenticity. He is
-                    the recipient of five international photography awards from institutions in
-                    the United Kingdom and the United States.
-                  </p>
-                </ExpandableText>
+                <p>
+                  Introduced to photography at age three through a camera gifted by his father,
+                  Gaurav Ramnarayanan spent much of his childhood near a tiger reserve in South
+                  India. He has travelled extensively across India and around the world,
+                  documenting wildlife, cultures and environments.
+                </p>
+                <p>
+                  As Chief Operating Officer, he translates this experience into carefully
+                  curated journeys that balance operational excellence with authenticity. He is
+                  the recipient of five international photography awards from institutions in
+                  the United Kingdom and the United States.
+                </p>
               </div>
             </article>
             <article data-about-profile>
@@ -119,22 +114,20 @@ export default function AboutPage() {
               <div>
                 <p className="eyebrow">Trikansh Sharma</p>
                 <h3>Chief Marketing Officer</h3>
-                <ExpandableText desktopLines={7} mobileLines={5}>
-                  <p>
-                    Trikansh is a nature, wildlife and travel photographer whose relationship with
-                    the camera began through his father. Over more than a decade, he has led
-                    hundreds of expeditions, photography tours and workshops across India and
-                    abroad, helping thousands of enthusiasts develop their own way of seeing the
-                    natural world.
-                  </p>
-                  <p>
-                    His work has received a National Geographic Award, and his association with
-                    Nikon India has contributed to wider conversations around photography and
-                    imaging technology. At Safari Crafters, he brings field experience, visual
-                    storytelling and a close understanding of travellers to the creation of
-                    distinctive, deeply personal journeys.
-                  </p>
-                </ExpandableText>
+                <p>
+                  Trikansh is a nature, wildlife and travel photographer whose relationship with
+                  the camera began through his father. Over more than a decade, he has led
+                  hundreds of expeditions, photography tours and workshops across India and
+                  abroad, helping thousands of enthusiasts develop their own way of seeing the
+                  natural world.
+                </p>
+                <p>
+                  His work has received a National Geographic Award, and his association with
+                  Nikon India has contributed to wider conversations around photography and
+                  imaging technology. At Safari Crafters, he brings field experience, visual
+                  storytelling and a close understanding of travellers to the creation of
+                  distinctive, deeply personal journeys.
+                </p>
               </div>
             </article>
           </div>

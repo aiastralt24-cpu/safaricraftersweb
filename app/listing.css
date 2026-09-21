@@ -251,12 +251,6 @@
   font-size: var(--type-small);
 }
 
-.journal-load-more {
-  display: flex;
-  justify-content: center;
-  margin-top: 48px;
-}
-
 .listing-grid {
   align-items: stretch;
   gap: 56px 34px;

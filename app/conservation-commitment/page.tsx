@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { ConservationMotion } from "./ConservationMotion";
 import "./conservation-commitment.css";
 
@@ -95,18 +94,6 @@ export default function ConservationCommitmentPage() {
           <p><strong>South & east</strong><span>Nagarhole · Bandipur · BRT · Sathyamangalam · Meghamalai · Brahmaputra landscape</span></p>
         </div>
         <p className="conservation-species"><strong>Species supported through these programmes</strong><span>Asian elephant, tiger, lion, caracal, one-horned rhinoceros, markhor, otter, leopard, fishing cat, sloth bear, gharial, vulture, wolf, golden jackal, deer and great hornbill.</span></p>
-      </div>
-      <div className="container conservation-closing" data-conservation-reveal>
-        <p className="conservation-eyebrow">Travel with context</p>
-        <h2>Let the journey deepen your relationship with the landscape.</h2>
-        <p>
-          Explore journeys shaped around time in the field, or speak with us about a safari
-          planned with the same care for habitat, pace and place.
-        </p>
-        <div className="conservation-closing-actions">
-          <Link href="/journeys">Explore journeys <span aria-hidden="true">↗</span></Link>
-          <Link href="/plan">Plan a safari <span aria-hidden="true">↗</span></Link>
-        </div>
       </div>
     </section>
 

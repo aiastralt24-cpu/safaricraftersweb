@@ -105,7 +105,7 @@ export default async function ExpeditionDetailPage({ params }: Props) {
                 </>
               ) : null}
             </dl>
-            <Link className="at-glance-action" href="#expedition-enquiry">Check availability</Link>
+            <Link className="at-glance-action" href="#expedition-enquiry">Ask about this departure</Link>
           </aside>
         </div>
         {expedition.highlights.length ? (
