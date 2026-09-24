@@ -453,3 +453,31 @@
     margin-bottom: 26px;
   }
 }
+
+/* Three-stage planner: short prompts and persistent mobile navigation. */
+.planner-stage-nav { display:grid; gap:12px; margin-top:32px; }
+.planner-stage-nav button { display:flex; align-items:center; gap:12px; border:0; background:transparent; color:inherit; text-align:left; padding:8px 0; cursor:pointer; opacity:.65; }
+.planner-stage-nav button[aria-current="step"] { opacity:1; font-weight:700; }
+.planner-stage-nav button:disabled { opacity:.35; cursor:default; }
+.planner-stage-nav span { display:grid; place-items:center; width:28px; height:28px; border:1px solid currentColor; border-radius:50%; flex-shrink:0; }
+.planner-step-content { animation:planner-step-in 180ms ease-out; }
+@keyframes planner-step-in { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
+.planner-edit-region,.planner-unsure,.planner-summary button { background:transparent; border:0; border-bottom:1px solid currentColor; padding:10px 0; color:var(--ink); cursor:pointer; font:inherit; }
+.planner-unsure { margin-top:20px; min-height:44px; }
+.planner-optional { margin:24px 0; padding:18px 0; border-block:var(--rule-fine); }
+.planner-optional summary { cursor:pointer; font-weight:700; padding:8px 0; }
+.planner-optional .field-grid { margin-top:24px; }
+.planner-optional .quiet-notes { display:grid; gap:10px; margin-top:20px; }
+.planner-summary { margin:24px 0; padding:20px; background:rgba(var(--rgb-soil),.06); }
+.planner-summary p { font-size:.9rem; line-height:1.6; margin:8px 0; }
+.planner-summary button { margin-right:22px; font-size:.85rem; min-height:44px; }
+.planner-streamlined .planner-card > h2 { scroll-margin-top:110px; }
+@media(max-width:760px) {
+ .planner-streamlined .planner-note { min-height:0; padding:20px; }
+ .planner-streamlined .planner-note h2 { display:none; }
+ .planner-stage-nav { display:flex; justify-content:space-between; gap:8px; margin-top:14px; }
+ .planner-stage-nav button { flex-direction:column; gap:7px; font-size:11px; text-align:center; }
+ .planner-streamlined .planner-actions { position:sticky; bottom:0; z-index:3; margin-inline:-22px; padding:14px 22px max(14px,env(safe-area-inset-bottom)); background:var(--bone); border-top:var(--rule-fine); }
+ .planner-streamlined .planner-actions .button { padding-inline:16px; min-height:48px; }
+}
+@media(prefers-reduced-motion:reduce) { .planner-step-content { animation:none; } }

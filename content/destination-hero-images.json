@@ -1,0 +1,376 @@
+{
+  "kenya": {
+    "src": "/assets/africa-atlas-generated/kenya.webp",
+    "alt": "AI-generated illustration: Reticulated giraffes in rolling Kenyan savannah among flat-topped acacias at warm sunrise.",
+    "credit": "AI-generated destination illustration"
+  },
+  "masai-mara": {
+    "src": "/assets/africa-atlas-generated/masai-mara.webp",
+    "alt": "AI-generated illustration: A lioness standing in waist-high golden grass on Kenya's Masai Mara plains, distant scattered wildebeest under a moody cloud bank.",
+    "credit": "AI-generated destination illustration"
+  },
+  "amboseli": {
+    "src": "/assets/africa-atlas-generated/amboseli.webp",
+    "alt": "AI-generated illustration: Two African elephants walking across the dusty Amboseli basin, Mount Kilimanjaro's snow-capped summit clearly distant behind, cool blue dawn.",
+    "credit": "AI-generated destination illustration"
+  },
+  "lake-nakuru-and-naivasha": {
+    "src": "/assets/africa-atlas-generated/lake-nakuru-and-naivasha.webp",
+    "alt": "AI-generated illustration: Lake Naivasha in Kenya, hippos partly submerged in calm water, papyrus fringes and fever trees reflected in soft morning light. One coherent lake scene.",
+    "credit": "AI-generated destination illustration"
+  },
+  "samburu": {
+    "src": "/assets/africa-atlas-generated/samburu.webp",
+    "alt": "AI-generated illustration: A Grevy's zebra with narrow stripes standing among ochre soil, sparse dry scrub and doum palms in Samburu Kenya, hot clear light.",
+    "credit": "AI-generated destination illustration"
+  },
+  "laikipia": {
+    "src": "/assets/africa-atlas-generated/laikipia.webp",
+    "alt": "AI-generated illustration: A solitary melanistic African leopard walking across a pale granite outcrop in Laikipia Kenya, subtle rosettes visible in soft twilight, full animal visible.",
+    "credit": "AI-generated destination illustration"
+  },
+  "mount-kenya": {
+    "src": "/assets/africa-atlas-generated/mount-kenya.webp",
+    "alt": "AI-generated illustration: Mount Kenya's rugged twin rock peaks above an Afro-alpine valley with giant groundsels, cold clear morning, dramatic high-altitude landscape without wildlife.",
+    "credit": "AI-generated destination illustration"
+  },
+  "tanzania": {
+    "src": "/assets/africa-atlas-generated/tanzania.webp",
+    "alt": "AI-generated illustration: A small herd of plains zebras crossing open Tanzanian savannah with distant rocky kopjes, glowing late afternoon cloudscape, panoramic environmental view.",
+    "credit": "AI-generated destination illustration"
+  },
+  "serengeti": {
+    "src": "/assets/africa-atlas-generated/serengeti.webp",
+    "alt": "AI-generated illustration: Long lines of blue wildebeest stretching across the immense short-grass Serengeti plains, pale dust hanging in the afternoon light, understated aerial-oblique landscape.",
+    "credit": "AI-generated destination illustration"
+  },
+  "ngorongoro": {
+    "src": "/assets/africa-atlas-generated/ngorongoro.webp",
+    "alt": "AI-generated illustration: Panoramic view down from Ngorongoro crater rim into the green caldera floor, a distant reflective lake beneath low clouds, natural landscape without close animals.",
+    "credit": "AI-generated destination illustration"
+  },
+  "tarangire": {
+    "src": "/assets/africa-atlas-generated/tarangire.webp",
+    "alt": "AI-generated illustration: An African elephant beside a massive old baobab in Tarangire Tanzania, dry golden woodland in side-lit evening, elephant small compared with tree.",
+    "credit": "AI-generated destination illustration"
+  },
+  "lake-manyara": {
+    "src": "/assets/africa-atlas-generated/lake-manyara.webp",
+    "alt": "AI-generated illustration: A flock of flamingos in shallow Lake Manyara water beneath the green Rift Valley escarpment, soft hazy daylight, pale water reflections.",
+    "credit": "AI-generated destination illustration"
+  },
+  "uganda": {
+    "src": "/assets/africa-atlas-generated/uganda.webp",
+    "alt": "AI-generated illustration: Lush rolling Ugandan hills and a winding wetland valley with papyrus and scattered woodland, after-rain morning mist and saturated but natural green.",
+    "credit": "AI-generated destination illustration"
+  },
+  "rwanda": {
+    "src": "/assets/africa-atlas-generated/rwanda.webp",
+    "alt": "AI-generated illustration: Layers of misty volcanic peaks and montane rainforest in Rwanda's Virunga landscape, first soft sunlight on green mountain slopes, no animals close to camera.",
+    "credit": "AI-generated destination illustration"
+  },
+  "bwindi-impenetrable": {
+    "src": "/assets/africa-atlas-generated/bwindi-impenetrable.webp",
+    "alt": "AI-generated illustration: A mountain gorilla seated among thick emerald understory in Bwindi Uganda, gentle forest light, accurate anatomy, thoughtful quiet environmental portrait.",
+    "credit": "AI-generated destination illustration"
+  },
+  "queen-elizabeth-national-park": {
+    "src": "/assets/africa-atlas-generated/queen-elizabeth-national-park.webp",
+    "alt": "AI-generated illustration: A herd of African buffalo at the edge of Uganda's Kazinga Channel with open savannah and low hills behind, late afternoon light.",
+    "credit": "AI-generated destination illustration"
+  },
+  "kibale-national-park": {
+    "src": "/assets/africa-atlas-generated/kibale-national-park.webp",
+    "alt": "AI-generated illustration: An adult chimpanzee climbing a low mossy branch within dense Kibale rainforest Uganda, leafy canopy and shafts of green filtered light.",
+    "credit": "AI-generated destination illustration"
+  },
+  "murchison-falls-national-park": {
+    "src": "/assets/africa-atlas-generated/murchison-falls-national-park.webp",
+    "alt": "AI-generated illustration: The Nile forcing through the narrow rocky gorge at Murchison Falls Uganda, powerful white water and rising spray amid green riverbanks, real landscape proportions.",
+    "credit": "AI-generated destination illustration"
+  },
+  "lake-mburo-national-park": {
+    "src": "/assets/africa-atlas-generated/lake-mburo-national-park.webp",
+    "alt": "AI-generated illustration: Impalas and plains zebras grazing in Lake Mburo Uganda's undulating acacia woodland, a small waterbody in the background, tranquil morning.",
+    "credit": "AI-generated destination illustration"
+  },
+  "zambia-and-zimbabwe": {
+    "src": "/assets/africa-atlas-generated/zambia-and-zimbabwe.webp",
+    "alt": "AI-generated illustration: Victoria Falls seen obliquely along its basalt gorge, enormous curtains of water and spray with surrounding green woodland, clear natural afternoon light, no invented buildings.",
+    "credit": "AI-generated destination illustration"
+  },
+  "mana-pools": {
+    "src": "/assets/africa-atlas-generated/mana-pools.webp",
+    "alt": "AI-generated illustration: An African elephant reaching upward into an ana tree canopy in Mana Pools Zimbabwe, floodplain woodland, dappled golden light and distant blue Zambezi.",
+    "credit": "AI-generated destination illustration"
+  },
+  "hwange": {
+    "src": "/assets/africa-atlas-generated/hwange.webp",
+    "alt": "AI-generated illustration: Several African elephants approaching a quiet Hwange Zimbabwe waterhole, dusty open ground and dry woodland beyond, amber sunset reflections.",
+    "credit": "AI-generated destination illustration"
+  },
+  "lower-zambezi": {
+    "src": "/assets/africa-atlas-generated/lower-zambezi.webp",
+    "alt": "AI-generated illustration: A canoe-free view across the Lower Zambezi Zambia, two hippos surfacing near a reedy island, wooded escarpment rising in distance, silver-blue morning light.",
+    "credit": "AI-generated destination illustration"
+  },
+  "south-luangwa": {
+    "src": "/assets/africa-atlas-generated/south-luangwa.webp",
+    "alt": "AI-generated illustration: An African leopard reclining on a broad tree limb beside the Luangwa river woodland Zambia, warm dry-season light, relaxed pose and realistic rosettes.",
+    "credit": "AI-generated destination illustration"
+  },
+  "kafue-national-park": {
+    "src": "/assets/africa-atlas-generated/kafue-national-park.webp",
+    "alt": "AI-generated illustration: Red lechwe antelope bounding through shallow water on Zambia's Busanga floodplain in Kafue, distant palms in soft dawn mist, open grassy wetland.",
+    "credit": "AI-generated destination illustration"
+  },
+  "botswana": {
+    "src": "/assets/africa-atlas-generated/botswana.webp",
+    "alt": "AI-generated illustration: A broad Botswana wetland aerial landscape of sinuous blue channels through green reeds and sandy islands, delicate abstract natural patterns, no animals necessary.",
+    "credit": "AI-generated destination illustration"
+  },
+  "okavango-delta": {
+    "src": "/assets/africa-atlas-generated/okavango-delta.webp",
+    "alt": "AI-generated illustration: A low water-level view of Botswana's Okavango Delta, African elephants wading through a clear reed-lined channel, green islands and glowing afternoon sky.",
+    "credit": "AI-generated destination illustration"
+  },
+  "chobe": {
+    "src": "/assets/africa-atlas-generated/chobe.webp",
+    "alt": "AI-generated illustration: African elephants crossing the Chobe River Botswana, small calf close to adults, water splashing softly, lush riverbank behind, natural daytime colours.",
+    "credit": "AI-generated destination illustration"
+  },
+  "chitabe": {
+    "src": "/assets/africa-atlas-generated/chitabe.webp",
+    "alt": "AI-generated illustration: A small pack of African wild dogs resting beside a sandy track in Chitabe Botswana, mosaic of light woodland and grassland, alert ears and realistic mottled coats.",
+    "credit": "AI-generated destination illustration"
+  },
+  "central-kalahari-game-reserve": {
+    "src": "/assets/africa-atlas-generated/central-kalahari-game-reserve.webp",
+    "alt": "AI-generated illustration: A black-maned Kalahari lion walking on a pale sandy track through sparse golden grass and low scrub in Botswana's Central Kalahari, immense open sky at dawn.",
+    "credit": "AI-generated destination illustration"
+  },
+  "mashatu": {
+    "src": "/assets/africa-atlas-generated/mashatu.webp",
+    "alt": "AI-generated illustration: A group of elephants moving through a dry sandy riverbed beneath a towering nyala berry tree in Mashatu Botswana, rocky red earth and warm evening light.",
+    "credit": "AI-generated destination illustration"
+  },
+  "south-africa": {
+    "src": "/assets/africa-atlas-generated/south-africa.webp",
+    "alt": "AI-generated illustration: African penguins on granite boulders beside clear turquoise sea on South Africa's Cape coast, restrained coastal palette and natural daylight.",
+    "credit": "AI-generated destination illustration"
+  },
+  "kruger-national-park": {
+    "src": "/assets/africa-atlas-generated/kruger-national-park.webp",
+    "alt": "AI-generated illustration: A white rhinoceros grazing in open Kruger South Africa bushveld with scattered marula trees and dry grasses, accurate square mouth and anatomy, calm late-afternoon scene.",
+    "credit": "AI-generated destination illustration"
+  },
+  "sabi-sands": {
+    "src": "/assets/africa-atlas-generated/sabi-sands.webp",
+    "alt": "AI-generated illustration: A leopard drinking beside a still waterhole in Sabi Sands South Africa, mirror reflection and soft wooded background, subtle golden light.",
+    "credit": "AI-generated destination illustration"
+  },
+  "madikwe-game-reserve": {
+    "src": "/assets/africa-atlas-generated/madikwe-game-reserve.webp",
+    "alt": "AI-generated illustration: An African wild dog standing on a low earthen rise in Madikwe South Africa, dry thornveld and distant rocky hills, rim-lit morning fur, full animal.",
+    "credit": "AI-generated destination illustration"
+  },
+  "whale-watching-in-cape-town": {
+    "src": "/assets/africa-atlas-generated/whale-watching-in-cape-town.webp",
+    "alt": "AI-generated illustration: A southern right whale surfacing offshore in South Africa's False Bay, broad dark back and V-shaped blow against a distant mountainous coastline, natural sea-level telephoto composition.",
+    "credit": "AI-generated destination illustration"
+  },
+  "namibia": {
+    "src": "/assets/africa-atlas-generated/namibia.webp",
+    "alt": "AI-generated illustration: The vast Namibian desert with a single oryx on a gravel plain, weathered ochre mountains far behind, silver-blue early morning sky, quiet spare landscape.",
+    "credit": "AI-generated destination illustration"
+  },
+  "etosha-national-park": {
+    "src": "/assets/africa-atlas-generated/etosha-national-park.webp",
+    "alt": "AI-generated illustration: A line of zebras at the edge of a waterhole beside Namibia's expansive white Etosha salt pan, shimmering pale horizon, clear midday light.",
+    "credit": "AI-generated destination illustration"
+  },
+  "damaraland": {
+    "src": "/assets/africa-atlas-generated/damaraland.webp",
+    "alt": "AI-generated illustration: A desert-adapted African elephant walking through a dry riverbed in Namibia's Damaraland, rugged rust-coloured mountains and sparse ana trees, late golden light.",
+    "credit": "AI-generated destination illustration"
+  },
+  "sossusvlei": {
+    "src": "/assets/africa-atlas-generated/sossusvlei.webp",
+    "alt": "AI-generated illustration: Dead camelthorn trees on the pale cracked clay of Deadvlei near Sossusvlei Namibia, immense burnt-orange dune behind and cobalt sky, graphic natural landscape.",
+    "credit": "AI-generated destination illustration"
+  },
+  "featured-masai-mara": {
+    "src": "/assets/africa-atlas-generated/featured-masai-mara.webp",
+    "alt": "AI-generated illustration: A cheetah resting on a low grassy termite mound overlooking the Masai Mara Kenya, wide green-gold plains beneath a pale morning sky, clean environmental portrait.",
+    "credit": "AI-generated destination illustration"
+  },
+  "featured-laikipia": {
+    "src": "/assets/africa-atlas-generated/featured-laikipia.webp",
+    "alt": "AI-generated illustration: A black leopard drinking at a small rocky pool in Laikipia Kenya, visible reflection and green-brown woodland, subtle natural late evening illumination.",
+    "credit": "AI-generated destination illustration"
+  },
+  "featured-amboseli": {
+    "src": "/assets/africa-atlas-generated/featured-amboseli.webp",
+    "alt": "AI-generated illustration: A wide herd of elephants viewed from a distance crossing Amboseli's pale dry lakebed, hazy foothills and acacia silhouettes, bright soft morning sky, no close giant elephant.",
+    "credit": "AI-generated destination illustration"
+  },
+  "featured-serengeti": {
+    "src": "/assets/africa-atlas-generated/featured-serengeti.webp",
+    "alt": "AI-generated illustration: A male lion on a weathered Serengeti granite kopje at first light, distant immense grassland, wide scene with warm rocks and cool sky.",
+    "credit": "AI-generated destination illustration"
+  },
+  "featured-bwindi-impenetrable": {
+    "src": "/assets/africa-atlas-generated/featured-bwindi-impenetrable.webp",
+    "alt": "AI-generated illustration: A female mountain gorilla with a young juvenile partly sheltered among ferns in Bwindi Uganda, quiet candid scene in soft overcast forest light, natural family interaction.",
+    "credit": "AI-generated destination illustration"
+  },
+  "featured-kibale-national-park": {
+    "src": "/assets/africa-atlas-generated/featured-kibale-national-park.webp",
+    "alt": "AI-generated illustration: A chimpanzee sitting high at the fork of a large fig tree in Kibale Uganda, wide rainforest canopy composition with glistening green leaves after rain.",
+    "credit": "AI-generated destination illustration"
+  },
+  "hero": {
+    "src": "/assets/africa-atlas-generated/hero.webp",
+    "alt": "AI-generated illustration: An expansive East African savannah panorama at dawn: a small elephant family moving in the lower right across luminous grass, scattered acacias, distant layered hills and sweeping clouds. Landscape and sky dominate, calm open central area for website title, realistic natural scale.",
+    "credit": "AI-generated destination illustration"
+  },
+  "volcanoes-national-park": {
+    "src": "/assets/destination-heroes/volcanoes-national-park.webp",
+    "alt": "AI-generated destination illustration: volcanoes national park",
+    "credit": "AI-generated destination illustration"
+  },
+  "nyungwe-national-park": {
+    "src": "/assets/destination-heroes/nyungwe-national-park.webp",
+    "alt": "AI-generated destination illustration: nyungwe national park",
+    "credit": "AI-generated destination illustration"
+  },
+  "akagera-national-park": {
+    "src": "/assets/destination-heroes/akagera-national-park.webp",
+    "alt": "AI-generated destination illustration: akagera national park",
+    "credit": "AI-generated destination illustration"
+  },
+  "pilibhit": {
+    "src": "/assets/destination-heroes/pilibhit.webp",
+    "alt": "AI-generated destination illustration: pilibhit",
+    "credit": "AI-generated destination illustration"
+  },
+  "satpura": {
+    "src": "/assets/destination-heroes/satpura.webp",
+    "alt": "AI-generated destination illustration: satpura",
+    "credit": "AI-generated destination illustration"
+  },
+  "iguazu-falls": {
+    "src": "/assets/destination-heroes/iguazu-falls.webp",
+    "alt": "AI-generated destination illustration: iguazu falls",
+    "credit": "AI-generated destination illustration"
+  },
+  "amazonia": {
+    "src": "/assets/destination-heroes/amazonia.webp",
+    "alt": "AI-generated destination illustration: amazonia",
+    "credit": "AI-generated destination illustration"
+  },
+  "peru": {
+    "src": "/assets/destination-heroes/peru.webp",
+    "alt": "AI-generated destination illustration: peru",
+    "credit": "AI-generated destination illustration"
+  },
+  "tambopata": {
+    "src": "/assets/destination-heroes/tambopata.webp",
+    "alt": "AI-generated destination illustration: tambopata",
+    "credit": "AI-generated destination illustration"
+  },
+  "lake-titicaca": {
+    "src": "/assets/destination-heroes/lake-titicaca.webp",
+    "alt": "AI-generated destination illustration: lake titicaca",
+    "credit": "AI-generated destination illustration"
+  },
+  "corcovado": {
+    "src": "/assets/destination-heroes/corcovado.webp",
+    "alt": "AI-generated destination illustration: corcovado",
+    "credit": "AI-generated destination illustration"
+  },
+  "sacred-valley": {
+    "src": "/assets/destination-heroes/sacred-valley.webp",
+    "alt": "AI-generated destination illustration: sacred valley",
+    "credit": "AI-generated destination illustration"
+  },
+  "monteverde": {
+    "src": "/assets/destination-heroes/monteverde.webp",
+    "alt": "AI-generated destination illustration: monteverde",
+    "credit": "AI-generated destination illustration"
+  },
+  "tortuguero": {
+    "src": "/assets/destination-heroes/tortuguero.webp",
+    "alt": "AI-generated destination illustration: tortuguero",
+    "credit": "AI-generated destination illustration"
+  },
+  "machu-picchu": {
+    "src": "/assets/destination-heroes/machu-picchu.webp",
+    "alt": "AI-generated destination illustration: machu picchu",
+    "credit": "AI-generated destination illustration"
+  },
+  "llanos-orientales": {
+    "src": "/assets/destination-heroes/llanos-orientales.webp",
+    "alt": "AI-generated destination illustration: llanos orientales",
+    "credit": "AI-generated destination illustration"
+  },
+  "colombian-coffee-region": {
+    "src": "/assets/destination-heroes/colombian-coffee-region.webp",
+    "alt": "AI-generated destination illustration: colombian coffee region",
+    "credit": "AI-generated destination illustration"
+  },
+  "zimbabwe": {
+    "src": "/assets/destination-heroes/zimbabwe-country.webp",
+    "alt": "AI-generated destination illustration: zimbabwe country",
+    "credit": "AI-generated destination illustration"
+  },
+  "zambia": {
+    "src": "/assets/destination-heroes/zambia-country.webp",
+    "alt": "AI-generated destination illustration: zambia country",
+    "credit": "AI-generated destination illustration"
+  },
+  "choco-pacific-coast": {
+    "src": "/assets/destination-heroes/choco-pacific-coast.webp",
+    "alt": "AI-generated destination illustration: choco pacific coast",
+    "credit": "AI-generated destination illustration"
+  },
+  "russia": {
+    "src": "/assets/destinations/kamchatka/supplied/12.webp",
+    "alt": "Brown bear walking beneath a snow-streaked volcano in Kamchatka",
+    "credit": "Safari Crafters archive"
+  },
+  "norway": {
+    "src": "/assets/destinations/svalbard/svalbard-01.jpg",
+    "alt": "Svalbard wildlife and landscape photograph 1",
+    "credit": "Safari Crafters archive"
+  },
+  "chile-and-argentina": {
+    "src": "/assets/destinations/patagonia/supplied/05.webp",
+    "alt": "Guanaco silhouetted against clouds in Patagonia",
+    "credit": "Safari Crafters archive"
+  },
+  "atlas-india": {
+    "src": "/assets/destinations/ranthambhore/ranthambhore-01.jpg",
+    "alt": "Ranthambhore wildlife and landscape photograph 1",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "36% 55%"
+  },
+  "atlas-arctic-beyond": {
+    "src": "/assets/destinations/svalbard/svalbard-03.jpg",
+    "alt": "Svalbard wildlife and landscape photograph 3",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "45% 65%"
+  },
+  "atlas-americas": {
+    "src": "/assets/destinations/pantanal/supplied/02.webp",
+    "alt": "Jaguar swimming through a Pantanal river",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "32% 100%"
+  },
+  "atlas-africa": {
+    "src": "/assets/africa-atlas-generated/hero.webp",
+    "alt": "AI-generated illustration: An expansive East African savannah panorama at dawn: a small elephant family moving in the lower right across luminous grass, scattered acacias, distant layered hills and sweeping clouds. Landscape and sky dominate, calm open central area for website title, realistic natural scale.",
+    "credit": "AI-generated destination illustration",
+    "focalPoint": "80% 65%"
+  }
+}

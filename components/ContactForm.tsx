@@ -1,5 +1,9 @@
 "use client";
 
+import { trackFunnel } from "@/lib/funnel-client";
+import { EnquiryHoneypot } from "@/components/EnquiryHoneypot";
+import { enquiryHeaders } from "@/lib/enquiry-client";
+
 import { FormEvent, useState } from "react";
 import { Check } from "lucide-react";
 
@@ -11,25 +15,27 @@ export function ContactForm() {
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (submitting) return;
+    trackFunnel("enquiry_started");
     setSubmitting(true);
     setError("");
     const values = new FormData(event.currentTarget);
     const travelWindow = String(values.get("travelWindow") || "Flexible");
     const interest = String(values.get("interest") || "Private safari planning");
     const payload = {
+      website: String(values.get("website") || ""),
       source: "planner",
       sourceType: "contact",
       sourceLabel: "Contact page",
       region: "Surprise me",
       types: [interest.toLowerCase().includes("photo") ? "Photo-led" : "Private"],
-      experiences: ["Cultural immersion"],
+      experiences: ["Open to suggestions"],
       months: [travelWindow],
       year: "Flexible",
       nights: "To discuss",
       travellers: "To discuss",
       occasion: "Private escape",
       flexibility: travelWindow,
-      accommodation: "A considered mix",
+      accommodation: String(values.get("accommodation") || "Not decided yet"),
       investment: "Prefer to discuss",
       contactPreference: values.get("phone") ? "Phone" : "Email",
       name: String(values.get("name") || ""),
@@ -40,8 +46,9 @@ export function ContactForm() {
       consent: values.get("consent") === "on"
     };
     try {
-      const response = await fetch("/api/enquiry", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+      const response = await fetch("/api/enquiry", { method: "POST", headers: await enquiryHeaders(payload), body: JSON.stringify(payload) });
       const result = await response.json();
+      if (!response.ok) trackFunnel("enquiry_failed");
       if (!response.ok) throw new Error(result.error || "We could not send your brief. Please try again.");
       setReference(result.enquiryId);
     } catch (caught) {
@@ -61,12 +68,19 @@ export function ContactForm() {
   );
 
   return (
-    <form className="contact-form" onSubmit={submit}>
+    <form className="contact-form" onSubmit={submit}><EnquiryHoneypot />
       <label>Name<input name="name" autoComplete="name" required /></label>
       <label>Email<input name="email" type="email" inputMode="email" autoComplete="email" required /></label>
       <label>Phone<input name="phone" type="tel" inputMode="tel" autoComplete="tel" /></label>
       <label>Travel window<input name="travelWindow" placeholder="Month, season or flexible" /></label>
       <label>Interest<input name="interest" placeholder="Journey, destination, photo expedition or aviation" /></label>
+      <label>Accommodation character<select name="accommodation" defaultValue="Not decided yet">
+        <option>Not decided yet</option>
+        <option>Quiet luxury</option>
+        <option>Classic safari camps</option>
+        <option>Design-led lodges</option>
+        <option>A considered mix</option>
+      </select></label>
       <label>Message<textarea name="message" placeholder="Where you want to go, who is travelling and what kind of safari you have in mind." required /></label>
       <label className="contact-consent"><input name="consent" type="checkbox" required /><span>I consent to Safari Crafters using these details to respond to my private travel brief.</span></label>
       {error ? <p className="planner-error" role="alert">{error}</p> : null}

@@ -1,6 +1,6 @@
 import "server-only";
 
-export type EnquiryStatus = "new" | "contacted" | "qualified" | "closed";
+export type EnquiryStatus = "new" | "contacted" | "qualified" | "booked" | "closed";
 
 export type EnquiryRecord = {
   id: number;

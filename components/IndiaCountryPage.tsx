@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { CountryAtlas, Destination } from "@/lib/data";
-import { specialists, testimonials } from "@/lib/data";
+import { specialists, testimonials, expeditions, journeys } from "@/lib/data";
+import { AtlasDepartures } from "@/components/AtlasDepartures";
 import { PageHero } from "@/components/PageHero";
 import "./IndiaCountryPage.css";
 
@@ -45,6 +46,9 @@ export function IndiaCountryPage({ country }: { country: CountryAtlas }) {
     .map((slug) => findDestination(country, slug))
     .filter((destination): destination is Destination => Boolean(destination));
   const remaining = country.destinations.filter((destination) => !featuredSlugs.includes(destination.slug));
+  const destinationTitles = new Set(country.destinations.map(destination => destination.title.toLowerCase()));
+  const relatedJourneys = journeys.filter(journey => journey.destinations.some(name => destinationTitles.has(name.toLowerCase())));
+  const relatedExpeditions = expeditions.filter(expedition => country.destinations.some(destination => destination.expeditions.some(name => name.toLowerCase() === expedition.title.toLowerCase())));
   const specialist = specialists[0];
   const guestNote = testimonials[0];
 
@@ -155,6 +159,8 @@ export function IndiaCountryPage({ country }: { country: CountryAtlas }) {
             ))}
           </div>
         </section>
+
+        <AtlasDepartures id="india" expeditions={relatedExpeditions.slice(0, 4)} journeys={relatedJourneys.slice(0, 4)} />
 
         <section className="india-guest-proof">
           <div className="container">

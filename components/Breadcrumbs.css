@@ -5,3 +5,18 @@
 .breadcrumbs a, .breadcrumbs [aria-current="page"] { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; }
 .breadcrumbs a:hover, .breadcrumbs a:focus-visible { color: var(--brass); }
 .breadcrumbs [aria-current="page"] { color: var(--ink); font-weight: 700; }
+.breadcrumbs-hero { width: 100%; padding: 0; }
+.breadcrumbs-hero ol { color: rgba(var(--rgb-white), .7); font-size: var(--type-label); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.breadcrumbs-hero li:not(:last-child)::after { color: var(--brass-light); }
+.breadcrumbs-hero a,
+.breadcrumbs-hero [aria-current="page"] { min-width: 0; min-height: 36px; color: inherit; }
+.breadcrumbs-hero a:hover,
+.breadcrumbs-hero a:focus-visible { color: var(--brass-light); }
+.breadcrumbs-hero [aria-current="page"] { max-width: min(42vw, 420px); overflow: hidden; color: rgba(var(--rgb-white), .9); text-overflow: ellipsis; white-space: nowrap; }
+
+@media (max-width: 700px) {
+  .breadcrumbs-hero ol { flex-wrap: nowrap; overflow: hidden; font-size: .63rem; }
+  .breadcrumbs-hero li:first-child,
+  .breadcrumbs-hero li:last-child { display: none; }
+  .breadcrumbs-hero li { flex: 0 0 auto; }
+}

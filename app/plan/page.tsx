@@ -1,3 +1,4 @@
+import { kenyaCombinations } from "@/content/kenya-editorial";
 import { Metadata } from "next";
 import { PlannerForm } from "@/components/PlannerForm";
 import { getDestination, getExpedition, getJourney } from "@/lib/data";
@@ -17,21 +18,24 @@ type PlanPageProps = {
     region?: string;
     specialist?: string;
     guided?: string;
+    kenyaRoute?: string;
   }>;
 };
 
 export default async function PlanPage({ searchParams }: PlanPageProps) {
   const params = await searchParams;
   const initialContext = getInitialContext(params);
+  const kenyaRoute = params.destination === "kenya" ? kenyaCombinations.find(route => route.slug === params.kenyaRoute) : undefined;
+  const plannerContext = kenyaRoute ? { ...initialContext, notes: `I am interested in ${kenyaRoute.title}. ${kenyaRoute.copy}` } : initialContext;
 
   return (
     <section className="plan-page">
       <div className="container plan-intro">
-        <p className="eyebrow">Private safari brief</p>
-        <h1 className="display">Begin quietly.</h1>
-        <p>Private, precise, specialist-led.</p>
+        <p className="eyebrow">Plan your safari</p>
+        <h1 className="display">Your safari starts here.</h1>
+        <p>Tell us what you have in mind. We’ll help shape the journey.</p>
       </div>
-      <PlannerForm initialContext={initialContext} />
+      <PlannerForm initialContext={plannerContext} />
     </section>
   );
 }
@@ -41,13 +45,14 @@ function plannerRegion(value?: string) {
   if (normalized.includes("india")) return "India";
   if (normalized.includes("africa")) return "Africa";
   if (normalized.includes("america")) return "The Americas";
-  if (normalized.includes("arctic") || normalized.includes("norway")) return "Arctic & Beyond";
+  if (normalized.includes("arctic") || normalized.includes("norway") || normalized.includes("russia") || normalized.includes("kamchatka")) return "Arctic & Beyond";
   if (normalized.includes("surprise")) return "Surprise me";
   return undefined;
 }
 
 function destinationExperiences(destination: NonNullable<ReturnType<typeof getDestination>>) {
   const wildlife = destination.wildlife.toLowerCase();
+  if (destination.country === "Russia") return ["Brown bears", "Wildlife photography"];
   if (wildlife.includes("tiger")) return ["Tigers", "Photography hides"];
   if (wildlife.includes("jaguar")) return ["Jaguars", "Photography hides"];
   if (wildlife.includes("gorilla") || wildlife.includes("chimpanzee")) return ["Great apes"];

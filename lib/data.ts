@@ -168,7 +168,17 @@ export type RegionalAtlas = {
   closingCopy: string;
 };
 
+export type ExpeditionDeparture = {
+  date: string;
+  endDate?: string;
+  status: "New" | "Filling fast" | "Full" | "Available";
+  availability?: string;
+};
+
 export type Expedition = {
+  publicationStatus?: "preview" | "published";
+  availabilityReviewedAt?: string;
+  departures?: ExpeditionDeparture[];
   slug: string;
   title: string;
   category: string;
@@ -275,7 +285,17 @@ export type SiteContent = {
   testimonials: Testimonial[];
 };
 
-export const siteContent = content as SiteContent;
+// Keep unpublished countries and destinations in the source content so they can be restored.
+const hiddenDestinationCountries = new Set(["Canada", "USA", "Ecuador", "Panama"]);
+const hiddenDestinationSlugs = new Set(["satpura", "pilibhit"]);
+
+export const siteContent: SiteContent = {
+  ...(content as SiteContent),
+  destinations: (content as SiteContent).destinations.filter(
+    (destination) => !hiddenDestinationCountries.has(destination.country)
+      && !hiddenDestinationSlugs.has(destination.slug)
+  )
+};
 
 export const heroImage = siteContent.heroImage;
 export const navItems = siteContent.navItems;
@@ -410,20 +430,20 @@ const regionalAtlases: RegionalAtlas[] = [
     title: "Arctic & Beyond",
     shortTitle: "Arctic & Beyond",
     continent: "Arctic",
-    meta: "The High Arctic Atlas",
+    meta: "Arctic & Beyond Atlas",
     heroTitle: "At the edge of the map.",
-    heroCopy: "Svalbard in the long light: expedition days shaped by ice, weather and the freedom to wait.",
+    heroCopy: "From Svalbard's sea ice to Kamchatka's volcanic coast: wild places shaped by weather, patient observation and room to explore.",
     heroDestinationSlug: "svalbard",
     introductionTitle: "An expedition defined by conditions.",
-    introductionCopy: "In the High Arctic, certainty is the wrong promise. Good judgement, flexible routing and time on deck create the possibility of polar bear, walrus and the sudden theatre of sea ice.",
+    introductionCopy: "Svalbard brings the High Arctic into focus. Farther south, Kamchatka opens a different chapter in the Russian Far East: brown bears, volcanic landscapes and Pacific wildlife. These are distinct journeys, each shaped by local conditions, experienced guiding and time to wait.",
     themes: [
       { label: "Sea ice", title: "Read the changing edge.", copy: "Daily decisions follow ice, wind and wildlife rather than a fixed sightseeing circuit.", destinationSlugs: ["svalbard"], imageSlug: "svalbard", imageIndex: 1 },
-      { label: "Long light", title: "Days made for observation.", copy: "Extended daylight leaves room for patient encounters and deliberate photography.", destinationSlugs: ["svalbard"], imageSlug: "svalbard", imageIndex: 3 },
-      { label: "Expedition craft", title: "Small ship, serious field time.", copy: "A capable team and flexible landing plan keep the experience intimate and responsive.", destinationSlugs: ["svalbard"], imageSlug: "svalbard", imageIndex: 5 }
+      { label: "Volcanic wilderness", title: "Bear country beneath the peaks.", copy: "Kamchatka's salmon waters and volcanic horizons create a different kind of wildlife journey in the Russian Far East.", destinationSlugs: ["kamchatka"], imageSlug: "kamchatka" },
+      { label: "Pacific coast", title: "A wilder edge of Russia.", copy: "Sea stacks, seabirds and marine mammals, explored through a Kamchatka brief shaped around weather and confirmed access.", destinationSlugs: ["russia", "kamchatka"], imageSlug: "kamchatka", imageIndex: 2 }
     ],
-    featuredDestinationSlugs: ["svalbard"],
+    featuredDestinationSlugs: ["svalbard", "kamchatka"],
     closingTitle: "Leave room for the unexpected.",
-    closingCopy: "We will help choose the vessel, departure and photographic emphasis that suit you."
+    closingCopy: "Begin with the landscape or wildlife that draws you. We will assess the season, access and style of journey that suit your brief."
   }
 ];
 
@@ -467,18 +487,31 @@ export function getCountryAtlas(): CountryAtlas[] {
 
   return Array.from(countries.entries()).map(([key, countryDestinations]) => {
     const [continent, country] = key.split(":") as [Destination["continent"], string];
+    if (country === "Kenya") {
+      const kenyaPlaces = ["kenya", "amboseli", "laikipia", "masai-mara"];
+      countryDestinations = countryDestinations
+        .filter((destination) => kenyaPlaces.includes(destination.slug))
+        .sort((a, b) => kenyaPlaces.indexOf(a.slug) - kenyaPlaces.indexOf(b.slug));
+    }
+    if (country === "Zambia & Zimbabwe") {
+      countryDestinations = destinations.filter((destination) =>
+        ["Zambia & Zimbabwe", "Zambia", "Zimbabwe"].includes(destination.country)
+      );
+    }
     const countryOverview =
       countryDestinations.find((destination) => destination.title === country) ??
       countryDestinations.find((destination) => destination.status === "rich") ??
       countryDestinations[0];
-    const destinationCount = countryDestinations.length;
+    const destinationCount = countryDestinations.filter((destination) =>
+      destination.slug !== slugifyAtlasValue(country) && destination.title !== country
+    ).length || 1;
 
     return {
       slug: slugifyAtlasValue(country),
-      title: country,
+      title: country === "Uganda" ? "Uganda & Rwanda" : country,
       continent,
       country,
-      description:
+      description: countryOverview.slug === "russia" ? countryOverview.description :
         destinationCount === 1
           ? `A private ${country} brief shaped around season, access, guiding and wildlife priorities.`
           : `${destinationCount} private ${country} destination briefs shaped around season, access, guiding and wildlife priorities.`,

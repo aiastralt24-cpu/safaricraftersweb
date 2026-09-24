@@ -1,6 +1,10 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { trackFunnel } from "@/lib/funnel-client";
+import { EnquiryHoneypot } from "@/components/EnquiryHoneypot";
+import { enquiryHeaders } from "@/lib/enquiry-client";
+
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { Check } from "lucide-react";
 import "./PlannerForm.css";
 
@@ -8,7 +12,7 @@ const regions = [
   { name: "India", copy: "Tiger forests, leopard country and the Himalaya" },
   { name: "Africa", copy: "Savannah, wetlands, primates and private conservancies" },
   { name: "The Americas", copy: "Rainforest, jaguar country and northern wilderness" },
-  { name: "Arctic & Beyond", copy: "Expeditionary travel at the edge of the map" },
+  { name: "Arctic & Beyond", copy: "Svalbard’s sea ice and Russia’s Kamchatka wilderness" },
   { name: "Surprise me", copy: "Let our specialists recommend the right geography" }
 ];
 const journeyTypes = ["Private", "Family", "Conservation", "Ultra-Luxury", "Small Group", "Photo-led"];
@@ -16,17 +20,17 @@ const experiencesByRegion: Record<string, string[]> = {
   India: ["Tigers", "Leopards", "Birdlife", "Photography hides", "Walking safaris", "Cultural immersion", "Conservation work", "Family-friendly camps"],
   Africa: ["Big Cats of Africa", "Great apes", "Birdlife", "Photography hides", "Walking safaris", "Cultural immersion", "Conservation work", "Family-friendly camps"],
   "The Americas": ["Jaguars", "Birdlife", "Photography hides", "Rainforest journeys", "Cultural immersion", "Conservation work", "Family-friendly camps"],
-  "Arctic & Beyond": ["Polar wildlife", "Birdlife", "Photography hides", "Expedition cruising", "Cultural immersion", "Conservation work"],
+  "Arctic & Beyond": ["Polar wildlife", "Brown bears", "Wildlife photography", "Birdlife", "Photography hides", "Expedition cruising", "Cultural immersion", "Conservation work"],
   "Surprise me": ["Tigers", "Leopards", "Big Cats of Africa", "Jaguars", "Great apes", "Polar wildlife", "Birdlife", "Photography hides", "Walking safaris", "Expedition cruising", "Rainforest journeys", "Cultural immersion", "Conservation work", "Family-friendly camps"]
 };
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const occasions = ["A private escape", "Family time", "Photography", "A celebration", "Conservation interest"];
-const accommodationStyles = ["Quiet luxury", "Classic safari camps", "Design-led lodges", "A considered mix"];
+const occasions = ["Not decided yet", "A private escape", "Family time", "Photography", "A celebration", "Conservation interest"];
+const accommodationStyles = ["Not decided yet", "Quiet luxury", "Classic safari camps", "Design-led lodges", "A considered mix"];
 const investmentRanges = ["Prefer to discuss", "US$8k-15k", "US$15k-30k", "US$30k+ per person"];
 const today = new Date();
 const currentYear = today.getFullYear();
 const currentMonthIndex = today.getMonth();
-const defaultTravelMonth = months[Math.min(currentMonthIndex + 2, 11)];
+
 
 type PlannerInitialContext = {
   sourceLabel?: string;
@@ -38,11 +42,22 @@ type PlannerInitialContext = {
 };
 
 export function PlannerForm({ initialContext }: { initialContext?: PlannerInitialContext }) {
-  const initialRegion = initialContext?.region || "";
+  const initialRegion = initialContext?.region && experiencesByRegion[initialContext.region] ? initialContext.region : "";
   const initialExperiences = (initialContext?.experiences || []).filter((experience) =>
     initialRegion ? experiencesByRegion[initialRegion]?.includes(experience) : false
   );
   const [step, setStep] = useState(0);
+  const [choosingRegion, setChoosingRegion] = useState(!initialRegion);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const phase = `${step}-${choosingRegion}`;
+  const previousStep = useRef(phase);
+  useEffect(() => {
+    if (previousStep.current !== phase) {
+      headingRef.current?.focus({ preventScroll: true });
+      headingRef.current?.scrollIntoView({ block: "start" });
+      previousStep.current = phase;
+    }
+  }, [phase]);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -52,32 +67,59 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
     region: initialRegion,
     types: initialContext?.types || ["Private"],
     experiences: initialExperiences,
-    months: [defaultTravelMonth],
-    year: String(currentYear),
-    nights: "7",
-    travellers: "2",
+    months: ["Flexible"],
+    year: "Flexible",
+    nights: "To discuss",
+    travellers: "To discuss",
     name: "",
     email: "",
     phone: "",
     city: "",
     notes: initialContext?.notes || "",
     specialist: initialContext?.specialist || "Auto-route"
-    ,occasion: "A private escape"
-    ,flexibility: "Flexible by a few days"
-    ,accommodation: "Quiet luxury"
+    ,occasion: "Not decided yet"
+    ,flexibility: "To discuss"
+    ,accommodation: "Not decided yet"
     ,investment: "Prefer to discuss"
     ,contactPreference: "Email"
     ,consent: false
   });
 
+  const draftReady = useRef(false);
+  const draftKey = "safari-planner-draft:" + (initialContext?.sourceLabel || "direct");
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem(draftKey) || "null");
+      if (saved?.version === 1 && Date.now()-saved.savedAt < 86400000 && saved.form && typeof saved.form === "object") {
+        setForm(current => {
+          const restored = {...current};
+          for (const key of ["region","year","nights","travellers","occasion","flexibility","accommodation","investment","contactPreference"] as const) {
+            if (typeof saved.form[key] === "string" && saved.form[key].length < 160) restored[key] = saved.form[key];
+          }
+          for (const key of ["types","experiences","months"] as const) {
+            if (Array.isArray(saved.form[key]) && saved.form[key].length <= 20 && saved.form[key].every((v:unknown)=>typeof v === "string" && v.length < 160)) restored[key] = saved.form[key];
+          }
+          return restored;
+        });
+        if (experiencesByRegion[saved.form.region]) {setChoosingRegion(false);if ([0,1,2].includes(saved.step)) setStep(saved.step); }
+      }
+    } catch {}
+    draftReady.current=true;
+  }, [draftKey]);
+  useEffect(() => {
+    if (!draftReady.current) return;
+    try {
+      if (submitted) {sessionStorage.removeItem(draftKey);return;}
+      const {name,email,phone,city,notes,consent,specialist,...preferences}=form;
+      sessionStorage.setItem(draftKey,JSON.stringify({version:1,savedAt:Date.now(),form:preferences,step}));
+    } catch {}
+  }, [form,submitted,draftKey,step]);
+
   const steps = useMemo(
     () => [
-      "Where shall we begin?",
-      "What kind of journey?",
-      "What should the wild hold?",
-      "When and how long?",
-      "Your details",
-      "Review"
+      "Your safari",
+      "Your timing",
+      "Your details"
     ],
     []
   );
@@ -92,23 +134,30 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
   }
 
   function selectRegion(region: string) {
+    trackFunnel("planner_started");
     const availableExperiences = experiencesByRegion[region] || [];
     setForm((current) => ({
       ...current,
       region,
       experiences: current.experiences.filter((experience) => availableExperiences.includes(experience))
     }));
+    setChoosingRegion(false);
   }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (submitting) return;
+    trackFunnel("enquiry_started");
+    if (step < steps.length - 1) {
+      if (requiredStepValidity[step]) setStep(step + 1);
+      return;
+    }
 
     const firstInvalidStep = requiredStepValidity.findIndex((valid) => !valid);
     if (firstInvalidStep !== -1) {
       setStep(firstInvalidStep);
       setSubmitError("Please complete this step before sending your private brief.");
-      if (firstInvalidStep === 4) {
+      if (firstInvalidStep === 2) {
         setFieldErrors({
           ...(!form.name.trim() ? { name: "Please enter your name." } : {}),
           ...(!/\S+@\S+\.\S+/.test(form.email) ? { email: "Please enter a valid email address." } : {})
@@ -127,13 +176,15 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
     setSubmitError("");
     setFieldErrors({});
     try {
+      const payload = { website: String(new FormData(event.currentTarget).get("website") || ""), source: "planner", sourceLabel: initialContext?.sourceLabel, ...form };
       const response = await fetch("/api/enquiry", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ source: "planner", sourceLabel: initialContext?.sourceLabel, ...form })
+        headers: await enquiryHeaders(payload),
+        body: JSON.stringify(payload)
       });
       const result = await response.json();
       if (!response.ok) {
+        trackFunnel("enquiry_failed");
         if (result.fields) setFieldErrors(result.fields);
         throw new Error(result.error || "We could not send your brief. Please try again.");
       }
@@ -147,9 +198,7 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
   }
 
   const requiredStepValidity = [
-    Boolean(form.region),
-    form.types.length > 0 && Boolean(form.occasion),
-    form.experiences.length > 0,
+    Boolean(form.region) && form.experiences.length > 0,
     form.months.length > 0 && Boolean(form.year),
     Boolean(form.name.trim()) && /\S+@\S+\.\S+/.test(form.email)
   ];
@@ -175,279 +224,63 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
   }
 
   return (
-    <form className="planner" onSubmit={submit}>
+    <form className="planner planner-streamlined" onSubmit={submit}><EnquiryHoneypot />
       <div className="planner-shell">
-        <aside className="planner-note" aria-label="Planner context">
-          <div>
-            <p className="eyebrow">Private concierge</p>
-            <h2 className="serif">Private safari concierge.</h2>
-          </div>
-          <div className="planner-dots" aria-label={`Step ${step + 1} of ${steps.length}`}>
-            {steps.map((item, index) => (
-              <button
-                key={item}
-                type="button"
-                aria-label={`Go to ${item}`}
-                aria-current={index === step ? "step" : undefined}
-                className={`${index === step ? "active" : ""}${index < steps.length - 1 && requiredStepValidity[index] ? " completed" : ""}`.trim()}
-                disabled={!canNavigateToStep(index)}
-                onClick={() => setStep(index)}
-              />
-            ))}
-          </div>
+        <aside className="planner-note" aria-label="Planner progress">
+          <div><p className="eyebrow">Plan your safari</p><h2 className="serif">A few details.<br/>A journey for you.</h2></div>
+          <nav className="planner-stage-nav" aria-label="Planning stages">{steps.map((item,index)=><button type="button" key={item} disabled={!canNavigateToStep(index)} aria-current={index===step ? "step" : undefined} onClick={()=>setStep(index)}><span>{index+1}</span>{item}</button>)}</nav>
         </aside>
-
         <div className="planner-card">
-          <p className="planner-count">
-            {String(step + 1).padStart(2, "0")} / {String(steps.length).padStart(2, "0")}
-          </p>
-          {initialContext?.sourceLabel ? (
-            <p className="prefill-note">Started from {initialContext.sourceLabel}</p>
-          ) : null}
-          <h2 className="h2">{steps[step]}</h2>
-
-          {step === 0 ? (
-            <div className="choice-grid region-choice-grid">
-              {regions.map((region) => (
-                <button
-                  type="button"
-                  key={region.name}
-                  className={form.region === region.name ? "choice selected" : "choice"}
-                  aria-pressed={form.region === region.name}
-                  onClick={() => selectRegion(region.name)}
-                >
-                  <span>{region.name}</span>
-                  <small>{region.copy}</small>
-                </button>
-              ))}
+          <p className="planner-count">{step+1} / {steps.length}</p>
+          {initialContext?.sourceLabel && <p className="prefill-note">{initialContext.sourceLabel}</p>}
+          <h2 className="h2" ref={headingRef} tabIndex={-1}>{step === 0 ? choosingRegion ? "Where would you like to go?" : "What interests you?" : steps[step]}</h2>
+          <div className="planner-step-content" key={phase}>
+          {step === 0 && (choosingRegion ? <>
+            <p>Select a region to see its experiences.</p>
+            <div className="choice-grid region-choice-grid">{regions.map(region=><button type="button" key={region.name} className={form.region===region.name ? "choice selected" : "choice"} aria-pressed={form.region===region.name} onClick={()=>selectRegion(region.name)}><span>{region.name}</span></button>)}</div>
+          </> : <>
+            <button type="button" className="planner-edit-region" onClick={()=>setChoosingRegion(true)}>{form.region} · Change region</button>
+            <p>Choose as many as you like.</p>
+            <ChipGroup values={experiencesByRegion[form.region] || []} selected={form.experiences} onToggle={value=>{setForm(current=>({...current,experiences:current.experiences.filter(item=>item!=="Open to suggestions")}));toggle("experiences",value);}}/>
+            <button type="button" className="planner-unsure" onClick={()=>{setForm(current=>({...current,experiences:["Open to suggestions"]}));setStep(1);}}>Not sure yet — help me choose</button>
+          </>)}
+          {step === 1 && <>
+            <p>Approximate plans are fine. We can work out the details together.</p>
+            <div className="field-grid planner-compact-fields">
+              <label>Year<select value={form.year} onChange={event=>setForm(current=>({...current,year:event.target.value,months:event.target.value===String(currentYear)?current.months.filter(month=>months.indexOf(month)>=currentMonthIndex):current.months}))}>{[String(currentYear),String(currentYear+1),String(currentYear+2),"Flexible"].map(year=><option key={year}>{year}</option>)}</select></label>
+              <label>Travellers<select value={form.travellers} onChange={event=>setForm(current=>({...current,travellers:event.target.value}))}>{["1","2","3","4","5","6","7","8","9","10","11","12","To discuss"].map(value=><option key={value} value={value}>{value === "To discuss" ? "Not sure yet" : value}</option>)}</select></label>
+              <label>Duration<select value={form.nights} onChange={event=>setForm(current=>({...current,nights:event.target.value}))}>{["3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","To discuss"].map(value=><option key={value} value={value}>{value === "To discuss" ? "Not sure yet" : value+" nights"}</option>)}</select></label>
             </div>
-          ) : null}
-
-          {step === 1 ? (
-            <>
-              <ChipGroup values={journeyTypes} selected={form.types} onToggle={(value) => toggle("types", value)} />
-              <label className="field-row planner-select">
-                Travel occasion
-                <select value={form.occasion} onChange={(event) => setForm((current) => ({ ...current, occasion: event.target.value }))}>
-                  {occasions.map((occasion) => <option key={occasion}>{occasion}</option>)}
-                </select>
-              </label>
-            </>
-          ) : null}
-
-          {step === 2 ? (
-            <>
-              <ChipGroup
-                values={experiencesByRegion[form.region] || []}
-                selected={form.experiences}
-                onToggle={(value) => toggle("experiences", value)}
-              />
-              <label className="wide quiet-notes">
-                Private brief
-                <textarea
-                  value={form.notes}
-                  placeholder="Wildlife priorities, privacy needs, lodge style, aviation, family requirements or anything we should know."
-                  onChange={(event) => setForm((current) => ({ ...current, notes: event.target.value }))}
-                />
-              </label>
-            </>
-          ) : null}
-
-          {step === 3 ? (
-            <>
-              <ChipGroup
-                values={months}
-                selected={form.months}
-                disabledValues={form.year === String(currentYear) ? months.slice(0, currentMonthIndex) : []}
-                onToggle={(value) => toggle("months", value)}
-              />
-              <div className="field-grid planner-compact-fields">
-                <label>
-                  Year
-                  <select
-                    value={form.year}
-                    onChange={(event) => setForm((current) => ({
-                      ...current,
-                      year: event.target.value,
-                      months: event.target.value === String(currentYear)
-                        ? current.months.filter((month) => months.indexOf(month) >= currentMonthIndex)
-                        : current.months
-                    }))}
-                  >
-                    <option>{currentYear}</option>
-                    <option>{currentYear + 1}</option>
-                    <option>{currentYear + 2}</option>
-                    <option>Flexible</option>
-                  </select>
-                </label>
-                <label>
-                  Nights
-                  <input
-                    type="range"
-                    min="3"
-                    max="21"
-                    value={form.nights}
-                    onChange={(event) => setForm((current) => ({ ...current, nights: event.target.value }))}
-                  />
-                  <span>{form.nights}+ nights</span>
-                </label>
-                <label>
-                  Travellers
-                  <input
-                    type="range"
-                    min="1"
-                    max="12"
-                    value={form.travellers}
-                    onChange={(event) => setForm((current) => ({ ...current, travellers: event.target.value }))}
-                  />
-                  <span>{form.travellers} guests</span>
-                </label>
-                <label>
-                  Date flexibility
-                  <select value={form.flexibility} onChange={(event) => setForm((current) => ({ ...current, flexibility: event.target.value }))}>
-                    <option>Exact dates</option>
-                    <option>Flexible by a few days</option>
-                    <option>Flexible by a few weeks</option>
-                  </select>
-                </label>
-                <label>
-                  Accommodation character
-                  <select value={form.accommodation} onChange={(event) => setForm((current) => ({ ...current, accommodation: event.target.value }))}>
-                    {accommodationStyles.map((style) => <option key={style}>{style}</option>)}
-                  </select>
-                </label>
-                <label>
-                  Approximate investment per person (optional)
-                  <select value={form.investment} onChange={(event) => setForm((current) => ({ ...current, investment: event.target.value }))}>
-                    {investmentRanges.map((range) => <option key={range}>{range}</option>)}
-                  </select>
-                </label>
-              </div>
-            </>
-          ) : null}
-
-          {step === 4 ? (
+            <p>Preferred months · choose one or more</p>
+            <ChipGroup values={months} selected={form.months} disabledValues={form.year===String(currentYear)?months.slice(0,currentMonthIndex):[]} onToggle={value=>{setForm(current=>({...current,months:current.months.filter(item=>item!=="Flexible")}));toggle("months",value);}}/>
+            <button type="button" className="planner-unsure" onClick={()=>{setForm(current=>({...current,months:["Flexible"],year:"Flexible",flexibility:"Flexible by a few weeks"}));setStep(2);}}>Dates not decided — continue</button>
+          </>}
+          {step === 2 && <>
             <div className="field-grid">
-              <label>
-                Name
-                <input
-                  required
-                  name="name"
-                  autoComplete="name"
-                  value={form.name}
-                  aria-invalid={Boolean(fieldErrors.name)}
-                  aria-describedby={fieldErrors.name ? "planner-name-error" : undefined}
-                  onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))}
-                />
-                {fieldErrors.name ? <span className="field-error" id="planner-name-error">{fieldErrors.name}</span> : null}
-              </label>
-              <label>
-                Email
-                <input
-                  required
-                  name="email"
-                  type="email"
-                  inputMode="email"
-                  autoComplete="email"
-                  value={form.email}
-                  aria-invalid={Boolean(fieldErrors.email)}
-                  aria-describedby={fieldErrors.email ? "planner-email-error" : undefined}
-                  onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
-                />
-                {fieldErrors.email ? <span className="field-error" id="planner-email-error">{fieldErrors.email}</span> : null}
-              </label>
-              <label>
-                Phone / WhatsApp
-                <input
-                  name="phone"
-                  type="tel"
-                  inputMode="tel"
-                  autoComplete="tel"
-                  value={form.phone}
-                  onChange={(event) => setForm((current) => ({ ...current, phone: event.target.value }))}
-                />
-              </label>
-              <label>
-                City
-                <input
-                  name="city"
-                  autoComplete="address-level2"
-                  value={form.city}
-                  onChange={(event) => setForm((current) => ({ ...current, city: event.target.value }))}
-                />
-              </label>
-              <label>
-                Preferred contact
-                <select value={form.contactPreference} onChange={(event) => setForm((current) => ({ ...current, contactPreference: event.target.value }))}>
-                  <option>Email</option>
-                  <option>Phone</option>
-                  <option>WhatsApp</option>
-                </select>
-              </label>
+              <label>Name<input required name="name" autoComplete="name" value={form.name} aria-invalid={Boolean(fieldErrors.name)} onChange={event=>setForm(current=>({...current,name:event.target.value}))}/>{fieldErrors.name && <span className="field-error">{fieldErrors.name}</span>}</label>
+              <label>Email<input required name="email" type="email" autoComplete="email" value={form.email} aria-invalid={Boolean(fieldErrors.email)} onChange={event=>setForm(current=>({...current,email:event.target.value}))}/>{fieldErrors.email && <span className="field-error">{fieldErrors.email}</span>}</label>
+              <label>WhatsApp / phone (optional)<input name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={event=>setForm(current=>({...current,phone:event.target.value}))}/></label>
             </div>
-          ) : null}
-
-          {step === 5 ? (
-            <div className="review">
-              <dl className="review-grid">
-                <div>
-                  <dt>Destination</dt>
-                  <dd>{form.region}</dd>
-                </div>
-                <div>
-                  <dt>Journey</dt>
-                  <dd>{form.types.join(", ")} · {form.occasion}</dd>
-                </div>
-                <div>
-                  <dt>Wildlife and interests</dt>
-                  <dd>{form.experiences.join(", ")}</dd>
-                </div>
-                <div>
-                  <dt>Timing</dt>
-                  <dd>{form.months.join(", ")} {form.year} · {form.nights}+ nights · {form.travellers} guests</dd>
-                </div>
-                <div>
-                  <dt>Stay and flexibility</dt>
-                  <dd>{form.accommodation} · {form.flexibility}</dd>
-                </div>
-                <div>
-                  <dt>Investment</dt>
-                  <dd>{form.investment}</dd>
-                </div>
-                <div className="review-contact">
-                  <dt>Contact details</dt>
-                  <dd>
-                    <strong>{form.name}</strong>
-                    <span>{form.email}</span>
-                    {form.phone ? <span>{form.phone}</span> : null}
-                    {form.city ? <span>{form.city}</span> : null}
-                    <span>Preferred contact: {form.contactPreference}</span>
-                  </dd>
-                </div>
-              </dl>
-              <label className="consent-field">
-                <input type="checkbox" checked={form.consent} aria-invalid={Boolean(fieldErrors.consent)} aria-describedby={fieldErrors.consent ? "planner-consent-error" : undefined} onChange={(event) => setForm((current) => ({ ...current, consent: event.target.checked }))} />
-                <span>I consent to Safari Crafters using these details to respond to this private travel brief.</span>
-              </label>
-              {fieldErrors.consent ? <span className="field-error" id="planner-consent-error">{fieldErrors.consent}</span> : null}
-            </div>
-          ) : null}
-
-          {submitError ? <p className="planner-error" role="alert">{submitError}</p> : null}
-
+            <details className="planner-optional"><summary>Optional preferences</summary>
+              <p>Share anything else that will help us plan.</p>
+              <p>Journey style</p><ChipGroup values={journeyTypes} selected={form.types} onToggle={value=>{if(form.types.length===1 && form.types.includes(value)) return;toggle("types",value);}}/>
+              <div className="field-grid">
+                <label>Accommodation character<select value={form.accommodation} onChange={event=>setForm(current=>({...current,accommodation:event.target.value}))}>{accommodationStyles.map(value=><option key={value}>{value}</option>)}</select></label>
+                <label>Budget per person<select value={form.investment} onChange={event=>setForm(current=>({...current,investment:event.target.value}))}>{investmentRanges.map(value=><option key={value}>{value}</option>)}</select></label>
+                <label>Occasion<select value={form.occasion} onChange={event=>setForm(current=>({...current,occasion:event.target.value}))}>{occasions.map(value=><option key={value}>{value}</option>)}</select></label>
+                <label>Preferred contact<select value={form.contactPreference} onChange={event=>setForm(current=>({...current,contactPreference:event.target.value}))}>{["Email","Phone","WhatsApp"].map(value=><option key={value}>{value}</option>)}</select></label>
+              </div>
+              <label className="quiet-notes">Anything else?<textarea value={form.notes} onChange={event=>setForm(current=>({...current,notes:event.target.value}))}/></label>
+            </details>
+            <div className="planner-summary"><strong>Your safari at a glance</strong><p>{form.region} · {form.experiences.join(", ")}</p><p>{form.months[0]==="Flexible" ? "Dates to discuss" : form.months.join(", ")+" · "+form.year} · {form.nights==="To discuss" ? "Duration to discuss" : form.nights+" nights"} · {form.travellers==="To discuss" ? "Group size to discuss" : form.travellers+" travellers"}</p><button type="button" onClick={()=>setStep(0)}>Edit safari</button><button type="button" onClick={()=>setStep(1)}>Edit timing</button></div>
+            <label className="consent-field"><input type="checkbox" checked={form.consent} onChange={event=>setForm(current=>({...current,consent:event.target.checked}))}/><span>I consent to Safari Crafters using these details to respond to my travel enquiry.</span></label>
+            {fieldErrors.consent && <p className="field-error">{fieldErrors.consent}</p>}
+          </>}
+          </div>
+          {submitError && <p className="planner-error" role="alert">{submitError}</p>}
           <div className="planner-actions">
-            <button className="button" type="button" disabled={step === 0} onClick={() => setStep((value) => value - 1)}>
-              Back
-            </button>
-            {step < steps.length - 1 ? (
-              <button className="button button-solid" type="button" disabled={!stepValid} onClick={() => setStep((value) => value + 1)}>
-                Continue
-              </button>
-            ) : (
-              <button className="button button-solid" type="submit" disabled={!stepValid || submitting}>
-                {submitting ? "Sending..." : "Send Brief"}
-              </button>
-            )}
+            <button className="button" type="button" disabled={step===0 && choosingRegion} onClick={()=>step===0?setChoosingRegion(true):setStep(value=>value-1)}>Back</button>
+            {step===0 && choosingRegion ? null : step<2 ? <button className="button button-solid" type="button" disabled={!stepValid} onClick={()=>setStep(value=>value+1)}>Next</button> : <button className="button button-solid" type="submit" disabled={!stepValid || submitting}>{submitting ? "Sending…" : "Help plan my safari"}</button>}
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ export function isValidAdminSession(value: string | undefined) {
 
 export function authorizeAdmin(request: Request) {
   const token = process.env.ADMIN_TOKEN;
-  if (!token && process.env.NODE_ENV !== "production") return null;
+
 
   const provided =
     request.headers.get("x-admin-token") ||

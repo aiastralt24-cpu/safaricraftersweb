@@ -289,6 +289,39 @@
   display: block;
 }
 
+.country-guide { background: var(--bone); color: var(--ink); }
+.country-guide-primary { padding-top: clamp(78px, 8vw, 118px); padding-bottom: clamp(92px, 10vw, 144px); }
+.country-guide-intro { display: grid; grid-template-columns: minmax(0, .9fr) minmax(300px, .62fr); gap: 22px clamp(42px, 7vw, 112px); align-items: end; margin-bottom: clamp(44px, 5vw, 68px); }
+.country-guide-intro .eyebrow { grid-column: 1 / -1; margin: 0; }
+.country-guide-intro h2 { max-width: 13ch; margin: 0; font-family: var(--font-display); font-size: var(--type-h2); font-weight: 300; letter-spacing: -.035em; line-height: .96; text-wrap: balance; }
+.country-guide-intro > p:last-child { max-width: 48ch; margin: 0; color: var(--mute); line-height: 1.72; }
+.country-guide-featured { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3vw, 42px); }
+.country-guide-featured.is-single { max-width: 760px; grid-template-columns: 1fr; }
+.country-guide-featured article { display: grid; min-width: 0; align-content: start; gap: 10px; }
+.country-guide-card-image { position: relative; display: block; aspect-ratio: 4 / 3; margin-bottom: 10px; overflow: hidden; background: var(--ink); }
+.country-guide-card-image img { object-fit: cover; filter: saturate(.82) contrast(1.03); transition: transform 700ms var(--ease), filter 700ms var(--ease); }
+.country-guide-card-image:hover img,
+.country-guide-card-image:focus-visible img { transform: scale(1.02); filter: saturate(.94) contrast(1.02); }
+.country-guide-featured article > p { margin: 0; color: var(--brass); font-size: var(--type-label); font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+.country-guide-featured h3 { margin: 0; font-family: var(--font-display); font-size: var(--type-h4); font-weight: 300; line-height: 1; }
+.country-guide-featured h3 a { display: inline-flex; min-height: 44px; align-items: center; }
+.country-guide-featured article > span { color: var(--mute); line-height: 1.65; }
+.country-guide-card-link { display: inline-flex; width: fit-content; min-height: 44px; align-items: center; gap: 7px; border-bottom: var(--rule-fine); color: var(--brass); font-size: var(--type-label); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.country-guide-card-link svg { width: 16px; transition: transform 240ms var(--ease); }
+.country-guide-card-link:hover svg,
+.country-guide-card-link:focus-visible svg { transform: translate(3px, -3px); }
+.country-guide-extensions { display: grid; grid-template-columns: minmax(240px, .55fr) minmax(0, 1fr); gap: clamp(38px, 7vw, 112px); margin-top: clamp(76px, 8vw, 118px); border-top: var(--rule-fine); padding-top: clamp(34px, 4vw, 54px); }
+.country-guide-extensions .eyebrow { margin: 0 0 16px; }
+.country-guide-extensions h2 { max-width: 10ch; margin: 0; font-family: var(--font-display); font-size: var(--type-h3); font-weight: 300; letter-spacing: -.025em; line-height: .98; }
+.country-guide-extension-list { border-top: var(--rule-fine); }
+.country-guide-extension-list > a { display: grid; grid-template-columns: 34px minmax(170px, .7fr) minmax(220px, 1fr) 24px; gap: 18px; align-items: center; min-height: 100px; border-bottom: var(--rule-fine); }
+.country-guide-extension-list > a > span { color: var(--brass); font-size: var(--type-label); letter-spacing: .14em; }
+.country-guide-extension-list strong { font-family: var(--font-display); font-size: var(--type-h4); font-weight: 300; line-height: 1; }
+.country-guide-extension-list small { color: var(--mute); line-height: 1.55; }
+.country-guide-extension-list svg { width: 19px; transition: transform 240ms var(--ease); }
+.country-guide-extension-list > a:hover svg,
+.country-guide-extension-list > a:focus-visible svg { transform: translate(3px, -3px); }
+
 .atlas-discovery {
   width: 100%;
 }
@@ -467,6 +500,8 @@
 }
 
 @media (max-width: 860px) {
+  .country-guide-featured { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .country-guide-extensions { grid-template-columns: 1fr; }
   .journey-listing-header,
   .atlas-intro,
   .atlas-section-header,
@@ -483,6 +518,13 @@
   .atlas-region-nav::-webkit-scrollbar { display: none; }
   .atlas-region-nav a { flex: 0 0 auto; }
   .atlas-region-cards { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .country-guide-intro,
+  .country-guide-featured { grid-template-columns: 1fr; }
+  .country-guide-extension-list > a { grid-template-columns: 30px minmax(0, 1fr) 24px; gap: 12px; padding: 20px 0; }
+  .country-guide-extension-list small { grid-column: 2 / 4; }
 }
 
 @media (max-width: 560px) {

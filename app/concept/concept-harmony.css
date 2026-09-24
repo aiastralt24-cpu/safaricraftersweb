@@ -214,3 +214,111 @@
     display: none;
   }
 }
+
+/* Homepage surface palette: one editorial base, one featured sand and one dark reset. */
+.concept-page {
+  --homepage-base: #f7f4ed;
+  --homepage-feature: #ece5d9;
+  --homepage-dark: #100d0a;
+  background: var(--homepage-dark);
+}
+
+.concept-story-proof,
+.concept-journey-types,
+.concept-wildest-places,
+.concept-guest-notes,
+.concept-journey-feature-shell,
+.concept-journey-feature,
+.concept-journey-feature-index,
+.concept-species-section,
+.concept-species-editorial,
+.concept-field-notes,
+.concept-expedition-calendar,
+.concept-conservation-statement,
+.concept-concierge {
+  background: var(--homepage-base);
+}
+
+.concept-private-aviation,
+.concept-concierge-card,
+.concept-field-note,
+.concept-expedition-calendar .concept-departure-dossier {
+  background: var(--homepage-feature);
+}
+
+.concept-choice-row a {
+  background: var(--homepage-base);
+}
+
+.concept-choice-row a:hover,
+.concept-choice-row a:focus-visible,
+.concept-choice-row .concept-choice-contact {
+  background: var(--homepage-dark);
+}
+
+/* Private aviation: one restrained, scroll-triggered editorial reveal. */
+@media (prefers-reduced-motion: no-preference) {
+  .concept-private-aviation[data-concept-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .concept-private-aviation-panel {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 620ms cubic-bezier(.2, 0, 0, 1),
+      transform 760ms cubic-bezier(.2, 0, 0, 1);
+  }
+
+  .concept-private-aviation-image {
+    opacity: 0;
+    transform: translateX(24px) scale(.99);
+    transition:
+      opacity 760ms 80ms cubic-bezier(.2, 0, 0, 1),
+      transform 980ms 80ms cubic-bezier(.2, 0, 0, 1);
+  }
+
+  .concept-private-aviation-copy > * {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 520ms cubic-bezier(.2, 0, 0, 1),
+      transform 680ms cubic-bezier(.2, 0, 0, 1);
+  }
+
+  .concept-private-aviation.is-visible .concept-private-aviation-panel,
+  .concept-private-aviation.is-visible .concept-private-aviation-image,
+  .concept-private-aviation.is-visible .concept-private-aviation-copy > * {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  .concept-private-aviation.is-visible .concept-private-aviation-copy > :nth-child(1) { transition-delay: 180ms; }
+  .concept-private-aviation.is-visible .concept-private-aviation-copy > :nth-child(2) { transition-delay: 240ms; }
+  .concept-private-aviation.is-visible .concept-private-aviation-copy > :nth-child(3) { transition-delay: 320ms; }
+  .concept-private-aviation.is-visible .concept-private-aviation-copy > :nth-child(4) { transition-delay: 400ms; }
+  .concept-private-aviation.is-visible .concept-private-aviation-copy > :nth-child(5) { transition-delay: 480ms; }
+
+  .concept-private-aviation.is-visible .concept-private-aviation-image img {
+    animation: privateAviationSettle 1500ms 100ms cubic-bezier(.2, 0, 0, 1) both;
+  }
+}
+
+@keyframes privateAviationSettle {
+  from { transform: scale(1.045) translateX(1%); }
+  to { transform: scale(1) translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-private-aviation,
+  .concept-private-aviation-panel,
+  .concept-private-aviation-image,
+  .concept-private-aviation-image img,
+  .concept-private-aviation-copy > * {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

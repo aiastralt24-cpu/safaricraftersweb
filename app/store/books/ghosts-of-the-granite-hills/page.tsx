@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
-import { productSchema } from "@/lib/structured-data";
+import { breadcrumbSchema, productSchema } from "@/lib/structured-data";
 import StoreMotion from "../../StoreMotion";
 import StoreGallery from "../../StoreGallery";
 import InternationalOrder from "../../InternationalOrder";
+import ShopifyBuyButton from "../../ShopifyBuyButton";
 import "../../store.css";
-
-const storeProductHref =
-  "https://www.store.safaricrafters.com/products/the-ghosts-of-the-granite-hills";
 
 const fieldNotes = [
   {
@@ -47,32 +44,39 @@ export const metadata: Metadata = {
 
 function AcquireEdition({
   className = "",
-  label = "Purchase the book"
+  label = "Purchase the book",
+  showQuantity = false
 }: {
   className?: string;
   label?: string;
+  showQuantity?: boolean;
 }) {
-  return (
-    <Link className={`store-acquire ${className}`.trim()} href={storeProductHref}>
-      <span>{label}</span>
-      <ArrowUpRight size={15} aria-hidden="true" />
-    </Link>
-  );
+  return <ShopifyBuyButton className={className} label={label} showQuantity={showQuantity} />;
 }
 
 export default function StorePage() {
   return (
     <>
       <JsonLd data={productSchema()} />
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Store", path: "/store" },
+        { name: "Books", path: "/store/books" },
+        { name: "Ghosts of the Granite Hills", path: "/store/books/ghosts-of-the-granite-hills" }
+      ])} />
       <StoreMotion />
 
       <section className="store-hero" aria-labelledby="store-title">
         <div className="container store-hero-grid">
           <div className="store-hero-copy">
             <nav className="store-breadcrumb" aria-label="Breadcrumb">
+              <Link href="/">Home</Link>
+              <span aria-hidden="true">/</span>
               <Link href="/store">Store</Link>
               <span aria-hidden="true">/</span>
               <Link href="/store/books">Books</Link>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">Ghosts of the Granite Hills</span>
             </nav>
             <p className="store-kicker">Jawai · Rajasthan</p>
             <h1 id="store-title">
@@ -92,7 +96,7 @@ export default function StorePage() {
             </p>
             <div className="store-hero-action">
               <div className="store-purchase-actions">
-                <AcquireEdition label="Purchase the book" />
+                <AcquireEdition label="Purchase the book" showQuantity />
                 <InternationalOrder />
               </div>
               <a className="store-preview-link" href="#book-preview">View inside the book</a>
@@ -127,7 +131,7 @@ export default function StorePage() {
             <div><dt>Delivery</dt><dd>Options and charges confirmed at checkout</dd></div>
             <div><dt>Assistance</dt><dd><Link href="/contact">Ask about delivery</Link></dd></div>
           </dl>
-          <p>The acquisition link continues to the official Safari Crafters store to complete the order securely.</p>
+          <p>Add the book to your bag, then complete your order with Shopify’s secure checkout.</p>
         </div>
       </section>
 

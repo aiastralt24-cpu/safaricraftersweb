@@ -4176,6 +4176,21 @@
       },
       "gallery": [
         {
+          "src": "/assets/destinations/laikipia/supplied/03.webp",
+          "alt": "Black leopard crossing a woodland track in Laikipia",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/laikipia/supplied/05.webp",
+          "alt": "Black leopard leaping across rocks in Laikipia",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/laikipia/supplied/02.webp",
+          "alt": "Spotted leopard standing beside a track in Laikipia",
+          "credit": "Safari Crafters archive"
+        },
+        {
           "src": "/assets/safari-crafters/laipikia-001e24e7.jpg",
           "alt": "Kenya gallery image 1",
           "credit": "Safari Crafters archive"
@@ -4661,24 +4676,39 @@
       "homepageMeta": "Kenya / Kenya",
       "intro": "The Kenya most travellers know comprises golden grasslands, acacia trees and is mostly focussed on the vast theatre of Masai Mara. Laikipia, lo and behold, is something else.\n\nIts landscape rises into a rugged highland plateau, where open savannah gives way to rocky country, riverine woodland and dry bush that seems to stretch towards the northern horizon. It feels less familiar compared to the more popular destinations in Kenya, but it is familiarly spacious. And, in the right places, wonderfully private – just what you might be looking for. This is a landscape where elephants move through open country, Grevy's zebras walk the plains and predators appear without ever conforming to what a conventional safari comes with as a promise. And then there is the black leopard.",
       "image": {
-        "src": "/assets/destinations/laikipia/laikipia-01.jpg",
-        "alt": "Black leopard moving through Laikipia grassland",
+        "src": "/assets/destinations/laikipia/supplied/01.webp",
+        "alt": "Black leopard moving through green grass in Laikipia",
         "credit": "Safari Crafters archive"
       },
       "gallery": [
         {
-          "src": "/assets/destinations/laikipia/laikipia-02.jpg",
-          "alt": "Laikipia wildlife and landscape photograph 2",
+          "src": "/assets/destinations/laikipia/supplied/02.webp",
+          "alt": "Spotted leopard standing beside a track in Laikipia",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/destinations/laikipia/laikipia-03.jpg",
-          "alt": "Laikipia wildlife and landscape photograph 3",
+          "src": "/assets/destinations/laikipia/supplied/03.webp",
+          "alt": "Black leopard crossing a woodland track in Laikipia",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/destinations/laikipia/laikipia-04.jpg",
-          "alt": "Laikipia wildlife and landscape photograph 4",
+          "src": "/assets/destinations/laikipia/supplied/04.webp",
+          "alt": "Spotted hyena standing in Laikipia scrub",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/laikipia/supplied/05.webp",
+          "alt": "Black leopard leaping across rocks in Laikipia",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/laikipia/supplied/06.webp",
+          "alt": "Black leopard approaching along a forest path in Laikipia",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/laikipia/supplied/07.webp",
+          "alt": "Black leopard carrying prey at night in Laikipia",
           "credit": "Safari Crafters archive"
         }
       ],
@@ -4688,7 +4718,9 @@
         "A considered starting point, not a fixed package"
       ],
       "journeys": [],
-      "expeditions": [],
+      "expeditions": [
+        "Laikipia Black Leopard Expedition"
+      ],
       "habitat": "Laikipia is especially suited to travellers who have already experienced the classic African safari circuit in Kenya or who want their first African safari to feel more individual than voguish.\n\nPrivate conservancies offer a quieter pace to your travel and, depending on the conservancy and property, greater flexibility in how the day plays out. Night drives add another dimension to your wildlife experience in Laikipia, bringing nocturnal predators and species into the forefront, which are rarely encountered during conventional daytime safaris.\n\nWild dogs, striped hyenas, elephants, Grevy's zebras and other antelope share the landscape with leopards and other predators. Unlike other more popular Kenyan destinations, this may not mean a safari of constant activity, but we craft our Laikipia itinerary for those who have the patience to pay undivided attention to everything they behold in the natural world.",
       "idealStay": "4 nights / 5 days",
       "gateway": "By road from Nairobi",
@@ -5880,7 +5912,7 @@
       "bestMonths": "May to October for the principal dry-season safari circuit; Victoria Falls and green-season priorities require separate timing",
       "wildlife": "Elephant, buffalo, lion, leopard, wild dog, hippo, crocodile and rich riverine birdlife",
       "photography": "River crossings, floodplain gatherings, walking-level detail and broad wilderness scenes reward two camera bodies and flexible focal lengths.",
-      "description": "Zambia and Zimbabwe is a private-safari destination in Zambia & Zimbabwe, defined by zambezi and luangwa river systems, floodplains, mopane and miombo woodland, escarpments and open pans and best understood through a carefully paced stay.",
+      "description": "Follow the Zambezi and Luangwa through two contrasting safari countries. Zambia and Zimbabwe bring together walking country, river landscapes and open woodland, with five park chapters to shape a considered private route.",
       "homepageCaption": "Zambia and Zimbabwe",
       "homepageMeta": "Zambia and Zimbabwe / Southern Africa",
       "intro": "Zambia and Zimbabwe is shaped by zambezi and luangwa river systems, floodplains, mopane and miombo woodland, escarpments and open pans. Its wildlife context includes elephant, buffalo, lion, leopard, wild dog, hippo, crocodile and rich riverine birdlife.\n\nThe strongest private journey is built around access, season and field rhythm rather than a guaranteed sighting list. Regional flights and road transfers connect the main reserves, but seasonal camp and airstrip operations must be reconfirmed. Combine drives with guided walks, boats or canoes where locally permitted, leaving transfer days deliberately light.",
@@ -7518,54 +7550,39 @@
       "homepageMeta": "June to October",
       "intro": "Brazil brings together pantanal wetland, amazon rainforest, atlantic forest, cerrado, coastal mangrove and major river systems. Its wildlife context includes jaguar, giant otter, tapir, maned wolf, primates, macaws, toucans and marine life.\n\nA strong journey begins with the governing landscape rather than a sighting promise. Brazil's wildlife regions are separated by long distances. Domestic flights, boat transfers and seasonal roads must be built into the route. Use multi-night ecolodge bases with boat, vehicle and walking sessions matched to water level and heat.",
       "image": {
-        "src": "/assets/safari-crafters/brazil-3a21ae04.jpg",
-        "alt": "Brazil",
+        "src": "/assets/destinations/pantanal/supplied/05.webp",
+        "alt": "Jaguar resting on a branch over the river in the Pantanal",
         "credit": "Safari Crafters archive"
       },
       "gallery": [
         {
-          "src": "/assets/safari-crafters/the-pantanal-wetlands-af117fe5.jpg",
-          "alt": "Brazil gallery image 1",
+          "src": "/assets/destinations/pantanal/supplied/01.webp",
+          "alt": "Jaguars on a sandy riverbank in the Pantanal",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/brazil-2-6e07db42.jpg",
-          "alt": "Brazil gallery image 2",
+          "src": "/assets/destinations/atlantic-rainforest/supplied/01.webp",
+          "alt": "Toucan perched on a mossy branch in Brazil’s Atlantic Forest",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/brazil-1-30fd494c.jpg",
-          "alt": "Brazil gallery image 3",
+          "src": "/assets/destinations/pantanal/supplied/03.webp",
+          "alt": "Giant anteater walking through Pantanal grassland",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/11-38fa371a.jpg",
-          "alt": "Brazil gallery image 4",
+          "src": "/assets/destinations/pantanal/supplied/04.webp",
+          "alt": "Toco toucan perched in the Pantanal",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/22-852abef8.jpg",
-          "alt": "Brazil gallery image 5",
+          "src": "/assets/destinations/pantanal/supplied/06.webp",
+          "alt": "Red and green macaws flying past a rock face in Brazil",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-25-60a9d57a.jpg",
-          "alt": "Brazil gallery image 6",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-24-591b7ff7.jpg",
-          "alt": "Brazil gallery image 7",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-23-8799c509.jpg",
-          "alt": "Brazil gallery image 8",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-16-cb13d1db.jpg",
-          "alt": "Brazil gallery image 9",
+          "src": "/assets/destinations/pantanal/supplied/07.webp",
+          "alt": "Armadillo walking through the Pantanal",
           "credit": "Safari Crafters archive"
         }
       ],
@@ -7647,24 +7664,39 @@
       "homepageMeta": "Brazil / Brazil",
       "intro": "Pantanal brings together seasonally flooded grassland, gallery forest, river channels, oxbow lakes and ranchland. Its wildlife context includes jaguar, giant otter, tapir, capybara, caiman, hyacinth macaw and prolific waterbirds.\n\nA strong journey begins with the governing landscape rather than a sighting promise. The north and south are distinct circuits. Road and boat access changes with flood level, and transfers can be long. Dawn and afternoon boats or drives focus on river edges and open floodplain, with a shaded midday pause.",
       "image": {
-        "src": "/assets/destinations/pantanal/pantanal-01.jpg",
-        "alt": "Jaguars beside a Pantanal riverbank",
+        "src": "/assets/destinations/pantanal/supplied/01.webp",
+        "alt": "Jaguars on a sandy riverbank in the Pantanal",
         "credit": "Safari Crafters archive"
       },
       "gallery": [
         {
-          "src": "/assets/destinations/pantanal/pantanal-02.jpg",
-          "alt": "Pantanal wildlife and landscape photograph 2",
+          "src": "/assets/destinations/pantanal/supplied/02.webp",
+          "alt": "Jaguar swimming through a Pantanal river",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/destinations/pantanal/pantanal-03.jpg",
-          "alt": "Pantanal wildlife and landscape photograph 3",
+          "src": "/assets/destinations/pantanal/supplied/03.webp",
+          "alt": "Giant anteater walking through Pantanal grassland",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/destinations/pantanal/pantanal-04.jpg",
-          "alt": "Pantanal wildlife and landscape photograph 4",
+          "src": "/assets/destinations/pantanal/supplied/04.webp",
+          "alt": "Toco toucan perched in the Pantanal",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/pantanal/supplied/05.webp",
+          "alt": "Jaguar resting on a branch over the river in the Pantanal",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/pantanal/supplied/06.webp",
+          "alt": "Red and green macaws flying past a rock face in Brazil",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/pantanal/supplied/07.webp",
+          "alt": "Armadillo walking through the Pantanal",
           "credit": "Safari Crafters archive"
         }
       ],
@@ -7674,7 +7706,9 @@
         "A considered starting point, not a fixed package"
       ],
       "journeys": [],
-      "expeditions": [],
+      "expeditions": [
+        "The Pantanal Wetlands"
+      ],
       "habitat": "Seasonally flooded grassland, gallery forest, river channels, oxbow lakes and ranchland",
       "idealStay": "4-5 nights in one sector; 7 nights when combining north and south",
       "gateway": "Cuiabá for the northern Pantanal or Campo Grande for the south",
@@ -7815,24 +7849,39 @@
       "homepageMeta": "Brazil / Brazil",
       "intro": "Atlantic Rainforest brings together coastal rainforest, montane cloud forest, restinga, mangrove and forest fragments. Its wildlife context includes golden lion tamarin, muriqui, howler monkey, toucans, antbirds, amphibians and endemic atlantic forest species.\n\nA strong journey begins with the governing landscape rather than a sighting promise. The biome survives in separated protected areas. A specialist naturalist and a precise reserve choice are more important than a broad regional label. Slow forest walks at first light, a midday pause and late birding or nocturnal work where permitted.",
       "image": {
-        "src": "/assets/destinations/atlantic-rainforest/atlantic-rainforest-01.jpg",
-        "alt": "Toucan in Brazil's Atlantic rainforest",
+        "src": "/assets/destinations/atlantic-rainforest/supplied/01.webp",
+        "alt": "Toucan perched on a mossy branch in Brazil’s Atlantic Forest",
         "credit": "Safari Crafters archive"
       },
       "gallery": [
         {
-          "src": "/assets/destinations/atlantic-rainforest/atlantic-rainforest-02.jpg",
-          "alt": "Atlantic Rainforest wildlife and landscape photograph 2",
+          "src": "/assets/destinations/atlantic-rainforest/supplied/02.webp",
+          "alt": "Toucan on a branch against the Atlantic Forest canopy",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/destinations/atlantic-rainforest/atlantic-rainforest-03.jpg",
-          "alt": "Atlantic Rainforest wildlife and landscape photograph 3",
+          "src": "/assets/destinations/atlantic-rainforest/supplied/03.webp",
+          "alt": "Black and white bird perched in Brazil’s Atlantic Forest",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/destinations/atlantic-rainforest/atlantic-rainforest-04.jpg",
-          "alt": "Atlantic Rainforest wildlife and landscape photograph 4",
+          "src": "/assets/destinations/atlantic-rainforest/supplied/04.webp",
+          "alt": "Large forest eagle among leafy branches in Brazil",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/atlantic-rainforest/supplied/05.webp",
+          "alt": "Toucan perched beside a mossy tree in the Atlantic Forest",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/atlantic-rainforest/supplied/06.webp",
+          "alt": "Red-headed bird at a tree hollow in the Atlantic Forest",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/atlantic-rainforest/supplied/07.webp",
+          "alt": "Toucan with a long dark bill in Brazil’s Atlantic Forest",
           "credit": "Safari Crafters archive"
         }
       ],
@@ -7972,54 +8021,39 @@
       "homepageMeta": "October to April",
       "intro": "Chile brings together patagonian steppe, temperate rainforest, andes, fjords, atacama desert, salt flats and pacific coast. Its wildlife context includes puma, guanaco, andean condor, huemul, fox, flamingo and marine mammals.\n\nA strong journey begins with the governing landscape rather than a sighting promise. Chile's wildlife regions span thousands of kilometres. Seasonal park access, wind and domestic-flight schedules must shape the route. Use several nights per base and preserve weather buffers; Patagonia punishes itineraries built around daily relocation.",
       "image": {
-        "src": "/assets/safari-crafters/chile-1e137918.jpg",
-        "alt": "Chile",
+        "src": "/assets/destinations/patagonia/supplied/02.webp",
+        "alt": "Puma in grassland below snow-covered Patagonian mountains",
         "credit": "Safari Crafters archive"
       },
       "gallery": [
         {
-          "src": "/assets/safari-crafters/13-1-6d9f6dcd.jpg",
-          "alt": "Chile gallery image 1",
+          "src": "/assets/destinations/patagonia/supplied/01.webp",
+          "alt": "Puma resting beneath the mountain peaks of Patagonia",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/chile-1-8a811cd2.jpg",
-          "alt": "Chile gallery image 2",
+          "src": "/assets/destinations/patagonia/supplied/03.webp",
+          "alt": "Puma walking beside water in Patagonia",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-5-11-4bb17520.jpg",
-          "alt": "Chile gallery image 3",
+          "src": "/assets/destinations/patagonia/supplied/04.webp",
+          "alt": "Puma crossing snow-dusted scrub in Patagonia",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-7-11-58e04b2c.jpg",
-          "alt": "Chile gallery image 4",
+          "src": "/assets/destinations/patagonia/supplied/05.webp",
+          "alt": "Guanaco silhouetted against clouds in Patagonia",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-1-12-ee6b0e3a.jpg",
-          "alt": "Chile gallery image 5",
+          "src": "/assets/destinations/patagonia/supplied/06.webp",
+          "alt": "Puma standing in golden Patagonian grassland",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-2-11-1a5192e8.jpg",
-          "alt": "Chile gallery image 6",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-3-11-7e537479.jpg",
-          "alt": "Chile gallery image 7",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-4-11-scaled-adcc3b24.jpg",
-          "alt": "Chile gallery image 8",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-6-11-488879de.jpg",
-          "alt": "Chile gallery image 9",
+          "src": "/assets/destinations/patagonia/supplied/07.webp",
+          "alt": "Skunk foraging in Patagonian grassland",
           "credit": "Safari Crafters archive"
         }
       ],
@@ -8101,24 +8135,39 @@
       "homepageMeta": "Chile and Argentina / Chile and Argentina",
       "intro": "Patagonia brings together andean peaks, glacial lakes, steppe, beech forest, fjords and wind-shaped grassland. Its wildlife context includes puma, guanaco, andean condor, huemul, fox, rhea and coastal wildlife.\n\nA strong journey begins with the governing landscape rather than a sighting promise. Chile and Argentina have separate borders, parks and logistics. Trail rules, closures and guide requirements must be checked close to travel. Track or hike in the cool morning, hold afternoons flexible for wind and cloud, and protect at least one weather-buffer day.",
       "image": {
-        "src": "/assets/destinations/patagonia/patagonia-02.jpg",
-        "alt": "Puma beneath the mountains of Patagonia",
+        "src": "/assets/destinations/patagonia/supplied/01.webp",
+        "alt": "Puma resting beneath the mountain peaks of Patagonia",
         "credit": "Safari Crafters archive"
       },
       "gallery": [
         {
-          "src": "/assets/destinations/patagonia/patagonia-01.jpg",
-          "alt": "Patagonia wildlife and landscape photograph 1",
+          "src": "/assets/destinations/patagonia/supplied/02.webp",
+          "alt": "Puma in grassland below snow-covered Patagonian mountains",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/destinations/patagonia/patagonia-03.jpg",
-          "alt": "Patagonia wildlife and landscape photograph 3",
+          "src": "/assets/destinations/patagonia/supplied/03.webp",
+          "alt": "Puma walking beside water in Patagonia",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/destinations/patagonia/patagonia-04.jpg",
-          "alt": "Patagonia wildlife and landscape photograph 4",
+          "src": "/assets/destinations/patagonia/supplied/04.webp",
+          "alt": "Puma crossing snow-dusted scrub in Patagonia",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/patagonia/supplied/05.webp",
+          "alt": "Guanaco silhouetted against clouds in Patagonia",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/patagonia/supplied/06.webp",
+          "alt": "Puma standing in golden Patagonian grassland",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/patagonia/supplied/07.webp",
+          "alt": "Skunk foraging in Patagonian grassland",
           "credit": "Safari Crafters archive"
         }
       ],
@@ -8503,11 +8552,42 @@
       "homepageMeta": "Colombia / Birding Destination",
       "intro": "Colombia brings together caribbean coast, three andean cordilleras, cloud forest, amazon, orinoco grassland and chocó rainforest. Its wildlife context includes spectacled bear, primates, jaguar, humpback whale and more bird species than any other country.\n\nA strong journey begins with the governing landscape rather than a sighting promise. Regional flights are often essential. Park access, community permissions and local security advice must be checked for the exact route. Base for several nights with specialist dawn birding, slower afternoon natural history and realistic domestic-flight buffers.",
       "image": {
-        "src": "/assets/safari-crafters/brazil-3a21ae04.jpg",
-        "alt": "Brazil",
+        "src": "/assets/destinations/colombia/supplied/01.webp",
+        "alt": "Andean cock-of-the-rock perched in Colombia",
         "credit": "Safari Crafters archive"
       },
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "/assets/destinations/colombia/supplied/02.webp",
+          "alt": "Colourful mountain toucan on a mossy branch in Colombia",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/colombia/supplied/03.webp",
+          "alt": "Spotted wild cat standing on a fallen tree in Colombia",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/colombia/supplied/04.webp",
+          "alt": "Multicoloured tanager on a mossy branch in Colombia",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/colombia/supplied/05.webp",
+          "alt": "Mountain bird perched against green forest in Colombia",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/colombia/supplied/06.webp",
+          "alt": "Brown forest bird among moss in Colombia",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/colombia/supplied/07.webp",
+          "alt": "Hummingbird approaching hanging red flowers in Colombia",
+          "credit": "Safari Crafters archive"
+        }
+      ],
       "highlights": [
         "Private planning around season, access and guest pace",
         "Specialist advice before any lodge or route is confirmed",
@@ -8959,11 +9039,42 @@
       "homepageMeta": "Costa Rica / Birding Destination",
       "intro": "Costa Rica brings together caribbean and pacific rainforest, cloud forest, dry forest, mangrove, volcano and marine protected areas. Its wildlife context includes sloth, monkey, tapir, jaguar habitat, quetzal, toucan, macaw, frog, sea turtle and whale.\n\nA strong journey begins with the governing landscape rather than a sighting promise. Road times can be slow despite short distances. Park reservations, turtle seasons and domestic flights must be matched to the exact route. Early guided walks and boat trips anchor the day, with heat-aware rest and nocturnal forest sessions where permitted.",
       "image": {
-        "src": "/assets/safari-crafters/brazil-3a21ae04.jpg",
-        "alt": "Brazil",
+        "src": "/assets/destinations/costa-rica/supplied/01.webp",
+        "alt": "Keel-billed toucan perched on a branch in Costa Rica",
         "credit": "Safari Crafters archive"
       },
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "/assets/destinations/costa-rica/supplied/02.webp",
+          "alt": "Sloth hanging from a forest branch in Costa Rica",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/costa-rica/supplied/03.webp",
+          "alt": "Scarlet macaw flying over green water in Costa Rica",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/costa-rica/supplied/04.webp",
+          "alt": "Hummingbird feeding at red flowers in Costa Rica",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/costa-rica/supplied/05.webp",
+          "alt": "King vultures spreading their wings in Costa Rica",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/costa-rica/supplied/06.webp",
+          "alt": "Red and black bird perched in the Costa Rican forest",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/costa-rica/supplied/07.webp",
+          "alt": "Toucan on a moss-covered branch in Costa Rica",
+          "credit": "Safari Crafters archive"
+        }
+      ],
       "highlights": [
         "Private planning around season, access and guest pace",
         "Specialist advice before any lodge or route is confirmed",
@@ -10487,6 +10598,933 @@
           "answer": "Early and late drives cross open saline plains and wetland edges, with midday reserved for rest, craft traditions or a change of habitat."
         }
       ]
+    },
+    {
+      "continent": "Arctic",
+      "country": "Russia",
+      "status": "concierge",
+      "category": "Private wildlife destination",
+      "parentRegion": "Russian Far East",
+      "bestFor": [
+        "Brown bears",
+        "Volcanic landscapes",
+        "Coastal wildlife",
+        "Wildlife photography"
+      ],
+      "planningNote": "A bespoke enquiry, with dates and access confirmed individually before an itinerary is offered.",
+      "bestMonths": "July, August and September for a summer wildlife brief; exact timing depends on the route, salmon runs and local conditions.",
+      "wildlife": "Brown bears, salmon, sea otters, Steller’s sea eagles and coastal seabirds. Offshore encounters may include orcas and other marine mammals; sightings depend on conditions.",
+      "photography": "Pair a long lens for wildlife with a wider lens for bears within the landscape. Waterproof protection and spare batteries are useful on coastal days. Keep distance and let the guide determine every approach.",
+      "journeys": [],
+      "expeditions": [],
+      "highlights": [
+        "Brown-bear observation shaped around seasonal salmon movement",
+        "Volcanic lakes, mountain silhouettes and open wilderness",
+        "Pacific coastal wildlife and photography from the water"
+      ],
+      "habitat": "Volcanic slopes, freshwater lakes, salmon rivers, birch woodland and North Pacific coast",
+      "idealStay": "Allow around 8–12 nights as a starting brief, with spare days for weather; final duration follows confirmed access.",
+      "gateway": "Petropavlovsk-Kamchatsky via Yelizovo Airport",
+      "access": "Remote excursions may involve boats, rough-road vehicles or helicopter transfers. Protected-area permissions, local operating conditions and weather determine which routes are possible. Confirm current entry requirements, travel advice, transport and insurance before making commitments.",
+      "safariRhythm": "Build each day around one main field experience, with time to wait, watch and return to promising locations. Keep flexible days between remote excursions and onward travel.",
+      "sources": [
+        {
+          "title": "Volcanoes of Kamchatka",
+          "publisher": "UNESCO World Heritage Centre",
+          "url": "https://whc.unesco.org/en/list/765",
+          "accessedAt": "2026-09-22"
+        },
+        {
+          "title": "South Kamchatka Sanctuary",
+          "publisher": "Kamchatka Tourism Portal",
+          "url": "https://visitkamchatka.ru/activities/yuzhno-kamchatskiy-zakaznik/",
+          "accessedAt": "2026-09-22"
+        }
+      ],
+      "slug": "russia",
+      "title": "Russia",
+      "region": "Russia · Russian Far East",
+      "description": "Our Russia collection begins in Kamchatka, where brown bears move beneath volcanic peaks and the Pacific meets a rugged coast. Explore this remote corner of the Russian Far East through a considered wildlife brief, shaped around the season, specialist guiding and confirmed local access.",
+      "homepageCaption": "Russia’s wild Pacific edge, beginning with Kamchatka.",
+      "homepageMeta": "Russia / Kamchatka",
+      "intro": "Russia spans an extraordinary range of landscapes. Our starting point is deliberately focused: Kamchatka, on the Pacific edge of the country. Here the interest lies in wild coastlines, bear country and the patient work of observing animals within a vast landscape.",
+      "image": {
+        "src": "/assets/destinations/kamchatka/supplied/13.webp",
+        "alt": "Brown bear and volcano reflected in calm water in Kamchatka",
+        "credit": "Safari Crafters archive"
+      },
+      "gallery": [
+        {
+          "src": "/assets/destinations/kamchatka/supplied/12.webp",
+          "alt": "Brown bear walking beneath a snow-streaked volcano in Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/03.webp",
+          "alt": "Blue crater lake surrounded by volcanic slopes in Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/01.webp",
+          "alt": "Rock sea stack off the coast of Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/08.webp",
+          "alt": "Sea otter floating on its back in Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/09.webp",
+          "alt": "Orca surfacing off the coast of Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/05.webp",
+          "alt": "Milky Way reflected in a pool beneath Kamchatka mountains",
+          "credit": "Safari Crafters archive"
+        }
+      ],
+      "seo": {
+        "title": "Russia Wildlife Travel & Kamchatka | Safari Crafters",
+        "description": "Explore Russia through Kamchatka: brown bears, volcanic landscapes and Pacific wildlife, with an individually assessed private travel brief.",
+        "reviewedAt": "2026-09-22"
+      }
+    },
+    {
+      "continent": "Arctic",
+      "country": "Russia",
+      "status": "concierge",
+      "category": "Private wildlife destination",
+      "parentRegion": "Russian Far East",
+      "bestFor": [
+        "Brown bears",
+        "Volcanic landscapes",
+        "Coastal wildlife",
+        "Wildlife photography"
+      ],
+      "planningNote": "A bespoke enquiry, with dates and access confirmed individually before an itinerary is offered.",
+      "bestMonths": "July, August and September for a summer wildlife brief; exact timing depends on the route, salmon runs and local conditions.",
+      "wildlife": "Brown bears, salmon, sea otters, Steller’s sea eagles and coastal seabirds. Offshore encounters may include orcas and other marine mammals; sightings depend on conditions.",
+      "photography": "Pair a long lens for wildlife with a wider lens for bears within the landscape. Waterproof protection and spare batteries are useful on coastal days. Keep distance and let the guide determine every approach.",
+      "journeys": [],
+      "expeditions": [],
+      "highlights": [
+        "Brown-bear observation shaped around seasonal salmon movement",
+        "Volcanic lakes, mountain silhouettes and open wilderness",
+        "Pacific coastal wildlife and photography from the water"
+      ],
+      "habitat": "Volcanic slopes, freshwater lakes, salmon rivers, birch woodland and North Pacific coast",
+      "idealStay": "Allow around 8–12 nights as a starting brief, with spare days for weather; final duration follows confirmed access.",
+      "gateway": "Petropavlovsk-Kamchatsky via Yelizovo Airport",
+      "access": "Remote excursions may involve boats, rough-road vehicles or helicopter transfers. Protected-area permissions, local operating conditions and weather determine which routes are possible. Confirm current entry requirements, travel advice, transport and insurance before making commitments.",
+      "safariRhythm": "Build each day around one main field experience, with time to wait, watch and return to promising locations. Keep flexible days between remote excursions and onward travel.",
+      "sources": [
+        {
+          "title": "Volcanoes of Kamchatka",
+          "publisher": "UNESCO World Heritage Centre",
+          "url": "https://whc.unesco.org/en/list/765",
+          "accessedAt": "2026-09-22"
+        },
+        {
+          "title": "South Kamchatka Sanctuary",
+          "publisher": "Kamchatka Tourism Portal",
+          "url": "https://visitkamchatka.ru/activities/yuzhno-kamchatskiy-zakaznik/",
+          "accessedAt": "2026-09-22"
+        }
+      ],
+      "slug": "kamchatka",
+      "title": "Kamchatka",
+      "region": "Kamchatka Peninsula, Russian Far East",
+      "description": "Brown bears beside salmon waters. Volcanoes above the cloud line. A Pacific coast alive with seabirds and marine mammals. Kamchatka rewards time in the field, flexible plans and a guide who knows when to stay still.",
+      "homepageCaption": "Brown bears, volcanic horizons and the wild Pacific.",
+      "homepageMeta": "Kamchatka / Russia",
+      "intro": "On Russia’s far eastern edge, Kamchatka brings wildlife and geology into the same frame. A bear crossing a riverbank may be backed by a snow-streaked volcano; a coastal day may unfold among sea stacks, seabirds and drifting sea otters. The UNESCO-listed Volcanoes of Kamchatka recognise a landscape shaped by volcanic activity and glaciers, with rich habitats for wildlife.\n\nThe strongest journey gives these places room. Rather than rush between distant highlights, begin with your main interest: bear observation, landscape photography or time on the Pacific coast. We use that preference to shape an individual brief, subject to current access and local arrangements. There is no fixed departure or guaranteed sighting attached to this page.",
+      "image": {
+        "src": "/assets/destinations/kamchatka/supplied/13.webp",
+        "alt": "Brown bear and volcano reflected in calm water in Kamchatka",
+        "credit": "Safari Crafters archive"
+      },
+      "gallery": [
+        {
+          "src": "/assets/destinations/kamchatka/supplied/03.webp",
+          "alt": "Blue crater lake surrounded by volcanic slopes in Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/12.webp",
+          "alt": "Brown bear walking beneath a snow-streaked volcano in Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/01.webp",
+          "alt": "Rock sea stack off the coast of Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/06.webp",
+          "alt": "Brown bear walking along a shoreline in Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/08.webp",
+          "alt": "Sea otter floating on its back in Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/09.webp",
+          "alt": "Orca surfacing off the coast of Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/02.webp",
+          "alt": "Sea lions resting on rocks along the Kamchatka coast",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/10.webp",
+          "alt": "Seabirds flying above the water off Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/07.webp",
+          "alt": "Sea otters swimming in coastal waters off Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/11.webp",
+          "alt": "Brown bear beside the water below a viewing platform in Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/05.webp",
+          "alt": "Milky Way reflected in a pool beneath Kamchatka mountains",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/supplied/04.webp",
+          "alt": "Milky Way above a building in Kamchatka",
+          "credit": "Safari Crafters archive"
+        }
+      ],
+      "editorial": {
+        "openingHeadline": "Where bear country meets the Pacific.",
+        "landscapeHeadline": "A horizon built by volcanoes.",
+        "wildlifeHeadline": "Give the encounter time."
+      },
+      "pairings": [
+        {
+          "slug": "russia",
+          "title": "Explore the Russia collection",
+          "reason": "Return to the country overview for the wider context of your Kamchatka brief."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "When should I plan a Kamchatka wildlife journey?",
+          "answer": "July to September is a starting window for a summer wildlife brief. Bear observation depends on salmon movement and the specific site; coastal excursions and mountain access depend on weather. Choose dates after your priorities and local access have been assessed."
+        },
+        {
+          "question": "What makes Kamchatka distinctive?",
+          "answer": "The combination of brown bears, salmon waters, volcanic scenery and Pacific coastal wildlife. A well-paced visit balances observation with time to appreciate the setting."
+        },
+        {
+          "question": "Can I see bears at Kuril Lake?",
+          "answer": "Kuril Lake in the South Kamchatka Sanctuary is associated with salmon and brown-bear observation. Any proposed visit must be checked with the protected-area authorities and local operators for current permissions and access. No sighting or excursion is guaranteed."
+        },
+        {
+          "question": "How much time should I allow?",
+          "answer": "Around 8–12 nights is a useful initial planning allowance rather than a fixed itinerary. The final length depends on your chosen locations, confirmed transfers and the weather margin needed between remote excursions."
+        },
+        {
+          "question": "How are wildlife encounters approached?",
+          "answer": "Follow the local guide and protected-area rules, keep a respectful distance and never approach or feed a bear. Photography should follow the animal’s behaviour rather than interrupt it."
+        },
+        {
+          "question": "Is this a confirmed departure?",
+          "answer": "No. This is a destination guide and an invitation to discuss a private brief. Current travel advice, entry requirements, transport, insurance and local operations must be assessed before arrangements are confirmed."
+        }
+      ],
+      "seo": {
+        "title": "Kamchatka Brown Bears & Wildlife Photography | Safari Crafters",
+        "description": "Explore Kamchatka’s brown bears, volcanic landscapes and Pacific coast with original field notes, photography and a bespoke wildlife travel brief.",
+        "reviewedAt": "2026-09-22"
+      }
+    },
+    {
+      "slug": "volcanoes-national-park",
+      "title": "Volcanoes National Park",
+      "category": "Private wildlife destination",
+      "continent": "Africa",
+      "country": "Rwanda",
+      "parentRegion": "Virunga highlands",
+      "status": "rich",
+      "bestFor": [
+        "Wildlife observation",
+        "Forest and savannah",
+        "Photography"
+      ],
+      "planningNote": "An individual planning brief; permits, local access and operating conditions are confirmed before arrangements.",
+      "region": "Virunga highlands, Rwanda",
+      "bestMonths": "June to September and December to February are generally drier; rain remains possible.",
+      "wildlife": "Mountain gorillas and golden monkeys",
+      "photography": "Work with the local guide on light, distance and positioning. Carry rain protection and choose lenses around the habitat; wildlife viewing always takes priority over the photograph.",
+      "description": "Forest-covered volcanoes form the backdrop to Rwanda’s best-known primate encounters. A visit here is built around guided tracking, with the rest of the day left deliberately unhurried.",
+      "intro": "Forest-covered volcanoes form the backdrop to Rwanda’s best-known primate encounters. A visit here is built around guided tracking, with the rest of the day left deliberately unhurried.\n\nBegin with the experience that matters most, then arrange permits and accommodation around it. Walking conditions and the time needed to find primates vary, so fitness, footwear and realistic expectations belong in the planning conversation.",
+      "image": {
+        "src": "/assets/destination-heroes/volcanoes-national-park.webp",
+        "alt": "AI-generated illustration of Volcanoes National Park",
+        "credit": "AI-generated destination illustration"
+      },
+      "gallery": [],
+      "highlights": [
+        "Mountain gorillas and golden monkeys",
+        "Bamboo and montane forest on volcanic slopes",
+        "An individually paced stay with local guiding"
+      ],
+      "journeys": [],
+      "expeditions": [],
+      "habitat": "Bamboo and montane forest on volcanic slopes",
+      "idealStay": "3–4 nights",
+      "gateway": "Kigali, continuing by road toward Musanze",
+      "access": "Confirm the route, local guiding and any required permissions before travel. Leave sufficient time for transfers and weather changes.",
+      "safariRhythm": "Use early tracking departures followed by a quiet afternoon; leave space between strenuous activities.",
+      "editorial": {
+        "openingHeadline": "Gorilla country, at forest pace.",
+        "landscapeHeadline": "A landscape that sets the pace.",
+        "wildlifeHeadline": "Time to watch, room to wait."
+      },
+      "sources": [
+        {
+          "title": "Volcanoes National Park",
+          "publisher": "Visit Rwanda",
+          "url": "https://visitrwanda.com/interests/primate-tracking/",
+          "accessedAt": "2026-09-22"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "When should I visit Volcanoes National Park?",
+          "answer": "June to September and December to February are generally drier; rain remains possible."
+        },
+        {
+          "question": "How long should I stay?",
+          "answer": "3–4 nights is a suggested starting point, adjusted to your interests and the wider route."
+        },
+        {
+          "question": "What does a day here look like?",
+          "answer": "Use early tracking departures followed by a quiet afternoon; leave space between strenuous activities."
+        },
+        {
+          "question": "Are sightings guaranteed?",
+          "answer": "No. Wildlife moves freely, and weather and habitat affect visibility. Experienced guiding and enough time in the field improve the experience without promising a particular encounter."
+        }
+      ],
+      "seo": {
+        "title": "Volcanoes National Park Wildlife Travel | Safari Crafters",
+        "description": "Forest-covered volcanoes form the backdrop to Rwanda’s best-known primate encounters. A visit here is built around guided tracking, with the rest of the day left deliberately unhurried.",
+        "reviewedAt": "2026-09-22"
+      }
+    },
+    {
+      "slug": "nyungwe-national-park",
+      "title": "Nyungwe National Park",
+      "category": "Private wildlife destination",
+      "continent": "Africa",
+      "country": "Rwanda",
+      "parentRegion": "Southwestern Rwanda",
+      "status": "rich",
+      "bestFor": [
+        "Wildlife observation",
+        "Forest and savannah",
+        "Photography"
+      ],
+      "planningNote": "An individual planning brief; permits, local access and operating conditions are confirmed before arrangements.",
+      "region": "Southwestern Rwanda, Rwanda",
+      "bestMonths": "June to September is often a useful drier window; forest conditions remain variable.",
+      "wildlife": "Chimpanzees, colobus monkeys and forest birds",
+      "photography": "Work with the local guide on light, distance and positioning. Carry rain protection and choose lenses around the habitat; wildlife viewing always takes priority over the photograph.",
+      "description": "Nyungwe is a forest journey: layered canopy, shaded trails and the calls of primates and birds. Its quieter discoveries reward time with a local guide.",
+      "intro": "Nyungwe is a forest journey: layered canopy, shaded trails and the calls of primates and birds. Its quieter discoveries reward time with a local guide.\n\nChoose a small number of forest experiences rather than treating each trail as a stop to collect. Chimpanzee tracking is active and unpredictable; birding asks for a different, slower rhythm. Both benefit from a flexible schedule and patient observation.",
+      "image": {
+        "src": "/assets/destination-heroes/nyungwe-national-park.webp",
+        "alt": "AI-generated illustration of Nyungwe National Park",
+        "credit": "AI-generated destination illustration"
+      },
+      "gallery": [],
+      "highlights": [
+        "Chimpanzees, colobus monkeys and forest birds",
+        "Montane rainforest, steep valleys and fern-lined trails",
+        "An individually paced stay with local guiding"
+      ],
+      "journeys": [],
+      "expeditions": [],
+      "habitat": "Montane rainforest, steep valleys and fern-lined trails",
+      "idealStay": "3–4 nights",
+      "gateway": "Kigali, with a road journey through southern Rwanda",
+      "access": "Confirm the route, local guiding and any required permissions before travel. Leave sufficient time for transfers and weather changes.",
+      "safariRhythm": "Alternate guided forest outings with rest; confirm tracking and trail arrangements before departure.",
+      "editorial": {
+        "openingHeadline": "Listen before you look.",
+        "landscapeHeadline": "A landscape that sets the pace.",
+        "wildlifeHeadline": "Time to watch, room to wait."
+      },
+      "sources": [
+        {
+          "title": "Nyungwe National Park",
+          "publisher": "Visit Rwanda",
+          "url": "https://visitrwanda.com/interests/primate-tracking/",
+          "accessedAt": "2026-09-22"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "When should I visit Nyungwe National Park?",
+          "answer": "June to September is often a useful drier window; forest conditions remain variable."
+        },
+        {
+          "question": "How long should I stay?",
+          "answer": "3–4 nights is a suggested starting point, adjusted to your interests and the wider route."
+        },
+        {
+          "question": "What does a day here look like?",
+          "answer": "Alternate guided forest outings with rest; confirm tracking and trail arrangements before departure."
+        },
+        {
+          "question": "Are sightings guaranteed?",
+          "answer": "No. Wildlife moves freely, and weather and habitat affect visibility. Experienced guiding and enough time in the field improve the experience without promising a particular encounter."
+        }
+      ],
+      "seo": {
+        "title": "Nyungwe National Park Wildlife Travel | Safari Crafters",
+        "description": "Nyungwe is a forest journey: layered canopy, shaded trails and the calls of primates and birds. Its quieter discoveries reward time with a local guide.",
+        "reviewedAt": "2026-09-22"
+      }
+    },
+    {
+      "slug": "akagera-national-park",
+      "title": "Akagera National Park",
+      "category": "Private wildlife destination",
+      "continent": "Africa",
+      "country": "Rwanda",
+      "parentRegion": "Eastern Rwanda",
+      "status": "rich",
+      "bestFor": [
+        "Wildlife observation",
+        "Forest and savannah",
+        "Photography"
+      ],
+      "planningNote": "An individual planning brief; permits, local access and operating conditions are confirmed before arrangements.",
+      "region": "Eastern Rwanda, Rwanda",
+      "bestMonths": "June to September generally suits drier safari conditions; greener months offer a different landscape.",
+      "wildlife": "Elephants, buffalo, giraffes, lions, rhinos and waterbirds",
+      "photography": "Work with the local guide on light, distance and positioning. Carry rain protection and choose lenses around the habitat; wildlife viewing always takes priority over the photograph.",
+      "description": "Akagera gives a Rwanda journey a change of scale: open grassland, wooded ridges and lakes after the intimacy of the mountain forests.",
+      "intro": "Akagera gives a Rwanda journey a change of scale: open grassland, wooded ridges and lakes after the intimacy of the mountain forests.\n\nThis is a place to spend several field sessions reading the landscape, rather than chasing a list of sightings. Combine time in open country with attention to the wetland edges, matching each day to conditions and locally available activities.",
+      "image": {
+        "src": "/assets/destination-heroes/akagera-national-park.webp",
+        "alt": "AI-generated illustration of Akagera National Park",
+        "credit": "AI-generated destination illustration"
+      },
+      "gallery": [],
+      "highlights": [
+        "Elephants, buffalo, giraffes, lions, rhinos and waterbirds",
+        "Savannah, woodland, lakes and papyrus wetlands",
+        "An individually paced stay with local guiding"
+      ],
+      "journeys": [],
+      "expeditions": [],
+      "habitat": "Savannah, woodland, lakes and papyrus wetlands",
+      "idealStay": "2–4 nights",
+      "gateway": "Kigali, followed by a road transfer to the park",
+      "access": "Confirm the route, local guiding and any required permissions before travel. Leave sufficient time for transfers and weather changes.",
+      "safariRhythm": "Plan early and late drives with a midday pause; add a guided lake outing when available.",
+      "editorial": {
+        "openingHeadline": "Rwanda opens into savannah.",
+        "landscapeHeadline": "A landscape that sets the pace.",
+        "wildlifeHeadline": "Time to watch, room to wait."
+      },
+      "sources": [
+        {
+          "title": "Akagera National Park",
+          "publisher": "Visit Rwanda",
+          "url": "https://visitrwanda.com/tourism/destinations/national-parks/",
+          "accessedAt": "2026-09-22"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "When should I visit Akagera National Park?",
+          "answer": "June to September generally suits drier safari conditions; greener months offer a different landscape."
+        },
+        {
+          "question": "How long should I stay?",
+          "answer": "2–4 nights is a suggested starting point, adjusted to your interests and the wider route."
+        },
+        {
+          "question": "What does a day here look like?",
+          "answer": "Plan early and late drives with a midday pause; add a guided lake outing when available."
+        },
+        {
+          "question": "Are sightings guaranteed?",
+          "answer": "No. Wildlife moves freely, and weather and habitat affect visibility. Experienced guiding and enough time in the field improve the experience without promising a particular encounter."
+        }
+      ],
+      "seo": {
+        "title": "Akagera National Park Wildlife Travel | Safari Crafters",
+        "description": "Akagera gives a Rwanda journey a change of scale: open grassland, wooded ridges and lakes after the intimacy of the mountain forests.",
+        "reviewedAt": "2026-09-22"
+      }
+    },
+    {
+      "slug": "colombian-coffee-region",
+      "title": "Colombian Coffee Region",
+      "category": "Private wildlife destination",
+      "continent": "Americas",
+      "country": "Colombia",
+      "parentRegion": "Central-western Andes",
+      "status": "rich",
+      "bestFor": [
+        "Birding",
+        "Nature photography",
+        "Slow exploration"
+      ],
+      "planningNote": "An individual planning brief; permits, local access and operating conditions are confirmed before arrangements.",
+      "region": "Central-western Andes, Colombia",
+      "bestMonths": "December to March and July to August are starting windows; elevation and rainfall shape the route.",
+      "wildlife": "Hummingbirds, tanagers and Andean forest birds",
+      "photography": "Work with the local guide on light, distance and positioning. Carry rain protection and choose lenses around the habitat; wildlife viewing always takes priority over the photograph.",
+      "description": "Colombia’s coffee region connects cultivated hillsides with pockets of cloud forest and rich birdlife. A carefully chosen base allows time for both forest observation and the character of the surrounding countryside.",
+      "intro": "Colombia’s coffee region connects cultivated hillsides with pockets of cloud forest and rich birdlife. A carefully chosen base allows time for both forest observation and the character of the surrounding countryside.\n\nPlan by elevation and habitat, with a local birding guide helping select reserves. We favour a few productive locations over long daily transfers, making room for dawn walks, patient photography and an unhurried introduction to coffee-growing landscapes.",
+      "image": {
+        "src": "/assets/destination-heroes/colombian-coffee-region.webp",
+        "alt": "AI-generated illustration of Colombian Coffee Region",
+        "credit": "AI-generated destination illustration"
+      },
+      "gallery": [],
+      "highlights": [
+        "Hummingbirds, tanagers and Andean forest birds",
+        "Coffee-growing hills, cloud forest and highland reserves",
+        "An individually paced stay with local guiding"
+      ],
+      "journeys": [],
+      "expeditions": [],
+      "habitat": "Coffee-growing hills, cloud forest and highland reserves",
+      "idealStay": "4–6 nights",
+      "gateway": "Pereira, Armenia or Manizales, selected around the reserves",
+      "access": "Confirm the route, local guiding and any required permissions before travel. Leave sufficient time for transfers and weather changes.",
+      "safariRhythm": "Start early in the reserves, return for rest, then use softer afternoon light for shorter outings.",
+      "editorial": {
+        "openingHeadline": "Birdlife above the coffee hills.",
+        "landscapeHeadline": "A landscape that sets the pace.",
+        "wildlifeHeadline": "Time to watch, room to wait."
+      },
+      "sources": [
+        {
+          "title": "Colombian Coffee Region",
+          "publisher": "Colombia Travel",
+          "url": "https://colombia.travel/en/armenia/bird-watching-in-coffee-cultural-landscape",
+          "accessedAt": "2026-09-22"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "When should I visit Colombian Coffee Region?",
+          "answer": "December to March and July to August are starting windows; elevation and rainfall shape the route."
+        },
+        {
+          "question": "How long should I stay?",
+          "answer": "4–6 nights is a suggested starting point, adjusted to your interests and the wider route."
+        },
+        {
+          "question": "What does a day here look like?",
+          "answer": "Start early in the reserves, return for rest, then use softer afternoon light for shorter outings."
+        },
+        {
+          "question": "Are sightings guaranteed?",
+          "answer": "No. Wildlife moves freely, and weather and habitat affect visibility. Experienced guiding and enough time in the field improve the experience without promising a particular encounter."
+        }
+      ],
+      "seo": {
+        "title": "Colombian Coffee Region Wildlife Travel | Safari Crafters",
+        "description": "Colombia’s coffee region connects cultivated hillsides with pockets of cloud forest and rich birdlife. A carefully chosen base allows time for both forest observation and the character of the surrounding countryside.",
+        "reviewedAt": "2026-09-22"
+      }
+    },
+    {
+      "slug": "choco-pacific-coast",
+      "title": "Chocó Pacific Coast",
+      "category": "Private wildlife destination",
+      "continent": "Americas",
+      "country": "Colombia",
+      "parentRegion": "Pacific Colombia",
+      "status": "rich",
+      "bestFor": [
+        "Birding",
+        "Nature photography",
+        "Slow exploration"
+      ],
+      "planningNote": "An individual planning brief; permits, local access and operating conditions are confirmed before arrangements.",
+      "region": "Pacific Colombia, Colombia",
+      "bestMonths": "A year-round rainforest setting; select dates for your wildlife priority and expect rain.",
+      "wildlife": "Tropical forest birds and seasonal marine wildlife",
+      "photography": "Work with the local guide on light, distance and positioning. Carry rain protection and choose lenses around the habitat; wildlife viewing always takes priority over the photograph.",
+      "description": "The Chocó coast brings dense tropical forest directly to the Pacific. Birding trails, coastal communities and time on the water offer different ways to experience the same wet, richly textured landscape.",
+      "intro": "The Chocó coast brings dense tropical forest directly to the Pacific. Birding trails, coastal communities and time on the water offer different ways to experience the same wet, richly textured landscape.\n\nChoose the base before drawing the itinerary. Boat transfers, weather and local guiding shape what can be done comfortably, so a slower stay is more useful than frequent moves. Any seasonal marine outing should be matched to current local conditions.",
+      "image": {
+        "src": "/assets/destination-heroes/choco-pacific-coast.webp",
+        "alt": "AI-generated illustration of Chocó Pacific Coast",
+        "credit": "AI-generated destination illustration"
+      },
+      "gallery": [],
+      "highlights": [
+        "Tropical forest birds and seasonal marine wildlife",
+        "Humid rainforest, mangroves and Pacific shoreline",
+        "An individually paced stay with local guiding"
+      ],
+      "journeys": [],
+      "expeditions": [],
+      "habitat": "Humid rainforest, mangroves and Pacific shoreline",
+      "idealStay": "4–5 nights",
+      "gateway": "Nuquí or Bahía Solano, depending on the local itinerary",
+      "access": "Confirm the route, local guiding and any required permissions before travel. Leave sufficient time for transfers and weather changes.",
+      "safariRhythm": "Use guided forest mornings and flexible coastal outings, keeping spare time for weather.",
+      "editorial": {
+        "openingHeadline": "Where rainforest reaches the sea.",
+        "landscapeHeadline": "A landscape that sets the pace.",
+        "wildlifeHeadline": "Time to watch, room to wait."
+      },
+      "sources": [
+        {
+          "title": "Chocó Pacific Coast",
+          "publisher": "Colombia Travel",
+          "url": "https://colombia.travel/en/choco/birdwatching-in-choco-hidden-destinations",
+          "accessedAt": "2026-09-22"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "When should I visit Chocó Pacific Coast?",
+          "answer": "A year-round rainforest setting; select dates for your wildlife priority and expect rain."
+        },
+        {
+          "question": "How long should I stay?",
+          "answer": "4–5 nights is a suggested starting point, adjusted to your interests and the wider route."
+        },
+        {
+          "question": "What does a day here look like?",
+          "answer": "Use guided forest mornings and flexible coastal outings, keeping spare time for weather."
+        },
+        {
+          "question": "Are sightings guaranteed?",
+          "answer": "No. Wildlife moves freely, and weather and habitat affect visibility. Experienced guiding and enough time in the field improve the experience without promising a particular encounter."
+        }
+      ],
+      "seo": {
+        "title": "Chocó Pacific Coast Wildlife Travel | Safari Crafters",
+        "description": "The Chocó coast brings dense tropical forest directly to the Pacific. Birding trails, coastal communities and time on the water offer different ways to experience the same wet, richly textured landscape.",
+        "reviewedAt": "2026-09-22"
+      }
+    },
+    {
+      "slug": "llanos-orientales",
+      "title": "Llanos Orientales",
+      "category": "Private wildlife destination",
+      "continent": "Americas",
+      "country": "Colombia",
+      "parentRegion": "Eastern Plains",
+      "status": "rich",
+      "bestFor": [
+        "Birding",
+        "Nature photography",
+        "Slow exploration"
+      ],
+      "planningNote": "An individual planning brief; permits, local access and operating conditions are confirmed before arrangements.",
+      "region": "Eastern Plains, Colombia",
+      "bestMonths": "December to March is often drier; flooding and local access change the experience through the year.",
+      "wildlife": "Capybaras, caimans, waterbirds and other grassland wildlife",
+      "photography": "Work with the local guide on light, distance and positioning. Carry rain protection and choose lenses around the habitat; wildlife viewing always takes priority over the photograph.",
+      "description": "The eastern plains offer open skies, wetlands and a wildlife experience very different from the Andean forests. Around Casanare, time on working rural landscapes can bring birdlife and wetland animals into focus.",
+      "intro": "The eastern plains offer open skies, wetlands and a wildlife experience very different from the Andean forests. Around Casanare, time on working rural landscapes can bring birdlife and wetland animals into focus.\n\nWater is the organising feature of the journey. The season affects both movement and the places where animals gather. Choose locally guided activities and a base that leaves enough time to observe the plains without spending each day in transit.",
+      "image": {
+        "src": "/assets/destination-heroes/llanos-orientales.webp",
+        "alt": "AI-generated illustration of Llanos Orientales",
+        "credit": "AI-generated destination illustration"
+      },
+      "gallery": [],
+      "highlights": [
+        "Capybaras, caimans, waterbirds and other grassland wildlife",
+        "Seasonally flooded savannah, palm groves and rivers",
+        "An individually paced stay with local guiding"
+      ],
+      "journeys": [],
+      "expeditions": [],
+      "habitat": "Seasonally flooded savannah, palm groves and rivers",
+      "idealStay": "3–5 nights",
+      "gateway": "Yopal for a Casanare-focused itinerary",
+      "access": "Confirm the route, local guiding and any required permissions before travel. Leave sufficient time for transfers and weather changes.",
+      "safariRhythm": "Work around cooler hours, with wetland observation and short guided outings suited to local conditions.",
+      "editorial": {
+        "openingHeadline": "A wider horizon in Colombia.",
+        "landscapeHeadline": "A landscape that sets the pace.",
+        "wildlifeHeadline": "Time to watch, room to wait."
+      },
+      "sources": [
+        {
+          "title": "Llanos Orientales",
+          "publisher": "Colombia Travel",
+          "url": "https://colombia.travel/en/blog/go-safari-in-colombias-cowboy-country-llanos-orientales",
+          "accessedAt": "2026-09-22"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "When should I visit Llanos Orientales?",
+          "answer": "December to March is often drier; flooding and local access change the experience through the year."
+        },
+        {
+          "question": "How long should I stay?",
+          "answer": "3–5 nights is a suggested starting point, adjusted to your interests and the wider route."
+        },
+        {
+          "question": "What does a day here look like?",
+          "answer": "Work around cooler hours, with wetland observation and short guided outings suited to local conditions."
+        },
+        {
+          "question": "Are sightings guaranteed?",
+          "answer": "No. Wildlife moves freely, and weather and habitat affect visibility. Experienced guiding and enough time in the field improve the experience without promising a particular encounter."
+        }
+      ],
+      "seo": {
+        "title": "Llanos Orientales Wildlife Travel | Safari Crafters",
+        "description": "The eastern plains offer open skies, wetlands and a wildlife experience very different from the Andean forests. Around Casanare, time on working rural landscapes can bring birdlife and wetland animals into focus.",
+        "reviewedAt": "2026-09-22"
+      }
+    },
+    {
+      "slug": "corcovado",
+      "title": "Corcovado & Osa Peninsula",
+      "category": "Private wildlife destination",
+      "continent": "Americas",
+      "country": "Costa Rica",
+      "parentRegion": "Southern Pacific coast",
+      "status": "rich",
+      "bestFor": [
+        "Birding",
+        "Nature photography",
+        "Slow exploration"
+      ],
+      "planningNote": "An individual planning brief; permits, local access and operating conditions are confirmed before arrangements.",
+      "region": "Southern Pacific coast, Costa Rica",
+      "bestMonths": "December to April is generally drier; rain and access need route-specific planning.",
+      "wildlife": "Tapirs, monkeys, scarlet macaws and rainforest birds",
+      "photography": "Work with the local guide on light, distance and positioning. Carry rain protection and choose lenses around the habitat; wildlife viewing always takes priority over the photograph.",
+      "description": "The Osa Peninsula is a deeply immersive rainforest chapter. Corcovado provides the focus, while the surrounding coastal forest invites a stay built around guided walks and close attention to smaller encounters.",
+      "intro": "The Osa Peninsula is a deeply immersive rainforest chapter. Corcovado provides the focus, while the surrounding coastal forest invites a stay built around guided walks and close attention to smaller encounters.\n\nStart with the park sector and the practical demands of getting there. Heat, humidity and walking conditions matter as much as the wildlife wish list. A suitable lodge base and a measured pace make room for forest observation without turning each day into an endurance exercise.",
+      "image": {
+        "src": "/assets/destination-heroes/corcovado.webp",
+        "alt": "AI-generated illustration of Corcovado & Osa Peninsula",
+        "credit": "AI-generated destination illustration"
+      },
+      "gallery": [],
+      "highlights": [
+        "Tapirs, monkeys, scarlet macaws and rainforest birds",
+        "Lowland rainforest, river mouths and Pacific coastal forest",
+        "An individually paced stay with local guiding"
+      ],
+      "journeys": [],
+      "expeditions": [],
+      "habitat": "Lowland rainforest, river mouths and Pacific coastal forest",
+      "idealStay": "4–5 nights",
+      "gateway": "Puerto Jiménez or Drake Bay, according to the chosen lodge and park sector",
+      "access": "Confirm the route, local guiding and any required permissions before travel. Leave sufficient time for transfers and weather changes.",
+      "safariRhythm": "Early guided walks, a shaded midday pause and shorter outings around the lodge.",
+      "editorial": {
+        "openingHeadline": "Forest with room to feel wild.",
+        "landscapeHeadline": "A landscape that sets the pace.",
+        "wildlifeHeadline": "Time to watch, room to wait."
+      },
+      "sources": [
+        {
+          "title": "Corcovado & Osa Peninsula",
+          "publisher": "Visit Costa Rica",
+          "url": "https://es.visitcostarica.com/where-to-go/protected-areas/corcovado-national-park",
+          "accessedAt": "2026-09-22"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "When should I visit Corcovado & Osa Peninsula?",
+          "answer": "December to April is generally drier; rain and access need route-specific planning."
+        },
+        {
+          "question": "How long should I stay?",
+          "answer": "4–5 nights is a suggested starting point, adjusted to your interests and the wider route."
+        },
+        {
+          "question": "What does a day here look like?",
+          "answer": "Early guided walks, a shaded midday pause and shorter outings around the lodge."
+        },
+        {
+          "question": "Are sightings guaranteed?",
+          "answer": "No. Wildlife moves freely, and weather and habitat affect visibility. Experienced guiding and enough time in the field improve the experience without promising a particular encounter."
+        }
+      ],
+      "seo": {
+        "title": "Corcovado & Osa Peninsula Wildlife Travel | Safari Crafters",
+        "description": "The Osa Peninsula is a deeply immersive rainforest chapter. Corcovado provides the focus, while the surrounding coastal forest invites a stay built around guided walks and close attention to smaller encounters.",
+        "reviewedAt": "2026-09-22"
+      }
+    },
+    {
+      "slug": "monteverde",
+      "title": "Monteverde Cloud Forest",
+      "category": "Private wildlife destination",
+      "continent": "Americas",
+      "country": "Costa Rica",
+      "parentRegion": "Tilarán highlands",
+      "status": "rich",
+      "bestFor": [
+        "Birding",
+        "Nature photography",
+        "Slow exploration"
+      ],
+      "planningNote": "An individual planning brief; permits, local access and operating conditions are confirmed before arrangements.",
+      "region": "Tilarán highlands, Costa Rica",
+      "bestMonths": "December to April is often a useful starting window; cloud, wind and rain are part of the setting.",
+      "wildlife": "Quetzals, hummingbirds and cloud-forest birds",
+      "photography": "Work with the local guide on light, distance and positioning. Carry rain protection and choose lenses around the habitat; wildlife viewing always takes priority over the photograph.",
+      "description": "Monteverde exchanges tropical lowland heat for cooler air and a forest draped in moss. Birding and natural-history walks are the heart of a stay here.",
+      "intro": "Monteverde exchanges tropical lowland heat for cooler air and a forest draped in moss. Birding and natural-history walks are the heart of a stay here.\n\nReserve choice and guide quality matter more than the number of activities. Give the forest time to reveal itself, with repeat visits to promising trails and space for the weather to change. Quetzal sightings are a possibility to plan around, never a promise.",
+      "image": {
+        "src": "/assets/destination-heroes/monteverde.webp",
+        "alt": "AI-generated illustration of Monteverde Cloud Forest",
+        "credit": "AI-generated destination illustration"
+      },
+      "gallery": [],
+      "highlights": [
+        "Quetzals, hummingbirds and cloud-forest birds",
+        "Misty montane forest, mosses, epiphytes and shaded trails",
+        "An individually paced stay with local guiding"
+      ],
+      "journeys": [],
+      "expeditions": [],
+      "habitat": "Misty montane forest, mosses, epiphytes and shaded trails",
+      "idealStay": "3–4 nights",
+      "gateway": "San José or Liberia, followed by a road transfer into the highlands",
+      "access": "Confirm the route, local guiding and any required permissions before travel. Leave sufficient time for transfers and weather changes.",
+      "safariRhythm": "Guided morning birding, a relaxed afternoon and an optional locally permitted night walk.",
+      "editorial": {
+        "openingHeadline": "Slow down beneath the cloud line.",
+        "landscapeHeadline": "A landscape that sets the pace.",
+        "wildlifeHeadline": "Time to watch, room to wait."
+      },
+      "sources": [
+        {
+          "title": "Monteverde Cloud Forest",
+          "publisher": "Visit Costa Rica",
+          "url": "https://www.visitcostarica.com/sites/default/files/2024-09/MONTEVERDE_INGLES.pdf",
+          "accessedAt": "2026-09-22"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "When should I visit Monteverde Cloud Forest?",
+          "answer": "December to April is often a useful starting window; cloud, wind and rain are part of the setting."
+        },
+        {
+          "question": "How long should I stay?",
+          "answer": "3–4 nights is a suggested starting point, adjusted to your interests and the wider route."
+        },
+        {
+          "question": "What does a day here look like?",
+          "answer": "Guided morning birding, a relaxed afternoon and an optional locally permitted night walk."
+        },
+        {
+          "question": "Are sightings guaranteed?",
+          "answer": "No. Wildlife moves freely, and weather and habitat affect visibility. Experienced guiding and enough time in the field improve the experience without promising a particular encounter."
+        }
+      ],
+      "seo": {
+        "title": "Monteverde Cloud Forest Wildlife Travel | Safari Crafters",
+        "description": "Monteverde exchanges tropical lowland heat for cooler air and a forest draped in moss. Birding and natural-history walks are the heart of a stay here.",
+        "reviewedAt": "2026-09-22"
+      }
+    },
+    {
+      "slug": "tortuguero",
+      "title": "Tortuguero National Park",
+      "category": "Private wildlife destination",
+      "continent": "Americas",
+      "country": "Costa Rica",
+      "parentRegion": "Northern Caribbean coast",
+      "status": "rich",
+      "bestFor": [
+        "Birding",
+        "Nature photography",
+        "Slow exploration"
+      ],
+      "planningNote": "An individual planning brief; permits, local access and operating conditions are confirmed before arrangements.",
+      "region": "Northern Caribbean coast, Costa Rica",
+      "bestMonths": "Plan around your main interest; turtle nesting is seasonal and rainfall can occur throughout the year.",
+      "wildlife": "Monkeys, sloths, waterbirds and seasonal nesting sea turtles",
+      "photography": "Work with the local guide on light, distance and positioning. Carry rain protection and choose lenses around the habitat; wildlife viewing always takes priority over the photograph.",
+      "description": "Tortuguero is a landscape of canals and forest edges. Quiet time on the water offers a different perspective on Costa Rica’s wildlife from a walking-based rainforest stay.",
+      "intro": "Tortuguero is a landscape of canals and forest edges. Quiet time on the water offers a different perspective on Costa Rica’s wildlife from a walking-based rainforest stay.\n\nChoose a guide who is attentive to both the animals and the pace of the waterway. Boat logistics and weather belong in the itinerary from the outset. If nesting turtles are the priority, confirm the season and authorised viewing arrangements before selecting dates.",
+      "image": {
+        "src": "/assets/destination-heroes/tortuguero.webp",
+        "alt": "AI-generated illustration of Tortuguero National Park",
+        "credit": "AI-generated destination illustration"
+      },
+      "gallery": [],
+      "highlights": [
+        "Monkeys, sloths, waterbirds and seasonal nesting sea turtles",
+        "Lowland rainforest, freshwater canals, lagoons and Caribbean beaches",
+        "An individually paced stay with local guiding"
+      ],
+      "journeys": [],
+      "expeditions": [],
+      "habitat": "Lowland rainforest, freshwater canals, lagoons and Caribbean beaches",
+      "idealStay": "3–4 nights",
+      "gateway": "San José, connecting to the Caribbean lowlands and onward boat or air access",
+      "access": "Confirm the route, local guiding and any required permissions before travel. Leave sufficient time for transfers and weather changes.",
+      "safariRhythm": "Early guided canal excursions, a midday rest and permitted evening activities when conditions allow.",
+      "editorial": {
+        "openingHeadline": "Read the forest from the water.",
+        "landscapeHeadline": "A landscape that sets the pace.",
+        "wildlifeHeadline": "Time to watch, room to wait."
+      },
+      "sources": [
+        {
+          "title": "Tortuguero National Park",
+          "publisher": "Visit Costa Rica",
+          "url": "https://www.visitcostarica.com/things-to-do/ecoturism/national-parks",
+          "accessedAt": "2026-09-22"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "When should I visit Tortuguero National Park?",
+          "answer": "Plan around your main interest; turtle nesting is seasonal and rainfall can occur throughout the year."
+        },
+        {
+          "question": "How long should I stay?",
+          "answer": "3–4 nights is a suggested starting point, adjusted to your interests and the wider route."
+        },
+        {
+          "question": "What does a day here look like?",
+          "answer": "Early guided canal excursions, a midday rest and permitted evening activities when conditions allow."
+        },
+        {
+          "question": "Are sightings guaranteed?",
+          "answer": "No. Wildlife moves freely, and weather and habitat affect visibility. Experienced guiding and enough time in the field improve the experience without promising a particular encounter."
+        }
+      ],
+      "seo": {
+        "title": "Tortuguero National Park Wildlife Travel | Safari Crafters",
+        "description": "Tortuguero is a landscape of canals and forest edges. Quiet time on the water offers a different perspective on Costa Rica’s wildlife from a walking-based rainforest stay.",
+        "reviewedAt": "2026-09-22"
+      }
     }
   ],
   "expeditions": [
@@ -10523,12 +11561,10 @@
       "guide": "Team Safari Crafters",
       "route": "Kanha National Park, Madhya Pradesh",
       "highlights": [
-        "Four nights and five days in Kanha National Park",
-        "Seven morning and afternoon wildlife safaris",
-        "Photography mentoring and on-field guidance throughout",
-        "Evening image-review and discussion sessions",
-        "Learning animal behaviour, composition, changing light and ethical fieldcraft",
-        "Shared safari vehicles with a pilot and naturalist"
+        "Seven wildlife safaris over five days",
+        "Photography mentoring in the field",
+        "Evening image reviews and discussions",
+        "Animal behaviour, light and ethical fieldcraft"
       ],
       "inclusions": [
         "Four nights accommodation at Tathastu, Jungle Camps or similar",
@@ -10552,23 +11588,18 @@
       ],
       "days": [
         {
-          "title": "Day 1: Arrival in Kanha",
+          "label": "Day 01",
+          "title": "Arrival in Kanha",
           "copy": "Check in after 1:00 PM, followed by the expedition briefing, orientation and an evening interaction."
         },
         {
-          "title": "Day 2: First day in the wilderness",
-          "copy": "Morning and afternoon safaris, followed by an evening image-review session."
+          "label": "Days 02–04",
+          "title": "Wildlife safaris & photography",
+          "copy": "Morning and afternoon safaris across three days, with photography mentoring in the field. Evening image reviews and discussions help refine technique and make the most of the remaining photographic opportunities."
         },
         {
-          "title": "Day 3: Immersion and photography",
-          "copy": "Morning and afternoon safaris with an evening review and discussion."
-        },
-        {
-          "title": "Day 4: Deeper into the wilderness",
-          "copy": "Two safari experiences focused on refining technique and making the most of the remaining photographic opportunities."
-        },
-        {
-          "title": "Day 5: Final safari and departure",
+          "label": "Day 05",
+          "title": "Final safari & departure",
           "copy": "A final morning safari, breakfast and checkout, followed by departure after 12:00 PM."
         }
       ],
@@ -10577,7 +11608,16 @@
         "The photographic focus includes understanding animal behaviour, reading the environment, anticipating movement, camera and lens settings, composition, framing, changing light, ethical wildlife photography, fieldcraft and positioning.",
         "Wildlife sightings depend on natural conditions and cannot be guaranteed. The expedition is centred on experiencing the forest, understanding behaviour and improving photographic skills.",
         "Guests should carry thermal layers, a warm jacket, winter cap, gloves, warm socks, comfortable closed footwear, personal medication, sunglasses and sunscreen."
-      ]
+      ],
+      "departures": [
+        {
+          "date": "2026-12-12",
+          "endDate": "2026-12-16",
+          "status": "Available",
+          "availability": "Check availability"
+        }
+      ],
+      "publicationStatus": "published"
     },
     {
       "slug": "laikipia-black-leopard-expedition",
@@ -10592,54 +11632,39 @@
       "description": "Track and photograph the legendary Black Leopard of Laikipia, Kenya, on an exceptionally rare photo safari set within private wilderness landscapes.",
       "intro": "Track and photograph the legendary Black Leopard of Laikipia, Kenya, on an exceptionally rare photo safari set within private wilderness landscapes.\n\nThis is a once-in-a-lifetime opportunity, among the rarest wildlife encounters on Earth, to witness and document a bold Black Leopard against dramatic savannahs and river valleys, capturing close-up portraits, powerful hunts, and intimate natural behaviour rarely seen anywhere in the world.\n\nAlong the way, encounter elephants, wild dogs, and elusive striped hyenas, all framed by Laikipia’s striking light and open terrain. Led by expert guides, this all-inclusive photo expedition offers day and night safaris, placing you at the heart of one of the most coveted and cherished wildlife photography journeys globally.\n\nIf you seek an off-beat African safari far removed from the crowds, join us in Northern Kenya for an all-inclusive photographic journey through the wild heart of Laikipia. This rugged plateau, where rolling savannahs dissolve into rocky escarpments and riverine forests, hosts a remarkable diversity of wildlife.\n\nElephants, Grevy’s zebras, and antelopes move through the open plains, while elusive predators such as leopards, wild dogs, and striped hyenas lend the landscape its raw, untamed edge.",
       "image": {
-        "src": "/assets/safari-crafters/laipikia-001e24e7.jpg",
-        "alt": "Laikipia Black Leopard Expedition",
+        "src": "/assets/destinations/laikipia/supplied/01.webp",
+        "alt": "Black leopard moving through green grass in Laikipia",
         "credit": "Safari Crafters archive"
       },
       "gallery": [
         {
-          "src": "/assets/safari-crafters/laikipia-highlights-fc6df289.jpg",
-          "alt": "Laikipia Black Leopard Expedition gallery image 1",
+          "src": "/assets/destinations/laikipia/supplied/02.webp",
+          "alt": "Spotted leopard standing beside a track in Laikipia",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-1-2-9ae80ae1.jpg",
-          "alt": "Laikipia Black Leopard Expedition gallery image 2",
+          "src": "/assets/destinations/laikipia/supplied/03.webp",
+          "alt": "Black leopard crossing a woodland track in Laikipia",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-2-1-12b936b9.jpg",
-          "alt": "Laikipia Black Leopard Expedition gallery image 3",
+          "src": "/assets/destinations/laikipia/supplied/04.webp",
+          "alt": "Spotted hyena standing in Laikipia scrub",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-6-1-3896ee13.jpg",
-          "alt": "Laikipia Black Leopard Expedition gallery image 4",
+          "src": "/assets/destinations/laikipia/supplied/05.webp",
+          "alt": "Black leopard leaping across rocks in Laikipia",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-3-1-07cfe655.jpg",
-          "alt": "Laikipia Black Leopard Expedition gallery image 5",
+          "src": "/assets/destinations/laikipia/supplied/06.webp",
+          "alt": "Black leopard approaching along a forest path in Laikipia",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-4-1-60dfafa6.jpg",
-          "alt": "Laikipia Black Leopard Expedition gallery image 6",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-7-1-102fa0ec.jpg",
-          "alt": "Laikipia Black Leopard Expedition gallery image 7",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-8-1-scaled-ce543c73.jpg",
-          "alt": "Laikipia Black Leopard Expedition gallery image 8",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-9-1-b16136a0.jpg",
-          "alt": "Laikipia Black Leopard Expedition gallery image 9",
+          "src": "/assets/destinations/laikipia/supplied/07.webp",
+          "alt": "Black leopard carrying prey at night in Laikipia",
           "credit": "Safari Crafters archive"
         }
       ],
@@ -10648,12 +11673,10 @@
       "price": "$4700",
       "route": "Designed around season, access and wildlife movement",
       "highlights": [
-        "Explore Kenya’s Laikipia Region: Discover the rugged, highland landscapes of Laikipia, far removed from the traditional safari circuit.",
-        "Private Concession Safari: Exclusive access ensures privacy, flexibility, and unhurried time with wildlife on every game drive.",
-        "Photograph Rare Wildlife: Capture the elusive Black Leopard, striped hyenas, wild dogs, and elephants in exceptional natural settings.",
-        "Private Vehicle & Night Safaris: Track nocturnal predators in comfort, guided by expert spotters with deep local knowledge.",
-        "All-Inclusive Photo Tour: Enjoy a seamless journey with guided safaris, thoughtfully prepared meals, and all transfers included.",
-        "Ideal for Photographers: A small-group format allows optimal positioning, creative freedom, and extended time for decisive moments."
+        "Private conservancy access in Laikipia",
+        "Black leopard and nocturnal wildlife tracking",
+        "Private vehicles with expert local spotters",
+        "Small-group photography with unhurried sightings"
       ],
       "inclusions": [
         "4 nights / 5 days accommodation on double occupancy",
@@ -10675,16 +11698,19 @@
       ],
       "days": [
         {
-          "title": "Day 1: Arrival in Nairobi",
-          "copy": "Today, guests arrive in Nairobi by morning."
+          "title": "Arrival in Nairobi",
+          "copy": "Today, guests arrive in Nairobi by morning.",
+          "label": "Day 01"
         },
         {
-          "title": "Day 2-4: Full days in Laikipia",
-          "copy": "Over the next 3 days, we will spend whole days in the conservancy looking for the region’s elusive Black Leopards."
+          "title": "Black leopard tracking in Laikipia",
+          "copy": "Over the next 3 days, we will spend whole days in the conservancy looking for the region’s elusive Black Leopards.",
+          "label": "Days 02–04"
         },
         {
-          "title": "Day 5: Drop at Nairobi",
-          "copy": "Today, will be our last morning on safari."
+          "title": "Final safari & return to Nairobi",
+          "copy": "Today, will be our last morning on safari.",
+          "label": "Day 05"
         }
       ],
       "body": [
@@ -10696,7 +11722,8 @@
         "Over the next 3 days, we will spend whole days in the conservancy looking for the region’s elusive Black Leopards. Our focus will remain on Giza, one of the resident Black Leopards, while we also look for and photograph other wildlife the region has to offer. The day would start by 5:30 am with a hot cup of coffee or tea followed by a light breakfast.",
         "As the sun rises, we will be out on safari until mid day, returning briefly just to have lunch and back on safari once again. We will conclude our evening safari just before dinner. On of the days, we will also enjoy a bush dinner in the middle of the wilderness and under the stars, an experience entirely worth it.",
         "Today, will be our last morning on safari. Soon after we return from the morning drive, we will check-out and proceed to Nairobi arriving in the Jomo Kenyatta International Airport by 4 pm. Tour concludes"
-      ]
+      ],
+      "publicationStatus": "published"
     },
     {
       "slug": "svalbard-expedition",
@@ -10711,7 +11738,7 @@
       "description": "Join our exclusive Svalbard expedition, a once-in-a-lifetime voyage to one of Earth’s last true frontiers, where towering glaciers meet the profound silence of the High.",
       "intro": "Join our exclusive Svalbard expedition, a once-in-a-lifetime voyage to one of Earth’s last true frontiers, where towering glaciers meet the profound silence of the High Arctic. Sail through ice-filled fjords as light dances across sculpted snow and drifting pack ice, in quiet search of Polar Bears, Walrus, Seals, and seabirds.\n\nEach encounter introduces you to the raw, elemental power of Mother Earth. Guided by expert photographers and naturalists, this intimate small-ship journey offers rare access to the jewels of the Arctic, revealing the planet at its most pristine, powerful, and humbling accents, a living marvel few will ever witness.\n\nSvalbard, a Norwegian archipelago set between mainland Norway and the North Pole, stands among the planet’s most spectacular Arctic frontiers. Discovered by Willem Barentsz in 1596, it lies approximately 965 km from the Pole and 644 km north of Norway.\n\nWith nearly 60% of its 39,784 km² landmass blanketed in ice, Svalbard remains Europe’s largest true wilderness, vast and elemental, and profoundly untouched.",
       "image": {
-        "src": "/assets/safari-crafters/svalbard-expedition-5fb9b55c.jpg",
+        "src": "/assets/safari-crafters/svalbard-polar-bear.webp",
         "alt": "Svalbard Expedition",
         "credit": "Safari Crafters archive"
       },
@@ -10778,12 +11805,10 @@
       "price": "On request",
       "route": "Designed around season, access and wildlife movement",
       "highlights": [
-        "Intimate Expedition: Just 12 guests aboard M/V Virgo, ensuring a private, deeply immersive Arctic adventure.",
-        "Small-Ship Advantage: Navigate hidden fjords, ice edges, and remote bays inaccessible to larger vessels.",
-        "Wildlife Encounters: Photograph Polar Bears, Walrus, Whales, Reindeer, Seals, and seabirds in their pristine natural habitat.",
-        "Expert Guidance: Led by seasoned Arctic naturalists and professional photographers, maximizing light, positioning, and sighting opportunities.",
-        "Flexible Exploration: Zodiac cruises and shore landings allow close, respectful access to wildlife and dramatic landscapes.",
-        "Immersive Experience: Capture the sweeping Arctic panoramas and elemental beauty of Svalbard, one of the planet’s last great wildernesses."
+        "Just 12 guests aboard M/V Virgo",
+        "Remote fjords, ice edges and Arctic wildlife",
+        "Zodiac cruises and shore landings",
+        "Guidance from naturalists and photographers"
       ],
       "inclusions": [
         "Expedition activities (Zodiac cruises, shore landings, and hikes).",
@@ -10801,20 +11826,19 @@
       ],
       "days": [
         {
-          "title": "DAY 1: Longyearbyen",
-          "copy": "Meet your expedition team and crew at the dock in Longyearbyen at 16:00 hrs and embark M/V Virgo."
+          "title": "Embark in Longyearbyen",
+          "copy": "Meet your expedition team and crew at the dock in Longyearbyen at 16:00 hrs and embark M/V Virgo.",
+          "label": "Day 01"
         },
         {
-          "title": "DAY 2-9: EXPLORING THE ARCHIPELAGO",
-          "copy": "For the next eight days, we travel in full expedition mode, allowing ice conditions, weather, and wildlife activity to shape our route."
+          "label": "Days 02–09",
+          "title": "Explore the archipelago",
+          "copy": "For the next eight days, we travel in full expedition mode, allowing ice conditions, weather, and wildlife activity to shape our route. Throughout the voyage, your expedition leader and guides keep you informed and ready for every photographic opportunity, whether it is a Polar Bear on the ice, a breaching Whale, or the soft glow of the midnight sun illuminating a glacier face."
         },
         {
-          "title": "Areas we may explore include:",
-          "copy": "Throughout the voyage, your expedition leader and guides keep you informed and ready for every photographic opportunity, whether it is a Polar Bear on the ice, a breaching Whale, or the soft glow of the midnight sun illuminating a glacier face."
-        },
-        {
-          "title": "DAY 10: LONGYEARBYEN",
-          "copy": "Enjoy a final breakfast on board as M/V Virgo docks back in Longyearbyen."
+          "title": "Return to Longyearbyen",
+          "copy": "Enjoy a final breakfast on board as M/V Virgo docks back in Longyearbyen.",
+          "label": "Day 10"
         }
       ],
       "body": [
@@ -10827,7 +11851,15 @@
         "Each day offers a flexible blend of Zodiac cruises, shore excursions, and photography sessions, always adapting to take advantage of changing light and unexpected encounters.",
         "Throughout the voyage, your expedition leader and guides keep you informed and ready for every photographic opportunity, whether it is a Polar Bear on the ice, a breaching Whale, or the soft glow of the midnight sun illuminating a glacier face.",
         "Enjoy a final breakfast on board as M/V Virgo docks back in Longyearbyen. Say farewell to your crew and fellow travelers before disembarking, taking with you unforgettable memories and photographs from the heart of the Arctic."
-      ]
+      ],
+      "departures": [
+        {
+          "date": "2027-07-05",
+          "status": "Available",
+          "availability": "4 spots available"
+        }
+      ],
+      "publicationStatus": "published"
     },
     {
       "slug": "the-pantanal-wetlands",
@@ -10842,64 +11874,39 @@
       "description": "Explore the Pantanal wetlands of Brazil, the world’s largest tropical wetland and South America’s most celebrated wildlife realms.",
       "intro": "Explore the Pantanal wetlands of Brazil, the world’s largest tropical wetland and South America’s most celebrated wildlife realms. This sojourn offers privileged access to one of the planet’s most life-rich landscapes, where Jaguars patrol riverbanks, Giant Anteaters roam open plains, Capybaras gather at the water’s edge, and Hyacinth Macaws streak the sky in vivid colours.\n\nGuided by expert naturalists, experience a seamless blend of private boat safaris and thoughtfully curated land excursions, designed for exceptional wildlife encounters. The Pantanal wetlands, stretching across central Brazil, are a paradise for wildlife enthusiasts and photographers. Unlike dense rainforests, the open landscapes here make animal viewing easy and rewarding.\n\nOur journey begins in Campo Grande, traveling through Aguapé Lodge’s grasslands where Giant Anteaters and Armadillos roam. We continue to Bonito for a spectacular encounter with Hyacinth Macaws before flying north to Cuiabá and onward to Porto Jofre , the heart of Jaguar country.\n\nFor four full days, explore the river channels by boat, where sightings of Jaguars hunting along the banks are common. The adventure ends at South Wild Pantanal Lodge, offering an unforgettable evening with the elusive Ocelot.\n\nExpert guides, small groups, and prime locations make this Brazil wildlife tour the ultimate way to experience the Pantanal’s raw beauty and unmatched biodiversity.",
       "image": {
-        "src": "/assets/safari-crafters/the-pantanal-wetlands-af117fe5.jpg",
-        "alt": "The Pantanal Wetlands",
+        "src": "/assets/destinations/pantanal/supplied/01.webp",
+        "alt": "Jaguars on a sandy riverbank in the Pantanal",
         "credit": "Safari Crafters archive"
       },
       "gallery": [
         {
-          "src": "/assets/safari-crafters/the-pantanal-wetlands-highlights-6d601266.jpg",
-          "alt": "The Pantanal Wetlands gallery image 1",
+          "src": "/assets/destinations/pantanal/supplied/02.webp",
+          "alt": "Jaguar swimming through a Pantanal river",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-1-1-34867bcc.jpg",
-          "alt": "The Pantanal Wetlands gallery image 2",
+          "src": "/assets/destinations/pantanal/supplied/03.webp",
+          "alt": "Giant anteater walking through Pantanal grassland",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-2-feea87b8.jpg",
-          "alt": "The Pantanal Wetlands gallery image 3",
+          "src": "/assets/destinations/pantanal/supplied/04.webp",
+          "alt": "Toco toucan perched in the Pantanal",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-3-837090ce.jpg",
-          "alt": "The Pantanal Wetlands gallery image 4",
+          "src": "/assets/destinations/pantanal/supplied/05.webp",
+          "alt": "Jaguar resting on a branch over the river in the Pantanal",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-4-ec255771.jpg",
-          "alt": "The Pantanal Wetlands gallery image 5",
+          "src": "/assets/destinations/pantanal/supplied/06.webp",
+          "alt": "Red and green macaws flying past a rock face in Brazil",
           "credit": "Safari Crafters archive"
         },
         {
-          "src": "/assets/safari-crafters/gallery-5-178288ae.jpg",
-          "alt": "The Pantanal Wetlands gallery image 6",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-6-8903dd89.jpg",
-          "alt": "The Pantanal Wetlands gallery image 7",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-7-451cc029.jpg",
-          "alt": "The Pantanal Wetlands gallery image 8",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-8-7de9cc30.jpg",
-          "alt": "The Pantanal Wetlands gallery image 9",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-9-75a9fb81.jpg",
-          "alt": "The Pantanal Wetlands gallery image 10",
-          "credit": "Safari Crafters archive"
-        },
-        {
-          "src": "/assets/safari-crafters/gallery-10-ebb52a32.jpg",
-          "alt": "The Pantanal Wetlands gallery image 11",
+          "src": "/assets/destinations/pantanal/supplied/07.webp",
+          "alt": "Armadillo walking through the Pantanal",
           "credit": "Safari Crafters archive"
         }
       ],
@@ -10909,11 +11916,10 @@
       "price": "$6500",
       "route": "Aguapé (2 nights), Bonito (1 night), Cuiabá (1 night), Porto Jofre (5 nights), Transpantaneira (1 night)",
       "highlights": [
-        "Jaguar Safaris: Spend four immersive days in Porto Jofre, widely regarded as the finest place on Earth to encounter wild jaguars in their natural habitat.",
-        "Extraordinary Biodiversity: Observe capybaras, caimans, giant anteaters, and an astonishing array of birdlife across one of the planet’s richest ecosystems.",
-        "Boat & Land Safaris: Explore both river corridors and open savanna, offering varied perspectives and exceptional opportunities for wildlife photography.",
-        "Macaw Sinkhole: Witness brilliant hyacinth macaws gathering at Bonito’s dramatic sandstone sinkhole, an unforgettable natural spectacle.",
-        "Authentic Lodges: Stay in thoughtfully selected eco-lodges that balance comfort with deep immersion in the wilderness."
+        "Four full days of jaguar boat safaris",
+        "Wetland wildlife and exceptional birding",
+        "River and land-based photography",
+        "Macaw photography near Bonito"
       ],
       "inclusions": [
         "2 nights at Pousada Aguapé Lodge with all meals.",
@@ -10939,36 +11945,44 @@
       ],
       "days": [
         {
-          "title": "September 11 - Arrival in Campo Grande",
-          "copy": "Arrive in Campo Grande and transfer to Aguapé Lodge, set within a private ranch renowned for its rich wildlife."
+          "title": "Arrival in Campo Grande",
+          "copy": "Arrive in Campo Grande and transfer to Aguapé Lodge, set within a private ranch renowned for its rich wildlife.",
+          "label": "Day 01"
         },
         {
-          "title": "September 12 - Exploring Aguapé Lodge",
-          "copy": "Morning and evening land safaris unfold across the lodge’s expansive wetlands."
+          "title": "Exploring Aguapé Lodge",
+          "copy": "Morning and evening land safaris unfold across the lodge’s expansive wetlands.",
+          "label": "Day 02"
         },
         {
-          "title": "September 13 - Aguapé to Bonito",
-          "copy": "After a final morning safari, drive to Bonito, celebrated for its limestone sinkholes and crystal-clear waters."
+          "title": "Aguapé to Bonito",
+          "copy": "After a final morning safari, drive to Bonito, celebrated for its limestone sinkholes and crystal-clear waters.",
+          "label": "Day 03"
         },
         {
-          "title": "September 14 - Macaws & Return to Campo Grande",
-          "copy": "Spend the morning photographing Hyacinth Macaws in flight before returning to Campo Grande for an overnight stay."
+          "title": "Macaws & Return to Campo Grande",
+          "copy": "Spend the morning photographing Hyacinth Macaws in flight before returning to Campo Grande for an overnight stay.",
+          "label": "Day 04"
         },
         {
-          "title": "September 15 - Fly to Cuiabá & Transfer to Porto Jofre",
-          "copy": "Take a short flight to Cuiabá (not included; approximately USD 90), then travel along the legendary Transpantaneira Road to Porto Jofre."
+          "title": "Fly to Cuiabá & Transfer to Porto Jofre",
+          "copy": "Take a short flight to Cuiabá (not included; approximately USD 90), then travel along the legendary Transpantaneira Road to Porto Jofre.",
+          "label": "Day 05"
         },
         {
-          "title": "September 16-19 - Jaguar Territory: Porto Jofre",
-          "copy": "Four full days devoted to exploring the river channels by boat."
+          "title": "Jaguar Territory: Porto Jofre",
+          "copy": "Four full days devoted to exploring the river channels by boat.",
+          "label": "Days 06–09"
         },
         {
-          "title": "September 20 - To SouthWild Pantanal Lodge",
-          "copy": "Enjoy a final morning on the river before transferring to SouthWild Pantanal Lodge."
+          "title": "To SouthWild Pantanal Lodge",
+          "copy": "Enjoy a final morning on the river before transferring to SouthWild Pantanal Lodge.",
+          "label": "Day 10"
         },
         {
-          "title": "September 21 - Morning Boat Safari & Departure",
-          "copy": "Begin the day with a relaxed morning boat ride, focusing on birdlife and the gentle rhythms of the wetland."
+          "title": "Morning Boat Safari & Departure",
+          "copy": "Begin the day with a relaxed morning boat ride, focusing on birdlife and the gentle rhythms of the wetland.",
+          "label": "Day 11"
         }
       ],
       "body": [
@@ -10982,7 +11996,192 @@
         "Four full days devoted to exploring the river channels by boat. Early mornings and late afternoons offer prime conditions to observe Jaguars, Giant Otters, Caimans, and an exceptional diversity of birdlife. With expert guides who know the most productive stretches of river, each outing presents outstanding photographic opportunities.",
         "Enjoy a final morning on the river before transferring to SouthWild Pantanal Lodge. After nightfall, visit the Ocelot Hide for an intimate and memorable encounter with the elusive Ocelot, ideal for low-light photography.",
         "Begin the day with a relaxed morning boat ride, focusing on birdlife and the gentle rhythms of the wetland. After breakfast and checkout, transfer to Cuiabá Airport for your onward journey."
-      ]
+      ],
+      "departures": [
+        {
+          "date": "2027-09-11",
+          "status": "Available",
+          "availability": "2 spots available"
+        }
+      ],
+      "publicationStatus": "published"
+    },
+    {
+      "slug": "bharatpur-photography-expedition",
+      "title": "Bharatpur Photography Expedition",
+      "category": "Photo Expedition",
+      "skill": "",
+      "groupSize": "To be confirmed",
+      "duration": "4 days",
+      "bestMonths": "",
+      "species": "",
+      "equipment": "",
+      "description": "Join our fixed photography departure to Bharatpur, 23 January 2027.",
+      "intro": "Our Bharatpur fixed departure runs from 23 January 2027 to 26 January 2027. Contact the team for the detailed programme, accommodation, pricing and availability.",
+      "image": {
+        "src": "/assets/destinations/bharatpur-keoladeo/bharatpur-keoladeo-03.jpg",
+        "alt": "Wetland birds at Bharatpur Keoladeo",
+        "credit": "Safari Crafters archive"
+      },
+      "gallery": [
+        {
+          "src": "/assets/destinations/bharatpur-keoladeo/bharatpur-keoladeo-01.jpg",
+          "alt": "Bharatpur & Keoladeo wildlife and landscape photograph 1",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/bharatpur-keoladeo/bharatpur-keoladeo-02.jpg",
+          "alt": "Bharatpur & Keoladeo wildlife and landscape photograph 2",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/bharatpur-keoladeo/bharatpur-keoladeo-04.jpg",
+          "alt": "Bharatpur & Keoladeo wildlife and landscape photograph 4",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/bharatpur-keoladeo/bharatpur-keoladeo-05.jpg",
+          "alt": "Bharatpur & Keoladeo wildlife and landscape photograph 5",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/bharatpur-keoladeo/bharatpur-keoladeo-06.jpg",
+          "alt": "Bharatpur & Keoladeo wildlife and landscape photograph 6",
+          "credit": "Safari Crafters archive"
+        }
+      ],
+      "mentor": "Team Safari Crafters",
+      "date": "23 January 2027",
+      "route": "Bharatpur & Keoladeo",
+      "highlights": [],
+      "days": [],
+      "departures": [
+        {
+          "date": "2027-01-23",
+          "endDate": "2027-01-26",
+          "status": "Available",
+          "availability": "Check availability"
+        }
+      ],
+      "publicationStatus": "preview"
+    },
+    {
+      "slug": "panna-photography-expedition",
+      "title": "Panna Photography Expedition",
+      "category": "Photo Expedition",
+      "skill": "",
+      "groupSize": "To be confirmed",
+      "duration": "5 days",
+      "bestMonths": "",
+      "species": "",
+      "equipment": "",
+      "description": "Join our fixed photography departure to Panna, 10 February 2027.",
+      "intro": "Our Panna fixed departure runs from 10 February 2027 to 14 February 2027. Contact the team for the detailed programme, accommodation, pricing and availability.",
+      "image": {
+        "src": "/assets/destinations/panna/panna-02.jpg",
+        "alt": "Tiger in Panna's dry forest",
+        "credit": "Safari Crafters archive"
+      },
+      "gallery": [
+        {
+          "src": "/assets/destinations/panna/panna-01.jpg",
+          "alt": "Panna wildlife and landscape photograph 1",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/panna/panna-03.jpg",
+          "alt": "Panna wildlife and landscape photograph 3",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/panna/panna-04.jpg",
+          "alt": "Panna wildlife and landscape photograph 4",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/panna/panna-05.jpg",
+          "alt": "Panna wildlife and landscape photograph 5",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/panna/panna-06.jpg",
+          "alt": "Panna wildlife and landscape photograph 6",
+          "credit": "Safari Crafters archive"
+        }
+      ],
+      "mentor": "Team Safari Crafters",
+      "date": "10 February 2027",
+      "route": "Panna",
+      "highlights": [],
+      "days": [],
+      "departures": [
+        {
+          "date": "2027-02-10",
+          "endDate": "2027-02-14",
+          "status": "Available",
+          "availability": "Check availability"
+        }
+      ],
+      "publicationStatus": "preview"
+    },
+    {
+      "slug": "ranthambhore-photography-expedition",
+      "title": "Ranthambhore Photography Expedition",
+      "category": "Photo Expedition",
+      "skill": "",
+      "groupSize": "To be confirmed",
+      "duration": "4 days",
+      "bestMonths": "",
+      "species": "",
+      "equipment": "",
+      "description": "Join our fixed photography departure to Ranthambhore, 18 February 2027.",
+      "intro": "Our Ranthambhore fixed departure runs from 18 February 2027 to 21 February 2027. Contact the team for the detailed programme, accommodation, pricing and availability.",
+      "image": {
+        "src": "/assets/destinations/ranthambhore/ranthambhore-02.jpg",
+        "alt": "Bengal tiger beside a Ranthambhore lake",
+        "credit": "Safari Crafters archive"
+      },
+      "gallery": [
+        {
+          "src": "/assets/destinations/ranthambhore/ranthambhore-01.jpg",
+          "alt": "Ranthambhore wildlife and landscape photograph 1",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/ranthambhore/ranthambhore-03.jpg",
+          "alt": "Ranthambhore wildlife and landscape photograph 3",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/ranthambhore/ranthambhore-04.jpg",
+          "alt": "Ranthambhore wildlife and landscape photograph 4",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/ranthambhore/ranthambhore-05.jpg",
+          "alt": "Ranthambhore wildlife and landscape photograph 5",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/ranthambhore/ranthambhore-06.jpg",
+          "alt": "Ranthambhore wildlife and landscape photograph 6",
+          "credit": "Safari Crafters archive"
+        }
+      ],
+      "mentor": "Team Safari Crafters",
+      "date": "18 February 2027",
+      "route": "Ranthambhore",
+      "highlights": [],
+      "days": [],
+      "departures": [
+        {
+          "date": "2027-02-18",
+          "endDate": "2027-02-21",
+          "status": "Available",
+          "availability": "Check availability"
+        }
+      ],
+      "publicationStatus": "preview"
     }
   ],
   "journal": [
@@ -11405,7 +12604,7 @@
       ],
       "quote": "In Svalbard, silence is not the absence of sound. It is a presence.",
       "image": {
-        "src": "/assets/safari-crafters/svalbard-expedition-5fb9b55c.jpg",
+        "src": "/assets/safari-crafters/svalbard-polar-bear.webp",
         "alt": "Svalbard: Where the White Breathes Blue - Safari Crafters field image 1",
         "credit": "Safari Crafters archive"
       },

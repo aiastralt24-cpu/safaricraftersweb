@@ -11,9 +11,7 @@ export default function AdminPage() {
             <p className="eyebrow">Production CMS</p>
             <h1 className="h1">Safari Crafters Studio.</h1>
             <p className="admin-summary">
-              The JSON editor has been retired as the primary backend. Use Sanity
-              Studio for production editing, media, draft review and structured
-              content updates.
+              Use Sanity Studio for editing and draft review. Published changes reach the public site through a validated Vercel deployment; Studio changes alone do not update the live site.
             </p>
           </div>
           <Link className="button button-solid" href="/studio">
@@ -31,8 +29,9 @@ export default function AdminPage() {
             <p>Homepage, journeys, destinations, photo expeditions, journal, specialists, testimonials and hero media.</p>
           </section>
           <section className="admin-panel">
-            <h2>Setup</h2>
-            <p>Set `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, then run `npm run sanity:seed` with `SANITY_WRITE_TOKEN`.</p>
+            <h2>Launch checks</h2><Link href="/admin/operations">Check configuration, delivery queue and funnel</Link>
+            <h2>Publishing setup</h2>
+            <p>Set `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, set SAFARI_CONTENT_SOURCE=sanity in Vercel, and redeploy after publishing. Review the deployment guide before the first CMS import.</p>
           </section>
         </div>
       </div>

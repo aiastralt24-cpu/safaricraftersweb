@@ -55,6 +55,7 @@ export default async function ArticlePage({ params }: Props) {
           <img src={heroImage.src} alt={heroImage.alt} />
           <div className="article-scrim" />
           <div className="container article-hero-content">
+            <Breadcrumbs items={breadcrumbs.map((item, index) => ({ label: item.name, ...(index < breadcrumbs.length - 1 ? { href: item.path } : {}) }))} variant="hero" />
             <p className="eyebrow">{article.category}</p>
             <h1 className="display">{article.title}</h1>
             <p>
@@ -62,7 +63,6 @@ export default async function ArticlePage({ params }: Props) {
             </p>
           </div>
         </section>
-        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "The Journal", href: "/journal" }, { label: article.title }]} />
         <div className="article-body">
           <p className="intro">{article.description}</p>
           {article.body.map((paragraph, index) => (

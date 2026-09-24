@@ -4,6 +4,7 @@ const port = Number(process.env.PLAYWRIGHT_PORT || 7801);
 
 export default defineConfig({
   testDir: "./tests",
+  testMatch: "**/*.spec.ts",
   timeout: 300_000,
   expect: { timeout: 10_000 },
   fullyParallel: false,

@@ -220,16 +220,6 @@ export default function GuidedBespokeSafarisPage() {
         <GuidedSafariFaq />
       </section>
 
-      <section className="guided-closing" aria-labelledby="guided-closing-title" data-guided-reveal>
-        <div>
-          <p className="eyebrow">A journey of your own</p>
-          <h2 id="guided-closing-title">Begin with what you hope to see.</h2>
-        </div>
-        <div>
-          <p>Tell us the place, species or photographic idea that has stayed with you. We will consider the route and the guide together.</p>
-          <Link href="/plan?guided=true">Plan with a private guide <ArrowUpRight aria-hidden="true" size={17} /></Link>
-        </div>
-      </section>
     </div>
   );
 }

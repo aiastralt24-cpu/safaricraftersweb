@@ -10,3 +10,5 @@ export const metadata = {
 export default function ConceptPage() {
   return <ConceptExperience />;
 }
+
+export const dynamic = "force-dynamic";

@@ -1,0 +1,30 @@
+.tanzania-page .page-hero-destination > img { transform:none; }
+.tanzania-place-figure { margin:0; }
+.tanzania-place-figure figcaption { font-size:11px; color:#62675e; margin-top:8px; }
+.tanzania-page .kenya-place:nth-of-type(even) .tanzania-place-figure { order:2; }
+.tanzania-page .kenya-combo-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; }
+.tanzania-page .kenya-combo-grid article { padding:24px 0; border:0; border-top:1px solid #29342430; }
+.tanzania-page button.kenya-text-link { background:transparent; border:0; border-bottom:1px solid #746446; color:inherit; padding:0; cursor:pointer; }
+.country-planner-dialog { width:min(1000px,calc(100% - 24px)); max-height:90svh; border:0; padding:32px; background:var(--bone); color:var(--ink); border-radius:16px; }
+.country-planner-dialog::backdrop { background:#101711bb; }
+body:has(.country-planner-dialog[open]) { overflow:hidden; }
+.country-planner-dialog header { padding-right:36px; }
+.country-planner-dialog header h2 { font-size:clamp(28px,4vw,44px); }
+.country-planner-close { float:right; position:sticky; top:0; display:grid; place-items:center; width:44px; height:44px; border:1px solid #29342440; border-radius:50%; background:var(--bone); cursor:pointer; z-index:2; }
+@media(min-width:1024px) and (min-height:650px) and (prefers-reduced-motion:no-preference) {
+ .tanzania-page .kenya-places { --stack-step:clamp(44px,6.4vh,64px); isolation:isolate; padding-bottom:72px; }
+ .tanzania-page .kenya-places::after { content:""; display:block; height:30vh; }
+ .tanzania-page .kenya-place { position:sticky; top:96px; z-index:1; margin-bottom:0; padding:0 24px 24px; background:var(--bone); border:1px solid #29342426; border-radius:20px; box-shadow:0 -12px 30px -16px #19271f55; scroll-margin-top:96px; }
+ .tanzania-page .kenya-place + .kenya-place { margin-top:18vh; }
+ .tanzania-page .kenya-place h3.kenya-place-title { display:flex; align-items:center; height:var(--stack-step); margin:0; font-size:clamp(28px,3vw,36px); }
+ .tanzania-page .kenya-place:nth-of-type(2) { top:calc(96px + var(--stack-step)); z-index:2; }
+ .tanzania-page .kenya-place:nth-of-type(3) { top:calc(96px + var(--stack-step) * 2); z-index:3; }
+ .tanzania-page .kenya-place:nth-of-type(4) { top:calc(96px + var(--stack-step) * 3); z-index:4; }
+ .tanzania-page .kenya-place:nth-of-type(5) { top:calc(96px + var(--stack-step) * 4); z-index:5; }
+ .tanzania-page .kenya-place:has(:focus-visible) { z-index:6; }
+ .tanzania-page .kenya-place-body { gap:clamp(28px,4vw,60px); }
+ .tanzania-page .kenya-place .kenya-place-image { height:min(40vh,450px,calc(100svh - 144px - var(--stack-step) * 5)); aspect-ratio:auto; border-radius:10px; }
+ .tanzania-page .kenya-place-copy > p { font-size:15px; margin:12px 0; }
+ .tanzania-page .kenya-place-copy .kenya-text-link { margin-top:12px; }
+}
+@media(max-width:760px) { .tanzania-page .kenya-combo-grid { grid-template-columns:1fr; } .tanzania-page .kenya-place:nth-of-type(even) .tanzania-place-figure { order:0; } .country-planner-dialog { padding:20px; } }

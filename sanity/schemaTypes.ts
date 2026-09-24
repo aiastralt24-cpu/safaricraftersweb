@@ -193,6 +193,17 @@ const expedition = defineType({
   title: "Photo expedition",
   type: "document",
   fields: [
+    defineField({name:"publicationStatus",title:"Publication status",type:"string",options:{list:["preview","published"]},initialValue:"preview"}),
+    defineField({name:"availabilityReviewedAt",title:"Availability last verified",type:"date"}),
+    defineField({name:"departures",title:"Departure dates and availability",type:"array",of:[defineArrayMember({type:"object",name:"departure",fields:[
+      defineField({name:"date",type:"date",validation:r=>r.required()}),
+      defineField({name:"endDate",type:"date"}),
+      defineField({name:"status",type:"string",options:{list:["New","Available","Filling fast","Full"]},validation:r=>r.required()}),
+      defineField({name:"availability",title:"Verified availability text",type:"string"})
+    ]})]}),
+
+    ...['category','skill','groupSize','duration','equipment','bestMonths','price','route'].map(name=>defineField({name,type:'string'})),
+    ...['highlights','inclusions','exclusions'].map(name=>defineField({name,type:'array',of:[defineArrayMember({type:'string'})]})),
     defineField({ name: "slug", title: "Slug", type: "slug", options: { source: "title" } }),
     defineField({ name: "title", title: "Title", type: "string" }),
     defineField({ name: "date", title: "Date", type: "string" }),

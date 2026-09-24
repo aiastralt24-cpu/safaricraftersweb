@@ -1,18 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
 import type { StoreCategory } from "@/lib/store";
+import { breadcrumbSchema } from "@/lib/structured-data";
 import StoreMotion from "./StoreMotion";
 
 export default function StoreCategoryCollection({ category }: { category: StoreCategory }) {
   return (
     <div className="store-category-page">
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Store", path: "/store" },
+        { name: category.title, path: `/store/${category.slug}` }
+      ])} />
       <StoreMotion />
 
       <section className="store-category-hero" aria-labelledby={`${category.slug}-title`}>
         <div className="container store-category-hero-grid">
           <div>
             <nav className="store-breadcrumb store-breadcrumb-light" aria-label="Breadcrumb">
+              <Link href="/">Home</Link>
+              <span aria-hidden="true">/</span>
               <Link href="/store">Store</Link>
               <span aria-hidden="true">/</span>
               <span aria-current="page">{category.title}</span>

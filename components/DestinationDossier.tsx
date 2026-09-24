@@ -1,3 +1,4 @@
+import { ItineraryBento } from "@/components/ItineraryBento";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -83,23 +84,11 @@ function DestinationCombos({ destination, combos }: { destination: Destination; 
       <h2 id={`destination-combos-${destination.slug}`}>Better together.</h2>
       <p>Considered routes that place {destination.title} in a wider journey without rushing either landscape.</p>
     </header>
-    <div className={`container destination-combo-grid${combos.length === 2 ? " has-two" : ""}`}>
-      {combos.map((combo, index) => {
-        const place = getDestination(combo.imageSlug) || destination;
-        const image = place.gallery[0] || place.image;
-        return <article key={combo.title} className="destination-combo-card">
-          <Link className="destination-combo-image" href={combo.href}>
-            <Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 100vw, 34vw" />
-            <span>{String(index + 1).padStart(2, "0")}</span>
-          </Link>
-          <div>
-            <h3><Link href={combo.href}>{combo.title}</Link></h3>
-            <p>{combo.description}</p>
-            <Link className="destination-combo-link" href={combo.href}>{combo.href.startsWith("/journeys/") ? "Explore journey" : "Start planning"} <ArrowUpRight size={15} /></Link>
-          </div>
-        </article>;
-      })}
-    </div>
+    <div className="container"><ItineraryBento items={combos.map((combo,index)=>{
+      const place = getDestination(combo.imageSlug) || destination;
+      const image = place.gallery[index % Math.max(place.gallery.length,1)] || place.image;
+      return { title:combo.title, label:"Suggested journey", copy:combo.description, image, href:combo.href, cta:combo.href.startsWith("/journeys/") ? "Explore journey" : "Start planning" };
+    })}/></div>
   </section>;
 }
 

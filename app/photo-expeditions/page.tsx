@@ -12,3 +12,6 @@ export const metadata: Metadata = {
 export default function PhotoExpeditionsPage() {
   return <PhotoExpeditionFilm expeditions={expeditions} />;
 }
+
+// Time-based departure filtering must not be frozen at build time.
+export const dynamic = "force-dynamic";

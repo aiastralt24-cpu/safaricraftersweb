@@ -50,10 +50,10 @@ export function Footer() {
             the wild still breathes freely.
           </p>
           <div className="footer-icons" aria-label="Social and contact links">
-            <Link href="/contact" aria-label="Email Safari Crafters">
+            <Link href="mailto:hello@safaricrafters.com" aria-label="Email Safari Crafters">
               <Mail size={18} />
             </Link>
-            <Link href="/contact" aria-label="WhatsApp Safari Crafters">
+            <Link href="/contact" aria-label="Contact Safari Crafters">
               <MessageCircle size={18} />
             </Link>
             <a

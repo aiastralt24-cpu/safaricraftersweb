@@ -11,6 +11,7 @@ export async function POST(request: Request) {
   const unauthorized = authorizeAdmin(request);
   if (unauthorized) return unauthorized;
 
+  if (process.env.NODE_ENV === "production") return NextResponse.json({ok:false,error:"Use the reviewed media publishing workflow. Local uploads are unavailable in production."},{status:409});
   const formData = await request.formData();
   const file = formData.get("file");
   if (!(file instanceof File)) {

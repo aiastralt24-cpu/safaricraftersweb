@@ -1,5 +1,8 @@
 "use client";
 
+import { EnquiryHoneypot } from "@/components/EnquiryHoneypot";
+import { enquiryHeaders } from "@/lib/enquiry-client";
+
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { ArrowUpRight, Check, X } from "lucide-react";
@@ -49,11 +52,9 @@ export default function InternationalOrder() {
     setSubmitting(true);
     setError("");
     try {
-      const response = await fetch("/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          source: "planner",
+      const payload = {
+          website: String(values.get("website") || ""),
+      source: "planner",
           sourceType: "store-international",
           sourceLabel: "Store · International payments and dispatch",
           region: "International book order",
@@ -74,8 +75,8 @@ export default function InternationalOrder() {
           city: "",
           notes: "Please contact this guest about international payment and dispatch for Ghosts of the Granite Hills.",
           consent: true
-        })
-      });
+        };
+      const response = await fetch("/api/enquiry", {method:"POST",headers:await enquiryHeaders(payload),body:JSON.stringify(payload)});
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || "We could not send your request. Please try again.");
       setReference(result.enquiryId);
@@ -109,7 +110,7 @@ export default function InternationalOrder() {
                 <button className="store-dialog-submit" type="button" onClick={close}>Return to the book</button>
               </div>
             ) : (
-              <form onSubmit={submit}>
+              <form onSubmit={submit}><EnquiryHoneypot />
                 <p className="store-kicker">International orders</p>
                 <h2 id="international-order-title">Payment and dispatch, arranged personally.</h2>
                 <p className="store-dialog-intro">Share your details and our team will contact you by email with payment and shipping options for your country.</p>

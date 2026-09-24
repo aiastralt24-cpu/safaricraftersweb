@@ -6,27 +6,15 @@ import { Menu, MoveRight, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
+import { CartButton } from "@/components/StoreCart";
 import { BrandMark } from "@/components/BrandMark";
 import type { ImageAsset } from "@/lib/data";
-import { destinations, expeditions, journeys, specialists } from "@/lib/data";
+import { destinations, expeditions, journeys } from "@/lib/data";
 import "./Header.css";
 
 const heroJourney = journeys[0];
 const featuredDestination = destinations.find((item) => item.slug === "jawai") ?? destinations[0];
-const tigerDestination = destinations.find((item) => item.slug === "bandhavgarh") ?? destinations[0];
 const photoExpedition = expeditions[0];
-const journalMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/dsc8123-789x1024-1f0b8c48.jpg",
-  alt: "Tiger walking toward the camera",
-  credit: "Safari Crafters archive"
-};
-
-const conservationMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/gallery-1-23-scaled-7f473b1f.jpg",
-  alt: "Red panda on a branch",
-  credit: "Safari Crafters archive"
-};
-
 const privateAviationMenuImage: ImageAsset = {
   src: "/assets/safari-crafters/amer-fort-original-scaled-31b56cd7.jpg",
   alt: "Amer Fort in Jaipur",
@@ -39,25 +27,7 @@ const storeMenuImage: ImageAsset = {
   credit: "Safari Crafters archive"
 };
 
-const contactMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/dsc8320-a71ff184.jpg",
-  alt: "Rabari elder in Jawai",
-  credit: "Safari Crafters archive"
-};
-
-const reviewsMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/gallery-1-23-scaled-7f473b1f.jpg",
-  alt: "Red panda on a branch",
-  credit: "Safari Crafters archive"
-};
-
-const guidedSafariMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/laipikia-001e24e7.jpg",
-  alt: "Black leopard walking through Laikipia",
-  credit: "Safari Crafters archive"
-};
-
-const menuItems = [
+const primaryMenuItems = [
   {
     key: "journeys",
     label: "Journeys",
@@ -77,32 +47,8 @@ const menuItems = [
     image: photoExpedition.image
   },
   {
-    key: "guided-bespoke-safaris",
-    label: "Bespoke Safaris",
-    href: "/guided-bespoke-safaris",
-    image: guidedSafariMenuImage
-  },
-  {
-    key: "journal",
-    label: "The Journal",
-    href: "/journal",
-    image: journalMenuImage
-  },
-  {
-    key: "reviews",
-    label: "Guest Notes",
-    href: "/reviews",
-    image: reviewsMenuImage
-  },
-  {
-    key: "conservation-commitment",
-    label: "Conservation",
-    href: "/conservation-commitment",
-    image: conservationMenuImage
-  },
-  {
     key: "private-aviation",
-    label: "Private Aviation",
+    label: "Private Jet Safaris",
     href: "/private-aviation",
     image: privateAviationMenuImage
   },
@@ -111,20 +57,38 @@ const menuItems = [
     label: "Store",
     href: "/store",
     image: storeMenuImage
+  }
+];
+
+const secondaryMenuItems = [
+  {
+    key: "journal",
+    label: "Journal",
+    href: "/journal"
+  },
+  {
+    key: "reviews",
+    label: "Guest Notes",
+    href: "/reviews"
+  },
+  {
+    key: "conservation-commitment",
+    label: "Conservation",
+    href: "/conservation-commitment"
   },
   {
     key: "about",
     label: "About",
-    href: "/about",
-    image: specialists[0]?.image ?? heroJourney.image
+    href: "/about"
   },
   {
     key: "contact",
-    label: "Contact Us",
-    href: "/contact",
-    image: contactMenuImage
+    label: "Contact",
+    href: "/contact"
   }
 ];
+
+const menuItems = [...primaryMenuItems, ...secondaryMenuItems];
 
 const knownRoutePrefixes = [
   "/about",
@@ -149,11 +113,13 @@ const knownRoutePrefixes = [
 
 export function Header() {
   const pathname = usePathname();
+  const matchedPrimaryMenuItem = primaryMenuItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`));
+  const currentPrimaryMenuKey = matchedPrimaryMenuItem?.key ?? (pathname === "/" ? primaryMenuItems[0].key : null);
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(true);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [activeMenuKey, setActiveMenuKey] = useState(menuItems[0].key);
+  const [activeMenuKey, setActiveMenuKey] = useState<string | null>(currentPrimaryMenuKey);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const isKnownRoute =
@@ -161,8 +127,10 @@ export function Header() {
   const hasLightOpening = pathname.startsWith("/search") || pathname.startsWith("/legal");
   const useSolidHeader = scrolled || !isKnownRoute || hasLightOpening;
   const isStore = pathname === "/store" || pathname.startsWith("/store/");
-  const sectionLabel = menuItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`))?.label
-    ?? (pathname.startsWith("/plan") ? "Private journey planning" : "Safari Crafters");
+  const sectionItem = menuItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`))
+    ?? (pathname.startsWith("/guided-bespoke-safaris") ? primaryMenuItems[0] : undefined);
+  const sectionHref = sectionItem?.href ?? (pathname.startsWith("/plan") ? "/plan" : undefined);
+  const sectionLabel = sectionItem?.label ?? (pathname.startsWith("/plan") ? "Private journey planning" : "Safari Crafters");
 
   useEffect(() => {
     let previousY = window.scrollY;
@@ -194,7 +162,7 @@ export function Header() {
   useEffect(() => {
     if (!open) return;
 
-    setActiveMenuKey(menuItems[0].key);
+    setActiveMenuKey(currentPrimaryMenuKey);
     const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
     const onKeyDown = (event: KeyboardEvent) => {
@@ -234,7 +202,7 @@ export function Header() {
       document.removeEventListener("focusin", onFocusIn);
       menuButtonRef.current?.focus();
     };
-  }, [open]);
+  }, [open, currentPrimaryMenuKey]);
 
   return (
     <>
@@ -243,10 +211,17 @@ export function Header() {
         style={{ "--header-progress": `${scrollProgress}%` } as CSSProperties}
       >
         <BrandMark className="wordmark" />
-        <span className="header-context" aria-live="polite">{sectionLabel}</span>
-        <Link className="header-cta" href={isStore ? "/store#store-categories" : "/plan"}>
-          {isStore ? "Browse Store" : "Plan a Journey"}
+        {sectionHref && pathname !== sectionHref ? (
+          <Link className="header-context" href={sectionHref} aria-label={`Back to ${sectionLabel}`}>{sectionLabel}</Link>
+        ) : (
+          <span className="header-context" aria-live="polite">{sectionLabel}</span>
+        )}
+        <div className="header-shop-actions">
+        <CartButton />
+        <Link className="header-cta" href={isStore ? "/" : "/plan"}>
+          {isStore ? "Back to Main Site" : "Plan a Journey"}
         </Link>
+        </div>
         <button
           ref={menuButtonRef}
           className="menu-button"
@@ -280,26 +255,39 @@ export function Header() {
           </button>
         </div>
         <div className="site-full-menu-grid">
-          <nav className="site-full-menu-list" aria-label="Expanded site menu">
-            {menuItems.map((item, index) => (
-              <Link
-                href={item.href}
-                className="site-full-menu-row"
-                key={item.href}
-                data-active={activeMenuKey === item.key ? "true" : undefined}
-                onClick={() => setOpen(false)}
-                onFocus={() => setActiveMenuKey(item.key)}
-                onPointerEnter={() => setActiveMenuKey(item.key)}
-              >
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h2>{item.label}</h2>
-                <MoveRight size={24} />
-              </Link>
-            ))}
-          </nav>
+          <div className="site-full-menu-navigation">
+            <nav className="site-full-menu-list" aria-label="Primary site menu">
+              {primaryMenuItems.map((item) => (
+                <Link
+                  href={item.href}
+                  className="site-full-menu-row"
+                  key={item.href}
+                  data-active={activeMenuKey === item.key ? "true" : undefined}
+                  aria-current={pathname === item.href || pathname.startsWith(`${item.href}/`) ? "page" : undefined}
+                  onClick={() => setOpen(false)}
+                  onFocus={() => setActiveMenuKey(item.key)}
+                  onPointerEnter={() => setActiveMenuKey(item.key)}
+                >
+                  <h2>{item.label}</h2>
+                  <MoveRight size={24} aria-hidden="true" />
+                </Link>
+              ))}
+            </nav>
+            <Link className="site-full-menu-plan" href="/plan" onClick={() => setOpen(false)}>
+              <span>Plan a Journey</span>
+              <MoveRight size={20} aria-hidden="true" />
+            </Link>
+            <nav className="site-full-menu-secondary" aria-label="More from Safari Crafters">
+              {secondaryMenuItems.map((item) => (
+                <Link href={item.href} key={item.href} onClick={() => setOpen(false)} aria-current={pathname === item.href || pathname.startsWith(`${item.href}/`) ? "page" : undefined}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
           <aside className="site-full-menu-image">
             <div className="site-full-menu-image-stack" aria-hidden="true">
-              {menuItems.map((item) => (
+              {primaryMenuItems.map((item) => (
                 <Image
                   src={item.image.src}
                   alt=""
@@ -312,10 +300,6 @@ export function Header() {
               ))}
             </div>
           </aside>
-          <div className="site-full-menu-footer">
-            <span>Tiger season / November to May</span>
-            <Link href="/plan">Plan a private safari</Link>
-          </div>
         </div>
       </div>
     </>

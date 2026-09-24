@@ -65,6 +65,7 @@ export default async function JourneyDetailPage({ params }: Props) {
         />
         <div className="journey-detail-hero-shade" />
         <div className="container journey-detail-hero-content">
+          <Breadcrumbs items={breadcrumbs.map((item, index) => ({ label: item.name, ...(index < breadcrumbs.length - 1 ? { href: item.path } : {}) }))} variant="hero" />
           <p className="eyebrow">Private journey · {journey.region}</p>
           <h1>{journey.title}</h1>
           <p className="journey-detail-dek">{journey.description}</p>
@@ -85,7 +86,6 @@ export default async function JourneyDetailPage({ params }: Props) {
           <a href="#enquire">Begin planning</a>
         </div>
       </nav>
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Journeys", href: "/journeys" }, { label: journey.title }]} />
       <article className="section detail journey-detail" id="overview">
         <div className="container journey-opening">
           <div>

@@ -18,3 +18,80 @@ alter table public.safari_enquiries enable row level security;
 
 comment on table public.safari_enquiries is
   'Private Safari Crafters briefs. Access is server-side through the service role only.';
+
+-- Reliability migration: run in Supabase SQL editor before deploying this version.
+alter table public.safari_enquiries add column if not exists submission_key uuid unique;
+alter table public.safari_enquiries add column if not exists payload_hash text;
+alter table public.safari_enquiries drop constraint if exists safari_enquiries_status_check;
+alter table public.safari_enquiries add constraint safari_enquiries_status_check check (status in ('new','contacted','qualified','booked','closed'));
+create table if not exists public.safari_notification_outbox (
+ id bigint generated always as identity primary key,
+ enquiry_id text not null references public.safari_enquiries(enquiry_id),
+ kind text not null check(kind in ('guest','team')),
+ attempts integer not null default 0,
+ created_at timestamptz not null default now(),
+ next_attempt_at timestamptz not null default now(),
+ lease_until timestamptz,
+ lease_token uuid,
+ sent_at timestamptz,
+ last_error text,
+ unique(enquiry_id,kind)
+);
+alter table public.safari_notification_outbox enable row level security;
+create index if not exists safari_notification_due on public.safari_notification_outbox(next_attempt_at) where sent_at is null;
+
+create or replace function public.accept_safari_enquiry(p_key uuid,p_hash text,p_payload jsonb,p_specialist text)
+returns jsonb language plpgsql security definer set search_path=public as $$
+declare existing public.safari_enquiries; reference text;
+begin
+ perform pg_advisory_xact_lock(hashtextextended(p_key::text,0));
+ select * into existing from safari_enquiries where submission_key=p_key;
+ if found then
+  if existing.payload_hash <> p_hash then raise exception 'submission_conflict'; end if;
+  return jsonb_build_object('enquiry_id',existing.enquiry_id,'specialist',existing.specialist);
+ end if;
+ perform pg_advisory_xact_lock(hashtextextended(lower(p_payload->>'email'),1));
+ if (select count(*) from safari_enquiries where lower(payload->>'email')=lower(p_payload->>'email') and created_at>now()-interval '10 minutes')>=3 then raise exception 'rate_limited'; end if;
+ reference := 'SC-' || upper(gen_random_uuid()::text);
+ insert into safari_enquiries(enquiry_id,submission_key,payload_hash,specialist,source,payload) values(reference,p_key,p_hash,p_specialist,'planner',p_payload);
+ insert into safari_notification_outbox(enquiry_id,kind) values(reference,'team'),(reference,'guest');
+ return jsonb_build_object('enquiry_id',reference,'specialist',p_specialist);
+end $$;
+
+create or replace function public.claim_safari_notifications()
+returns table(id bigint,enquiry_id text,kind text,attempts integer,lease_token uuid,payload jsonb)
+language sql security definer set search_path=public as $$
+ with due as (
+  select o.id from safari_notification_outbox o where o.sent_at is null and o.attempts<10
+   and o.next_attempt_at<=now() and (o.lease_until is null or o.lease_until<now())
+   order by o.next_attempt_at limit 2 for update skip locked
+ ), claimed as (
+  update safari_notification_outbox o set attempts=o.attempts+1,lease_until=now()+interval '5 minutes',lease_token=gen_random_uuid()
+  from due where o.id=due.id returning o.*
+ ) select c.id,c.enquiry_id,c.kind,c.attempts,c.lease_token,e.payload from claimed c join safari_enquiries e using(enquiry_id);
+$$;
+revoke all on function public.accept_safari_enquiry(uuid,text,jsonb,text) from public,anon,authenticated;
+revoke all on function public.claim_safari_notifications() from public,anon,authenticated;
+grant execute on function public.accept_safari_enquiry(uuid,text,jsonb,text) to service_role;
+grant execute on function public.claim_safari_notifications() to service_role;
+
+-- Anonymous, short-lived funnel sessions. No form values, query strings or IPs.
+create table if not exists public.safari_funnel_events (
+ id bigint generated always as identity primary key,
+ visit uuid not null,
+ event text not null check(event in ('trip_viewed','planner_started','enquiry_started','enquiry_failed')),
+ path text not null,
+ created_at timestamptz not null default now(),
+ unique(visit,event,path)
+);
+alter table public.safari_funnel_events enable row level security;
+create or replace function public.record_safari_event(p_event text,p_path text,p_visit uuid)
+returns void language plpgsql security definer set search_path=public as $$
+begin
+ perform pg_advisory_xact_lock(hashtextextended(p_visit::text,2));
+ if (select count(*) from safari_funnel_events where visit=p_visit)>=100 then return; end if;
+ insert into safari_funnel_events(visit,event,path) values(p_visit,p_event,p_path) on conflict do nothing;
+end $$;
+revoke all on function public.record_safari_event(text,text,uuid) from public,anon,authenticated;
+grant execute on function public.record_safari_event(text,text,uuid) to service_role;
+create index if not exists safari_enquiries_email_recent_idx on public.safari_enquiries(lower(payload->>'email'),created_at desc);

@@ -45,7 +45,8 @@
 .destination-photo-heading { display: grid; grid-template-columns: 180px minmax(0,1fr) minmax(260px,.56fr); gap: clamp(28px,5vw,76px); align-items: end; margin-bottom: clamp(46px,6vw,76px); }
 .destination-photo-heading h2 { margin: 0; max-width: 760px; font-family: var(--font-display); font-size: clamp(3rem,5.5vw,5.8rem); font-weight: 300; letter-spacing: -.035em; line-height: .94; text-wrap: balance; }
 .destination-photo-heading>p:last-child { max-width: 38ch; margin: 0 0 7px; color: var(--mute); line-height: 1.7; }
-.destination-photo-journal .destination-story-gallery { width: min(calc(100% - 48px),var(--max)); margin: 0 auto; padding: 0; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; }
+.destination-photo-journal .destination-story-gallery { display: grid; box-sizing: border-box; width: min(calc(100% - 48px),var(--max)); min-width: 0; margin: 0 auto; padding: 0; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; }
+.destination-photo-journal .gallery-trigger { display: block; width: 100%; min-width: 0; }
 .destination-photo-journal .destination-story-gallery.gallery-count-1 { grid-template-columns: minmax(0,760px); justify-content: center; }
 .destination-photo-journal .destination-story-gallery.gallery-count-2,
 .destination-photo-journal .destination-story-gallery.gallery-count-4 { grid-template-columns: repeat(2,minmax(0,1fr)); }

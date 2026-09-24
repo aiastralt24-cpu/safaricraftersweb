@@ -293,17 +293,26 @@ body:has(.concept-page) .site-header {
   display: contents;
 }
 
-.concept-full-menu-list {
+.concept-full-menu-navigation {
   grid-area: list;
   display: grid;
-  grid-auto-rows: minmax(58px, 1fr);
-  align-content: stretch;
+  grid-template-rows: auto auto auto;
+  align-content: center;
+  gap: clamp(18px, 2.5vh, 30px);
   min-width: 0;
   height: 100%;
-  max-width: 780px;
+  max-width: 760px;
   overflow-y: auto;
-  padding: clamp(12px, 1.6vh, 20px) clamp(24px, 3.4vw, 56px) clamp(18px, 2.2vh, 28px);
+  padding: clamp(24px, 3vh, 42px) clamp(24px, 3.4vw, 56px) clamp(28px, 4vh, 52px);
   scrollbar-width: none;
+}
+
+.concept-full-menu-navigation::-webkit-scrollbar {
+  display: none;
+}
+
+.concept-full-menu-list {
+  display: grid;
 }
 
 .concept-full-menu-list::-webkit-scrollbar {
@@ -312,14 +321,13 @@ body:has(.concept-page) .site-header {
 
 .concept-full-menu-row {
   display: grid;
-  grid-template-columns: 40px minmax(0, 1fr) 22px;
+  grid-template-columns: minmax(0, 1fr) 22px;
   gap: clamp(14px, 1.8vw, 24px);
   align-items: center;
   border-bottom: 0.5px solid rgba(var(--rgb-bone), 0.13);
-  min-height: 0;
-  padding: clamp(7px, 1vh, 12px) 0;
-  color: var(--bone);
-  transition: opacity 420ms var(--ease), color 360ms var(--ease), border-color 360ms var(--ease);
+  padding: clamp(12px, 1.4vh, 17px) 0;
+  color: rgba(var(--rgb-bone), 0.78);
+  transition: color 360ms var(--ease), border-color 360ms var(--ease);
 }
 
 .concept-full-menu-row:first-child {
@@ -328,15 +336,6 @@ body:has(.concept-page) .site-header {
 
 .concept-full-menu-row:last-child {
   border-bottom: 0.5px solid rgba(var(--rgb-bone), 0.13);
-}
-
-.concept-full-menu-row > span {
-  color: rgba(var(--rgb-brass-light), 0.55);
-  font-family: var(--font-body);
-  font-size: var(--concept-label);
-  font-weight: 500;
-  letter-spacing: var(--concept-label-tracking);
-  line-height: 1.2;
 }
 
 .concept-full-menu-row h2 {
@@ -348,16 +347,6 @@ body:has(.concept-page) .site-header {
   line-height: 1;
   text-wrap: balance;
   transition: color 420ms var(--ease), transform 520ms var(--ease);
-}
-
-.concept-full-menu-list:hover .concept-full-menu-row {
-  opacity: 0.36;
-}
-
-.concept-full-menu-list:hover .concept-full-menu-row:hover,
-.concept-full-menu-list:hover .concept-full-menu-row:focus-visible,
-.concept-full-menu-row[data-active="true"] {
-  opacity: 1;
 }
 
 .concept-full-menu-row[data-active="true"] {
@@ -377,15 +366,76 @@ body:has(.concept-page) .site-header {
 }
 
 .concept-full-menu-row svg {
-  color: rgba(var(--rgb-bone), 0.48);
-  transition: color 420ms var(--ease), transform 520ms var(--ease);
+  color: var(--brass-light);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 320ms var(--ease), transform 420ms var(--ease);
 }
 
 .concept-full-menu-row:hover svg,
-.concept-full-menu-row:focus-visible svg,
-.concept-full-menu-row[data-active="true"] svg {
+.concept-full-menu-row:focus-visible svg {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.concept-full-menu-plan {
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid var(--brass);
+  padding: 14px 18px;
+  background: var(--brass);
+  color: var(--white);
+  font-size: var(--concept-label);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 320ms var(--ease), border-color 320ms var(--ease), color 320ms var(--ease);
+}
+
+.concept-full-menu-plan:hover,
+.concept-full-menu-plan:focus-visible {
+  border-color: var(--brass-light);
+  background: var(--brass-light);
+  color: var(--night-deep);
+}
+
+.concept-full-menu-plan svg {
+  transition: transform 320ms var(--ease);
+}
+
+.concept-full-menu-plan:hover svg,
+.concept-full-menu-plan:focus-visible svg {
+  transform: translateX(5px);
+}
+
+.concept-full-menu-secondary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(18px, 3vw, 40px);
+  border-top: 0.5px solid rgba(var(--rgb-bone), 0.18);
+  padding-top: 8px;
+}
+
+.concept-full-menu-secondary a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(var(--rgb-bone), 0.1);
+  color: rgba(var(--rgb-bone), 0.68);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 280ms var(--ease), border-color 280ms var(--ease);
+}
+
+.concept-full-menu-secondary a:hover,
+.concept-full-menu-secondary a:focus-visible {
+  border-color: rgba(var(--rgb-brass-light), 0.45);
   color: var(--brass-light);
-  transform: translateX(10px);
 }
 
 .concept-full-menu-image {
@@ -726,6 +776,17 @@ body:has(.concept-page) .site-header {
   color: rgba(var(--rgb-espresso), 0.66);
   font-size: clamp(0.95rem, 1.05vw, 1.16rem);
   line-height: 1.62;
+}
+
+.concept-journey-types-grid .concept-brand-emphasis {
+  border-bottom: 1px solid rgba(var(--rgb-brass), 0.72);
+  padding-bottom: 0.04em;
+  color: var(--espresso);
+  font-family: var(--font-display);
+  font-size: 1.14em;
+  font-style: italic;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .concept-journey-types-grid a {
@@ -2622,14 +2683,21 @@ body:has(.concept-page) .site-header {
     display: contents;
   }
 
+  .concept-full-menu-navigation {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    align-content: start;
+    gap: 18px;
+    padding: 18px max(22px, env(safe-area-inset-right, 0px)) max(24px, env(safe-area-inset-bottom, 0px)) max(22px, env(safe-area-inset-left, 0px));
+  }
+
   .concept-full-menu-list {
     grid-auto-rows: auto;
     align-content: start;
     height: auto;
     min-height: 0;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    padding: 10px 20px max(22px, env(safe-area-inset-bottom, 0px));
+    padding: 0;
   }
 
   .concept-menu-row svg,
@@ -2644,20 +2712,15 @@ body:has(.concept-page) .site-header {
   }
 
   .concept-full-menu-row {
-    grid-template-columns: 30px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 12px;
-    min-height: 62px;
+    min-height: 58px;
     padding: 10px 0;
   }
 
-  .concept-full-menu-row > span {
-    font-size: var(--concept-label);
-  }
-
-  .concept-full-menu-footer {
-    flex-direction: column;
-    padding: 0 22px 22px;
-  }
+  .concept-full-menu-plan { min-height: 50px; }
+  .concept-full-menu-secondary { gap: 0 18px; }
+  .concept-full-menu-secondary a { min-height: 40px; font-size: .64rem; }
 
   .concept-spread-image,
   .concept-spread-image img {
@@ -2807,6 +2870,28 @@ body:has(.concept-page) .site-header {
   }
 }
 
+@media (min-width: 861px) and (max-width: 1060px) {
+  .concept-full-menu {
+    grid-template-areas:
+      "header image"
+      "list image";
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 40vw);
+    grid-template-rows: auto minmax(0, 1fr);
+    overflow: hidden;
+  }
+
+  .concept-full-menu-navigation {
+    width: auto;
+    max-width: 760px;
+    height: 100%;
+    align-content: center;
+  }
+
+  .concept-full-menu-image {
+    display: block;
+  }
+}
+
 /* Shared editorial chapter header: journeys, aviation and expeditions. */
 .concept-expedition-calendar .concept-field-notes-header,
 .concept-private-aviation-header {
@@ -2949,6 +3034,133 @@ body:has(.concept-page) .site-header {
   }
 }
 
+/* Compact homepage introduction; the dedicated page carries the full aviation story. */
+.concept-private-aviation {
+  padding: clamp(64px, 5.5vw, 88px) var(--concept-gutter);
+}
+
+.concept-private-aviation-panel {
+  display: grid;
+  width: min(var(--concept-canvas), 100%);
+  min-height: clamp(470px, 38vw, 550px);
+  margin-inline: auto;
+  grid-template-columns: minmax(360px, 0.76fr) minmax(0, 1.24fr);
+  overflow: hidden;
+  border: 1px solid rgba(var(--rgb-soil), 0.14);
+  border-radius: clamp(10px, 0.8vw, 16px);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.concept-private-aviation-copy {
+  display: flex;
+  padding: clamp(42px, 3.6vw, 58px) clamp(36px, 3.2vw, 48px);
+  flex-direction: column;
+  justify-content: center;
+}
+
+.concept-private-aviation-copy .concept-private-aviation-eyebrow {
+  width: auto;
+  margin: 0 0 24px;
+}
+
+.concept-private-aviation-copy h2 {
+  max-width: 8ch;
+  margin: 0;
+  color: var(--soil);
+  font-family: var(--font-display);
+  font-size: clamp(3.25rem, 4.4vw, 5.2rem);
+  font-weight: 300;
+  letter-spacing: -0.035em;
+  line-height: 0.94;
+}
+
+.concept-private-aviation-summary {
+  max-width: 35ch;
+  margin: clamp(24px, 2.4vw, 34px) 0 0;
+  color: rgba(var(--rgb-soil), 0.7);
+  font-size: var(--type-body);
+  line-height: 1.65;
+}
+
+.concept-private-aviation-points {
+  display: flex;
+  margin: clamp(24px, 2.4vw, 34px) 0 0;
+  color: var(--brass-dark);
+  flex-wrap: wrap;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+
+.concept-private-aviation-points span + span::before {
+  margin: 0 5px;
+  color: rgba(var(--rgb-brass), 0.65);
+  content: "·";
+}
+
+.concept-private-aviation-copy > a {
+  align-self: flex-start;
+  margin-top: clamp(24px, 2.4vw, 34px);
+  border-bottom: 1px solid rgba(var(--rgb-brass), 0.65);
+  padding-bottom: 6px;
+  color: var(--brass-dark);
+}
+
+.concept-private-aviation-panel .concept-private-aviation-image {
+  width: auto;
+  min-height: 100%;
+  margin: 0;
+  border-radius: 0;
+  aspect-ratio: auto;
+}
+
+.concept-private-aviation-panel .concept-private-aviation-image img {
+  object-position: 43% center;
+}
+
+@media (max-width: 900px) {
+  .concept-private-aviation-panel {
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .concept-private-aviation-panel .concept-private-aviation-image {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 680px) {
+  .concept-private-aviation {
+    padding: 56px 16px 62px;
+  }
+
+  .concept-private-aviation-copy {
+    padding: 38px 28px 42px;
+  }
+
+  .concept-private-aviation-copy h2 {
+    max-width: 9ch;
+    font-size: clamp(3rem, 13vw, 4rem);
+  }
+
+  .concept-private-aviation-points {
+    display: grid;
+    gap: 7px;
+  }
+
+  .concept-private-aviation-points span + span::before {
+    margin: 0 9px 0 0;
+    content: "·";
+  }
+
+  .concept-private-aviation-panel .concept-private-aviation-image {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 /* Shared editorial chapter header: journeys, aviation and expeditions. */
 .concept-expedition-calendar .concept-field-notes-header,
 .concept-private-aviation-header {
@@ -3041,7 +3253,7 @@ body:has(.concept-page) .site-header {
 }
 
 .concept-choice-row a {
-  min-height: 104px;
+  min-height: 82px;
   padding: 20px 48px 20px 24px;
 }
 
@@ -5053,7 +5265,8 @@ body:has(.concept-page) .site-header {
 }
 
 .concept-concierge-card h3 {
-  max-width: 18ch;
+  max-width: none;
+  text-wrap: balance;
 }
 
 @media (max-width: 720px) {
@@ -5150,5 +5363,16 @@ body:has(.concept-page) .site-header {
   .concept-private-aviation-benefits article,
   .concept-private-aviation-benefits article:first-child {
     border-bottom-color: rgba(var(--rgb-soil), .16);
+  }
+}
+
+/* The homepage preview stays compact; the full aviation narrative lives on its own page. */
+.concept-private-aviation {
+  padding: clamp(64px, 5.5vw, 88px) var(--concept-gutter);
+}
+
+@media (max-width: 680px) {
+  .concept-private-aviation {
+    padding: 56px 16px 62px;
   }
 }

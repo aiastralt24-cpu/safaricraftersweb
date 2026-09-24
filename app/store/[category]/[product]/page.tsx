@@ -3,7 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
 import { getStoreCategory, getStoreProduct, storeCategories } from "@/lib/store";
+import { breadcrumbSchema } from "@/lib/structured-data";
 import StoreMotion from "../../StoreMotion";
 import "../../store.css";
 
@@ -46,13 +48,23 @@ export default async function StoreProductPage({ params }: ProductPageProps) {
 
   return (
     <div className="store-category-page">
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Store", path: "/store" },
+        { name: category.title, path: `/store/${category.slug}` },
+        { name: product.title, path: `/store/${category.slug}/${product.slug}` }
+      ])} />
       <StoreMotion />
       <section className="store-generic-product" aria-labelledby="store-generic-product-title">
         <div className="container">
           <nav className="store-breadcrumb" aria-label="Breadcrumb">
+            <Link href="/">Home</Link>
+            <span aria-hidden="true">/</span>
             <Link href="/store">Store</Link>
             <span aria-hidden="true">/</span>
             <Link href={`/store/${category.slug}`}>{category.title}</Link>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">{product.title}</span>
           </nav>
           <div className="store-generic-product-grid">
             <figure className="store-generic-product-media">

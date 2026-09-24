@@ -5,3 +5,5 @@ import "./concept/concept-harmony.css";
 export default function HomePage() {
   return <ConceptExperience />;
 }
+
+export const dynamic = "force-dynamic";

@@ -169,14 +169,6 @@ export default function PrivateAviationPage() {
         </div>
       </section>
 
-      <section className="aviation-cta">
-        <div className="container aviation-cta-inner" data-aviation-reveal>
-          <p className="eyebrow">The journey comes first</p>
-          <h2>Tell us where you want to spend your time.</h2>
-          <p>We will consider whether air access genuinely improves the route and include it only when it earns its place.</p>
-          <Link href="/plan?experience=private-aviation">Begin planning <ArrowUpRight size={17} strokeWidth={1.5} /></Link>
-        </div>
-      </section>
     </main>
   );
 }

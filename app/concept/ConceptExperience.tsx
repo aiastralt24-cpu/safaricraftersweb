@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrandMark } from "@/components/BrandMark";
 import type { ImageAsset } from "@/lib/data";
+import { upcomingDepartures, departureLabel } from "@/lib/departures";
 import { destinations, expeditions, journeys, specialists, testimonials } from "@/lib/data";
 
 const heroJourney = journeys[0];
@@ -133,18 +134,6 @@ const expeditionDossierSides: Record<string, "left" | "right"> = {
   "svalbard-expedition": "left"
 };
 
-const journalMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/dsc8123-789x1024-1f0b8c48.jpg",
-  alt: "Tiger walking toward the camera",
-  credit: "Safari Crafters archive"
-};
-
-const conservationMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/gallery-1-23-scaled-7f473b1f.jpg",
-  alt: "Red panda on a branch",
-  credit: "Safari Crafters archive"
-};
-
 const privateAviationMenuImage: ImageAsset = {
   src: "/assets/safari-crafters/amer-fort-original-scaled-31b56cd7.jpg",
   alt: "Amer Fort in Jaipur",
@@ -154,24 +143,6 @@ const privateAviationMenuImage: ImageAsset = {
 const storeMenuImage: ImageAsset = {
   src: "/assets/store/ghosts-of-the-granite-hills-book.jpg",
   alt: "Ghosts of the Granite Hills red clothbound photographic book on granite stone",
-  credit: "Safari Crafters archive"
-};
-
-const reviewsMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/gallery-1-23-scaled-7f473b1f.jpg",
-  alt: "Red panda on a branch",
-  credit: "Safari Crafters archive"
-};
-
-const contactMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/dsc8320-a71ff184.jpg",
-  alt: "Rabari elder in Jawai",
-  credit: "Safari Crafters archive"
-};
-
-const guidedSafariMenuImage: ImageAsset = {
-  src: "/assets/safari-crafters/laipikia-001e24e7.jpg",
-  alt: "Black leopard walking through Laikipia",
   credit: "Safari Crafters archive"
 };
 
@@ -203,7 +174,7 @@ const heroLines = [
   }
 ];
 
-const menuItems = [
+const primaryMenuItems = [
   {
     key: "journeys",
     label: "Journeys",
@@ -223,32 +194,8 @@ const menuItems = [
     image: photoExpedition.image
   },
   {
-    key: "guided-bespoke-safaris",
-    label: "Bespoke Safaris",
-    href: "/guided-bespoke-safaris",
-    image: guidedSafariMenuImage
-  },
-  {
-    key: "journal",
-    label: "The Journal",
-    href: "/journal",
-    image: journalMenuImage
-  },
-  {
-    key: "reviews",
-    label: "Guest Notes",
-    href: "/reviews",
-    image: reviewsMenuImage
-  },
-  {
-    key: "conservation-commitment",
-    label: "Conservation",
-    href: "/conservation-commitment",
-    image: conservationMenuImage
-  },
-  {
     key: "private-aviation",
-    label: "Private Aviation",
+    label: "Private Jet Safaris",
     href: "/private-aviation",
     image: privateAviationMenuImage
   },
@@ -257,23 +204,39 @@ const menuItems = [
     label: "Store",
     href: "/store",
     image: storeMenuImage
+  }
+];
+
+const secondaryMenuItems = [
+  {
+    key: "journal",
+    label: "Journal",
+    href: "/journal"
+  },
+  {
+    key: "reviews",
+    label: "Guest Notes",
+    href: "/reviews"
+  },
+  {
+    key: "conservation-commitment",
+    label: "Conservation",
+    href: "/conservation-commitment"
   },
   {
     key: "about",
     label: "About",
-    href: "/about",
-    image: specialists[0]?.image ?? heroJourney.image
+    href: "/about"
   },
   {
     key: "contact",
-    label: "Contact Us",
-    href: "/contact",
-    image: contactMenuImage
+    label: "Contact",
+    href: "/contact"
   }
 ];
 
 export function ConceptExperience() {
-  const [activeMenuKey, setActiveMenuKey] = useState(menuItems[0].key);
+  const [activeMenuKey, setActiveMenuKey] = useState(primaryMenuItems[0].key);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isNavVisible, setIsNavVisible] = useState(true);
@@ -296,12 +259,13 @@ export function ConceptExperience() {
     ? expeditions
     : expeditions.filter((expedition) => expeditionRegions[expedition.slug] === expeditionFilter);
   const activeExpedition = filteredExpeditions.find((expedition) => expedition.slug === activeExpeditionSlug) ?? filteredExpeditions[0];
-  const featuredDeparture = expeditions.find((expedition) => expedition.slug === featuredDepartureSlug) ?? expeditions[0];
+  const scheduledExpeditions = expeditions.filter(item=>upcomingDepartures(item).length).sort((a,b)=>upcomingDepartures(a)[0].date.localeCompare(upcomingDepartures(b)[0].date));
+  const featuredDeparture = scheduledExpeditions.find((expedition) => expedition.slug === featuredDepartureSlug) ?? scheduledExpeditions[0];
   const activeJourney = homepageJourneys.find((journey) => journey.slug === activeJourneySlug) ?? homepageJourneys[0];
   const activeJourneyIndex = Math.max(0, homepageJourneys.findIndex((journey) => journey.slug === activeJourney?.slug));
   const nextJourney = homepageJourneys[(activeJourneyIndex + 1) % homepageJourneys.length];
-  const featuredDepartureIndex = Math.max(0, expeditions.findIndex((expedition) => expedition.slug === featuredDeparture.slug));
-  const nextFeaturedDeparture = expeditions[(featuredDepartureIndex + 1) % expeditions.length];
+  const featuredDepartureIndex = Math.max(0, scheduledExpeditions.findIndex((expedition) => expedition.slug === featuredDeparture?.slug));
+  const nextFeaturedDeparture = scheduledExpeditions[(featuredDepartureIndex + 1) % scheduledExpeditions.length];
 
   const showPreviousDestination = () => {
     setActiveDestinationIndex((current) => (current - 1 + destinationStories.length) % destinationStories.length);
@@ -573,29 +537,41 @@ export function ConceptExperience() {
           </button>
         </div>
         <div className="concept-full-menu-grid">
-          <nav className="concept-full-menu-list" aria-label="Expanded concept menu">
-            {menuItems.map((item, index) => (
-              <Link
-                href={item.href}
-                className="concept-full-menu-row"
-                key={item.href}
-                data-menu-item={item.key}
-                data-active={activeMenuKey === item.key ? "true" : undefined}
-                onClick={() => setIsMenuOpen(false)}
-                onFocus={() => setActiveMenuKey(item.key)}
-                onMouseEnter={() => setActiveMenuKey(item.key)}
-                onMouseMove={() => setActiveMenuKey(item.key)}
-                onPointerEnter={() => setActiveMenuKey(item.key)}
-              >
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h2>{item.label}</h2>
-                <MoveRight size={24} />
-              </Link>
-            ))}
-          </nav>
+          <div className="concept-full-menu-navigation">
+            <nav className="concept-full-menu-list" aria-label="Primary site menu">
+              {primaryMenuItems.map((item) => (
+                <Link
+                  href={item.href}
+                  className="concept-full-menu-row"
+                  key={item.href}
+                  data-menu-item={item.key}
+                  data-active={activeMenuKey === item.key ? "true" : undefined}
+                  onClick={() => setIsMenuOpen(false)}
+                  onFocus={() => setActiveMenuKey(item.key)}
+                  onPointerEnter={() => setActiveMenuKey(item.key)}
+                >
+                  <h2>{item.label}</h2>
+                  <MoveRight size={24} aria-hidden="true" />
+                </Link>
+              ))}
+            </nav>
+
+            <Link className="concept-full-menu-plan" href="/plan" onClick={() => setIsMenuOpen(false)}>
+              <span>Plan a Journey</span>
+              <MoveRight size={20} aria-hidden="true" />
+            </Link>
+
+            <nav className="concept-full-menu-secondary" aria-label="More from Safari Crafters">
+              {secondaryMenuItems.map((item) => (
+                <Link href={item.href} key={item.href} onClick={() => setIsMenuOpen(false)}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
           <aside className="concept-full-menu-image">
             <div className="concept-full-menu-image-stack" aria-hidden="true">
-              {menuItems.map((item) => (
+              {primaryMenuItems.map((item) => (
                 <Image
                   src={item.image.src}
                   alt=""
@@ -609,10 +585,6 @@ export function ConceptExperience() {
               ))}
             </div>
           </aside>
-          <div className="concept-full-menu-footer">
-            <span>Tiger season / November to May</span>
-            <Link href="/plan">Plan a private safari</Link>
-          </div>
         </div>
       </div>
 
@@ -687,7 +659,7 @@ export function ConceptExperience() {
             <h3>Guided<br />bespoke safaris</h3>
             <p>
               All the goodness of our private wildlife journeys, with the added benefit
-              of a professional <em>Safari Crafters</em> guide for the ultimate informed
+              of a professional <strong className="concept-brand-emphasis">Safari Crafters</strong> guide for the ultimate informed
               experience.
             </p>
             <Link href="/guided-bespoke-safaris">Explore</Link>
@@ -791,7 +763,6 @@ export function ConceptExperience() {
           <h2 id="homepage-journey-title">{activeJourney.title}</h2>
           <p className="concept-journey-feature-route">{activeJourney.route || activeJourney.region}</p>
           <small>{activeJourney.duration}</small>
-          <p className="concept-journey-feature-description">{activeJourney.description}</p>
           <Link href={`/journeys/${activeJourney.slug}`}>
             Explore the journey <ArrowRight size={18} strokeWidth={1.25} />
           </Link>
@@ -868,7 +839,7 @@ export function ConceptExperience() {
       {showHomepagePhotographicWorlds ? <section className="concept-journey-cinema" aria-labelledby="kanha-cinema-title" data-nav-label="Private journeys">
         <aside className="concept-cinema-rail" aria-label={`${expeditionLocations[activeExpedition.slug]} expedition`}>
           <span>Safari Crafters</span>
-          <h2 id="kanha-cinema-title">{expeditionLocations[activeExpedition.slug].split(",")[0]}</h2>
+          <h2 id="kanha-cinema-title">{(expeditionLocations[activeExpedition.slug] || activeExpedition.title).split(",")[0]}</h2>
           <small>Photographic worlds</small>
         </aside>
         <nav className="concept-cinema-filters" aria-label="Choose a photographic world">
@@ -899,7 +870,7 @@ export function ConceptExperience() {
         </figure>
         <div className="concept-cinema-ledger">
           <dl>
-            <div><dt>Departure</dt><dd>{activeExpedition.date ?? activeExpedition.bestMonths}</dd></div>
+            <div><dt>Departure</dt><dd>{departureLabel(upcomingDepartures(activeExpedition)[0])}</dd></div>
             <div><dt>Duration</dt><dd>{activeExpedition.duration ?? "By private arrangement"}</dd></div>
             <div><dt>In focus</dt><dd>{activeExpedition.slug === photoExpedition.slug ? "7 wildlife safaris" : activeExpedition.species}</dd></div>
           </dl>
@@ -909,47 +880,11 @@ export function ConceptExperience() {
         </div>
       </section> : null}
 
-      {showHomepagePrivateAviation ? <section className="concept-private-aviation" aria-labelledby="private-aviation-title" data-nav-label="Private jet safaris">
-        <div className="concept-private-aviation-header">
-          <div>
-            <p className="concept-private-aviation-eyebrow">Private Jet Safaris</p>
-            <h2 id="private-aviation-title">The wild, without the distance between.</h2>
-          </div>
-          <Link className="concept-text-link" href="/private-aviation">
-            Explore private jet safaris <ArrowUpRight size={15} />
-          </Link>
-        </div>
-        <figure className="concept-private-aviation-image" data-scroll-expand>
-          <Image
-            src="/assets/kairamya/private-aviation-hero.jpg"
-            alt="Safari Crafters private aircraft and crew prepared for a remote safari journey"
-            fill
-            sizes="100vw"
-          />
-        </figure>
-        <div className="concept-private-aviation-story">
-          <div className="concept-private-aviation-benefits">
-            <article>
-              <span>Private aircraft</span>
-              <p>A dedicated aircraft and itinerary shaped around your own rhythm.</p>
-            </article>
-            <article>
-              <span>Remote wilderness</span>
-              <p>Reach exceptional landscapes that conventional connections make difficult.</p>
-            </article>
-            <article>
-              <span>Seamless routing</span>
-              <p>Move from runway to wilderness with every transfer quietly considered.</p>
-            </article>
-          </div>
-        </div>
-      </section> : null}
-
-      <section className="concept-field-notes concept-expedition-calendar" aria-labelledby="expedition-calendar-title" data-nav-label="Photo expeditions">
+      {featuredDeparture ? <section className="concept-field-notes concept-expedition-calendar" aria-labelledby="expedition-calendar-title" data-nav-label="Photo expeditions">
         <div className="concept-field-notes-header">
           <div>
             <p>Photographic expeditions</p>
-            <h2 id="expedition-calendar-title">The next private departures.</h2>
+            <h2 id="expedition-calendar-title">The next group departures.</h2>
           </div>
           <Link className="concept-text-link" href="/photo-expeditions">
             View all expeditions <ArrowUpRight size={15} />
@@ -972,21 +907,20 @@ export function ConceptExperience() {
           </figure>
 
           <article className="concept-departure-dossier" aria-live="polite">
-            <p>The next departure</p>
+            <p>{featuredDeparture.publicationStatus === "preview" ? "Departure preview" : "Upcoming departure"}</p>
             <h3>{featuredDeparture.title}</h3>
             <dl>
-              <div><dt>Destination</dt><dd>{expeditionLocations[featuredDeparture.slug]}</dd></div>
-              <div><dt>Dates</dt><dd>{featuredDeparture.date ?? featuredDeparture.bestMonths}</dd></div>
-              <div><dt>Duration</dt><dd>{featuredDeparture.duration ?? "By private arrangement"}</dd></div>
+              <div><dt>Destination</dt><dd>{expeditionLocations[featuredDeparture.slug] || featuredDeparture.title}</dd></div>
+              <div><dt>Dates</dt><dd>{departureLabel(upcomingDepartures(featuredDeparture)[0])}</dd></div>
             </dl>
             <Link href={`/photo-expeditions/${featuredDeparture.slug}`}>
-              Request expedition details <ArrowRight size={17} strokeWidth={1.25} />
+              View expedition details <ArrowRight size={17} strokeWidth={1.25} />
             </Link>
           </article>
         </div>
 
         <nav className="concept-departure-index" aria-label="Choose a photographic expedition">
-          {expeditions.map((expedition) => (
+          {scheduledExpeditions.map((expedition) => (
             <button
               className={expedition.slug === featuredDeparture.slug ? "is-active" : ""}
               type="button"
@@ -994,8 +928,8 @@ export function ConceptExperience() {
               onClick={() => setFeaturedDepartureSlug(expedition.slug)}
               key={expedition.slug}
             >
-              <span>{expeditionLocations[expedition.slug].split(",")[0]}</span>
-              <small>{expedition.date ?? expedition.bestMonths}</small>
+              <span>{(expeditionLocations[expedition.slug] || expedition.title.replace(/ Photography Expedition$/, "")).split(",")[0]}</span>
+              <small>{departureLabel(upcomingDepartures(expedition)[0])}</small>
             </button>
           ))}
           {nextFeaturedDeparture ? (
@@ -1010,11 +944,35 @@ export function ConceptExperience() {
             </button>
           ) : null}
         </nav>
-        <div className="concept-expedition-enquiry">
-          <p>Looking for a different date or a privately crafted departure?</p>
-          <Link href="/plan">Enquire privately <ArrowRight size={16} /></Link>
+      </section> : null}
+
+      {showHomepagePrivateAviation ? <section className="concept-private-aviation" aria-labelledby="private-aviation-title" data-nav-label="Private jet safaris" data-concept-reveal>
+        <div className="concept-private-aviation-panel">
+          <div className="concept-private-aviation-copy">
+            <p className="concept-private-aviation-eyebrow">Private Jet Safaris</p>
+            <h2 id="private-aviation-title">The wild, within reach.</h2>
+            <p className="concept-private-aviation-summary">
+              Dedicated aircraft and seamless routing bring distant landscapes closer.
+            </p>
+            <p className="concept-private-aviation-points" aria-label="Private jet safari benefits">
+              <span>Private aircraft</span>
+              <span>Remote wilderness</span>
+              <span>Seamless routing</span>
+            </p>
+            <Link className="concept-text-link" href="/private-aviation">
+              Explore private jet safaris <ArrowUpRight size={15} />
+            </Link>
+          </div>
+          <figure className="concept-private-aviation-image">
+            <Image
+              src="/assets/kairamya/aviation-concierge.jpg"
+              alt="Safari Crafters private aircraft prepared for a remote safari journey"
+              fill
+              sizes="(max-width: 760px) 100vw, 58vw"
+            />
+          </figure>
         </div>
-      </section>
+      </section> : null}
 
       {showHomepageConservation ? <section className="concept-conservation-statement" aria-labelledby="conservation-statement-title" data-nav-label="Our responsibility">
         <h2 id="conservation-statement-title">
@@ -1042,27 +1000,21 @@ export function ConceptExperience() {
           <div className="concept-choice-row">
             <Link href="/plan?region=India">
               <span>India</span>
-              <small>Big Cats · Charismatic Wildlife · Birds · Himalaya · Forests · Archaeology · Ancient Culture</small>
             </Link>
             <Link href="/plan?region=Africa">
               <span>Africa</span>
-              <small>Big Cats · Megafauna · Savannah · Private Conservancies · Primates</small>
             </Link>
             <Link href="/plan?region=South%20%26%20Central%20America">
               <span>South &amp; Central America</span>
-              <small>Jaguar · Puma · Rainforests · Birds · Wetlands</small>
             </Link>
             <Link href="/plan?region=Arctic%20%26%20Beyond">
               <span>Arctic &amp; Beyond</span>
-              <small>High Arctic · Polar Wildlife · Tundra · Expedition Cruising</small>
             </Link>
             <Link href="/plan?region=Surprise%20me">
               <span>Surprise me</span>
-              <small>Let our specialists choose the right geography</small>
             </Link>
             <Link className="concept-choice-contact" href="/contact">
               <span>Speak with a specialist</span>
-              <small>Begin with a private conversation</small>
             </Link>
           </div>
         </div>

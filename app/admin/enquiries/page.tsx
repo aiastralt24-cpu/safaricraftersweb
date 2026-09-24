@@ -39,6 +39,7 @@ function Detail({ enquiry }: { enquiry: EnquiryRecord }) {
         <div><span>Length</span><strong>{nights ? `${nights} nights` : "Not provided"}</strong></div>
         <div><span>Preferred contact</span><strong>{payloadText(p, "contactPreference")}</strong></div>
       </div>
+      <form action="/api/admin/enquiries" method="post"><input type="hidden" name="id" value={enquiry.enquiry_id}/><label>Lead status <select name="status" defaultValue={enquiryStatus(enquiry)}>{["new","contacted","qualified","booked","closed"].map(status=><option key={status}>{status}</option>)}</select></label><button type="submit" className="button">Save status</button></form>
       <section className="enquiry-notes"><p className="admin-label">Guest notes</p><p>{payloadText(p, "notes", "No additional notes were supplied.")}</p></section>
       {email ? <a className="button button-solid enquiry-reply" href={`mailto:${email}?subject=${encodeURIComponent(`${enquiry.enquiry_id} · Safari Crafters`)}`}>Reply to guest</a> : null}
     </aside>
@@ -65,7 +66,7 @@ export default async function EnquiriesPage({ searchParams }: { searchParams: Pr
     <div className="enquiries-page">
       <header className="enquiries-admin-header">
         <Link href="/admin" className="admin-wordmark">Safari Crafters</Link>
-        <nav><Link href="/studio">Content Studio</Link><strong>Enquiries</strong><form action="/api/admin/logout" method="post"><button type="submit"><LogOut size={16} /> Sign out</button></form></nav>
+        <nav><Link href="/studio">Content Studio</Link><strong>Enquiries</strong><Link href="/admin/operations">Operations</Link><form action="/api/admin/logout" method="post"><button type="submit"><LogOut size={16} /> Sign out</button></form></nav>
       </header>
       <div className="enquiries-shell">
         <section className="enquiries-overview">
@@ -74,7 +75,7 @@ export default async function EnquiriesPage({ searchParams }: { searchParams: Pr
         </section>
         <form className="enquiry-filters" method="get">
           <label><Search size={18} /><span className="sr-only">Search enquiries</span><input name="q" defaultValue={params.q} placeholder="Search guest, reference, email or region" /></label>
-          <select name="status" defaultValue={params.status || "all"} aria-label="Filter by status"><option value="all">All statuses</option><option value="new">New</option><option value="contacted">Contacted</option><option value="qualified">Qualified</option><option value="closed">Closed</option></select>
+          <select name="status" defaultValue={params.status || "all"} aria-label="Filter by status"><option value="all">All statuses</option><option value="new">New</option><option value="contacted">Contacted</option><option value="qualified">Qualified</option><option value="booked">Booked</option><option value="closed">Closed</option></select>
           <button className="button" type="submit">Apply filters</button>
           <Link className="enquiry-refresh" href="/admin/enquiries"><RefreshCw size={17} /> Refresh</Link>
         </form>
