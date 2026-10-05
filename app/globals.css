@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
+  /* Shared editorial surfaces for the homepage and public inner pages. */
+  --surface-warm: #f3eee4;
+  --surface-white: #ffffff;
+  --surface-sand: #ece5d9;
+  --surface-forest: #1c2b22;
   /* Safari Crafters brand palette */
   --night: #100d0a;
   --night-deep: #0f0c09;
@@ -38,6 +43,22 @@
   --rule-fine-light: 0.5px solid rgba(var(--rgb-brass-light), 0.26);
   --font-display: "Cormorant Garamond", "Canela", "Reckless Neue", Georgia, "Times New Roman", serif;
   --font-body: Inter, "Suisse Int'l", "Neue Haas Grotesk Text", "Avenir Next", ui-sans-serif, system-ui, sans-serif;
+  /* Editorial type ladder: every page and component should resolve to these roles. */
+  --type-display: clamp(4rem, 2.7rem + 4.2vw, 6.5rem);
+  --type-h1: clamp(3.25rem, 2.35rem + 3vw, 5.5rem);
+  --type-h2: clamp(2.65rem, 2rem + 2.15vw, 4.25rem);
+  --type-h3: clamp(2rem, 1.65rem + 1.1vw, 3rem);
+  --type-h4: clamp(1.5rem, 1.32rem + 0.55vw, 2rem);
+  --type-h5: clamp(1.125rem, 1.04rem + 0.25vw, 1.375rem);
+  --type-intro: clamp(1.125rem, 1.02rem + 0.35vw, 1.5rem);
+  --type-body-lg: clamp(1.0625rem, 1rem + 0.2vw, 1.125rem);
+  --type-body: 1rem;
+  --type-small: 0.875rem;
+  --type-label: clamp(0.75rem, 0.72rem + 0.1vw, 0.8125rem);
+  --type-cta: clamp(0.75rem, 0.72rem + 0.1vw, 0.8125rem);
+  --measure-reading: 65ch;
+  --measure-intro: 54ch;
+  --measure-display: 14ch;
 }
 
 * {
@@ -47,9 +68,13 @@
 html {
   scroll-behavior: smooth;
   background: var(--ink);
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
+  min-width: 0;
   margin: 0;
   background:
     linear-gradient(180deg, rgba(var(--rgb-ink), 0.02), rgba(var(--rgb-ink), 0)),
@@ -60,6 +85,8 @@ body {
   line-height: 1.74;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
 }
 
 a {
@@ -86,17 +113,18 @@ textarea {
 
 .skip-link {
   position: fixed;
-  top: 12px;
+  top: 0;
   left: 12px;
-  z-index: 100;
-  transform: translateY(-120%);
+  z-index: 2000;
+  transform: translateY(-100%);
   background: var(--ink);
   color: var(--white);
   padding: 10px 14px;
+  transition: transform 180ms ease;
 }
 
-.skip-link:focus {
-  transform: translateY(0);
+.skip-link:focus-visible {
+  transform: translateY(12px);
 }
 
 .serif {
@@ -109,7 +137,7 @@ textarea {
 }
 
 .section {
-  padding: 128px 0;
+  padding: clamp(76px, 9vw, 116px) 0;
 }
 
 .section-tight {
@@ -118,7 +146,7 @@ textarea {
 
 .display {
   font-family: var(--font-display);
-  font-size: clamp(3.45rem, 7.2vw, 7rem);
+  font-size: var(--type-display);
   font-weight: 300;
   letter-spacing: 0;
   line-height: 0.92;
@@ -126,7 +154,7 @@ textarea {
 
 .h1 {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 5.8vw, 6rem);
+  font-size: var(--type-h1);
   font-weight: 300;
   letter-spacing: 0;
   line-height: 0.98;
@@ -134,7 +162,7 @@ textarea {
 
 .h2 {
   font-family: var(--font-display);
-  font-size: clamp(2.35rem, 4.2vw, 4.65rem);
+  font-size: var(--type-h2);
   font-weight: 300;
   letter-spacing: 0;
   line-height: 1.05;
@@ -142,25 +170,54 @@ textarea {
 
 .h3 {
   font-family: var(--font-display);
-  font-size: clamp(1.72rem, 2.65vw, 2.7rem);
+  font-size: var(--type-h3);
   font-weight: 300;
   letter-spacing: 0;
   line-height: 1.1;
 }
 
+.h4 {
+  font-family: var(--font-display);
+  font-size: var(--type-h4);
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.14;
+}
+
+.h5 {
+  font-family: var(--font-display);
+  font-size: var(--type-h5);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.body-large {
+  max-width: var(--measure-intro);
+  font-size: var(--type-body-lg);
+  line-height: 1.65;
+}
+
+.body-copy {
+  max-width: var(--measure-reading);
+  font-size: var(--type-body);
+  line-height: 1.7;
+}
+
 .intro {
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2vw, 2.12rem);
-  line-height: 1.48;
+  max-width: 68ch;
+  font-size: var(--type-intro);
+  line-height: 1.58;
   color: var(--charcoal);
 }
 
 .eyebrow {
   color: var(--brass);
   font-family: var(--font-body);
-  font-size: 0.64rem;
+  font-size: var(--type-label);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.17em;
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -170,11 +227,14 @@ textarea {
 }
 
 .brass-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   color: var(--brass);
   font-family: var(--font-body);
-  font-size: 0.68rem;
+  font-size: var(--type-cta);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -189,9 +249,9 @@ textarea {
   border: var(--rule-fine);
   padding: 13px 24px;
   color: var(--brass);
-  font-size: 0.68rem;
+  font-size: var(--type-cta);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   transition: background 500ms var(--ease), color 500ms var(--ease), border-color 500ms var(--ease), transform 500ms var(--ease);
 }
@@ -300,8 +360,40 @@ textarea {
     padding: 54px 0;
   }
 
+  .display {
+    font-size: clamp(2.9rem, 15vw, 4.8rem);
+  }
+
+  .h1 {
+    font-size: clamp(2.65rem, 13vw, 4.2rem);
+  }
+
+  .h2 {
+    font-size: clamp(2.1rem, 10vw, 3.5rem);
+  }
+
+  .intro {
+    font-size: clamp(1.25rem, 6.2vw, 1.75rem);
+    line-height: 1.42;
+  }
+
   .grid-3,
   .grid-2 {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

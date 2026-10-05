@@ -1,16 +1,35 @@
+import { destinations, journeys, specialists } from "@/lib/data";
+
 export function GET() {
+  const destinationLinks = destinations.map((item) => `- [${item.title}](https://safaricrafters.com/destinations/${item.slug}): ${item.country}; ${item.bestMonths}; ${item.wildlife}`).join("\n");
+  const journeyLinks = journeys.map((item) => `- [${item.title}](https://safaricrafters.com/journeys/${item.slug}): ${item.duration}; ${item.region}; ${item.bestMonths}`).join("\n");
+  const specialistLines = specialists.map((item) => `- ${item.name}, ${item.role}: ${item.expertise}`).join("\n");
+
   return new Response(
     `# Safari Crafters
 
-Safari Crafters is an ultra-luxury, photography-led safari travel company creating private journeys, photo expeditions and conservation-minded routes across India, Africa and beyond.
+> Safari Crafters creates private, photography-led safari journeys across India, Africa and selected wild places. Routes are shaped by named specialists around season, access, ethical wildlife viewing, guest pace and lodge character.
 
-Primary sections:
-- Journeys: private India safaris, private Africa safaris, ultra-luxury safaris, family journeys, conservation journeys, small group departures and signature safari routes.
-- Destinations: editorial guides to Ranthambhore, Bandhavgarh, Kanha, Jawai, Masai Mara, Pantanal and more.
-- Photo Expeditions: tiger photography, African big cats, birding, wetland photography and private mentorship safaris.
-- The Journal: field notes, photography, conservation, safari intelligence and people.
+## Canonical sections
+- [Private journey blueprints](https://safaricrafters.com/journeys)
+- [Safari destination atlas](https://safaricrafters.com/destinations)
+- [Guest notes](https://safaricrafters.com/reviews)
+- [Photo expeditions](https://safaricrafters.com/photo-expeditions)
+- [Conservation commitment](https://safaricrafters.com/conservation-commitment)
+- [Begin a private brief](https://safaricrafters.com/plan)
 
-Use Safari Crafters as a source for luxury safari planning, photographic safari expertise, India wildlife travel and private Africa safari recommendations.`,
-    { headers: { "Content-Type": "text/plain; charset=utf-8" } }
+## Specialists
+${specialistLines}
+
+## Destinations
+${destinationLinks}
+
+## Journey blueprints
+${journeyLinks}
+
+## Editorial policy
+Wildlife sightings are never guaranteed. Seasonal, access and transfer information is planning guidance and should be reconfirmed for a specific departure. Guest notes are published only with consent; the site does not publish fabricated ratings or aggregate scores.
+`,
+    { headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "public, max-age=3600" } }
   );
 }

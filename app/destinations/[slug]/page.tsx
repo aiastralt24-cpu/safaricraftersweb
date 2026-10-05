@@ -1,153 +1,252 @@
+import { BrazilCountryPage } from "@/components/BrazilCountryPage";
+import { brazilDescription } from "@/content/brazil-editorial";
+import { UgandaRwandaCountryPage } from "@/components/UgandaRwandaCountryPage";
+import { ugandaDescription } from "@/content/uganda-rwanda-editorial";
+import { tanzaniaDescription } from "@/content/tanzania-editorial";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
-import { EditorialProse } from "@/components/EditorialProse";
+import { ArrowUpRight } from "lucide-react";
+import { TanzaniaCountryPage } from "@/components/TanzaniaCountryPage";
+import { KenyaCountryPage } from "@/components/KenyaCountryPage";
+import { kenyaDescription } from "@/content/kenya-editorial";
+import { DestinationDossier } from "@/components/DestinationDossier";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
-import { destinations, getDestination } from "@/lib/data";
+import { MediaGallery } from "@/components/MediaGallery";
+import { RegionalAtlasPage } from "@/components/RegionalAtlasPage";
+import { destinations, expeditions, getCountryAtlas, getCountryBySlug, getDestination, getRegionalAtlas, getRegionalAtlases } from "@/lib/data";
 import { getFieldIntelligence } from "@/lib/luxury";
+import { getCountryHeroImage, getDestinationHeroImage, isApprovedEditorialImage } from "@/lib/media";
+import { destinationSeo, getDestinationFaqs, getDestinationPairings, getRelatedJourneys } from "@/lib/content-intelligence";
+import { breadcrumbSchema, destinationSchema, faqSchema, siteUrl } from "@/lib/structured-data";
 import "../../detail.css";
+import "../../listing.css";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
+const heroIntroductions: Record<string, string> = {
+  jawai: "Granite hills, wild leopards and Rabari herders: a landscape shaped by a remarkable coexistence.",
+  kanha: "Tigers among tall sal trees, barasingha in golden meadows and patient mornings in the forest.",
+  panna: "Ancient rock, dry forest and the emerald Ken River: tiger country with a landscape all its own.",
+  kabini: "Elephants, tigers and forest encounters along the Kabini River, between two iconic national parks.",
+  russia: "Brown bears, volcanic peaks and a rugged Pacific coast. Discover Russia through the remote wilderness of Kamchatka.",
+  kamchatka: "Volcanoes, salmon-filled rivers, immense brown bears and wild Pacific coastlines – Kamchatka is where fire and water have created one of the planet’s great wildlife frontiers."
+};
+
+function destinationHeroCopy(slug: string, description: string) {
+  return heroIntroductions[slug] || description
+    .replace(/, with private journeys planned around.*$/, ".")
+    .replace(/ and best understood through a carefully paced stay\.$/, ".");
+}
+
+function conciseCountryCopy(value: string, maxWords = 26) {
+  const words = value.replace(/\s+/g, " ").trim().split(" ");
+  return words.length <= maxWords ? value : `${words.slice(0, maxWords).join(" ").replace(/[,.]$/, "")}…`;
+}
+
 export function generateStaticParams() {
-  return destinations.map((destination) => ({ slug: destination.slug }));
+  const destinationParams = destinations.map((destination) => ({ slug: destination.slug }));
+  const countryParams = getCountryAtlas().map((country) => ({ slug: country.slug }));
+  const atlasParams = getRegionalAtlases().map((atlas) => ({ slug: atlas.slug }));
+  return Array.from(new Map([...atlasParams, ...countryParams, ...destinationParams].map((item) => [item.slug, item])).values());
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  if (["uganda", "rwanda", "uganda-rwanda"].includes(slug)) return { title: "Uganda & Rwanda", description: ugandaDescription, alternates: { canonical: "/destinations/uganda" } };
+  const atlas = getRegionalAtlas(slug);
+  if (atlas) {
+    return {
+      title: atlas.title,
+      description: atlas.heroCopy,
+      alternates: { canonical: `/destinations/${atlas.slug}` }
+    };
+  }
+  const country = getCountryBySlug(slug);
+  if (country) {
+    return {
+      title: country.title,
+      description: country.slug === "brazil" ? brazilDescription : country.slug === "kenya" ? kenyaDescription : country.slug === "tanzania" ? tanzaniaDescription : country.description,
+      alternates: { canonical: `/destinations/${country.slug}` },
+      openGraph: { images: [{ url: getCountryHeroImage(country).src, alt: getCountryHeroImage(country).alt }] }
+    };
+  }
   const destination = getDestination(slug);
   if (!destination) return {};
+  const seo = destinationSeo(destination);
+  const socialImage = getDestinationHeroImage(destination);
+  const hasAccurateSocialImage = isApprovedEditorialImage(socialImage);
   return {
-    title: destination.title,
-    description: destination.description
+    ...seo,
+    alternates: { canonical: `/destinations/${destination.slug}` },
+    openGraph: {
+      ...seo,
+      url: `${siteUrl}/destinations/${destination.slug}`,
+      ...(hasAccurateSocialImage ? { images: [{ url: socialImage.src, alt: socialImage.alt }] } : {})
+    }
   };
 }
 
 export default async function DestinationDetailPage({ params }: Props) {
   const { slug } = await params;
+  if (slug === "rwanda" || slug === "uganda-rwanda") redirect("/destinations/uganda");
+  if (slug === "uganda") return <UgandaRwandaCountryPage />;
+  if (slug === "brazil") return <BrazilCountryPage />;
+  const atlas = getRegionalAtlas(slug);
+  if (atlas) return <RegionalAtlasPage atlas={atlas} />;
+  const country = getCountryBySlug(slug);
+  if (country) {
+    if (country.slug === "kenya") return <KenyaCountryPage />;
+    if (country.slug === "tanzania") return <TanzaniaCountryPage />;
+    return <CountryDestinationPage country={country} />;
+  }
+
   const destination = getDestination(slug);
   if (!destination) notFound();
+  const heroImage = getDestinationHeroImage(destination);
   const intelligence = getFieldIntelligence(destination);
+  const faqs = getDestinationFaqs(destination);
+  const pairings = getDestinationPairings(destination);
+  const relatedJourneys = getRelatedJourneys(destination);
+  const relatedExpeditions = expeditions.filter((expedition) =>
+    destination.expeditions.some((title) => title.toLowerCase() === expedition.title.toLowerCase())
+  );
+  const parentAtlas = getRegionalAtlases().find((item) => item.continent === destination.continent);
+  const parentCountry = getCountryAtlas().find((item) => item.continent === destination.continent && item.country === destination.country);
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Destinations", path: "/destinations" },
+    ...(parentAtlas ? [{ name: parentAtlas.shortTitle, path: `/destinations/${parentAtlas.slug}` }] : []),
+    ...(parentCountry && parentCountry.slug !== parentAtlas?.slug ? [{ name: parentCountry.title, path: `/destinations/${parentCountry.slug}` }] : []),
+    { name: destination.title, path: `/destinations/${destination.slug}` }
+  ];
 
   return (
     <>
+      <JsonLd data={destinationSchema(destination)} />
+      <JsonLd data={breadcrumbSchema(breadcrumbs)} />
+      <JsonLd data={faqSchema(faqs)} />
       <PageHero
         title={destination.title}
-        copy={destination.description}
-        image={destination.image}
-        meta={destination.region}
+        copy={destinationHeroCopy(destination.slug, destination.description)}
+        image={heroImage}
+        meta={[destination.country, destination.slug === "kamchatka" ? "Far East" : destination.country === "Russia" ? "Russian Far East" : destination.continent === "Arctic" ? "Arctic / Other" : destination.continent]
+          .filter((value, index, values) => values.indexOf(value) === index)
+          .join(" · ")}
+        breadcrumbs={breadcrumbs.map((item, index) => ({ label: item.name, ...(index < breadcrumbs.length - 1 ? { href: item.path } : {}) }))}
+        showImage
+        variant="destination"
       />
-      <article className="section detail">
-        <div className="container detail-grid">
-          <div>
-            <p className="eyebrow">Destination guide</p>
-            <EditorialProse text={destination.intro} className="intro editorial-prose" />
-          </div>
-          <aside className="at-glance">
-            <h2>At a glance</h2>
-            <dl>
-              <dt>Best months</dt>
-              <dd>{destination.bestMonths}</dd>
-              <dt>Wildlife signature</dt>
-              <dd>{destination.wildlife}</dd>
-              <dt>Photography</dt>
-              <dd>{destination.photography}</dd>
-            </dl>
-          </aside>
-        </div>
-        <div className="container field-intelligence">
-          <p className="eyebrow">Field intelligence</p>
-          <div>
-            <article>
-              <span>Airport</span>
-              <strong>{intelligence.airport}</strong>
-            </article>
-            <article>
-              <span>Transfer</span>
-              <strong>{intelligence.transfer}</strong>
-            </article>
-            <article>
-              <span>Ideal stay</span>
-              <strong>{intelligence.idealStay}</strong>
-            </article>
-            <article>
-              <span>Safari rhythm</span>
-              <strong>{intelligence.safariRhythm}</strong>
-            </article>
-            <article>
-              <span>Access note</span>
-              <strong>{intelligence.accessNote}</strong>
-            </article>
-          </div>
-        </div>
-        <div className="container timeline">
-          <h2 className="h2">How we shape this place</h2>
-          <section className="timeline-item">
-            <span className="serif">01</span>
-            <div>
-              <h3 className="h3">Best time to visit</h3>
-              <p>{destination.bestMonths} is the strongest window for light, comfort and wildlife movement.</p>
+      <DestinationDossier
+        destination={{ ...destination, image: heroImage }}
+        intelligence={intelligence}
+        faqs={faqs}
+        pairings={pairings}
+        relatedJourneys={relatedJourneys}
+        relatedExpeditions={relatedExpeditions}
+      />
+    </>
+  );
+}
+
+function CountryDestinationPage({ country }: { country: NonNullable<ReturnType<typeof getCountryBySlug>> }) {
+  const countryOverview = country.destinations.find((destination) =>
+    destination.slug === country.slug || destination.title.toLowerCase() === country.title.toLowerCase()
+  );
+  const places = country.destinations.filter((destination) => destination !== countryOverview);
+  const gallerySource = countryOverview || (places.length === 1 ? places[0] : undefined);
+  const countryGallery = gallerySource?.gallery.filter(isApprovedEditorialImage) || [];
+  const placeImageCounts = new Map(places.map((destination) => [getDestinationHeroImage(destination).src, places.filter((item) => getDestinationHeroImage(item).src === getDestinationHeroImage(destination).src).length]));
+  const featured = places.filter((destination) =>
+    destination.gallery.some(isApprovedEditorialImage)
+    || (isApprovedEditorialImage(getDestinationHeroImage(destination)) && (placeImageCounts.get(getDestinationHeroImage(destination).src) || 0) === 1)
+  ).slice(0, 3);
+  const featuredSlugs = new Set(featured.map((destination) => destination.slug));
+  const extensions = places.filter((destination) => !featuredSlugs.has(destination.slug));
+  const countryHeroImage = getCountryHeroImage(country);
+  const showCountryHeroImage = isApprovedEditorialImage(countryHeroImage);
+  const parentAtlas = getRegionalAtlases().find((item) => item.continent === country.continent);
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Destinations", path: "/destinations" },
+    ...(parentAtlas && parentAtlas.slug !== country.slug ? [{ name: parentAtlas.shortTitle, path: `/destinations/${parentAtlas.slug}` }] : []),
+    { name: country.title, path: `/destinations/${country.slug}` }
+  ];
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema(breadcrumbs)} />
+      <PageHero
+        title={country.title}
+        copy={destinationHeroCopy(country.slug, countryOverview?.description || country.description)}
+        image={countryHeroImage}
+        meta={`${country.continent === "Arctic" ? "Arctic & Beyond" : country.continent} · Country atlas`}
+        breadcrumbs={breadcrumbs.map((item, index) => ({ label: item.name, ...(index < breadcrumbs.length - 1 ? { href: item.path } : {}) }))}
+        showImage={showCountryHeroImage}
+        variant="destination"
+      />
+      <main className="country-guide">
+        <section className="container country-guide-primary" aria-labelledby={`${country.slug}-places`}>
+          <header className="country-guide-intro">
+            <p className="eyebrow">Country atlas</p>
+            <h2 id={`${country.slug}-places`}>{places.length} {places.length === 1 ? "place" : "places"}. One coherent {country.title} journey.</h2>
+            <p>Begin with the landscape that draws you. We will connect the right places around season, access and the pace you want to keep.</p>
+          </header>
+
+          {featured.length > 0 && (
+            <div className={`country-guide-featured${featured.length === 1 ? " is-single" : ""}`}>
+              {featured.map((destination, index) => {
+                const image = getDestinationHeroImage(destination);
+                return (
+                  <article key={destination.slug}>
+                    <Link className="country-guide-card-image" href={`/destinations/${destination.slug}`}>
+                      <Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 100vw, 33vw" priority={index === 0} />
+                    </Link>
+                    <p>{destination.parentRegion || destination.region}</p>
+                    <h3><Link href={`/destinations/${destination.slug}`}>{destination.title}</Link></h3>
+                    <span>{conciseCountryCopy(destination.description)}</span>
+                    <Link className="country-guide-card-link" href={`/destinations/${destination.slug}`}>Explore <ArrowUpRight aria-hidden="true" /></Link>
+                  </article>
+                );
+              })}
+            </div>
+          )}
+
+          {extensions.length > 0 && (
+            <div className="country-guide-extensions">
+              <div>
+                <p className="eyebrow">Explore further</p>
+                <h2>More ways into {country.title}.</h2>
+              </div>
+              <div className="country-guide-extension-list">
+                {extensions.map((destination, index) => (
+                  <Link href={`/destinations/${destination.slug}`} key={destination.slug}>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <strong>{destination.title}</strong>
+                    <small>{conciseCountryCopy(destination.description, 18)}</small>
+                    <ArrowUpRight aria-hidden="true" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+        {countryGallery.length > 0 && (
+          <section className="section surface-white" aria-labelledby={`${country.slug}-photographs`}>
+            <div className="container">
+              <header className="country-guide-intro">
+                <p className="eyebrow">Photo journal</p>
+                <h2 id={`${country.slug}-photographs`}>{country.title}, in frames.</h2>
+                <p>Moments from the field. Open a photograph to explore the collection.</p>
+              </header>
+              <MediaGallery images={countryGallery} label={`${country.title} field photographs`} variant="story" />
             </div>
           </section>
-          <section className="timeline-item">
-            <span className="serif">02</span>
-            <div>
-              <h3 className="h3">Wildlife highlights</h3>
-              <p>{destination.wildlife} guide the route design, lodge choice and drive timings.</p>
-            </div>
-          </section>
-          <section className="timeline-item">
-            <span className="serif">03</span>
-            <div>
-              <h3 className="h3">Photography opportunities</h3>
-              <p>{destination.photography} are considered before we recommend vehicle, guide and lodge position.</p>
-            </div>
-          </section>
-        </div>
-        {destination.gallery.length ? (
-          <div className="container detail-section">
-            <p className="eyebrow">Gallery</p>
-            <div className="gallery-grid">
-              {destination.gallery.slice(0, 9).map((image) => (
-                <img key={image.src} src={image.src} alt={image.alt} loading="lazy" />
-              ))}
-            </div>
-          </div>
-        ) : null}
-        {destination.journeys.length || destination.expeditions.length ? (
-          <div className="container split-lists">
-            {destination.journeys.length ? (
-              <section>
-                <h2 className="h3">Related journeys</h2>
-                <ul>
-                  {destination.journeys.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </section>
-            ) : null}
-            {destination.expeditions.length ? (
-              <section>
-                <h2 className="h3">Photo expeditions</h2>
-                <ul>
-                  {destination.expeditions.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </section>
-            ) : null}
-          </div>
-        ) : null}
-        <div className="container specialist-callout">
-          <p className="eyebrow">Begin here</p>
-          <h2 className="h2">Begin a journey to {destination.title}.</h2>
-          <Link className="button button-solid" href={`/plan?destination=${destination.slug}`}>
-            Plan a Journey
-          </Link>
-        </div>
-      </article>
+        )}
+      </main>
     </>
   );
 }

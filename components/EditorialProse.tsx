@@ -1,6 +1,11 @@
+import { ExpandableText } from "@/components/ExpandableText";
+
 type EditorialProseProps = {
   text: string;
   className?: string;
+  collapsible?: boolean;
+  desktopLines?: number;
+  mobileLines?: number;
 };
 
 export function splitEditorialParagraphs(text: string) {
@@ -10,12 +15,27 @@ export function splitEditorialParagraphs(text: string) {
     .filter(Boolean);
 }
 
-export function EditorialProse({ text, className = "editorial-prose" }: EditorialProseProps) {
+export function EditorialProse({
+  text,
+  className = "editorial-prose",
+  collapsible = false,
+  desktopLines = 7,
+  mobileLines = 5
+}: EditorialProseProps) {
+  const paragraphs = splitEditorialParagraphs(text).map((paragraph, index) => (
+    <p key={`${index}-${paragraph.slice(0, 32)}`}>{paragraph}</p>
+  ));
+
+  if (!collapsible) return <div className={className}>{paragraphs}</div>;
+
   return (
-    <div className={className}>
-      {splitEditorialParagraphs(text).map((paragraph, index) => (
-        <p key={`${index}-${paragraph.slice(0, 32)}`}>{paragraph}</p>
-      ))}
-    </div>
+    <ExpandableText
+      className="editorial-prose-expandable"
+      contentClassName={className}
+      desktopLines={desktopLines}
+      mobileLines={mobileLines}
+    >
+      {paragraphs}
+    </ExpandableText>
   );
 }

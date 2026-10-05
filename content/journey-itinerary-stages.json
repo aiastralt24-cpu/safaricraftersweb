@@ -1,0 +1,284 @@
+{
+  "heart-of-the-wildcentral-indias-six-park-safari": [
+    {
+      "label": "Day 1",
+      "title": "Arrive in Delhi",
+      "summary": "Settle in and rest before the forests.",
+      "labels": [
+        "Day 1"
+      ]
+    },
+    {
+      "label": "Days 2–5",
+      "title": "Tadoba",
+      "summary": "Fly to Nagpur, then explore tiger country.",
+      "labels": [
+        "Day 2",
+        "Days 3-5"
+      ]
+    },
+    {
+      "label": "Days 6–8",
+      "title": "Pench",
+      "summary": "Travel onwards for forest safaris.",
+      "labels": [
+        "Day 6",
+        "Days 7-8"
+      ]
+    },
+    {
+      "label": "Days 9–11",
+      "title": "Kanha",
+      "summary": "Sal forests, open meadows and barasingha.",
+      "labels": [
+        "Day 9",
+        "Days 10-11"
+      ]
+    },
+    {
+      "label": "Days 12–14",
+      "title": "Bandhavgarh",
+      "summary": "Tiger tracking beneath ancient fort-topped hills.",
+      "labels": [
+        "Day 12",
+        "Days 13-14"
+      ]
+    },
+    {
+      "label": "Days 15–18",
+      "title": "Panna",
+      "summary": "Jeep and boat safaris around the Ken River.",
+      "labels": [
+        "Day 15",
+        "Days 16-18"
+      ]
+    },
+    {
+      "label": "Days 19–21",
+      "title": "Satpura",
+      "summary": "A quieter finale among hills and river valleys.",
+      "labels": [
+        "Day 19",
+        "Days 20-21"
+      ]
+    },
+    {
+      "label": "Day 22",
+      "title": "Departure",
+      "summary": "Transfer to Bhopal and fly to Delhi.",
+      "labels": [
+        "Day 22"
+      ]
+    }
+  ],
+  "big-cats-of-india": [
+    {
+      "label": "Day 1",
+      "title": "Arrive in Delhi",
+      "summary": "Settle in before the journey.",
+      "labels": [
+        "Day 1"
+      ]
+    },
+    {
+      "label": "Days 2–9",
+      "title": "Ladakh",
+      "summary": "Acclimatise, then track snow leopards.",
+      "labels": [
+        "Day 2",
+        "Day 3",
+        "Day 4",
+        "Days 5-9"
+      ]
+    },
+    {
+      "label": "Days 10–14",
+      "title": "Ranthambhore",
+      "summary": "Travel south for tiger safaris.",
+      "labels": [
+        "Day 10",
+        "Days 11-14"
+      ]
+    },
+    {
+      "label": "Days 15–17",
+      "title": "Jawai",
+      "summary": "Leopard tracking among granite hills.",
+      "labels": [
+        "Day 15",
+        "Days 16-17"
+      ]
+    },
+    {
+      "label": "Days 18–20",
+      "title": "Gir",
+      "summary": "Explore the home of the Asiatic lion.",
+      "labels": [
+        "Day 18",
+        "Days 19-20"
+      ]
+    },
+    {
+      "label": "Day 21",
+      "title": "Departure",
+      "summary": "Begin your onward journey.",
+      "labels": [
+        "Day 21"
+      ]
+    }
+  ],
+  "whiskers-stripes-and-roarssafari-adventures-with-indias-big-cats": [
+    {
+      "label": "Day 1",
+      "title": "Delhi",
+      "summary": "Ease into the journey in India’s capital.",
+      "labels": [
+        "Day 1"
+      ]
+    },
+    {
+      "label": "Days 2–4",
+      "title": "Kaziranga",
+      "summary": "Fly to Assam for floodplain safaris.",
+      "labels": [
+        "Day 2",
+        "Days 3-4"
+      ]
+    },
+    {
+      "label": "Days 5–10",
+      "title": "Jaipur & Ranthambhore",
+      "summary": "Travel through Jaipur to tiger country.",
+      "labels": [
+        "Day 5",
+        "Day 6",
+        "Days 7-10"
+      ]
+    },
+    {
+      "label": "Days 11–14",
+      "title": "Gir",
+      "summary": "Continue to Gujarat for lion safaris.",
+      "labels": [
+        "Day 11",
+        "Days 12-14"
+      ]
+    },
+    {
+      "label": "Day 15",
+      "title": "Departure via Mumbai",
+      "summary": "Travel to Mumbai for your onward journey.",
+      "labels": [
+        "Day 15"
+      ]
+    }
+  ],
+  "palaces-and-tigers": [
+    {
+      "label": "Day 1",
+      "title": "Arrive in Delhi",
+      "summary": "Settle in before your Rajasthan journey.",
+      "labels": [
+        "Day 1"
+      ]
+    },
+    {
+      "label": "Days 2–4",
+      "title": "Ranthambhore",
+      "summary": "Tiger safaris among lakes and forest.",
+      "labels": [
+        "Day 2",
+        "Days 3-4"
+      ]
+    },
+    {
+      "label": "Days 5–6",
+      "title": "Jaipur",
+      "summary": "A final safari, then the Pink City.",
+      "labels": [
+        "Day 5",
+        "Day 6"
+      ]
+    },
+    {
+      "label": "Days 7–8",
+      "title": "Jaisalmer",
+      "summary": "Sandstone architecture and desert dunes.",
+      "labels": [
+        "Day 7",
+        "Day 8"
+      ]
+    },
+    {
+      "label": "Day 9",
+      "title": "Jodhpur",
+      "summary": "Explore the fort and the Blue City.",
+      "labels": [
+        "Day 9"
+      ]
+    },
+    {
+      "label": "Days 10–12",
+      "title": "Jawai",
+      "summary": "Leopard safaris among granite hills.",
+      "labels": [
+        "Day 10",
+        "Days 11-12"
+      ]
+    },
+    {
+      "label": "Days 13–14",
+      "title": "Udaipur",
+      "summary": "Temples, palaces and lakeside time.",
+      "labels": [
+        "Day 13",
+        "Day 14"
+      ]
+    },
+    {
+      "label": "Day 15",
+      "title": "Departure",
+      "summary": "Depart from Udaipur.",
+      "labels": [
+        "Day 15"
+      ]
+    }
+  ],
+  "trail-of-the-himalayan-firefox-a-red-panda-rhino-expedition": [
+    {
+      "label": "Day 1",
+      "title": "Delhi",
+      "summary": "Begin your journey in the capital.",
+      "labels": [
+        "Day 1"
+      ]
+    },
+    {
+      "label": "Days 2–6",
+      "title": "Siliguri & Singalila",
+      "summary": "Travel to the hills and explore red panda country.",
+      "labels": [
+        "Day 2",
+        "Days 3-6"
+      ]
+    },
+    {
+      "label": "Days 7–11",
+      "title": "Kaziranga & Gibbon Sanctuary",
+      "summary": "Continue to Assam for rhinos and forest wildlife.",
+      "labels": [
+        "Day 7",
+        "Day 8",
+        "Days 9-11"
+      ]
+    },
+    {
+      "label": "Day 12",
+      "title": "Departure to Delhi",
+      "summary": "Return to Delhi for your onward journey.",
+      "labels": [
+        "Day 12"
+      ]
+    }
+  ]
+}

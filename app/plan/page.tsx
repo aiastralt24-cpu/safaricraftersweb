@@ -1,3 +1,4 @@
+import { kenyaCombinations } from "@/content/kenya-editorial";
 import { Metadata } from "next";
 import { PlannerForm } from "@/components/PlannerForm";
 import { getDestination, getExpedition, getJourney } from "@/lib/data";
@@ -5,7 +6,8 @@ import "../forms.css";
 
 export const metadata: Metadata = {
   title: "Plan a Private Safari",
-  description: "Share a discreet private safari brief with Safari Crafters and receive a specialist response."
+  description: "Share a discreet private safari brief with Safari Crafters and receive a considered response from a wildlife travel specialist.",
+  alternates: { canonical: "/plan" }
 };
 
 type PlanPageProps = {
@@ -13,36 +15,88 @@ type PlanPageProps = {
     journey?: string;
     destination?: string;
     expedition?: string;
+    region?: string;
+    specialist?: string;
+    guided?: string;
+    kenyaRoute?: string;
   }>;
 };
 
 export default async function PlanPage({ searchParams }: PlanPageProps) {
   const params = await searchParams;
   const initialContext = getInitialContext(params);
+  const kenyaRoute = params.destination === "kenya" ? kenyaCombinations.find(route => route.slug === params.kenyaRoute) : undefined;
+  const plannerContext = kenyaRoute ? { ...initialContext, notes: `I am interested in ${kenyaRoute.title}. ${kenyaRoute.copy}` } : initialContext;
 
   return (
     <section className="plan-page">
       <div className="container plan-intro">
-        <p className="eyebrow">Private safari brief</p>
-        <h1 className="display">Begin quietly.</h1>
-        <p>Private, precise, specialist-led.</p>
+        <p className="eyebrow">Plan your safari</p>
+        <h1 className="display">Your safari starts here.</h1>
+        <p>Tell us what you have in mind. We’ll help shape the journey.</p>
       </div>
-      <PlannerForm initialContext={initialContext} />
+      <PlannerForm initialContext={plannerContext} />
     </section>
   );
 }
 
-function getInitialContext(params: { journey?: string; destination?: string; expedition?: string }) {
+function plannerRegion(value?: string) {
+  const normalized = value?.toLowerCase() || "";
+  if (normalized.includes("india")) return "India";
+  if (normalized.includes("africa")) return "Africa";
+  if (normalized.includes("america")) return "The Americas";
+  if (normalized.includes("arctic") || normalized.includes("norway") || normalized.includes("russia") || normalized.includes("kamchatka")) return "Arctic & Beyond";
+  if (normalized.includes("surprise")) return "Surprise me";
+  return undefined;
+}
+
+function destinationExperiences(destination: NonNullable<ReturnType<typeof getDestination>>) {
+  const wildlife = destination.wildlife.toLowerCase();
+  if (destination.country === "Russia") return ["Brown bears", "Wildlife photography"];
+  if (wildlife.includes("tiger")) return ["Tigers", "Photography hides"];
+  if (wildlife.includes("jaguar")) return ["Jaguars", "Photography hides"];
+  if (wildlife.includes("gorilla") || wildlife.includes("chimpanzee")) return ["Great apes"];
+  if (wildlife.includes("polar") || wildlife.includes("bear")) return ["Polar wildlife", "Photography hides"];
+  if (wildlife.includes("bird")) return ["Birdlife"];
+  return destination.continent === "Africa" ? ["Big Cats of Africa"] : ["Cultural immersion"];
+}
+
+function contextualExperiences(value: string, region: string) {
+  const normalized = value.toLowerCase();
+  if (normalized.includes("tiger")) return ["Tigers", "Photography hides"];
+  if (normalized.includes("leopard")) return ["Leopards", "Photography hides"];
+  if (normalized.includes("jaguar") || normalized.includes("pantanal")) return ["Jaguars", "Photography hides"];
+  if (normalized.includes("gorilla") || normalized.includes("chimpanzee") || normalized.includes("ape")) return ["Great apes"];
+  if (normalized.includes("polar") || normalized.includes("bear") || normalized.includes("svalbard")) return ["Polar wildlife", "Photography hides"];
+  if (normalized.includes("bird")) return ["Birdlife", "Photography hides"];
+  if (region === "Africa") return ["Big Cats of Africa"];
+  if (region === "Arctic & Beyond") return ["Polar wildlife"];
+  return ["Cultural immersion"];
+}
+
+function getInitialContext(params: { journey?: string; destination?: string; expedition?: string; region?: string; specialist?: string; guided?: string }) {
+  const requestedRegion = plannerRegion(params.region);
+  if (params.guided === "true") {
+    return {
+      sourceLabel: "Guided Bespoke Safari",
+      region: requestedRegion || "Surprise me",
+      types: ["Private"],
+      experiences: requestedRegion ? contextualExperiences("wildlife photography", requestedRegion) : [],
+      notes: "I would like to add a dedicated Safari Crafters guide to my private journey.",
+      specialist: params.specialist || "Auto-route"
+    };
+  }
   if (params.journey) {
     const journey = getJourney(params.journey);
     if (journey) {
+      const region = plannerRegion(journey.region) || requestedRegion || "Surprise me";
       return {
         sourceLabel: journey.title,
-        region: journey.region.includes("Africa") ? "Africa" : "India",
+        region,
         types: [journey.category.includes("Ultra") ? "Ultra-Luxury" : "Private"],
-        experiences: journey.title.toLowerCase().includes("tiger") ? ["Tigers", "Photography hides"] : ["Big Cats of Africa"],
+        experiences: contextualExperiences(`${journey.title} ${journey.wildlifeFocus}`, region),
         notes: `I am interested in ${journey.title}.`,
-        specialist: journey.specialist.split(" ")[0]
+        specialist: params.specialist || journey.specialist.split(" ")[0]
       };
     }
   }
@@ -52,13 +106,13 @@ function getInitialContext(params: { journey?: string; destination?: string; exp
     if (destination) {
       return {
         sourceLabel: destination.title,
-        region: destination.region.includes("Kenya") || destination.region.includes("Brazil") ? "Africa" : "India",
+        region: plannerRegion(destination.continent) || requestedRegion || "Surprise me",
         types: ["Private"],
-        experiences: destination.wildlife.toLowerCase().includes("tiger")
-          ? ["Tigers", "Photography hides"]
-          : ["Big Cats of Africa"],
-        notes: `I am interested in travelling to ${destination.title}.`,
-        specialist: "Kairav"
+        experiences: destinationExperiences(destination),
+        notes: destination.status === "concierge"
+          ? `I am interested in a private brief for ${destination.title}.`
+          : `I am interested in travelling to ${destination.title}.`,
+        specialist: params.specialist || "Kairav"
       };
     }
   }
@@ -66,17 +120,23 @@ function getInitialContext(params: { journey?: string; destination?: string; exp
   if (params.expedition) {
     const expedition = getExpedition(params.expedition);
     if (expedition) {
+      const region = plannerRegion(expedition.category) || plannerRegion(expedition.title) || requestedRegion || "Surprise me";
       return {
         sourceLabel: expedition.title,
-        region: expedition.category.includes("Africa") ? "Africa" : "India",
+        region,
         types: ["Photo-led"],
-        experiences: expedition.species.toLowerCase().includes("bird")
-          ? ["Birdlife", "Photography hides"]
-          : ["Tigers", "Photography hides"],
+        experiences: contextualExperiences(`${expedition.title} ${expedition.species}`, region),
         notes: `I am interested in ${expedition.title}.`,
-        specialist: expedition.mentor.split(" ")[0]
+        specialist: params.specialist || expedition.mentor.split(" ")[0]
       };
     }
+  }
+
+  if (requestedRegion || params.specialist) {
+    return {
+      region: requestedRegion,
+      specialist: params.specialist
+    };
   }
 
   return undefined;

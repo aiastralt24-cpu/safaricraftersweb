@@ -1,0 +1,334 @@
+/* One section-heading grammar across private journeys, private aviation and expeditions. */
+.concept-expedition-calendar .concept-field-notes-header,
+.concept-private-aviation-header {
+  width: min(var(--concept-canvas), 100%);
+}
+
+.concept-private-aviation-header {
+  display: flex;
+  margin: 0 auto clamp(54px, 6vw, 82px);
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  color: var(--soil);
+}
+
+.concept-private-aviation-header > div { min-width: 0; }
+
+.concept-private-aviation-eyebrow {
+  width: auto;
+  margin: 0 0 14px;
+  color: var(--brass);
+  font-family: var(--font-body);
+  font-size: var(--concept-label);
+  font-weight: 700;
+  letter-spacing: var(--concept-label-tracking);
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.concept-private-aviation-header h2 {
+  max-width: 900px;
+  margin: 0;
+  color: var(--soil);
+  font-family: var(--font-display);
+  font-size: var(--concept-section-title);
+  font-weight: 300;
+  letter-spacing: -.025em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.concept-private-aviation-header > a { flex: 0 0 auto; }
+
+.concept-private-aviation-story {
+  display: block;
+  padding-top: clamp(36px, 4vw, 56px);
+}
+
+.concept-private-aviation-benefits { width: 100%; }
+
+/* Keep the expedition dossier secondary to the photograph. */
+.concept-expedition-calendar .concept-departure-dossier {
+  width: 100%;
+  min-height: 100%;
+  padding: clamp(32px, 3.1vw, 46px);
+}
+
+.concept-expedition-calendar .concept-departure-dossier > p {
+  margin-bottom: 18px;
+}
+
+.concept-expedition-calendar .concept-departure-dossier h3 {
+  margin-bottom: 24px;
+  font-size: clamp(2.15rem, 1.65rem + 1.15vw, 2.75rem);
+  line-height: 1;
+}
+
+.concept-expedition-calendar .concept-departure-dossier dl {
+  margin-bottom: 26px;
+}
+
+.concept-expedition-calendar .concept-departure-dossier dl > div {
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 16px;
+  padding: 11px 0;
+}
+
+.concept-expedition-calendar .concept-departure-dossier > a {
+  min-height: 50px;
+  padding: 0 18px;
+}
+
+@media (max-width: 760px) {
+  .concept-private-aviation-header {
+    margin-bottom: 34px;
+    align-items: start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .concept-private-aviation-header h2 {
+    font-size: var(--type-h2);
+    line-height: .98;
+  }
+}
+
+/* Final mobile collection composition. Kept in the harmony layer so it wins
+   over the legacy rail rules in concept.css without changing desktop layouts. */
+.concept-journey-feature-index .concept-journey-next,
+.concept-departure-index .concept-departure-next { display: none; }
+
+@media (max-width: 720px) {
+  .concept-journey-feature-frame {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .concept-journey-feature-index,
+  .concept-departure-index {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 78px;
+    overflow: hidden;
+    scroll-snap-type: none;
+  }
+
+  .concept-journey-feature-index button:not(.is-active):not(.concept-journey-next),
+  .concept-departure-index button:not(.is-active):not(.concept-departure-next) {
+    display: none;
+  }
+
+  .concept-journey-feature-index button.is-active,
+  .concept-departure-index button.is-active {
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    min-height: 104px;
+    padding: 18px 20px;
+  }
+
+  .concept-journey-feature-index .concept-journey-next,
+  .concept-departure-index .concept-departure-next {
+    display: flex;
+    width: 78px;
+    min-width: 0;
+    min-height: 104px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-left: 1px solid rgba(var(--rgb-soil), .16);
+    padding: 12px 8px;
+    color: var(--brass-dark);
+  }
+
+  .concept-journey-feature-index .concept-journey-next span,
+  .concept-departure-index .concept-departure-next span {
+    font-family: var(--font-body);
+    font-size: .58rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .concept-journey-feature-index .concept-journey-next::before,
+  .concept-departure-index .concept-departure-next::after {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .concept-departure-salon {
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--paper);
+  }
+
+  .concept-departure-salon-image {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 0;
+  }
+
+  .concept-expedition-calendar .concept-departure-dossier {
+    width: 100%;
+    min-height: 0;
+    border-radius: 0;
+    padding: 28px 22px 30px;
+  }
+
+  .concept-expedition-calendar .concept-departure-dossier h3 {
+    margin-bottom: 22px;
+    font-size: clamp(2.15rem, 9.2vw, 2.8rem);
+    line-height: .98;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 980px) {
+  .concept-expedition-calendar .concept-departure-dossier {
+    width: 100%;
+    min-height: 100%;
+    padding: 30px;
+  }
+
+  .concept-expedition-calendar .concept-departure-dossier h3 {
+    font-size: clamp(2.15rem, 4.2vw, 2.55rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .concept-journey-feature-index,
+  .concept-departure-index {
+    grid-template-columns: minmax(0, 1fr) 68px;
+  }
+
+  .concept-journey-feature-index .concept-journey-next,
+  .concept-departure-index .concept-departure-next {
+    width: 68px;
+  }
+
+  .concept-journey-feature-index .concept-journey-next span,
+  .concept-departure-index .concept-departure-next span {
+    display: none;
+  }
+}
+
+/* Homepage rhythm: warm story, white ways, warm journeys, forest departures,
+   warm aviation and white concierge. */
+.concept-page {
+  --homepage-base: var(--surface-warm);
+  --homepage-white: var(--surface-white);
+  --homepage-feature: var(--surface-sand);
+  --homepage-forest: var(--surface-forest);
+  --homepage-dark: #100d0a;
+  background: var(--homepage-dark);
+}
+
+.concept-story-proof,
+.concept-wildest-places,
+.concept-guest-notes,
+.concept-journey-feature-shell,
+.concept-journey-feature,
+.concept-journey-feature-index,
+.concept-species-section,
+.concept-species-editorial,
+.concept-field-notes,
+.concept-expedition-calendar,
+.concept-conservation-statement {
+  background: var(--homepage-base);
+}
+
+.concept-journey-types,
+.concept-concierge,
+.concept-choice-row a {
+  background: var(--homepage-white);
+}
+
+.concept-expedition-calendar.concept-expedition-board-section {
+  background: var(--homepage-forest);
+}
+
+.concept-private-aviation {
+  background: var(--homepage-base);
+}
+
+.concept-concierge-card,
+.concept-field-note,
+.concept-expedition-calendar .concept-departure-dossier {
+  background: var(--homepage-feature);
+}
+
+.concept-choice-row a:hover,
+.concept-choice-row a:focus-visible,
+.concept-choice-row .concept-choice-contact {
+  background: var(--homepage-dark);
+}
+
+/* Private aviation: one restrained, scroll-triggered editorial reveal. */
+@media (prefers-reduced-motion: no-preference) {
+  .concept-private-aviation[data-concept-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .concept-private-aviation-panel {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 620ms cubic-bezier(.2, 0, 0, 1),
+      transform 760ms cubic-bezier(.2, 0, 0, 1);
+  }
+
+  .concept-private-aviation-image {
+    opacity: 0;
+    transform: translateX(24px) scale(.99);
+    transition:
+      opacity 760ms 80ms cubic-bezier(.2, 0, 0, 1),
+      transform 980ms 80ms cubic-bezier(.2, 0, 0, 1);
+  }
+
+  .concept-private-aviation-copy > * {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 520ms cubic-bezier(.2, 0, 0, 1),
+      transform 680ms cubic-bezier(.2, 0, 0, 1);
+  }
+
+  .concept-private-aviation.is-visible .concept-private-aviation-panel,
+  .concept-private-aviation.is-visible .concept-private-aviation-image,
+  .concept-private-aviation.is-visible .concept-private-aviation-copy > * {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  .concept-private-aviation.is-visible .concept-private-aviation-copy > :nth-child(1) { transition-delay: 180ms; }
+  .concept-private-aviation.is-visible .concept-private-aviation-copy > :nth-child(2) { transition-delay: 240ms; }
+  .concept-private-aviation.is-visible .concept-private-aviation-copy > :nth-child(3) { transition-delay: 320ms; }
+  .concept-private-aviation.is-visible .concept-private-aviation-copy > :nth-child(4) { transition-delay: 400ms; }
+  .concept-private-aviation.is-visible .concept-private-aviation-copy > :nth-child(5) { transition-delay: 480ms; }
+
+  .concept-private-aviation.is-visible .concept-private-aviation-image img {
+    animation: privateAviationSettle 1500ms 100ms cubic-bezier(.2, 0, 0, 1) both;
+  }
+}
+
+@keyframes privateAviationSettle {
+  from { transform: scale(1.045) translateX(1%); }
+  to { transform: scale(1) translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-private-aviation,
+  .concept-private-aviation-panel,
+  .concept-private-aviation-image,
+  .concept-private-aviation-image img,
+  .concept-private-aviation-copy > * {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,128 @@
+import { ItineraryBento } from "@/components/ItineraryBento";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import type { Destination, DestinationCombo, DestinationPairing, Expedition, FAQItem, ImageAsset, Journey } from "@/lib/data";
+import { getDedicatedDestinationCombos, getDestination } from "@/lib/data";
+import type { FieldIntelligence } from "@/lib/luxury";
+import { isApprovedEditorialImage } from "@/lib/media";
+import { EditorialProse } from "@/components/EditorialProse";
+import { ExpandableText } from "@/components/ExpandableText";
+import { MediaGallery } from "@/components/MediaGallery";
+import { DestinationMotion } from "@/components/DestinationMotion";
+import { DestinationFieldNotes } from "@/components/DestinationFieldNotes";
+import type { CSSProperties } from "react";
+import "./DestinationDossier.css";
+
+type Props = { destination: Destination; intelligence: FieldIntelligence; faqs: FAQItem[]; pairings: DestinationPairing[]; relatedJourneys: Journey[]; relatedExpeditions?: Expedition[] };
+
+const supplementalImages: Record<string, ImageAsset[]> = {
+  laikipia: [
+    { src: "/assets/safari-crafters/kenya-1-e9e06241.jpg", alt: "Black leopard moving through Laikipia grassland", credit: "Safari Crafters archive" },
+    { src: "/assets/safari-crafters/kenya-2-d6840ff9.jpg", alt: "Serval in Kenya's highland grassland", credit: "Safari Crafters archive" },
+    { src: "/assets/safari-crafters/laikipia-highlights-fc6df289.jpg", alt: "Black leopard crossing a Laikipia river", credit: "Safari Crafters archive" }
+  ]
+};
+
+export function DestinationDossier({ destination, intelligence, faqs, pairings }: Props) {
+  const dedicatedCombos = getDedicatedDestinationCombos(destination.slug);
+  const approvedGallery = [...new Map([...destination.gallery, ...(supplementalImages[destination.slug] || []), destination.image].filter(isApprovedEditorialImage).map((image) => [image.src, image])).values()];
+  const gallery = approvedGallery.length ? approvedGallery : [destination.image];
+  const photoGallery = gallery.slice(0, 12);
+  const introParagraphs = destination.intro.split(/\n\s*\n/).filter(Boolean);
+  const extendedEditorial = Boolean(destination.editorial?.scoop?.length);
+  const useStickyScoop = destination.slug === "kamchatka";
+  const chapters = [
+    { label: "The landscape", title: destination.editorial?.landscapeHeadline || `${destination.title}, read slowly.`, copy: destination.editorial?.landscapeCopy || destination.habitat || introParagraphs[0] || destination.description, image: gallery[1] || gallery[0] },
+    { label: "In the field", title: "Follow the rhythm, not a checklist.", copy: destination.safariRhythm || intelligence.safariRhythm, image: gallery[2] || gallery[0] },
+    ...(!destination.editorial?.wildlifeCopy ? [{ label: "The encounter", title: destination.editorial?.wildlifeHeadline || "Wildlife, honestly framed.", copy: destination.wildlife, image: gallery[3] || gallery[1] || gallery[0] }] : [])
+  ];
+
+  return <article className="destination-dossier">
+    <DestinationMotion />
+    <dl className="destination-facts" aria-label={`${destination.title} essentials`}>
+      <Essential label={destination.editorial?.factsLabel || "Best for"} value={destination.bestFor.join(" · ")} collapsible />
+      <Essential label="Best months" value={destination.bestMonths} />
+      <Essential label="Ideal duration" value={destination.idealStay || intelligence.idealStay} />
+      <Essential label="Getting there" value={destination.gateway || intelligence.airport} />
+    </dl>
+
+    <section className="container destination-opening">
+      <div><p className="eyebrow">Introducing {destination.title}</p><h2>{destination.editorial?.openingHeadline || "A landscape with no need to perform."}</h2></div>
+      <EditorialProse text={destination.intro} className="destination-opening-prose" collapsible />
+    </section>
+
+    {!useStickyScoop ? <DestinationFieldNotes destination={destination.title} notes={chapters} /> : null}
+
+    <section className={`destination-photo-journal${useStickyScoop ? " is-compact" : ""}`} aria-labelledby="destination-gallery-title">
+      <header className="container destination-photo-heading destination-editorial-heading" data-destination-gallery-heading>
+        <p className="eyebrow">Photo journal</p>
+        <h2 id="destination-gallery-title"><span>{destination.title},</span><span>in frames.</span></h2>
+        <p>Open any photograph to explore the collection in full screen.</p>
+      </header>
+      <MediaGallery images={photoGallery} label={`${destination.title} photo gallery`} variant="story" />
+    </section>
+
+    {destination.editorial?.wildlifeCopy && !useStickyScoop ? <section className="container destination-wildlife-story">
+      <div className="destination-wildlife-story-image"><Image src={(gallery[3] || gallery[1] || gallery[0]).src} alt={(gallery[3] || gallery[1] || gallery[0]).alt} fill sizes="(max-width: 900px) 100vw, 50vw" /></div>
+      <div><p className="eyebrow">The encounter</p><h2>{destination.editorial.wildlifeHeadline}</h2><EditorialProse text={destination.editorial.wildlifeCopy} /></div>
+    </section> : null}
+
+    {destination.editorial?.scoop?.length ? <section className={`destination-scoop${useStickyScoop ? " is-sticky-stack" : ""}`} aria-labelledby="destination-scoop-title"><div className="container">
+      <header><p className="eyebrow">Field intelligence</p><h2 id="destination-scoop-title">The Scoop.</h2></header>
+      <div className="destination-scoop-list">{destination.editorial.scoop.map((item, index) => <details
+        key={item.title}
+        name="destination-scoop"
+        style={useStickyScoop ? { "--scoop-top": `${88 + index * 14}px`, "--scoop-layer": index + 1 } as CSSProperties : undefined}
+      >
+        <summary>
+          <span className="destination-scoop-number">{String(index + 1).padStart(2, "0")}</span>
+          <span className="destination-scoop-summary"><strong>{item.title}</strong><small>{item.blurb}</small><em>Continue reading</em></span>
+          {useStickyScoop ? <span className="destination-scoop-image" aria-hidden="true"><Image src={(gallery[(index + 1) % gallery.length] || gallery[0]).src} alt="" fill sizes="(max-width: 760px) 100vw, 46vw" /></span> : <em>Continue reading</em>}
+        </summary>
+        <div className="destination-scoop-body"><EditorialProse text={item.body} /><Link className="destination-scoop-link" href={`/plan?destination=${destination.slug}`}>Start planning <ArrowUpRight size={15} /></Link></div>
+      </details>)}</div>
+    </div></section> : null}
+
+    {dedicatedCombos.length ? <DestinationCombos destination={destination} combos={dedicatedCombos} /> : null}
+
+    {!extendedEditorial ? <DestinationPlan destination={destination} /> : null}
+
+    <section className="container destination-faq-section"><div><p className="eyebrow">Good to know</p><h2>Question, meet answer.</h2></div><div className="destination-faqs">
+      {faqs.map((faq) => <details key={faq.question} name="destination-faq"><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}
+    </div></section>
+
+    {!dedicatedCombos.length && pairings.length ? <section className="container destination-pairings"><header className="destination-editorial-heading"><p className="eyebrow">{destination.editorial?.relatedLabel || "Keep exploring"}</p><h2>{destination.editorial?.relatedHeadline ? <span>{destination.editorial.relatedHeadline}</span> : <><span>Places in the same</span><span>conversation.</span></>}</h2><p className="destination-pairings-intro">{destination.editorial?.relatedIntro || "Extend the journey through landscapes that share a natural rhythm, wildlife story or sense of place."}</p></header><div className="destination-card-grid">
+      {pairings.slice(0, 3).map((pairing) => { const place = getDestination(pairing.slug); return place ? <RelatedCard key={pairing.slug} href={`/destinations/${pairing.slug}`} image={place.image} meta={place.country} title={pairing.title} description={pairing.reason} /> : null; })}
+    </div>{extendedEditorial ? <Link className="destination-all-link" href="/destinations">Explore all destinations <ArrowUpRight size={16} /></Link> : null}</section> : null}
+
+    {extendedEditorial ? <DestinationPlan destination={destination} /> : null}
+  </article>;
+}
+
+function DestinationPlan({ destination }: { destination: Destination }) {
+  return <section className="destination-plan"><div className="container destination-plan-inner">
+    <div><p className="eyebrow">Your private journey</p><h2>{destination.editorial?.plannerHeadline || `Make your own ${destination.title} plan.`}</h2></div>
+    <div><p>{destination.editorial?.plannerCopy || "Tell us what draws you here. We will shape the right season, access, pace and places into one coherent private journey."}</p><Link className="destination-plan-link" href={`/plan?destination=${destination.slug}`}>{destination.editorial?.plannerCta || "Begin planning"} <ArrowUpRight size={16} /></Link></div>
+  </div></section>;
+}
+
+function DestinationCombos({ destination, combos }: { destination: Destination; combos: DestinationCombo[] }) {
+  return <section className="destination-combos" aria-labelledby={`destination-combos-${destination.slug}`}>
+    <header className="container destination-combos-heading">
+      <p className="eyebrow">Destination combinations</p>
+      <h2 id={`destination-combos-${destination.slug}`}>Better together.</h2>
+      <p>Considered routes that place {destination.title} in a wider journey without rushing either landscape.</p>
+    </header>
+    <div className="container"><ItineraryBento items={combos.map((combo,index)=>{
+      const place = getDestination(combo.imageSlug) || destination;
+      const image = place.gallery[index % Math.max(place.gallery.length,1)] || place.image;
+      return { title:combo.title, label:"Suggested journey", copy:combo.description, image, href:combo.href, cta:combo.href.startsWith("/journeys/") ? "Explore journey" : "Start planning" };
+    })}/></div>
+  </section>;
+}
+
+function Essential({ label, value, collapsible = false }: { label: string; value: string; collapsible?: boolean }) {
+  return <div><dt>{label}</dt><dd>{collapsible ? <ExpandableText desktopLines={5} mobileLines={4}>{value}</ExpandableText> : value}</dd></div>;
+}
+function RelatedCard({ href, image, meta, title, description }: { href: string; image: ImageAsset; meta: string; title: string; description: string }) { return <article className="destination-related-card"><Link className="destination-related-image" href={href}><Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 100vw, 33vw" /></Link><p>{meta}</p><h3><Link href={href}>{title}</Link></h3><p className="destination-related-description">{description}</p><Link className="destination-related-link" href={href}>Explore {title} <ArrowUpRight size={15} /></Link></article>; }

@@ -1,35 +1,32 @@
 import { Metadata } from "next";
-import { JourneyCard } from "@/components/Cards";
-import { PageHero } from "@/components/PageHero";
-import { journeyCategories, journeys } from "@/lib/data";
+import { JourneyFilm } from "@/components/JourneyFilm";
+import { JsonLd } from "@/components/JsonLd";
+import { journeys } from "@/lib/data";
+import { breadcrumbSchema } from "@/lib/structured-data";
 import "../listing.css";
+import "./journeys-atlas.css";
 
 export const metadata: Metadata = {
-  title: "Journeys",
-  description: "Private India safaris, Africa safaris, ultra-luxury routes, family journeys and conservation-led safari routes."
+  title: "Private Safari Journey Blueprints",
+  description: "Private safari journey blueprints for India and Africa, refined around wildlife, season, photography, comfort and unhurried pacing.",
+  alternates: { canonical: "/journeys" }
 };
 
 export default function JourneysPage() {
-  return (
-    <>
-      <PageHero
-        title="Journeys with intent."
-        copy="Private routes, rare access and field-led pacing."
-        image={journeys[1].image}
-        meta="Journeys"
-      />
-      <section className="section">
-        <div className="container category-rail">
-          {journeyCategories.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
-        </div>
-        <div className="container grid-3 listing-grid">
-          {journeys.map((journey) => (
-            <JourneyCard key={journey.slug} journey={journey} />
-          ))}
-        </div>
-      </section>
-    </>
-  );
+  const featuredSlugs = [
+    "big-cats-of-india",
+    "heart-of-the-wildcentral-indias-six-park-safari",
+    "whiskers-stripes-and-roarssafari-adventures-with-indias-big-cats",
+    "palaces-and-tigers",
+    "southern-splendourwhere-forests-hills-wildlife-converge",
+    "trail-of-the-himalayan-firefox-a-red-panda-rhino-expedition"
+  ];
+  const featuredJourneys = featuredSlugs
+    .map((slug) => journeys.find((journey) => journey.slug === slug))
+    .filter((journey): journey is (typeof journeys)[number] => Boolean(journey));
+
+  return <>
+    <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Private Journeys", path: "/journeys" }])} />
+    <JourneyFilm journeys={featuredJourneys} />
+  </>;
 }

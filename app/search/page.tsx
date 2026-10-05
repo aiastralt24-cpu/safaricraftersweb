@@ -1,33 +1,31 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { destinations, expeditions, journal, journeys } from "@/lib/data";
-import "../simple.css";
+import { SearchIndex, type SearchItem } from "./SearchIndex";
+import "./search.css";
 
 export const metadata: Metadata = {
   title: "Search",
-  description: "Search Safari Crafters journeys, destinations, photo expeditions and journal stories."
+  description: "Search Safari Crafters journeys, destinations, photo expeditions and journal stories.",
+  alternates: { canonical: "/search" }
 };
 
 export default function SearchPage() {
-  const items = [
-    ...journeys.map((item) => ({ title: item.title, href: `/journeys/${item.slug}`, type: "Journey" })),
-    ...destinations.map((item) => ({ title: item.title, href: `/destinations/${item.slug}`, type: "Destination" })),
-    ...expeditions.map((item) => ({ title: item.title, href: `/photo-expeditions/${item.slug}`, type: "Photo Expedition" })),
-    ...journal.map((item) => ({ title: item.title, href: `/journal/${item.slug}`, type: "Journal" }))
+  const items: SearchItem[] = [
+    ...journeys.map((item) => ({ title: item.title, href: `/journeys/${item.slug}`, type: "Journey" as const, detail: item.region })),
+    ...destinations.map((item) => ({ title: item.title, href: `/destinations/${item.slug}`, type: "Destination" as const, detail: item.country })),
+    ...expeditions.map((item) => ({ title: item.title, href: `/photo-expeditions/${item.slug}`, type: "Photo Expedition" as const, detail: item.category })),
+    ...journal.map((item) => ({ title: item.title, href: `/journal/${item.slug}`, type: "Journal" as const, detail: item.category }))
   ];
 
   return (
-    <section className="section simple" style={{ paddingTop: 150 }}>
-      <div className="container">
+    <section className="search-page">
+      <header className="container search-heading">
         <p className="eyebrow">Search</p>
-        <h1 className="h1">Browse the Safari Crafters library.</h1>
-        <div className="category-rail">
-          {items.map((item) => (
-            <Link key={item.href} href={item.href}>
-              {item.type}: {item.title}
-            </Link>
-          ))}
-        </div>
+        <h1>Find a place, journey or field story.</h1>
+        <p>Search the Safari Crafters collection, or browse it by the kind of experience you are considering.</p>
+      </header>
+      <div className="container">
+        <SearchIndex items={items} />
       </div>
     </section>
   );

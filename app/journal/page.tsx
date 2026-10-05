@@ -1,7 +1,9 @@
 import { Metadata } from "next";
-import { JournalCard } from "@/components/Cards";
 import { PageHero } from "@/components/PageHero";
+import { JsonLd } from "@/components/JsonLd";
 import { journal, journalCategories } from "@/lib/data";
+import { breadcrumbSchema } from "@/lib/structured-data";
+import { JournalIndex } from "./JournalIndex";
 import "../listing.css";
 
 export const metadata: Metadata = {
@@ -12,23 +14,17 @@ export const metadata: Metadata = {
 export default function JournalPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "The Journal", path: "/journal" }])} />
       <PageHero
         title="The Journal"
         copy="Field notes, photographic essays, conservation thinking and practical safari intelligence, written with the care of a magazine rather than a blog."
         image={journal[0].image}
         meta="Field Notes · Photography · Conservation"
+        variant="destination"
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "The Journal" }]}
       />
-      <section className="section">
-        <div className="container category-rail">
-          {journalCategories.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
-        </div>
-        <div className="container grid-3 listing-grid">
-          {journal.map((article) => (
-            <JournalCard key={article.slug} article={article} />
-          ))}
-        </div>
+      <section className="section surface-white">
+        <JournalIndex articles={journal} categories={journalCategories} />
       </section>
     </>
   );

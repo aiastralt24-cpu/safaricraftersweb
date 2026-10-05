@@ -1,5 +1,6 @@
 import { ConceptExperience } from "./ConceptExperience";
 import "./concept.css";
+import "./concept-harmony.css";
 
 export const metadata = {
   title: "Luxury Safari Concept",
@@ -9,3 +10,5 @@ export const metadata = {
 export default function ConceptPage() {
   return <ConceptExperience />;
 }
+
+export const dynamic = "force-dynamic";
