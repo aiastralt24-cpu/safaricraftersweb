@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ok:true,enquiryId:result.enquiryId,specialist:result.specialist});
   } catch {
     console.error("enquiry_storage_unavailable");
-    return NextResponse.json({ok:false,error:"We could not confirm your enquiry was saved. Please retry; we will not create a duplicate. You can also email hello@safaricrafters.com."},{status:503});
+    return NextResponse.json({ok:false,error:"We could not confirm your enquiry was saved. Please retry; we will not create a duplicate. You can also email info@safaricrafters.com."},{status:503});
   }
 }
 
