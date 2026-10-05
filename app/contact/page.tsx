@@ -33,8 +33,8 @@ export default function ContactPage() {
               forward with care.
             </p>
             <div className="contact-links">
-              <Link className="whatsapp-link" href="mailto:hello@safaricrafters.com">
-                hello@safaricrafters.com
+              <Link className="whatsapp-link" href="mailto:info@safaricrafters.com">
+                info@safaricrafters.com
               </Link>
             </div>
             <div className="contact-notes" aria-label="Contact page notes">

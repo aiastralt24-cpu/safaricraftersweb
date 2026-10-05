@@ -53,7 +53,7 @@ export default async function JourneyDetailPage({ params }: Props) {
       <JsonLd data={journeySchema(journey)} />
       <JsonLd data={breadcrumbSchema(breadcrumbs)} />
       <JsonLd data={faqSchema(faqs)} />
-      <section className="journey-detail-hero">
+      <section className={`journey-detail-hero${slug === "royal-rajasthan-safari" ? " journey-detail-hero-wide" : ""}`}>
         <Image
           src={heroImage.src}
           alt={heroImage.alt}
