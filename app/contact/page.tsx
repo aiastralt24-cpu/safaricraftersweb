@@ -36,8 +36,8 @@ export default function ContactPage() {
               <Link className="whatsapp-link" href="https://wa.me/910000000000">
                 <MessageCircle size={18} /> WhatsApp Safari Crafters
               </Link>
-              <Link className="whatsapp-link" href="mailto:hello@safaricrafters.com">
-                hello@safaricrafters.com
+              <Link className="whatsapp-link" href="mailto:info@safaricrafters.com">
+                info@safaricrafters.com
               </Link>
             </div>
             <div className="contact-notes" aria-label="Contact page notes">
