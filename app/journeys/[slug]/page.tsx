@@ -34,6 +34,7 @@ export default async function JourneyDetailPage({ params }: Props) {
   return (
     <>
       <PageHero
+        className={slug === "royal-rajasthan-safari" ? "page-hero-journey-wide" : undefined}
         title={journey.title}
         copy={journey.description}
         image={journey.image}
