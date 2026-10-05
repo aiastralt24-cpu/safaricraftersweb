@@ -6,11 +6,12 @@ type PageHeroProps = {
   copy: string;
   image: ImageAsset;
   meta?: string;
+  className?: string;
 };
 
-export function PageHero({ title, copy, image, meta }: PageHeroProps) {
+export function PageHero({ title, copy, image, meta, className }: PageHeroProps) {
   return (
-    <section className="page-hero">
+    <section className={`page-hero${className ? ` ${className}` : ""}`}>
       <img src={image.src} alt={image.alt} />
       <div className="page-hero-scrim" />
       <div className="container page-hero-content reveal">

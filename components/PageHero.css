@@ -47,6 +47,13 @@
   text-wrap: balance;
 }
 
+@media (min-width: 1101px) {
+  .page-hero-journey-wide .page-hero-content h1 {
+    max-width: none;
+    white-space: nowrap;
+  }
+}
+
 .page-hero-content p:last-child {
   max-width: 470px;
   margin-top: 26px;
