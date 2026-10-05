@@ -1,8 +1,10 @@
 import { Metadata } from "next";
-import { ExpeditionCard } from "@/components/Cards";
-import { PageHero } from "@/components/PageHero";
-import { expeditionCategories, expeditions } from "@/lib/data";
-import "../listing.css";
+import { PhotoExpeditionFilm } from "@/components/PhotoExpeditionFilm";
+import { JsonLd } from "@/components/JsonLd";
+import { expeditions } from "@/lib/data";
+import { breadcrumbSchema } from "@/lib/structured-data";
+import "../journeys/journeys-atlas.css";
+import "./photo-expeditions-atlas.css";
 
 export const metadata: Metadata = {
   title: "Photo Expeditions",
@@ -10,26 +12,11 @@ export const metadata: Metadata = {
 };
 
 export default function PhotoExpeditionsPage() {
-  return (
-    <>
-      <PageHero
-        title="Field craft, framed."
-        copy="Small groups, private mentorship and patient light."
-        image={expeditions[0].image}
-        meta="Photo Expeditions"
-      />
-      <section className="section">
-        <div className="container category-rail">
-          {expeditionCategories.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
-        </div>
-        <div className="container grid-3 listing-grid">
-          {expeditions.map((expedition) => (
-            <ExpeditionCard key={expedition.slug} expedition={expedition} />
-          ))}
-        </div>
-      </section>
-    </>
-  );
+  return <>
+    <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Photo Expeditions", path: "/photo-expeditions" }])} />
+    <PhotoExpeditionFilm expeditions={expeditions} />
+  </>;
 }
+
+// Time-based departure filtering must not be frozen at build time.
+export const dynamic = "force-dynamic";

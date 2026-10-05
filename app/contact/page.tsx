@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import { ContactForm } from "@/components/ContactForm";
 import { destinations } from "@/lib/data";
 import "../forms.css";
 
@@ -19,7 +19,7 @@ export default function ContactPage() {
         image={destinations[4].image}
         meta="Contact Us"
       />
-      <section className="section">
+      <section className="section surface-white">
         <div className="container form-grid">
           <div className="contact-copy">
             <p className="eyebrow">Direct contact</p>
@@ -33,9 +33,6 @@ export default function ContactPage() {
               forward with care.
             </p>
             <div className="contact-links">
-              <Link className="whatsapp-link" href="https://wa.me/910000000000">
-                <MessageCircle size={18} /> WhatsApp Safari Crafters
-              </Link>
               <Link className="whatsapp-link" href="mailto:info@safaricrafters.com">
                 info@safaricrafters.com
               </Link>
@@ -51,40 +48,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-          <form className="contact-form" action="/api/enquiry" method="post">
-            <input type="hidden" name="source" value="contact" />
-            <label>
-              Name
-              <input name="name" required />
-            </label>
-            <label>
-              Email
-              <input name="email" type="email" required />
-            </label>
-            <label>
-              Phone
-              <input name="phone" />
-            </label>
-            <label>
-              Travel window
-              <input name="travelWindow" placeholder="Month, season or flexible" />
-            </label>
-            <label>
-              Interest
-              <input name="interest" placeholder="Journeys, destinations, photo expeditions or aviation" />
-            </label>
-            <label>
-              Message
-              <textarea
-                name="message"
-                placeholder="A few lines on where you want to go, who is travelling and what kind of safari you have in mind."
-                required
-              />
-            </label>
-            <button className="button button-solid" type="submit">
-              Send Brief
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
     </>

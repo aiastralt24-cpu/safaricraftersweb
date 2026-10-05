@@ -549,20 +549,28 @@ export const journalCategories = [
 
 export const specialists: Specialist[] = ${js([
   {
-    name: "Gaurav Ramnarayanan",
-    role: "Photography Specialist",
-    expertise: "Big cats, field craft, ethical wildlife photography and private mentorship",
-    bio: "Gaurav shapes photographic journeys around patience, animal behaviour and the discipline of staying ready without disturbing the field.",
-    moment: "He is at his best when a guest has stopped chasing frames and started reading the forest.",
-    image: destinations.find((item) => item.slug === "ranthambhore")?.image ?? heroImage,
+    name: "Kairav Engineer",
+    role: "Founder of Safari Crafters",
+    expertise: "Executive Director at Astral Limited, author and wildlife photographer",
+    bio: "Kairav Engineer is an Executive Director at Astral Limited, an author, and a wildlife photographer. His long-term work in landscapes such as Ranthambore and Jawai is shaped by years of observation and an evolving understanding of animal behaviour. His conservation work includes habitat strengthening, water restoration, anti-poaching preparedness and improved infrastructure for forest guards.",
+    moment: "",
+    image: {
+      src: "/assets/founders/kairav-engineer.jpg",
+      alt: "Kairav Engineer in the field wearing Safari Crafters field clothing",
+      credit: "Safari Crafters",
+    },
   },
   {
-    name: "Sachin Vats",
-    role: "India Safari Specialist",
-    expertise: "Central India, Rajasthan, Gujarat, Himalayan tracking and family safaris",
-    bio: "Sachin designs India journeys with quiet logistics, trusted naturalists and lodges chosen for access rather than noise.",
-    moment: "He knows when a route needs one more night, one quieter gate, or one slower morning.",
-    image: destinations.find((item) => item.slug === "jawai")?.image ?? heroImage,
+    name: "Gaurav Ramnarayanan",
+    role: "Chief Operating Officer",
+    expertise: "Wildlife photography, animal behaviour, big cat tracking and safari operations",
+    bio: "Introduced to photography at age three through a camera gifted by his father, Gaurav Ramnarayanan spent much of his childhood near a tiger reserve in South India. He has travelled extensively across India and around the world, documenting wildlife, cultures and environments. As Chief Operating Officer, he translates this experience into carefully curated journeys. He is the recipient of five international photography awards from institutions in the United Kingdom and the United States.",
+    moment: "",
+    image: {
+      src: "/assets/founders/gaurav-ramnarayanan.jpg",
+      alt: "Gaurav Ramnarayanan with his camera in a granite landscape at sunset",
+      credit: "Safari Crafters",
+    },
   },
   {
     name: "Safari Crafters Field Team",

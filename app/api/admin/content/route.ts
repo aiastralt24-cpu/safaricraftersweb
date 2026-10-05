@@ -21,6 +21,7 @@ export async function PUT(request: Request) {
   const unauthorized = authorizeAdmin(request);
   if (unauthorized) return unauthorized;
 
+  if (process.env.NODE_ENV === "production") return NextResponse.json({ok:false,error:"Publish through Sanity Studio and deploy a validated build. Live filesystem editing is disabled."},{status:409});
   const content = (await request.json()) as SiteContent;
   const validation = validateContent(content);
   if (validation) {
@@ -28,7 +29,9 @@ export async function PUT(request: Request) {
   }
 
   await writeBackup();
-  await fs.writeFile(contentPath, `${JSON.stringify(content, null, 2)}\n`);
+  const temporary = `${contentPath}.${crypto.randomUUID()}.tmp`;
+  await fs.writeFile(temporary, `${JSON.stringify(content, null, 2)}\n`);
+  await fs.rename(temporary, contentPath);
   return NextResponse.json({ ok: true, updatedAt: new Date().toISOString() });
 }
 

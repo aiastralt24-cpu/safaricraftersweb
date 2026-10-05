@@ -1,7 +1,12 @@
-import type { Metadata } from "next";
+import { FunnelTracking } from "@/components/FunnelTracking";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./editorial-surfaces.css";
+import { StoreCartProvider } from "@/components/StoreCart";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
+import { organizationSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: {
@@ -17,8 +22,18 @@ export const metadata: Metadata = {
       "Private safari journeys, photo expeditions and editorial field notes shaped by named specialists.",
     url: "https://safaricrafters.com",
     siteName: "Safari Crafters",
-    type: "website"
-  }
+    type: "website",
+    images: [{ url: "/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png", width: 1261, height: 1261, alt: "Tiger family walking through Ranthambhore" }]
+  },
+  twitter: { card: "summary_large_image", title: "Safari Crafters", description: "Private, photography-led safari journeys." },
+  alternates: { canonical: "/" }
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#142015"
 };
 
 export default function RootLayout({
@@ -27,14 +42,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body>
+        <JsonLd data={organizationSchema()} />
         <a className="skip-link" href="#main">
           Skip to main content
         </a>
+        <FunnelTracking />
+        <StoreCartProvider>
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        </StoreCartProvider>
       </body>
     </html>
   );

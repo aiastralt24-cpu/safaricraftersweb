@@ -30,9 +30,9 @@
   border: var(--rule-fine);
   padding: 12px 16px;
   color: var(--brass);
-  font-size: 0.68rem;
+  font-size: var(--type-cta);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
@@ -68,23 +68,40 @@
   display: grid;
   gap: 8px;
   color: var(--charcoal);
-  font-size: 0.78rem;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
   border: 0.5px solid rgba(var(--rgb-ink), 0.2);
   background: var(--bone);
   color: var(--ink);
   padding: 12px 14px;
+  font-size: 1rem;
 }
 
 .contact-form textarea {
   min-height: 150px;
 }
+
+.contact-consent {
+  grid-template-columns: 22px minmax(0, 1fr) !important;
+  min-height: 44px;
+  align-items: start;
+  font-weight: 400 !important;
+  letter-spacing: normal !important;
+  line-height: 1.5;
+  text-transform: none !important;
+}
+
+.contact-consent input { width: 18px; min-height: 18px; height: 18px; margin: 2px 0 0; padding: 0; accent-color: var(--brass); }
+.contact-form-success { align-content: center; min-height: 420px; color: var(--ink); }
+.contact-form-success h2 { margin: 4px 0; font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; }
+.contact-form-success p { margin: 0; }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
@@ -93,10 +110,11 @@
 
 .plan-page {
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 150px 0 90px;
   background:
     linear-gradient(180deg, rgba(var(--rgb-ink), 0.62), rgba(var(--rgb-ink), 0.12) 38%, var(--bone) 72%),
-    url("/assets/safari-crafters/ranthambhore-84d7a5a3.jpg") center/cover fixed;
+    url("/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png") center/cover fixed;
 }
 
 .plan-intro {
@@ -112,7 +130,7 @@
 .plan-intro h1 {
   max-width: 880px;
   margin: 0 auto;
-  font-size: clamp(4rem, 7vw, 8rem);
+  font-size: var(--type-display);
   line-height: 0.94;
   text-wrap: balance;
 }
@@ -138,5 +156,9 @@
   .plan-page {
     padding-top: 120px;
     background-attachment: scroll;
+  }
+
+  .contact-form {
+    padding: 24px 20px;
   }
 }

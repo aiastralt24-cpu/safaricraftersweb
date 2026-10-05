@@ -1,0 +1,167 @@
+{
+  "costa-rica": {
+    "folder": "Costa Rica-2",
+    "images": [
+      {
+        "file": "_DSC7155ap.JPG",
+        "alt": "Keel-billed toucan perched on a branch in Costa Rica"
+      },
+      {
+        "file": "_DSC8003ap.JPG",
+        "alt": "Sloth hanging from a forest branch in Costa Rica"
+      },
+      {
+        "file": "_DSC9882ap.JPG",
+        "alt": "Scarlet macaw flying over green water in Costa Rica"
+      },
+      {
+        "file": "_DSC8987ap.JPG",
+        "alt": "Hummingbird feeding at red flowers in Costa Rica"
+      },
+      {
+        "file": "_DSC8091-Enhanced BGap.JPG",
+        "alt": "King vultures spreading their wings in Costa Rica"
+      },
+      {
+        "file": "_DSC0386-Enhancedap.JPG",
+        "alt": "Red and black bird perched in the Costa Rican forest"
+      },
+      {
+        "file": "_DSC4064ap.JPG",
+        "alt": "Toucan on a moss-covered branch in Costa Rica"
+      }
+    ]
+  },
+  "colombia": {
+    "folder": "Colombia-2",
+    "images": [
+      {
+        "file": "_DSC1928-2.jpg",
+        "alt": "Andean cock-of-the-rock perched in Colombia"
+      },
+      {
+        "file": "_DSC0252.jpg",
+        "alt": "Colourful mountain toucan on a mossy branch in Colombia"
+      },
+      {
+        "file": "_DSC9533.jpg",
+        "alt": "Spotted wild cat standing on a fallen tree in Colombia"
+      },
+      {
+        "file": "_DSC0711 copyap.jpg",
+        "alt": "Multicoloured tanager on a mossy branch in Colombia"
+      },
+      {
+        "file": "_DSC2671.jpg",
+        "alt": "Mountain bird perched against green forest in Colombia"
+      },
+      {
+        "file": "_DSC8782.jpg",
+        "alt": "Brown forest bird among moss in Colombia"
+      },
+      {
+        "file": "_DSC1900.jpg",
+        "alt": "Hummingbird approaching hanging red flowers in Colombia"
+      }
+    ]
+  },
+  "pantanal": {
+    "folder": "Brazil-2",
+    "images": [
+      {
+        "file": "Pantanal 2/_DSC4959.jpg",
+        "alt": "Jaguars on a sandy riverbank in the Pantanal"
+      },
+      {
+        "file": "Pantanal 2/_DSC9021.jpg",
+        "alt": "Jaguar swimming through a Pantanal river"
+      },
+      {
+        "file": "Pantanal 2/_DSC8833.jpg",
+        "alt": "Giant anteater walking through Pantanal grassland"
+      },
+      {
+        "file": "Pantanal 2/_DSC0837.jpg",
+        "alt": "Toco toucan perched in the Pantanal"
+      },
+      {
+        "file": "Pantanal/_DSC1920.JPG",
+        "alt": "Jaguar resting on a branch over the river in the Pantanal"
+      },
+      {
+        "file": "Pantanal/_DSC5961.JPG",
+        "alt": "Red and green macaws flying past a rock face in Brazil"
+      },
+      {
+        "file": "Pantanal/_DSC5955.JPG",
+        "alt": "Armadillo walking through the Pantanal"
+      }
+    ]
+  },
+  "atlantic-rainforest": {
+    "folder": "Brazil-2",
+    "images": [
+      {
+        "file": "Atlantic Forest/_DSC5157ap.JPG",
+        "alt": "Toucan perched on a mossy branch in Brazil’s Atlantic Forest"
+      },
+      {
+        "file": "Atlantic Forest/_DSC4156.JPG",
+        "alt": "Toucan on a branch against the Atlantic Forest canopy"
+      },
+      {
+        "file": "Atlantic Forest/_DSC4858.JPG",
+        "alt": "Black and white bird perched in Brazil’s Atlantic Forest"
+      },
+      {
+        "file": "Atlantic Forest/_DSC6698.JPG",
+        "alt": "Large forest eagle among leafy branches in Brazil"
+      },
+      {
+        "file": "Atlantic Forest/_DSC7294.JPG",
+        "alt": "Toucan perched beside a mossy tree in the Atlantic Forest"
+      },
+      {
+        "file": "Atlantic Forest/_DSC1737.JPG",
+        "alt": "Red-headed bird at a tree hollow in the Atlantic Forest"
+      },
+      {
+        "file": "Atlantic Forest/_DSC1262 copyap.JPG",
+        "alt": "Toucan with a long dark bill in Brazil’s Atlantic Forest"
+      }
+    ]
+  },
+  "patagonia": {
+    "folder": "Chile",
+    "images": [
+      {
+        "file": "Patagonia/_DSC6974.JPG",
+        "alt": "Puma resting beneath the mountain peaks of Patagonia"
+      },
+      {
+        "file": "Patagonia/_DSC1882.JPG",
+        "alt": "Puma in grassland below snow-covered Patagonian mountains"
+      },
+      {
+        "file": "Patagonia/_DSC5677.JPG",
+        "alt": "Puma walking beside water in Patagonia"
+      },
+      {
+        "file": "Patagonia/_DSC5695.JPG",
+        "alt": "Puma crossing snow-dusted scrub in Patagonia"
+      },
+      {
+        "file": "Patagonia/_DSC8553.JPG",
+        "alt": "Guanaco silhouetted against clouds in Patagonia"
+      },
+      {
+        "file": "Patagonia/_DSC6300.JPG",
+        "alt": "Puma standing in golden Patagonian grassland"
+      },
+      {
+        "file": "Patagonia/_DSC8617.JPG",
+        "alt": "Skunk foraging in Patagonian grassland"
+      }
+    ]
+  }
+}
