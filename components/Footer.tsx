@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Mail, MessageCircle } from "lucide-react";
+import { Facebook, Instagram, Mail, MessageCircle } from "lucide-react";
 import { BrandMark } from "@/components/BrandMark";
 import { journalCategories, journeyCategories, navItems } from "@/lib/data";
 import "./Footer.css";
@@ -21,8 +21,11 @@ export function Footer() {
             <Link href="/contact" aria-label="WhatsApp Safari Crafters">
               <MessageCircle size={18} />
             </Link>
-            <Link href="/journal" aria-label="Safari Crafters Instagram stories">
+            <Link href="https://www.instagram.com/safaricrafters/" target="_blank" rel="noopener noreferrer" aria-label="Safari Crafters on Instagram (opens in a new tab)">
               <Instagram size={18} />
+            </Link>
+            <Link href="https://www.facebook.com/safaricrafters/" target="_blank" rel="noopener noreferrer" aria-label="Safari Crafters on Facebook (opens in a new tab)">
+              <Facebook size={18} />
             </Link>
           </div>
         </div>
