@@ -12,7 +12,7 @@ export type EnquiryRecord = {
   payload: Record<string, unknown>;
 };
 
-export type EnquiryFilters = { query?: string; status?: string };
+export type EnquiryFilters = { query?: string; status?: string; trash?: boolean };
 
 export async function getEnquiries(filters: EnquiryFilters = {}) {
   const url = process.env.SUPABASE_URL;
@@ -23,6 +23,7 @@ export async function getEnquiries(filters: EnquiryFilters = {}) {
   endpoint.searchParams.set("select", "id,enquiry_id,specialist,source,status,created_at,payload");
   endpoint.searchParams.set("order", "created_at.desc");
   endpoint.searchParams.set("limit", "250");
+  endpoint.searchParams.set("payload->>_deletedAt", filters.trash ? "not.is.null" : "is.null");
 
   const request = () => fetch(endpoint, {
     headers: { apikey: key, Authorization: `Bearer ${key}` },

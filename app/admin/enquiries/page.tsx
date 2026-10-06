@@ -7,13 +7,13 @@ import { enquiryStatus, getEnquiries, payloadText, type EnquiryRecord } from "@/
 import "../../simple.css";
 import "../admin.css";
 
-type Params = { q?: string; status?: string; selected?: string };
+type Params = { q?: string; status?: string; selected?: string; view?: string; notice?: string };
 
 function formatReceived(value: string) {
   return new Intl.DateTimeFormat("en-IN", { dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Kolkata" }).format(new Date(value));
 }
 
-function Detail({ enquiry }: { enquiry: EnquiryRecord }) {
+function Detail({ enquiry, trash }: { enquiry: EnquiryRecord; trash: boolean }) {
   const p = enquiry.payload;
   const email = payloadText(p, "email", "");
   const nights = payloadText(p, "nights", "");
@@ -39,9 +39,16 @@ function Detail({ enquiry }: { enquiry: EnquiryRecord }) {
         <div><span>Length</span><strong>{nights ? `${nights} nights` : "Not provided"}</strong></div>
         <div><span>Preferred contact</span><strong>{payloadText(p, "contactPreference")}</strong></div>
       </div>
-      <form action="/api/admin/enquiries" method="post"><input type="hidden" name="id" value={enquiry.enquiry_id}/><label>Lead status <select name="status" defaultValue={enquiryStatus(enquiry)}>{["new","contacted","qualified","booked","closed"].map(status=><option key={status}>{status}</option>)}</select></label><button type="submit" className="button">Save status</button></form>
+      {!trash ? <form className="enquiry-status-form" action="/admin/enquiries/actions" method="post"><input type="hidden" name="id" value={enquiry.enquiry_id}/><label>Lead status <select name="status" defaultValue={enquiryStatus(enquiry)}>{["new","contacted","qualified","booked","closed"].map(status=><option key={status}>{status}</option>)}</select></label><button type="submit" className="button">Save status</button></form> : null}
       <section className="enquiry-notes"><p className="admin-label">Guest notes</p><p>{payloadText(p, "notes", "No additional notes were supplied.")}</p></section>
       {email ? <a className="button button-solid enquiry-reply" href={`mailto:${email}?subject=${encodeURIComponent(`${enquiry.enquiry_id} · Safari Crafters`)}`}>Reply to guest</a> : null}
+      {trash ? <form action="/admin/enquiries/actions" method="post" className="enquiry-delete">
+        <input type="hidden" name="id" value={enquiry.enquiry_id} /><input type="hidden" name="action" value="restore" />
+        <p>This lead is in Trash. Restore it to return it to your inbox.</p><button className="button" type="submit">Restore lead</button>
+      </form> : <details className="enquiry-delete"><summary>Delete lead</summary>
+        <p>Move {payloadText(p, "name")} to Trash? You can restore this lead later.</p>
+        <form action="/admin/enquiries/actions" method="post"><input type="hidden" name="id" value={enquiry.enquiry_id} /><input type="hidden" name="action" value="trash" /><input type="hidden" name="confirm" value="yes" /><button className="button enquiry-danger" type="submit">Confirm move to Trash</button></form>
+      </details>}
     </aside>
   );
 }
@@ -50,9 +57,11 @@ export default async function EnquiriesPage({ searchParams }: { searchParams: Pr
   const session = (await cookies()).get(ADMIN_SESSION_COOKIE)?.value;
   if (!isValidAdminSession(session)) redirect("/admin/login");
   const params = await searchParams;
+  const trash = params.view === "trash";
+  const notices: Record<string, string> = { saved: "Lead status updated.", deleted: "Lead moved to Trash. You can restore it from the Trash tab.", restored: "Lead restored to your inbox.", missing: "This lead could not be found.", trashed: "Restore this lead before changing its status.", conflict: "This lead changed while you were editing. Please review it and try again.", error: "The change could not be saved. Please try again." };
   let enquiries: EnquiryRecord[] = [];
   let loadError = "";
-  try { enquiries = await getEnquiries({ query: params.q, status: params.status }); }
+  try { enquiries = await getEnquiries({ query: params.q, status: params.status, trash }); }
   catch (error) { loadError = error instanceof Error ? error.message : "Enquiries could not be loaded."; }
 
   const selected = enquiries.find((item) => item.enquiry_id === params.selected) || enquiries[0];
@@ -73,20 +82,24 @@ export default async function EnquiriesPage({ searchParams }: { searchParams: Pr
           <div><h1>Enquiries</h1><p>Guest briefs submitted through Safari Crafters.</p></div>
           <dl><div><dt>Total shown</dt><dd>{enquiries.length}</dd></div><div><dt>New</dt><dd>{counts.new || 0}</dd></div><div><dt>Contacted</dt><dd>{counts.contacted || 0}</dd></div></dl>
         </section>
+        <nav className="enquiry-tabs" aria-label="Lead folders"><Link href="/admin/enquiries" aria-current={!trash ? "page" : undefined}>Inbox</Link><Link href="/admin/enquiries?view=trash" aria-current={trash ? "page" : undefined}>Trash</Link></nav>
+        {params.notice && notices[params.notice] ? <p className="enquiry-notice" role={params.notice === "error" || params.notice === "conflict" ? "alert" : "status"}>{notices[params.notice]}</p> : null}
         <form className="enquiry-filters" method="get">
-          <label><Search size={18} /><span className="sr-only">Search enquiries</span><input name="q" defaultValue={params.q} placeholder="Search guest, reference, email or region" /></label>
+          {trash ? <input type="hidden" name="view" value="trash" /> : null}
+          <label className="enquiry-search"><Search size={18} aria-hidden="true" /><input aria-label="Search enquiries" name="q" defaultValue={params.q} placeholder="Search guest, reference, email or region" /></label>
           <select name="status" defaultValue={params.status || "all"} aria-label="Filter by status"><option value="all">All statuses</option><option value="new">New</option><option value="contacted">Contacted</option><option value="qualified">Qualified</option><option value="booked">Booked</option><option value="closed">Closed</option></select>
           <button className="button" type="submit">Apply filters</button>
-          <Link className="enquiry-refresh" href="/admin/enquiries"><RefreshCw size={17} /> Refresh</Link>
+          <Link className="enquiry-refresh" href={trash ? "/admin/enquiries?view=trash" : "/admin/enquiries"}><RefreshCw size={17} /> Refresh</Link>
         </form>
         {loadError ? <section className="admin-state admin-error-state"><h2>Inbox unavailable</h2><p>{loadError}</p><p>Check the Supabase environment variables and database migration.</p></section> : null}
-        {!loadError && !enquiries.length ? <section className="admin-state"><Inbox size={30} /><h2>No enquiries found</h2><p>New guest briefs will appear here after they are successfully stored.</p></section> : null}
+        {!loadError && !enquiries.length ? <section className="admin-state"><Inbox size={30} /><h2>{trash ? "No leads in Trash" : "No enquiries found"}</h2><p>{trash ? "Deleted leads will appear here and can be restored." : "New guest briefs will appear here after they are successfully stored."}</p></section> : null}
         {enquiries.length ? <div className="enquiry-workspace">
           <section className="enquiry-list" aria-label="Enquiry list">
             <div className="enquiry-list-head"><span>Guest</span><span>Journey / region</span><span>Received</span></div>
             {enquiries.map((enquiry) => {
               const p = enquiry.payload;
               const href = new URLSearchParams();
+              if (trash) href.set("view", "trash");
               if (params.q) href.set("q", params.q);
               if (params.status) href.set("status", params.status);
               href.set("selected", enquiry.enquiry_id);
@@ -97,7 +110,7 @@ export default async function EnquiriesPage({ searchParams }: { searchParams: Pr
               </Link>;
             })}
           </section>
-          {selected ? <Detail enquiry={selected} /> : null}
+          {selected ? <Detail key={selected.enquiry_id} enquiry={selected} trash={trash} /> : null}
         </div> : null}
       </div>
     </div>
