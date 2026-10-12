@@ -107,6 +107,21 @@ export function formatTeamEnquiryEmail(payload: EnquiryPayload & { sourceType?: 
 }
 
 export async function deliverEnquiryEmails() {
+  const result = { processed: 0, failed: 0 };
+  // The database leases two notifications at a time (one enquiry's emails).
+  // Continue past older jobs so each submission can also deliver its own emails.
+  // Keep claiming bounded and leave time for the final batch within maxDuration.
+  const claimDeadline = Date.now() + 5000;
+  for (let batch = 0; batch < 10; batch++) {
+    const next = await deliverEnquiryEmailBatch();
+    result.processed += next.processed;
+    result.failed += next.failed;
+    if (!next.processed || Date.now() >= claimDeadline) break;
+  }
+  return result;
+}
+
+async function deliverEnquiryEmailBatch() {
   const response = await database("rpc/claim_safari_notifications", { method:"POST", body:"{}" });
   if (!response.ok) throw new Error("Notification queue unavailable");
   const jobs = await response.json() as {id:number; enquiry_id:string; kind:string; attempts:number; lease_token:string; payload:EnquiryPayload}[];

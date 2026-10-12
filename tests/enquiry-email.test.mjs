@@ -49,8 +49,13 @@ test('notification delivery sends the curated team email and retains reply-to an
   const saved=Object.fromEntries(keys.map(key=>[key,process.env[key]]));
   Object.assign(process.env,{SUPABASE_URL:'https://db.example.test',SUPABASE_SERVICE_ROLE_KEY:'test',ENQUIRY_FROM_EMAIL:'from@example.test',ENQUIRY_TO_EMAIL:'team@example.test',RESEND_API_KEY:'test'});
   let sent;
+  let claimed = false;
   globalThis.fetch=async (url,options) => {
-    if(String(url).includes('claim_safari_notifications')) return Response.json([{id:1,enquiry_id:'SC-test',kind:'team',attempts:0,lease_token:'lease',payload:lead}]);
+    if(String(url).includes('claim_safari_notifications')) {
+      if (claimed) return Response.json([]);
+      claimed = true;
+      return Response.json([{id:1,enquiry_id:'SC-test',kind:'team',attempts:0,lease_token:'lease',payload:lead}]);
+    }
     if(String(url)==='https://api.resend.com/emails') {sent={body:JSON.parse(options.body),headers:options.headers}; return Response.json({id:'email-test'});}
     if(String(url).includes('safari_notification_outbox')) return new Response(null,{status:204});
     throw new Error('Unexpected network request');
@@ -65,5 +70,37 @@ test('notification delivery sends the curated team email and retains reply-to an
   } finally {
     globalThis.fetch=savedFetch;
     for(const key of keys) {if(saved[key]===undefined) delete process.env[key]; else process.env[key]=saved[key];}
+  }
+});
+
+
+test('one invocation delivers older queued enquiries and the current test enquiry', async () => {
+  const savedFetch = globalThis.fetch;
+  const keys = ['SUPABASE_URL','SUPABASE_SERVICE_ROLE_KEY','ENQUIRY_FROM_EMAIL','ENQUIRY_TO_EMAIL','RESEND_API_KEY'];
+  const saved = Object.fromEntries(keys.map(key => [key, process.env[key]]));
+  Object.assign(process.env, {SUPABASE_URL:'https://db.example.test',SUPABASE_SERVICE_ROLE_KEY:'test',ENQUIRY_FROM_EMAIL:'from@example.test',ENQUIRY_TO_EMAIL:'team@example.test',RESEND_API_KEY:'test'});
+  const sent = [];
+  let claims = 0;
+  globalThis.fetch = async (url, options) => {
+    if (String(url).includes('claim_safari_notifications')) {
+      claims++;
+      if (claims > 2) return Response.json([]);
+      const name = claims === 1 ? 'Older guest' : 'test lead';
+      return Response.json(['team','guest'].map((kind,i) => ({id:claims*2+i,enquiry_id:`SC-${claims}`,kind,attempts:1,lease_token:'lease',payload:{...lead,name}})));
+    }
+    if (String(url) === 'https://api.resend.com/emails') {sent.push(JSON.parse(options.body));return Response.json({id:'test'});}
+    if (String(url).includes('safari_notification_outbox')) return new Response(null,{status:204});
+    throw new Error('Unexpected network request');
+  };
+  try {
+    assert.deepEqual(await deliverEnquiryEmails(), {processed:4,failed:0});
+    assert.equal(claims,3);
+    assert.equal(sent.length,4);
+    assert.match(sent[2].subject,/New enquiry: test lead/);
+    assert.match(sent[2].text,/Name: test lead/);
+    assert.ok(!sent[2].text.includes('Older guest'));
+  } finally {
+    globalThis.fetch = savedFetch;
+    for (const key of keys) {if(saved[key] === undefined) delete process.env[key];else process.env[key]=saved[key];}
   }
 });
