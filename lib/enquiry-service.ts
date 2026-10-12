@@ -131,7 +131,7 @@ async function deliverEnquiryEmailBatch() {
       const from = process.env.ENQUIRY_FROM_EMAIL;
       const to = job.kind === "guest"
         ? [job.payload.email]
-        : [...new Set((process.env.ENQUIRY_TO_EMAIL || "").split(",").map(email => email.trim()).filter(Boolean))];
+        : [...new Set([...(process.env.ENQUIRY_TO_EMAIL || "").split(","), "info@safaricrafters.com"].map(email => email.trim().toLowerCase()).filter(Boolean))];
       if (!from || !to.length || !process.env.RESEND_API_KEY) throw new Error("Email configuration missing");
       const message = job.kind === "guest"
         ? {

@@ -47,7 +47,7 @@ test('notification delivery sends the curated team email and retains reply-to an
   const savedFetch=globalThis.fetch;
   const keys=['SUPABASE_URL','SUPABASE_SERVICE_ROLE_KEY','ENQUIRY_FROM_EMAIL','ENQUIRY_TO_EMAIL','RESEND_API_KEY'];
   const saved=Object.fromEntries(keys.map(key=>[key,process.env[key]]));
-  Object.assign(process.env,{SUPABASE_URL:'https://db.example.test',SUPABASE_SERVICE_ROLE_KEY:'test',ENQUIRY_FROM_EMAIL:'from@example.test',ENQUIRY_TO_EMAIL:'team@example.test',RESEND_API_KEY:'test'});
+  Object.assign(process.env,{SUPABASE_URL:'https://db.example.test',SUPABASE_SERVICE_ROLE_KEY:'test',ENQUIRY_FROM_EMAIL:'from@example.test',ENQUIRY_TO_EMAIL:'team@example.test, INFO@SAFARICRAFTERS.COM, team@example.test',RESEND_API_KEY:'test'});
   let sent;
   let claimed = false;
   globalThis.fetch=async (url,options) => {
@@ -65,7 +65,7 @@ test('notification delivery sends the curated team email and retains reply-to an
     assert.equal(sent.body.subject,formatTeamEnquiryEmail(lead,'SC-test').subject);
     assert.equal(sent.body.text,formatTeamEnquiryEmail(lead,'SC-test').text);
     assert.equal(sent.body.reply_to,lead.email);
-    assert.deepEqual(sent.body.to,['team@example.test']);
+    assert.deepEqual(sent.body.to,['team@example.test','info@safaricrafters.com']);
     assert.equal(sent.headers['Idempotency-Key'],'SC-test-team');
   } finally {
     globalThis.fetch=savedFetch;
@@ -96,6 +96,8 @@ test('one invocation delivers older queued enquiries and the current test enquir
     assert.deepEqual(await deliverEnquiryEmails(), {processed:4,failed:0});
     assert.equal(claims,3);
     assert.equal(sent.length,4);
+    assert.deepEqual(sent[0].to,['team@example.test','info@safaricrafters.com']);
+    assert.deepEqual(sent[1].to,[lead.email]);
     assert.match(sent[2].subject,/New enquiry: test lead/);
     assert.match(sent[2].text,/Name: test lead/);
     assert.ok(!sent[2].text.includes('Older guest'));
