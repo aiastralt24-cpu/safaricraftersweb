@@ -2,7 +2,9 @@
 
 import { trackFunnel } from "@/lib/funnel-client";
 import { EnquiryHoneypot } from "@/components/EnquiryHoneypot";
-import { enquiryHeaders } from "@/lib/enquiry-client";
+import { enquiryHeaders, validatePhoneInput } from "@/lib/enquiry-client";
+import { EnquiryPhoneInput } from "@/components/EnquiryPhoneInput";
+import { getPhoneError } from "@/lib/phone-validation";
 
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { Check } from "lucide-react";
@@ -153,13 +155,15 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
       return;
     }
 
+    if (!validatePhoneInput(event.currentTarget)) return;
+
     const firstInvalidStep = requiredStepValidity.findIndex((valid) => !valid);
     if (firstInvalidStep !== -1) {
       setStep(firstInvalidStep);
       setSubmitError("Please complete this step before sending your private brief.");
       if (firstInvalidStep === 2) {
         setFieldErrors({
-          ...(!form.phone.trim() ? { phone: "Please enter your phone number." } : {}),
+          ...(getPhoneError(form.phone) ? { phone: getPhoneError(form.phone) } : {}),
           ...(!form.name.trim() ? { name: "Please enter your name." } : {}),
           ...(!/\S+@\S+\.\S+/.test(form.email) ? { email: "Please enter a valid email address." } : {})
         });
@@ -201,7 +205,7 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
   const requiredStepValidity = [
     Boolean(form.region) && form.experiences.length > 0,
     form.months.length > 0 && Boolean(form.year),
-    Boolean(form.phone.trim()) && Boolean(form.name.trim()) && /\S+@\S+\.\S+/.test(form.email)
+    !getPhoneError(form.phone) && Boolean(form.name.trim()) && /\S+@\S+\.\S+/.test(form.email)
   ];
   const allRequiredStepsValid = requiredStepValidity.every(Boolean);
   const stepValid = step === steps.length - 1
@@ -260,7 +264,7 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
             <div className="field-grid">
               <label>Name<input required name="name" autoComplete="name" value={form.name} aria-invalid={Boolean(fieldErrors.name)} onChange={event=>setForm(current=>({...current,name:event.target.value}))}/>{fieldErrors.name && <span className="field-error">{fieldErrors.name}</span>}</label>
               <label>Email<input required name="email" type="email" autoComplete="email" value={form.email} aria-invalid={Boolean(fieldErrors.email)} onChange={event=>setForm(current=>({...current,email:event.target.value}))}/>{fieldErrors.email && <span className="field-error">{fieldErrors.email}</span>}</label>
-              <label>WhatsApp / phone (required)<input required name="phone" type="tel" inputMode="tel" autoComplete="tel" value={form.phone} aria-invalid={Boolean(fieldErrors.phone)} onChange={event=>setForm(current=>({...current,phone:event.target.value}))}/>{fieldErrors.phone && <span className="field-error">{fieldErrors.phone}</span>}</label>
+              <EnquiryPhoneInput label="WhatsApp / phone (required)" value={form.phone} error={fieldErrors.phone} onChange={event=>{setForm(current=>({...current,phone:event.target.value}));setFieldErrors(current=>({...current,phone:""}));}} />
             </div>
             <details className="planner-optional"><summary>Optional preferences</summary>
               <p>Share anything else that will help us plan.</p>

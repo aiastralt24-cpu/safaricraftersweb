@@ -1,3 +1,17 @@
+import { getPhoneError } from "./phone-validation";
+
+export function validatePhoneInput(form: HTMLFormElement): boolean {
+  const input = form.elements.namedItem("phone") as HTMLInputElement;
+  const error = getPhoneError(input.value);
+  input.setCustomValidity(error);
+  if (error) {
+    input.reportValidity();
+    input.focus();
+    return false;
+  }
+  return true;
+}
+
 const inMemoryKeys = new Map<string,string>();
 // Keep one key for the same attempted submission, including network retries/reloads.
 // Only the random key and a digest are stored; no contact details are persisted.

@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { formatTeamEnquiryEmail, deliverEnquiryEmails } from '../lib/enquiry-service.ts';
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+const { formatTeamEnquiryEmail, deliverEnquiryEmails } = require('../lib/enquiry-service.ts');
 
 const lead = {
   source:'planner', sourceType:'fixed-expedition',

@@ -1,7 +1,8 @@
 "use client";
 
 import { EnquiryHoneypot } from "@/components/EnquiryHoneypot";
-import { enquiryHeaders } from "@/lib/enquiry-client";
+import { enquiryHeaders, validatePhoneInput } from "@/lib/enquiry-client";
+import { EnquiryPhoneInput } from "@/components/EnquiryPhoneInput";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
@@ -47,7 +48,7 @@ export default function InternationalOrder() {
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (submitting) return;
+    if (submitting || !validatePhoneInput(event.currentTarget)) return;
     const values = new FormData(event.currentTarget);
     setSubmitting(true);
     setError("");
@@ -116,7 +117,7 @@ export default function InternationalOrder() {
                 <p className="store-dialog-intro">Share your details and our team will contact you by email with payment and shipping options for your country.</p>
                 <label>Name<input name="name" autoComplete="name" required /></label>
                 <label>Email address<input name="email" type="email" inputMode="email" autoComplete="email" required /></label>
-                <label>Phone number (required)<input name="phone" type="tel" inputMode="tel" autoComplete="tel" required /></label>
+                <EnquiryPhoneInput />
                 <p className="store-dialog-consent">By submitting, you agree that Safari Crafters may use these details to respond to this request.</p>
                 {error ? <p className="store-dialog-error" role="alert">{error}</p> : null}
                 <button className="store-dialog-submit" type="submit" disabled={submitting}>{submitting ? "Sending…" : "Request international assistance"}</button>
