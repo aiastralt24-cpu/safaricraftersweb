@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import type { EnquiryPayload } from "./data";
+import { getPhoneError } from "./phone-validation";
 
 export function validateEnquiry(value: unknown) {
   const fields: Record<string, string> = {};
@@ -19,7 +20,8 @@ export function validateEnquiry(value: unknown) {
   if (input.source !== "planner") fields.source = "Invalid source.";
   if (!payload.name) fields.name = "Please share your name.";
   if (typeof payload.email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) fields.email = "Please use a valid email address.";
-  if (!payload.phone && !fields.phone) fields.phone = "Please enter your phone number.";
+  const phoneError = getPhoneError(input.phone);
+  if (phoneError) fields.phone = phoneError;
   if (!payload.region) fields.region = "Please choose a region.";
   if (input.consent !== true) fields.consent = "Consent is required so we can respond.";
   if (input.website) fields.website = "Unable to accept this submission.";

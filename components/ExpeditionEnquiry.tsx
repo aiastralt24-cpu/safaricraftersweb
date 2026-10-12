@@ -2,7 +2,8 @@
 
 import { trackFunnel } from "@/lib/funnel-client";
 import { EnquiryHoneypot } from "@/components/EnquiryHoneypot";
-import { enquiryHeaders } from "@/lib/enquiry-client";
+import { enquiryHeaders, validatePhoneInput } from "@/lib/enquiry-client";
+import { EnquiryPhoneInput } from "@/components/EnquiryPhoneInput";
 
 import { FormEvent, useState } from "react";
 import { Check } from "lucide-react";
@@ -26,7 +27,7 @@ export function ExpeditionEnquiry({ title, slug, departure, mentor, region, depa
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (submitting) return;
+    if (submitting || !validatePhoneInput(event.currentTarget)) return;
     trackFunnel("enquiry_started");
     setSubmitting(true);
     setError("");
@@ -96,7 +97,7 @@ export function ExpeditionEnquiry({ title, slug, departure, mentor, region, depa
         {departureOptions.length > 1 && <label className="wide">Preferred departure<select value={selectedDeparture} onChange={event=>setSelectedDeparture(event.target.value)}>{departureOptions.map(date=><option key={date}>{date}</option>)}</select></label>}
         <label>Name<input name="name" autoComplete="name" required /></label>
         <label>Email<input name="email" type="email" inputMode="email" autoComplete="email" required /></label>
-        <label>Phone number (required)<input name="phone" type="tel" inputMode="tel" autoComplete="tel" required /></label>
+        <EnquiryPhoneInput />
         <label className="expedition-travellers">Travellers<select name="travellers" defaultValue="1">{[1,2,3,4,5,6,7,8].map((count) => <option key={count}>{count}</option>)}</select></label>
         <label className="wide"><span className="expedition-notes-label">Question or note <span>(optional)</span></span><textarea name="notes" rows={2} /></label>
         <label className="wide expedition-consent"><input name="consent" type="checkbox" required /><span>I consent to Safari Crafters using these details to respond to this expedition enquiry.</span></label>
