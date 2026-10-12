@@ -71,14 +71,14 @@ export default function InternationalOrder() {
           contactPreference: "Email",
           name: String(values.get("name") || ""),
           email: String(values.get("email") || ""),
-          phone: "",
+          phone: String(values.get("phone") || ""),
           city: "",
           notes: "Please contact this guest about international payment and dispatch for Ghosts of the Granite Hills.",
           consent: true
         };
       const response = await fetch("/api/enquiry", {method:"POST",headers:await enquiryHeaders(payload),body:JSON.stringify(payload)});
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "We could not send your request. Please try again.");
+      if (!response.ok) throw new Error(result.fields?.phone || result.error || "We could not send your request. Please try again.");
       setReference(result.enquiryId);
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "We could not send your request. Please try again.");
@@ -116,6 +116,7 @@ export default function InternationalOrder() {
                 <p className="store-dialog-intro">Share your details and our team will contact you by email with payment and shipping options for your country.</p>
                 <label>Name<input name="name" autoComplete="name" required /></label>
                 <label>Email address<input name="email" type="email" inputMode="email" autoComplete="email" required /></label>
+                <label>Phone number (required)<input name="phone" type="tel" inputMode="tel" autoComplete="tel" required /></label>
                 <p className="store-dialog-consent">By submitting, you agree that Safari Crafters may use these details to respond to this request.</p>
                 {error ? <p className="store-dialog-error" role="alert">{error}</p> : null}
                 <button className="store-dialog-submit" type="submit" disabled={submitting}>{submitting ? "Sending…" : "Request international assistance"}</button>

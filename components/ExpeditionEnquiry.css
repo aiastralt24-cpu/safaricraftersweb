@@ -51,7 +51,7 @@
 .expedition-selection div,.expedition-selection div:nth-child(even) { display:grid; grid-template-columns:86px minmax(0,1fr); gap:14px; border-left:0; padding:12px 0; }
 .expedition-selection dt { font-size:10px; letter-spacing:.09em; padding-top:3px; }
 .expedition-selection dd { margin:0; font-size:13px; line-height:1.5; }
-.expedition-enquiry form { grid-template-columns:minmax(0,1fr) minmax(0,1fr) 90px; gap:18px 12px; }
+.expedition-enquiry form { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 12px; }
 .expedition-enquiry label { font-size:10px; letter-spacing:.1em; gap:8px; }
 .expedition-notes-label { display:flex; gap:6px; align-items:baseline; font-weight:700!important; }
 .expedition-notes-label > span { font-weight:400; letter-spacing:0; text-transform:none; }
