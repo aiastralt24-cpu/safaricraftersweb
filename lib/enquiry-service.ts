@@ -46,6 +46,66 @@ export async function acceptEnquiry(payload: EnquiryPayload, submissionId: strin
   return { status:200, enquiryId:result.enquiry_id as string, specialist:result.specialist as string };
 }
 
+// Notification copy is deliberately curated: stored metadata stays in the portal.
+export function formatTeamEnquiryEmail(payload: EnquiryPayload & { sourceType?: string; departure?: string }, reference: string) {
+  const placeholders = new Set([
+    "to confirm", "to discuss", "prefer to discuss", "not decided yet", "not applicable",
+    "as per confirmed programme", "flexible", "current", "surprise me", "open to suggestions",
+    "selected departure", "auto-route"
+  ]);
+  const detail = (value: unknown): string => {
+    if (Array.isArray(value)) return [...new Set(value.map(detail).filter(Boolean))].join(", ");
+    if (typeof value !== "string") return "";
+    const text = value.trim();
+    return placeholders.has(text.toLowerCase()) ? "" : text;
+  };
+  const singleLine = (value: string) => value.replace(/[\r\n]+/g, " ").trim();
+  const contact = [
+    ["Name", payload.name], ["Phone", payload.phone], ["Email", payload.email], ["City", payload.city]
+  ].filter(([, value]) => typeof value === "string" && value.trim())
+    .map(([label, value]) => `${label}: ${singleLine(value!)}`);
+  const isContact = payload.sourceType === "contact";
+  const isStore = payload.sourceType === "store-international";
+  const departure = detail(payload.departure);
+  let journey = isContact ? "" : detail(payload.sourceLabel);
+  if (departure && journey.endsWith(` · ${departure}`)) journey = journey.slice(0, -(` · ${departure}`).length);
+  const dates = departure || detail(payload.months);
+  const details: string[] = [];
+  const add = (label: string, value: unknown) => {
+    const text = detail(value);
+    if (text) details.push(`${label}: ${singleLine(text)}`);
+  };
+  add("Journey", journey);
+  if (!isContact && !isStore && payload.region !== "Photo Expedition") add("Destination", payload.region);
+  add("Travel dates", dates);
+  const year = detail(payload.year);
+  if (year && !dates.includes(year)) add("Year", year);
+  add("Travellers", payload.travellers);
+  const nights = detail(payload.nights);
+  if (nights) add("Duration", /^\d+$/.test(nights) ? `${nights} ${nights === "1" ? "night" : "nights"}` : nights);
+  // Contact and store forms populate these fields internally, not from guest choices.
+  if (!isContact && !isStore) {
+    add("Safari style", payload.types);
+    add("Interests", payload.experiences);
+    add("Occasion", payload.occasion);
+    if (detail(payload.flexibility) !== dates) add("Date flexibility", payload.flexibility);
+    add("Budget per person", payload.investment);
+    add("Preferred contact", payload.contactPreference);
+  }
+  add("Accommodation", payload.accommodation);
+  const notes = typeof payload.notes === "string" ? payload.notes.trim() : "";
+  const text = [
+    "New Safari Crafters enquiry",
+    contact.join("\n"),
+    details.length ? `Enquiry details\n${details.join("\n")}` : "",
+    notes ? `Guest message\n${notes}` : "",
+    "View and manage this lead: https://www.safaricrafters.com/admin/enquiries",
+    `Reference: ${reference}`
+  ].filter(Boolean).join("\n\n");
+  const subject = `New enquiry: ${singleLine(payload.name)}${journey ? ` · ${singleLine(journey)}` : " · Safari Crafters"}`.slice(0, 200);
+  return { subject, text };
+}
+
 export async function deliverEnquiryEmails() {
   const response = await database("rpc/claim_safari_notifications", { method:"POST", body:"{}" });
   if (!response.ok) throw new Error("Notification queue unavailable");
@@ -58,10 +118,13 @@ export async function deliverEnquiryEmails() {
         ? [job.payload.email]
         : [...new Set((process.env.ENQUIRY_TO_EMAIL || "").split(",").map(email => email.trim()).filter(Boolean))];
       if (!from || !to.length || !process.env.RESEND_API_KEY) throw new Error("Email configuration missing");
-      const body = job.kind === "guest"
-        ? `Dear ${job.payload.name},\n\nYour enquiry has been saved.\nReference: ${job.enquiry_id}\nJourney: ${job.payload.sourceLabel || job.payload.region}\n\nOur team will review your request and respond with the next steps.\n\nSafari Crafters`
-        : [`Reference: ${job.enquiry_id}`, ...Object.entries(job.payload).map(([key,value])=>`${key}: ${Array.isArray(value)?value.join(", "):value}`)].join("\n");
-      const email = await fetch("https://api.resend.com/emails", { method:"POST", signal:AbortSignal.timeout(10000), headers:{Authorization:`Bearer ${process.env.RESEND_API_KEY}`, "Content-Type":"application/json", "Idempotency-Key":`${job.enquiry_id}-${job.kind}`}, body:JSON.stringify({from,to,reply_to:job.payload.email,subject:`${job.enquiry_id} · Safari Crafters enquiry`,text:body}) });
+      const message = job.kind === "guest"
+        ? {
+            subject: "We’ve received your enquiry · Safari Crafters",
+            text: `Dear ${job.payload.name},\n\nYour enquiry has been saved.\nReference: ${job.enquiry_id}\nJourney: ${job.payload.sourceLabel || job.payload.region}\n\nOur team will review your request and respond with the next steps.\n\nSafari Crafters`
+          }
+        : formatTeamEnquiryEmail(job.payload, job.enquiry_id);
+      const email = await fetch("https://api.resend.com/emails", { method:"POST", signal:AbortSignal.timeout(10000), headers:{Authorization:`Bearer ${process.env.RESEND_API_KEY}`, "Content-Type":"application/json", "Idempotency-Key":`${job.enquiry_id}-${job.kind}`}, body:JSON.stringify({from,to,reply_to:job.payload.email,...message}) });
       if (!email.ok) throw new Error(`Email provider returned ${email.status}`);
       const ack = await database(`safari_notification_outbox?id=eq.${job.id}&lease_token=eq.${job.lease_token}`, {method:"PATCH",body:JSON.stringify({sent_at:new Date().toISOString(),last_error:null,lease_until:null})});
       if (!ack.ok) throw new Error("Delivery acknowledgement failed");
