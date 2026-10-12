@@ -49,7 +49,7 @@ export function ContactForm() {
       const response = await fetch("/api/enquiry", { method: "POST", headers: await enquiryHeaders(payload), body: JSON.stringify(payload) });
       const result = await response.json();
       if (!response.ok) trackFunnel("enquiry_failed");
-      if (!response.ok) throw new Error(result.error || "We could not send your brief. Please try again.");
+      if (!response.ok) throw new Error(result.fields?.phone || result.error || "We could not send your brief. Please try again.");
       setReference(result.enquiryId);
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "We could not send your brief. Please try again.");
@@ -71,7 +71,7 @@ export function ContactForm() {
     <form className="contact-form" onSubmit={submit}><EnquiryHoneypot />
       <label>Name<input name="name" autoComplete="name" required /></label>
       <label>Email<input name="email" type="email" inputMode="email" autoComplete="email" required /></label>
-      <label>Phone<input name="phone" type="tel" inputMode="tel" autoComplete="tel" /></label>
+      <label>Phone number (required)<input name="phone" type="tel" inputMode="tel" autoComplete="tel" required /></label>
       <label>Travel window<input name="travelWindow" placeholder="Month, season or flexible" /></label>
       <label>Interest<input name="interest" placeholder="Journey, destination, photo expedition or aviation" /></label>
       <label>Accommodation character<select name="accommodation" defaultValue="Not decided yet">
