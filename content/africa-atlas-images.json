@@ -35,19 +35,19 @@
     "credit": "AI-generated destination illustration"
   },
   "tanzania": {
-    "src": "/assets/africa-atlas-generated/tanzania.webp",
-    "alt": "AI-generated illustration: A small herd of plains zebras crossing open Tanzanian savannah with distant rocky kopjes, glowing late afternoon cloudscape, panoramic environmental view.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+    "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+    "credit": "Safari Crafters archive"
   },
   "serengeti": {
-    "src": "/assets/africa-atlas-generated/serengeti.webp",
-    "alt": "AI-generated illustration: Long lines of blue wildebeest stretching across the immense short-grass Serengeti plains, pale dust hanging in the afternoon light, understated aerial-oblique landscape.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+    "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+    "credit": "Safari Crafters archive"
   },
   "ngorongoro": {
-    "src": "/assets/africa-atlas-generated/ngorongoro.webp",
-    "alt": "AI-generated illustration: Panoramic view down from Ngorongoro crater rim into the green caldera floor, a distant reflective lake beneath low clouds, natural landscape without close animals.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/ngorongoro/field-photographs/83322d8861c8.webp",
+    "alt": "Elephant grazing beneath the Ngorongoro crater rim in Tanzania",
+    "credit": "Safari Crafters archive"
   },
   "tarangire": {
     "src": "/assets/africa-atlas-generated/tarangire.webp",
@@ -60,9 +60,9 @@
     "credit": "AI-generated destination illustration"
   },
   "uganda": {
-    "src": "/assets/africa-atlas-generated/uganda.webp",
-    "alt": "AI-generated illustration: Lush rolling Ugandan hills and a winding wetland valley with papyrus and scattered woodland, after-rain morning mist and saturated but natural green.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/bwindi-impenetrable/field-photographs/7717f43c985e.webp",
+    "alt": "Mountain gorilla looking back in Bwindi Impenetrable Forest, Uganda",
+    "credit": "Safari Crafters archive"
   },
   "rwanda": {
     "src": "/assets/africa-atlas-generated/rwanda.webp",
@@ -70,19 +70,19 @@
     "credit": "AI-generated destination illustration"
   },
   "bwindi-impenetrable": {
-    "src": "/assets/africa-atlas-generated/bwindi-impenetrable.webp",
-    "alt": "AI-generated illustration: A mountain gorilla seated among thick emerald understory in Bwindi Uganda, gentle forest light, accurate anatomy, thoughtful quiet environmental portrait.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/bwindi-impenetrable/field-photographs/7717f43c985e.webp",
+    "alt": "Mountain gorilla looking back in Bwindi Impenetrable Forest, Uganda",
+    "credit": "Safari Crafters archive"
   },
   "queen-elizabeth-national-park": {
-    "src": "/assets/africa-atlas-generated/queen-elizabeth-national-park.webp",
-    "alt": "AI-generated illustration: A herd of African buffalo at the edge of Uganda's Kazinga Channel with open savannah and low hills behind, late afternoon light.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/queen-elizabeth-national-park/field-photographs/b1e9b851127d.webp",
+    "alt": "Elephant beneath a spreading tree in Queen Elizabeth National Park, Uganda",
+    "credit": "Safari Crafters archive"
   },
   "kibale-national-park": {
-    "src": "/assets/africa-atlas-generated/kibale-national-park.webp",
-    "alt": "AI-generated illustration: An adult chimpanzee climbing a low mossy branch within dense Kibale rainforest Uganda, leafy canopy and shafts of green filtered light.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/kibale-national-park/field-photographs/856ea7d98361.webp",
+    "alt": "Chimpanzee resting on a tree branch in Kibale National Park, Uganda",
+    "credit": "Safari Crafters archive"
   },
   "murchison-falls-national-park": {
     "src": "/assets/africa-atlas-generated/murchison-falls-national-park.webp",
@@ -215,19 +215,19 @@
     "credit": "AI-generated destination illustration"
   },
   "featured-serengeti": {
-    "src": "/assets/africa-atlas-generated/featured-serengeti.webp",
-    "alt": "AI-generated illustration: A male lion on a weathered Serengeti granite kopje at first light, distant immense grassland, wide scene with warm rocks and cool sky.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/serengeti/field-photographs/ec57020b6dc1.webp",
+    "alt": "Leopard standing on a tree branch in the Serengeti",
+    "credit": "Safari Crafters archive"
   },
   "featured-bwindi-impenetrable": {
-    "src": "/assets/africa-atlas-generated/featured-bwindi-impenetrable.webp",
-    "alt": "AI-generated illustration: A female mountain gorilla with a young juvenile partly sheltered among ferns in Bwindi Uganda, quiet candid scene in soft overcast forest light, natural family interaction.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/bwindi-impenetrable/field-photographs/d8d1d12f2e2d.webp",
+    "alt": "Mist over the rainforest canopy of Bwindi, Uganda",
+    "credit": "Safari Crafters archive"
   },
   "featured-kibale-national-park": {
-    "src": "/assets/africa-atlas-generated/featured-kibale-national-park.webp",
-    "alt": "AI-generated illustration: A chimpanzee sitting high at the fork of a large fig tree in Kibale Uganda, wide rainforest canopy composition with glistening green leaves after rain.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/kibale-national-park/field-photographs/30dedac029a1.webp",
+    "alt": "Chimpanzees together in Kibale forest, Uganda",
+    "credit": "Safari Crafters archive"
   },
   "hero": {
     "src": "/assets/africa-atlas-generated/hero.webp",

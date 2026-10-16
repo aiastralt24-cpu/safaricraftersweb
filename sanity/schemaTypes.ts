@@ -190,7 +190,7 @@ const journey = defineType({
 
 const expedition = defineType({
   name: "photoExpedition",
-  title: "Photo expedition",
+  title: "Photography Tours",
   type: "document",
   fields: [
     defineField({name:"publicationStatus",title:"Publication status",type:"string",options:{list:["preview","published"]},initialValue:"preview"}),
@@ -202,6 +202,7 @@ const expedition = defineType({
       defineField({name:"availability",title:"Verified availability text",type:"string"})
     ]})]}),
 
+    defineField({ name: "geography", title: "Geography", type: "string", options: { list: ["India", "International"], layout: "radio" }, validation: rule => rule.required() }),
     ...['category','skill','groupSize','duration','equipment','bestMonths','price','route'].map(name=>defineField({name,type:'string'})),
     ...['highlights','inclusions','exclusions'].map(name=>defineField({name,type:'array',of:[defineArrayMember({type:'string'})]})),
     defineField({ name: "slug", title: "Slug", type: "slug", options: { source: "title" } }),

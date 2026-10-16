@@ -749,7 +749,7 @@
 }
 
 .store-hero-facts p { margin: 0; }
-.store-hero-facts span { display: block; margin-bottom: 7px; color: rgba(241,237,228,.55); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+.store-hero-facts p > span:not(.store-offer-price) { display: block; margin-bottom: 7px; color: rgba(241,237,228,.55); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
 .store-hero-facts strong { color: var(--store-ivory); font-size: .98rem; font-weight: 500; }
 
 .store-hero-media {
@@ -1966,3 +1966,16 @@ body:has(.store-home) .footer-journey-cta {
 .field-books-cta { margin-left:auto; display:flex; align-items:center; gap:16px; font-size:13px; }
 @media(max-width:1000px) { .field-category-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .field-category:nth-child(2) { border-right:0; } .field-category:nth-child(3),.field-category:nth-child(4) { border-top:1px solid #20271c30; } .field-category:nth-child(3) { padding-left:0; } }
 @media(max-width:640px) { .field-categories-heading { display:block; } .field-categories-heading p { margin-top:22px; } .field-category { padding:24px 16px; } .field-category h3 { font-size:25px; } .field-category p { min-height:92px; } .field-category-top { display:block; } .field-category-top > span:first-child { display:none; } .field-books { flex-wrap:wrap; } .field-books-cta { width:100%; margin-left:52px; } }
+
+.store-offer-price {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  color: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.store-offer-price del { opacity: .65; font-size: .85em; }
+.store-offer-price strong { font-weight: 500; }
+.store-offer-price small { flex-basis: 100%; font-size: 12px; font-weight: 500; line-height: 1.5; }

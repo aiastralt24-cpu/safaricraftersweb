@@ -1,0 +1,56 @@
+.section {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr);
+  gap: clamp(32px, 6vw, 96px);
+  padding-block: clamp(48px, 6vw, 80px);
+  align-items: start;
+}
+.intro { min-width: 0; }
+.intro > :global(.eyebrow) { margin: 0 0 20px; }
+.intro h2 {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 3.4vw, 52px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -.025em;
+  margin: 0 0 20px;
+  text-wrap: balance;
+}
+.intro > p:not(:global(.eyebrow)), .questions p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #505348;
+  max-width: 65ch;
+}
+.questions { min-width: 0; }
+.questions details { border-top: 1px solid #cfc6b5; }
+.questions details:last-of-type { border-bottom: 1px solid #cfc6b5; }
+.questions summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 76px;
+  padding: 22px 0;
+  list-style: none;
+  cursor: pointer;
+  color: #25291f;
+  font-family: var(--font-display);
+  font-size: clamp(21px, 1.65vw, 26px);
+  line-height: 1.35;
+}
+.questions summary::-webkit-details-marker { display: none; }
+.questions summary::after { content: '+'; flex: 0 0 28px; text-align: center; color: #8b6935; font-family: sans-serif; font-size: 24px; font-weight: 400; }
+.questions details[open] summary::after { content: '−'; }
+.questions summary:focus-visible, .questions a:focus-visible { outline: 2px solid #8b6935; outline-offset: 4px; }
+.questions details p { margin: 0; padding: 0 40px 24px 0; }
+.questions > p:first-child { margin: 0 0 24px; }
+.questions > a { display: inline-flex; margin-top: 24px; min-height: 44px; align-items: center; border-bottom: 1px solid #8b6935; }
+.questions > p > a { text-decoration: underline; text-underline-offset: 4px; }
+.booking { border-top: 1px solid #cfc6b5; }
+@media (max-width: 760px) {
+  .section { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .intro h2 { max-width: 18ch; }
+  .questions summary { gap: 16px; min-height: 70px; padding-block: 20px; }
+  .questions details p { padding-right: 0; }
+}

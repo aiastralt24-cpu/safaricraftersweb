@@ -1,6 +1,7 @@
 import { FunnelTracking } from "@/components/FunnelTracking";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./editorial-surfaces.css";
 import { StoreCartProvider } from "@/components/StoreCart";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Safari Crafters",
     description:
-      "Private safari journeys, photo expeditions and editorial field notes shaped by named specialists.",
+      "Private safari journeys, photography tours and editorial field notes shaped by named specialists.",
     url: "https://safaricrafters.com",
     siteName: "Safari Crafters",
     type: "website",

@@ -12,7 +12,7 @@ import "./KenyaCountryPage.css";
 import "./TanzaniaCountryPage.css";
 const brazil = getDestination("brazil")!;
 const hero = brazil.image;
-const gallery = [getDestination("pantanal")!.gallery[0], brazil.gallery[2], brazil.gallery[4]];
+const gallery = brazil.gallery;
 function placeImage(slug:string):ImageAsset {
  const destination = getDestination(slug)!;
  return ["pantanal", "atlantic-rainforest"].includes(slug) ? destination.image : getDestinationHeroImage(destination);
@@ -21,7 +21,7 @@ export function BrazilCountryPage() {
   return <div className="kenya-page tanzania-page">
     <JsonLd data={breadcrumbSchema([{name:"Home",path:"/"},{name:"Destinations",path:"/destinations"},{name:"Americas",path:"/destinations/americas"},{name:"Brazil",path:"/destinations/brazil"}])}/>
     <JsonLd data={faqSchema(brazilFaqs)}/>
-    <PageHero title="Brazil" copy={brazilDescription} image={hero} focalPoint="50% 45%" meta="Americas / Big Cats" variant="destination" breadcrumbs={[{label:"Home",href:"/"},{label:"Destinations",href:"/destinations"},{label:"Americas",href:"/destinations/americas"},{label:"Brazil"}]}/>
+    <PageHero accent="Brazil" title="Brazil" copy={brazilDescription} image={hero} focalPoint="50% 45%" meta="Americas / Big Cats" variant="destination" breadcrumbs={[{label:"Home",href:"/"},{label:"Destinations",href:"/destinations"},{label:"Americas",href:"/destinations/americas"},{label:"Brazil"}]}/>
     <section className="kenya-facts" aria-label="Brazil at a glance"><div className="container kenya-facts-grid">
       <div><h2>Come for</h2><p>Jaguars, birdlife & river safaris</p><small>Wetlands, rainforests and remarkable wildlife encounters.</small></div>
       <div><h2>Best time to visit</h2><p>June–October</p><small>Rewarding for wildlife, especially in the Pantanal; timing varies by region.</small></div>

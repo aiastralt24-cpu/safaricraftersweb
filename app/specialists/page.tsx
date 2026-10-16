@@ -23,7 +23,7 @@ export default function SpecialistsPage() {
         image={specialists[1].image}
         meta="Specialists"
       />
-      <section className="section">
+      <section className="section surface-white">
         <div className="container specialist-list">
           {visibleSpecialists.map((specialist) => (
             <article key={specialist.name}>

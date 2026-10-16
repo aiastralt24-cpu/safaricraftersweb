@@ -9,12 +9,12 @@ import "./guided-bespoke-safaris.css";
 const showSpecialistsCta = false;
 
 export const metadata: Metadata = {
-  title: "Guided Bespoke Safaris",
-  description: "Add an experienced Safari Crafters guide to a private wildlife journey for deeper field knowledge, thoughtful pacing and photographic guidance.",
+  title: "Bespoke Safaris",
+  description: "Add an experienced Safari Crafters guide to a private journey for deeper field knowledge, thoughtful pacing and photographic guidance.",
   alternates: { canonical: "/guided-bespoke-safaris" },
   openGraph: {
-    title: "Guided Bespoke Safaris | Safari Crafters",
-    description: "Private wildlife journeys shaped by field knowledge, thoughtful pacing and a dedicated Safari Crafters guide.",
+    title: "Bespoke Safaris | Safari Crafters",
+    description: "Private Journeys shaped by field knowledge, thoughtful pacing and a dedicated Safari Crafters guide.",
     images: [{
       url: "/assets/safari-crafters/laipikia-001e24e7.jpg",
       width: 2400,
@@ -55,10 +55,10 @@ export default function GuidedBespokeSafarisPage() {
 
       <section className="guided-hero" aria-labelledby="guided-hero-title">
         <div className="guided-hero-copy">
-          <p className="eyebrow">Guided bespoke safaris</p>
-          <h1 id="guided-hero-title">The field,<br /><em>read with you.</em></h1>
+          <p className="eyebrow">Bespoke Safaris</p>
+          <h1 id="guided-hero-title">The field,<br /><em className="editorial-accent editorial-accent-light">read with you.</em></h1>
           <p>
-            Add a professional Safari Crafters guide to your private wildlife journey for
+            Add a professional Safari Crafters guide to your private journey for
             deeper insight, better opportunities and a more considered experience.
           </p>
           <Link href="/plan?guided=true">Plan with a private guide <ArrowUpRight aria-hidden="true" size={17} /></Link>
@@ -69,7 +69,7 @@ export default function GuidedBespokeSafarisPage() {
             alt="Black leopard walking through the Laikipia landscape"
             fill
             priority
-            sizes="(max-width: 720px) 100vw, 58vw"
+            sizes="100vw"
           />
           <figcaption>Laikipia, Kenya · Safari Crafters archive</figcaption>
         </figure>
@@ -111,7 +111,7 @@ export default function GuidedBespokeSafarisPage() {
       <section className="guided-field" aria-labelledby="guided-field-title">
         <header className="guided-field-heading" data-guided-reveal>
           <p className="eyebrow">Field intelligence</p>
-          <h2 id="guided-field-title">What experience changes.</h2>
+          <h2 id="guided-field-title">What <em className="editorial-accent">experience</em> changes.</h2>
           <p>Not more noise in the vehicle. More attention to the landscape around it.</p>
         </header>
         <div className="guided-field-grid">
@@ -139,7 +139,7 @@ export default function GuidedBespokeSafarisPage() {
         </div>
         <div className="guided-photography-copy" data-guided-reveal>
           <p className="eyebrow">For the photograph</p>
-          <h2 id="guided-photography-title">The sighting is only the beginning.</h2>
+          <h2 id="guided-photography-title">The sighting is only the <em className="editorial-accent editorial-accent-light">beginning.</em></h2>
           <p>
             Good wildlife photography depends on more than proximity. Your guide considers
             light, positioning, animal movement and the patience an image may require. The aim

@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
+  /* Shared editorial surfaces for the homepage and public inner pages. */
+  --surface-warm: #f3eee4;
+  --surface-white: #ffffff;
+  --surface-sand: #ece5d9;
+  --surface-forest: #1c2b22;
   /* Safari Crafters brand palette */
   --night: #100d0a;
   --night-deep: #0f0c09;
@@ -391,4 +396,14 @@ textarea {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Deliberate emphasis for editorial headings, independent of body emphasis. */
+:is(h1, h2, h3) em.editorial-accent {
+  color: #8b6935;
+  font-style: italic;
+  font-weight: inherit;
+}
+:is(h1, h2, h3) em.editorial-accent-light {
+  color: #d1ad65;
 }

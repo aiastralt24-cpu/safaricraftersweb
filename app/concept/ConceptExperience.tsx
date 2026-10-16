@@ -1,12 +1,18 @@
 "use client";
 
+import { GuestNotes } from "@/components/GuestNotes";
+import { guestStories } from "@/lib/guest-notes";
+import { MiceSection } from "@/components/MiceSection";
+
 import Link from "next/link";
+import "./journey-collection.css";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Menu, MoveRight, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrandMark } from "@/components/BrandMark";
+import { CountUp } from "@/components/CountUp";
 import type { ImageAsset } from "@/lib/data";
 import { upcomingDepartures, departureLabel } from "@/lib/departures";
 import { destinations, expeditions, journeys, specialists, testimonials } from "@/lib/data";
@@ -14,8 +20,6 @@ import { destinations, expeditions, journeys, specialists, testimonials } from "
 const heroJourney = journeys[0];
 const featuredDestination = destinations.find((item) => item.slug === "jawai") ?? destinations[0];
 const photoExpedition = expeditions[0];
-const featuredGuestNote = testimonials[0];
-const showHomepageGuestNotes = false;
 const showHomepagePrivateAviation = true;
 const showHomepageWildestPlaces = false;
 const showHomepageConservation = false;
@@ -32,12 +36,6 @@ const homepageJourneySlugs = [
 const homepageJourneys = homepageJourneySlugs
   .map((slug) => journeys.find((journey) => journey.slug === slug))
   .filter((journey): journey is (typeof journeys)[number] => Boolean(journey));
-
-const homepageJourneyRailMeta: Record<string, string> = {
-  "big-cats-of-india": "India · 21 days",
-  "heart-of-the-wildcentral-indias-six-park-safari": "Central India · 22 days",
-  "trail-of-the-himalayan-firefox-a-red-panda-rhino-expedition": "Northeast India · 12 days"
-};
 
 const destinationStoryCopy: Record<string, { headline: string; description: string; landscape: string }> = {
   jawai: {
@@ -122,16 +120,12 @@ const expeditionRegions: Record<string, string> = {
 
 const expeditionLocations: Record<string, string> = {
   "kanha-wildlife-photography-expedition": "Kanha, India",
+  "bharatpur-photography-expedition": "Keoladeo, Rajasthan",
+  "panna-photography-expedition": "Panna, Madhya Pradesh",
+  "ranthambhore-photography-expedition": "Ranthambhore, Rajasthan",
   "laikipia-black-leopard-expedition": "Laikipia, Kenya",
   "svalbard-expedition": "Svalbard, Norway",
   "the-pantanal-wetlands": "Pantanal, Brazil"
-};
-
-const expeditionDossierSides: Record<string, "left" | "right"> = {
-  "kanha-wildlife-photography-expedition": "right",
-  "laikipia-black-leopard-expedition": "left",
-  "the-pantanal-wetlands": "right",
-  "svalbard-expedition": "left"
 };
 
 const privateAviationMenuImage: ImageAsset = {
@@ -189,9 +183,19 @@ const primaryMenuItems = [
   },
   {
     key: "photo-expeditions",
-    label: "Photo Expeditions",
+    label: "Photography Tours",
     href: "/photo-expeditions",
     image: photoExpedition.image
+  },
+  {
+    key: "guided-bespoke-safaris",
+    label: "Bespoke Safaris",
+    href: "/guided-bespoke-safaris",
+    image: {
+      src: "/assets/safari-crafters/laipikia-001e24e7.jpg",
+      alt: "Black leopard walking through the Laikipia landscape",
+      credit: "Safari Crafters archive"
+    }
   },
   {
     key: "private-aviation",
@@ -208,6 +212,7 @@ const primaryMenuItems = [
 ];
 
 const secondaryMenuItems = [
+  { key: "mice", label: "Corporate Journeys", href: "/mice" },
   {
     key: "journal",
     label: "Journal",
@@ -244,13 +249,13 @@ export function ConceptExperience() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeHeroLine, setActiveHeroLine] = useState(0);
   const [activeDestinationIndex, setActiveDestinationIndex] = useState(0);
-  const [activeJourneySlug, setActiveJourneySlug] = useState(homepageJourneys.at(-1)?.slug ?? homepageJourneys[0]?.slug ?? "");
   const [expeditionFilter, setExpeditionFilter] = useState("India");
   const [activeExpeditionSlug, setActiveExpeditionSlug] = useState(expeditions[0].slug);
-  const [featuredDepartureSlug, setFeaturedDepartureSlug] = useState(expeditions[0].slug);
   const [canPlayHeroVideo, setCanPlayHeroVideo] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const departureBoardRef = useRef<HTMLDivElement>(null);
+  const departureBoardPausedRef = useRef(false);
   const lastScrollYRef = useRef(0);
   const activeDestination = destinationStories[activeDestinationIndex];
   const activeDestinationStory = destinationStoryCopy[activeDestination.slug];
@@ -260,12 +265,20 @@ export function ConceptExperience() {
     : expeditions.filter((expedition) => expeditionRegions[expedition.slug] === expeditionFilter);
   const activeExpedition = filteredExpeditions.find((expedition) => expedition.slug === activeExpeditionSlug) ?? filteredExpeditions[0];
   const scheduledExpeditions = expeditions.filter(item=>upcomingDepartures(item).length).sort((a,b)=>upcomingDepartures(a)[0].date.localeCompare(upcomingDepartures(b)[0].date));
-  const featuredDeparture = scheduledExpeditions.find((expedition) => expedition.slug === featuredDepartureSlug) ?? scheduledExpeditions[0];
-  const activeJourney = homepageJourneys.find((journey) => journey.slug === activeJourneySlug) ?? homepageJourneys[0];
-  const activeJourneyIndex = Math.max(0, homepageJourneys.findIndex((journey) => journey.slug === activeJourney?.slug));
-  const nextJourney = homepageJourneys[(activeJourneyIndex + 1) % homepageJourneys.length];
-  const featuredDepartureIndex = Math.max(0, scheduledExpeditions.findIndex((expedition) => expedition.slug === featuredDeparture?.slug));
-  const nextFeaturedDeparture = scheduledExpeditions[(featuredDepartureIndex + 1) % scheduledExpeditions.length];
+  const scheduledDepartureKey = scheduledExpeditions.map((expedition) => expedition.slug).join("|");
+
+  useEffect(() => {
+    if (scheduledExpeditions.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => {
+      const rail = departureBoardRef.current;
+      if (!rail || departureBoardPausedRef.current) return;
+      const card = rail.querySelector<HTMLElement>(".concept-expedition-board-card");
+      const step = (card?.offsetWidth || rail.clientWidth * .78) + 18;
+      const atEnd = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - step * .55;
+      rail.scrollTo({ left: atEnd ? 0 : rail.scrollLeft + step, behavior: "smooth" });
+    }, 4200);
+    return () => window.clearInterval(timer);
+  }, [scheduledDepartureKey]);
 
   const showPreviousDestination = () => {
     setActiveDestinationIndex((current) => (current - 1 + destinationStories.length) % destinationStories.length);
@@ -592,7 +605,7 @@ export function ConceptExperience() {
         <div className="concept-story-proof-intro">
           <div>
             <p>Our story</p>
-            <h2 id="homepage-story-title">Informed <em>by</em> intention,<br />guided <em>by</em> experience.</h2>
+            <h2 id="homepage-story-title">Informed by <em>intention,</em><br />guided by <em>experience.</em></h2>
           </div>
           <div className="concept-story-proof-copy">
             <p>
@@ -607,19 +620,19 @@ export function ConceptExperience() {
           <p>Our experience, measured quietly</p>
           <dl>
             <div>
-              <dt>75+</dt>
+              <dt><CountUp value={75} /></dt>
               <dd>Years of combined expertise</dd>
             </div>
             <div>
-              <dt>24+</dt>
+              <dt><CountUp value={24} /></dt>
               <dd>Countries across our network</dd>
             </div>
             <div>
-              <dt>6,000+</dt>
+              <dt><CountUp value={6000} /></dt>
               <dd>Guests hosted</dd>
             </div>
             <div>
-              <dt>450+</dt>
+              <dt><CountUp value={450} /></dt>
               <dd>Journeys privately crafted</dd>
             </div>
           </dl>
@@ -629,18 +642,18 @@ export function ConceptExperience() {
       <section className="concept-journey-types" id="ways-to-journey" aria-labelledby="journey-types-title" data-nav-label="Ways to journey">
         <h2 id="journey-types-title">
           Give your dream journeys<br />
-          wings <em>and</em> paws.
+          <em>wings</em> and <em>paws.</em>
         </h2>
         <div className="concept-journey-types-grid">
           <article data-concept-reveal>
             <Image
               src="/assets/safari-crafters/golden-triangle-ae04a20e.jpg"
-              alt="A private wildlife journey through India"
+              alt="A private journey through India"
               width={900}
               height={600}
               sizes="(max-width: 720px) 100vw, 33vw"
             />
-            <h3>Private<br />wildlife journeys</h3>
+            <h3>Private<br />Journeys</h3>
             <p>
               Tailored itineraries across India and select wildlife destinations across
               the world, designed around your interests, season, and preferred duration
@@ -656,9 +669,9 @@ export function ConceptExperience() {
               height={600}
               sizes="(max-width: 720px) 100vw, 33vw"
             />
-            <h3>Guided<br />bespoke safaris</h3>
+            <h3>Bespoke<br />Safaris</h3>
             <p>
-              All the goodness of our private wildlife journeys, with the added benefit
+              All the goodness of our private journeys, with the added benefit
               of a professional <strong className="concept-brand-emphasis">Safari Crafters</strong> guide for the ultimate informed
               experience.
             </p>
@@ -672,7 +685,7 @@ export function ConceptExperience() {
               height={600}
               sizes="(max-width: 720px) 100vw, 33vw"
             />
-            <h3>Scheduled<br />photo expeditions</h3>
+            <h3>Photography<br />Tours</h3>
             <p>
               Fixed-date, specialist-led group departures for photographers who want
               time in the field, expert guidance and the pursuit of a clear photographic
@@ -708,95 +721,27 @@ export function ConceptExperience() {
         </div>
       </section> : null}
 
-      {showHomepageGuestNotes ? <section className="concept-guest-notes" aria-label="Guest notes">
-        <div className="concept-guest-notes-heading">
-          <div>
-            <p>Guest Notes</p>
-            <span>A private journey, remembered</span>
-          </div>
-          <h2>What remains after the journey.</h2>
-        </div>
-        <article className="concept-guest-note-feature">
-          <blockquote>“{featuredGuestNote.quote}”</blockquote>
-          <div className="concept-guest-note-details">
-            <div>
-              <span>Guest</span>
-              <strong>{featuredGuestNote.guestType ?? featuredGuestNote.name}</strong>
-              <small>{featuredGuestNote.city}</small>
-            </div>
-            <div>
-              <span>Journey composed</span>
-              <strong>{featuredGuestNote.trip}</strong>
-              <small>{featuredGuestNote.travelled}</small>
-            </div>
-          </div>
-        </article>
-        <Link className="concept-guest-notes-link" href="/reviews">
-          Read guest notes <ArrowUpRight size={17} strokeWidth={1.4} />
-        </Link>
-      </section> : null}
 
-      {activeJourney ? <div className="concept-journey-feature-shell">
-      <header className="concept-journey-collection-header">
-        <div>
-          <p>Private journey collection</p>
-          <h2 id="private-journey-collection-title">Journeys, composed around you.</h2>
-        </div>
-        <Link className="concept-text-link" href="/journeys">
-          View all journeys <ArrowUpRight size={15} />
-        </Link>
-      </header>
-      <section className="concept-journey-feature" aria-labelledby="homepage-journey-title" data-nav-label="Private journeys" data-scroll-expand>
-        <figure className="concept-journey-feature-frame">
-          <Image
-            key={activeJourney.slug}
-            className="concept-journey-feature-image"
-            src={activeJourney.image.src}
-            alt={activeJourney.image.alt}
-            fill
-            sizes="(max-width: 760px) 100vw, 66vw"
-            style={{ objectPosition: activeJourney.image.focalPoint || "center" }}
-          />
-        </figure>
-
-        <article className="concept-journey-feature-copy" aria-live="polite">
-          <h2 id="homepage-journey-title">{activeJourney.title}</h2>
-          <p className="concept-journey-feature-route">{activeJourney.route || activeJourney.region}</p>
-          <small>{activeJourney.duration}</small>
-          <Link href={`/journeys/${activeJourney.slug}`}>
-            Explore the journey <ArrowRight size={18} strokeWidth={1.25} />
-          </Link>
-        </article>
-
-        <nav className="concept-journey-feature-index" aria-label="Select a private journey">
-          {homepageJourneys.map((journey) => (
-            <button
-              className={journey.slug === activeJourney.slug ? "is-active" : ""}
-              type="button"
-              aria-current={journey.slug === activeJourney.slug ? "true" : undefined}
-              onClick={() => setActiveJourneySlug(journey.slug)}
-              onMouseEnter={() => setActiveJourneySlug(journey.slug)}
-              onFocus={() => setActiveJourneySlug(journey.slug)}
-              key={journey.slug}
-            >
-              <span>{journey.title}</span>
-              <small>{homepageJourneyRailMeta[journey.slug] ?? `${journey.region} · ${journey.duration}`}</small>
-            </button>
+      {homepageJourneys.length ? <section className="journey-collection" aria-labelledby="private-journey-collection-title" data-nav-label="Private journeys">
+        <header className="journey-collection-heading">
+          <div><p className="journey-collection-eyebrow">Private journey collection</p><h2 id="private-journey-collection-title">Journeys, designed<br />around <em>you.</em></h2></div>
+          <div className="journey-collection-intro"><p>A starting point for something personal. Find the landscape that calls to you; we’ll shape the journey around it.</p><Link href="/journeys">View all journeys <ArrowUpRight size={17} /></Link></div>
+        </header>
+        <div className="journey-bento">
+          {homepageJourneys.map((journey, index) => (
+            <Link className={`journey-bento-card${index === 0 ? " journey-bento-featured" : ""}`} href={`/journeys/${journey.slug}`} key={journey.slug} aria-label={`Explore ${journey.title}`}>
+              <Image src={journey.image.src} alt={journey.image.alt} fill sizes="(max-width: 760px) 100vw, 55vw" style={{objectPosition: journey.image.focalPoint || "center"}} />
+              <span className="journey-bento-kicker">{index === 0 ? "The signature journey" : index === 1 ? "Into the heart of India" : "Beyond the familiar"}</span>
+              <div className="journey-bento-copy">
+                <p className="journey-bento-duration">{journey.duration}</p>
+                <h3>{journey.title}</h3>
+                <p className="journey-bento-route">{journey.region}</p>
+                <span className="journey-bento-action">Explore journey <ArrowUpRight size={20} strokeWidth={1.4} /></span>
+              </div>
+            </Link>
           ))}
-          {nextJourney ? (
-            <button
-              className="concept-journey-next"
-              type="button"
-              aria-label={`Next journey: ${nextJourney.title}`}
-              onClick={() => setActiveJourneySlug(nextJourney.slug)}
-            >
-              <span>Next</span>
-              <ArrowRight size={17} strokeWidth={1.4} aria-hidden="true" />
-            </button>
-          ) : null}
-        </nav>
-      </section>
-      </div> : null}
+        </div>
+      </section> : null}
 
       {showHomepageSpeciesEditorial ? <section className="concept-species-editorial" aria-labelledby="species-chapter-title" data-nav-label="Species stories">
         <header className="concept-species-editorial-header">
@@ -866,7 +811,7 @@ export function ConceptExperience() {
             fill
             sizes="(max-width: 760px) 100vw, 88vw"
           />
-          <figcaption>Signature Photo Expedition · {expeditionFilter}</figcaption>
+          <figcaption>Signature Photography Tours · {expeditionFilter}</figcaption>
         </figure>
         <div className="concept-cinema-ledger">
           <dl>
@@ -880,77 +825,49 @@ export function ConceptExperience() {
         </div>
       </section> : null}
 
-      {featuredDeparture ? <section className="concept-field-notes concept-expedition-calendar" aria-labelledby="expedition-calendar-title" data-nav-label="Photo expeditions">
+      {scheduledExpeditions.length ? <section className="concept-field-notes concept-expedition-calendar concept-expedition-board-section" aria-labelledby="expedition-calendar-title" data-nav-label="Photography Tours">
         <div className="concept-field-notes-header">
           <div>
-            <p>Photographic expeditions</p>
-            <h2 id="expedition-calendar-title">The next group departures.</h2>
+            <p>Photography Tours</p>
+            <h2 id="expedition-calendar-title">The next group <em className="editorial-accent editorial-accent-light">departures.</em></h2>
           </div>
           <Link className="concept-text-link" href="/photo-expeditions">
             View all expeditions <ArrowUpRight size={15} />
           </Link>
         </div>
         <div
-          className="concept-departure-salon"
-          data-concept-reveal
-          data-dossier-side={expeditionDossierSides[featuredDeparture.slug] ?? "right"}
+          ref={departureBoardRef}
+          className="concept-expedition-board"
+          aria-label="Upcoming photography tours"
+          onMouseEnter={() => { departureBoardPausedRef.current = true; }}
+          onMouseLeave={() => { departureBoardPausedRef.current = false; }}
+          onFocusCapture={() => { departureBoardPausedRef.current = true; }}
+          onBlurCapture={() => { departureBoardPausedRef.current = false; }}
+          onPointerDown={() => { departureBoardPausedRef.current = true; }}
         >
-          <figure className="concept-departure-salon-image" data-scroll-expand>
-            <Image
-              key={featuredDeparture.slug}
-              src={featuredDeparture.image.src}
-              alt={featuredDeparture.image.alt}
-              fill
-              sizes="(max-width: 760px) 100vw, 78vw"
-              style={{ objectPosition: featuredDeparture.image.focalPoint || "center" }}
-            />
-          </figure>
-
-          <article className="concept-departure-dossier" aria-live="polite">
-            <p>{featuredDeparture.publicationStatus === "preview" ? "Departure preview" : "Upcoming departure"}</p>
-            <h3>{featuredDeparture.title}</h3>
-            <dl>
-              <div><dt>Destination</dt><dd>{expeditionLocations[featuredDeparture.slug] || featuredDeparture.title}</dd></div>
-              <div><dt>Dates</dt><dd>{departureLabel(upcomingDepartures(featuredDeparture)[0])}</dd></div>
-            </dl>
-            <Link href={`/photo-expeditions/${featuredDeparture.slug}`}>
-              View expedition details <ArrowRight size={17} strokeWidth={1.25} />
-            </Link>
-          </article>
+          {scheduledExpeditions.map((expedition) => {
+            const nextDeparture = upcomingDepartures(expedition)[0];
+            const place = (expeditionLocations[expedition.slug] || expedition.title.replace(/ Wildlife Photography Expedition$| Photography Expedition$| Expedition$/, "")).split(",")[0];
+            return <Link className="concept-expedition-board-card" href={`/photo-expeditions/${expedition.slug}`} key={expedition.slug}>
+              <figure><Image src={expedition.image.src} alt={expedition.image.alt} fill sizes="(max-width: 720px) 82vw, 390px" style={{ objectPosition: expedition.image.focalPoint || "center" }} /></figure>
+              <div className="concept-expedition-board-copy">
+                <h3>{place}</h3>
+                <time dateTime={nextDeparture.date}>{departureLabel(nextDeparture)}</time>
+                <span className="concept-expedition-board-meta">{expedition.duration || `${expedition.days.length} days`} · {expeditionLocations[expedition.slug] || expedition.route}</span>
+                <strong>View expedition <ArrowUpRight size={16} /></strong>
+              </div>
+            </Link>;
+          })}
         </div>
-
-        <nav className="concept-departure-index" aria-label="Choose a photographic expedition">
-          {scheduledExpeditions.map((expedition) => (
-            <button
-              className={expedition.slug === featuredDeparture.slug ? "is-active" : ""}
-              type="button"
-              aria-pressed={expedition.slug === featuredDeparture.slug}
-              onClick={() => setFeaturedDepartureSlug(expedition.slug)}
-              key={expedition.slug}
-            >
-              <span>{(expeditionLocations[expedition.slug] || expedition.title.replace(/ Photography Expedition$/, "")).split(",")[0]}</span>
-              <small>{departureLabel(upcomingDepartures(expedition)[0])}</small>
-            </button>
-          ))}
-          {nextFeaturedDeparture ? (
-            <button
-              className="concept-departure-next"
-              type="button"
-              aria-label={`Next expedition: ${nextFeaturedDeparture.title}`}
-              onClick={() => setFeaturedDepartureSlug(nextFeaturedDeparture.slug)}
-            >
-              <span>Next</span>
-              <ArrowRight size={17} strokeWidth={1.4} aria-hidden="true" />
-            </button>
-          ) : null}
-        </nav>
       </section> : null}
+
+      <MiceSection />
 
       {showHomepagePrivateAviation ? <section className="concept-private-aviation" aria-labelledby="private-aviation-title" data-nav-label="Private jet safaris" data-concept-reveal>
         <div className="concept-private-aviation-panel">
           <div className="concept-private-aviation-copy">
             <p className="concept-private-aviation-eyebrow">Private Jet Safaris</p>
-            <h2 id="private-aviation-title">The wild, within reach.</h2>
+            <h2 id="private-aviation-title">The wild, within <em className="editorial-accent">reach.</em></h2>
             <p className="concept-private-aviation-summary">
               Dedicated aircraft and seamless routing bring distant landscapes closer.
             </p>
@@ -991,9 +908,12 @@ export function ConceptExperience() {
         </div>
       </section> : null}
 
+
+      <GuestNotes stories={guestStories} compact />
+
       <section className="concept-concierge" data-nav-label="Begin your journey" data-concept-reveal>
         <div>
-          <h2>Ready when<br />you are.</h2>
+          <h2>Ready when<br /><em className="editorial-accent editorial-accent-light">you are.</em></h2>
         </div>
         <div className="concept-concierge-card">
           <h3>Where would you like <em>to</em> begin?</h3>
@@ -1014,7 +934,7 @@ export function ConceptExperience() {
               <span>Surprise me</span>
             </Link>
             <Link className="concept-choice-contact" href="/contact">
-              <span>Speak with a specialist</span>
+              <span>Plan My Journey</span>
             </Link>
           </div>
         </div>

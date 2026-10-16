@@ -34,11 +34,10 @@ export function GuidedSafariMotion() {
     const media = gsap.matchMedia();
     const context = gsap.context(() => {
       media.add("(min-width: 721px)", () => {
-        gsap.fromTo("[data-guided-expand]",
-          { scale: 0.92, borderRadius: "24px", transformOrigin: "50% 50%" },
+        gsap.fromTo("[data-guided-expand] img",
+          { scale: 1.06, transformOrigin: "50% 50%" },
           {
             scale: 1,
-            borderRadius: "4px",
             ease: "none",
             scrollTrigger: {
               trigger: "[data-guided-expand]",
@@ -52,11 +51,10 @@ export function GuidedSafariMotion() {
       });
 
       media.add("(max-width: 720px)", () => {
-        gsap.fromTo("[data-guided-expand]",
-          { scale: 0.975, borderRadius: "18px", transformOrigin: "50% 50%" },
+        gsap.fromTo("[data-guided-expand] img",
+          { scale: 1.035, transformOrigin: "50% 50%" },
           {
             scale: 1,
-            borderRadius: "4px",
             ease: "none",
             scrollTrigger: {
               trigger: "[data-guided-expand]",

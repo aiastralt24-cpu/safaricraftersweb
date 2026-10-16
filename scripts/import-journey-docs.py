@@ -179,7 +179,7 @@ def update_record(record: dict, config: dict) -> None:
         "customizationNote": "This is a private journey blueprint. Dates, pacing, accommodation and field priorities are refined around you before confirmation.",
         "faqs": parse_faqs(items),
         "seo": {
-            "title": f"{config['title']} | Private Wildlife Journey",
+            "title": f"{config['title']} | Private Journeys",
             "description": config["description"],
             "reviewedAt": "September 2026",
         },

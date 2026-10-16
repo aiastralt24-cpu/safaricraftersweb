@@ -8,6 +8,7 @@ import { getStoreCategory, getStoreProduct, storeCategories } from "@/lib/store"
 import { breadcrumbSchema } from "@/lib/structured-data";
 import StoreMotion from "../../StoreMotion";
 import "../../store.css";
+import StorePrice from "../../StorePrice";
 
 type ProductPageProps = {
   params: Promise<{ category: string; product: string }>;
@@ -76,7 +77,7 @@ export default async function StoreProductPage({ params }: ProductPageProps) {
               <p>{product.description}</p>
               <dl>
                 <div><dt>Format</dt><dd>{product.format}</dd></div>
-                <div><dt>Price</dt><dd>{product.price}</dd></div>
+                <div><dt>Price</dt><dd><StorePrice product={product} /></dd></div>
               </dl>
               <Link className="store-collection-link store-collection-link-light" href={product.purchaseHref ?? "/contact"}>
                 <span>{product.purchaseHref ? "Purchase" : "Enquire"}</span>

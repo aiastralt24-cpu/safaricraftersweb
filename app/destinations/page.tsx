@@ -2,8 +2,10 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { JsonLd } from "@/components/JsonLd";
 import { DestinationFinder } from "@/components/DestinationFinder";
 import { destinations, getDestination, getRegionalAtlases } from "@/lib/data";
+import { breadcrumbSchema } from "@/lib/structured-data";
 import "../listing.css";
 
 export const metadata: Metadata = {
@@ -16,17 +18,20 @@ export default function DestinationsPage() {
   const atlases = getRegionalAtlases();
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Destinations", path: "/destinations" }])} />
       <PageHero
         title="The wild, considered."
         copy="Private journeys shaped by habitat, season and the people who know a place intimately."
         image={destinations[0].image}
         meta="Destinations"
+        variant="destination"
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Destinations" }]}
       />
       <section className="section atlas-page">
         <div className="atlas-discovery">
           <div className="container atlas-intro">
             <p className="eyebrow">A private atlas</p>
-            <h2 className="h2">A few remarkable places, chosen with intent.</h2>
+            <h2 className="h2">A few remarkable places, chosen with <em className="editorial-accent">intent.</em></h2>
             <p>
               This is not an inventory of everywhere we can send you. It is a way into the
               landscapes we know, guided by what you hope to witness and how you want to travel.

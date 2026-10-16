@@ -35,19 +35,19 @@
     "credit": "AI-generated destination illustration"
   },
   "tanzania": {
-    "src": "/assets/africa-atlas-generated/tanzania.webp",
-    "alt": "AI-generated illustration: A small herd of plains zebras crossing open Tanzanian savannah with distant rocky kopjes, glowing late afternoon cloudscape, panoramic environmental view.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+    "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+    "credit": "Safari Crafters archive"
   },
   "serengeti": {
-    "src": "/assets/africa-atlas-generated/serengeti.webp",
-    "alt": "AI-generated illustration: Long lines of blue wildebeest stretching across the immense short-grass Serengeti plains, pale dust hanging in the afternoon light, understated aerial-oblique landscape.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+    "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+    "credit": "Safari Crafters archive"
   },
   "ngorongoro": {
-    "src": "/assets/africa-atlas-generated/ngorongoro.webp",
-    "alt": "AI-generated illustration: Panoramic view down from Ngorongoro crater rim into the green caldera floor, a distant reflective lake beneath low clouds, natural landscape without close animals.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/ngorongoro/field-photographs/83322d8861c8.webp",
+    "alt": "Elephant grazing beneath the Ngorongoro crater rim in Tanzania",
+    "credit": "Safari Crafters archive"
   },
   "tarangire": {
     "src": "/assets/africa-atlas-generated/tarangire.webp",
@@ -60,9 +60,9 @@
     "credit": "AI-generated destination illustration"
   },
   "uganda": {
-    "src": "/assets/africa-atlas-generated/uganda.webp",
-    "alt": "AI-generated illustration: Lush rolling Ugandan hills and a winding wetland valley with papyrus and scattered woodland, after-rain morning mist and saturated but natural green.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/bwindi-impenetrable/field-photographs/7717f43c985e.webp",
+    "alt": "Mountain gorilla looking back in Bwindi Impenetrable Forest, Uganda",
+    "credit": "Safari Crafters archive"
   },
   "rwanda": {
     "src": "/assets/africa-atlas-generated/rwanda.webp",
@@ -70,19 +70,19 @@
     "credit": "AI-generated destination illustration"
   },
   "bwindi-impenetrable": {
-    "src": "/assets/africa-atlas-generated/bwindi-impenetrable.webp",
-    "alt": "AI-generated illustration: A mountain gorilla seated among thick emerald understory in Bwindi Uganda, gentle forest light, accurate anatomy, thoughtful quiet environmental portrait.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/bwindi-impenetrable/field-photographs/7717f43c985e.webp",
+    "alt": "Mountain gorilla looking back in Bwindi Impenetrable Forest, Uganda",
+    "credit": "Safari Crafters archive"
   },
   "queen-elizabeth-national-park": {
-    "src": "/assets/africa-atlas-generated/queen-elizabeth-national-park.webp",
-    "alt": "AI-generated illustration: A herd of African buffalo at the edge of Uganda's Kazinga Channel with open savannah and low hills behind, late afternoon light.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/queen-elizabeth-national-park/field-photographs/b1e9b851127d.webp",
+    "alt": "Elephant beneath a spreading tree in Queen Elizabeth National Park, Uganda",
+    "credit": "Safari Crafters archive"
   },
   "kibale-national-park": {
-    "src": "/assets/africa-atlas-generated/kibale-national-park.webp",
-    "alt": "AI-generated illustration: An adult chimpanzee climbing a low mossy branch within dense Kibale rainforest Uganda, leafy canopy and shafts of green filtered light.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/kibale-national-park/field-photographs/856ea7d98361.webp",
+    "alt": "Chimpanzee resting on a tree branch in Kibale National Park, Uganda",
+    "credit": "Safari Crafters archive"
   },
   "murchison-falls-national-park": {
     "src": "/assets/africa-atlas-generated/murchison-falls-national-park.webp",
@@ -215,19 +215,19 @@
     "credit": "AI-generated destination illustration"
   },
   "featured-serengeti": {
-    "src": "/assets/africa-atlas-generated/featured-serengeti.webp",
-    "alt": "AI-generated illustration: A male lion on a weathered Serengeti granite kopje at first light, distant immense grassland, wide scene with warm rocks and cool sky.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/serengeti/field-photographs/ec57020b6dc1.webp",
+    "alt": "Leopard standing on a tree branch in the Serengeti",
+    "credit": "Safari Crafters archive"
   },
   "featured-bwindi-impenetrable": {
-    "src": "/assets/africa-atlas-generated/featured-bwindi-impenetrable.webp",
-    "alt": "AI-generated illustration: A female mountain gorilla with a young juvenile partly sheltered among ferns in Bwindi Uganda, quiet candid scene in soft overcast forest light, natural family interaction.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/bwindi-impenetrable/field-photographs/d8d1d12f2e2d.webp",
+    "alt": "Mist over the rainforest canopy of Bwindi, Uganda",
+    "credit": "Safari Crafters archive"
   },
   "featured-kibale-national-park": {
-    "src": "/assets/africa-atlas-generated/featured-kibale-national-park.webp",
-    "alt": "AI-generated illustration: A chimpanzee sitting high at the fork of a large fig tree in Kibale Uganda, wide rainforest canopy composition with glistening green leaves after rain.",
-    "credit": "AI-generated destination illustration"
+    "src": "/assets/destinations/kibale-national-park/field-photographs/30dedac029a1.webp",
+    "alt": "Chimpanzees together in Kibale forest, Uganda",
+    "credit": "Safari Crafters archive"
   },
   "hero": {
     "src": "/assets/africa-atlas-generated/hero.webp",
@@ -335,18 +335,18 @@
     "credit": "AI-generated destination illustration"
   },
   "russia": {
-    "src": "/assets/destinations/kamchatka/supplied/12.webp",
-    "alt": "Brown bear walking beneath a snow-streaked volcano in Kamchatka",
+    "src": "/assets/destinations/kamchatka/field-photographs/fd2f68b9b549.webp",
+    "alt": "Brown bear reflected in water beneath a Kamchatka volcano",
     "credit": "Safari Crafters archive"
   },
   "norway": {
-    "src": "/assets/destinations/svalbard/svalbard-01.jpg",
-    "alt": "Svalbard wildlife and landscape photograph 1",
+    "src": "/assets/destinations/svalbard/field-photographs/a513430a84d8.webp",
+    "alt": "Polar bear and cub on a sea-ice floe in Svalbard",
     "credit": "Safari Crafters archive"
   },
   "chile-and-argentina": {
-    "src": "/assets/destinations/patagonia/supplied/05.webp",
-    "alt": "Guanaco silhouetted against clouds in Patagonia",
+    "src": "/assets/destinations/patagonia/field-photographs/60aa43e40fd5.webp",
+    "alt": "Puma resting below snowy mountains in Chilean Patagonia",
     "credit": "Safari Crafters archive"
   },
   "atlas-india": {
@@ -356,21 +356,192 @@
     "focalPoint": "36% 55%"
   },
   "atlas-arctic-beyond": {
-    "src": "/assets/destinations/svalbard/svalbard-03.jpg",
-    "alt": "Svalbard wildlife and landscape photograph 3",
-    "credit": "Safari Crafters archive",
-    "focalPoint": "45% 65%"
+    "src": "/assets/destinations/svalbard/field-photographs/a513430a84d8.webp",
+    "alt": "Polar bear and cub on a sea-ice floe in Svalbard",
+    "credit": "Safari Crafters archive"
   },
   "atlas-americas": {
-    "src": "/assets/destinations/pantanal/supplied/02.webp",
-    "alt": "Jaguar swimming through a Pantanal river",
-    "credit": "Safari Crafters archive",
-    "focalPoint": "32% 100%"
+    "src": "/assets/destinations/patagonia/field-photographs/60aa43e40fd5.webp",
+    "alt": "Puma resting below snowy mountains in Chilean Patagonia",
+    "credit": "Safari Crafters archive"
   },
   "atlas-africa": {
     "src": "/assets/africa-atlas-generated/hero.webp",
     "alt": "AI-generated illustration: An expansive East African savannah panorama at dawn: a small elephant family moving in the lower right across luminous grass, scattered acacias, distant layered hills and sweeping clouds. Landscape and sky dominate, calm open central area for website title, realistic natural scale.",
     "credit": "AI-generated destination illustration",
     "focalPoint": "80% 65%"
+  },
+  "atlantic-rainforest": {
+    "src": "/assets/destinations/atlantic-rainforest/field-photographs/021c56c72f7b.webp",
+    "alt": "Toucan perched in Brazil’s Atlantic Forest",
+    "credit": "Safari Crafters archive"
+  },
+  "pantanal": {
+    "src": "/assets/destinations/pantanal/field-photographs/e755e99797fb.webp",
+    "alt": "Jaguar at the water’s edge in Brazil’s Pantanal",
+    "credit": "Safari Crafters archive"
+  },
+  "patagonia": {
+    "src": "/assets/destinations/patagonia/field-photographs/60aa43e40fd5.webp",
+    "alt": "Puma resting below snowy mountains in Chilean Patagonia",
+    "credit": "Safari Crafters archive"
+  },
+  "colombia": {
+    "src": "/assets/destinations/colombia/field-photographs/98b6eef2c7c6.webp",
+    "alt": "Red-and-black bird perched in Colombia’s cloud forest",
+    "credit": "Safari Crafters archive"
+  },
+  "costa-rica": {
+    "src": "/assets/destinations/costa-rica/field-photographs/8f739f09d929.webp",
+    "alt": "Keel-billed toucan perched on a branch in Costa Rica",
+    "credit": "Safari Crafters archive"
+  },
+  "svalbard": {
+    "src": "/assets/destinations/svalbard/field-photographs/a513430a84d8.webp",
+    "alt": "Polar bear and cub on a sea-ice floe in Svalbard",
+    "credit": "Safari Crafters archive"
+  },
+  "kamchatka": {
+    "src": "/assets/destinations/kamchatka/field-photographs/fd2f68b9b549.webp",
+    "alt": "Brown bear reflected in water beneath a Kamchatka volcano",
+    "credit": "Safari Crafters archive"
+  },
+  "brazil": {
+    "src": "/assets/destinations/pantanal/field-photographs/e755e99797fb.webp",
+    "alt": "Jaguar at the water’s edge in Brazil’s Pantanal",
+    "credit": "Safari Crafters archive"
+  },
+  "chile": {
+    "src": "/assets/destinations/patagonia/field-photographs/60aa43e40fd5.webp",
+    "alt": "Puma resting below snowy mountains in Chilean Patagonia",
+    "credit": "Safari Crafters archive"
+  },
+  "velavadar": {
+    "src": "/assets/destinations/velavadar/field-photographs/fcf7e2317e76.webp",
+    "alt": "Blackbuck herd silhouetted in golden light at Velavadar",
+    "credit": "Safari Crafters archive"
+  },
+  "sunderbans": {
+    "src": "/assets/destinations/sunderbans/field-photographs/c34284b16c27.webp",
+    "alt": "Tigers beside a mangrove-lined waterway under dark clouds in the Sundarbans",
+    "credit": "Safari Crafters archive"
+  },
+  "spiti-valley": {
+    "src": "/assets/destinations/spiti-valley/field-photographs/0de6df82937a.webp",
+    "alt": "Snow leopard crossing a snow-covered slope in Spiti Valley",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "68% 50%"
+  },
+  "sattal-and-pangot": {
+    "src": "/assets/destinations/sattal-and-pangot/field-photographs/d6ea8bb954be.webp",
+    "alt": "Parakeet perched on a branch in the Sattal and Pangot forests",
+    "credit": "Safari Crafters archive"
+  },
+  "singalila": {
+    "src": "/assets/destinations/singalila/field-photographs/dda42ebeaa92.webp",
+    "alt": "Red panda among bamboo and branches in Singalila",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "30% 50%"
+  },
+  "ranthambhore": {
+    "src": "/assets/destinations/ranthambhore/field-photographs/861288cdc556.webp",
+    "alt": "Bengal tiger walking beside a Ranthambhore lake at sunrise",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "62% 50%"
+  },
+  "tadoba": {
+    "src": "/assets/destinations/tadoba/field-photographs/b2cd0670fa67.webp",
+    "alt": "Tigress walking through grass with her cub",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "60% 40%"
+  },
+  "rann-of-kutch": {
+    "src": "/assets/destinations/rann-of-kutch/field-photographs/b74fecc61357.webp",
+    "alt": "Wild asses crossing the Rann of Kutch beneath a warm evening sky",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "50% 45%"
+  },
+  "ladakh": {
+    "src": "/assets/destinations/ladakh/field-photographs/40974ed870e8.webp",
+    "alt": "Mountain lake beneath glowing clouds in Ladakh",
+    "credit": "Safari Crafters archive"
+  },
+  "panna": {
+    "src": "/assets/destinations/panna/field-photographs/96f58b18cda7.webp",
+    "alt": "Tiger walking through Panna beneath a glowing sunset",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "60% 40%"
+  },
+  "pench": {
+    "src": "/assets/destinations/pench/field-photographs/659e8c4eaae1.webp",
+    "alt": "Leopard resting on a sunlit rock in Pench",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "62% 40%"
+  },
+  "rajaji": {
+    "src": "/assets/destinations/rajaji/field-photographs/5a8d188b1121.webp",
+    "alt": "Asian elephant family walking through Rajaji forest",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "50% 35%"
+  },
+  "kaziranga": {
+    "src": "/assets/destinations/kaziranga/field-photographs/152a9cbb1ee4.webp",
+    "alt": "One-horned rhinoceros standing in Kaziranga grassland",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "48% 35%"
+  },
+  "jhalana": {
+    "src": "/assets/destinations/jhalana/field-photographs/68f9f6d610bd.webp",
+    "alt": "Leopard resting on a rock in Jhalana",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "42% 35%"
+  },
+  "kanha": {
+    "src": "/assets/destinations/kanha/field-photographs/7e97ab33488f.webp",
+    "alt": "Tiger walking along a misty forest track in Kanha",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "52% 40%"
+  },
+  "kabini": {
+    "src": "/assets/destinations/kabini/field-photographs/239a6ddf5dc2.webp",
+    "alt": "Asian elephants together beside the Kabini backwaters",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "65% 35%"
+  },
+  "jawai": {
+    "src": "/assets/destinations/jawai/field-photographs/eef269a96892.webp",
+    "alt": "Two leopard cubs at the entrance of a granite cave in Jawai",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "60% 40%"
+  },
+  "gir": {
+    "src": "/assets/destinations/gir/field-photographs/834159d44bdd.webp",
+    "alt": "Asiatic lion resting in Gir forest",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "60% 35%"
+  },
+  "dudhwa": {
+    "src": "/assets/destinations/dudhwa/field-photographs/2c8f5cacf45e.webp",
+    "alt": "Tiger approaching along a misty forest track in Dudhwa",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "58% 35%"
+  },
+  "bharatpur-keoladeo": {
+    "src": "/assets/destinations/bharatpur-keoladeo/field-photographs/976f71ef5d58.webp",
+    "alt": "Sarus cranes together in Bharatpur grassland",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "44% 35%"
+  },
+  "bandhavgarh": {
+    "src": "/assets/destinations/bandhavgarh/field-photographs/f6678f9a6c31.webp",
+    "alt": "Bengal tiger portrait in Bandhavgarh forest",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "60% 35%"
+  },
+  "bandipur": {
+    "src": "/assets/destinations/bandipur/field-photographs/705b07848c5c.webp",
+    "alt": "Elephant family resting beneath a tree in Bandipur",
+    "credit": "Safari Crafters archive",
+    "focalPoint": "62% 35%"
   }
 }

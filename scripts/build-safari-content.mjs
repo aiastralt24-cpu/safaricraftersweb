@@ -343,7 +343,7 @@ function makeExpedition(page) {
   return {
     slug,
     title,
-    category: "Photo Expedition",
+    category: "Photography Tours",
     skill: "Photography-led private or small-group safari",
     groupSize: page.body.match(/Spaces:\s*([^\n]+)/i)?.[1]?.trim() ?? "Small group or private departure",
     bestMonths: date ?? "Seasonal departure",
@@ -519,7 +519,7 @@ export const heroImage: ImageAsset = ${js(heroImage)};
 export const navItems = [
   { href: "/journeys", label: "Journeys" },
   { href: "/destinations", label: "Destinations" },
-  { href: "/photo-expeditions", label: "Photo Expeditions" },
+  { href: "/photo-expeditions", label: "Photography Tours" },
   { href: "/journal", label: "The Journal" },
   { href: "/about", label: "About" }
 ];

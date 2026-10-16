@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/JsonLd";
 import type { StoreCategory } from "@/lib/store";
 import { breadcrumbSchema } from "@/lib/structured-data";
 import StoreMotion from "./StoreMotion";
+import StorePrice from "./StorePrice";
 
 export default function StoreCategoryCollection({ category }: { category: StoreCategory }) {
   return (
@@ -59,7 +60,7 @@ export default function StoreCategoryCollection({ category }: { category: StoreC
                   <p>{product.description}</p>
                   <dl>
                     <div><dt>Format</dt><dd>{product.format}</dd></div>
-                    <div><dt>Price</dt><dd>{product.price}</dd></div>
+                    <div><dt>Price</dt><dd><StorePrice product={product} /></dd></div>
                   </dl>
                   <Link className="store-collection-link" href={`/store/${category.slug}/${product.slug}`}>
                     <span>View product</span>

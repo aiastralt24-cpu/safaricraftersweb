@@ -7,18 +7,18 @@ import { useMemo, useState } from "react";
 export type SearchItem = {
   title: string;
   href: string;
-  type: "Journey" | "Destination" | "Photo Expedition" | "Journal";
+  type: "Journey" | "Destination" | "Photography Tours" | "Journal";
   detail?: string;
 };
 
-const categories = ["All", "Journey", "Destination", "Photo Expedition", "Journal"] as const;
+const categories = ["All", "Journey", "Destination", "Photography Tours", "Journal"] as const;
 type SearchCategory = (typeof categories)[number];
 
 const categoryLabels: Record<SearchCategory, string> = {
   All: "All",
   Journey: "Journeys",
   Destination: "Destinations",
-  "Photo Expedition": "Photo expeditions",
+  "Photography Tours": "Photography Tours",
   Journal: "Journal"
 };
 

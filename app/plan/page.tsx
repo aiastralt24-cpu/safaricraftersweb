@@ -32,7 +32,7 @@ export default async function PlanPage({ searchParams }: PlanPageProps) {
     <section className="plan-page">
       <div className="container plan-intro">
         <p className="eyebrow">Plan your safari</p>
-        <h1 className="display">Your safari starts here.</h1>
+        <h1 className="display">Your safari starts <em className="editorial-accent">here.</em></h1>
         <p>Tell us what you have in mind. We’ll help shape the journey.</p>
       </div>
       <PlannerForm initialContext={plannerContext} />
@@ -78,7 +78,7 @@ function getInitialContext(params: { journey?: string; destination?: string; exp
   const requestedRegion = plannerRegion(params.region);
   if (params.guided === "true") {
     return {
-      sourceLabel: "Guided Bespoke Safari",
+      sourceLabel: "Bespoke Safaris",
       region: requestedRegion || "Surprise me",
       types: ["Private"],
       experiences: requestedRegion ? contextualExperiences("wildlife photography", requestedRegion) : [],

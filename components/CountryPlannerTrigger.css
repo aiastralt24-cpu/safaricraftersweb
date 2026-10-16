@@ -1,0 +1,82 @@
+.country-planner-dialog {
+  width: min(900px, calc(100% - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: var(--bone);
+  color: var(--ink);
+  overflow: hidden;
+}
+
+.country-planner-dialog[open] { display: flex; flex-direction: column; }
+.country-planner-dialog::backdrop { background: #101711bb; }
+body:has(.country-planner-dialog[open]) { overflow: hidden; }
+
+.country-planner-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-shrink: 0;
+  padding: 24px 28px;
+  border-bottom: var(--rule-fine);
+}
+.country-planner-header .eyebrow { margin: 0 0 8px; }
+.country-planner-header h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.5vw, 34px);
+  font-weight: 400;
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+.country-planner-close {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #29342440;
+  border-radius: 50%;
+  background: var(--bone);
+  color: var(--ink);
+  cursor: pointer;
+}
+.country-planner-body { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.country-planner-dialog .planner,
+.country-planner-dialog .planner-success { width: 100%; margin: 0; border: 0; box-shadow: none; backdrop-filter: none; }
+.country-planner-dialog .planner-shell { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+.country-planner-dialog .planner-note { min-height: 0; padding: 16px 28px; }
+.country-planner-dialog .planner-note > div { display: none; }
+.country-planner-dialog .planner-stage-nav { display: flex; justify-content: space-between; gap: 12px; margin: 0; }
+.country-planner-dialog .planner-stage-nav button { font-size: 13px; }
+.country-planner-dialog .planner-card { min-width: 0; padding: 24px 28px 0; }
+.country-planner-dialog .prefill-note { display: none; }
+.country-planner-dialog .planner-card > h2 { font-size: clamp(28px, 3vw, 40px); line-height: 1.1; margin: 12px 0 20px; scroll-margin-top: 16px; }
+.country-planner-dialog .choice-grid,
+.country-planner-dialog .chip-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.country-planner-dialog .field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.country-planner-dialog .choice,
+.country-planner-dialog .chip { min-width: 0; font-size: 22px; padding: 18px 32px 18px 16px; overflow-wrap: anywhere; }
+.country-planner-dialog .choice span { font-size: inherit; }
+.country-planner-dialog .choice::after,
+.country-planner-dialog .chip::after { right: 14px; }
+.country-planner-dialog .planner-actions { position: sticky; bottom: 0; z-index: 3; margin: 24px -28px 0; padding: 16px 28px; background: var(--bone); border-top: var(--rule-fine); }
+.country-planner-dialog .planner-success { padding: 32px; }
+
+@media (max-width: 600px) {
+  .country-planner-dialog { width: calc(100% - 16px); max-height: calc(100dvh - 16px); border-radius: 12px; }
+  .country-planner-header { padding: 18px 16px; gap: 12px; }
+  .country-planner-dialog .planner-note { padding: 12px 16px; }
+  .country-planner-dialog .planner-stage-nav button { flex-direction: column; text-align: center; font-size: 11px; }
+  .country-planner-dialog .planner-card { padding: 20px 16px 0; }
+  .country-planner-dialog .choice-grid,
+  .country-planner-dialog .chip-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .country-planner-dialog .field-grid { grid-template-columns: minmax(0, 1fr); }
+  .country-planner-dialog .chip,
+  .country-planner-dialog .choice { font-size: 19px; }
+  .country-planner-dialog .planner-actions { margin-inline: -16px; padding: 14px 16px max(14px, env(safe-area-inset-bottom)); }
+}

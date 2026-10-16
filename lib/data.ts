@@ -129,6 +129,20 @@ export type Destination = {
     openingHeadline?: string;
     landscapeHeadline?: string;
     wildlifeHeadline?: string;
+    landscapeCopy?: string;
+    wildlifeCopy?: string;
+    factsLabel?: string;
+    relatedLabel?: string;
+    relatedHeadline?: string;
+    relatedIntro?: string;
+    plannerHeadline?: string;
+    plannerCopy?: string;
+    plannerCta?: string;
+    scoop?: Array<{
+      title: string;
+      blurb: string;
+      body: string;
+    }>;
   };
 };
 
@@ -176,6 +190,7 @@ export type ExpeditionDeparture = {
 };
 
 export type Expedition = {
+  geography?: "India" | "International";
   publicationStatus?: "preview" | "published";
   availabilityReviewedAt?: string;
   departures?: ExpeditionDeparture[];

@@ -1,5 +1,6 @@
 import type { Destination, Expedition, FAQItem, JournalArticle, Journey, Specialist } from "@/lib/data";
 import { isApprovedEditorialImage } from "@/lib/media";
+import { bookOffer } from "@/lib/store";
 
 export const siteUrl = "https://safaricrafters.com";
 
@@ -132,11 +133,15 @@ export function productSchema() {
     description: "A decade in the making, Kairav Engineer's 396-page photographic natural history traces the leopards, habitat and inhabitants of Jawai.",
     image: `${siteUrl}/assets/store/ghosts-book-cover.webp`,
     brand: { "@type": "Brand", name: "Safari Crafters" },
-    author: { "@type": "Person", name: "Kairav Engineer" },
+    author: [
+      { "@type": "Person", name: "Kairav Engineer" },
+      { "@type": "Person", name: "Gaurav Ramnarayanan" },
+      { "@type": "Person", name: "Yashwant Singh Ranawat" },
+    ],
     offers: {
       "@type": "Offer",
       priceCurrency: "INR",
-      price: "3300",
+      price: String(bookOffer.amount),
       url: "https://www.store.safaricrafters.com/products/the-ghosts-of-the-granite-hills"
     }
   };

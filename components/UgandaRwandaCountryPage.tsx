@@ -14,7 +14,7 @@ import "./KenyaCountryPage.css";
 import "./TanzaniaCountryPage.css";
 const forest = getDestination("bwindi-impenetrable")!;
 const hero = forest.image;
-const gallery = [forest.image, getDestination("kibale-national-park")!.image, getDestination("queen-elizabeth-national-park")!.image];
+const gallery = getDestination("uganda")!.gallery;
 function placeImage(slug:string):ImageAsset {
  const destination = getDestination(slug)!;
  return ["bwindi-impenetrable", "kibale-national-park", "queen-elizabeth-national-park"].includes(slug) ? destination.image : getDestinationHeroImage(destination);
@@ -23,7 +23,7 @@ export function UgandaRwandaCountryPage() {
   return <div className="kenya-page tanzania-page">
     <JsonLd data={breadcrumbSchema([{name:"Home",path:"/"},{name:"Destinations",path:"/destinations"},{name:"Africa",path:"/destinations/africa"},{name:"Uganda & Rwanda",path:"/destinations/uganda"}])}/>
     <JsonLd data={faqSchema(ugandaFaqs)}/>
-    <PageHero title="Uganda & Rwanda" copy={ugandaDescription} image={hero} focalPoint="50% 45%" meta="Africa / East Africa" variant="destination" breadcrumbs={[{label:"Home",href:"/"},{label:"Destinations",href:"/destinations"},{label:"Africa",href:"/destinations/africa"},{label:"Uganda & Rwanda"}]}/>
+    <PageHero accent="Uganda & Rwanda" title="Uganda & Rwanda" copy={ugandaDescription} image={hero} focalPoint="50% 45%" meta="Africa / East Africa" variant="destination" breadcrumbs={[{label:"Home",href:"/"},{label:"Destinations",href:"/destinations"},{label:"Africa",href:"/destinations/africa"},{label:"Uganda & Rwanda"}]}/>
     <section className="kenya-facts" aria-label="Uganda and Rwanda at a glance"><div className="container kenya-facts-grid">
       <div><h2>Come for</h2><p>Gorillas, chimpanzees & safari</p><small>Forest treks, big mammals, birdlife and boat safaris.</small></div>
       <div><h2>Best time to visit</h2><p>June–September · December–February</p><small>Drier months favour trekking; green seasons bring lush forests and fewer visitors.</small></div>

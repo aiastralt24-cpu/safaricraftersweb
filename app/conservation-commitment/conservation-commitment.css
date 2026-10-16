@@ -61,3 +61,16 @@
 @media (max-width:900px) { .conservation-intro-grid,.conservation-impact-heading,.conservation-record-heading,.conservation-record,.conservation-record:nth-child(even) { grid-template-columns:1fr; } .conservation-impact-primary { grid-template-columns:repeat(3,minmax(0,1fr)); } .conservation-impact-secondary { grid-template-columns:repeat(2,minmax(0,1fr)); border-top:0; } .conservation-record:nth-child(even) figure,.conservation-record:nth-child(even) .conservation-record-copy { grid-column:auto; grid-row:auto; } .conservation-record:nth-child(even) figure { order:0; } .conservation-record:nth-child(even) .conservation-record-copy { order:1; } .conservation-record-copy { max-width:720px; } }
 @media (max-width:620px) { .conservation-hero { min-height:78svh; } .conservation-hero>img { object-position:62% center; } .conservation-hero-copy { padding-top:150px; padding-bottom:68px; } .conservation-hero h1 { font-size:clamp(3.5rem,14vw,4.8rem); } .conservation-credit { display:none; } .conservation-intro-copy,.conservation-impact-primary,.conservation-impact-secondary,.conservation-footprint-grid,.conservation-species { grid-template-columns:1fr; } .conservation-impact-primary div { min-height:150px; gap:24px; } .conservation-impact-secondary { border-left:0; } .conservation-impact-secondary div { min-height:auto; display:grid; grid-template-columns:128px minmax(0,1fr); gap:18px; align-items:center; padding:20px 0; border-right:0; } .conservation-impact-secondary dt { font-size:1.85rem; } .conservation-record-heading { margin-bottom:62px; } .conservation-record-list { gap:80px; } .conservation-record figure { aspect-ratio:4/3; } .conservation-record-meta { align-items:flex-start; } .conservation-footprint-grid p,.conservation-footprint-grid p:first-child { border-right:0; border-bottom:1px solid rgba(var(--rgb-bone),.18); padding:26px 0; } .conservation-species { gap:18px; } }
 @media (prefers-reduced-motion:reduce) { .conservation-hero>img,.conservation-record figure img { animation:none; transition:none; } [data-conservation-expand] { transform:none !important; border-radius:10px !important; will-change:auto; } }
+
+.conservation-source-link { display:block; width:fit-content; margin-top:18px; color:var(--c-ink); text-decoration:underline; text-underline-offset:4px; }
+.conservation-source-link:focus-visible { outline:2px solid var(--c-brass); outline-offset:5px; }
+
+/* Keep the wildlife photograph separate from the text on narrow screens. */
+@media (max-width:620px) {
+  .conservation-hero { display:flex; flex-direction:column; align-items:stretch; min-height:0; padding-top:100px; }
+  .conservation-hero>img { position:relative !important; inset:auto !important; width:100% !important; height:auto !important; aspect-ratio:4/3; object-position:62% bottom; animation:none; filter:saturate(.9) contrast(1.02); }
+  .conservation-hero-shade { display:none; }
+  .conservation-hero-copy { padding-top:36px; padding-bottom:48px; }
+  .conservation-hero h1 { font-size:clamp(2.8rem,12vw,4rem); line-height:1; }
+  .conservation-hero-copy>p:last-child { margin-top:24px; }
+}

@@ -1024,3 +1024,33 @@
 }
 
 .expedition-preview-note { margin:0; padding:18px max(24px,calc((100vw - 1200px)/2)); background:var(--bone); color:var(--ink); font-size:14px; position:relative; z-index:1; }
+
+/* Compact stage overview shared by private journeys. */
+.journey-stages-heading { grid-column:1; grid-row:1; }
+.journey-stages-heading .h2 { margin-bottom:16px; }
+.journey-stages-heading > p:last-child { max-width:26ch; color:var(--muted); font-size:15px; line-height:1.6; }
+.journey-stages-list { grid-column:2; min-width:0; }
+.journey-stage { border-top:var(--rule-fine); }
+.journey-stage:last-child { border-bottom:var(--rule-fine); }
+.journey-stage summary { display:grid; grid-template-columns:98px minmax(0,1fr) 44px; align-items:center; gap:20px; padding:18px 0; cursor:pointer; list-style:none; }
+.journey-stage summary::-webkit-details-marker { display:none; }
+.journey-stage summary:focus-visible { outline:2px solid var(--brass); outline-offset:5px; }
+.journey-stage-overview { display:grid; gap:5px; }
+.journey-stage-title { font-family:var(--font-display); font-size:clamp(24px,2.2vw,30px); line-height:1.15; }
+.journey-stage-description { font-size:14px; line-height:1.5; color:var(--muted); }
+.journey-stage[open] .timeline-toggle::after { transform:translate(-50%,-50%) rotate(0); }
+.journey-stage-days { padding:0 64px 24px 118px; }
+.journey-stage-day + .journey-stage-day { margin-top:24px; }
+.journey-stage-day h3 { font-family:var(--font-sans); font-size:14px; font-weight:600; line-height:1.5; margin:0 0 10px; }
+.journey-stage-day p { font-size:15px; line-height:1.75; margin:0 0 12px; }
+@media(max-width:760px) {
+  .journey-stages-heading,.journey-stages-list { grid-column:1 / -1; }
+  .journey-stages-heading > p:last-child { max-width:36ch; margin-bottom:24px; }
+  .journey-stage summary { grid-template-columns:minmax(0,1fr) 44px; gap:6px 14px; padding:16px 0; }
+  .journey-stage .timeline-day-label { grid-column:1; font-size:10px; }
+  .journey-stage-overview { grid-column:1; }
+  .journey-stage .timeline-toggle { grid-column:2; grid-row:1 / span 2; }
+  .journey-stage-title { font-size:25px; }
+  .journey-stage-description { font-size:13px; }
+  .journey-stage-days { padding:4px 0 20px; }
+}

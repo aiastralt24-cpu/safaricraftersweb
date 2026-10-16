@@ -5,7 +5,7 @@ import "./search.css";
 
 export const metadata: Metadata = {
   title: "Search",
-  description: "Search Safari Crafters journeys, destinations, photo expeditions and journal stories.",
+  description: "Search Safari Crafters journeys, destinations, photography tours and journal stories.",
   alternates: { canonical: "/search" }
 };
 
@@ -13,7 +13,7 @@ export default function SearchPage() {
   const items: SearchItem[] = [
     ...journeys.map((item) => ({ title: item.title, href: `/journeys/${item.slug}`, type: "Journey" as const, detail: item.region })),
     ...destinations.map((item) => ({ title: item.title, href: `/destinations/${item.slug}`, type: "Destination" as const, detail: item.country })),
-    ...expeditions.map((item) => ({ title: item.title, href: `/photo-expeditions/${item.slug}`, type: "Photo Expedition" as const, detail: item.category })),
+    ...expeditions.map((item) => ({ title: item.title, href: `/photo-expeditions/${item.slug}`, type: "Photography Tours" as const, detail: item.category })),
     ...journal.map((item) => ({ title: item.title, href: `/journal/${item.slug}`, type: "Journal" as const, detail: item.category }))
   ];
 

@@ -8,6 +8,7 @@ import InternationalOrder from "./InternationalOrder";
 import StoreMotion from "./StoreMotion";
 import ShopifyBuyButton from "./ShopifyBuyButton";
 import "./store.css";
+import StorePrice from "./StorePrice";
 
 export const metadata: Metadata = {
   title: "Store | Safari Crafters",
@@ -56,7 +57,7 @@ export default function StoreCollectionPage() {
                 <p className="store-home-release-label">Now available · Photographic book</p>
                 <h2>{featured.product.title}</h2>
                 <p className="store-home-release-meta">
-                  {featured.product.format} <span aria-hidden="true">·</span> {featured.product.price}
+                  {featured.product.format} <span aria-hidden="true">·</span> <StorePrice product={featured.product} />
                 </p>
                 <div className="store-home-actions">
                   <div className="store-home-purchase-actions">

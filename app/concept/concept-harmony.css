@@ -50,8 +50,8 @@
 
 /* Keep the expedition dossier secondary to the photograph. */
 .concept-expedition-calendar .concept-departure-dossier {
-  width: min(380px, 33%);
-  min-height: min(450px, calc(100% - 92px));
+  width: 100%;
+  min-height: 100%;
   padding: clamp(32px, 3.1vw, 46px);
 }
 
@@ -188,8 +188,8 @@
 
 @media (min-width: 681px) and (max-width: 980px) {
   .concept-expedition-calendar .concept-departure-dossier {
-    width: min(360px, 42%);
-    min-height: min(450px, calc(100% - 72px));
+    width: 100%;
+    min-height: 100%;
     padding: 30px;
   }
 
@@ -215,16 +215,18 @@
   }
 }
 
-/* Homepage surface palette: one editorial base, one featured sand and one dark reset. */
+/* Homepage rhythm: warm story, white ways, warm journeys, forest departures,
+   warm aviation and white concierge. */
 .concept-page {
-  --homepage-base: #f7f4ed;
-  --homepage-feature: #ece5d9;
+  --homepage-base: var(--surface-warm);
+  --homepage-white: var(--surface-white);
+  --homepage-feature: var(--surface-sand);
+  --homepage-forest: var(--surface-forest);
   --homepage-dark: #100d0a;
   background: var(--homepage-dark);
 }
 
 .concept-story-proof,
-.concept-journey-types,
 .concept-wildest-places,
 .concept-guest-notes,
 .concept-journey-feature-shell,
@@ -234,20 +236,28 @@
 .concept-species-editorial,
 .concept-field-notes,
 .concept-expedition-calendar,
-.concept-conservation-statement,
-.concept-concierge {
+.concept-conservation-statement {
   background: var(--homepage-base);
 }
 
-.concept-private-aviation,
+.concept-journey-types,
+.concept-concierge,
+.concept-choice-row a {
+  background: var(--homepage-white);
+}
+
+.concept-expedition-calendar.concept-expedition-board-section {
+  background: var(--homepage-forest);
+}
+
+.concept-private-aviation {
+  background: var(--homepage-base);
+}
+
 .concept-concierge-card,
 .concept-field-note,
 .concept-expedition-calendar .concept-departure-dossier {
   background: var(--homepage-feature);
-}
-
-.concept-choice-row a {
-  background: var(--homepage-base);
 }
 
 .concept-choice-row a:hover,
@@ -264,7 +274,7 @@
   }
 
   .concept-private-aviation-panel {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(18px);
     transition:
       opacity 620ms cubic-bezier(.2, 0, 0, 1),
@@ -272,7 +282,7 @@
   }
 
   .concept-private-aviation-image {
-    opacity: 0;
+    opacity: 1;
     transform: translateX(24px) scale(.99);
     transition:
       opacity 760ms 80ms cubic-bezier(.2, 0, 0, 1),
@@ -280,7 +290,7 @@
   }
 
   .concept-private-aviation-copy > * {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(16px);
     transition:
       opacity 520ms cubic-bezier(.2, 0, 0, 1),
@@ -322,3 +332,23 @@
     transition: none !important;
   }
 }
+
+/* Emphasise the meaningful words in the homepage's editorial headings. */
+.concept-story-proof-intro h2 em,
+.concept-journey-types > h2 em {
+  color: var(--brass-dark, #8b6935);
+  font-style: italic;
+  font-weight: inherit;
+}
+
+/* Give the three closing editorial sections distinct visual identities. */
+.concept-private-aviation { background:#192d24; color:#f5f0e5; }
+.concept-private-aviation .concept-private-aviation-panel { background:#21392d; border-color:#ffffff24; }
+.concept-private-aviation .concept-private-aviation-copy { background:#21392d; color:#f5f0e5; }
+.concept-private-aviation .concept-private-aviation-copy h2 { color:#f5f0e5; }
+.concept-private-aviation .concept-private-aviation-copy h2 em.editorial-accent { color:#d1ad65; }
+.concept-private-aviation .concept-private-aviation-eyebrow { color:#d1ad65; }
+.concept-private-aviation .concept-private-aviation-summary { color:#d0d8cc; }
+.concept-private-aviation .concept-private-aviation-points { color:#d0d8cc; }
+.concept-private-aviation .concept-text-link { color:#e1c58c; border-bottom-color:#c3a363; }
+.guest-notes-feature { background:#fcfaf5; }

@@ -36,7 +36,7 @@ export default function ConservationCommitmentPage() {
       <div className="conservation-hero-shade" />
       <div className="container conservation-hero-copy">
         <p className="conservation-eyebrow">Safari Crafters × Astral Foundation</p>
-        <h1 id="conservation-title">Conservation,{" "}<br /><em>carried quietly.</em></h1>
+        <h1 id="conservation-title">Conservation,{" "}<br /><em className="editorial-accent editorial-accent-light">carried quietly.</em></h1>
         <p>Practical support for the landscapes we travel through and the people who protect them.</p>
       </div>
       <p className="conservation-credit">Safari Crafters archive · Ranthambhore</p>
@@ -46,7 +46,7 @@ export default function ConservationCommitmentPage() {
       <div className="container conservation-intro-grid" data-conservation-reveal>
         <p className="conservation-index">Our position</p>
         <div>
-          <h2>A responsibility that<br />continues beyond the journey.</h2>
+          <h2>A responsibility that<br />continues <em className="editorial-accent">beyond the journey.</em></h2>
           <div className="conservation-intro-copy">
             <p>Safari Crafters supports conservation through Astral Foundation as an ongoing commitment, funded independently and never presented as an obligation to our guests.</p>
             <p>The focus is practical and long-term: strengthening field capacity, caring for habitat, supporting research and investing in the communities that share these wildlife landscapes.</p>
@@ -59,7 +59,7 @@ export default function ConservationCommitmentPage() {
       <div className="container conservation-impact-heading" data-conservation-reveal>
         <p className="conservation-eyebrow">A decade in the field</p>
         <h2 id="impact-title">The measure of<br />long-term work.</h2>
-        <p>Figures published by Astral Foundation across its forest conservation and climate-resilience programmes in India.</p>
+        <p>Figures published by Astral Foundation across its forest conservation and climate-resilience programmes in India.<a className="conservation-source-link" href="https://www.theastralfoundation.org/wildlife-conservation/" target="_blank" rel="noopener noreferrer">Explore Astral Foundation’s conservation projects ↗</a></p>
       </div>
       <div className="container conservation-impact-layers">
         <dl className="conservation-impact-primary" aria-label="Headline conservation outcomes" data-conservation-reveal>

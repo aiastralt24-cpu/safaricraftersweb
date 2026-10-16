@@ -163,8 +163,8 @@
 }
 .journey-atlas-feature-image:hover img,
 .journey-atlas-feature-image:focus-visible img,
-.journey-atlas-card > button:hover img,
-.journey-atlas-card > button:focus-visible img { transform: scale(1.025); }
+.journey-atlas-card-link:hover img,
+.journey-atlas-card-link:focus-visible img { transform: scale(1.025); }
 
 .journey-atlas-feature-copy {
   display: flex;
@@ -271,7 +271,7 @@
   padding-top: 0;
   grid-column: auto;
 }
-.journey-atlas-card > button {
+.journey-atlas-card-link {
   display: block;
   width: 100%;
   border: 0;

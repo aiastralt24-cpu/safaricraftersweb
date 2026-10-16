@@ -62,7 +62,7 @@ export function RegionalAtlasPage({ atlas }: { atlas: RegionalAtlas }) {
   const singleTravelOption = relatedExpeditions[0]
     ? {
         href: `/photo-expeditions/${relatedExpeditions[0].slug}`,
-        label: "Photo expedition",
+        label: "Photography Tours",
         title: relatedExpeditions[0].title,
         meta: `${relatedExpeditions[0].duration || "Private departure"} · ${relatedExpeditions[0].bestMonths}`
       }
@@ -132,7 +132,7 @@ export function RegionalAtlasPage({ atlas }: { atlas: RegionalAtlas }) {
             {isArcticBeyond
               ? <p>Follow the sea ice in Svalbard or explore the volcanic wilderness of Kamchatka.</p>
               : <p>Not a checklist—{featured.length} strong starting {featured.length === 1 ? "point" : "points"}, each with a distinct reason to travel.</p>}
-            {atlas.slug === "africa" && <p>Atlas imagery is AI-generated to illustrate each destination’s wildlife and landscapes.</p>}
+            {atlas.slug === "africa" && <p>Selected destination images are AI-generated illustrations.</p>}
           </header>
           <div className={`regional-atlas-featured${featured.length === 1 ? " is-single" : ""}`}>
             {featured.map((destination, index) => (

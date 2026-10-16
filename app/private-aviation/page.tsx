@@ -38,7 +38,7 @@ export default function PrivateAviationPage() {
         <div className="container aviation-hero-copy">
           <div>
             <p className="eyebrow">Safari Crafters × Kairamya Air</p>
-            <h1>Private flight.{" "}<br /><em>Wild arrival.</em></h1>
+            <h1>Private flight.{" "}<br /><em className="editorial-accent editorial-accent-light">Wild arrival.</em></h1>
           </div>
           <div className="aviation-hero-aside">
             <p>Considered air access for remote landscapes—shaped around the safari, never the other way around.</p>
@@ -67,7 +67,7 @@ export default function PrivateAviationPage() {
         <div className="container aviation-intro-grid">
           <div>
             <p className="eyebrow">Distance, made quiet</p>
-            <h2>More time in the wild.<br /><em>Less time between it.</em></h2>
+            <h2>More time in the wild.<br /><em className="editorial-accent">Less time between it.</em></h2>
           </div>
           <div className="aviation-intro-copy">
             <p>
@@ -142,7 +142,7 @@ export default function PrivateAviationPage() {
           </div>
           <div className="aviation-journey-copy">
             <p className="eyebrow">Beyond the runway</p>
-            <h2>One route.<br /><em>No loose ends.</em></h2>
+            <h2>One route.<br /><em className="editorial-accent editorial-accent-light">No loose ends.</em></h2>
             <ol>
               <li><span>01</span><div><h3>The safari brief</h3><p>Regions, lodges, wildlife priorities, party size and preferred pace are considered first.</p></div></li>
               <li><span>02</span><div><h3>The considered connection</h3><p>Kairamya Air coordinates the appropriate aircraft and routing around the proposed journey.</p></div></li>

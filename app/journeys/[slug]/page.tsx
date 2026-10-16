@@ -1,3 +1,5 @@
+import { BookingConditions } from "@/components/BookingConditions";
+import { tourPriceLabel } from "@/lib/tour-pricing";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -6,7 +8,7 @@ import { EditorialProse } from "@/components/EditorialProse";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { MediaGallery } from "@/components/MediaGallery";
-import { Itinerary } from "@/components/Itinerary";
+import { JourneyItinerary } from "@/components/JourneyItinerary";
 import { getJourney, journeys } from "@/lib/data";
 import { getJourneyIntelligence } from "@/lib/luxury";
 import { getJourneyFaqs, journeySeo } from "@/lib/content-intelligence";
@@ -116,8 +118,8 @@ export default async function JourneyDetailPage({ params }: Props) {
               ) : null}
               <dt>Difficulty</dt>
               <dd>{journey.difficulty}</dd>
-              <dt>Indicative investment</dt>
-              <dd>{journey.price}</dd>
+              <dt>Journey price</dt>
+              <dd>{tourPriceLabel(journey.price)}</dd>
             </dl>
             <Link className="at-glance-action" href={`/plan?journey=${journey.slug}`}>Shape this journey</Link>
           </aside>
@@ -188,7 +190,7 @@ export default async function JourneyDetailPage({ params }: Props) {
             </div>
           </section>
         ) : null}
-        <div id="itinerary"><Itinerary days={journey.days} /></div>
+        <div id="itinerary"><JourneyItinerary days={journey.days} slug={journey.slug} duration={journey.duration} /></div>
         {journey.inclusions?.length || journey.exclusions?.length ? (
           <div className="container split-lists">
             {journey.inclusions?.length ? (
@@ -232,6 +234,7 @@ export default async function JourneyDetailPage({ params }: Props) {
           </div>
           <p className="content-reviewed">Journey information reviewed {journey.seo?.reviewedAt || "July 2026"}.</p>
         </section>
+        <BookingConditions />
         <div className="container specialist-callout" id="enquire">
           <p className="eyebrow">Specialist recommendation</p>
           <h2 className="h2">This journey is shaped with {journey.specialist}.</h2>

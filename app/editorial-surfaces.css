@@ -1,0 +1,112 @@
+/* Explicit section roles keep the palette stable when content is reordered.
+   Scope to public editorial components; image heroes retain their own scrims.
+   #main makes the surface layer independent of route stylesheet load order. */
+#main :is(
+  .surface-warm,
+  .simple:not(.band-ivory),
+  .atlas-page,
+  .journey-atlas,
+  .journey-atlas-collection,
+  .journey-detail,
+  .expedition-detail,
+  .regional-atlas,
+  .country-guide,
+  .india-country-page,
+  .kenya-page,
+  .destination-dossier,
+  .destination-facts,
+  .destination-chapters,
+  .destination-field-notes,
+  .destination-combos,
+  .kenya-facts,
+  .guided-introduction,
+  .guided-paths,
+  .aviation-intro,
+  .aviation-service,
+  .conservation-intro,
+  .reviews-opening,
+  .reviews-final,
+  .store-introduction,
+  .store-home-collection,
+  .field-categories,
+  .plan-page
+) {
+  background-color: var(--surface-warm);
+}
+
+#main :is(
+  .surface-white,
+  .simple.band-ivory,
+  .journey-atlas-feature-copy,
+  .expedition-stack-card,
+  .departure-calendar-row:not(:hover):not(:focus-visible),
+  .destination-photo-journal,
+  .destination-chapter,
+  .destination-field-notes-stage,
+  .kenya-gallery,
+  .kenya-faq,
+  .kenya-related,
+  .india-specialist,
+  .guided-field,
+  .guided-person,
+  .guided-faq,
+  .aviation-fleet,
+  .conservation-impact,
+  .store-making,
+  .planner-card
+) {
+  background-color: var(--surface-white);
+}
+
+/* These sections already use light typography and accessible dark-surface links. */
+#main :is(
+  .about-principles,
+  .fixed-departure-calendar,
+  .journey-detail .luxury-brief,
+  .journey-detail .specialist-callout,
+  .regional-atlas-countries,
+  .atlas-departures,
+  .india-guidance,
+  .kenya-opening-band,
+  .kenya-luxury,
+  .kenya-plan-band,
+  .destination-scoop,
+  .destination-plan,
+  .guided-photography,
+  .guided-closing,
+  .aviation-journey,
+  .aviation-cta,
+  .reviews-ledger,
+  .store-purchase-notes,
+  .planner-note
+) {
+  background-color: var(--surface-forest);
+}
+
+#main :is(.article-cta, .store-author-note, .contact-notes) {
+  background-color: var(--surface-warm);
+}
+
+/* Reading pages get a quiet white canvas with a warm closing panel. */
+#main:has(> article > .article-body) {
+  background-color: var(--surface-white);
+}
+
+/* Container sections keep their content width while the color reaches the edges.
+   Border-image paints the band without clipping galleries or sticky content. */
+#main :is(
+  .regional-atlas-section,
+  .india-approaches,
+  .india-complete-atlas,
+  .destination-faq-section,
+  .reviews-paths
+) {
+  background-color: var(--surface-white);
+  border-image: linear-gradient(var(--surface-white), var(--surface-white)) fill 0 / 0 / 0 100vw;
+}
+
+#main :is(.journey-detail, .expedition-detail) .timeline {
+  padding-block: clamp(44px, 5vw, 72px);
+  background-color: var(--surface-white);
+  border-image: linear-gradient(var(--surface-white), var(--surface-white)) fill 0 / 0 / 0 100vw;
+}

@@ -8,6 +8,8 @@ import StoreGallery from "../../StoreGallery";
 import InternationalOrder from "../../InternationalOrder";
 import ShopifyBuyButton from "../../ShopifyBuyButton";
 import "../../store.css";
+import StorePrice from "../../StorePrice";
+import { bookOffer } from "@/lib/store";
 
 const fieldNotes = [
   {
@@ -88,7 +90,9 @@ export default function StorePage() {
               <br />
               A photographic work by
               <br />
-              Kairav{"\u00A0"}Engineer
+              Kairav{"\u00A0"}Engineer, Gaurav Ramnarayanan
+              <br />
+              and Yashwant Singh Ranawat
             </p>
             <p className="store-hero-intro">
               A decade of fieldwork distilled into 396 pages of natural{"\u00A0"}history, tracing the
@@ -102,7 +106,7 @@ export default function StorePage() {
               <a className="store-preview-link" href="#book-preview">View inside the book</a>
             </div>
             <div className="store-hero-facts" aria-label="Book price and format">
-              <p><span>Price</span><strong>₹3,300</strong></p>
+              <p><span>Price</span><StorePrice product={bookOffer} /></p>
               <p><span>Format</span><strong>Clothbound hardcover</strong></p>
             </div>
           </div>
@@ -255,7 +259,7 @@ export default function StorePage() {
         <div className="container store-final-inner" data-reveal="rise">
           <p className="store-kicker">Ghosts of the Granite Hills</p>
           <h2 id="final-title">A decade in the field, bound in one volume.</h2>
-          <p className="store-final-note">396 pages · Clothbound hardcover · ₹3,300</p>
+          <p className="store-final-note">396 pages · Clothbound hardcover · <StorePrice product={bookOffer} /></p>
           <AcquireEdition label="Order your edition" />
         </div>
       </section>

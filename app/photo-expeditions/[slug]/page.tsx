@@ -1,3 +1,6 @@
+import informationStyles from "@/components/TourInformation.module.css";
+import { BookingConditions } from "@/components/BookingConditions";
+import { tourPriceLabel } from "@/lib/tour-pricing";
 import { upcomingDepartures, departureLabel } from "@/lib/departures";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -8,7 +11,7 @@ import { MediaGallery } from "@/components/MediaGallery";
 import { Itinerary } from "@/components/Itinerary";
 import { ExpeditionEnquiry } from "@/components/ExpeditionEnquiry";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, expeditionSchema } from "@/lib/structured-data";
+import { breadcrumbSchema, expeditionSchema, faqSchema } from "@/lib/structured-data";
 import { expeditions, getDestination, getExpedition } from "@/lib/data";
 import "../../detail.css";
 
@@ -58,22 +61,30 @@ export default async function ExpeditionDetailPage({ params }: Props) {
   const departures = upcomingDepartures(expedition);
   const formatDate = (date:string) => new Date(date).toLocaleDateString("en-GB", {day:"numeric", month:"long", year:"numeric", timeZone:"UTC"});
   const departure = departures.length ? departureLabel(departures[0]) : undefined;
+  const faqs = [
+    { question: "When does this tour depart?", answer: departure ? `The next departure is ${departure}. See the departure list for other available dates.` : "New dates are being finalised. Send an enquiry to register your interest." },
+    { question: "What photography experience do I need?", answer: expedition.skill ? `${expedition.skill}. Share your experience and goals with the team so they can confirm whether this tour is suitable for you.` : "Tell the team about your photography experience and interests when enquiring so they can confirm suitability." },
+    { question: "What equipment should I bring?", answer: expedition.equipment || "Ask for a recommended equipment list for your departure before booking. Share your camera and lens setup with the team." },
+    { question: "Are wildlife sightings guaranteed?", answer: "Wildlife moves freely. Sightings depend on animal behaviour, weather and conditions in the field and cannot be guaranteed." },
+    { question: "How do I check availability and book?", answer: "Use the tour enquiry form with your preferred dates and group size. Request a confirmed quote, inclusions and booking conditions before making payment." }
+  ];
   const breadcrumbs = [
     { name: "Home", path: "/" },
-    { name: "Photo Expeditions", path: "/photo-expeditions" },
+    { name: "Photography Tours", path: "/photo-expeditions" },
     { name: expedition.title, path: `/photo-expeditions/${expedition.slug}` }
   ];
 
   return (
     <>
       <JsonLd data={expeditionSchema(expedition)} />
+      <JsonLd data={faqSchema(faqs)} />
       <JsonLd data={breadcrumbSchema(breadcrumbs)} />
       <div className="expedition-hero"><PageHero
         variant="destination"
         title={heroSummary?.title || expedition.title}
         copy={heroSummary?.copy || expedition.description}
         image={heroImage}
-        meta="Wildlife photography expedition"
+        meta="Photography Tours"
         breadcrumbs={breadcrumbs.map((item, index) => ({ label: index === breadcrumbs.length - 1 ? heroSummary?.title || item.name : item.name, ...(index < breadcrumbs.length - 1 ? { href: item.path } : {}) }))}
       /></div>
       {expedition.publicationStatus === "preview" && <p className="expedition-preview-note" role="note">Departure preview · The programme, accommodation and pricing are being finalised. Enquire to receive confirmed details.</p>}
@@ -115,12 +126,7 @@ export default async function ExpeditionDetailPage({ params }: Props) {
               {expedition.bestMonths && !/[0-9]{4}/.test(expedition.bestMonths) && <><dt>Season</dt><dd>{expedition.bestMonths}</dd></>}
               {expedition.species && <><dt>Species focus</dt><dd>{expedition.species}</dd></>}
 
-              {expedition.price ? (
-                <>
-                  <dt>From</dt>
-                  <dd>{expedition.price}</dd>
-                </>
-              ) : null}
+              <dt>Tour price</dt><dd>{tourPriceLabel(expedition.price)}</dd>
             </dl>
             {expedition.equipment && <details className="expedition-equipment"><summary>Camera equipment</summary><p>{expedition.equipment}</p></details>}
             <section className="expedition-departures" aria-label="Upcoming departures">
@@ -167,6 +173,8 @@ export default async function ExpeditionDetailPage({ params }: Props) {
             <MediaGallery images={visualGallery} label={`${expedition.title} complete photographic journal`} />
           </section>
         ) : null}
+        <section className={`container ${informationStyles.section}`} aria-labelledby="tour-faq-heading"><header className={informationStyles.intro}><p className="eyebrow">Photography tour questions</p><h2 id="tour-faq-heading">Before you <em className="editorial-accent">set out.</em></h2><p>Dates, equipment and what to expect on your photography tour.</p></header><div className={informationStyles.questions}>{faqs.map(faq => <details key={faq.question} name="photography-faq"><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
+        <BookingConditions />
         <ExpeditionEnquiry
           title={expedition.title}
           slug={expedition.slug}

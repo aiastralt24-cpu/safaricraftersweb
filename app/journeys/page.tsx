@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import { JourneyFilm } from "@/components/JourneyFilm";
+import { JsonLd } from "@/components/JsonLd";
 import { journeys } from "@/lib/data";
+import { breadcrumbSchema } from "@/lib/structured-data";
 import "../listing.css";
 import "./journeys-atlas.css";
 
@@ -23,5 +25,8 @@ export default function JourneysPage() {
     .map((slug) => journeys.find((journey) => journey.slug === slug))
     .filter((journey): journey is (typeof journeys)[number] => Boolean(journey));
 
-  return <JourneyFilm journeys={featuredJourneys} />;
+  return <>
+    <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Private Journeys", path: "/journeys" }])} />
+    <JourneyFilm journeys={featuredJourneys} />
+  </>;
 }

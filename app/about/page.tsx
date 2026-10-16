@@ -30,7 +30,7 @@ export default function AboutPage() {
         <div className="container simple-grid" data-about-reveal>
           <div data-about-reveal-item>
             <p className="eyebrow">Our story</p>
-            <h2 className="h2">Immersive wildlife and photography journeys, crafted with intent.</h2>
+            <h2 className="h2">Immersive wildlife and photography journeys, crafted with <em className="editorial-accent">intent.</em></h2>
           </div>
           <div data-about-reveal-item>
             <p>
@@ -137,7 +137,7 @@ export default function AboutPage() {
         <div className="container about-principles-grid">
           <div className="about-principles-heading" data-about-reveal>
             <p className="eyebrow">What guides us</p>
-            <h2 className="h2" id="about-principles-title">The field sets the terms.</h2>
+            <h2 className="h2" id="about-principles-title">The field sets the <em className="editorial-accent">terms.</em></h2>
             <p>
               Better journeys begin with restraint: knowing when to move closer, when to wait
               and when to leave a place exactly as it was found.

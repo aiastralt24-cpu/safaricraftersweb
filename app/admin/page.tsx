@@ -26,7 +26,7 @@ export default function AdminPage() {
           </section>
           <section className="admin-panel">
             <h2>What moved to Sanity</h2>
-            <p>Homepage, journeys, destinations, photo expeditions, journal, specialists, testimonials and hero media.</p>
+            <p>Homepage, journeys, destinations, photography tours, journal, specialists, testimonials and hero media.</p>
           </section>
           <section className="admin-panel">
             <h2>Launch checks</h2><Link href="/admin/operations">Check configuration, delivery queue and funnel</Link>

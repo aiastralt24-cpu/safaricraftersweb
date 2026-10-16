@@ -14,6 +14,7 @@ import { kenyaDescription } from "@/content/kenya-editorial";
 import { DestinationDossier } from "@/components/DestinationDossier";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
+import { MediaGallery } from "@/components/MediaGallery";
 import { RegionalAtlasPage } from "@/components/RegionalAtlasPage";
 import { destinations, expeditions, getCountryAtlas, getCountryBySlug, getDestination, getRegionalAtlas, getRegionalAtlases } from "@/lib/data";
 import { getFieldIntelligence } from "@/lib/luxury";
@@ -33,7 +34,7 @@ const heroIntroductions: Record<string, string> = {
   panna: "Ancient rock, dry forest and the emerald Ken River: tiger country with a landscape all its own.",
   kabini: "Elephants, tigers and forest encounters along the Kabini River, between two iconic national parks.",
   russia: "Brown bears, volcanic peaks and a rugged Pacific coast. Discover Russia through the remote wilderness of Kamchatka.",
-  kamchatka: "Brown bears beside salmon waters, volcanoes above the clouds and a Pacific coast alive with seabirds."
+  kamchatka: "Volcanoes, salmon-filled rivers, immense brown bears and wild Pacific coastlines – Kamchatka is where fire and water have created one of the planet’s great wildlife frontiers."
 };
 
 function destinationHeroCopy(slug: string, description: string) {
@@ -131,9 +132,10 @@ export default async function DestinationDetailPage({ params }: Props) {
       <JsonLd data={faqSchema(faqs)} />
       <PageHero
         title={destination.title}
+        accent={destination.title}
         copy={destinationHeroCopy(destination.slug, destination.description)}
         image={heroImage}
-        meta={[destination.country, destination.country === "Russia" ? "Russian Far East" : destination.continent === "Arctic" ? "Arctic / Other" : destination.continent]
+        meta={[destination.country, destination.slug === "kamchatka" ? "Far East" : destination.country === "Russia" ? "Russian Far East" : destination.continent === "Arctic" ? "Arctic / Other" : destination.continent]
           .filter((value, index, values) => values.indexOf(value) === index)
           .join(" · ")}
         breadcrumbs={breadcrumbs.map((item, index) => ({ label: item.name, ...(index < breadcrumbs.length - 1 ? { href: item.path } : {}) }))}
@@ -157,6 +159,8 @@ function CountryDestinationPage({ country }: { country: NonNullable<ReturnType<t
     destination.slug === country.slug || destination.title.toLowerCase() === country.title.toLowerCase()
   );
   const places = country.destinations.filter((destination) => destination !== countryOverview);
+  const gallerySource = countryOverview || (places.length === 1 ? places[0] : undefined);
+  const countryGallery = gallerySource?.gallery.filter(isApprovedEditorialImage) || [];
   const placeImageCounts = new Map(places.map((destination) => [getDestinationHeroImage(destination).src, places.filter((item) => getDestinationHeroImage(item).src === getDestinationHeroImage(destination).src).length]));
   const featured = places.filter((destination) =>
     destination.gallery.some(isApprovedEditorialImage)
@@ -178,6 +182,7 @@ function CountryDestinationPage({ country }: { country: NonNullable<ReturnType<t
       <JsonLd data={breadcrumbSchema(breadcrumbs)} />
       <PageHero
         title={country.title}
+        accent={country.title}
         copy={destinationHeroCopy(country.slug, countryOverview?.description || country.description)}
         image={countryHeroImage}
         meta={`${country.continent === "Arctic" ? "Arctic & Beyond" : country.continent} · Country atlas`}
@@ -231,6 +236,18 @@ function CountryDestinationPage({ country }: { country: NonNullable<ReturnType<t
             </div>
           )}
         </section>
+        {countryGallery.length > 0 && (
+          <section className="section surface-white" aria-labelledby={`${country.slug}-photographs`}>
+            <div className="container">
+              <header className="country-guide-intro">
+                <p className="eyebrow">Photo journal</p>
+                <h2 id={`${country.slug}-photographs`}>{country.title}, in frames.</h2>
+                <p>Moments from the field. Open a photograph to explore the collection.</p>
+              </header>
+              <MediaGallery images={countryGallery} label={`${country.title} field photographs`} variant="story" />
+            </div>
+          </section>
+        )}
       </main>
     </>
   );

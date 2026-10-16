@@ -4,6 +4,8 @@ export type StoreProduct = {
   subtitle: string;
   description: string;
   price: string;
+  originalPrice?: string;
+  offerLabel?: string;
   format: string;
   featured?: boolean;
   purchaseHref?: string;
@@ -31,6 +33,8 @@ export type StoreCategory = {
   products: StoreProduct[];
 };
 
+export const bookOffer = { price: "₹4,800", amount: 4800, originalPrice: "₹6,000", offerLabel: "20% off · Limited-time offer" };
+
 export const storeCategories: StoreCategory[] = [
   {
     slug: "books",
@@ -48,10 +52,10 @@ export const storeCategories: StoreCategory[] = [
       {
         slug: "ghosts-of-the-granite-hills",
         title: "Ghosts of the Granite Hills",
-        subtitle: "A photographic work by Kairav Engineer",
+        subtitle: "A photographic work by Kairav Engineer, Gaurav Ramnarayanan and Yashwant Singh Ranawat",
         description:
           "A decade of fieldwork distilled into 396 pages, tracing the leopards of Jawai, their granite habitat and the lives unfolding around them.",
-        price: "₹3,300",
+        ...bookOffer,
         format: "396-page clothbound hardcover",
         featured: true,
         purchaseHref: "https://www.store.safaricrafters.com/products/the-ghosts-of-the-granite-hills",

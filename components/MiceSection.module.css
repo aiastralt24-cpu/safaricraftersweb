@@ -1,0 +1,79 @@
+.mice-home { padding:clamp(64px,8vw,112px) max(24px,5vw); background:#20372a; color:#f4f0e7; }
+.mice-home-inner { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(36px,6vw,100px); max-width:1440px; margin:auto; align-items:center; }
+.mice-home-copy :global(.eyebrow) { color:#d1ad65; }
+.mice-home-copy h2 { font-family:var(--font-display); font-size:clamp(36px,4.2vw,62px); font-weight:400; line-height:1.08; letter-spacing:-.035em; margin:24px 0; }
+.mice-home-copy > p:not(:global(.eyebrow)) { font-size:14px; line-height:1.8; color:#c6d0c2; max-width:44ch; }
+.mice-home-formats { margin-top:32px; }
+.mice-home-formats a { display:grid; grid-template-columns:minmax(0,1fr) 20px; width:100%; align-items:center; gap:16px; border-top:1px solid #ffffff30; padding:18px 0; }
+.mice-home-formats a > span { color:#d1ad65; font-size:12px; }
+.mice-home-formats small { font-size:10px; letter-spacing:.05em; color:#b5c2af; }
+.mice-home-formats h3 { font-family:var(--font-display); font-size:clamp(23px,2.2vw,30px); font-weight:400; line-height:1.15; margin:6px 0 0; }
+.mice-home-cta { display:inline-flex; align-items:center; justify-content:space-between; gap:36px; min-height:48px; padding:0 20px; margin-top:22px; background:#e1c58c; color:#20372a; font-size:12px; font-weight:600; }
+.mice-home-composition { position:relative; padding:0 0 80px 35px; }
+.mice-home-main-image { position:relative; min-height:540px; margin:0; }
+.mice-home-main-image img { object-fit:cover; }
+.mice-home-main-image figcaption { position:absolute; bottom:0; left:0; right:0; padding:30px 24px 22px; background:linear-gradient(transparent,#13241dd9); font-size:11px; color:#fff7e9; text-align:right; }
+.mice-home-inset { position:absolute; bottom:0; left:0; width:47%; aspect-ratio:1/1.08; border:8px solid #20372a; margin:0; box-shadow:0 16px 32px #0002; }
+.mice-home-inset img { object-fit:cover; }
+.mice-home-inset figcaption { position:absolute; left:0; bottom:0; right:0; padding:26px 12px 12px; font-size:10px; color:#fff; background:linear-gradient(transparent,#13241de6); }
+.mice-home a:focus-visible { outline:2px solid #d1ad65; outline-offset:5px; }
+@media(hover:hover) { .mice-home-formats a:hover h3 { color:#e1c58c; } .mice-home-cta:hover { background:#f0dab0; } }
+@media(max-width:1000px) { .mice-home-inner { gap:30px; } .mice-home-main-image { min-height:480px; } }
+@media(max-width:760px) {
+ .mice-home { padding:56px 24px; } .mice-home-inner { grid-template-columns:1fr; gap:40px; }
+ .mice-home-copy h2 { font-size:clamp(35px,8vw,48px); }
+ .mice-home-composition { padding-left:24px; padding-bottom:55px; }
+ .mice-home-main-image { min-height:0; aspect-ratio:4/5; }
+ .mice-home-inset { width:48%; }
+}
+
+/* Keep captions clear of the overlapping photograph. */
+.mice-home-main-image figcaption { left:44%; padding-left:12px; font-size:10px; }
+@media(max-width:760px) {
+ .mice-home-main-image { aspect-ratio:1; }
+ .mice-home-main-image figcaption { display:none; }
+ .mice-home-composition { padding-bottom:35px; }
+ .mice-home-inset { width:42%; }
+ .mice-home-inner { gap:28px; }
+}
+
+/* Separate corporate journeys from the preceding dark photography section. */
+.mice-home { background:#ede6d8; color:#25291f; }
+.mice-home-copy :global(.eyebrow) { color:#8b6935; }
+.mice-home-copy h2 em:global(.editorial-accent-light) { color:#8b6935; }
+.mice-home-copy > p:not(:global(.eyebrow)) { color:#626457; }
+.mice-home-formats a { border-top-color:#25291f30; }
+.mice-home-formats a > span { color:#8b6935; }
+.mice-home-formats small { color:#6b705f; }
+.mice-home-cta { background:#20372a; color:#fff8e9; }
+.mice-home-inset { border-color:#ede6d8; }
+.mice-home a:focus-visible { outline-color:#8b6935; }
+@media(hover:hover) {
+ .mice-home-formats a:hover h3 { color:#8b6935; }
+ .mice-home-cta:hover { background:#304c3b; }
+}
+
+/* Keep supporting copy as readable as the neighbouring homepage sections. */
+.mice-home-copy > p:not(:global(.eyebrow)) {
+  color:#3f493c;
+  font-size:16px;
+  line-height:1.75;
+}
+.mice-home-formats small {
+  color:#46503f;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.5;
+  letter-spacing:.015em;
+}
+
+.mice-home-formats a > div { min-width:0; width:100%; }
+.mice-home-formats a > span { width:20px; text-align:right; }
+.mice-home-formats small { display:block; width:auto; }
+
+.mice-home-main-image img { object-position:50% 60%; }
+.mice-home-inset { aspect-ratio:1.2; }
+.mice-home-inset img { object-position:42% center; }
+
+.mice-home-inner > * { min-width:0; }
+.mice-home-copy h2 { overflow-wrap:break-word; }

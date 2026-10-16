@@ -41,3 +41,23 @@ test('chunked oversized requests are rejected before buffering the whole body',a
  await assert.rejects(readLimitedBody(request,5));
  assert.equal(await readLimitedBody(new Request('https://example.test',{method:'POST',body:'hello'}),5),'hello');
 });
+
+test('team alerts reach multiple recipients while guest receipts stay private',async()=>{
+ const originalFetch=global.fetch;
+ const originalRecipients=process.env.ENQUIRY_TO_EMAIL;
+ process.env.ENQUIRY_TO_EMAIL='one@example.test, two@example.test,three@example.test, one@example.test, ';
+ const emails=[];
+ global.fetch=async(url,init)=>{
+  if(url.includes('claim_safari_notifications'))return Response.json(['team','guest'].map((kind,index)=>({id:index+1,enquiry_id:'SC-MULTI',kind,attempts:1,lease_token:'lease',payload})));
+  if(url.includes('resend.com')){emails.push(JSON.parse(init.body));return new Response(null,{status:200});}
+  return new Response(null,{status:204});
+ };
+ try {
+  assert.equal((await deliverEnquiryEmails()).failed,0);
+  assert.deepEqual(emails[0].to,['one@example.test','two@example.test','three@example.test']);
+  assert.deepEqual(emails[1].to,[payload.email]);
+ } finally {
+  global.fetch=originalFetch;
+  if(originalRecipients===undefined)delete process.env.ENQUIRY_TO_EMAIL;else process.env.ENQUIRY_TO_EMAIL=originalRecipients;
+ }
+});

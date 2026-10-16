@@ -42,9 +42,19 @@ const primaryMenuItems = [
   },
   {
     key: "photo-expeditions",
-    label: "Photo Expeditions",
+    label: "Photography Tours",
     href: "/photo-expeditions",
     image: photoExpedition.image
+  },
+  {
+    key: "guided-bespoke-safaris",
+    label: "Bespoke Safaris",
+    href: "/guided-bespoke-safaris",
+    image: {
+      src: "/assets/safari-crafters/laipikia-001e24e7.jpg",
+      alt: "Black leopard walking through the Laikipia landscape",
+      credit: "Safari Crafters archive"
+    }
   },
   {
     key: "private-aviation",
@@ -61,6 +71,7 @@ const primaryMenuItems = [
 ];
 
 const secondaryMenuItems = [
+  { key: "mice", label: "Corporate Journeys", href: "/mice" },
   {
     key: "journal",
     label: "Journal",
@@ -99,6 +110,7 @@ const knownRoutePrefixes = [
   "/destinations",
   "/guided-bespoke-safaris",
   "/journal",
+  "/mice",
   "/journeys",
   "/legal",
   "/photo-expeditions",
@@ -124,11 +136,10 @@ export function Header() {
   const menuRef = useRef<HTMLDivElement>(null);
   const isKnownRoute =
     pathname === "/" || knownRoutePrefixes.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
-  const hasLightOpening = pathname.startsWith("/search") || pathname.startsWith("/legal");
+  const hasLightOpening = pathname === "/contact" || pathname.startsWith("/search") || pathname.startsWith("/legal");
   const useSolidHeader = scrolled || !isKnownRoute || hasLightOpening;
   const isStore = pathname === "/store" || pathname.startsWith("/store/");
-  const sectionItem = menuItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`))
-    ?? (pathname.startsWith("/guided-bespoke-safaris") ? primaryMenuItems[0] : undefined);
+  const sectionItem = menuItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`));
   const sectionHref = sectionItem?.href ?? (pathname.startsWith("/plan") ? "/plan" : undefined);
   const sectionLabel = sectionItem?.label ?? (pathname.startsWith("/plan") ? "Private journey planning" : "Safari Crafters");
 

@@ -31,7 +31,7 @@ export function DestinationFieldNotes({ destination, notes }: { destination: str
   return <section className="destination-field-notes" aria-labelledby="destination-field-notes-title">
     <header className="container destination-field-notes-heading destination-editorial-heading">
       <p className="eyebrow">Field notes</p>
-      <h2 id="destination-field-notes-title"><span>Three ways to read</span><span>{destination}.</span></h2>
+      <h2 id="destination-field-notes-title"><span>{notes.length === 2 ? "Two ways" : "Three ways"} to read</span><span>{destination}.</span></h2>
       <p>A concise field guide to the landscape, its daily rhythm and the encounters that define it.</p>
     </header>
 

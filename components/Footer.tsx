@@ -20,12 +20,13 @@ const atlasLinks = [
 const travelStyleLinks = [
   { label: "Private Journeys", href: "/journeys" },
   { label: "Bespoke Safaris", href: "/guided-bespoke-safaris" },
-  { label: "Photo Expeditions", href: "/photo-expeditions" },
+  { label: "Photography Tours", href: "/photo-expeditions" },
   { label: "Private Jet Safaris", href: "/private-aviation" },
   { label: "Conservation", href: "/conservation-commitment" }
 ];
 
 const companyLinks = [
+  { label: "Corporate Journeys & MICE", href: "/mice" },
   { label: "Begin Planning", href: "/plan" },
   { label: "Our Specialists", href: "/specialists" },
   { label: "Guest Notes", href: "/reviews" },
@@ -38,7 +39,7 @@ export function Footer() {
       <div className="container footer-journey-cta">
         <div>
           <p className="eyebrow">A journey of your own</p>
-          <h2>Begin with a conversation.</h2>
+          <h2>Begin with a <em className="editorial-accent editorial-accent-light">conversation.</em></h2>
         </div>
         <Link href="/plan">Begin a Private Journey <span aria-hidden="true">↗</span></Link>
       </div>
@@ -46,7 +47,7 @@ export function Footer() {
         <div>
           <BrandMark className="footer-wordmark" />
           <p>
-            Private safari journeys, photo expeditions and field notes from places where
+            Private safari journeys, photography tours and field notes from places where
             the wild still breathes freely.
           </p>
           <div className="footer-icons" aria-label="Social and contact links">

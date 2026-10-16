@@ -859,6 +859,19 @@ body:has(.concept-page) .site-header {
   line-height: 0.9;
 }
 
+.experience-count {
+  display: inline-grid;
+  font-variant-numeric: tabular-nums;
+}
+
+.experience-count > span {
+  grid-area: 1 / 1;
+}
+
+.experience-count-final {
+  opacity: 0;
+}
+
 .concept-legacy-ledger dd {
   margin: 0;
   color: rgba(var(--rgb-espresso), 0.68);
@@ -3725,7 +3738,7 @@ body:has(.concept-page) .site-header {
   .concept-species-section > .concept-species-index::before { position: absolute; top: -23px; right: 0; color: rgba(var(--rgb-soil), 0.58); content: "Swipe to explore →"; font-size: var(--concept-label); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 }
 
-/* Scheduled Photo Expeditions — photographic darkroom */
+/* Scheduled Photography Tours — photographic darkroom */
 .concept-expedition-darkroom {
   position: relative;
   padding: clamp(110px, 10vw, 160px) 0 clamp(86px, 9vw, 132px);
@@ -3942,6 +3955,74 @@ body:has(.concept-page) .site-header {
   max-width: 900px;
 }
 
+.concept-expedition-calendar.concept-expedition-board-section {
+  overflow: hidden;
+  border-top: 0;
+  background: #131713;
+  color: var(--bone);
+}
+
+.concept-expedition-board-section .concept-field-notes-header { color: var(--bone); }
+.concept-expedition-board-section .concept-field-notes-header p { color: var(--brass-light); }
+.concept-expedition-board-section .concept-text-link { color: var(--bone); border-bottom-color: rgba(var(--rgb-bone), .32); }
+
+.concept-expedition-board {
+  display: flex;
+  width: min(var(--concept-canvas), 100%);
+  margin: 0 auto;
+  gap: 18px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding-bottom: 18px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  scrollbar-color: rgba(var(--rgb-brass), .62) rgba(var(--rgb-bone), .1);
+  scrollbar-width: thin;
+}
+
+.concept-expedition-board-card {
+  position: relative;
+  display: block;
+  width: clamp(310px, 29vw, 410px);
+  min-width: clamp(310px, 29vw, 410px);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #20241f;
+  color: var(--bone);
+  scroll-snap-align: start;
+  isolation: isolate;
+}
+
+.concept-expedition-board-card figure { position: absolute; inset: 0; margin: 0; }
+.concept-expedition-board-card figure::after { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(9,12,9,.02) 25%, rgba(9,12,9,.84) 100%); content: ""; }
+.concept-expedition-board-card img { object-fit: cover; filter: saturate(.78) contrast(1.04); transition: transform 850ms var(--ease), filter 500ms var(--ease); }
+.concept-expedition-board-card:hover img,.concept-expedition-board-card:focus-visible img { transform: scale(1.035); filter: saturate(.96) contrast(1.03); }
+.concept-expedition-board-card:focus-visible { outline: 2px solid var(--brass-light); outline-offset: -2px; }
+
+.concept-expedition-board-copy {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  padding: clamp(20px,2vw,28px);
+}
+
+.concept-expedition-board-copy h3 { margin: 0; color: var(--bone); font-family: var(--font-display); font-size: clamp(2rem,2.6vw,2.8rem); font-weight: 300; letter-spacing: -.035em; line-height: .94; }
+.concept-expedition-board-copy time { margin-top: 12px; color: var(--bone); font-family: var(--font-display); font-size: 1rem; }
+.concept-expedition-board-meta { margin-top: 5px; color: rgba(var(--rgb-bone), .68); font-size: .7rem; line-height: 1.4; }
+.concept-expedition-board-copy > strong { display: inline-flex; width: fit-content; min-height: 32px; align-items: center; gap: 8px; margin-top: 12px; border-bottom: 1px solid rgba(var(--rgb-brass), .72); color: var(--brass-light); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; }
+
+@media (max-width: 720px) {
+  .concept-expedition-board-section .concept-field-notes-header { display: block; }
+  .concept-expedition-board-section .concept-field-notes-header > a { margin-top: 22px; }
+  .concept-expedition-board { width: auto; margin-right: calc(var(--concept-gutter) * -1); padding-right: var(--concept-gutter); gap: 12px; }
+  .concept-expedition-board-card { width: min(82vw,340px); min-width: min(82vw,340px); }
+  .concept-expedition-board-copy { padding: 20px; }
+  .concept-expedition-board-copy h3 { font-size: clamp(2rem,10vw,2.6rem); }
+}
+
 .concept-departure-editorial {
   display: grid;
   width: min(1380px, 100%);
@@ -4084,8 +4165,13 @@ body:has(.concept-page) .site-header {
 
 .concept-departure-salon {
   position: relative;
+  display: grid;
   width: min(1420px, 100%);
   margin: 0 auto;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
+  overflow: hidden;
+  border-radius: clamp(10px, .9vw, 16px);
+  background: var(--bone);
 }
 
 .concept-departure-salon-image {
@@ -4093,6 +4179,7 @@ body:has(.concept-page) .site-header {
   min-height: clamp(540px, 49vw, 740px);
   margin: 0;
   overflow: hidden;
+  border-radius: 0 !important;
   background: var(--night);
 }
 
@@ -4104,23 +4191,23 @@ body:has(.concept-page) .site-header {
 }
 
 .concept-departure-dossier {
-  position: absolute;
-  top: 50%;
-  right: clamp(24px, 3vw, 48px);
+  position: relative;
   display: flex;
-  width: min(440px, 35%);
-  min-height: min(510px, calc(100% - 70px));
-  padding: clamp(38px, 4vw, 64px);
+  width: 100%;
+  min-height: 100%;
+  padding: clamp(38px, 4vw, 58px);
   background: var(--bone);
   color: var(--soil);
   flex-direction: column;
   justify-content: center;
-  transform: translateY(-50%);
 }
 
 .concept-departure-salon[data-dossier-side="left"] .concept-departure-dossier {
-  right: auto;
-  left: clamp(24px, 3vw, 48px);
+  order: -1;
+}
+
+.concept-departure-salon[data-dossier-side="left"] {
+  grid-template-columns: minmax(360px, 420px) minmax(0, 1fr);
 }
 
 .concept-departure-dossier > p {
@@ -4135,7 +4222,7 @@ body:has(.concept-page) .site-header {
 .concept-departure-dossier h3 {
   margin: 0 0 32px;
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 3.5vw, 4.4rem);
+  font-size: clamp(2.8rem, 4vw, 4.8rem);
   font-weight: 300;
   letter-spacing: -.035em;
   line-height: .96;
@@ -4150,7 +4237,7 @@ body:has(.concept-page) .site-header {
 
 .concept-departure-dossier dl > div {
   display: grid;
-  grid-template-columns: 100px minmax(0, 1fr);
+  grid-template-columns: 92px minmax(0, 1fr);
   gap: 18px;
   padding: 13px 0;
   border-bottom: var(--rule-fine);
@@ -4171,8 +4258,11 @@ body:has(.concept-page) .site-header {
   line-height: 1.3;
 }
 
+.concept-departure-dossier dl > div:last-child dd { white-space: nowrap; }
+
 .concept-departure-dossier > a {
   display: flex;
+  width: 100%;
   min-height: 54px;
   align-items: center;
   justify-content: space-between;
@@ -4193,25 +4283,34 @@ body:has(.concept-page) .site-header {
 }
 
 .concept-departure-index {
-  display: grid;
-  width: min(1420px, 100%);
+  display: flex;
+  width: 100%;
   margin: 0 auto;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  overflow-x: auto;
   border-bottom: var(--rule-fine);
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
 }
+
+.concept-departure-index::-webkit-scrollbar { display: none; }
 
 .concept-departure-index button {
   position: relative;
   display: grid;
-  min-height: 112px;
-  place-content: center;
-  gap: 9px;
+  width: clamp(280px, 25vw, 370px);
+  min-width: clamp(280px, 25vw, 370px);
+  min-height: 126px;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
   border: 0;
-  padding: 20px;
+  padding: 18px 28px 18px 18px;
   background: transparent;
   color: rgba(var(--rgb-soil), .65);
   cursor: pointer;
-  text-align: center;
+  scroll-snap-align: center;
+  text-align: left;
 }
 
 .concept-departure-index button + button {
@@ -4220,9 +4319,9 @@ body:has(.concept-page) .site-header {
 
 .concept-departure-index button::after {
   position: absolute;
-  right: 20%;
+  right: 18px;
   bottom: -1px;
-  left: 20%;
+  left: 18px;
   height: 2px;
   background: var(--brass);
   content: "";
@@ -4242,10 +4341,40 @@ body:has(.concept-page) .site-header {
   transform: scaleX(1);
 }
 
-.concept-departure-index span {
+.concept-departure-index-image {
+  position: relative;
+  display: block;
+  width: 88px;
+  height: 88px;
+  overflow: hidden;
+  background: #d8d1c5;
+}
+
+.concept-departure-index-image img {
+  object-fit: cover;
+  filter: saturate(.78) contrast(1.03);
+  transition: filter 300ms var(--ease), transform 500ms var(--ease);
+}
+
+.concept-departure-index button:hover .concept-departure-index-image img,
+.concept-departure-index button.is-active .concept-departure-index-image img {
+  filter: saturate(.98) contrast(1.02);
+  transform: scale(1.035);
+}
+
+.concept-departure-index-copy {
+  display: grid;
+  min-width: 0;
+  gap: 9px;
+}
+
+.concept-departure-index-copy strong {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 1.6vw, 1.7rem);
+  font-size: clamp(1.3rem, 1.7vw, 1.85rem);
+  font-weight: 400;
   letter-spacing: .03em;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .concept-departure-index small {
@@ -4270,7 +4399,9 @@ body:has(.concept-page) .site-header {
   .concept-departure-list > a { grid-template-columns: 82px minmax(0, 1fr); border-top: var(--rule-fine); padding-right: 20px; }
   .concept-departure-list > a + a { padding-left: 20px; border-left: var(--rule-fine); }
   .concept-departure-list > a svg { display: none; }
-  .concept-departure-dossier { width: min(410px, 44%); padding: 36px; }
+  .concept-departure-salon { grid-template-columns: minmax(0,1fr) minmax(310px,360px); }
+  .concept-departure-salon[data-dossier-side="left"] { grid-template-columns: minmax(310px,360px) minmax(0,1fr); }
+  .concept-departure-dossier { width: 100%; padding: 36px; }
   .concept-departure-dossier h3 { font-size: clamp(2.4rem, 4.8vw, 3.7rem); }
 }
 
@@ -4312,14 +4443,14 @@ body:has(.concept-page) .site-header {
     padding: 36px 24px 40px;
     transform: none;
   }
+  .concept-departure-salon[data-dossier-side="left"] .concept-departure-dossier { order: 0; }
   .concept-departure-dossier h3 { font-size: clamp(2.55rem, 12vw, 3.65rem); }
   .concept-departure-index {
-    display: flex;
-    overflow-x: auto;
-    scrollbar-width: none;
+    margin-right: -20px;
+    padding-right: 20px;
   }
-  .concept-departure-index::-webkit-scrollbar { display: none; }
-  .concept-departure-index button { min-width: 154px; min-height: 96px; flex: 0 0 auto; }
+  .concept-departure-index button { width: min(82vw, 320px); min-width: min(82vw, 320px); min-height: 108px; grid-template-columns: 72px minmax(0,1fr); gap: 16px; padding: 14px 20px 14px 14px; }
+  .concept-departure-index-image { width: 72px; height: 72px; }
   .concept-departure-index button::after { right: 18px; left: 18px; }
 }
 
@@ -4653,7 +4784,7 @@ body:has(.concept-page) .site-header {
 /* Soft, Grafton-inspired entrances with a more restrained Safari Crafters radius. */
 @media (prefers-reduced-motion: no-preference) {
   [data-concept-reveal] {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(26px);
     transition: opacity 760ms cubic-bezier(.2, 0, 0, 1), transform 920ms cubic-bezier(.2, 0, 0, 1);
   }

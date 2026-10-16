@@ -112,7 +112,7 @@ export function ExpeditionCard({ expedition }: { expedition: Expedition }) {
       meta={`${expedition.duration || "Specialist departure"} · ${departureLabel}`}
       title={expedition.title}
       copy={expedition.description}
-      cta="Join a photo expedition"
+      cta="Explore photography tours"
     />
   );
 }

@@ -95,3 +95,6 @@ end $$;
 revoke all on function public.record_safari_event(text,text,uuid) from public,anon,authenticated;
 grant execute on function public.record_safari_event(text,text,uuid) to service_role;
 create index if not exists safari_enquiries_email_recent_idx on public.safari_enquiries(lower(payload->>'email'),created_at desc);
+
+-- Refresh PostgREST after creating the tables and RPCs above.
+notify pgrst, 'reload schema';

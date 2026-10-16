@@ -14,7 +14,7 @@ export function GET() {
 - [Private journey blueprints](https://safaricrafters.com/journeys)
 - [Safari destination atlas](https://safaricrafters.com/destinations)
 - [Guest notes](https://safaricrafters.com/reviews)
-- [Photo expeditions](https://safaricrafters.com/photo-expeditions)
+- [Photography Tours](https://safaricrafters.com/photo-expeditions)
 - [Conservation commitment](https://safaricrafters.com/conservation-commitment)
 - [Begin a private brief](https://safaricrafters.com/plan)
 

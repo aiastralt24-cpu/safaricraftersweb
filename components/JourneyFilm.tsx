@@ -116,10 +116,12 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
   return (
     <main className="journey-atlas" aria-label="Private journey collection" ref={atlasRef}>
       <PageHero
-        title="Journeys, composed."
+        title="Journeys, designed."
         copy="Private journeys shaped around your interests, season and preferred pace."
         image={heroJourney.image}
         meta="Private journey collection"
+        variant="destination"
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Private Journeys" }]}
       />
 
       <section className="journey-atlas-collection" id="journey-collection" aria-labelledby="journey-collection-title">
@@ -131,9 +133,9 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
         </nav>
 
         <article className="journey-atlas-feature" aria-live="polite" data-journey-feature>
-          <button className="journey-atlas-feature-image" type="button" aria-label={`View ${activeJourney.title}`} onClick={() => window.location.assign(`/journeys/${activeJourney.slug}`)}>
+          <Link className="journey-atlas-feature-image" href={`/journeys/${activeJourney.slug}`} aria-label={`View ${activeJourney.title}`}>
             <Image key={activeJourney.slug} src={activeJourney.image.src} alt={activeJourney.image.alt} fill loading="eager" sizes="(max-width: 780px) 100vw, 64vw" />
-          </button>
+          </Link>
           <div className="journey-atlas-feature-copy">
             <p>Featured journey</p>
             <h2 id="journey-collection-title">{activeJourney.title}</h2>
@@ -148,16 +150,16 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
         </article>
 
         <div className="journey-atlas-heading" data-journey-heading>
-          <div><p>The private collection</p><h2>Six ways into the wild.</h2></div>
+          <div><p>The private collection</p><h2>Six ways into the <em className="editorial-accent">wild.</em></h2></div>
           <p>Each route is a starting point—privately shaped around season, pace and the encounters that matter to you.</p>
         </div>
 
         <div className="journey-atlas-grid">
           {filteredJourneys.map((journey, index) => (
             <article className={`journey-atlas-card journey-atlas-card-${index % 3}`} data-journey-card key={journey.slug}>
-              <button type="button" onClick={() => setActiveSlug(journey.slug)} aria-label={`Feature ${journey.title}`}>
+              <Link className="journey-atlas-card-link" href={`/journeys/${journey.slug}`} aria-label={`View ${journey.title}`}>
                 <span className="journey-atlas-card-image"><Image src={journey.image.src} alt={journey.image.alt} fill sizes="(max-width: 760px) 100vw, 50vw" /></span>
-              </button>
+              </Link>
               <div className="journey-atlas-card-copy">
                 <h3><Link href={`/journeys/${journey.slug}`}>{journey.title}</Link></h3>
                 <p className="journey-atlas-card-route">{journey.region}</p>
