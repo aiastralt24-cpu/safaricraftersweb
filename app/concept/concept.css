@@ -771,6 +771,7 @@ body:has(.concept-page) .site-header {
 }
 
 .concept-journey-types-grid p {
+  flex-grow: 1;
   max-width: 390px;
   margin: 0;
   color: rgba(var(--rgb-espresso), 0.66);

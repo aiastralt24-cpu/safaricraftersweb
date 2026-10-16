@@ -77,3 +77,6 @@
 
 .mice-home-inner > * { min-width:0; }
 .mice-home-copy h2 { overflow-wrap:break-word; }
+
+/* Separate the offer and audience into two readable paragraphs. */
+.mice-home-copy > p:not(:global(.eyebrow)) { margin-block:0 16px; text-wrap:pretty; }

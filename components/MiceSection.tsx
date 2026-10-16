@@ -9,7 +9,7 @@ const formats = [
 export function MiceSection() {
   return <section className={styles["mice-home"]} aria-labelledby="mice-home-title" data-nav-label="Corporate journeys">
     <div className={styles["mice-home-inner"]}>
-      <div className={styles["mice-home-copy"]}><p className="eyebrow">Corporate journeys · MICE</p><h2 id="mice-home-title">Out of the office.<br />Into the <em className="editorial-accent editorial-accent-light">extraordinary.</em></h2><p>Incentive travel, partner retreats and client hospitality across India and international destinations. Bring employees, dealers, distributors and clients together through journeys shaped around your purpose.</p>
+      <div className={styles["mice-home-copy"]}><p className="eyebrow">Corporate journeys · MICE</p><h2 id="mice-home-title">Out of the office.<br />Into the <em className="editorial-accent editorial-accent-light">extraordinary.</em></h2><p>Incentive travel, partner retreats and client hospitality across India and international destinations.</p><p>Bring employees, dealers, distributors and clients together through journeys shaped around your purpose.</p>
         <div className={styles["mice-home-formats"]}>{formats.map(format => <Link href="/mice" key={format.number}><div><small>{format.label}</small><h3>{format.title}</h3></div><span aria-hidden="true">↗</span></Link>)}</div>
         <Link className={styles["mice-home-cta"]} href="/mice">Discover corporate journeys <span aria-hidden="true">↗</span></Link>
       </div>
