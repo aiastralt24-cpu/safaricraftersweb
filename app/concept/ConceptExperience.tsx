@@ -2,6 +2,7 @@
 
 import { GuestNotes } from "@/components/GuestNotes";
 import { guestStories } from "@/lib/guest-notes";
+import { PreferredPartners } from "@/components/PreferredPartners";
 import { MiceSection } from "@/components/MiceSection";
 
 import Link from "next/link";
@@ -908,6 +909,8 @@ export function ConceptExperience() {
         </div>
       </section> : null}
 
+
+      <PreferredPartners />
 
       <GuestNotes stories={guestStories} compact />
 

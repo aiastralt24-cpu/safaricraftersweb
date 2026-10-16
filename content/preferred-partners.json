@@ -1,0 +1,407 @@
+[
+  {
+    "region": "India",
+    "partners": [
+      {
+        "name": "Six Senses",
+        "src": "/assets/partners/India-25.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-25.png"
+      },
+      {
+        "name": "The Leela",
+        "src": "/assets/partners/India-26.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-26.png"
+      },
+      {
+        "name": "The Bamboo Forest",
+        "src": "/assets/partners/India-27.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-27.png"
+      },
+      {
+        "name": "The Postcard Hotel",
+        "src": "/assets/partners/India-28.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-28.png"
+      },
+      {
+        "name": "CGH Earth",
+        "src": "/assets/partners/India-29.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-29.png"
+      },
+      {
+        "name": "The Imperial New Delhi",
+        "src": "/assets/partners/India-30.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-30.png"
+      },
+      {
+        "name": "Relais & Châteaux",
+        "src": "/assets/partners/India-31.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-31.png"
+      },
+      {
+        "name": "Taj",
+        "src": "/assets/partners/India-32.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-32.png"
+      },
+      {
+        "name": "Aramness",
+        "src": "/assets/partners/India-33.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-33.png"
+      },
+      {
+        "name": "Pugdundee Safaris",
+        "src": "/assets/partners/India-34.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-34.png"
+      },
+      {
+        "name": "SUJÁN",
+        "src": "/assets/partners/India-35.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-35.png"
+      },
+      {
+        "name": "RAAS",
+        "src": "/assets/partners/India-36.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-36.png"
+      },
+      {
+        "name": "Oberoi Hotels & Resorts",
+        "src": "/assets/partners/India-37.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-37.png"
+      },
+      {
+        "name": "ITC Hotels",
+        "src": "/assets/partners/India-38.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-38.png"
+      },
+      {
+        "name": "Aman",
+        "src": "/assets/partners/India-39.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-39.png"
+      },
+      {
+        "name": "The Ultimate Travelling Camp",
+        "src": "/assets/partners/India-40.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-40.png"
+      },
+      {
+        "name": "Jehan Numa Wilderness",
+        "src": "/assets/partners/India-41.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/India-41.png"
+      }
+    ]
+  },
+  {
+    "region": "Africa",
+    "partners": [
+      {
+        "name": "Safarilink",
+        "src": "/assets/partners/Africa-42.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-42.png"
+      },
+      {
+        "name": "Wilderness",
+        "src": "/assets/partners/Africa-43.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-43.png"
+      },
+      {
+        "name": "Chiawa Safaris",
+        "src": "/assets/partners/Africa-44.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-44.png"
+      },
+      {
+        "name": "Governors’ Camp Collection",
+        "src": "/assets/partners/Africa-45.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-45.png"
+      },
+      {
+        "name": "Time + Tide",
+        "src": "/assets/partners/Africa-46.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-46.png"
+      },
+      {
+        "name": "Royal Mansour Marrakech",
+        "src": "/assets/partners/Africa-47.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-47.png"
+      },
+      {
+        "name": "Royal Chundu",
+        "src": "/assets/partners/Africa-48.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-48.png"
+      },
+      {
+        "name": "Relais & Châteaux",
+        "src": "/assets/partners/Africa-49.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-49.png"
+      },
+      {
+        "name": "Steenberg",
+        "src": "/assets/partners/Africa-50.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-50.png"
+      },
+      {
+        "name": "Elewana Collection",
+        "src": "/assets/partners/Africa-51.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-51.png"
+      },
+      {
+        "name": "Gondwana Collection Namibia",
+        "src": "/assets/partners/Africa-52.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-52.png"
+      },
+      {
+        "name": "Londolozi",
+        "src": "/assets/partners/Africa-53.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-53.png"
+      },
+      {
+        "name": "Al Moudira Hotel",
+        "src": "/assets/partners/Africa-54.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-54.png"
+      },
+      {
+        "name": "Lalibela Wildlife Reserve",
+        "src": "/assets/partners/Africa-55.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-55.png"
+      },
+      {
+        "name": "Cape Town Helicopters / Escape + Explore",
+        "src": "/assets/partners/Africa-56.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-56.png"
+      },
+      {
+        "name": "Sabi Sabi",
+        "src": "/assets/partners/Africa-58.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-58.png"
+      },
+      {
+        "name": "Great Plains",
+        "src": "/assets/partners/Africa-59.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-59.png"
+      },
+      {
+        "name": "Delaire Graff Lodges & Spa",
+        "src": "/assets/partners/Africa-61.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-61.png"
+      },
+      {
+        "name": "Airlink",
+        "src": "/assets/partners/Africa-62.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-62.png"
+      },
+      {
+        "name": "Ellerman House",
+        "src": "/assets/partners/Africa-63.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-63.png"
+      },
+      {
+        "name": "Singita",
+        "src": "/assets/partners/Africa-64.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-64.png"
+      },
+      {
+        "name": "Escape + Explore",
+        "src": "/assets/partners/Africa-65.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-65.png"
+      },
+      {
+        "name": "Epako Safari Lodge & Spa",
+        "src": "/assets/partners/Africa-66.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-66.png"
+      },
+      {
+        "name": "Dorp",
+        "src": "/assets/partners/Africa-67.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-67.png"
+      },
+      {
+        "name": "The Royal Portfolio",
+        "src": "/assets/partners/Africa-68.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-68.png"
+      },
+      {
+        "name": "Cobra Experience",
+        "src": "/assets/partners/Africa-69.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-69.png"
+      },
+      {
+        "name": "Anjajavy le Lodge",
+        "src": "/assets/partners/Africa-70.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-70.png"
+      },
+      {
+        "name": "African Bush Camps",
+        "src": "/assets/partners/Africa-71.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-71.png"
+      },
+      {
+        "name": "El Morocco Hotel",
+        "src": "/assets/partners/Africa-72.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-72.png"
+      },
+      {
+        "name": "Xigera Safari Lodge",
+        "src": "/assets/partners/Africa-73.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-73.png"
+      },
+      {
+        "name": "Jabulani",
+        "src": "/assets/partners/Africa-74.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-74.png"
+      },
+      {
+        "name": "Cottar’s Safaris",
+        "src": "/assets/partners/Africa-76.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-76.png"
+      },
+      {
+        "name": "The Red Carnation Hotel Collection",
+        "src": "/assets/partners/Africa-77.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-77.png"
+      },
+      {
+        "name": "The Bushcamp Company",
+        "src": "/assets/partners/Africa-78.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-78.png"
+      },
+      {
+        "name": "Ol Jogi Wildlife Conservancy",
+        "src": "/assets/partners/Africa-79.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-79.png"
+      },
+      {
+        "name": "Sausage Tree Safari Camp",
+        "src": "/assets/partners/Africa-80.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-80.png"
+      },
+      {
+        "name": "Gmundner Lodge",
+        "src": "/assets/partners/Africa-81.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-81.png"
+      },
+      {
+        "name": "Angama",
+        "src": "/assets/partners/Africa-82.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Africa-82.png"
+      }
+    ]
+  },
+  {
+    "region": "Indian Subcontinent",
+    "partners": [
+      {
+        "name": "&Beyond",
+        "src": "/assets/partners/Whiteeye-Logos-01.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-01.png"
+      },
+      {
+        "name": "Anantara",
+        "src": "/assets/partners/Whiteeye-Logos-02.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-02.png"
+      },
+      {
+        "name": "One&Only Reethi Rah",
+        "src": "/assets/partners/Whiteeye-Logos-03.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-03.png"
+      },
+      {
+        "name": "Resplendent Ceylon",
+        "src": "/assets/partners/Whiteeye-Logos-04.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-04.png"
+      },
+      {
+        "name": "Cheval Blanc",
+        "src": "/assets/partners/Whiteeye-Logos-05.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-05.png"
+      },
+      {
+        "name": "Six Senses Bhutan",
+        "src": "/assets/partners/Whiteeye-Logos-06.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-06.png"
+      },
+      {
+        "name": "The Ritz-Carlton Maldives",
+        "src": "/assets/partners/Whiteeye-Logos-07-1.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-07-1.png"
+      },
+      {
+        "name": "Velaa Private Island",
+        "src": "/assets/partners/Whiteeye-Logos-08.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-08.png"
+      },
+      {
+        "name": "JOALI Maldives",
+        "src": "/assets/partners/Whiteeye-Logos-10.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-10.png"
+      },
+      {
+        "name": "Shinta Mani Mustang",
+        "src": "/assets/partners/Whiteeye-Logos-11.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-11.png"
+      },
+      {
+        "name": "Dwarika’s Sanctuary",
+        "src": "/assets/partners/Whiteeye-Logos-12.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-12.png"
+      },
+      {
+        "name": "Bhutan Spirit Sanctuary",
+        "src": "/assets/partners/Whiteeye-Logos-13.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-13.png"
+      },
+      {
+        "name": "The Nautilus Maldives",
+        "src": "/assets/partners/Whiteeye-Logos-14.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-14.png"
+      },
+      {
+        "name": "Cinnamon Hotels & Resorts",
+        "src": "/assets/partners/Whiteeye-Logos-15.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-15.png"
+      },
+      {
+        "name": "Wild Coast Tented Lodge",
+        "src": "/assets/partners/Whiteeye-Logos-16.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-16.png"
+      },
+      {
+        "name": "Jetwing Hotels",
+        "src": "/assets/partners/Whiteeye-Logos-17.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-17.png"
+      },
+      {
+        "name": "Patina Maldives",
+        "src": "/assets/partners/Whiteeye-Logos-19.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-19.png"
+      },
+      {
+        "name": "Resplendent Ceylon",
+        "src": "/assets/partners/Whiteeye-Logos-20.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-20.png"
+      },
+      {
+        "name": "Relais & Châteaux",
+        "src": "/assets/partners/Whiteeye-Logos-21.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-21.png"
+      },
+      {
+        "name": "Soneva",
+        "src": "/assets/partners/Whiteeye-Logos-22.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-22.png"
+      },
+      {
+        "name": "Six Senses Laamu",
+        "src": "/assets/partners/Whiteeye-Logos-23.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-23.png"
+      },
+      {
+        "name": "Waldorf Astoria",
+        "src": "/assets/partners/Whiteeye-Logos-24.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-24.png"
+      },
+      {
+        "name": "Pemako",
+        "src": "/assets/partners/Whiteeye-Logos-09.png",
+        "source": "https://whiteeye.co/wp-content/uploads/2026/09/Whiteeye-Logos-09.png"
+      }
+    ]
+  }
+]
