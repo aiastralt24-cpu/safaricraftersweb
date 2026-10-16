@@ -352,3 +352,15 @@
 .concept-private-aviation .concept-private-aviation-points { color:#d0d8cc; }
 .concept-private-aviation .concept-text-link { color:#e1c58c; border-bottom-color:#c3a363; }
 .guest-notes-feature { background:#fcfaf5; }
+
+/* Keep the closing sections on the same content edges as the journey collection. */
+.concept-page .concept-private-aviation,
+.concept-page .guest-notes-feature { padding-inline:max(24px,5vw); }
+.concept-page .guest-notes-feature > .container,
+.concept-page .concept-private-aviation-panel { width:100%; max-width:1440px; margin-inline:auto; }
+.concept-page .concept-private-aviation-panel { border:0; background:transparent; }
+.concept-page .concept-private-aviation-copy { padding-left:0; background:transparent; }
+@media(max-width:760px) {
+ .concept-page .concept-private-aviation,
+ .concept-page .guest-notes-feature { padding-inline:24px; }
+}
