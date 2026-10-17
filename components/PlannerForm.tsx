@@ -159,6 +159,7 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
       setSubmitError("Please complete this step before sending your private brief.");
       if (firstInvalidStep === 2) {
         setFieldErrors({
+          ...(!form.phone?.trim() ? { phone: "Please enter your phone number." } : {}),
           ...(!form.name.trim() ? { name: "Please enter your name." } : {}),
           ...(!/\S+@\S+\.\S+/.test(form.email) ? { email: "Please enter a valid email address." } : {})
         });
@@ -200,7 +201,7 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
   const requiredStepValidity = [
     Boolean(form.region) && form.experiences.length > 0,
     form.months.length > 0 && Boolean(form.year),
-    Boolean(form.name.trim()) && /\S+@\S+\.\S+/.test(form.email)
+    Boolean(form.name.trim()) && /\S+@\S+\.\S+/.test(form.email) && Boolean(form.phone?.trim())
   ];
   const allRequiredStepsValid = requiredStepValidity.every(Boolean);
   const stepValid = step === steps.length - 1
@@ -259,7 +260,7 @@ export function PlannerForm({ initialContext }: { initialContext?: PlannerInitia
             <div className="field-grid">
               <label>Name<input required name="name" autoComplete="name" value={form.name} aria-invalid={Boolean(fieldErrors.name)} onChange={event=>setForm(current=>({...current,name:event.target.value}))}/>{fieldErrors.name && <span className="field-error">{fieldErrors.name}</span>}</label>
               <label>Email<input required name="email" type="email" autoComplete="email" value={form.email} aria-invalid={Boolean(fieldErrors.email)} onChange={event=>setForm(current=>({...current,email:event.target.value}))}/>{fieldErrors.email && <span className="field-error">{fieldErrors.email}</span>}</label>
-              <label>WhatsApp / phone (optional)<input name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={event=>setForm(current=>({...current,phone:event.target.value}))}/></label>
+              <label>WhatsApp / phone<input required minLength={7} maxLength={60} name="phone" type="tel" autoComplete="tel" value={form.phone} aria-invalid={Boolean(fieldErrors.phone)} onChange={event=>setForm(current=>({...current,phone:event.target.value}))}/>{fieldErrors.phone && <span className="field-error">{fieldErrors.phone}</span>}</label>
             </div>
             <details className="planner-optional"><summary>Optional preferences</summary>
               <p>Share anything else that will help us plan.</p>

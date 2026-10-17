@@ -29,6 +29,6 @@ export default function MicePage() {
       </div>
     </section>
     <section className="mice-process"><div className="container"><p className="eyebrow">From brief to journey</p><h2>Built around <em className="editorial-accent editorial-accent-light">your people.</em></h2><ol><li><h3>Share the purpose</h3><p>Your objectives, people, preferred dates and budget.</p></li><li><h3>Shape the programme</h3><p>Discuss destinations, accommodation, group time and experiences.</p></li><li><h3>Confirm the details</h3><p>Review the proposal, availability, inclusions and booking conditions.</p></li></ol></div></section>
-    <section className="container form-grid mice-enquiry" id="corporate-enquiry"><div><p className="eyebrow">Start with your brief</p><h2>Where could your people <em className="editorial-accent">go next?</em></h2><p>India, international or still exploring? Share your name and email to start. If you already have dates, group size or a destination in mind, add them to your brief.</p></div><ContactForm corporate /></section>
+    <section className="container form-grid mice-enquiry" id="corporate-enquiry"><div><p className="eyebrow">Start with your brief</p><h2>Where could your people <em className="editorial-accent">go next?</em></h2><p>India, international or still exploring? Share your name, email and phone number to start. If you already have dates, group size or a destination in mind, add them to your brief.</p></div><ContactForm corporate /></section>
   </main>;
 }

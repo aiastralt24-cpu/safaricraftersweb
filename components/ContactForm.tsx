@@ -49,7 +49,7 @@ export function ContactForm({ corporate = false }: { corporate?: boolean }) {
       const response = await fetch("/api/enquiry", { method: "POST", headers: await enquiryHeaders(payload), body: JSON.stringify(payload) });
       const result = await response.json();
       if (!response.ok) trackFunnel("enquiry_failed");
-      if (!response.ok) throw new Error(result.error || "We could not send your brief. Please try again.");
+      if (!response.ok) throw new Error(result.fields?.phone || result.error || "We could not send your brief. Please try again.");
       setReference(result.enquiryId);
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "We could not send your brief. Please try again.");
@@ -72,12 +72,12 @@ export function ContactForm({ corporate = false }: { corporate?: boolean }) {
       {corporate && <p className="corporate-form-note">Start with the essentials. We’ll work out the details together.</p>}
       <label>Name<input name="name" autoComplete="name" required maxLength={120} /></label>
       <label>Email<input name="email" type="email" inputMode="email" autoComplete="email" required /></label>
+      <label>WhatsApp / phone<input name="phone" type="tel" inputMode="tel" autoComplete="tel" required minLength={7} maxLength={60} /></label>
       {corporate ? <>
         <label>Company (optional)<input name="company" autoComplete="organization" maxLength={160} /></label>
         <label>Destination preference<select name="destination" defaultValue="Open to suggestions"><option>Open to suggestions</option><option>India</option><option>International</option><option>India & International</option></select></label>
         <label className="corporate-brief">Your brief (optional)<span id="corporate-brief-hint" className="corporate-field-hint">Who is travelling? Add your purpose, dates or group size, if known.</span><textarea name="message" rows={3} maxLength={4000} aria-describedby="corporate-brief-hint" placeholder="e.g. An incentive trip for 30 dealers in March" /></label>
       </> : <>
-        <label>Phone (optional)<input name="phone" type="tel" inputMode="tel" autoComplete="tel" /></label>
         <label>Travel dates (optional)<input name="travelWindow" placeholder="Month, season or flexible" /></label>
         <label>Travel interests (optional)<input name="interest" placeholder="e.g. Wildlife or photography" /></label>
         <label>Stay preference (optional)<select name="accommodation" defaultValue="Not decided yet"><option>Not decided yet</option><option>Quiet luxury</option><option>Classic safari camps</option><option>Design-led lodges</option><option>A considered mix</option></select></label>

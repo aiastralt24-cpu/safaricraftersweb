@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {validateEnquiry,acceptEnquiry,deliverEnquiryEmails,formatEnquiryEmail} from '../lib/enquiry-service.ts';
 import {upcomingDepartures,departureLabel,isFeaturedExpedition} from '../lib/departures.ts';
-const payload={source:'planner',name:'Test guest',email:'guest@example.test',region:'India',types:['Private'],experiences:['Open to suggestions'],months:['Flexible'],year:'Flexible',nights:'To discuss',travellers:'To discuss',occasion:'To discuss',flexibility:'To discuss',accommodation:'Not decided yet',investment:'Prefer to discuss',contactPreference:'Email',consent:true};
+const payload={source:'planner',name:'Test guest',email:'guest@example.test',phone:'+44 7700 900123',region:'India',types:['Private'],experiences:['Open to suggestions'],months:['Flexible'],year:'Flexible',nights:'To discuss',travellers:'To discuss',occasion:'To discuss',flexibility:'To discuss',accommodation:'Not decided yet',investment:'Prefer to discuss',contactPreference:'Email',consent:true};
 test('international book alerts omit safari placeholders and internal fields',()=>{
  const book={...payload,sourceType:'store-international',types:['Store purchase'],experiences:['Ghosts of the Granite Hills'],months:['As soon as available'],year:'Current',nights:'Not applicable',travellers:'Not applicable',investment:'International payment and shipping quote requested',notes:'Please contact this guest about international payment and dispatch.'};
  const email=formatEnquiryEmail(book,'SC-BOOK','team');
@@ -85,5 +85,16 @@ test('team alerts reach multiple recipients while guest receipts stay private',a
  } finally {
   global.fetch=originalFetch;
   if(originalRecipients===undefined)delete process.env.ENQUIRY_TO_EMAIL;else process.env.ENQUIRY_TO_EMAIL=originalRecipients;
+ }
+});
+
+test('all enquiry sources require a valid phone number',()=>{
+ for (const sourceType of ['contact','fixed-expedition','store-international',undefined]) {
+  for (const phone of [undefined,'','   ','abcdefghi','123', '+1234567890123456']) {
+   const result=validateEnquiry({...payload,sourceType,phone});
+   assert.equal(result.ok,false);
+   assert.ok(result.fields.phone);
+  }
+  for (const phone of ['+44 7700 900123','(212) 555-0123','9876543210']) assert.equal(validateEnquiry({...payload,sourceType,phone}).ok,true);
  }
 });

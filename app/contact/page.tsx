@@ -27,7 +27,7 @@ export default function ContactPage() {
           <p className={styles.corporate}>Planning for your company, partners or clients? <Link href="/mice#corporate-enquiry">Explore corporate journeys ↗</Link></p>
         </div>
         <section className={styles.panel} aria-labelledby="contact-form-heading">
-          <header><p className="eyebrow">Your travel brief</p><h2 id="contact-form-heading">Let’s make a <em>beginning.</em></h2><p>Start with what you know. We’ll work out the details together.</p><span>Name, email and a short message are required.</span></header>
+          <header><p className="eyebrow">Your travel brief</p><h2 id="contact-form-heading">Let’s make a <em>beginning.</em></h2><p>Start with what you know. We’ll work out the details together.</p><span>Name, email, phone number and a short message are required.</span></header>
           <ContactForm />
           <p className={styles.privacy}>Your details help us respond to your enquiry. <Link href="/legal/privacy">Privacy policy</Link></p>
         </section>
