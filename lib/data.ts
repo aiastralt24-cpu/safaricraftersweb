@@ -265,6 +265,9 @@ export type Testimonial = {
 export type EnquiryPayload = {
   source: "planner";
   sourceLabel?: string;
+  sourceType?: string;
+  expeditionSlug?: string;
+  departure?: string;
   region: string;
   types: string[];
   experiences: string[];
