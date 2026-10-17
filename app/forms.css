@@ -113,7 +113,7 @@
   min-height: 100dvh;
   padding: 150px 0 90px;
   background:
-    linear-gradient(180deg, rgba(var(--rgb-ink), 0.62), rgba(var(--rgb-ink), 0.12) 38%, var(--bone) 72%),
+    linear-gradient(180deg, rgba(var(--rgb-ink), 0.72), rgba(var(--rgb-ink), 0.58) 38%, var(--bone) 72%),
     url("/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png") center/cover fixed;
 }
 
@@ -127,6 +127,14 @@
   margin: 0 auto;
 }
 
+.plan-intro .eyebrow {
+  color: #f3dfb6;
+}
+
+.plan-intro .editorial-accent {
+  color: var(--white);
+}
+
 .plan-intro h1 {
   max-width: 880px;
   margin: 0 auto;
@@ -138,7 +146,7 @@
 .plan-intro p:last-child {
   max-width: 360px;
   margin-top: 14px;
-  color: rgba(var(--rgb-white), 0.68);
+  color: rgba(var(--rgb-white), 0.94);
   font-size: 0.98rem;
   line-height: 1.45;
 }
