@@ -38,13 +38,14 @@ export default async function ExpeditionDetailPage({ params }: Props) {
   const expedition = getExpedition(slug);
   if (!expedition) notFound();
   const heroSummaries: Record<string, {title:string; copy:string}> = {
+    "kaziranga-wildlife-photography-expedition": {title:"Kaziranga", copy:"Six wildlife safaris, grassland encounters and a Gibbon Sanctuary visit, with photography mentoring from Team Safari Crafters."},
     "kanha-wildlife-photography-expedition": {title:"Kanha", copy:"Five days of wildlife photography, winter light and expert mentoring in Kanha’s forests and meadows."},
     "laikipia-black-leopard-expedition": {title:"Laikipia", copy:"Black leopard tracking and patient photography in Kenya’s private conservancies."},
     "svalbard-expedition": {title:"Svalbard", copy:"An intimate Arctic voyage shaped by sea ice, wildlife and extraordinary light."},
     "the-pantanal-wetlands": {title:"The Pantanal", copy:"Jaguar encounters, river safaris and remarkable birdlife in Brazil’s vast wetlands."}
   };
   const heroSummary = heroSummaries[slug] || {title:expedition.title.replace(/ Photography Expedition$/, ""), copy:expedition.description};
-  const heroImage = expedition.gallery.find((image, index) => index > 0 && image.src !== expedition.image.src)
+  const heroImage = slug === "kaziranga-wildlife-photography-expedition" ? expedition.image : expedition.gallery.find((image, index) => index > 0 && image.src !== expedition.image.src)
     || expedition.gallery.find((image) => image.src !== expedition.image.src)
     || expedition.image;
   const destinationGallery = expedition.slug === "kanha-wildlife-photography-expedition"
@@ -62,6 +63,7 @@ export default async function ExpeditionDetailPage({ params }: Props) {
   const formatDate = (date:string) => new Date(date).toLocaleDateString("en-GB", {day:"numeric", month:"long", year:"numeric", timeZone:"UTC"});
   const departure = departures.length ? departureLabel(departures[0]) : undefined;
   const faqs = [
+    ...(expedition.faqs || []),
     { question: "When does this tour depart?", answer: departure ? `The next departure is ${departure}. See the departure list for other available dates.` : "New dates are being finalised. Send an enquiry to register your interest." },
     { question: "What photography experience do I need?", answer: expedition.skill ? `${expedition.skill}. Share your experience and goals with the team so they can confirm whether this tour is suitable for you.` : "Tell the team about your photography experience and interests when enquiring so they can confirm suitability." },
     { question: "What equipment should I bring?", answer: expedition.equipment || "Ask for a recommended equipment list for your departure before booking. Share your camera and lens setup with the team." },
@@ -174,7 +176,7 @@ export default async function ExpeditionDetailPage({ params }: Props) {
           </section>
         ) : null}
         <section className={`container ${informationStyles.section}`} aria-labelledby="tour-faq-heading"><header className={informationStyles.intro}><p className="eyebrow">Photography tour questions</p><h2 id="tour-faq-heading">Before you <em className="editorial-accent">set out.</em></h2><p>Dates, equipment and what to expect on your photography tour.</p></header><div className={informationStyles.questions}>{faqs.map(faq => <details key={faq.question} name="photography-faq"><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
-        <BookingConditions />
+        <BookingConditions cancellationPolicy={expedition.cancellationPolicy} />
         <ExpeditionEnquiry
           title={expedition.title}
           slug={expedition.slug}

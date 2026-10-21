@@ -193,6 +193,8 @@ const expedition = defineType({
   title: "Photography Tours",
   type: "document",
   fields: [
+    defineField({ name: "cancellationPolicy", title: "Tour cancellation policy", type: "text" }),
+    defineField({ name: "faqs", title: "Tour questions", type: "array", of: [defineArrayMember({ type: "object", fields: [defineField({ name: "question", type: "string" }), defineField({ name: "answer", type: "text" })] })] }),
     defineField({name:"publicationStatus",title:"Publication status",type:"string",options:{list:["preview","published"]},initialValue:"preview"}),
     defineField({name:"availabilityReviewedAt",title:"Availability last verified",type:"date"}),
     defineField({name:"departures",title:"Departure dates and availability",type:"array",of:[defineArrayMember({type:"object",name:"departure",fields:[

@@ -3946,7 +3946,9 @@
       "journeys": [
         "Trail of the Himalayan Firefox"
       ],
-      "expeditions": [],
+      "expeditions": [
+        "Kaziranga Wildlife Photography Expedition"
+      ],
       "category": "Destination guide",
       "continent": "India",
       "country": "India",
@@ -13392,6 +13394,168 @@
         }
       ],
       "publicationStatus": "preview"
+    },
+    {
+      "slug": "kaziranga-wildlife-photography-expedition",
+      "geography": "India",
+      "publicationStatus": "published",
+      "title": "Kaziranga Wildlife Photography Expedition",
+      "category": "Photography Tours",
+      "skill": "Guided wildlife photography and field mentoring",
+      "groupSize": "Group expedition",
+      "duration": "4 nights / 5 days",
+      "bestMonths": "March",
+      "species": "Greater one-horned rhinoceros, elephants, wild water buffalo, swamp deer, tigers and birdlife",
+      "equipment": "24–70mm for landscapes and environmental images; 70–200mm for wildlife portraits; 400mm or 600mm for distant subjects. Bring spare batteries, memory cards, a lens-cleaning kit, dust cover and a comfortable camera backpack. Binoculars are optional.",
+      "description": "Explore Kaziranga with Team Safari Crafters, 24–28 March 2027: six wildlife safaris, a Gibbon Sanctuary visit and photography mentoring. Starting from ₹74,900 + 5% GST.",
+      "intro": "Kaziranga’s vast grasslands, wetlands and tropical forests offer an extraordinary range of wildlife photography opportunities. Best known for the greater one-horned rhinoceros, the park is also home to elephants, wild water buffalo, swamp deer, tigers and remarkable birdlife.\n\nAcross six jeep safaris, Team Safari Crafters will guide you in reading animal behaviour, anticipating movement, working with changing light and composing wildlife within its natural landscape. Field mentoring covers shutter speed, aperture and ISO, with an emphasis on patient observation and responsible photography.\n\nA visit to Hollongapar Gibbon Wildlife Sanctuary adds a forest experience to this five-day expedition, with opportunities to explore the habitat of India’s only apes.",
+      "image": {
+        "src": "/assets/destinations/kaziranga/field-photographs/152a9cbb1ee4.webp",
+        "alt": "One-horned rhinoceros standing in Kaziranga grassland",
+        "credit": "Safari Crafters archive",
+        "focalPoint": "48% 35%"
+      },
+      "gallery": [
+        {
+          "src": "/assets/destinations/kaziranga/field-photographs/f4232e5e10e1.webp",
+          "alt": "Rhinoceros beside a Kaziranga wetland beneath the setting sun",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kaziranga/field-photographs/0908f49c01b0.webp",
+          "alt": "Wild water buffalo cooling in a forest pool",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kaziranga/field-photographs/bdfd9e210567.webp",
+          "alt": "One-horned rhinoceros walking through tall grass",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kaziranga/field-photographs/c04edd7fb012.webp",
+          "alt": "Rhinoceros with white birds perched on its back",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kaziranga/field-photographs/990c68af0649.webp",
+          "alt": "Tiger crossing a safari track in Kaziranga",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kaziranga/field-photographs/f2920704cf5b.webp",
+          "alt": "Rhinoceros and deer beside misty wetlands in black and white",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kaziranga/field-photographs/d7bafed4ed8f.webp",
+          "alt": "Tall wetland grasses and forest in Kaziranga",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kaziranga/field-photographs/5c24f1ab3be7.webp",
+          "alt": "Deer reflected in a wetland at sunset",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kaziranga/field-photographs/482eac193a10.webp",
+          "alt": "Golden sunset over a Kaziranga lake",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kaziranga/field-photographs/b264de93acba.webp",
+          "alt": "Rhinoceros silhouetted against golden evening light",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kaziranga/field-photographs/15af1d8b4791.webp",
+          "alt": "Deer silhouetted beside a bright sunset reflection",
+          "credit": "Safari Crafters archive"
+        }
+      ],
+      "mentor": "Team Safari Crafters",
+      "guide": "Team Safari Crafters",
+      "date": "24–28 March 2027",
+      "price": "₹74,900 + 5% GST",
+      "route": "Guwahati → Kaziranga & Gibbon Wildlife Sanctuary → Guwahati",
+      "highlights": [
+        "Six jeep safaris in Kaziranga, including a final morning safari before departure",
+        "A visit to Hollongapar Gibbon Wildlife Sanctuary",
+        "Field mentoring in animal behaviour, light, camera settings and composition",
+        "Four nights of accommodation and return Guwahati Airport transfers"
+      ],
+      "inclusions": [
+        "Four nights of accommodation",
+        "Six wildlife safaris in Kaziranga National Park",
+        "One visit to Gibbon Wildlife Sanctuary",
+        "Return airport transfers between Guwahati and Kaziranga",
+        "Guided wildlife photography and field mentoring",
+        "Expedition coordination by Safari Crafters"
+      ],
+      "exclusions": [
+        "5% GST, additional to the starting tour price",
+        "Flights and train tickets",
+        "Personal expenses and shopping",
+        "Travel insurance",
+        "Alcoholic beverages and laundry",
+        "Camera equipment",
+        "Tips and gratuities",
+        "Additional accommodation",
+        "Any expenses not specifically mentioned under inclusions"
+      ],
+      "days": [
+        {
+          "label": "Day 01",
+          "title": "Arrival, briefing and welcome dinner",
+          "copy": "Arrive at Guwahati Airport and transfer by road to Kaziranga. Check in, settle in and meet the expedition team. A welcome dinner and briefing introduce the itinerary, photography approach, field etiquette and wildlife photography ethics."
+        },
+        {
+          "label": "Day 02",
+          "title": "First safaris and grassland encounters",
+          "copy": "Explore Kaziranga on morning and afternoon jeep safaris. Look for greater one-horned rhinoceros, elephants, swamp deer, wild water buffalo and birdlife while practising observation, composition and working with available light."
+        },
+        {
+          "label": "Day 03",
+          "title": "Wildlife behaviour and changing light",
+          "copy": "Continue with morning and afternoon safaris through Kaziranga’s varied habitats. Work with the team on anticipating movement, framing environmental wildlife images and creating photographs that tell the story of an encounter."
+        },
+        {
+          "label": "Day 04",
+          "title": "Gibbon Sanctuary and an afternoon safari",
+          "copy": "Visit Gibbon Wildlife Sanctuary in the morning to explore a different forest ecosystem and learn about gibbon habitat and conservation. Walking may be involved, depending on permitted routes and conditions; bring leech socks. Return for an afternoon safari in Kaziranga."
+        },
+        {
+          "label": "Day 05",
+          "title": "Final safari and departure",
+          "copy": "Head out for an early morning safari, then return for checkout and the included road transfer to Guwahati Airport. Choose an onward flight after 7:00 PM, preferably after 8:00 PM, and coordinate flight timings with Safari Crafters before booking."
+        }
+      ],
+      "departures": [
+        {
+          "date": "2027-03-24",
+          "endDate": "2027-03-28",
+          "status": "Available",
+          "availability": "Check availability"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Which flights should I book?",
+          "answer": "Return transfers from Guwahati Airport are included. Plan to arrive between 10:00 AM and 12:00 PM on 24 March 2027. For 28 March, choose a departure after 7:00 PM, preferably after 8:00 PM, to allow for the final safari and road transfer. Coordinate flight timings with Safari Crafters before booking because travel times can vary."
+        },
+        {
+          "question": "How much walking is involved?",
+          "answer": "Most photography takes place on jeep safaris. The Gibbon Sanctuary visit may include forest walking, subject to permitted routes and local conditions. Bring comfortable walking shoes and leech socks, and be comfortable with early starts, extended vehicle time and carrying your camera equipment."
+        },
+        {
+          "question": "What else should I pack?",
+          "answer": "Bring government-issued photo ID, personal medication, toiletries, sunscreen, sunglasses and a reusable water bottle. Pack lightweight full-sleeve clothing, comfortable trousers, closed shoes and a light jacket for early safaris. Bring rain protection if the forecast requires it."
+        },
+        {
+          "question": "Can the itinerary change?",
+          "answer": "Wildlife sightings depend on animal movement, weather and field conditions. Safari zones, schedules and activities may change for operational, regulatory or safety reasons. Follow the expedition team and local guides, and photograph responsibly without disturbing wildlife or habitats."
+        }
+      ],
+      "cancellationPolicy": "Cancellation 150 days or more before departure: 50% of the expedition fee will be retained. Cancellation between 120 and 150 days before departure: 70% will be retained. Cancellation 120 days or less before departure: 100% will be retained. Charges are based on the date the cancellation request is formally received. Confirm the applicable charge with Safari Crafters before booking, including cancellations exactly 120 or 150 days before departure."
     }
   ],
   "journal": [

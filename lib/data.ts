@@ -190,6 +190,8 @@ export type ExpeditionDeparture = {
 };
 
 export type Expedition = {
+  faqs?: Array<{ question: string; answer: string }>;
+  cancellationPolicy?: string;
   geography?: "India" | "International";
   publicationStatus?: "preview" | "published";
   availabilityReviewedAt?: string;
