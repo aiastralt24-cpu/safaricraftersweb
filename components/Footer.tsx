@@ -111,7 +111,7 @@ export function Footer() {
       <div className="container footer-bottom">
         <span>© 2026 Safari Crafters.</span>
         <span>
-          <Link href="/legal/privacy">Privacy</Link> · <Link href="/legal/terms">Terms</Link> ·{" "}
+          <Link href="/legal/privacy">Privacy</Link> ·{" "}
           <Link href="/legal/cookies">Cookies</Link>
         </span>
       </div>
