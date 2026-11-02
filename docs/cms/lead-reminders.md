@@ -1,0 +1,15 @@
+# Personal follow-up reminders
+
+The **Follow-up reminders** panel is available in Enquiries and Content health. Enable **Show reminders and refresh every minute while this tab is visible** to load reminders immediately, refresh every minute while visible and refresh on returning to the tab. Disabling the checkbox or leaving the workspace stops refreshes. This panel is an in-app reminder channel; it does not send email, push or closed-browser notifications.
+
+The default scope is enquiries assigned to the current user. **All enquiries I can view** includes unassigned and other accessible enquiries. Due, snoozed and acknowledged views are separate, with pages of 20. Dates are evaluated by database time and displayed in the browser’s local timezone. Future follow-ups, closed outcomes and retained merged submissions are excluded. Only metadata appears in the reminder list; contact answers are not returned.
+
+Acknowledge a reminder, snooze it for one hour/day, or restore an acknowledged/snoozed reminder to the due view. Snoozed reminders become due automatically when their time expires. These choices belong to the current user; they do not change another person’s reminders, the enquiry’s follow-up date, status or owner. Opening the enquiry uses the normal latest-detail workflow and unsaved-change protection.
+
+SQL **293** binds personal reminder state to a follow-up generation. Changing the date, reassigning the enquiry or reopening a closed enquiry increments that generation. Returning to a previously used date creates a new generation too. Notes and unrelated edits do not reset acknowledgements. A stale action cannot acknowledge a rescheduled, closed, merged or inaccessible enquiry. Commands recheck view permission and expected personal-state version under a lead row lock. Exact immediate retries return the existing result without another state change. Personal choices require view permission; they do not confer enquiry editing permission.
+
+The browser verifies website, actor, scope, state, ordering and command receipts. A failed or uncertain action clears stale list rows and asks for a refresh; refreshing reads the saved state before any further action. Service and anonymous roles cannot use the authenticated reminder procedures, and direct application access to the private state table is withheld.
+
+Local evidence: permission/tenant/pagination tests; independent users; acknowledgement and retry; snooze expiry; rescheduling, returning to the same date, reassignment, closure/reopening, merge exclusion and membership revocation. Browser checks cover desktop/mobile timed refresh, acknowledgement/reset, snooze expiry, lost-response recovery, actor mismatch, detail navigation and stopping refresh. **1,699 CMS tests pass with zero skips**, plus production build and TypeScript.
+
+Pending: hosted clocks/concurrency/role verification, client acceptance and an explicitly configured out-of-app reminder delivery channel. CRM integration is also still pending. No hosted migration or external reminder has been sent.

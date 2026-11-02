@@ -1,0 +1,9 @@
+'use client';
+import {specialistSchema} from '../../lib/cms/specialists';
+import {MediaImage,type LoadMediaPreview} from './media-image';
+export function SpecialistPreview({value,loadPreview}:{value:unknown;loadPreview:LoadMediaPreview}){
+ const parsed=specialistSchema.safeParse(value);
+ if(!parsed.success)return <p role='alert'>This specialist profile needs repair before previewing.</p>;
+ const profile=parsed.data;
+ return <article className='cms-specialist-preview'><p>Profile preview · {profile.kind==='team'?'Team':'Individual specialist'} · {profile.visible?'Visible after publication':'Hidden from the public directory'}</p>{profile.image?<figure><MediaImage asset={profile.image.assetId} alt={profile.image.decorative?'':profile.image.alt} load={loadPreview}/>{(profile.image.caption||profile.image.credit)&&<figcaption>{profile.image.caption}{profile.image.credit&&<small> {profile.image.credit}</small>}</figcaption>}</figure>:<p>No portrait selected.</p>}<p>{profile.role}</p><h2>{profile.name}</h2><p style={{whiteSpace:'pre-line'}}>{profile.expertise}</p><p style={{whiteSpace:'pre-line'}}>{profile.bio}</p>{profile.moment&&<blockquote style={{whiteSpace:'pre-line'}}>{profile.moment}</blockquote>}{profile.video&&<section><h3>{profile.video.title||'Specialist film'}</h3><p>Film playback is not connected in this preview.</p><p>{profile.video.caption}</p>{profile.video.transcript&&<details><summary>Read film transcript</summary><p style={{whiteSpace:'pre-line'}}>{profile.video.transcript}</p></details>}</section>}{(profile.journeys.length>0||profile.expeditions.length>0)&&<p>{profile.journeys.length} related journeys · {profile.expeditions.length} photography expeditions. Related-trip display is still being connected.</p>}{profile.planning.label&&<><button type='button' disabled>{profile.planning.label}</button><p>Enquiry specialist: {profile.planning.enquiryName||'Not set'}. This preview does not submit an enquiry.</p></>}</article>;
+}

@@ -1,0 +1,8 @@
+Draft preview validation passed.
+destination: 102 included / 102 records
+journey: 14 included / 14 records
+photoExpedition: 8 included / 8 records
+journalArticle: 15 included / 15 records
+specialist: 3 included / 3 records
+testimonial: 0 included / 3 records
+No content was published or imported.

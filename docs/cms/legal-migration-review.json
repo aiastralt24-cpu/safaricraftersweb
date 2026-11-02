@@ -1,0 +1,893 @@
+{
+  "schemaVersion": 1,
+  "mode": "review-only",
+  "pages": [
+    {
+      "path": "/legal/privacy",
+      "sourcePath": "app/legal/privacy/page.tsx",
+      "sourceSha256": "d123daea7c17ffb90a3f448d86e5ffff8fe3c03e7e1462fa4679fe2249e493bd",
+      "sourceBlockCount": 75,
+      "findings": [],
+      "candidate": {
+        "composition": {
+          "schemaVersion": 1,
+          "title": "Privacy Policy",
+          "sections": [
+            {
+              "id": "legal-1",
+              "kind": "text",
+              "controls": {
+                "label": "Legal text 1",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Legal & privacy"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-2",
+              "kind": "text",
+              "controls": {
+                "label": "Privacy Policy",
+                "headingLevel": "h1",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Privacy Policy",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "How Safari Crafters collects, manages and protects your personal data."
+                  },
+                  {
+                    "kind": "paragraph",
+                    "text": "On this page"
+                  },
+                  {
+                    "kind": "link",
+                    "label": "Introduction",
+                    "href": "#introduction"
+                  },
+                  {
+                    "kind": "link",
+                    "label": "Information we collect",
+                    "href": "#information"
+                  },
+                  {
+                    "kind": "link",
+                    "label": "How information is collected",
+                    "href": "#collection"
+                  },
+                  {
+                    "kind": "link",
+                    "label": "How we use information",
+                    "href": "#use"
+                  },
+                  {
+                    "kind": "link",
+                    "label": "Sharing and transfers",
+                    "href": "#sharing"
+                  },
+                  {
+                    "kind": "link",
+                    "label": "Security and retention",
+                    "href": "#security"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-11",
+              "kind": "text",
+              "controls": {
+                "label": "Legal text 11",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact",
+                "anchor": "introduction"
+              },
+              "data": {
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Safari Crafters · the Company"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-12",
+              "kind": "text",
+              "controls": {
+                "label": "Our commitment to your privacy",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Our commitment to your privacy",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Safari Crafters (referred to as the “Company”, “we”, “us” or “our”) respects your privacy and is committed to protecting your personal data. This notice explains how we look after your personal data when you visit our website, regardless of where you visit it from, or provide personal data to us by other means, including by telephone. It also explains your privacy rights and how the law protects you."
+                  },
+                  {
+                    "kind": "paragraph",
+                    "text": "This notice describes how we collect, manage and process personal data, including information you provide when purchasing travel arrangements. Please read it together with any other privacy or fair-processing notice supplied when we collect your data. Those notices supplement this policy and do not override it."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-15",
+              "kind": "text",
+              "controls": {
+                "label": "Minors",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Minors",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "This website is not intended for minors as defined by the Indian Contract Act, 1872. We collect information relating to children or minors only when an adult who is legally competent to enter into a contract makes a booking for them."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-17",
+              "kind": "text",
+              "controls": {
+                "label": "Third-party links",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Third-party links",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Our website may contain links to third-party websites, plug-ins and applications. Those services may collect or share information about you. We do not control third-party websites and are not responsible for their privacy statements. We encourage you to read the privacy notice of each website you visit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-19",
+              "kind": "text",
+              "controls": {
+                "label": "Legal text 19",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact",
+                "anchor": "information"
+              },
+              "data": {
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Personal information"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-20",
+              "kind": "text",
+              "controls": {
+                "label": "The data we collect",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "The data we collect",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Personal data means information from which an individual can be identified. It does not include information where the identity has been removed."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-22",
+              "kind": "text",
+              "controls": {
+                "label": "Identity data",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Identity data",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Your first name, maiden name, last name or similar identifiers, marital status, title, date of birth and gender."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-24",
+              "kind": "text",
+              "controls": {
+                "label": "Contact data",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Contact data",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Your home or business address, email address and telephone numbers."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-26",
+              "kind": "text",
+              "controls": {
+                "label": "Financial data",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Financial data",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Your bank account and payment-card details. We do not retain or store credit-card details unless authorised to retain them as a security deposit."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-28",
+              "kind": "text",
+              "controls": {
+                "label": "Transaction data",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Transaction data",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Details about payments to and from you, and the products and services you have purchased from us."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-30",
+              "kind": "text",
+              "controls": {
+                "label": "Technical data",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Technical data",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Your IP address, login data, browser type and version, time-zone setting and location, browser plug-ins, operating system, platform and other technology used to access this website."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-32",
+              "kind": "text",
+              "controls": {
+                "label": "Usage data",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Usage data",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Information about how you use our website, products and services."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-34",
+              "kind": "text",
+              "controls": {
+                "label": "Marketing and communications data",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Marketing and communications data",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Your preferences for receiving marketing from us and your communication preferences."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-36",
+              "kind": "text",
+              "controls": {
+                "label": "Aggregated data",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Aggregated data",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "We may collect, use and share statistical or demographic information. Aggregated data may be derived from personal data but is not treated as personal data in law when it does not directly or indirectly reveal your identity."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-38",
+              "kind": "text",
+              "controls": {
+                "label": "Special categories of personal data",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Special categories of personal data",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "To assess whether a journey is suitable and provide an appropriate service, we may need information about dietary requirements, health, race or ethnicity, religious or philosophical beliefs, gender or sexual orientation. We collect and process sensitive personal data only where strictly necessary and with your explicit consent. You are not required to consent, and you may withdraw consent at any time."
+                  },
+                  {
+                    "kind": "paragraph",
+                    "text": "This information is handled in accordance with the Information Technology Act, 2000 and rules amended from time to time."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-41",
+              "kind": "text",
+              "controls": {
+                "label": "Legal text 41",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact",
+                "anchor": "collection"
+              },
+              "data": {
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Collection"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-42",
+              "kind": "text",
+              "controls": {
+                "label": "How your personal data reaches us",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "How your personal data reaches us",
+                "body": []
+              }
+            },
+            {
+              "id": "legal-43",
+              "kind": "text",
+              "controls": {
+                "label": "Direct interactions",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Direct interactions",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "You may provide identity, contact and financial information when you:"
+                  },
+                  {
+                    "kind": "list",
+                    "ordered": false,
+                    "items": [
+                      "make a booking or request a travel quotation;",
+                      "subscribe to a newsletter or request marketing;",
+                      "enter a competition, promotion or survey;",
+                      "provide feedback; or",
+                      "use our online payment or client portals."
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-46",
+              "kind": "text",
+              "controls": {
+                "label": "Automated technologies",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Automated technologies",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "As you interact with our website, we may automatically collect technical information about your equipment, browsing actions and patterns through cookies or similar technologies."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-48",
+              "kind": "text",
+              "controls": {
+                "label": "Third-party sources",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Third-party sources",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "From time to time we may run competitions with third parties and receive participant information. Participants are given the opportunity to opt in or out of communications from us."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-50",
+              "kind": "text",
+              "controls": {
+                "label": "Legal text 50",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact",
+                "anchor": "use"
+              },
+              "data": {
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Use of information"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-51",
+              "kind": "text",
+              "controls": {
+                "label": "How we use your personal data",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "How we use your personal data",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "We use personal data only where the law allows us to: perform a contract we are entering into or have entered into with you; pursue our legitimate interests or those of a third party where your rights do not override those interests; or comply with a legal or regulatory obligation."
+                  },
+                  {
+                    "kind": "paragraph",
+                    "text": "We generally rely on consent only for direct marketing by email or text. You may withdraw marketing consent at any time by contacting info@safaricrafters.in.",
+                    "spans": [
+                      {
+                        "text": "We generally rely on consent only for direct marketing by email or text. You may withdraw marketing consent at any time by contacting "
+                      },
+                      {
+                        "text": "info@safaricrafters.in",
+                        "href": "mailto:info@safaricrafters.in"
+                      },
+                      {
+                        "text": "."
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-54",
+              "kind": "text",
+              "controls": {
+                "label": "Marketing and promotional offers",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Marketing and promotional offers",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "We may use identity, contact, technical, usage and profile information to understand which services and offers may interest you. You will receive marketing communications only where you have requested information or purchased services and have opted in to receive marketing."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-56",
+              "kind": "text",
+              "controls": {
+                "label": "Opting out",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Opting out",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "You may stop marketing messages by using the unsubscribe link in a message or emailing info@safaricrafters.in. Opting out does not affect personal data supplied in connection with a booking or other transaction.",
+                    "spans": [
+                      {
+                        "text": "You may stop marketing messages by using the unsubscribe link in a message or emailing "
+                      },
+                      {
+                        "text": "info@safaricrafters.in",
+                        "href": "mailto:info@safaricrafters.in"
+                      },
+                      {
+                        "text": ". Opting out does not affect personal data supplied in connection with a booking or other transaction."
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-58",
+              "kind": "text",
+              "controls": {
+                "label": "Cookies",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Cookies",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "You can configure your browser to refuse some or all cookies or alert you when websites set or access cookies. Disabling cookies may cause parts of this website to become inaccessible or function incorrectly."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-60",
+              "kind": "text",
+              "controls": {
+                "label": "Change of purpose",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Change of purpose",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "We use personal data for the purpose for which it was collected unless another use is reasonably compatible with that purpose. You may contact us for an explanation. If we need to use information for an unrelated purpose, we will notify you and explain the legal basis. We may process information without your knowledge or consent where the law requires or permits it."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-62",
+              "kind": "text",
+              "controls": {
+                "label": "Legal text 62",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact",
+                "anchor": "sharing"
+              },
+              "data": {
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Disclosure"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-63",
+              "kind": "text",
+              "controls": {
+                "label": "Sharing and international transfers",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Sharing and international transfers",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "We may share your personal data with necessary legal and consular authorities where circumstances warrant it and the governing laws of India require or permit us to do so."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-65",
+              "kind": "text",
+              "controls": {
+                "label": "International travel",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "International travel",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "When you travel outside India, we may transfer your personal data outside India where necessary to fulfil our contract with you."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-67",
+              "kind": "text",
+              "controls": {
+                "label": "Legal text 67",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact",
+                "anchor": "security"
+              },
+              "data": {
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Safeguards"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-68",
+              "kind": "text",
+              "controls": {
+                "label": "Data security and retention",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Data security and retention",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "We use appropriate security measures to protect personal data from accidental loss, unauthorised access or use, alteration and disclosure. Access is limited to employees, agents, contractors and third parties with a legitimate business need. They process information on our instructions and are subject to confidentiality obligations."
+                  },
+                  {
+                    "kind": "paragraph",
+                    "text": "We maintain procedures for suspected personal-data breaches and will notify you and any applicable regulator where legally required."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-71",
+              "kind": "text",
+              "controls": {
+                "label": "How long we retain data",
+                "headingLevel": "h3",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "How long we retain data",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "We retain personal data only for as long as necessary for the purpose for which it was collected, including legal, accounting and reporting requirements. The retention period reflects the amount, nature and sensitivity of the data, the risk of harm from unauthorised use or disclosure, the processing purpose, whether that purpose can be achieved by other means and applicable legal requirements."
+                  },
+                  {
+                    "kind": "paragraph",
+                    "text": "Questions or requests"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "legal-74",
+              "kind": "text",
+              "controls": {
+                "label": "Contact Safari Crafters",
+                "headingLevel": "h2",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Contact Safari Crafters",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "For questions about this policy, your personal data or your marketing preferences, email info@safaricrafters.in.",
+                    "spans": [
+                      {
+                        "text": "For questions about this policy, your personal data or your marketing preferences, email "
+                      },
+                      {
+                        "text": "info@safaricrafters.in",
+                        "href": "mailto:info@safaricrafters.in"
+                      },
+                      {
+                        "text": "."
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "seo": {
+          "schemaVersion": 1,
+          "title": "Privacy Policy",
+          "description": "How Safari Crafters collects, uses, stores and protects personal data.",
+          "canonical": "",
+          "indexing": "inherit",
+          "following": "inherit",
+          "socialTitle": "",
+          "socialDescription": "",
+          "breadcrumbLabel": "",
+          "sitemap": "inherit"
+        }
+      }
+    },
+    {
+      "path": "/legal/terms",
+      "sourcePath": "app/legal/terms/page.tsx",
+      "sourceSha256": "a7f4c199702ff544213b2145fd934c7b4786038293bbcb39008f01329b983aa6",
+      "sourceBlockCount": 2,
+      "findings": [],
+      "candidate": {
+        "composition": {
+          "schemaVersion": 1,
+          "title": "Terms",
+          "sections": [
+            {
+              "id": "legal-1",
+              "kind": "text",
+              "controls": {
+                "label": "Terms",
+                "headingLevel": "h1",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Terms",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "Safari Crafters journey proposals are personalised and subject to availability, local park rules, lodge policies and final confirmation by a specialist."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "seo": {
+          "schemaVersion": 1,
+          "title": "Terms",
+          "description": "Ultra-luxury, photography-led private safaris across India, Africa and the wild places between.",
+          "canonical": "",
+          "indexing": "inherit",
+          "following": "inherit",
+          "socialTitle": "",
+          "socialDescription": "",
+          "breadcrumbLabel": "",
+          "sitemap": "inherit"
+        }
+      }
+    },
+    {
+      "path": "/legal/cookies",
+      "sourcePath": "app/legal/cookies/page.tsx",
+      "sourceSha256": "821ba13e2318f811c2e262de98d42ad0f5f251d3428fd5f64b136c3aefd79e93",
+      "sourceBlockCount": 4,
+      "findings": [],
+      "candidate": {
+        "composition": {
+          "schemaVersion": 1,
+          "title": "Browser storage & analytics",
+          "sections": [
+            {
+              "id": "legal-1",
+              "kind": "text",
+              "controls": {
+                "label": "Browser storage & analytics",
+                "headingLevel": "h1",
+                "width": "reading",
+                "spacing": "compact"
+              },
+              "data": {
+                "title": "Browser storage & analytics",
+                "body": [
+                  {
+                    "kind": "paragraph",
+                    "text": "The planner remembers travel preferences in this browser tab for up to 24 hours. Name, email, phone and free-text notes are not included in that saved draft."
+                  },
+                  {
+                    "kind": "paragraph",
+                    "text": "We also keep a random submission reference in the tab to avoid duplicate enquiries when you retry. Closing the tab clears this session storage."
+                  },
+                  {
+                    "kind": "paragraph",
+                    "text": "When website measurement is enabled, we record page paths and enquiry steps using a temporary session identifier. These events exclude form contents, URL query strings and IP addresses. Measurement respects your browser’s Do Not Track setting."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "seo": {
+          "schemaVersion": 1,
+          "title": "Browser storage & analytics",
+          "description": "Ultra-luxury, photography-led private safaris across India, Africa and the wild places between.",
+          "canonical": "",
+          "indexing": "inherit",
+          "following": "inherit",
+          "socialTitle": "",
+          "socialDescription": "",
+          "breadcrumbLabel": "",
+          "sitemap": "inherit"
+        }
+      }
+    }
+  ]
+}

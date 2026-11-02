@@ -1,0 +1,11 @@
+import {z} from 'zod';
+const asset=z.string().regex(/^[a-zA-Z0-9][a-zA-Z0-9_-]{0,127}$/),instant=z.string().datetime({offset:true});
+export const mediaRightsQuery=z.object({site:z.string().uuid(),after:asset.optional(),filter:z.enum(['attention','expired','expiring','pending','revoked']).default('attention')}).strict();
+const schema=z.object({websiteId:z.string().uuid(),filter:mediaRightsQuery.shape.filter,checkedAt:instant,items:z.array(z.object({id:asset,title:z.string(),mime:z.enum(['image/jpeg','image/png','image/webp','image/avif','video/mp4','application/pdf']),revision:z.number().int().positive(),rightsStatus:z.enum(['approved','pending','revoked']),expiresAt:instant.nullable(),expired:z.boolean(),expiring:z.boolean()}).strict()).max(20),nextCursor:asset.nullable()}).strict();
+export type MediaRightsMonitor=z.infer<typeof schema>;
+export function verifiedMediaRights(input:unknown,query:z.infer<typeof mediaRightsQuery>){const value=schema.parse(input);if(value.websiteId!==query.site||value.filter!==query.filter)throw Error('Media rights report mismatch.');let previous=query.after??null;const now=Date.parse(value.checkedAt);
+ for(const item of value.items){if(previous&&item.id<=previous)throw Error('Media rights ordering mismatch.');previous=item.id;const expiry=item.expiresAt?Date.parse(item.expiresAt):null;if(item.expired!==(expiry!==null&&expiry<=now)||item.expiring!==(expiry!==null&&expiry>now&&expiry<=now+30*86400000))throw Error('Media rights expiry mismatch.');
+ const matches={attention:item.expired||item.expiring||item.rightsStatus!=='approved',expired:item.expired,expiring:item.expiring,pending:item.rightsStatus==='pending',revoked:item.rightsStatus==='revoked'};if(!matches[query.filter])throw Error('Media rights filter mismatch.');}
+ if(value.nextCursor!==null&&(!value.items.length||value.nextCursor!==previous))throw Error('Media rights cursor mismatch.');return value;}
+
+export function verifiedRightsKind(value:MediaRightsMonitor,kind:'media'|'pdf'){if(value.items.some(item=>(item.mime==='application/pdf')!==(kind==='pdf')))throw Error('Rights catalogue mismatch.');if(kind==='pdf'&&value.items.some(item=>!z.string().uuid().safeParse(item.id).success))throw Error('PDF file identity mismatch.');return value;}

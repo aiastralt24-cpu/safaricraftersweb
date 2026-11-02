@@ -855,11 +855,9 @@
 .departure-status-full { background:#e4e0db; color:#59534c; }
 .departure-status-new { background:#dfe9e8; color:#28534f; }
 
-.expedition-hero .page-hero-destination .page-hero-content h1 { font-size:clamp(64px,8vw,112px); max-width:12ch; line-height:1; }
+
 .expedition-hero .page-hero-destination .page-hero-description { font-size:clamp(16px,1.35vw,20px); line-height:1.65; }
-@media(max-width:760px) {
- .expedition-hero .page-hero-destination .page-hero-content h1 { font-size:clamp(48px,13vw,72px); }
-}
+
 
 /* Keep fixed expedition information in a connected, compact reading flow. */
 .expedition-detail { padding-top:clamp(36px,4vw,60px); padding-bottom:56px; }
@@ -1053,4 +1051,35 @@
   .journey-stage-title { font-size:25px; }
   .journey-stage-description { font-size:13px; }
   .journey-stage-days { padding:4px 0 20px; }
+}
+
+/* Big Cats: a quieter, two-column hero following the destination atlas. */
+.journey-hero-editorial { min-height: min(760px, 88svh); }
+.journey-hero-editorial .journey-detail-hero-shade { background: linear-gradient(90deg,rgba(12,15,10,.7),rgba(12,15,10,.28) 52%,rgba(12,15,10,.6)),linear-gradient(0deg,rgba(12,15,10,.68),transparent 70%); }
+.journey-editorial-content { padding-top: 190px; padding-bottom: 65px; }
+.journey-editorial-content > .eyebrow { color: #d1a85d; margin: 0 0 25px; }
+.journey-editorial-heading { display: grid; grid-template-columns: 1.3fr .8fr; gap: 12%; align-items: end; }
+.journey-hero-editorial h1 { margin: 0; font-size: clamp(4.8rem,8vw,9rem); line-height: .96; max-width: none; }
+.journey-hero-editorial h1 em { color: #d1ad65; font-weight: 300; }
+.journey-editorial-heading .journey-detail-dek { max-width: 390px; padding-bottom: 8px; color: rgba(255,255,255,.88); }
+.journey-editorial-content .breadcrumbs { margin-top: 55px; }
+.journey-editorial-credit { position: absolute; right: 30px; bottom: 22px; font-size: 11px; color: rgba(255,255,255,.7); }
+.journey-editorial-facts { display: grid; grid-template-columns: .85fr 1.8fr 1fr; gap: 30px; margin-block: 0; padding-block: 26px; }
+.journey-editorial-facts div + div { border-left: 1px solid rgba(75,67,50,.2); padding-left: 30px; }
+.journey-editorial-facts dt { font-size: 10px; text-transform: uppercase; letter-spacing: .15em; color: #76613e; font-weight: 700; }
+.journey-editorial-facts dd { margin: 7px 0 0; font-size: 15px; line-height: 1.5; color: var(--charcoal); }
+@media (max-width: 760px) {
+  .journey-hero-editorial { min-height: 680px; }
+  .journey-editorial-content { padding-top: 160px; padding-bottom: 65px; }
+  .journey-editorial-heading { grid-template-columns: 1fr; gap: 28px; }
+  .journey-hero-editorial h1 { font-size: clamp(4.2rem,15vw,6rem); }
+  .journey-editorial-heading .journey-detail-dek { max-width: 330px; font-size: 15px; }
+  .journey-editorial-content .breadcrumbs { margin-top: 28px; }
+  .journey-editorial-facts { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .journey-editorial-facts div:nth-child(2) { grid-column: 1 / -1; grid-row: 2; border: 0; padding-left: 0; }
+  .journey-editorial-facts div:nth-child(3) { padding-left: 20px; }
+}
+@media (max-width: 760px) {
+  .journey-editorial-content .breadcrumbs-hero li:first-child,
+  .journey-editorial-content .breadcrumbs-hero li:last-child { display: inline-flex; }
 }

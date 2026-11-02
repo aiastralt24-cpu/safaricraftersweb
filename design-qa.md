@@ -37,6 +37,157 @@ The combined comparison shows the supplied CTA above the revised complete sectio
 
 final result: passed
 
+# About Page — Editorial Motion QA
+
+- source visual truth: `/var/folders/86/xk6mzkbn0l38n62l52kcsn0c0000gn/T/codex-clipboard-358689bd-e941-4198-9a24-1f962c6741b3.png`
+- implementation: `http://127.0.0.1:3000/about`
+- implementation screenshots: `/private/tmp/about-animation-qa/hero-loaded-1440.png`, `/private/tmp/about-animation-qa/leadership-revealed-1440.png`, `/private/tmp/about-animation-qa/hero-top-390.png`, `/private/tmp/about-animation-qa/profile-revealed-390.png`, `/private/tmp/about-animation-qa/principles-revealed-390.png`
+- combined visual comparison: `about-hero-design-qa-comparison.png`
+- implementation viewports: 1440 × 900 and 390 × 844 CSS px at 1× capture density
+- states: hero at page load; story, leadership profile and principles after their one-time scroll reveals
+
+## Motion and visual evidence
+
+The hero photograph now settles with a restrained scale-and-depth movement while the existing headline entrance remains the primary load animation. Story and leadership content reveal in short editorial sequences, portraits resolve with a gentle image settle, and the two principles enter once as the reader reaches them. The motion preserves the page's composed, field-led character and does not compete with the photography.
+
+## Responsive and accessibility evidence
+
+The same motion hierarchy remains intact at 390 px without horizontal movement or overflow. All animated properties are transform and opacity based. When `prefers-reduced-motion: reduce` is active, the About motion component exits before applying any hidden or transformed state, leaving every section immediately visible and readable.
+
+## Findings
+
+- No actionable P0, P1 or P2 issues remain.
+- Desktop and mobile horizontal overflow: 0 px.
+- Browser console errors and warnings: none.
+- Production build: passed, including all 166 generated pages.
+
+final result: passed
+
+# About Page — Leadership and Principles QA
+
+- source visual truth: `/var/folders/86/xk6mzkbn0l38n62l52kcsn0c0000gn/T/codex-clipboard-61dabf76-167f-4563-8c2b-2f786aa7c044.png`
+- supplied Trikansh portrait: `/var/folders/86/xk6mzkbn0l38n62l52kcsn0c0000gn/T/codex-clipboard-38578b42-77ac-4333-bc8e-0b3230fbdc0c.png`
+- implementation: `http://127.0.0.1:3000/about`
+- implementation screenshots: `/private/tmp/about-trikansh-qa/leadership-1440.png`, `/private/tmp/about-trikansh-qa/profile-1440.png`, `/private/tmp/about-trikansh-qa/principles-1440.png`, `/private/tmp/about-trikansh-qa/tablet-768.png`, `/private/tmp/about-trikansh-qa/after-390.png`
+- combined comparison: `/Volumes/Private data/safariCrafters-beta/about-page-design-qa-comparison.png`
+- source pixels: 2718 × 1646 supplied desktop capture; original CSS viewport and density unavailable
+- implementation pixels: 1440 × 1000 at a 1440 × 1000 CSS viewport and 1× capture density; responsive checks at 768 × 1024 and 390 × 844 CSS px
+- normalization: source and implementation were independently contained in equal 1000 × 660 panels with no crop, then placed side by side on a 2024 × 660 comparison canvas
+- state: leadership introduction, Trikansh profile and consolidated “What guides us” chapter after content reveal
+
+## Full-view comparison evidence
+
+The source stacked two similarly composed pale sections with oversized headings and large unused vertical fields. The implementation retains the editorial display/body contrast but consolidates the philosophy and conservation material into one forest-toned chapter with two numbered principles. Trikansh is introduced directly before that chapter, so the page now moves from story to people to principles without repeating the same layout.
+
+## Focused-region comparison evidence
+
+The leadership capture shows one coherent two-column introduction rather than a disconnected eyebrow, headline and paragraph. Trikansh’s supplied portrait is presented at its natural square proportion on desktop and mobile, with the subject fully legible and no upscaling. The tablet and mobile captures show single-column stacking, readable measures and no horizontal overflow.
+
+## Comparison history
+
+- Initial source finding: the separate photography and conservation blocks repeated the same split composition and created excessive negative space (P2).
+- Fix: merged both ideas into a single, compact principles chapter with numbered rows, a stronger background transition and a direct conservation link.
+- First implementation finding: the leadership eyebrow, headline and standfirst occupied separate grid cells, separating the headline from its label (P2).
+- Fix: grouped the eyebrow and headline in one grid cell and aligned the standfirst on the second track.
+- Post-fix evidence: `/private/tmp/about-trikansh-qa/leadership-1440.png` and `/private/tmp/about-trikansh-qa/tablet-768.png` show a stable reading order and balanced alignment.
+
+## Required fidelity surfaces
+
+- Fonts and typography: existing Cormorant Garamond and Inter roles are retained; leadership and principles headings use the established fluid scale with controlled line measures.
+- Spacing and layout rhythm: repeated oversized sections were replaced by one denser chapter; profile rows continue the existing alternating editorial cadence.
+- Colors and visual tokens: only existing bone, forest, brass and fine-rule tokens are used; contrast is consistent with the wider site.
+- Image quality and asset fidelity: the exact supplied Trikansh portrait is used at its native square aspect ratio; existing founder portraits and crops are unchanged.
+- Copy and content: the supplied biography is compressed to two paragraphs while retaining field experience, expedition leadership, National Geographic recognition, Nikon India association and his CMO role.
+- Responsiveness and accessibility: verified at 1440, 768 and 390 CSS px; no horizontal overflow; semantic headings, descriptive alt text and a labelled principles section are present.
+
+## Findings
+
+- No actionable P0, P1 or P2 issues remain.
+- No new browser console errors were found. Existing historical development warnings concern LCP detection for the Kairav portrait and are unrelated to this change.
+- Production build passed, including all 166 generated pages.
+
+final result: passed
+
+# Responsive Read More — Long Editorial Copy QA
+
+- source visual truth: `/Users/bunny/Downloads/IMG_8908 2.PNG`
+- implementation: `http://127.0.0.1:3000/destinations/bandhavgarh`
+- implementation screenshots: `/private/tmp/read-more-qa/implementation-mobile-top.png`, `/private/tmp/read-more-qa/after-mobile.png`, `/private/tmp/read-more-qa/expanded-mobile.png`
+- combined comparisons: `/private/tmp/read-more-qa/source-vs-implementation.png`, `/private/tmp/read-more-qa/collapsed-expanded.png`
+- source pixels: 1320 × 2868 at approximately 3× mobile density, normalized to 440 × 956 for comparison
+- implementation pixels: 440 × 956 at 1× capture density; additional responsive checks at 320, 375, 390, 412, 440, 1024 and 1440 CSS px
+- state: destination hero and “Best for” copy; focused collapsed and expanded states
+
+## Full-view comparison evidence
+
+The source capture shows the original long mobile copy running directly into the page flow. The normalized source and 440 px implementation were compared in one side-by-side image. The implementation preserves the site’s display, serif and brass utility hierarchy while exposing a compact, clearly labelled control before secondary facts. Browser chrome in the source capture is intentionally excluded from implementation judgments.
+
+## Focused-region comparison evidence
+
+The collapsed and expanded “Best for” states were compared at the same 440 × 956 viewport. Collapsed copy holds a readable four-line measure; expansion reveals the complete text in normal flow and moves following content down without overlap or horizontal overflow. The control retains a 44 px minimum target, native button semantics, `aria-controls`, an accurate `aria-expanded` state and a directional icon that reverses on expansion.
+
+## Comparison history
+
+- Initial issue: lengthy mobile copy created overlong blocks and pushed useful page facts far below the fold (P2).
+- Fix: introduced one reusable measured expansion component; applied it only to long destination facts, destination introductions, journey introductions, photo-expedition introductions and destination field notes.
+- Post-fix evidence: short “Best for” copy on Pantanal renders without a toggle; Bandhavgarh expands and collapses without overflow; the full copy remains in the DOM; destination, journey and expedition routes remain stable from 320 px through 1440 px.
+
+## Required fidelity surfaces
+
+- Fonts and typography: existing site typefaces, sizes, weights and text colors are inherited; the control uses the established uppercase utility treatment.
+- Spacing and layout rhythm: the control adds a compact 12 px transition from copy, preserves a 44 px interaction target and expands within normal document flow.
+- Colors and visual tokens: existing brass, soil and background tokens are reused; no new palette values were introduced.
+- Image quality and asset fidelity: no imagery, crops, radii or compression settings were changed.
+- Copy and content: all approved copy remains verbatim and present in the initial HTML/DOM; only visual disclosure changes.
+
+## Findings
+
+- No actionable P0, P1 or P2 issues remain.
+- Short-copy suppression, click state, ARIA state, responsive overflow, production build and browser console errors were checked.
+- Residual test gap: automated keyboard synthesis in the in-app browser did not activate the control, but the rendered control is a native `<button>` and retains standard keyboard semantics.
+
+final result: passed
+
+# iPhone 17 Pro Max Responsive Correction QA
+
+- source visual truth: `/Users/bunny/Downloads/IMG_8906 3.PNG`, `/Users/bunny/Downloads/IMG_8907 2.PNG`, `/Users/bunny/Downloads/IMG_8908 2.PNG`
+- normalized beta captures: `/private/tmp/iphone17-pro-max-audit/01-home-journey.png`, `/private/tmp/iphone17-pro-max-audit/02-home-departure.png`, `/private/tmp/iphone17-pro-max-audit/03-bandhavgarh-hero.png`
+- implementation: `http://127.0.0.1:3000/` and `http://127.0.0.1:3000/destinations/bandhavgarh`
+- implementation screenshots: `/private/tmp/iphone17-pro-max-audit/after-home-journey.png`, `/private/tmp/iphone17-pro-max-audit/after-home-departure.png`, `/private/tmp/iphone17-pro-max-audit/after-bandhavgarh-hero.png`
+- combined comparison: `/private/tmp/iphone17-pro-max-audit/iphone17-before-after.jpg`
+- viewport: 440 × 956 CSS px; 1320 × 2868 user captures normalized from 3× density to 1× CSS pixels
+- additional checks: 320, 375, 390, 412, and 440 CSS-pixel widths; 1440 × 1000 desktop regression
+- state: Big Cats of India active, Kanha expedition active, Bandhavgarh hero at page load
+
+## Full-view and focused-region evidence
+
+The combined comparison includes matching focused regions for the homepage journey showcase, homepage departure showcase and Bandhavgarh hero. The shorter 4:3 media frames reveal the subject and adjacent content sooner, the active option is shown completely beside an explicit next action, and the destination name remains inside the safe area.
+
+## Comparison history
+
+- Initial P1: Bandhavgarh extended beyond both viewport edges at 440px. Fix: mobile-safe destination title scale, explicit content padding and controlled line height. Post-fix: x=20 to x=420 at 440px and in bounds at all five phone widths.
+- Initial P2: 4:5 homepage media frames consumed excessive vertical space. Fix: 4:3 phone frames and a single rounded expedition image/dossier card. Post-fix: both frames measure at a 1.33 width-to-height ratio.
+- Initial P2: journey and expedition rails exposed chopped labels. Fix: one complete active option and a functional next control on phones while retaining the full desktop rails. Post-fix: zero rail overflow at all five phone widths; desktop still shows three journey and four expedition choices.
+
+## Required fidelity surfaces
+
+- Fonts and typography: existing families, weights, tracking and hierarchy retained; mobile title wrapping corrected.
+- Spacing and layout rhythm: shorter media, continuous rounded expedition card and complete compact selectors now produce deliberate vertical rhythm.
+- Colors and visual tokens: existing paper, soil, brass and night tokens are unchanged.
+- Image quality and asset fidelity: original Safari Crafters assets and their focal points remain in use; no replacement or synthetic assets added.
+- Copy and content: all journey, expedition and destination copy is unchanged and no label is clipped.
+- Accessibility and interaction: both next controls have descriptive labels and update the active content correctly.
+
+## Verification
+
+- `npm run build`: passed.
+- No document or component overflow at 320, 375, 390, 412 or 440px.
+- Desktop regression at 1440 × 1000: passed.
+- Next journey and next expedition interactions: passed.
+- Browser console: no runtime errors; only development HMR notices and an existing Next.js LCP advisory.
+
+final result: passed
+
 # Destination Field Notes — Design QA
 
 - source state: previous live Laikipia chapter section captured at `http://localhost:9090/destinations/laikipia?audit=story-chapters`
@@ -348,5 +499,50 @@ At 1440 px the eyebrow and title share x=60.48. The title resolves to two balanc
 
 - No actionable P0, P1 or P2 issues remain.
 - Reveal completion, responsive structure, horizontal overflow and browser console errors were checked.
+
+final result: passed
+
+# Homepage Expedition Dossier — Compact Scale QA
+
+- source visual truth: `/var/folders/86/xk6mzkbn0l38n62l52kcsn0c0000gn/T/codex-clipboard-a7500cfe-270c-4964-9850-913431329d4e.png`
+- local pre-change capture: `/private/tmp/departure-card-qa/before-1440.png`
+- implementation: `http://127.0.0.1:3000/`
+- implementation screenshots: `/private/tmp/departure-card-qa/after-1440.png`, `/private/tmp/departure-card-qa/after-768.png`, `/private/tmp/departure-card-qa/after-440.png`
+- combined comparison: `/private/tmp/departure-card-qa/before-after-1440.png`
+- source pixels: 986 × 1258 supplied crop; original CSS viewport and density unavailable
+- matched local comparison: 1280 × 720 screenshots from a 1440 × 1000 CSS viewport; additional 768 × 1024, 440 × 956 and 320 × 844 CSS viewport checks at 1×
+- state: Kanha active at desktop and mobile; all four expedition variants exercised
+
+## Full-view comparison evidence
+
+The side-by-side local comparison uses the same route, scroll position, image and Kanha content before and after the refinement. The revised dossier occupies less of the photograph while retaining a clear visual hierarchy and the established right-side placement. The supplied crop confirms the original issue was excessive panel dominance rather than a content or imagery problem.
+
+## Focused-region comparison evidence
+
+At 1440 CSS px, the dossier changed from 403.2 × 558.0 px to 380 × 491.6 px: approximately 6% narrower and 12% shorter. The title resolves at 41.1 px, the internal padding is 39.7 px, and the CTA remains 50 px high. At 440 px the card stays full width beneath the 4:3 photograph and measures 408 × 462.5 px. At 320 px it remains 288 px wide with a 244 × 50 px CTA and no overflow.
+
+## Comparison history
+
+- Initial finding: the oversized dossier and generous internal spacing competed with the photograph and obscured too much wildlife context (P2).
+- First fix: reduced the desktop panel width, minimum height, padding, title scale, row spacing and CTA height.
+- First-pass regression: a more specific desktop width rule narrowed the mobile card to one-third width (P1).
+- Regression fix: added explicit scoped mobile width and minimum-height resets.
+- Post-fix evidence: the mobile dossier returns to the full 408 px content width at 440 px, all content aligns, the CTA remains usable and no overflow remains.
+
+## Required fidelity surfaces
+
+- Fonts and typography: existing display and utility families are retained; the title is reduced to a calmer card scale without truncation.
+- Spacing and layout rhythm: vertical footprint is reduced by roughly 12%; facts and CTA keep clear separation and consistent rules.
+- Colors and visual tokens: bone, soil, brass and rule tokens are unchanged.
+- Image quality and asset fidelity: all four original expedition images, focal points and rounded media treatment are unchanged.
+- Copy and content: all expedition titles, dates, destinations, durations and CTA labels remain unchanged.
+- Accessibility and interaction: the CTA remains at least 50 px high; all four expedition selectors update the dossier and preserve the planned right/left/right/left composition.
+
+## Findings
+
+- No actionable P0, P1 or P2 issues remain.
+- All four expedition states are contained at 1440 px and 320 px, with zero horizontal overflow.
+- Browser console errors: none.
+- Production build: passed, including all 166 generated pages.
 
 final result: passed

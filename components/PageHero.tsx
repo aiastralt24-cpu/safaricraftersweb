@@ -5,6 +5,7 @@ import "./PageHero.css";
 
 type PageHeroProps = {
   title: string;
+  titleSize?: "default" | "compact";
   accent?: string;
   copy: string;
   image: ImageAsset;
@@ -15,7 +16,7 @@ type PageHeroProps = {
   breadcrumbs?: BreadcrumbItem[];
 };
 
-export function PageHero({ title, accent, copy, image, meta, focalPoint, showImage = true, variant = "default", breadcrumbs }: PageHeroProps) {
+export function PageHero({ title, titleSize = "default", accent, copy, image, meta, focalPoint, showImage = true, variant = "default", breadcrumbs }: PageHeroProps) {
   const accents: Record<string, string> = {
     "Field craft, framed.": "framed.",
     "Journeys, designed.": "designed.",
@@ -39,7 +40,7 @@ export function PageHero({ title, accent, copy, image, meta, focalPoint, showIma
   const showCredit = showImage && image.credit !== "AI-generated destination illustration";
 
   return (
-    <section className={`page-hero${showImage ? "" : " page-hero-textual"}${variant === "destination" ? ` page-hero-destination${titleScale}` : ""}`}>
+    <section className={`page-hero${titleSize === "compact" ? " page-hero-title-compact" : ""}${showImage ? "" : " page-hero-textual"}${variant === "destination" ? ` page-hero-destination${titleScale}` : ""}`}>
       {showImage ? <Image
         src={image.src}
         alt={image.alt}

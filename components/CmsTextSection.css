@@ -1,0 +1,2 @@
+.cms-text-section.text-split{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:76px}.cms-text-section.text-split :is(h1,h2,h3){margin:10px 0 0}.cms-text-body p{white-space:pre-wrap}.cms-text-body .button{max-width:100%;white-space:normal}
+@media(max-width:860px){.cms-text-section.text-split{grid-template-columns:1fr;gap:36px}}

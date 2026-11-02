@@ -9,7 +9,7 @@ const categories = [
 ];
 export default function FieldCategories() {
   return <section className="field-categories" aria-labelledby="field-categories-title"><div className="container">
-    <div className="field-categories-heading"><h2 id="field-categories-title">Made for the field.</h2><p>From the pages you keep to the pieces you carry. Explore what’s next for the Safari Crafters collection.</p></div>
+    <div className="field-categories-heading"><h2 id="field-categories-title">Made for the <em className="editorial-accent">field.</em></h2><p>From the pages you keep to the pieces you carry. Explore what’s next for the Safari Crafters collection.</p></div>
     <div className="field-category-grid">{categories.map(({ title, icon: Icon, items, copy }, index) => <article className="field-category" key={title}>
       <div className="field-category-top"><span>0{index + 1}</span><span>Coming soon</span></div>
       <Icon size={44} strokeWidth={1} aria-hidden="true" />

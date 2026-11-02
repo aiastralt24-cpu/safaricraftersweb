@@ -5,8 +5,10 @@ const imageAsset = defineType({
   title: "Image asset",
   type: "object",
   fields: [
-    defineField({ name: "src", title: "Local or CDN URL", type: "string" }),
-    defineField({ name: "alt", title: "Alt text", type: "string" }),
+    defineField({ name: "upload", title: "Upload image", type: "image", options: { hotspot: true }, description: "Upload takes priority over the legacy URL. Add alt text below." }),
+    defineField({ name: "src", title: "Existing image URL", type: "string", description: "Use /assets/… or a https://cdn.sanity.io/images/… URL when not uploading." }),
+    defineField({ name: "focalPoint", title: "Focal point", type: "string", description: "Optional CSS position, for example 50% 35%. Uploaded hotspot is used when this is empty." }),
+    defineField({ name: "alt", title: "Alt text", type: "string", description: "Describe what is visible; avoid promotional keywords.", validation: r => r.required() }),
     defineField({ name: "credit", title: "Credit", type: "string" })
   ]
 });
@@ -51,8 +53,9 @@ const dayPlan = defineType({
   title: "Day plan",
   type: "object",
   fields: [
-    defineField({ name: "title", title: "Title", type: "string" }),
-    defineField({ name: "copy", title: "Copy", type: "text" }),
+    defineField({ name: "label", title: "Day label", type: "string", description: "For example Day 1 or Days 2–3." }),
+    defineField({ name: "title", title: "Title", type: "string", validation: r => r.required() }),
+    defineField({ name: "copy", title: "Copy", type: "text", validation: r => r.required() }),
     defineField({ name: "stay", title: "Stay", type: "string" })
   ]
 });
@@ -75,8 +78,8 @@ const faqItem = defineType({
   title: "Traveller question",
   type: "object",
   fields: [
-    defineField({ name: "question", title: "Question", type: "string" }),
-    defineField({ name: "answer", title: "Direct answer", type: "text", rows: 3 })
+    defineField({ name: "question", title: "Question", type: "string", validation: r => r.required() }),
+    defineField({ name: "answer", title: "Direct answer", type: "text", rows: 3, validation: r => r.required() })
   ]
 });
 
@@ -96,9 +99,10 @@ const seoFields = defineType({
   title: "Search and answer-engine fields",
   type: "object",
   fields: [
-    defineField({ name: "title", title: "Search title", type: "string", validation: (rule) => rule.max(65) }),
-    defineField({ name: "description", title: "Search description", type: "text", rows: 3, validation: (rule) => rule.max(165) }),
-    defineField({ name: "reviewedAt", title: "Fact review date", type: "date" })
+    defineField({ name: "title", title: "Search title", type: "string", validation: (rule) => rule.max(65).warning("Aim for a concise search title.") }),
+    defineField({ name: "description", title: "Search description", type: "text", rows: 3, validation: (rule) => rule.max(165).warning("Aim for a concise search description.") }),
+    defineField({ name: "socialImage", title: "Social sharing image", type: "imageAsset", description: "Optional. Falls back to the page hero image." }),
+    defineField({ name: "reviewedAt", title: "Fact review date", type: "date", description: "Set only after checking the information against reliable sources." })
   ]
 });
 
@@ -122,8 +126,8 @@ const homepage = defineType({
     defineField({ name: "title", title: "Hero title", type: "string" }),
     defineField({ name: "copy", title: "Hero copy", type: "text" }),
     defineField({ name: "heroMedia", title: "Hero media", type: "heroMedia" }),
-    defineField({ name: "proof", title: "Proof points", type: "array", of: [defineArrayMember({ type: "string" })] }),
-    defineField({ name: "atelier", title: "Atelier pillars", type: "array", of: [defineArrayMember({ type: "text" })] })
+    defineField({ name: "proof", title: "Proof points", description: "Legacy field; the current homepage uses code-managed proof sections.", readOnly: true, type: "array", of: [defineArrayMember({ type: "string" })] }),
+    defineField({ name: "atelier", title: "Atelier pillars", description: "Legacy field; the current homepage uses code-managed pillars.", readOnly: true, type: "array", of: [defineArrayMember({ type: "text" })] })
   ]
 });
 
@@ -150,7 +154,7 @@ const destination = defineType({
     ,defineField({ name: "access", title: "Access guidance", type: "text" })
     ,defineField({ name: "safariRhythm", title: "Safari rhythm", type: "text" })
     ,defineField({ name: "pairings", title: "Recommended pairings", type: "array", of: [defineArrayMember({ type: "destinationPairing" })] })
-    ,defineField({ name: "faqs", title: "Traveller questions", type: "array", of: [defineArrayMember({ type: "faqItem" })], validation: (rule) => rule.max(5) })
+    ,defineField({ name: "faqs", title: "Traveller questions", type: "array", of: [defineArrayMember({ type: "faqItem" })], validation: (rule) => rule.max(12).warning("Keep answers focused; group longer guidance into the destination story.") })
     ,defineField({ name: "seo", title: "SEO / AEO / GEO", type: "seoFields" })
     ,defineField({ name: "sources", title: "Research sources", type: "array", of: [defineArrayMember({ type: "researchSource" })] })
   ]
@@ -183,7 +187,7 @@ const journey = defineType({
     ,defineField({ name: "wildlifeFocus", title: "Wildlife focus", type: "text" })
     ,defineField({ name: "accessApproach", title: "Access approach", type: "text" })
     ,defineField({ name: "customizationNote", title: "Customisation note", type: "text" })
-    ,defineField({ name: "faqs", title: "Journey questions", type: "array", of: [defineArrayMember({ type: "faqItem" })], validation: (rule) => rule.max(5) })
+    ,defineField({ name: "faqs", title: "Journey questions", type: "array", of: [defineArrayMember({ type: "faqItem" })], validation: (rule) => rule.max(12).warning("Keep answers focused; group longer guidance into the destination story.") })
     ,defineField({ name: "seo", title: "SEO / AEO / GEO", type: "seoFields" })
   ]
 });
@@ -194,7 +198,7 @@ const expedition = defineType({
   type: "document",
   fields: [
     defineField({ name: "cancellationPolicy", title: "Tour cancellation policy", type: "text" }),
-    defineField({ name: "faqs", title: "Tour questions", type: "array", of: [defineArrayMember({ type: "object", fields: [defineField({ name: "question", type: "string" }), defineField({ name: "answer", type: "text" })] })] }),
+    defineField({ name: "faqs", title: "Tour questions", type: "array", of: [defineArrayMember({ type: "faqItem" }), defineArrayMember({ type: "object", title: "Legacy question", fields: [defineField({ name: "question", type: "string" }), defineField({ name: "answer", type: "text" })] })] }),
     defineField({name:"publicationStatus",title:"Publication status",type:"string",options:{list:["preview","published"]},initialValue:"preview"}),
     defineField({name:"availabilityReviewedAt",title:"Availability last verified",type:"date"}),
     defineField({name:"departures",title:"Departure dates and availability",type:"array",of:[defineArrayMember({type:"object",name:"departure",fields:[
@@ -276,21 +280,61 @@ const testimonial = defineType({
   ]
 });
 
+const strings = (names: string[]) => names.map(name => defineField({ name, title: name.replace(/([A-Z])/g, " $1").replace(/^./, c => c.toUpperCase()), type: "string" }));
+const list = (name: string, title: string) => defineField({ name, title, type: "array", of: [defineArrayMember({ type: "string" })], initialValue: [] });
+const seo = defineField({ name: "seo", title: "Search and sharing", type: "seoFields" });
+const sources = defineField({ name: "sources", title: "Fact-check sources", type: "array", of: [defineArrayMember({ type: "researchSource" })] });
+const gallery = defineField({ name: "gallery", title: "Gallery", type: "array", of: [defineArrayMember({ type: "imageAsset" })], initialValue: [] });
+const body = defineField({ name: "body", title: "Additional paragraphs", type: "array", of: [defineArrayMember({ type: "text" })], initialValue: [] });
+
+const additions: Record<string, ReturnType<typeof defineField>[]> = {
+  homepage: [seo, defineField({name: "heroLines", title: "Rotating hero headlines", type: "array", validation: r => r.min(1).max(6), of: [defineArrayMember({type: "object", name: "heroLine", fields: strings(["lead", "rest", "accent"]), preview: {select: {title: "lead", subtitle: "accent"}}})]})],
+  destination: [
+    ...strings(["category", "country", "parentRegion", "homepageCaption", "homepageMeta"]),
+    defineField({name: "continent", type: "string", options: {list: ["India", "Africa", "Americas", "Arctic"]}, validation: r => r.required()}),
+    defineField({name: "status", title: "Guide depth", type: "string", options: {list: ["rich", "concierge"]}, initialValue: "concierge"}),
+    defineField({name: "planningNote", type: "text"}),
+    list("bestFor", "Best suited to"), list("highlights", "Highlights"), list("journeys", "Related journey titles"), list("expeditions", "Related photography tour titles"),
+    defineField({name: "heroImage", title: "Page hero override", type: "imageAsset", description: "Overrides the curated website hero. The main image remains the collection card."}),
+    defineField({name: "editorial", title: "Destination story", type: "object", fields: [
+      ...strings(["openingHeadline", "landscapeHeadline", "wildlifeHeadline", "factsLabel", "relatedLabel", "relatedHeadline", "plannerHeadline", "plannerCta"]),
+      ...["landscapeCopy", "wildlifeCopy", "relatedIntro", "plannerCopy"].map(name => defineField({name, type: "text"})),
+      defineField({name: "scoop", title: "In-depth field notes", type: "array", of: [defineArrayMember({type: "object", name: "fieldNote", fields: [ ...strings(["title"]), defineField({name:"blurb",type:"text"}), defineField({name:"body",type:"text"})]})]})
+    ]})
+  ],
+  journey: [...strings(["tagline", "groupSize", "difficulty", "price"]), ...["destinations", "locations", "statesOrRegions", "inclusions", "exclusions"].map(n => list(n, n)), body, sources],
+  photoExpedition: [body, seo, sources, ...strings(["heroTitle"]), defineField({name:"heroCopy",title:"Hero introduction",type:"text"})],
+  journalArticle: [...strings(["readTime"]), defineField({name:"quote",title:"Pull quote",type:"text"}), gallery, seo, sources],
+  specialist: [],
+  testimonial: [defineField({name:"image",title:"Journey image",type:"imageAsset"}), defineField({name:"anonymous",title:"Withhold guest name",type:"boolean",initialValue:false,description:"Consent is still required for the quote itself."})]
+};
+const mediaFields = new Set(["image", "heroImage", "gallery", "video", "heroMedia"]);
+const planningFields = new Set(["days", "duration", "groupSize", "difficulty", "price", "route", "bestMonths", "fieldIntelligence", "inclusions", "exclusions", "departures", "publicationStatus", "availabilityReviewedAt", "cancellationPolicy", "equipment", "skill", "pace", "accommodation", "accessApproach", "customizationNote", "idealGuest", "idealStay", "gateway", "access", "safariRhythm", "planningNote"]);
+const requiredByType: Record<string, string[]> = {
+  homepage: ["title", "copy"], destination: ["title", "slug", "country", "region", "description", "intro", "bestMonths", "wildlife", "photography", "image"],
+  journey: ["title", "slug", "region", "category", "description", "intro", "duration", "bestMonths", "groupSize", "difficulty", "price", "specialist", "image"],
+  photoExpedition: ["title", "slug", "category", "description", "intro", "mentor", "image"],
+  journalArticle: ["title", "slug", "category", "description", "author", "date", "readTime", "image", "body"], specialist: ["name", "role", "bio", "image"], testimonial: ["name", "trip", "quote"]
+};
+function editorialDocument(doc: import("sanity").DocumentDefinition) {
+  const fields = [...doc.fields, ...(additions[doc.name] || []), defineField({name: "orderRank", title: "Display order", type: "number", description: "Lower numbers appear first. Leave empty to preserve existing website order.", validation: r => r.integer().min(0)})];
+  return defineType({
+    ...doc,
+    groups: [{name:"story",title:"Story",default:true},{name:"planning",title:"Trip planning"},{name:"media",title:"Images and film"},{name:"search",title:"Search and fact checks"}],
+    fields: fields.map(field => ({...field,
+      group: mediaFields.has(field.name) ? "media" : ["seo","sources"].includes(field.name) ? "search" : planningFields.has(field.name) ? "planning" : "story",
+      ...(requiredByType[doc.name]?.includes(field.name) && !field.validation ? {validation: (r: import("sanity").Rule) => r.required()} : {}),
+      ...(field.type === "array" ? {initialValue: []} : {}),
+      ...(field.name === "slug" ? {description: "Public URL. Keep existing slugs stable; changing one needs a redirect."} : {}),
+      ...(field.name === "verified" ? {description: "Confirm this is the guest’s actual wording. Only verified, consented CMS notes appear on the site."} : {})
+    })),
+    preview: {select: {title: doc.name === "specialist" || doc.name === "testimonial" ? "name" : "title", subtitle: doc.name === "testimonial" ? "trip" : doc.name === "specialist" ? "role" : "description", media: "image.upload"}},
+    orderings: [{title:"Website order",name:"websiteOrder",by:[{field:"orderRank",direction:"asc"}]}]
+  });
+}
+
 export const schemaTypes = [
-  imageAsset,
-  heroMedia,
-  editorialVideo,
-  dayPlan,
-  fieldIntelligence,
-  faqItem,
-  destinationPairing,
-  seoFields,
-  researchSource,
-  homepage,
-  destination,
-  journey,
-  expedition,
-  journalArticle,
-  specialist,
-  testimonial
+  imageAsset, heroMedia, editorialVideo, dayPlan, fieldIntelligence, faqItem,
+  destinationPairing, seoFields, researchSource,
+  ...[homepage, destination, journey, expedition, journalArticle, specialist, testimonial].map(editorialDocument)
 ];

@@ -501,3 +501,29 @@ a.header-context:focus-visible { color: var(--brass-light); }
   .site-full-menu-secondary a { min-height: 40px; font-size: .64rem; }
 
 }
+
+/* Published menu hierarchy shares the existing modal and focus management. */
+.site-full-menu-grid.cms-menu-grid { grid-template-columns: 1fr; }
+.cms-published-menu { width: min(100%, 960px); }
+.cms-published-menu ul { list-style: none; padding: 0; margin: 0; }
+.cms-published-menu > ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 36px 56px; }
+.cms-published-menu li { min-width: 0; overflow-wrap: anywhere; }
+.cms-published-menu a,.cms-menu-group { display: inline-block; padding: 8px 0; font-family: var(--font-serif,serif); font-size: clamp(24px,3vw,42px); line-height: 1.15; }
+.cms-published-menu a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.cms-published-menu a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
+.cms-published-menu p { font-size: 14px; line-height: 1.6; max-width: 50ch; margin: 4px 0 12px; }
+.cms-published-menu li ul { margin: 8px 0 8px 18px; padding-left: 16px; border-left: 1px solid currentColor; }
+.cms-published-menu li li a,.cms-published-menu li li .cms-menu-group { font-size: 20px; }
+.cms-published-menu .cms-menu-featured a { font-size: 16px; }
+@media(max-width:700px) { .cms-published-menu > ul { grid-template-columns:1fr; gap:24px; } }
+
+.cms-header-brand { display:block; max-width:180px; color:inherit; font-family:var(--font-display); font-size:22px; line-height:1.1; overflow-wrap:anywhere; }
+.cms-header-brand img { display:block; width:auto; max-width:140px; height:60px; object-fit:contain; }
+.cms-header-static { position:absolute!important; }
+.cms-configured-header.cms-header-compact { gap:16px; padding-top:12px; padding-bottom:12px; }
+.cms-header-compact .cms-header-brand img { height:40px; }
+.cms-menu-mobile { display:none; }
+.cms-menu-utility { border-top:1px solid currentColor; padding-top:20px; }
+.cms-menu-utility .cms-published-menu a { font-size:18px; }
+.cms-header-featured { display:flex; flex-wrap:wrap; gap:16px 24px; font-size:16px; }
+@media(max-width:700px){.cms-menu-desktop{display:none}.cms-menu-mobile{display:block}.cms-header-brand{max-width:130px;font-size:18px}.cms-header-brand img{max-width:100px;height:48px}}

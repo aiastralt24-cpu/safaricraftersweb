@@ -245,10 +245,10 @@
 .journey-atlas-heading h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(3.7rem, 5.4vw, 6.4rem);
+  font-size: clamp(42px, 5vw, 74px);
   font-weight: 300;
   letter-spacing: -.04em;
-  line-height: .94;
+  line-height: 1.04;
 }
 .journey-atlas-heading > p {
   max-width: 42ch;
@@ -405,7 +405,7 @@
   .journey-atlas-feature-copy h2 { font-size: clamp(3rem, 13vw, 4.2rem); }
   .journey-atlas-feature-copy dl { grid-template-columns: 1fr; }
   .journey-atlas-heading { margin-top: 92px; grid-template-columns: 1fr; gap: 24px; }
-  .journey-atlas-heading h2 { font-size: clamp(3.4rem, 14vw, 4.6rem); }
+  .journey-atlas-heading h2 { font-size: clamp(36px, 9vw, 54px); }
   .journey-atlas-grid { grid-template-columns: 1fr; gap: 54px; }
   .journey-atlas-card,
   .journey-atlas-card-0,

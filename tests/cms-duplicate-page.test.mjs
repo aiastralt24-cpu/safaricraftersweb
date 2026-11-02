@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {duplicatePageContent} from '../lib/cms/duplicate-page.ts';import {createPageTemplate} from '../lib/cms/page-templates.ts';import {newPageSeo} from '../lib/cms/page-seo.ts';
+test('page duplicate is independent and clears identity-sensitive canonical without copying release state',()=>{
+ const payload={composition:createPageTemplate('about').composition,seo:{...newPageSeo(),title:'About metadata',canonical:'https://safaricrafters.com/about'}};const before=structuredClone(payload),copy=duplicatePageContent(payload,'About');assert.equal(copy.path,'');assert.equal(copy.title,'About (copy)');assert.equal(copy.seo.canonical,'');assert.equal(copy.seo.title,'About metadata');copy.composition.sections[0].data.title='New heading';assert.deepEqual(payload,before);assert.deepEqual(Object.keys(copy).sort(),['composition','path','seo','title']);
+ assert.throws(()=>duplicatePageContent({...payload,privateUnknown:'preserve'},'About'));assert.throws(()=>duplicatePageContent({composition:{}},'Broken'));
+});

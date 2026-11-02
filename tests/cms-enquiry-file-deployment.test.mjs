@@ -1,0 +1,11 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {enquiryFileDeploymentPreflight} from '../lib/cms/enquiry-file-deployment.ts';
+const env={CMS_SUPABASE_URL:'https://db.test',CMS_SUPABASE_ANON_KEY:'sb_publishable_abcdefghijklmnop',CMS_SUPABASE_SERVICE_ROLE_KEY:'sb_secret_abcdefghijklmnop',CMS_WEBSITE_ID:'00000000-0000-4000-8000-000000000001',CMS_PUBLIC_SITE_ORIGIN:'https://site.test',CMS_ENQUIRY_INGRESS_SECRET:'a'.repeat(32),CMS_ENQUIRY_IDENTITY_SECRET:'b'.repeat(32),CMS_ENQUIRY_FILE_WORKER_SECRET:'c'.repeat(32),CMS_ENQUIRY_FILE_CLEANUP_SECRET:'d'.repeat(32),CMS_TURNSTILE_SECRET:'private-challenge',CMS_TURNSTILE_SITE_KEY:'public-challenge',CMS_PDF_PARSER_VERSION:'6.0.0',CMS_CLAMSCAN_PATH:'/private/scanner',CMS_CLAMAV_DATABASE_DIRECTORY:'/private/signatures',CMS_PDF_PYTHON_PATH:'/private/python',CMS_PDF_SCRIPT_PATH:'/private/parser.py'};
+test('attachment preflight distinguishes prepared configuration from activation without exposing values',async()=>{
+ const paths=[];const report=await enquiryFileDeploymentPreflight(env,async(value,kind)=>{paths.push({value,kind});return true;});assert.equal(report.configurationReady,true);assert.equal(paths.length,4);assert.equal(Object.values(report.flags).every(value=>value===false),true);
+ const text=JSON.stringify(report);for(const value of Object.values(env))assert.equal(text.includes(value),false);assert.ok(report.verificationRequired.some(v=>v.includes('scanner')));
+});
+test('missing dependencies and reused secrets fail readiness without running an executable',async()=>{
+ const absent=await enquiryFileDeploymentPreflight({},async()=>assert.fail('missing paths must not be probed'));assert.equal(absent.configurationReady,false);
+ const missing=await enquiryFileDeploymentPreflight(env,async()=>false);assert.equal(missing.configurationReady,false);assert.equal(missing.checks.filter(v=>v.status==='unavailable').length,4);
+ const shared=await enquiryFileDeploymentPreflight({...env,CMS_ENQUIRY_FILE_CLEANUP_SECRET:env.CMS_ENQUIRY_FILE_WORKER_SECRET},async()=>true);assert.equal(shared.configurationReady,false);assert.equal(shared.checks.find(v=>v.id==='CMS_ENQUIRY_FILE_CLEANUP_SECRET').status,'invalid');
+});

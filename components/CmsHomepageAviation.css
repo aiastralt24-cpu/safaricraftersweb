@@ -1,0 +1,8 @@
+.cms-home-aviation{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,4vw,64px);align-items:center;overflow-wrap:anywhere}
+.cms-home-aviation-copy{white-space:pre-wrap}
+.cms-home-aviation ul{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:24px 0}
+.cms-home-aviation li{border-bottom:1px solid currentColor;padding-bottom:6px}
+.cms-home-aviation figure{margin:0;min-width:0}
+.cms-home-aviation figure img{width:100%;display:block}
+.cms-home-aviation figcaption small{display:block}
+@media(max-width:760px){.cms-home-aviation{grid-template-columns:1fr}}

@@ -1,0 +1,7 @@
+'use client';
+import {certificationSchema} from '../../lib/cms/certifications';
+import type {LoadMediaPreview} from './media-image';
+export function CertificationPreview({value}:{value:unknown;loadPreview:LoadMediaPreview}){
+ const parsed=certificationSchema.safeParse(value);if(!parsed.success)return <p role='alert'>This draft needs repair before previewing.</p>;const d=parsed.data;
+ return <article aria-label='Certification draft preview' className='cms-destination-preview'><p>Private draft preview. This claim has not been approved for publication.</p><h2>{d.title}</h2><p>{d.summary}</p><p>Issuer: {d.issuer||'Not set'}</p><p>Certificate number: {d.certificateNumber||'Not supplied'}</p><h3>Claim</h3><p className='cms-destination-copy'>{d.statement}</p><h3>Scope</h3><p className='cms-destination-copy'>{d.scope}</p><p>Status: {d.status}</p><p>{d.statusNote}</p><p>Issued: {d.issuedOn||'Not set'} · Valid from: {d.validFrom||'Not set'}</p><p>Expiry: {d.validity==='noExpiry'?'No expiry stated':d.expiresOn||'Not set'}</p><p>Next review: {d.reviewOn||'Not set'}</p><p>{d.evidence.length} supporting document(s) selected. Evidence and approval still require verification.</p><details><summary>Search and sharing overrides</summary><p>Title: {d.seo.title||'Automatic'}</p><p>Description: {d.seo.description||'Automatic'}</p><p>Indexing: {d.seo.indexing} · Sitemap: {d.seo.sitemap}</p></details></article>;
+}

@@ -33,9 +33,9 @@ function destinationImage(destination: Destination) {
 
 export function RegionalAtlasPage({ atlas }: { atlas: RegionalAtlas }) {
   const isArcticBeyond = atlas.slug === "arctic-beyond";
-  const generatedImages: Record<string, ImageAsset> = atlas.slug === "africa" ? africaAtlasImages : {};
+  const atlasImages: Record<string, ImageAsset> = atlas.slug === "africa" ? africaAtlasImages : {};
   const atlasImage = (destination: Destination, role: "destination" | "featured" = "destination") =>
-    generatedImages[role === "featured" ? `featured-${destination.slug}` : destination.slug] || destinationImage(destination);
+    atlasImages[role === "featured" ? `featured-${destination.slug}` : destination.slug] || destinationImage(destination);
   const regionDestinations = getDestinationsByAtlas(atlas.slug);
   const countries = getCountriesByAtlas(atlas.slug);
   const isIndia = atlas.slug === "india";
@@ -46,7 +46,7 @@ export function RegionalAtlasPage({ atlas }: { atlas: RegionalAtlas }) {
   const selectedCountries = countryCollectionSlugs[atlas.slug]?.flatMap((slug) => {
     // Chile has its own destination page within the combined Chile/Argentina country group.
     const place = countries.find((country) => country.slug === slug) || getDestination(slug);
-    return place ? [{ slug: place.slug, title: place.title, image: generatedImages[slug] || place.image }] : [];
+    return place ? [{ slug: place.slug, title: place.title, image: atlasImages[slug] || place.image }] : [];
   });
   const collection = isIndia ? regionDestinations : selectedCountries || countries;
   const showCountryIndex = false;
@@ -83,7 +83,7 @@ export function RegionalAtlasPage({ atlas }: { atlas: RegionalAtlas }) {
   return (
     <>
       <JsonLd data={breadcrumbSchema(breadcrumbItems.map((item) => ({ name: item.label, path: item.href ?? `/destinations/${atlas.slug}` })))} />
-      <PageHero title={atlas.heroTitle} copy={atlas.heroCopy} image={getAtlasHeroImage(atlas, heroDestination)} meta={atlas.meta} variant="destination" breadcrumbs={breadcrumbItems} />
+      <PageHero titleSize="compact" title={atlas.heroTitle} copy={atlas.heroCopy} image={getAtlasHeroImage(atlas, heroDestination)} meta={atlas.meta} variant="destination" breadcrumbs={breadcrumbItems} />
       <div className={`regional-atlas${isSingleDestination ? " is-single-destination" : ""}`}>
         <RegionalAtlasMotion />
 
@@ -128,11 +128,10 @@ export function RegionalAtlasPage({ atlas }: { atlas: RegionalAtlas }) {
         {!isSingleDestination && <section className="container regional-atlas-section" aria-labelledby={`${atlas.slug}-featured`}>
           <header className="regional-atlas-heading" data-atlas-reveal>
             <p className="eyebrow">Signature places</p>
-            <h2 id={`${atlas.slug}-featured`}>{isArcticBeyond ? "Two landscapes. Two distinct journeys." : "Places that define the atlas."}</h2>
+            <h2 className="atlas-signature-title" id={`${atlas.slug}-featured`}>{isArcticBeyond ? <>Two <em className="editorial-accent">landscapes.</em><br />Two distinct <em className="editorial-accent">journeys.</em></> : <>Defining <em className="editorial-accent">places.</em><br />Rare <em className="editorial-accent">encounters.</em></>}</h2>
             {isArcticBeyond
               ? <p>Follow the sea ice in Svalbard or explore the volcanic wilderness of Kamchatka.</p>
-              : <p>Not a checklist—{featured.length} strong starting {featured.length === 1 ? "point" : "points"}, each with a distinct reason to travel.</p>}
-            {atlas.slug === "africa" && <p>Selected destination images are AI-generated illustrations.</p>}
+              : <p>{featured.length} considered starting {featured.length === 1 ? "point" : "points"}, each with a distinct reason to travel.</p>}
           </header>
           <div className={`regional-atlas-featured${featured.length === 1 ? " is-single" : ""}`}>
             {featured.map((destination, index) => (

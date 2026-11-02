@@ -45,6 +45,7 @@ export type SeoFields = {
   title?: string;
   description?: string;
   reviewedAt?: string;
+  socialImage?: ImageAsset;
 };
 
 export type ResearchSource = {
@@ -55,6 +56,9 @@ export type ResearchSource = {
 };
 
 export type Journey = {
+  heroImage?: ImageAsset;
+  wildlifeExpectation?: string;
+  photography?: string;
   slug: string;
   title: string;
   tagline?: string;
@@ -93,6 +97,8 @@ export type Journey = {
 };
 
 export type Destination = {
+  heroImage?: ImageAsset;
+  fieldIntelligence?: Partial<{airport: string; transfer: string; idealStay: string; safariRhythm: string; accessNote: string}>;
   slug: string;
   title: string;
   category?: string;
@@ -127,6 +133,7 @@ export type Destination = {
   sources?: ResearchSource[];
   editorial?: {
     openingHeadline?: string;
+    openingAccent?: string;
     landscapeHeadline?: string;
     wildlifeHeadline?: string;
     landscapeCopy?: string;
@@ -190,6 +197,10 @@ export type ExpeditionDeparture = {
 };
 
 export type Expedition = {
+  enquiryDeparture?: string;
+  seo?: SeoFields;
+  heroTitle?: string;
+  heroCopy?: string;
   faqs?: Array<{ question: string; answer: string }>;
   cancellationPolicy?: string;
   geography?: "India" | "International";
@@ -223,6 +234,7 @@ export type Expedition = {
 };
 
 export type JournalArticle = {
+  seo?: SeoFields;
   slug: string;
   title: string;
   category: string;
@@ -248,6 +260,8 @@ export type Specialist = {
 };
 
 export type Testimonial = {
+  image?: ImageAsset;
+  anonymous?: boolean;
   name: string;
   city: string;
   trip: string;
@@ -291,7 +305,17 @@ export type EnquiryPayload = {
   consent: boolean;
 };
 
+export type Homepage = {
+  title: string;
+  copy: string;
+  heroLines?: Array<{lead: string; rest?: string; accent: string}>;
+  heroMedia?: {type: "image" | "video"; videoMp4?: string; videoWebm?: string; posterImage?: ImageAsset; mobilePosterImage?: ImageAsset; alt?: string};
+  seo?: SeoFields;
+};
+
 export type SiteContent = {
+  contentSource?: "sanity";
+  homepage?: Homepage;
   heroImage: ImageAsset;
   navItems: { href: string; label: string }[];
   journeyCategories: string[];
@@ -317,6 +341,7 @@ export const siteContent: SiteContent = {
   )
 };
 
+export const homepage = siteContent.homepage;
 export const heroImage = siteContent.heroImage;
 export const navItems = siteContent.navItems;
 export const journeyCategories = siteContent.journeyCategories;

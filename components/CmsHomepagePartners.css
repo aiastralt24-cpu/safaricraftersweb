@@ -1,0 +1,10 @@
+.cms-home-partners{overflow-wrap:anywhere}
+.cms-home-partners [role=tablist]{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.cms-home-partners [role=tab]{padding:12px 16px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.cms-home-partners [role=tab][aria-selected=true]{box-shadow:inset 0 -3px currentColor;font-weight:700}
+.cms-home-partners [role=tabpanel] ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:0;list-style:none}
+.cms-home-partners figure{margin:0}
+.cms-home-partners figure img{width:100%;height:140px;object-fit:contain}
+.cms-home-partners figcaption{text-align:center}
+.cms-home-partners figcaption span,.cms-home-partners figcaption small{display:block}
+@media(max-width:760px){.cms-home-partners [role=tabpanel] ul{grid-template-columns:repeat(2,minmax(0,1fr))}}

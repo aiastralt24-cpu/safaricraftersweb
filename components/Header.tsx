@@ -1,5 +1,9 @@
 "use client";
 
+import {CmsBrandMark} from './CmsBrandMark';
+import type {PublishedHeader} from '../lib/cms/published-header';
+import {CmsNavigationLinks} from './CmsNavigationLinks';
+import type {PublishedNavigation} from '../lib/cms/published-navigation';
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, MoveRight, X } from "lucide-react";
@@ -123,7 +127,8 @@ const knownRoutePrefixes = [
   "/studio"
 ];
 
-export function Header() {
+export function Header({cmsMenu:providedMenu,cmsHeader,menuId='site-full-menu',showCart=true}:{cmsMenu?:PublishedNavigation;cmsHeader?:PublishedHeader;menuId?:string;showCart?:boolean} = {}) {
+  const cmsMenu=cmsHeader?.main??providedMenu;
   const pathname = usePathname();
   const matchedPrimaryMenuItem = primaryMenuItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`));
   const currentPrimaryMenuKey = matchedPrimaryMenuItem?.key ?? (pathname === "/" ? primaryMenuItems[0].key : null);
@@ -137,11 +142,12 @@ export function Header() {
   const isKnownRoute =
     pathname === "/" || knownRoutePrefixes.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
   const hasLightOpening = pathname === "/contact" || pathname.startsWith("/search") || pathname.startsWith("/legal");
-  const useSolidHeader = scrolled || !isKnownRoute || hasLightOpening;
+  const useSolidHeader = (cmsHeader&&cmsHeader.variant!=='transparent') || scrolled || !isKnownRoute || hasLightOpening;
   const isStore = pathname === "/store" || pathname.startsWith("/store/");
-  const sectionItem = menuItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`));
-  const sectionHref = sectionItem?.href ?? (pathname.startsWith("/plan") ? "/plan" : undefined);
-  const sectionLabel = sectionItem?.label ?? (pathname.startsWith("/plan") ? "Private journey planning" : "Safari Crafters");
+  const contextItems = cmsMenu?cmsMenu.items.flatMap(item=>item.link?[{href:item.link.href,label:item.label}]:[]):menuItems;
+  const sectionItem = contextItems.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`));
+  const sectionHref = sectionItem?.href ?? (!cmsHeader&&pathname.startsWith("/plan") ? "/plan" : undefined);
+  const sectionLabel = sectionItem?.label ?? cmsHeader?.brand.name ?? (pathname.startsWith("/plan") ? "Private journey planning" : "Safari Crafters");
 
   useEffect(() => {
     let previousY = window.scrollY;
@@ -218,28 +224,28 @@ export function Header() {
   return (
     <>
       <header
-        className={`site-header${useSolidHeader ? " is-scrolled" : ""}${visible ? "" : " is-hidden"}`}
+        className={`site-header${useSolidHeader ? " is-scrolled" : ""}${visible||cmsHeader?.sticky===false ? "" : " is-hidden"}${cmsHeader?` cms-configured-header cms-header-${cmsHeader.variant}${cmsHeader.sticky?"":" cms-header-static"}`:""}`}
         style={{ "--header-progress": `${scrollProgress}%` } as CSSProperties}
       >
-        <BrandMark className="wordmark" />
+        {cmsHeader?<CmsBrandMark brand={cmsHeader.brand} homeHref={cmsHeader.interfaceText.homeHref} homeLabel={cmsHeader.interfaceText.homeLabel}/>:<BrandMark className="wordmark" />}
         {sectionHref && pathname !== sectionHref ? (
-          <Link className="header-context" href={sectionHref} aria-label={`Back to ${sectionLabel}`}>{sectionLabel}</Link>
+          <Link className="header-context" href={sectionHref} aria-label={cmsHeader?sectionLabel:`Back to ${sectionLabel}`}>{sectionLabel}</Link>
         ) : (
           <span className="header-context" aria-live="polite">{sectionLabel}</span>
         )}
         <div className="header-shop-actions">
-        <CartButton />
-        <Link className="header-cta" href={isStore ? "/" : "/plan"}>
+        {showCart&&<CartButton />}
+        {cmsHeader?(cmsHeader.cta&&<Link className="header-cta" href={cmsHeader.cta.href} target={cmsHeader.cta.newWindow?"_blank":undefined} rel={cmsHeader.cta.newWindow?"noopener noreferrer":undefined}>{cmsHeader.cta.label}</Link>):<Link className="header-cta" href={isStore ? "/" : "/plan"}>
           {isStore ? "Back to Main Site" : "Plan a Journey"}
-        </Link>
+        </Link>}
         </div>
         <button
           ref={menuButtonRef}
           className="menu-button"
           type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? (cmsHeader?.interfaceText.closeMenu??"Close menu") : (cmsHeader?.interfaceText.openMenu??"Open menu")}
           aria-expanded={open}
-          aria-controls="site-full-menu"
+          aria-controls={menuId}
           onClick={() => setOpen((current) => !current)}
         >
           <Menu size={18} />
@@ -248,24 +254,32 @@ export function Header() {
       <div
         ref={menuRef}
         className={open ? "site-full-menu is-open" : "site-full-menu"}
-        id="site-full-menu"
+        id={menuId}
         aria-hidden={!open}
         aria-modal={open ? "true" : undefined}
         role="dialog"
+        aria-label={cmsMenu?.title??"Site menu"}
       >
         <div className="site-full-menu-top">
-          <BrandMark className="wordmark" />
+          {cmsHeader?<CmsBrandMark brand={cmsHeader.brand} homeHref={cmsHeader.interfaceText.homeHref} homeLabel={cmsHeader.interfaceText.homeLabel}/>:<BrandMark className="wordmark" />}
           <button
             className="menu-close"
             type="button"
-            aria-label="Close menu"
+            aria-label={cmsHeader?.interfaceText.closeMenu??"Close menu"}
             onClick={() => setOpen(false)}
           >
             <X size={18} />
-            <span>Close</span>
+            <span>{cmsHeader?.interfaceText.closeMenu??"Close"}</span>
           </button>
         </div>
-        <div className="site-full-menu-grid">
+        <div className={cmsMenu?"site-full-menu-grid cms-menu-grid":"site-full-menu-grid"}>
+          {cmsMenu?<div className="site-full-menu-navigation">
+            {cmsHeader?.brand.tagline&&<p>{cmsHeader.brand.tagline}</p>}
+            <div className={cmsHeader?'cms-menu-desktop':undefined}><CmsNavigationLinks menu={cmsMenu} pathname={pathname} onNavigate={()=>setOpen(false)}/></div>
+            {cmsHeader&&<div className='cms-menu-mobile'><CmsNavigationLinks menu={cmsHeader.mobile} pathname={pathname} onNavigate={()=>setOpen(false)}/></div>}
+            {cmsHeader?.utility&&<div className='cms-menu-utility'><CmsNavigationLinks menu={cmsHeader.utility} pathname={pathname} onNavigate={()=>setOpen(false)}/></div>}
+            {cmsHeader&&cmsHeader.featured.length>0&&<nav className='cms-header-featured' aria-label={cmsHeader.interfaceText.featuredContent}>{cmsHeader.featured.map(item=><Link key={item.recordId} href={item.href} onClick={()=>setOpen(false)}>{item.title}</Link>)}</nav>}
+          </div>:<>
           <div className="site-full-menu-navigation">
             <nav className="site-full-menu-list" aria-label="Primary site menu">
               {primaryMenuItems.map((item) => (
@@ -310,7 +324,7 @@ export function Header() {
                 />
               ))}
             </div>
-          </aside>
+          </aside></>}
         </div>
       </div>
     </>

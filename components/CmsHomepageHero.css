@@ -1,0 +1,9 @@
+.cms-homepage-hero .concept-hero-media{object-position:var(--hero-position)}
+.cms-homepage-hero .cms-homepage-poster{position:absolute;inset:0}
+.cms-homepage-hero .cms-homepage-motion{position:absolute;z-index:4;right:var(--concept-gutter,24px);bottom:24px;border:1px solid currentColor;border-radius:2px;background:rgba(0,0,0,.55);color:white;padding:10px 14px;font:inherit;font-size:12px;cursor:pointer}
+.cms-homepage-hero .cms-homepage-motion:focus-visible{outline:2px solid white;outline-offset:4px}
+.cms-homepage-hero .cms-homepage-credit{position:absolute;z-index:3;left:var(--concept-gutter,24px);bottom:70px;max-width:80%;color:white;font-size:12px}
+@media(max-width:767px){.cms-homepage-hero .concept-hero-media{object-position:var(--hero-mobile-position)}}
+@media(prefers-reduced-motion:reduce){.cms-homepage-hero *{animation:none!important;transition:none!important}}
+
+.cms-homepage-hero[data-cms-motion] .concept-hero-line,.cms-homepage-hero[data-cms-motion] .concept-hero-line-main,.cms-homepage-hero[data-cms-motion] .concept-hero-line-sub,.cms-homepage-hero[data-cms-motion] .concept-hero-line-accent{animation:none}

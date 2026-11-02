@@ -8,10 +8,11 @@ import { JsonLd } from "@/components/JsonLd";
 import { getDestination, type ImageAsset } from "@/lib/data";
 import { breadcrumbSchema, faqSchema } from "@/lib/structured-data";
 import { kenyaCombinations, kenyaDescription, kenyaFaqs, kenyaPlaces } from "@/content/kenya-editorial";
+import heroImages from "@/content/destination-hero-images.json";
 import "./KenyaCountryPage.css";
 
 const image = (src: string, alt: string): ImageAsset => ({ src, alt, credit: "Safari Crafters archive" });
-const hero = image("/assets/destinations/masai-mara/masai-mara-01.jpg", "Buffalo on the Masai Mara plains beneath a golden sunrise");
+const hero: ImageAsset = heroImages.kenya;
 const gallery = [
   image("/assets/destinations/amboseli/amboseli-02.jpg", "An elephant herd crossing the Amboseli plains"),
   image("/assets/destinations/laikipia/supplied/03.webp", "Black leopard crossing a woodland track in Laikipia"),
@@ -23,7 +24,7 @@ export function KenyaCountryPage() {
   return <div className="kenya-page">
     <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Destinations", path: "/destinations" }, { name: "Africa", path: "/destinations/africa" }, { name: "Kenya", path: "/destinations/kenya" }])} />
     <JsonLd data={faqSchema(kenyaFaqs)} />
-    <PageHero title="Kenya" copy={kenyaDescription} image={hero} focalPoint="35% 100%" meta="Africa / East Africa" variant="destination" breadcrumbs={[{label:"Home",href:"/"},{label:"Destinations",href:"/destinations"},{label:"Africa",href:"/destinations/africa"},{label:"Kenya"}]} />
+    <PageHero title="Kenya" copy={kenyaDescription} image={hero} meta="Africa / East Africa" variant="destination" breadcrumbs={[{label:"Home",href:"/"},{label:"Destinations",href:"/destinations"},{label:"Africa",href:"/destinations/africa"},{label:"Kenya"}]} />
 
     <section className="kenya-facts" aria-label="Kenya at a glance">
       <div className="container kenya-facts-grid">

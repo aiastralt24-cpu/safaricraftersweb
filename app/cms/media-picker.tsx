@@ -1,0 +1,17 @@
+'use client';
+import {useEffect,useRef,useState} from 'react';
+import {mediaSelectionReason} from '../../lib/cms/media-selection';
+import type {SelectableMedia} from '../../lib/cms/media-selection';
+import {MediaImage} from './media-image';
+import type {LoadMediaPreview} from './media-image';
+type Props={site:string;value:string;disabled:boolean;api:(path:string,options?:RequestInit)=>Promise<any>;loadPreview:LoadMediaPreview;onChange:(id:string)=>void};
+export function MediaPicker({site,value,disabled,api,loadPreview,onChange}:Props){
+ const [open,setOpen]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState(''),[search,setSearch]=useState(''),[applied,setApplied]=useState(''),[rows,setRows]=useState<SelectableMedia[]>([]),[more,setMore]=useState(false);
+ const alive=useRef(true),generation=useRef(0);
+ useEffect(()=>{alive.current=true;return()=>{alive.current=false;generation.current++;};},[]);
+ async function command(action:string,extra:Record<string,unknown>){return (await api('/api/cms/media',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,site,...extra})})).result;}
+ async function list(append=false){const current=++generation.current;setBusy(true);setError('');try{const result:SelectableMedia[]=await command('list',{search:append?applied:search,after:append?rows.at(-1)?.id:null});if(alive.current&&generation.current===current){setRows(append?[...rows,...result]:result);setMore(result.length===50);if(!append)setApplied(search);}}catch(reason){if(alive.current&&generation.current===current)setError(reason instanceof Error?reason.message:'Unable to load images.');}finally{if(alive.current&&generation.current===current)setBusy(false);}}
+ async function choose(id:string){setBusy(true);setError('');try{const asset:SelectableMedia=await command('get',{asset:id});if(!alive.current)return;const reason=mediaSelectionReason(asset);if(reason)throw Error(reason);onChange(asset.id);setOpen(false);}catch(reason){if(alive.current)setError(reason instanceof Error?reason.message:'Unable to select image.');}finally{if(alive.current)setBusy(false);}}
+ return <div className='cms-media-picker'>{value?<><p>Selected image: {value}</p><MediaImage key={value} asset={value} alt='Selected journey image' load={loadPreview}/></>:<p>No image selected.</p>}<button type='button' disabled={disabled||busy} onClick={()=>{setOpen(!open);if(!open)void list();}}>{open?'Close image library':value?'Replace image':'Choose library image'}</button>
+ {open&&<section aria-label='Choose library image'><p>Only inspected images with current approved rights can be selected. Add new files in Image uploads.</p><label>Search library<input maxLength={200} value={search} disabled={disabled||busy} onChange={event=>setSearch(event.target.value)}/></label><button type='button' disabled={disabled||busy} onClick={()=>void list()}>Search images</button>{busy&&<p role='status'>Loading images…</p>}{!busy&&!rows.length&&<p>No images found.</p>}<ul>{rows.map(asset=>{const reason=mediaSelectionReason(asset);return <li key={asset.id}><strong>{asset.title||asset.id}</strong>{reason&&<p>{reason}</p>}<button type='button' disabled={disabled||busy||Boolean(reason)} onClick={()=>void choose(asset.id)}>Use {asset.title||asset.id}</button></li>;})}</ul>{more&&<button type='button' disabled={disabled||busy} onClick={()=>void list(true)}>Load more images</button>}</section>}{error&&<p role='alert'>{error}</p>}</div>;
+}

@@ -1,0 +1,10 @@
+'use client';
+import type {HomepageConcierge} from '../../components/CmsHomepageConcierge';
+import {EditorialHeadingEditor} from './editorial-heading-editor';
+import {SectionButtonsEditor} from './section-buttons-editor';
+export function HomepageConciergeFields({value,onChange}:{value:HomepageConcierge;onChange:(value:HomepageConcierge)=>void}){
+ function move(index:number,offset:number){const choices=[...value.choices];[choices[index],choices[index+offset]]=[choices[index+offset],choices[index]];onChange({...value,choices});}
+ return <fieldset><legend>Journey planning choices</legend><fieldset><legend>Main heading</legend><EditorialHeadingEditor value={value.heading} onChange={heading=>onChange({...value,heading})}/></fieldset><fieldset><legend>Choice prompt</legend><EditorialHeadingEditor value={value.prompt} onChange={prompt=>onChange({...value,prompt})}/></fieldset><p>Keep the region query in planning links, such as /plan?region=India, to preselect the traveller’s choice.</p>
+ {value.choices.map((choice,index)=><fieldset key={choice.id}><legend>Planning choice {index+1}</legend><SectionButtonsEditor value={[choice.link]} min={1} max={1} onChange={links=>onChange({...value,choices:value.choices.map(item=>item.id===choice.id?{...item,link:links[0]}:item)})}/><button type='button' disabled={index===0} onClick={()=>move(index,-1)}>Move choice up</button><button type='button' disabled={index===value.choices.length-1} onClick={()=>move(index,1)}>Move choice down</button><button type='button' disabled={value.choices.length===1} onClick={()=>onChange({...value,choices:value.choices.filter(item=>item.id!==choice.id)})}>Remove choice</button></fieldset>)}
+ <button type='button' disabled={value.choices.length>=12} onClick={()=>onChange({...value,choices:[...value.choices,{id:crypto.randomUUID(),link:{label:'New choice',href:'/plan',newWindow:false}}]})}>Add planning choice</button><fieldset><legend>Contact action</legend><SectionButtonsEditor min={1} max={1} value={[value.contact]} onChange={links=>onChange({...value,contact:links[0]})}/></fieldset></fieldset>;
+}

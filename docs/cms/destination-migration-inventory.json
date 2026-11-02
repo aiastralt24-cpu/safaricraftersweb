@@ -1,0 +1,4550 @@
+{
+  "version": 1,
+  "operation": "review_only",
+  "sourceDigest": "7ceeda07e07347475f8b09ea4013ec468f75648de81b80257d97c3a9e854eb64",
+  "count": 102,
+  "readyDrafts": 0,
+  "candidates": [
+    {
+      "sourceIndex": 0,
+      "slug": "ranthambhore",
+      "sourceDigest": "86712eb950329409f695ee4b8b0debc12466879fc8e077853118d928b0b96584",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.0",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.1",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.2",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.3",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.4",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 1,
+      "slug": "jawai",
+      "sourceDigest": "f2e60346e76fbf12ea7f1786812468bd8f7b61a232902ed4df3e24ea02c579c3",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.0",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.1",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.2",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 2,
+      "slug": "spiti-valley",
+      "sourceDigest": "1e8cd810660ce545f41470a5ad18a45fe450f92c82c650289dad7a770d07053c",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 3,
+      "slug": "singalila",
+      "sourceDigest": "0c6266a46678ab4d1d4d83b310d0dd27219d9a1dac5bae7c55f3d10e7b9f01d5",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 4,
+      "slug": "ladakh",
+      "sourceDigest": "0037f4380837837587444a075635145692e8171d87f4a646f719fa96a62d6414",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 5,
+      "slug": "bandhavgarh",
+      "sourceDigest": "31855e4f658bd02f0ab72c4135667af3ca46029447259cb95f026f41614ea951",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.0",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 6,
+      "slug": "kanha",
+      "sourceDigest": "92e017a7d2826d5ef6ffa82ab8f7137c0afad9fd20b56f027055794c4e363820",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.0",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 7,
+      "slug": "pench",
+      "sourceDigest": "71d872aa0f75689b4aec392d1bd3967e0fe0a3bfcf5f4396eaeeb636163e6bdb",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 8,
+      "slug": "tadoba",
+      "sourceDigest": "937688014ac32f11f0cf3021972e9926c00ebb87c226caf97516f06342332306",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 9,
+      "slug": "panna",
+      "sourceDigest": "b6cf5490401bb49a38c5835c4d803d67841c91564c000190d0a4084b1c2ca6c7",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.0",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 10,
+      "slug": "satpura",
+      "sourceDigest": "16963443177d1a5b09e3b34718852df162a49198910fc1ea327c1df08176d615",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 11,
+      "slug": "kaziranga",
+      "sourceDigest": "736029eb4658a1d5dcde9161318fc2618d4d7569da426a559492403cdd1e8ce0",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.0",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "expeditions.0",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 12,
+      "slug": "bandipur",
+      "sourceDigest": "3c000060256f08f8a52fe275c8b5b022ade9ddca875c7a76ee3af59f6fdbbd00",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 13,
+      "slug": "kabini",
+      "sourceDigest": "9e450ecf02df8862f593d2ce81912adc61e2a3321ad5a79c04875859619af7d3",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 14,
+      "slug": "sunderbans",
+      "sourceDigest": "f3ab07037974cd471aa9c561ff0a9e85c099089bdd30a10394cb1e527576199c",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 15,
+      "slug": "dudhwa",
+      "sourceDigest": "53aed9d59d5670bdc3b558ae2f002d18a2bc386a2a7d971b5634a06694b38e2d",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 16,
+      "slug": "pilibhit",
+      "sourceDigest": "3ef78182b1450a2aa2746854c5af930296b802c95880863c8ed7f2eb3cd3797e",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 17,
+      "slug": "kenya",
+      "sourceDigest": "fbcf018db5564420ac6ec8b219a36f0bc168dd4ca176184b830b2dad29074329",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 18,
+      "slug": "masai-mara",
+      "sourceDigest": "19df1ee30ea67cfaa550cbcad1e4631d4218e376c1b2772bae8b1ebfe190f700",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 19,
+      "slug": "amboseli",
+      "sourceDigest": "19a235d029a00e37b9c612c1dc04306cec9185c6577c9d0857d490b017cc82ea",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 20,
+      "slug": "lake-nakuru-and-naivasha",
+      "sourceDigest": "52cdbed402a4df405dac0a1236428a5beeafd5d00ccaef18c0c446e321b1d9cb",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 21,
+      "slug": "samburu",
+      "sourceDigest": "3ad87087853ea713ef258f6b57a9428075d17d09c4ea4c3c00b1015b36e187b9",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 22,
+      "slug": "laikipia",
+      "sourceDigest": "9dfb54062970c9266f75d31507587d3c833a2dcff50d79058b1f4c8e569ef262",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "expeditions.0",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 23,
+      "slug": "mount-kenya",
+      "sourceDigest": "a15453ca05531ed1762b31da1695b23d5d50d7c96fe77d838ad99c20b48a28c0",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 24,
+      "slug": "tanzania",
+      "sourceDigest": "e1b358c9b10169b161faa851c65ce6f654e62ba0e7c1816d3926fc7f3abf72f5",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 25,
+      "slug": "serengeti",
+      "sourceDigest": "5ffdd49cd9d4fd3f4c5b9c079f61d8f8582d1b770a0c7b284efe334c05371205",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 26,
+      "slug": "ngorongoro",
+      "sourceDigest": "9320994a7e879e21d7b509f60cfbbafc6ec33145c55b4abc79fda1de0f8e11a7",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 27,
+      "slug": "tarangire",
+      "sourceDigest": "fa15c80839958605f794dd2ec59ec8cd07f33e073d23892733adbbaf7af99c03",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 28,
+      "slug": "lake-manyara",
+      "sourceDigest": "87a7e154e6dc567cd80e3e348ab4930e6b251edf9274033027d9dd940a77a9da",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 29,
+      "slug": "uganda",
+      "sourceDigest": "cd732d5a4d5154881a2a6f6b0cb6c7e90d1974c731dba77c25b41591118a7aa9",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 30,
+      "slug": "rwanda",
+      "sourceDigest": "3d13a17ecf9ec61f6e7deab8371437dc76e35b56c41659800ec30bf626d7cadd",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 31,
+      "slug": "bwindi-impenetrable",
+      "sourceDigest": "d5b1e9a608e0b14130fa8a783d5f82504a50c18660b173bc1ab88168165bb1e0",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 32,
+      "slug": "queen-elizabeth-national-park",
+      "sourceDigest": "e67ade552aa48bce9f0c19097db332f2ebcb7a0875cc68f7652f3dd0f9993aa0",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 33,
+      "slug": "kibale-national-park",
+      "sourceDigest": "be0a9dee682c1beeff2a3193e7a39557577ef19bf52bfe98318e35ab89d9d60b",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 34,
+      "slug": "murchison-falls-national-park",
+      "sourceDigest": "5991cbe276ccc00e3ba2b780d88cbf1b3045bb3427fb22f6bc0e8c5d4e4b64bc",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 35,
+      "slug": "lake-mburo-national-park",
+      "sourceDigest": "c9b291ad94c09fd5b2dbe90e7007f618fdbf96ea7f6557a441b67d45fefff536",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 36,
+      "slug": "zambia-and-zimbabwe",
+      "sourceDigest": "d642849c6dad30c4e0de7c8b8eaee8e281a8315656cdaa79ca8f7ad22e09a8b9",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 37,
+      "slug": "mana-pools",
+      "sourceDigest": "8e3ce8854efe710ecddcffae4e2ba62ee68f83509a85ad587dc717c9e944fe00",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 38,
+      "slug": "hwange",
+      "sourceDigest": "d3beaa10b6fdd156e67dcce6d5f3e5c5dc922db170a7e033757235221a3e45a5",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 39,
+      "slug": "lower-zambezi",
+      "sourceDigest": "9cfdf43442f8ace534beb01a0cf21dea54dabec9a6ec61fedb8da692736fb1d7",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 40,
+      "slug": "south-luangwa",
+      "sourceDigest": "09c08240f58d7c9612a512d9cf0bad5941adc0cf30c3ec326d3e86e91eaca2ca",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 41,
+      "slug": "kafue-national-park",
+      "sourceDigest": "9c95dba20f24f8879b4d14db818c8d7765d5e770c9a792a537638e263427baca",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 42,
+      "slug": "botswana",
+      "sourceDigest": "1f2ebb943215102151978e6ad9c47224bc58309adf7aa566923440422024955a",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 43,
+      "slug": "okavango-delta",
+      "sourceDigest": "c2ae5cde9d479fa43ac2c0a65e61e4bad972a3f84081a3fa3e95b81d259d7785",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 44,
+      "slug": "chobe",
+      "sourceDigest": "ba60236422409415789eac46d37ec15864b74793c20609334816c192dd78bf36",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 45,
+      "slug": "chitabe",
+      "sourceDigest": "7e487b7bdb699ac193682143a156d4badd54f9b120ca68758ef0ce4a8fa57731",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 46,
+      "slug": "central-kalahari-game-reserve",
+      "sourceDigest": "b8f8a43659716d2638fd25e4439be2207e5e076a20181b15e35275b9d67fb60c",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 47,
+      "slug": "mashatu",
+      "sourceDigest": "ac216f0bc314a58d857c0c8df742f2ceec002c72fed7fc672973a7197bf16887",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 48,
+      "slug": "south-africa",
+      "sourceDigest": "8b219d03c0182cc7d7bd6d000b72072872aba9c963ea58dcd7fc8809f3c40dba",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 49,
+      "slug": "kruger-national-park",
+      "sourceDigest": "273a8fae230e51c6e508754d0ac97376e7fcfbe83393a7764ddf9283ae11410b",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 50,
+      "slug": "sabi-sands",
+      "sourceDigest": "440caf516cc8182887376fe5948f7f12fad07ea3be1e5d4ae75da07c0a986161",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 51,
+      "slug": "madikwe-game-reserve",
+      "sourceDigest": "33a40c8126813b00818cc59b4ab775114475727f77f3a28d4ca8b9eaefb25bb9",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 52,
+      "slug": "whale-watching-in-cape-town",
+      "sourceDigest": "b6091bffc1cd78f09c41198ee08d9732ef6a452612bf1f9533c84306d0deaae4",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 53,
+      "slug": "namibia",
+      "sourceDigest": "4f74fd4eb57da2c9022381fee96f3510658a8967879e37f4d6e16192d63542fa",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 54,
+      "slug": "etosha-national-park",
+      "sourceDigest": "965b15d414fbac88748e0f9ed58085418dc6a5aa9313dacf28a4ad2f2a6cc317",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 55,
+      "slug": "damaraland",
+      "sourceDigest": "ac4fd15b28be8045e42a423796eeb3a565451271ecda4ede46d28f74e458e277",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 56,
+      "slug": "sossusvlei",
+      "sourceDigest": "3b8a8ca10eaaac3177db9a7195a936a4f9939f53a43f53e7a1d2b83f5b162da0",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 57,
+      "slug": "brazil",
+      "sourceDigest": "1a8dd26e55c18dd7e5232e0df4ec12496d684d3dc417adaa84ee9c21699eea39",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 58,
+      "slug": "pantanal",
+      "sourceDigest": "24a4897ce9101c2b38b0e3799acb1b29a51d2651690a8a0e5b3c6a17f7208cbb",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "expeditions.0",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 59,
+      "slug": "amazonia",
+      "sourceDigest": "a158ce68064acdd621f4b1e24a87a59f63c42f43b139e0ab2cca2f96de22e035",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 60,
+      "slug": "atlantic-rainforest",
+      "sourceDigest": "38bf692f136b9e4c5dd9d4c787cfbd1f43958710f82af38dffe560e63e7dc2a1",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 61,
+      "slug": "iguazu-falls",
+      "sourceDigest": "5c9014f204ef39bfcf5593c820862e4ea6b82c88f800acb7d71debb0532942b5",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 62,
+      "slug": "chile",
+      "sourceDigest": "fc2f8c5f15cb2b00a219e1a2bb98fc9df0da56871a9cfe2b306cc06a01ce7ce4",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 63,
+      "slug": "patagonia",
+      "sourceDigest": "e61fe7784ef415bcd93a5c6d98c4f844df48edabe1cef0b80c51ee4c1c4a298b",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 64,
+      "slug": "ecuador",
+      "sourceDigest": "8ac868af10c7952c6f3bee2e62a7e1627a564901e1052c0c8bd1f716f38be79a",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 65,
+      "slug": "galapagos",
+      "sourceDigest": "358971a484620bf3c97b251a7d059375180d6ab8cb54630f4478f8c751f3e719",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 66,
+      "slug": "andes",
+      "sourceDigest": "46c49efee663ca7913098b284e1e2aa5673b36d4913a5b75bc5d028d20358c87",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 67,
+      "slug": "ecuadorian-amazon",
+      "sourceDigest": "1c910803477fe9651edcee0bfa7dce6bac8b985f93a8eb41e058580e5269d300",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 68,
+      "slug": "colombia",
+      "sourceDigest": "c50e98c4a8e8a4cf6b2d0bf29c7dedc98874eca798c625e61bcccfc800687c6a",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 69,
+      "slug": "peru",
+      "sourceDigest": "6b18570ba4747024e641278882de4c1ae10f666e983b70d2d860741ac0622010",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 70,
+      "slug": "tambopata",
+      "sourceDigest": "c7b58e116c238225bbaa96c464bcadd5c93afe00d29de894386b2a4700f063b3",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 71,
+      "slug": "sacred-valley",
+      "sourceDigest": "10e1e5108a1c5fdb6dc61e6e3d4ac5093e9dfa9701dfbf7ec89a7bb096a10365",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 72,
+      "slug": "machu-picchu",
+      "sourceDigest": "086ffef4ce468c3880955c847248e5674fa60e98a6f95e38d85c2e753af63864",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 73,
+      "slug": "lake-titicaca",
+      "sourceDigest": "07723d66a72a3dcdf59aa086b29407cda975b221e0db171a0028892ab63bd5fc",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 74,
+      "slug": "costa-rica",
+      "sourceDigest": "19389f57e99f900e215bb944e0acb70dfe7f31b197676fe553ac70a7d4fc3584",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 75,
+      "slug": "panama",
+      "sourceDigest": "a73d158cb1abe58cd6ae2db126894490c149b0194dcd69e859fde2a9107fe7bc",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 76,
+      "slug": "canada",
+      "sourceDigest": "f2de1e42c9f9d3e2f08dc740bc834d551fd36d4ee397fed6a68435e5bf04e498",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 77,
+      "slug": "great-bear-rainforest",
+      "sourceDigest": "b8b03e8c339defd88e9989ed2017952784bb67472f5f2f0d0fee43587061bf35",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 78,
+      "slug": "churchill",
+      "sourceDigest": "2ccf35fbcaa379fde156a747b7cbb89a73f388f0685ecfae31840b172e4bb98a",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 79,
+      "slug": "usa",
+      "sourceDigest": "2118dffe15a3389ac7310b48c474541eb9e63d56383345e6c804704097984ca3",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 80,
+      "slug": "alaska",
+      "sourceDigest": "04d7de7fb7342482adbf6d1ca128e1f18ffde92cf124ef9d6241b8244fc5eef1",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 81,
+      "slug": "yellowstone-national-park",
+      "sourceDigest": "832cd7dd51f372f23eb57c43eda56468a1675033cf0c84205ef100db60544581",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 82,
+      "slug": "svalbard",
+      "sourceDigest": "6a2f78d8bfa9aef5f81147a0353ba24cc91f97a11b91187035370a3e3db54dcb",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "expeditions.0",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 83,
+      "slug": "gir",
+      "sourceDigest": "9a1288310408e546bcd676856baa72903a59b0da273f7cc8a7297e5843c32f3c",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.0",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.1",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "journeys.2",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 84,
+      "slug": "rajaji",
+      "sourceDigest": "8c67f3edd734f2422bd7cffc88b958c11bade7f162a86dbdae997ed8bb17b16f",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 85,
+      "slug": "corbett",
+      "sourceDigest": "a44425530194cc5fe2a6b163c95ca1236529ac24837473a6f7d68607655e2f0c",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 86,
+      "slug": "velavadar",
+      "sourceDigest": "f75228fd5472cd30788b1920d953f2317b7b7326fe3faff19ff7b2ae99c3b00b",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 87,
+      "slug": "sattal-and-pangot",
+      "sourceDigest": "c7074b45839c8cc940246168e1a4447cb6d4ed40ed4e0a76ff8999012cfba70b",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 88,
+      "slug": "bharatpur-keoladeo",
+      "sourceDigest": "997b74a6ae29152593da4d0bf2bdbba4506baccb49da3433237b84455d4699e0",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.11",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 89,
+      "slug": "jhalana",
+      "sourceDigest": "c99146cb13861a0067c94fa8125868d4ed4b7073048c071559a3f8c754b68eab",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 90,
+      "slug": "rann-of-kutch",
+      "sourceDigest": "3c304b5123f08b1b95e5c468f9bf0d432f84849b84e12d5ed0be06a596d6579e",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 91,
+      "slug": "russia",
+      "sourceDigest": "d236c5a33bb282d3eea35ce2d4d4686a117cc7094792324697c0a3b507188d10",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "slug",
+          "message": "This source belongs to a specialized country/atlas route and needs that migration contract.",
+          "severity": "error"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 92,
+      "slug": "kamchatka",
+      "sourceDigest": "c37086cf22c054227d0f2e8eacdec22d10add7d3a85ef7cbac3d606ed095d66d",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.4",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.5",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.6",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.7",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.8",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.9",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.10",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "pairings.0",
+          "message": "Explicit CMS record mapping is required; titles and slugs are not assumed to identify a record.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        },
+        {
+          "field": "gateway",
+          "message": "Too big: expected string to have <=200 characters",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 93,
+      "slug": "volcanoes-national-park",
+      "sourceDigest": "1aca600270a9d94a653367eb13c3fb2451b1063aeed70ab6dc9b2e69e08e34b3",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 94,
+      "slug": "nyungwe-national-park",
+      "sourceDigest": "965d16f9725838f6d4f72352dc0b6f295ade60db7ddbaa217c106ffa66237204",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 95,
+      "slug": "akagera-national-park",
+      "sourceDigest": "50e1a6ed074d77ecc151d1fba0a2bccd7d93927ee4616264101c4951bfa13531",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 96,
+      "slug": "colombian-coffee-region",
+      "sourceDigest": "6ea042c98fcb4da101366f6c395ba9b7f7d13c8cc88bd17dc7417f4c4730e005",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 97,
+      "slug": "choco-pacific-coast",
+      "sourceDigest": "bb88a846d6f7633156415ef3ac0058d2156abd0e0ecb4fdfc9b32e8c8eba8c29",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 98,
+      "slug": "llanos-orientales",
+      "sourceDigest": "8958458da7667967130c30bbf6f8cb3578bfc265102c2bde2f15da8b4361926a",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 99,
+      "slug": "corcovado",
+      "sourceDigest": "180ab9c3f8abca1b6c6fca8b6d436f3b42b9747ac3677c7624a1c6b98e1f4d16",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 100,
+      "slug": "monteverde",
+      "sourceDigest": "cd37cabc23baffdf5bd35c6e710f42cdf05c6351cb5000b40208c5c6e858d20b",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 101,
+      "slug": "tortuguero",
+      "sourceDigest": "29d08960f28c282a18dfe1d459f321e29066eb29020287409603904d69e113c9",
+      "canSaveDraft": false,
+      "issues": [
+        {
+          "field": "image",
+          "message": "Map this original image to an inspected CMS image, preserving its alt text, credit and crop decision.",
+          "severity": "error"
+        },
+        {
+          "field": "seo.reviewedAt",
+          "message": "Legacy review date retained in the source snapshot; it is not a CMS approval.",
+          "severity": "warning"
+        },
+        {
+          "field": "heroImage",
+          "message": "Choose an explicit hero image during review; legacy runtime image overrides are not inferred.",
+          "severity": "warning"
+        }
+      ]
+    }
+  ]
+}

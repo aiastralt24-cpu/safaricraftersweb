@@ -1,3 +1,6 @@
+import {usesCmsDestination} from '@/lib/cms/destination-route';
+import {reservedDestinationSlugs} from '@/lib/cms/destination-reserved-routes';
+import {readPublishedDestination,publicDestinationConfig} from '@/lib/cms/public-destination-runtime';
 import { kenyaCombinations } from "@/content/kenya-editorial";
 import { Metadata } from "next";
 import { PlannerForm } from "@/components/PlannerForm";
@@ -24,7 +27,7 @@ type PlanPageProps = {
 
 export default async function PlanPage({ searchParams }: PlanPageProps) {
   const params = await searchParams;
-  const initialContext = getInitialContext(params);
+  const initialContext = await getInitialContext(params);
   const kenyaRoute = params.destination === "kenya" ? kenyaCombinations.find(route => route.slug === params.kenyaRoute) : undefined;
   const plannerContext = kenyaRoute ? { ...initialContext, notes: `I am interested in ${kenyaRoute.title}. ${kenyaRoute.copy}` } : initialContext;
 
@@ -50,7 +53,7 @@ function plannerRegion(value?: string) {
   return undefined;
 }
 
-function destinationExperiences(destination: NonNullable<ReturnType<typeof getDestination>>) {
+function destinationExperiences(destination: Pick<NonNullable<ReturnType<typeof getDestination>>, "wildlife" | "country" | "continent">) {
   const wildlife = destination.wildlife.toLowerCase();
   if (destination.country === "Russia") return ["Brown bears", "Wildlife photography"];
   if (wildlife.includes("tiger")) return ["Tigers", "Photography hides"];
@@ -74,7 +77,7 @@ function contextualExperiences(value: string, region: string) {
   return ["Cultural immersion"];
 }
 
-function getInitialContext(params: { journey?: string; destination?: string; expedition?: string; region?: string; specialist?: string; guided?: string }) {
+async function getInitialContext(params: { journey?: string; destination?: string; expedition?: string; region?: string; specialist?: string; guided?: string }) {
   const requestedRegion = plannerRegion(params.region);
   if (params.guided === "true") {
     return {
@@ -102,7 +105,9 @@ function getInitialContext(params: { journey?: string; destination?: string; exp
   }
 
   if (params.destination) {
-    const destination = getDestination(params.destination);
+    const destination = usesCmsDestination(params.destination,reservedDestinationSlugs)
+      ? (await readPublishedDestination(params.destination,publicDestinationConfig()))?.content
+      : getDestination(params.destination);
     if (destination) {
       return {
         sourceLabel: destination.title,

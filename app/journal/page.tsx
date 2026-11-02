@@ -1,3 +1,7 @@
+import {CmsJournalListing} from '@/components/CmsJournalListing';
+import {usesCmsJournal} from '@/lib/cms/journal-route';
+import {journalListReader,readPublishedJournalList} from '@/lib/cms/published-journal-list';
+import '../article.css';
 import { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { JsonLd } from "@/components/JsonLd";
@@ -6,12 +10,14 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 import { JournalIndex } from "./JournalIndex";
 import "../listing.css";
 
+export const dynamic='force-dynamic';
 export const metadata: Metadata = {
   title: "The Journal",
   description: "Field notes, photography, conservation, safari intelligence and people from Safari Crafters."
 };
 
-export default function JournalPage() {
+export default async function JournalPage() {
+  if(usesCmsJournal()){const articles=await readPublishedJournalList(journalListReader());return <><JsonLd data={breadcrumbSchema([{name:"Home",path:"/"},{name:"The Journal",path:"/journal"}])}/><CmsJournalListing articles={articles}/></>;}
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "The Journal", path: "/journal" }])} />

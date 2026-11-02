@@ -95,7 +95,7 @@
 
 /* Match the Destinations page's centered editorial container and rhythm. */
 .expedition-atlas { --expedition-gutter:max(20px, calc((100% - var(--max)) / 2)); }
-.expedition-atlas .page-hero-content h1 { max-width:9ch; }
+.expedition-atlas .page-hero-content h1 { max-width:20ch; }
 .expedition-atlas .page-hero-content p:last-child { max-width:52ch; }
 .expedition-stack-intro { padding-top:clamp(76px,9vw,116px); padding-bottom:56px; }
 .expedition-stack-intro h2 { max-width:17ch; margin-top:40px; }

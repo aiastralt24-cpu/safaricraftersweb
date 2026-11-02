@@ -1,0 +1,56 @@
+.cms-aviation-page p{white-space:pre-wrap}
+.cms-aviation-page .cms-aviation-media{margin:0;position:relative}
+.cms-aviation-page .cms-aviation-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--hero-position)}
+.cms-aviation-page .cms-aviation-mobile{display:none}
+.cms-aviation-page .cms-aviation-media figcaption{position:absolute;bottom:0;left:0;right:0;padding:12px;background:rgba(0,0,0,.6);color:white;font-size:14px}
+.cms-aviation-page .cms-aviation-hero-media{aspect-ratio:var(--aviation-hero-ratio)}
+.cms-aviation-page .cms-aviation-hero-media video,.cms-aviation-page .cms-aviation-hero-media img{width:100%;height:100%;object-fit:cover;object-position:var(--aviation-position)}
+.cms-aviation-page .cms-heading-accent{font-style:italic;color:var(--brass)}
+.cms-aviation-page .aviation-hero .cms-heading-accent,.cms-aviation-page .aviation-journey .cms-heading-accent{color:var(--brass-light)}
+@media(min-width:761px){.cms-aviation-page .cms-aviation-media:not([data-desktop-shape='natural']){aspect-ratio:var(--hero-ratio);min-height:0}}
+@media(max-width:760px){.cms-aviation-page .cms-aviation-desktop{display:none}.cms-aviation-page .cms-aviation-mobile{display:block}.cms-aviation-page .cms-aviation-media img{object-position:var(--hero-mobile-position)}.cms-aviation-page .cms-aviation-media:not([data-mobile-shape='natural']){aspect-ratio:var(--hero-mobile-ratio);min-height:0}}
+@media(max-width:600px){.cms-aviation-page .cms-aviation-hero-media{aspect-ratio:var(--aviation-mobile-ratio)}.cms-aviation-page .cms-aviation-hero-media video,.cms-aviation-page .cms-aviation-hero-media img{object-position:var(--aviation-mobile-position)}.cms-aviation-page .aviation-hero-image figcaption .cms-aviation-caption-mobile{display:block}}
+#main .cms-aviation-page>section.background-paper{background:var(--surface-warm,#f1ede4);color:var(--ink,#191813)}
+#main .cms-aviation-page>section.background-white{background:white;color:var(--ink,#191813)}
+#main .cms-aviation-page>section.background-forest{background:var(--surface-forest,var(--forest));color:var(--bone)}
+#main .cms-aviation-page>section.background-ink{background:var(--night);color:var(--bone)}
+.cms-aviation-page>section:is(.background-paper,.background-white) :is(.aviation-hero-aside p,.aviation-journey-copy h2,.aviation-journey-copy li p,.aviation-aircraft dd){color:inherit}
+.cms-aviation-page>section:is(.background-paper,.background-white) .cms-heading-accent{color:var(--brass)}
+.cms-aviation-page>section:is(.background-forest,.background-ink) :is(.aviation-intro-copy>p,.aviation-section-heading>p,.aviation-aircraft-copy>p:not(.eyebrow),.aviation-aircraft dd,.aviation-source-note,.aviation-service-grid p){color:inherit}
+.cms-aviation-page>section:is(.background-forest,.background-ink) .cms-heading-accent{color:var(--brass-light)}
+.cms-aviation-page>section.spacing-compact{padding-block:48px}
+.cms-aviation-page>section.spacing-generous{padding-block:168px}
+.cms-aviation-page>section.align-center{text-align:center}
+.cms-aviation-page>section.align-center :is(.aviation-intro-copy,.aviation-section-heading>p,.aviation-hero-aside,.cms-aviation-h1,.cms-aviation-h2){margin-inline:auto}
+.cms-aviation-page>section.width-reading>.container{max-width:760px;width:calc(100% - 40px)}
+.cms-aviation-page>section.width-reading :is(.aviation-intro-grid,.aviation-section-heading,.aviation-hero-copy,.aviation-aircraft,.aviation-journey-grid){grid-template-columns:1fr}
+.cms-aviation-page>section.width-reading .aviation-aircraft :is(.aviation-aircraft-image,.aviation-aircraft-copy){grid-column:auto;grid-row:auto}
+.cms-aviation-page>section.width-reading .aviation-journey-copy{padding:48px 24px}
+.cms-aviation-page>section.width-reading .cms-aviation-hero-media{max-width:760px}
+.cms-aviation-page>section.width-full>.container{max-width:none}
+.cms-aviation-page>section.width-content>.aviation-journey-grid{width:min(1440px,calc(100% - 40px));margin-inline:auto}
+.cms-aviation-page .cms-aviation-h2:not(h2){max-width:760px;margin:14px 0 0;font-family:var(--font-display);font-size:var(--type-h2);font-weight:300;letter-spacing:-.035em;line-height:.96}
+.cms-aviation-page .aviation-aircraft-copy .cms-aviation-card-heading:not(h3){margin:12px 0 22px;font-family:var(--font-display);font-size:var(--type-h3);font-weight:300;letter-spacing:-.025em;line-height:.98}
+.cms-aviation-page .aviation-journey-copy .cms-aviation-card-heading:not(h3){margin:0 0 8px;font-family:var(--font-display);font-size:clamp(1.45rem,2vw,2rem);font-weight:300}
+.cms-aviation-page .aviation-service-grid .cms-aviation-card-heading:not(h3){margin:70px 0 16px;font-family:var(--font-display);font-size:var(--type-h4);font-weight:300;line-height:1.04}
+@media(min-width:901px){
+ .cms-aviation-page>.aviation-journey.media-end .aviation-journey-grid{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)}
+ .cms-aviation-page>.aviation-journey.media-end .aviation-journey-image{grid-column:2;grid-row:1}
+ .cms-aviation-page>.aviation-journey.media-end .aviation-journey-copy{grid-column:1;grid-row:1}
+ .cms-aviation-page>.aviation-fleet.media-end .aviation-aircraft{direction:rtl}
+ .cms-aviation-page>.aviation-fleet.media-end .aviation-aircraft>*{direction:ltr}
+ .cms-aviation-page>.aviation-hero.media-start{display:flex;flex-direction:column}
+ .cms-aviation-page>.aviation-hero.media-start .aviation-hero-image{order:-1}
+ .cms-aviation-page>section.width-reading .aviation-journey-grid{grid-template-columns:1fr}
+ .cms-aviation-page>section.width-reading .aviation-journey-grid>*{grid-column:auto;grid-row:auto}
+}
+@media(max-width:900px){
+ .cms-aviation-page>section.spacing-generous{padding-block:100px}
+ .cms-aviation-page>.aviation-journey.mobile-textFirst .aviation-journey-image{grid-row:2}
+ .cms-aviation-page>.aviation-journey.mobile-textFirst .aviation-journey-copy{grid-row:1}
+ .cms-aviation-page>.aviation-fleet.mobile-textFirst .aviation-aircraft-image{grid-row:2}
+ .cms-aviation-page>.aviation-fleet.mobile-textFirst .aviation-aircraft-copy{grid-row:1}
+ .cms-aviation-page>.aviation-hero.mobile-mediaFirst{display:flex;flex-direction:column}
+ .cms-aviation-page>.aviation-hero.mobile-mediaFirst .aviation-hero-image{order:-1}
+ .cms-aviation-page .aviation-service-grid .cms-aviation-card-heading:not(h3){margin-top:42px}
+}

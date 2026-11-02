@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react";
 
 const numberFormat = new Intl.NumberFormat("en-US");
 
-export function CountUp({ value }: { value: number }) {
+export function CountUp({ value, suffix = "+" }: { value: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const formatted = `${numberFormat.format(value)}+`;
+  const formatted = `${numberFormat.format(value)}${suffix}`;
 
   useEffect(() => {
     const element = ref.current;
@@ -20,7 +20,7 @@ export function CountUp({ value }: { value: number }) {
     };
     if (motion.matches || !("IntersectionObserver" in window)) return;
 
-    element.textContent = "0+";
+    element.textContent = `0${suffix}`;
     const observer = new IntersectionObserver((entries) => {
       if (!entries.some((entry) => entry.isIntersecting)) return;
       observer.disconnect();
@@ -28,7 +28,7 @@ export function CountUp({ value }: { value: number }) {
       const tick = (now: number) => {
         const progress = Math.min((now - start) / 1800, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
-        element.textContent = `${numberFormat.format(Math.round(value * eased))}+`;
+        element.textContent = `${numberFormat.format(Math.round(value * eased))}${suffix}`;
         if (progress < 1) frame = requestAnimationFrame(tick);
       };
       frame = requestAnimationFrame(tick);
@@ -47,7 +47,7 @@ export function CountUp({ value }: { value: number }) {
       motion.removeEventListener("change", onMotionChange);
       finish();
     };
-  }, [value, formatted]);
+  }, [value, formatted, suffix]);
 
   return (
     <span className="experience-count">

@@ -1979,3 +1979,7 @@ body:has(.store-home) .footer-journey-cta {
 .store-offer-price del { opacity: .65; font-size: .85em; }
 .store-offer-price strong { font-weight: 500; }
 .store-offer-price small { flex-basis: 100%; font-size: 12px; font-weight: 500; line-height: 1.5; }
+
+.field-categories-heading { align-items:center; }
+.field-categories-heading h2 { font-size:clamp(32px,3.6vw,54px); line-height:1.08; }
+@media(max-width:760px) { .field-categories-heading h2 { font-size:clamp(30px,7vw,42px); } }

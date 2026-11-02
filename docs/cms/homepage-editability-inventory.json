@@ -1,0 +1,348 @@
+{
+  "version": 1,
+  "route": "/",
+  "status": "source-traced-not-client-editable",
+  "method": "Manual source tracing with content dependency hashes; not a DOM capture or an editability certification.",
+  "sourceProof": [
+    {
+      "path": "app/page.tsx",
+      "sha256": "41022c4b059562bb7b15aeedbab556daedbe7a7201d8e9f2fd508adaa86a7dd2"
+    },
+    {
+      "path": "app/concept/ConceptExperience.tsx",
+      "sha256": "247644a1719d075aa1c7eaf593e447c62c77fcc31d10464610e5b1af107ac7c4"
+    },
+    {
+      "path": "app/concept/concept.css",
+      "sha256": "4f67aa8b2c8ea28f8f4c7a3b8d1afb8918681daf522303e42df7b7d09208a553"
+    },
+    {
+      "path": "app/concept/concept-harmony.css",
+      "sha256": "a9453074a1d9d5978ebcf93a2417082869f243ef29bf757622f97e6d7f75bcfa"
+    },
+    {
+      "path": "app/concept/journey-collection.css",
+      "sha256": "6dde611316a583b9069b5cfdaddef393f92b43fcab441a41001d4072549ec900"
+    },
+    {
+      "path": "components/MiceSection.tsx",
+      "sha256": "5e2b0829960f96cf8438f381629edf4d2e7f1fbcfb2de3cbb5f148f833473103"
+    },
+    {
+      "path": "components/MiceSection.module.css",
+      "sha256": "1b37fac3e6a1fe0aa117bf6c1d902a843af09f6811e44075cba25fd8b4654942"
+    },
+    {
+      "path": "components/PreferredPartners.tsx",
+      "sha256": "306ffabd38e1c862accad88587ed413fee4b2d7b5abd989c42a8fcbb2dee3ae5"
+    },
+    {
+      "path": "components/PreferredPartners.module.css",
+      "sha256": "9e7504c76a3704166e8bc1d014ad3c0e81825af1ce4d1bd8f428f9962cadd8aa"
+    },
+    {
+      "path": "components/GuestNotes.tsx",
+      "sha256": "e27ff49c84d99ab4b3395329343beb690eb255b7cd7098a97b538888263d6f8c"
+    },
+    {
+      "path": "components/GuestNotes.css",
+      "sha256": "b635067b328b47a74f1ff7bac9b8979b9e3f431dd2d48141edb93ecd1fb22c79"
+    },
+    {
+      "path": "lib/guest-notes.ts",
+      "sha256": "743ddfb20970c8faad3f6ca7eb3e1f45b48c39bf75fdc6dfa16f9c74582765b3"
+    },
+    {
+      "path": "lib/data.ts",
+      "sha256": "a7657781655fe3c1803f37a6c8750b49fbb759490260770de9f95919f3e98a56"
+    },
+    {
+      "path": "lib/departures.ts",
+      "sha256": "d11919fc9bf5950a7a759cdb746ebf455421082d66eb8830cbd493b9867fd9b1"
+    },
+    {
+      "path": "content/site-content.json",
+      "sha256": "5511df488dcf2dd7195b8b938822c210765b1030a48c2cb76ec21b37f6255e65"
+    },
+    {
+      "path": "content/preferred-partners.json",
+      "sha256": "4dcce2e7b5903d9c6b9fc12459c87922a5b2ab77eedb20d50686126f6e498c11"
+    }
+  ],
+  "sections": [
+    {
+      "id": "hero",
+      "state": "active",
+      "source": "app/concept/ConceptExperience.tsx",
+      "editableRequirements": [
+        "Ordered lead/rest/accent headline frames",
+        "Optional introduction",
+        "Desktop and mobile video, poster, alt text and rights",
+        "Section navigation label"
+      ],
+      "candidateComposition": [
+        "hero",
+        "video"
+      ],
+      "remaining": "Existing hero has one heading/accent; rotating frames and responsive background video are not represented. Preserve reduced-motion/static-poster behavior; verify media before release."
+    },
+    {
+      "id": "story-and-experience",
+      "state": "active",
+      "source": "app/concept/ConceptExperience.tsx",
+      "editableRequirements": [
+        "Eyebrow",
+        "Heading with two emphasis fragments and line breaks",
+        "Introduction",
+        "About CTA label/link",
+        "Ledger heading",
+        "Four numeric values, labels, order and supporting evidence"
+      ],
+      "candidateComposition": [
+        "text",
+        "statistics"
+      ],
+      "remaining": "Preserve combined split layout, multiple emphasis fragments and count-up behavior. Source figures are 75, 24, 6000, 450; do not invent evidence or silently replace with zero."
+    },
+    {
+      "id": "ways-to-journey",
+      "state": "active",
+      "source": "app/concept/ConceptExperience.tsx",
+      "editableRequirements": [
+        "Heading with two emphasis fragments",
+        "Three ordered cards: images/alt, heading line breaks, copy, inline brand emphasis, CTA labels/links"
+      ],
+      "candidateComposition": [
+        "cards"
+      ],
+      "remaining": "Existing plain card copy cannot preserve inline strong emphasis or all heading formatting; approve and implement matching presentation."
+    },
+    {
+      "id": "private-journey-collection",
+      "state": "conditional-nonempty",
+      "source": "app/concept/ConceptExperience.tsx",
+      "editableRequirements": [
+        "Eyebrow/title/emphasis/introduction",
+        "Listing CTA",
+        "Ordered journey references",
+        "Per-card kicker",
+        "Card CTA label"
+      ],
+      "candidateComposition": [
+        "related"
+      ],
+      "remaining": "Source selection uses three fixed slugs; first card has distinct bento presentation. Resolve published referenced data, preserve editorial kickers by item identity and prevent silent omission of missing selections."
+    },
+    {
+      "id": "departure-board",
+      "state": "conditional-upcoming",
+      "source": "app/concept/ConceptExperience.tsx",
+      "editableRequirements": [
+        "Eyebrow/title/emphasis",
+        "Directory CTA",
+        "Upcoming selection/order policy",
+        "Location display overrides",
+        "Card action label",
+        "Empty behavior"
+      ],
+      "candidateComposition": [
+        "expeditionDirectory"
+      ],
+      "remaining": "Source uses all upcoming expeditions sorted by first date and hardcoded location overrides. Existing directory is not proof of this horizontal board layout; preserve date/time semantics, accessible scrolling and pause-on-interaction."
+    },
+    {
+      "id": "corporate-journeys",
+      "state": "active",
+      "source": "components/MiceSection.tsx",
+      "editableRequirements": [
+        "Eyebrow/title/emphasis",
+        "Two introduction paragraphs",
+        "Three ordered format labels/titles/links",
+        "CTA",
+        "Two images, alt text, captions and framing"
+      ],
+      "candidateComposition": [
+        "imageText",
+        "cards"
+      ],
+      "remaining": "Preserve two-image collage and linked format rows as one approved section, rather than flattening into unrelated blocks."
+    },
+    {
+      "id": "private-aviation",
+      "state": "active",
+      "source": "app/concept/ConceptExperience.tsx",
+      "editableRequirements": [
+        "Visibility",
+        "Eyebrow/title/emphasis",
+        "Summary",
+        "Three ordered benefits",
+        "CTA",
+        "Image and alt"
+      ],
+      "candidateComposition": [
+        "imageText"
+      ],
+      "remaining": "Add benefit-list presentation and source-equivalent layout. Current visibility true is a code constant."
+    },
+    {
+      "id": "preferred-partners",
+      "state": "active",
+      "source": "components/PreferredPartners.tsx",
+      "editableRequirements": [
+        "Eyebrow/title/emphasis",
+        "Ordered region groups",
+        "Ordered partner names and logos per region",
+        "Default selected region"
+      ],
+      "candidateComposition": [
+        "logos",
+        "tabs"
+      ],
+      "remaining": "Region-tabbed logo marquee is not represented by flat logos or rich-text tabs; preserve accessible duplicate handling and pause behavior. Source content/preferred-partners.json."
+    },
+    {
+      "id": "guest-notes",
+      "state": "active",
+      "source": "components/GuestNotes.tsx",
+      "editableRequirements": [
+        "Eyebrow/title/emphasis",
+        "Reviews CTA",
+        "Ordered published testimonial references",
+        "Image/alt/trip/category/quote/name/anonymity/link",
+        "Optional film/captions/transcript",
+        "Card action label"
+      ],
+      "candidateComposition": [
+        "testimonials"
+      ],
+      "remaining": "Source lib/guest-notes.ts switches archive vs transformed testimonials by contentSource. Preserve anonymity, consent/rights, film accessibility, one-at-a-time navigation and empty handling; never infer consent from source presence."
+    },
+    {
+      "id": "concierge",
+      "state": "active",
+      "source": "app/concept/ConceptExperience.tsx",
+      "editableRequirements": [
+        "Heading/emphasis",
+        "Prompt heading/emphasis",
+        "Five ordered region label/link pairs",
+        "Contact CTA label/link"
+      ],
+      "candidateComposition": [
+        "cta"
+      ],
+      "remaining": "Existing CTA supports at most two links; source has six. Preserve region query parameters, accessible choice layout and separate prompt heading."
+    },
+    {
+      "id": "wildest-places",
+      "state": "hidden",
+      "source": "app/concept/ConceptExperience.tsx",
+      "editableRequirements": [
+        "Visibility",
+        "Heading/emphasis/line breaks",
+        "Three paragraphs"
+      ],
+      "candidateComposition": [
+        "text"
+      ],
+      "remaining": "Keep disabled through migration; source is behind showHomepageWildestPlaces=false."
+    },
+    {
+      "id": "species-editorial",
+      "state": "hidden",
+      "source": "app/concept/ConceptExperience.tsx",
+      "editableRequirements": [
+        "Visibility",
+        "Eyebrow/title/introduction",
+        "Ordered destination references",
+        "Species names/behaviour labels",
+        "Location labels",
+        "Card CTA"
+      ],
+      "candidateComposition": [
+        "related"
+      ],
+      "remaining": "Keep disabled; uses speciesStoryMeta plus selected destinations. Map species metadata rather than guessing from destination title."
+    },
+    {
+      "id": "photographic-worlds",
+      "state": "hidden",
+      "source": "app/concept/ConceptExperience.tsx",
+      "editableRequirements": [
+        "Visibility",
+        "Region labels/membership/order",
+        "Selected expedition",
+        "Heading/caption",
+        "Departure/duration/focus labels and overrides",
+        "CTA"
+      ],
+      "candidateComposition": [
+        "tabs",
+        "related"
+      ],
+      "remaining": "Keep disabled. Needs defined no-upcoming-departure and empty-region behavior before enabling."
+    },
+    {
+      "id": "conservation",
+      "state": "hidden",
+      "source": "app/concept/ConceptExperience.tsx",
+      "editableRequirements": [
+        "Visibility",
+        "Multiline heading/emphasis",
+        "Three paragraphs",
+        "CTA label/link"
+      ],
+      "candidateComposition": [
+        "text"
+      ],
+      "remaining": "Keep disabled; verify source claim copy with client before enabling."
+    }
+  ],
+  "sharedSurfaces": [
+    {
+      "id": "homepage-navigation",
+      "source": "app/concept/ConceptExperience.tsx",
+      "requirements": [
+        "Primary and secondary menu label/link/order",
+        "Primary menu images",
+        "Plan CTA",
+        "Brand destination",
+        "Section navigation labels"
+      ],
+      "remaining": "Wire published navigation/settings into this distinct menu and preserve focus trapping, keyboard dismissal, image semantics and mobile behavior."
+    },
+    {
+      "id": "metadata",
+      "source": "app/page.tsx",
+      "requirements": [
+        "Title",
+        "Description",
+        "Canonical",
+        "Social title/description/image/alt",
+        "Indexing"
+      ],
+      "remaining": "Opt-in route now shares one published homepage/settings snapshot between body and metadata. Verify real-provider delivery, migration and client acceptance before enabling production rollout."
+    },
+    {
+      "id": "global-shell",
+      "source": "app/layout.tsx",
+      "remaining": "Global footer/header/settings require separate integration evidence; not certified by this inventory."
+    }
+  ],
+  "unusedSourceFlags": [
+    "showHomepageSpeciesIndex: declared false, no rendering use found"
+  ],
+  "releaseGates": [
+    "Implement explicit contracts and source-equivalent approved renderers for gaps above.",
+    "Resolve published references and media with rights, expiry and revision checks; reject unavailable required dependencies.",
+    "Create source-hash-bound migration review without publication; preserve hidden states and selection order.",
+    "Keep existing homepage default until opt-in integration and complete preview/release/rollback checks pass.",
+    "Validate desktop/mobile, menu states, all hero frames, partner regions, testimonial states, empty/date-dependent cases and reduced motion.",
+    "Complete real provider verification and client acceptance before live rollout."
+  ],
+  "limitations": [
+    "Does not hash every transitive dependency, public media file, font or global stylesheet.",
+    "Active sections are source classifications, not a current rendered count; two sections depend on available data and dates.",
+    "Candidate composition kinds describe possible reuse, not completed editor or renderer support.",
+    "No provider data read or changed. No source asset rights approved."
+  ]
+}

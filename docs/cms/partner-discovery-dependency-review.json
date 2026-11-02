@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-30",
+  "reviews": [
+    {
+      "inventory": "concept-migration-inventory.json",
+      "sourcePath": "lib/cms/global-settings.ts",
+      "previousSha256": "cd5492faf79069af33b4adef942a0b817dbbd82b13caf26041cbf4e12819c460",
+      "sha256": "904eaaa0ec2fb8733bf828713b6a435f426d4f465a7eacc9562b4772ca3649de",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "concept-migration-inventory.json",
+      "sourcePath": "lib/cms/search-policy.ts",
+      "previousSha256": "42149357d686ac554be31d909349a0a81d9b7e4fe5508fbb8c4a8316d1e1a165",
+      "sha256": "5395aebc77e86c41d86b5773a9c3a71c52f18f4d5f0c035e0699f2a9596689a3",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "concept-migration-inventory.json",
+      "sourcePath": "lib/site-search.ts",
+      "previousSha256": "a52950a1a8f27a3a0b0171c3725be97e7bf2608d02c66f031418ff514f07a461",
+      "sha256": "ef9c6a668bb0a169c27633d86f0cffc1379443673b39470bca87dd67a7d8fe85",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "private-aviation-migration-inventory.json",
+      "sourcePath": "lib/cms/global-settings.ts",
+      "previousSha256": "cd5492faf79069af33b4adef942a0b817dbbd82b13caf26041cbf4e12819c460",
+      "sha256": "904eaaa0ec2fb8733bf828713b6a435f426d4f465a7eacc9562b4772ca3649de",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "private-aviation-migration-inventory.json",
+      "sourcePath": "lib/cms/search-policy.ts",
+      "previousSha256": "42149357d686ac554be31d909349a0a81d9b7e4fe5508fbb8c4a8316d1e1a165",
+      "sha256": "5395aebc77e86c41d86b5773a9c3a71c52f18f4d5f0c035e0699f2a9596689a3",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "private-aviation-migration-inventory.json",
+      "sourcePath": "lib/site-search.ts",
+      "previousSha256": "a52950a1a8f27a3a0b0171c3725be97e7bf2608d02c66f031418ff514f07a461",
+      "sha256": "ef9c6a668bb0a169c27633d86f0cffc1379443673b39470bca87dd67a7d8fe85",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "tanzania-source-inventory.json",
+      "sourcePath": "lib/cms/global-settings.ts",
+      "previousSha256": "cd5492faf79069af33b4adef942a0b817dbbd82b13caf26041cbf4e12819c460",
+      "sha256": "904eaaa0ec2fb8733bf828713b6a435f426d4f465a7eacc9562b4772ca3649de",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "tanzania-source-inventory.json",
+      "sourcePath": "lib/cms/search-policy.ts",
+      "previousSha256": "42149357d686ac554be31d909349a0a81d9b7e4fe5508fbb8c4a8316d1e1a165",
+      "sha256": "5395aebc77e86c41d86b5773a9c3a71c52f18f4d5f0c035e0699f2a9596689a3",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "tanzania-source-inventory.json",
+      "sourcePath": "lib/site-search.ts",
+      "previousSha256": "a52950a1a8f27a3a0b0171c3725be97e7bf2608d02c66f031418ff514f07a461",
+      "sha256": "ef9c6a668bb0a169c27633d86f0cffc1379443673b39470bca87dd67a7d8fe85",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "guided-safaris-migration-inventory.json",
+      "sourcePath": "lib/cms/global-settings.ts",
+      "previousSha256": "cd5492faf79069af33b4adef942a0b817dbbd82b13caf26041cbf4e12819c460",
+      "sha256": "904eaaa0ec2fb8733bf828713b6a435f426d4f465a7eacc9562b4772ca3649de",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "guided-safaris-migration-inventory.json",
+      "sourcePath": "lib/cms/search-policy.ts",
+      "previousSha256": "42149357d686ac554be31d909349a0a81d9b7e4fe5508fbb8c4a8316d1e1a165",
+      "sha256": "5395aebc77e86c41d86b5773a9c3a71c52f18f4d5f0c035e0699f2a9596689a3",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "guided-safaris-migration-inventory.json",
+      "sourcePath": "lib/site-search.ts",
+      "previousSha256": "a52950a1a8f27a3a0b0171c3725be97e7bf2608d02c66f031418ff514f07a461",
+      "sha256": "ef9c6a668bb0a169c27633d86f0cffc1379443673b39470bca87dd67a7d8fe85",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "kenya-source-inventory.json",
+      "sourcePath": "lib/cms/global-settings.ts",
+      "previousSha256": "cd5492faf79069af33b4adef942a0b817dbbd82b13caf26041cbf4e12819c460",
+      "sha256": "904eaaa0ec2fb8733bf828713b6a435f426d4f465a7eacc9562b4772ca3649de",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "kenya-source-inventory.json",
+      "sourcePath": "lib/cms/search-policy.ts",
+      "previousSha256": "42149357d686ac554be31d909349a0a81d9b7e4fe5508fbb8c4a8316d1e1a165",
+      "sha256": "5395aebc77e86c41d86b5773a9c3a71c52f18f4d5f0c035e0699f2a9596689a3",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    },
+    {
+      "inventory": "kenya-source-inventory.json",
+      "sourcePath": "lib/site-search.ts",
+      "previousSha256": "a52950a1a8f27a3a0b0171c3725be97e7bf2608d02c66f031418ff514f07a461",
+      "sha256": "ef9c6a668bb0a169c27633d86f0cffc1379443673b39470bca87dd67a7d8fe85",
+      "reason": "Reviewed optional partner discovery category. Existing defaults, page content, layouts and assets remain unchanged."
+    }
+  ]
+}

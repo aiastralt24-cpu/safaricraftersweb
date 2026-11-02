@@ -141,10 +141,5 @@ body:has(.kenya-page) .footer-journey-cta { display:none; }
 .kenya-opening-band .kenya-prose > p:not(.kenya-lead) { color:#d1d7cc; }
 .kenya-opening-band + .kenya-places { padding-top:clamp(64px,8vw,120px); }
 
-.kenya-page .page-hero-destination > img { transform:scale(1.18); transform-origin:35% 90%; }
-@media (max-width:760px) {
-  .kenya-page .page-hero-destination > img { transform:none; }
-}
-
 .kenya-bento-heading { max-width:900px; }
 .kenya-bento-heading h2 { font-size:clamp(36px,4vw,56px); }

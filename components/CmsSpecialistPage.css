@@ -1,0 +1,33 @@
+.cms-specialist-page-section { padding-inline: clamp(20px, 4vw, 64px); overflow-wrap: anywhere; }
+.cms-specialist-page-section.background-paper { background: var(--paper, #f5f1e9); }
+.cms-specialist-page-section.background-white { background: #fff; }
+.cms-specialist-page-section.background-forest { background: #193e33; color: #fff; }
+.cms-specialist-page-section.background-ink { background: #17221d; color: #fff; }
+.cms-specialist-page-section.spacing-compact { padding-block: 32px; }
+.cms-specialist-page-section.spacing-standard { padding-block: 64px; }
+.cms-specialist-page-section.spacing-generous { padding-block: 100px; }
+.cms-specialist-page-section.align-center { text-align: center; }
+.cms-specialist-page-width { margin-inline: auto; }
+.cms-specialist-page-width.width-reading { max-width: 760px; }
+.cms-specialist-page-width.width-content { max-width: 1280px; }
+.cms-specialist-page-width.width-full { max-width: none; }
+.cms-specialist-page p, .cms-specialist-page li { white-space: pre-line; }
+.cms-specialist-page-buttons { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+.cms-specialist-page .align-center .cms-specialist-page-buttons { justify-content: center; }
+.cms-specialist-page .button { max-width: 100%; white-space: normal; }
+.cms-specialist-page-hero { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: center; gap: clamp(24px,5vw,64px); }
+.cms-specialist-page-hero figure { margin: 0; min-width: 0; }
+.cms-specialist-page-hero.media-start figure { order: -1; }
+.cms-specialist-page-hero img { display: block; width: 100%; height: auto; }
+.cms-specialist-page-hero figcaption { margin-top: 12px; font-size: .875rem; }
+.cms-specialist-page-hero .mobile-caption, .cms-specialist-page-hero .mobile-image { display: none; }
+.cms-specialist-page .background-forest :is(a,blockquote,.eyebrow), .cms-specialist-page .background-ink :is(a,blockquote,.eyebrow) { color: inherit; }
+.cms-specialist-page :is(.background-forest,.background-ink) :is(p,li,h1,h2,h3,h4,h5,figcaption) { color: inherit; }
+.cms-specialist-page .background-forest .button, .cms-specialist-page .background-ink .button { border-color: currentColor; }
+@media(max-width:860px) {
+ .cms-specialist-page-hero { grid-template-columns: minmax(0,1fr); }
+ .cms-specialist-page-hero.mobile-textFirst figure { order: 1; }
+ .cms-specialist-page-hero.mobile-mediaFirst figure { order: -1; }
+ .cms-specialist-page-hero .desktop-caption, .cms-specialist-page-hero .desktop-image { display: none; }
+ .cms-specialist-page-hero .mobile-caption, .cms-specialist-page-hero .mobile-image { display: block; }
+}

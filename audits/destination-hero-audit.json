@@ -1,0 +1,699 @@
+{
+  "results": [
+    {
+      "slug": "ranthambhore",
+      "status": 200,
+      "asset": "/assets/destinations/ranthambhore/ranthambhore-02.jpg",
+      "title": "Ranthambhore",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "jawai",
+      "status": 200,
+      "asset": "/assets/destinations/jawai/jawai-03.jpg",
+      "title": "Jawai",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "spiti-valley",
+      "status": 200,
+      "asset": "/assets/destinations/spiti-valley/spiti-valley-02.jpg",
+      "title": "Spiti Valley",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "ladakh",
+      "status": 200,
+      "asset": "/assets/safari-crafters/where-sky-meets-earth-ladakh-eda4b10b.jpg",
+      "title": "Ladakh",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "singalila",
+      "status": 200,
+      "asset": "/assets/safari-crafters/red-panda-61dc9dd9.jpg",
+      "title": "Singalila",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "bandhavgarh",
+      "status": 200,
+      "asset": "/assets/destinations/bandhavgarh/bandhavgarh-02.jpg",
+      "title": "Bandhavgarh",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "kanha",
+      "status": 200,
+      "asset": "/assets/destinations/kanha/kanha-01.jpg",
+      "title": "Kanha",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "pench",
+      "status": 200,
+      "asset": "/assets/destinations/pench/pench-01.jpg",
+      "title": "Pench",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "satpura",
+      "status": 200,
+      "asset": "/assets/destination-heroes/satpura.webp",
+      "title": "Satpura",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "tadoba",
+      "status": 200,
+      "asset": "/assets/destinations/tadoba/tadoba-01.jpg",
+      "title": "Tadoba",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "panna",
+      "status": 200,
+      "asset": "/assets/destinations/panna/panna-02.jpg",
+      "title": "Panna",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "kaziranga",
+      "status": 200,
+      "asset": "/assets/destinations/kaziranga/kaziranga-02.jpg",
+      "title": "Kaziranga",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "kabini",
+      "status": 200,
+      "asset": "/assets/destinations/kabini/kabini-05.jpg",
+      "title": "Kabini",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "bandipur",
+      "status": 200,
+      "asset": "/assets/destinations/bandipur/bandipur-03.jpg",
+      "title": "Bandipur",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "sunderbans",
+      "status": 200,
+      "asset": "/assets/destinations/sunderbans/sunderbans-02.jpg",
+      "title": "Sunderbans",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "pilibhit",
+      "status": 200,
+      "asset": "/assets/destination-heroes/pilibhit.webp",
+      "title": "Pilibhit",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "dudhwa",
+      "status": 200,
+      "asset": "/assets/destinations/dudhwa/dudhwa-02.jpg",
+      "title": "Dudhwa",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "kenya",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/kenya.webp",
+      "title": "Kenya",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "amboseli",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/amboseli.webp",
+      "title": "Amboseli",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "masai-mara",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/masai-mara.webp",
+      "title": "Masai Mara",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "lake-nakuru-and-naivasha",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/lake-nakuru-and-naivasha.webp",
+      "title": "Lake Nakuru and Naivasha",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "laikipia",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/laikipia.webp",
+      "title": "Laikipia",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "samburu",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/samburu.webp",
+      "title": "Samburu",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "mount-kenya",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/mount-kenya.webp",
+      "title": "Mount Kenya",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "tanzania",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/tanzania.webp",
+      "title": "Tanzania",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "serengeti",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/serengeti.webp",
+      "title": "Serengeti",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "ngorongoro",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/ngorongoro.webp",
+      "title": "Ngorongoro",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "lake-manyara",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/lake-manyara.webp",
+      "title": "Lake Manyara",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "tarangire",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/tarangire.webp",
+      "title": "Tarangire",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "uganda",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/uganda.webp",
+      "title": "Uganda",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "rwanda",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/rwanda.webp",
+      "title": "Rwanda",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "bwindi-impenetrable",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/bwindi-impenetrable.webp",
+      "title": "Bwindi Impenetrable",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "queen-elizabeth-national-park",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/queen-elizabeth-national-park.webp",
+      "title": "Queen Elizabeth National Park",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "kibale-national-park",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/kibale-national-park.webp",
+      "title": "Kibale National Park",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "murchison-falls-national-park",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/murchison-falls-national-park.webp",
+      "title": "Murchison Falls National Park",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "lake-mburo-national-park",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/lake-mburo-national-park.webp",
+      "title": "Lake Mburo National Park",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "zambia-and-zimbabwe",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/zambia-and-zimbabwe.webp",
+      "title": "Zambia & Zimbabwe",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "mana-pools",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/mana-pools.webp",
+      "title": "Mana Pools",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "hwange",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/hwange.webp",
+      "title": "Hwange",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "lower-zambezi",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/lower-zambezi.webp",
+      "title": "Lower Zambezi",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "south-luangwa",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/south-luangwa.webp",
+      "title": "South Luangwa",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "kafue-national-park",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/kafue-national-park.webp",
+      "title": "Kafue National Park",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "botswana",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/botswana.webp",
+      "title": "Botswana",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "okavango-delta",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/okavango-delta.webp",
+      "title": "Okavango Delta",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "chobe",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/chobe.webp",
+      "title": "Chobe",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "chitabe",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/chitabe.webp",
+      "title": "Chitabe",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "central-kalahari-game-reserve",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/central-kalahari-game-reserve.webp",
+      "title": "Central Kalahari Game Reserve",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "mashatu",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/mashatu.webp",
+      "title": "Mashatu",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "south-africa",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/south-africa.webp",
+      "title": "South Africa",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "kruger-national-park",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/kruger-national-park.webp",
+      "title": "Kruger National Park",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "sabi-sands",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/sabi-sands.webp",
+      "title": "Sabi Sands",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "madikwe-game-reserve",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/madikwe-game-reserve.webp",
+      "title": "Madikwe Game Reserve",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "whale-watching-in-cape-town",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/whale-watching-in-cape-town.webp",
+      "title": "Whale Watching in Cape Town",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "namibia",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/namibia.webp",
+      "title": "Namibia",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "etosha-national-park",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/etosha-national-park.webp",
+      "title": "Etosha National Park",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "damaraland",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/damaraland.webp",
+      "title": "Damaraland",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "sossusvlei",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/sossusvlei.webp",
+      "title": "Sossusvlei",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "brazil",
+      "status": 200,
+      "asset": "/assets/destinations/pantanal/supplied/05.webp",
+      "title": "Brazil",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "pantanal",
+      "status": 200,
+      "asset": "/assets/destinations/pantanal/supplied/01.webp",
+      "title": "Pantanal",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "amazonia",
+      "status": 200,
+      "asset": "/assets/destination-heroes/amazonia.webp",
+      "title": "Amazonia",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "iguazu-falls",
+      "status": 200,
+      "asset": "/assets/destination-heroes/iguazu-falls.webp",
+      "title": "Iguazu Falls",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "atlantic-rainforest",
+      "status": 200,
+      "asset": "/assets/destinations/atlantic-rainforest/supplied/01.webp",
+      "title": "Atlantic Rainforest",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "chile",
+      "status": 200,
+      "asset": "/assets/destinations/patagonia/supplied/02.webp",
+      "title": "Chile",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "patagonia",
+      "status": 200,
+      "asset": "/assets/destinations/patagonia/supplied/01.webp",
+      "title": "Patagonia",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "colombia",
+      "status": 200,
+      "asset": "/assets/destinations/colombia/supplied/01.webp",
+      "title": "Colombia",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "peru",
+      "status": 200,
+      "asset": "/assets/destination-heroes/peru.webp",
+      "title": "Peru",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "tambopata",
+      "status": 200,
+      "asset": "/assets/destination-heroes/tambopata.webp",
+      "title": "Tambopata",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "sacred-valley",
+      "status": 200,
+      "asset": "/assets/destination-heroes/sacred-valley.webp",
+      "title": "Sacred Valley",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "machu-picchu",
+      "status": 200,
+      "asset": "/assets/destination-heroes/machu-picchu.webp",
+      "title": "Machu Picchu",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "lake-titicaca",
+      "status": 200,
+      "asset": "/assets/destination-heroes/lake-titicaca.webp",
+      "title": "Lake Titicaca",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "costa-rica",
+      "status": 200,
+      "asset": "/assets/destinations/costa-rica/supplied/01.webp",
+      "title": "Costa Rica",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "svalbard",
+      "status": 200,
+      "asset": "/assets/destinations/svalbard/svalbard-02.jpg",
+      "title": "Svalbard",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "gir",
+      "status": 200,
+      "asset": "/assets/destinations/gir/gir-03.jpg",
+      "title": "Gir",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "rajaji",
+      "status": 200,
+      "asset": "/assets/destinations/rajaji/rajaji-03.jpg",
+      "title": "Rajaji",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "corbett",
+      "status": 200,
+      "asset": "/assets/destinations/corbett/corbett-01.jpg",
+      "title": "Corbett",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "velavadar",
+      "status": 200,
+      "asset": "/assets/destinations/velavadar/velavadar-02.jpg",
+      "title": "Velavadar",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "sattal-and-pangot",
+      "status": 200,
+      "asset": "/assets/destinations/sattal-and-pangot/sattal-and-pangot-04.jpg",
+      "title": "Sattal & Pangot",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "bharatpur-keoladeo",
+      "status": 200,
+      "asset": "/assets/destinations/bharatpur-keoladeo/bharatpur-keoladeo-03.jpg",
+      "title": "Bharatpur & Keoladeo",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "rann-of-kutch",
+      "status": 200,
+      "asset": "/assets/destinations/rann-of-kutch/rann-of-kutch-04.jpg",
+      "title": "Rann of Kutch",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "jhalana",
+      "status": 200,
+      "asset": "/assets/safari-crafters/jawai-leopard-portrait.JPG",
+      "title": "Jhalana",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "russia",
+      "status": 200,
+      "asset": "/assets/destinations/kamchatka/supplied/12.webp",
+      "title": "Russia",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "kamchatka",
+      "status": 200,
+      "asset": "/assets/destinations/kamchatka/supplied/13.webp",
+      "title": "Kamchatka",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "volcanoes-national-park",
+      "status": 200,
+      "asset": "/assets/destination-heroes/volcanoes-national-park.webp",
+      "title": "Volcanoes National Park",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "akagera-national-park",
+      "status": 200,
+      "asset": "/assets/destination-heroes/akagera-national-park.webp",
+      "title": "Akagera National Park",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "nyungwe-national-park",
+      "status": 200,
+      "asset": "/assets/destination-heroes/nyungwe-national-park.webp",
+      "title": "Nyungwe National Park",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "colombian-coffee-region",
+      "status": 200,
+      "asset": "/assets/destination-heroes/colombian-coffee-region.webp",
+      "title": "Colombian Coffee Region",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "choco-pacific-coast",
+      "status": 200,
+      "asset": "/assets/destination-heroes/choco-pacific-coast.webp",
+      "title": "Chocó Pacific Coast",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "llanos-orientales",
+      "status": 200,
+      "asset": "/assets/destination-heroes/llanos-orientales.webp",
+      "title": "Llanos Orientales",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "monteverde",
+      "status": 200,
+      "asset": "/assets/destination-heroes/monteverde.webp",
+      "title": "Monteverde Cloud Forest",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "corcovado",
+      "status": 200,
+      "asset": "/assets/destination-heroes/corcovado.webp",
+      "title": "Corcovado & Osa Peninsula",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "tortuguero",
+      "status": 200,
+      "asset": "/assets/destination-heroes/tortuguero.webp",
+      "title": "Tortuguero National Park",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "india",
+      "status": 200,
+      "asset": "/assets/destinations/ranthambhore/ranthambhore-01.jpg",
+      "title": "A subcontinent, read slowly.",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "zambia",
+      "status": 200,
+      "asset": "/assets/destination-heroes/zambia-country.webp",
+      "title": "Zambia",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "zimbabwe",
+      "status": 200,
+      "asset": "/assets/destination-heroes/zimbabwe-country.webp",
+      "title": "Zimbabwe",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "chile-and-argentina",
+      "status": 200,
+      "asset": "/assets/destinations/patagonia/supplied/05.webp",
+      "title": "Chile and Argentina",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "norway",
+      "status": 200,
+      "asset": "/assets/destinations/svalbard/svalbard-01.jpg",
+      "title": "Norway",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "africa",
+      "status": 200,
+      "asset": "/assets/africa-atlas-generated/hero.webp",
+      "title": "Africa, without the shorthand.",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "americas",
+      "status": 200,
+      "asset": "/assets/destinations/pantanal/supplied/02.webp",
+      "title": "A wilder western hemisphere.",
+      "zeroPlaces": 0
+    },
+    {
+      "slug": "arctic-beyond",
+      "status": 200,
+      "asset": "/assets/destinations/svalbard/svalbard-03.jpg",
+      "title": "At the edge of the map.",
+      "zeroPlaces": 0
+    }
+  ],
+  "duplicates": [],
+  "errors": []
+}

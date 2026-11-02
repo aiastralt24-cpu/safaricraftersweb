@@ -12,7 +12,16 @@ export default defineConfig({
   projectId,
   dataset,
   basePath: "/studio",
-  plugins: [structureTool(), visionTool()],
+  plugins: [structureTool({
+    structure: (S) => S.list().title("Content").items([
+      S.listItem().title("Homepage").id("homepage").child(S.document().schemaType("homepage").documentId("homepage")),
+      ...S.documentTypeListItems().filter(item => item.getId() !== "homepage")
+    ])
+  }), visionTool()],
+  document: {
+    newDocumentOptions: (options) => options.filter(option => option.templateId !== "homepage"),
+    actions: (actions, context) => context.schemaType === "homepage" ? actions.filter(action => action.action !== "duplicate") : actions
+  },
   schema: {
     types: schemaTypes
   }

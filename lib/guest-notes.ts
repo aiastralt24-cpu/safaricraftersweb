@@ -1,8 +1,8 @@
-import { testimonials } from "@/lib/data";
+import { testimonials, destinations, journeys, heroImage, siteContent } from "@/lib/data";
 
 const photographerNote = testimonials.find((item) => item.guestType === "Wildlife photographer");
 
-export const guestStories = [
+const archiveStories = [
   {
     name: "Pallavi Khemka",
     category: "Private journey",
@@ -59,3 +59,13 @@ export const guestStories = [
     href: "/journeys"
   }
 ];
+
+// A Sanity snapshot is authoritative: withdrawn notes must not reappear from the archive.
+const cmsStories = testimonials.filter(note => note.verified === true && note.consented === true).map(note => {
+  const destination = destinations.find(item => item.slug === note.destinationSlug);
+  const journey = journeys.find(item => item.slug === note.journeySlug);
+  const image = note.image || destination?.image || journey?.image || heroImage;
+  return {name: note.anonymous ? "Anonymous guest" : note.name, category: note.guestType || "Private journey", trip: note.trip, quote: note.quote, image: image.src, alt: image.alt,
+    href: journey ? `/journeys/${journey.slug}` : destination ? `/destinations/${destination.slug}` : "/journeys", anonymous: note.anonymous || false, video: note.video};
+});
+export const guestStories = siteContent.contentSource === "sanity" ? cmsStories : archiveStories;

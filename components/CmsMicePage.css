@@ -1,0 +1,17 @@
+.cms-mice-page .public-enquiry-form { min-width: 0; }
+.cms-mice-page .public-enquiry-form form { display: grid; gap: 20px; }
+.cms-mice-page .public-enquiry-form fieldset { min-width: 0; margin: 0; padding: 0; border: 0; display: grid; gap: 20px; }
+.cms-mice-page .cms-form-preview-field { display: grid; gap: 8px; min-width: 0; }
+.cms-mice-page .cms-form-preview-field label { font-size: 14px; line-height: 1.6; }
+.cms-mice-page .cms-form-preview-field :is(input:not([type='checkbox']), select, textarea) { box-sizing: border-box; width: 100%; min-width: 0; min-height: 48px; padding: 12px; border: 1px solid #72766a; border-radius: 2px; background: #fff; color: #25291f; font: inherit; font-size: 16px; }
+.cms-mice-page .cms-form-preview-field textarea { min-height: 144px; resize: vertical; }
+.cms-mice-page .cms-form-preview-field label:has(input[type='checkbox']) { display: flex; align-items: flex-start; gap: 12px; min-height: 44px; cursor: pointer; }
+.cms-mice-page .cms-form-preview-field input[type='checkbox'] { flex: 0 0 20px; width: 20px; height: 20px; margin: 3px 0 0; accent-color: #20372a; }
+.cms-mice-page .cms-form-preview-field small { font-size: 12px; line-height: 1.6; }
+.cms-mice-page .cms-form-preview-field small:empty { display: none; }
+.cms-mice-page .public-enquiry-form button { min-height: 48px; padding: 12px 20px; border: 1px solid currentColor; border-radius: 2px; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.cms-mice-page .public-enquiry-form button[type='submit'] { background: #20372a; color: #fff; border-color: #20372a; }
+.cms-mice-page .public-enquiry-form button:disabled { opacity: .6; cursor: not-allowed; }
+.cms-mice-page .public-enquiry-form :is(input, select, textarea, button):focus-visible { outline: 3px solid #a67c32; outline-offset: 3px; }
+.cms-mice-page .public-enquiry-form [aria-invalid='true'] { border-color: #b42318; }
+.cms-mice-page .public-enquiry-form [role='alert'] { padding: 12px; background: #fff0ed; color: #882118; line-height: 1.6; }

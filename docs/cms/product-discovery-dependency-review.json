@@ -1,0 +1,65 @@
+{
+  "reason": "Add published products to search type mapping and result union; original source hashes verified against each capture before replacement.",
+  "changes": [
+    {
+      "inventory": "private-aviation-migration-inventory.json",
+      "source": "lib/cms/search-policy.ts",
+      "before": "d993e97c48175f88caec30e705463e9232c937d00f49e3a74fcfbe26aeb5e93c",
+      "after": "e5ace73e00f8e583eaf1c146c882de783e6f4ae91bcd42319ef68ba2b8840632"
+    },
+    {
+      "inventory": "private-aviation-migration-inventory.json",
+      "source": "lib/site-search.ts",
+      "before": "72f1970311b261dc0c145b26157df4133093d3cf2512f2e7783bb2d3e7b9290e",
+      "after": "3fa14d12029dec26acfb0aa3e9c93f945e71a2edd68083c2721be197571bb626"
+    },
+    {
+      "inventory": "kenya-source-inventory.json",
+      "source": "lib/cms/search-policy.ts",
+      "before": "d993e97c48175f88caec30e705463e9232c937d00f49e3a74fcfbe26aeb5e93c",
+      "after": "e5ace73e00f8e583eaf1c146c882de783e6f4ae91bcd42319ef68ba2b8840632"
+    },
+    {
+      "inventory": "kenya-source-inventory.json",
+      "source": "lib/site-search.ts",
+      "before": "72f1970311b261dc0c145b26157df4133093d3cf2512f2e7783bb2d3e7b9290e",
+      "after": "3fa14d12029dec26acfb0aa3e9c93f945e71a2edd68083c2721be197571bb626"
+    },
+    {
+      "inventory": "concept-migration-inventory.json",
+      "source": "lib/cms/search-policy.ts",
+      "before": "d993e97c48175f88caec30e705463e9232c937d00f49e3a74fcfbe26aeb5e93c",
+      "after": "e5ace73e00f8e583eaf1c146c882de783e6f4ae91bcd42319ef68ba2b8840632"
+    },
+    {
+      "inventory": "concept-migration-inventory.json",
+      "source": "lib/site-search.ts",
+      "before": "72f1970311b261dc0c145b26157df4133093d3cf2512f2e7783bb2d3e7b9290e",
+      "after": "3fa14d12029dec26acfb0aa3e9c93f945e71a2edd68083c2721be197571bb626"
+    },
+    {
+      "inventory": "guided-safaris-migration-inventory.json",
+      "source": "lib/cms/search-policy.ts",
+      "before": "d993e97c48175f88caec30e705463e9232c937d00f49e3a74fcfbe26aeb5e93c",
+      "after": "e5ace73e00f8e583eaf1c146c882de783e6f4ae91bcd42319ef68ba2b8840632"
+    },
+    {
+      "inventory": "guided-safaris-migration-inventory.json",
+      "source": "lib/site-search.ts",
+      "before": "72f1970311b261dc0c145b26157df4133093d3cf2512f2e7783bb2d3e7b9290e",
+      "after": "3fa14d12029dec26acfb0aa3e9c93f945e71a2edd68083c2721be197571bb626"
+    },
+    {
+      "inventory": "tanzania-source-inventory.json",
+      "source": "lib/cms/search-policy.ts",
+      "before": "d993e97c48175f88caec30e705463e9232c937d00f49e3a74fcfbe26aeb5e93c",
+      "after": "e5ace73e00f8e583eaf1c146c882de783e6f4ae91bcd42319ef68ba2b8840632"
+    },
+    {
+      "inventory": "tanzania-source-inventory.json",
+      "source": "lib/site-search.ts",
+      "before": "72f1970311b261dc0c145b26157df4133093d3cf2512f2e7783bb2d3e7b9290e",
+      "after": "3fa14d12029dec26acfb0aa3e9c93f945e71a2edd68083c2721be197571bb626"
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "deserts-lions-dunesan-expedition-into-indias-wild-heart": {
+    "hero": {
+      "src": "/assets/destinations/gir/field-photographs/834159d44bdd.webp",
+      "alt": "Asiatic lion resting in Gir forest",
+      "credit": "Safari Crafters archive",
+      "focalPoint": "60% 35%"
+    },
+    "gallery": [
+      {
+        "src": "/assets/destinations/gir/field-photographs/176c394bbec8.webp",
+        "alt": "Two lions walking together along a forest track — Gir",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/velavadar/field-photographs/fcf7e2317e76.webp",
+        "alt": "Blackbuck herd silhouetted in golden light at Velavadar",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/velavadar/field-photographs/01b64455a004.webp",
+        "alt": "Male blackbuck leaping above Velavadar’s golden grassland",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/rann-of-kutch/field-photographs/b74fecc61357.webp",
+        "alt": "Wild asses crossing the Rann of Kutch beneath a warm evening sky",
+        "credit": "Safari Crafters archive",
+        "focalPoint": "50% 45%"
+      },
+      {
+        "src": "/assets/destinations/rann-of-kutch/field-photographs/ec5b25a89ce3.webp",
+        "alt": "Desert fox crossing the open salt flats — Rann of Kutch",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/jawai/field-photographs/eef269a96892.webp",
+        "alt": "Two leopard cubs at the entrance of a granite cave in Jawai",
+        "credit": "Safari Crafters archive",
+        "focalPoint": "60% 40%"
+      },
+      {
+        "src": "/assets/destinations/jawai/field-photographs/d042418feee5.webp",
+        "alt": "Leopard standing beside a rocky cave — Jawai",
+        "credit": "Safari Crafters archive"
+      }
+    ],
+    "wildlifeFocus": "Asiatic lion · Leopard · Blackbuck · Indian wolf · Asiatic wild ass · Desert wildlife",
+    "coverageNotes": "No verified Desert National Park image selected. Photographs show the named Gir, Velavadar, Rann of Kutch and Jawai stops only.",
+    "tagline": "From lion country to the Thar."
+  },
+  "phantoms-of-the-wild-indias-elusive-small-cats-safari": {
+    "hero": {
+      "src": "/assets/destinations/velavadar/field-photographs/fb81084d9f8d.webp",
+      "alt": "Jungle cat walking across open ground at Velavadar",
+      "credit": "Safari Crafters archive",
+      "focalPoint": "50% 100%"
+    },
+    "gallery": [
+      {
+        "src": "/assets/destinations/velavadar/field-photographs/81bdbb282fde.webp",
+        "alt": "Jungle cat watching from tall grass at Velavadar",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/velavadar/field-photographs/fcf7e2317e76.webp",
+        "alt": "Blackbuck herd silhouetted in golden light at Velavadar",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/velavadar/field-photographs/65ae2ee0069e.webp",
+        "alt": "Flamingos standing in shallow water at Velavadar",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/velavadar/field-photographs/366523745a27.webp",
+        "alt": "Blackbuck bounding across open grassland at Velavadar",
+        "credit": "Safari Crafters archive"
+      }
+    ],
+    "wildlifeFocus": "Fishing cat · Jungle cat · Rusty-spotted cat · Desert cat",
+    "coverageNotes": "Only verified Velavadar wildlife and habitat photos are used. Kolkata fishing-cat, Jawai rusty-spotted-cat and Desert National Park photo locations remain unverified. No unrelated cat photographs substituted.",
+    "tagline": "Four habitats. Four elusive cats."
+  },
+  "where-rivers-forests-tigers-thriveterrific-terai": {
+    "hero": {
+      "src": "/assets/destinations/dudhwa/field-photographs/2c8f5cacf45e.webp",
+      "alt": "Tiger approaching along a misty forest track in Dudhwa",
+      "credit": "Safari Crafters archive",
+      "focalPoint": "58% 35%"
+    },
+    "gallery": [
+      {
+        "src": "/assets/destinations/corbett/corbett-01.jpg",
+        "alt": "Tiger in Corbett's tall grass",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/rajaji/field-photographs/5a8d188b1121.webp",
+        "alt": "Asian elephant family walking through Rajaji forest",
+        "credit": "Safari Crafters archive",
+        "focalPoint": "50% 35%"
+      },
+      {
+        "src": "/assets/destinations/rajaji/field-photographs/0d2bbd820b4b.webp",
+        "alt": "Elephant and calf beneath tall trees in Rajaji",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/dudhwa/field-photographs/890a5e089ae5.webp",
+        "alt": "One-horned rhinoceros on a forest track in Dudhwa",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/dudhwa/field-photographs/ab37309a7e74.webp",
+        "alt": "Two tigers beside a Dudhwa waterhole",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/dudhwa/field-photographs/1e5e395ce4a5.webp",
+        "alt": "Tall trees lining a shaded forest trail — Dudhwa",
+        "credit": "Safari Crafters archive"
+      }
+    ],
+    "wildlifeFocus": "Tiger · Leopard · Elephant · Swamp deer · Wetland birds",
+    "coverageNotes": "Pilibhit photo omitted: the old destination record pointed to Ranthambhore. Other images retain Corbett, Rajaji and Dudhwa location labels.",
+    "tagline": "Follow the forests of the Terai."
+  },
+  "roar-trumpet-wingbeat-uttarakhands-wilderness-circuit": {
+    "hero": {
+      "src": "/assets/destinations/rajaji/field-photographs/5a8d188b1121.webp",
+      "alt": "Asian elephant family walking through Rajaji forest",
+      "credit": "Safari Crafters archive",
+      "focalPoint": "50% 35%"
+    },
+    "gallery": [
+      {
+        "src": "/assets/destinations/corbett/corbett-01.jpg",
+        "alt": "Tiger in Corbett's tall grass",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/rajaji/field-photographs/0d2bbd820b4b.webp",
+        "alt": "Elephant and calf beneath tall trees in Rajaji",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/sattal-and-pangot/field-photographs/d6ea8bb954be.webp",
+        "alt": "Parakeet perched on a branch in the Sattal and Pangot forests — Sattal & Pangot",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/sattal-and-pangot/field-photographs/8b090434c5e6.webp",
+        "alt": "Black-lored tit perched on a stem at Sattal — Sattal & Pangot",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/sattal-and-pangot/field-photographs/dbe4c183c1f2.webp",
+        "alt": "Kalij pheasant in the forest at Sattal — Sattal & Pangot",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/sattal-and-pangot/field-photographs/118e7fd79695.webp",
+        "alt": "Colourful barbet portrait in the Sattal and Pangot forests — Sattal & Pangot",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/sattal-and-pangot/field-photographs/a8e483db55d0.webp",
+        "alt": "Small bird and its reflection beside a forest pool at Sattal and Pangot — Sattal & Pangot",
+        "credit": "Safari Crafters archive"
+      }
+    ],
+    "wildlifeFocus": "Tiger · Elephant · Leopard · Himalayan birdlife",
+    "coverageNotes": "Verified Corbett, Rajaji and Sattal/Pangot photographs. No photograph labelled as Chopta without source evidence.",
+    "tagline": "From river valleys to Himalayan forests."
+  },
+  "where-sky-meets-earthladakh-realm-of-the-snow-leopard": {
+    "hero": {
+      "src": "/assets/destinations/ladakh/field-photographs/0f71412edf77.webp",
+      "alt": "Snow leopard climbing a rocky cliff in Ladakh",
+      "credit": "Safari Crafters archive"
+    },
+    "gallery": [
+      {
+        "src": "/assets/destinations/ladakh/field-photographs/40974ed870e8.webp",
+        "alt": "Mountain lake beneath glowing clouds in Ladakh",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/ladakh/field-photographs/4e42c5499d7a.webp",
+        "alt": "Snow leopard resting on a stony mountainside — Ladakh",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/ladakh/field-photographs/aca22880c7f4.webp",
+        "alt": "Marmot standing in an alpine meadow — Ladakh",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/ladakh/field-photographs/187e71e2741b.webp",
+        "alt": "Black-necked crane walking through a high-altitude meadow — Ladakh",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/ladakh/field-photographs/7040322e3566.webp",
+        "alt": "Mountain lake surrounded by green wetland and golden slopes — Ladakh",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/ladakh/field-photographs/c7b6d8d2d92d.webp",
+        "alt": "River winding through a dramatic mountain valley — Ladakh",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/ladakh/field-photographs/527fd5b76604.webp",
+        "alt": "Hillside monastery beneath dramatic clouds in Ladakh",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/ladakh/field-photographs/7e10664aaacf.webp",
+        "alt": "Leh illuminated at dusk beneath the mountains — Ladakh",
+        "credit": "Safari Crafters archive"
+      }
+    ],
+    "wildlifeFocus": "Snow leopard · Pallas’ cat · Blue sheep · Ibex · High-altitude birds",
+    "coverageNotes": "All photographs come from the supplied Ladakh collection; regional labels retained without asserting a precise lake or valley. No verified Hanle Pallas’ cat photograph available.",
+    "tagline": "Into the snow leopard’s mountain world."
+  },
+  "royal-rajasthan-safari": {
+    "hero": {
+      "src": "/assets/destinations/ranthambhore/field-photographs/2b4793d79ff4.webp",
+      "alt": "Tiger resting beside an old stone doorway in Ranthambhore",
+      "credit": "Safari Crafters archive",
+      "focalPoint": "60% 85%"
+    },
+    "gallery": [
+      {
+        "src": "/assets/safari-crafters/amer-fort-original-scaled-31b56cd7.jpg",
+        "alt": "Amer Fort in Jaipur",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/ranthambhore/field-photographs/2e257fb21a8f.webp",
+        "alt": "Tiger family walking along a forest track in Ranthambhore",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/destinations/ranthambhore/field-photographs/8b4d115003ed.webp",
+        "alt": "Tiger beside a Ranthambhore lake beneath rocky cliffs",
+        "credit": "Safari Crafters archive",
+        "focalPoint": "62% 50%"
+      },
+      {
+        "src": "/assets/destinations/ranthambhore/field-photographs/14f02d734699.webp",
+        "alt": "Two tigers interacting in the water at Ranthambhore",
+        "credit": "Safari Crafters archive"
+      },
+      {
+        "src": "/assets/safari-crafters/taj-mahal-ed1c7535.jpg",
+        "alt": "The Taj Mahal in Agra",
+        "credit": "Safari Crafters archive"
+      }
+    ],
+    "wildlifeFocus": "Bengal tiger · Leopard · Sloth bear · Royal heritage",
+    "coverageNotes": "Jaipur and Agra archive landmarks, plus verified Ranthambhore photographs. Previous off-route Jawai/Udaipur imagery removed.",
+    "tagline": "Royal cities and the realm of the tiger."
+  }
+}

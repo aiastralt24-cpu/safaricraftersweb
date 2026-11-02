@@ -15,29 +15,63 @@
     "studio": "sanity dev",
     "sanity:seed": "node scripts/seed-sanity.mjs",
     "test:reliability": "node --experimental-strip-types --test tests/reliability.test.mjs",
-    "check:launch": "node scripts/check-launch.mjs"
+    "check:launch": "node scripts/check-launch.mjs",
+    "cms:check-staging": "node --experimental-strip-types scripts/cms/check-staging.mjs",
+    "cms:check": "node scripts/publish-content.mjs --check",
+    "test:cms": "node --test tests/cms-snapshot.test.mjs",
+    "cms:drafts": "node scripts/enrich-cms-drafts.mjs",
+    "cms:check-drafts": "node scripts/publish-content.mjs --check --drafts",
+    "test:cms-import": "node --experimental-strip-types --test tests/cms-import.test.mjs tests/cms-import-file.test.mjs tests/cms-import-review.test.mjs tests/cms-import-api.test.mjs",
+    "cms:import-check": "node --experimental-strip-types scripts/check-cms-import.mjs",
+    "cms:inventory": "node scripts/inventory-cms.mjs",
+    "test:cms-composition": "node --experimental-strip-types --test tests/cms-composition.test.mjs",
+    "test:cms-gateway": "node --experimental-strip-types --test tests/cms-gateway.test.mjs",
+    "test:cms-delivery": "node --experimental-strip-types --test tests/cms-delivery-worker.test.mjs",
+    "test:cms-editor": "node --experimental-strip-types --test tests/cms-editor-api.test.mjs",
+    "test:cms-db": "node --test tests/cms-database.test.mjs",
+    "test:cms-workspace": "node --experimental-strip-types --test tests/cms-browser-config.test.mjs tests/cms-journey-editor.test.mjs tests/cms-journey-collections.test.mjs tests/cms-media-selection.test.mjs",
+    "test:cms-validation": "node --experimental-strip-types --test tests/cms-content-validation.test.mjs tests/cms-validation-worker.test.mjs",
+    "test:cms-images": "node --experimental-strip-types --test tests/cms-image-inspection.test.mjs",
+    "test:cms-uploads": "node --experimental-strip-types --test tests/cms-upload-api.test.mjs tests/cms-upload-worker.test.mjs tests/cms-upload-transfer.test.mjs",
+    "test:cms-media": "node --experimental-strip-types --test tests/cms-media-api.test.mjs tests/cms-media-preview.test.mjs",
+    "test:cms-references": "node --experimental-strip-types --test tests/cms-reference-api.test.mjs",
+    "test:cms-settings": "node --experimental-strip-types --test tests/cms-global-settings.test.mjs tests/cms-settings-review-api.test.mjs tests/cms-settings-api.test.mjs",
+    "test:cms-navigation": "node --experimental-strip-types --test tests/cms-navigation.test.mjs",
+    "cms:plan-migrations": "node --experimental-strip-types scripts/cms/plan-migrations.mjs",
+    "cms:check-attachments": "node --experimental-strip-types scripts/cms/check-attachments.mjs"
   },
   "dependencies": {
-    "@sanity/client": "^7.22.0",
-    "@sanity/vision": "^5.23.0",
+    "@sanity/client": "^7.27.0",
+    "@sanity/vision": "^6.20.0",
+    "@supabase/supabase-js": "^2.118.0",
+    "fast-xml-parser": "^5.11.2",
     "gsap": "^3.15.0",
     "lucide-react": "^0.468.0",
     "next": "16.2.4",
-    "next-sanity": "^12.4.0",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "sanity": "^5.23.0"
+    "next-sanity": "^13.3.4",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "sanity": "^6.20.0",
+    "sharp": "0.34.5",
+    "styled-components": "^6.6.0",
+    "yauzl": "^3.4.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.11",
     "@playwright/test": "^1.61.1",
     "@types/node": "^20.17.10",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
+    "@types/yauzl": "^3.4.0",
     "eslint": "^9.16.0",
     "eslint-config-next": "16.2.4",
     "typescript": "^5.7.2"
   },
   "overrides": {
     "postcss": "8.5.13"
+  },
+  "engines": {
+    "node": ">=22.12"
   }
 }

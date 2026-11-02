@@ -1,0 +1,33 @@
+.cms-expedition-page-section { padding-inline: clamp(20px, 4vw, 64px); overflow-wrap: anywhere; }
+.cms-expedition-page-section.background-paper { background: var(--paper, #f5f1e9); }
+.cms-expedition-page-section.background-white { background: #fff; }
+.cms-expedition-page-section.background-forest { background: #193e33; color: #fff; }
+.cms-expedition-page-section.background-ink { background: #17221d; color: #fff; }
+.cms-expedition-page-section.spacing-compact { padding-block: 32px; }
+.cms-expedition-page-section.spacing-standard { padding-block: 64px; }
+.cms-expedition-page-section.spacing-generous { padding-block: 100px; }
+.cms-expedition-page-section.align-center { text-align: center; }
+.cms-expedition-page-width { margin-inline: auto; }
+.cms-expedition-page-width.width-reading { max-width: 760px; }
+.cms-expedition-page-width.width-content { max-width: 1280px; }
+.cms-expedition-page-width.width-full { max-width: none; }
+.cms-expedition-page p, .cms-expedition-page li { white-space: pre-line; }
+.cms-expedition-page-buttons { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+.cms-expedition-page .align-center .cms-expedition-page-buttons { justify-content: center; }
+.cms-expedition-page .button { max-width: 100%; white-space: normal; }
+.cms-expedition-page-hero { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: center; gap: clamp(24px,5vw,64px); }
+.cms-expedition-page-hero figure { margin: 0; min-width: 0; }
+.cms-expedition-page-hero.media-start figure { order: -1; }
+.cms-expedition-page-hero img { display: block; width: 100%; height: auto; }
+.cms-expedition-page-hero figcaption { margin-top: 12px; font-size: .875rem; }
+.cms-expedition-page-hero .mobile-caption, .cms-expedition-page-hero .mobile-image { display: none; }
+.cms-expedition-page .background-forest :is(a,blockquote,.eyebrow), .cms-expedition-page .background-ink :is(a,blockquote,.eyebrow) { color: inherit; }
+.cms-expedition-page :is(.background-forest,.background-ink) :is(p,li,h1,h2,h3,h4,h5,figcaption) { color: inherit; }
+.cms-expedition-page .background-forest .button, .cms-expedition-page .background-ink .button { border-color: currentColor; }
+@media(max-width:860px) {
+ .cms-expedition-page-hero { grid-template-columns: minmax(0,1fr); }
+ .cms-expedition-page-hero.mobile-textFirst figure { order: 1; }
+ .cms-expedition-page-hero.mobile-mediaFirst figure { order: -1; }
+ .cms-expedition-page-hero .desktop-caption, .cms-expedition-page-hero .desktop-image { display: none; }
+ .cms-expedition-page-hero .mobile-caption, .cms-expedition-page-hero .mobile-image { display: block; }
+}

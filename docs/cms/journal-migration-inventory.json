@@ -1,0 +1,487 @@
+{
+  "version": 1,
+  "source": "content/site-content.json#journal",
+  "operation": "review_only",
+  "sourceDigest": "5b4e7347670d7b76a2106c155b47a8824d85389c137e9b0d15baaa335198275c",
+  "count": 15,
+  "readyDrafts": 0,
+  "articles": [
+    {
+      "slug": "achieving-low-angle-on-a-wildlife-safari",
+      "sourceKey": "snapshot:4ce9f27f918dc5ff0ddff0a12963e0cf8233213bbf8fc11e20df834d683d6525",
+      "paragraphs": 11,
+      "originalDate": "February 20, 2026",
+      "proposedDate": "2026-02-20",
+      "heroSourcePath": "gallery.1",
+      "retainedGalleryPaths": [
+        "gallery.0"
+      ],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-02-20; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery",
+          "message": "The current website hides some gallery images. Their original descriptors and mappings remain in this migration review; the proposed gallery matches the current visible subset.",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "slug": "booking-wildlife-safaris-how-early-is-not-too-late",
+      "sourceKey": "snapshot:5497e2a24de67a06bcce0547c277f8064825ebf2abe523f1f61722b1c8168f8a",
+      "paragraphs": 10,
+      "originalDate": "December 26, 2025",
+      "proposedDate": "2025-12-26",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2025-12-26; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "indias-silent-sovereign-the-leopard-and-the-art-of-living",
+      "sourceKey": "snapshot:9add180448b7a8e44728b8d3cd086c7eeb1dec502710c61d0c891de004d80212",
+      "paragraphs": 11,
+      "originalDate": "January 20, 2026",
+      "proposedDate": "2026-01-20",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-01-20; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "living-by-old-ways-the-rebari-reverence-for-nature",
+      "sourceKey": "snapshot:d06d6bec60bc7e4f7b1a9364980e52c75d8a83ad0bdaed798275bd266515642a",
+      "paragraphs": 10,
+      "originalDate": "January 10, 2026",
+      "proposedDate": "2026-01-10",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-01-10; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "the-golden-moment-matters-more-than-the-golden-hour",
+      "sourceKey": "snapshot:df09cfe9a13b6e118ad9a6195753c3fa76ea555b316be382d910ba0ea30ba271",
+      "paragraphs": 8,
+      "originalDate": "January 3, 2026",
+      "proposedDate": "2026-01-03",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-01-03; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "what-to-pack-for-a-snow-leopard-safari",
+      "sourceKey": "snapshot:c228d95d973080670459a82855afac744455833fb3aac55da6f9a3cff44a5ff9",
+      "paragraphs": 11,
+      "originalDate": "February 2, 2026",
+      "proposedDate": "2026-02-02",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-02-02; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.2",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.3",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "bandhavgarh-paradise-of-stone-stripes-and-roots",
+      "sourceKey": "snapshot:799fcfb227efc005a3ea6a0678c3f3364c6cf3f1113213334b992b647fc7fe3a",
+      "paragraphs": 6,
+      "originalDate": "August 3, 2026",
+      "proposedDate": "2026-08-03",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-08-03; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "the-dawn-of-immersive-safaris-in-india",
+      "sourceKey": "snapshot:108215d1a4343ea83b33d6e51ee14b52d955b8fb004d99a4fd6f70b919678322",
+      "paragraphs": 6,
+      "originalDate": "August 3, 2026",
+      "proposedDate": "2026-08-03",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-08-03; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "photo-safaris-and-why-they-matter",
+      "sourceKey": "snapshot:737a01f77822e6fdf24b3b47ecaa87a5bffefef6e1c13ede2ed735a038a89188",
+      "paragraphs": 7,
+      "originalDate": "August 3, 2026",
+      "proposedDate": "2026-08-03",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-08-03; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "wildlife-travel-for-first-timers",
+      "sourceKey": "snapshot:04ec625333116386f38788978cc8bb3d954cb18455aabc16126f9bd941c496bb",
+      "paragraphs": 7,
+      "originalDate": "August 3, 2026",
+      "proposedDate": "2026-08-03",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-08-03; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "svalbard-where-the-white-breathes-blue",
+      "sourceKey": "snapshot:7fd9ccb80d26e95c591a123f26424daa8a897dbd2bd9117b10d9618e43cf551b",
+      "paragraphs": 5,
+      "originalDate": "August 3, 2026",
+      "proposedDate": "2026-08-03",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-08-03; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.1",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "wildlife-destinations-in-india-that-come-alive-in-the-monsoon",
+      "sourceKey": "snapshot:f5f71a2faf610552b124cdcda1630e9979b9195de8a9d62d3f7104d2460356cd",
+      "paragraphs": 9,
+      "originalDate": "August 3, 2026",
+      "proposedDate": "2026-08-03",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-08-03; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "laikipia-the-land-of-the-black-leopard",
+      "sourceKey": "snapshot:83554f877276f5205255c3261b95fef1d6962a2e8ebf86433d154ffb7c136de7",
+      "paragraphs": 7,
+      "originalDate": "August 3, 2026",
+      "proposedDate": "2026-08-03",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-08-03; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "indias-small-cats-in-the-margins-of-the-wild",
+      "sourceKey": "snapshot:17055a15f26897dadc72f742a64bf299e23f706d9b2598fee5fe5cc5131e18b4",
+      "paragraphs": 7,
+      "originalDate": "August 3, 2026",
+      "proposedDate": "2026-08-03",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-08-03; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "slug": "mapping-seasons-how-a-forest-changes-its-personality",
+      "sourceKey": "snapshot:48aac11a280aed32c162cba1b815ddab763e5f7ebee8521c2dc8aeeaf76d66e6",
+      "paragraphs": 14,
+      "originalDate": "August 3, 2026",
+      "proposedDate": "2026-08-03",
+      "heroSourcePath": "gallery.0",
+      "retainedGalleryPaths": [],
+      "issues": [
+        {
+          "field": "date",
+          "message": "Calendar date preserved as 2026-08-03; original display wording is retained in the snapshot.",
+          "severity": "warning"
+        },
+        {
+          "field": "image",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        },
+        {
+          "field": "gallery.0",
+          "message": "Map this image to an inspected CMS asset, retaining its exact alternative text and credit.",
+          "severity": "error"
+        }
+      ]
+    }
+  ]
+}

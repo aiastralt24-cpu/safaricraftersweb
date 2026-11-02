@@ -66,7 +66,7 @@ export function Footer() {
               <Instagram size={18} />
             </a>
             <a
-              href="https://www.facebook.com/safaricrafters/"
+              href="https://www.facebook.com/profile.php?id=61574511053895"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Safari Crafters on Facebook (opens in a new tab)"

@@ -1,0 +1,8 @@
+import {z} from 'zod';
+const uuid=z.string().uuid();
+export const claimSnapshot=z.object({statement:z.string().min(1).max(2000),reviewOn:z.iso.date(),evidence:z.array(z.object({recordId:uuid,revisionId:uuid,title:z.string(),assetId:uuid,fileRevision:z.number().int().positive()}).strict()).min(1).max(30)}).strict();
+const scope={site:uuid,record:uuid,revision:uuid,claim:uuid};
+export const claimReviewCommand=z.discriminatedUnion('action',[z.object({action:z.literal('review'),...scope}).strict(),z.object({action:z.literal('approve'),...scope,assignment:z.number().int().positive(),snapshot:claimSnapshot,attested:z.literal(true)}).strict()]);
+const schema=z.object({websiteId:uuid,recordId:uuid,revisionId:uuid,claimId:uuid,assignmentVersion:z.number().int().nonnegative(),snapshot:claimSnapshot.nullable(),canApprove:z.boolean(),approvalId:uuid.nullable()}).strict();
+export type ClaimReview=z.infer<typeof schema>;
+export function verifiedClaimReview(input:unknown,site:string,record:string,revision:string,claim:string){const value=schema.parse(input);if(value.websiteId!==site||value.recordId!==record||value.revisionId!==revision||value.claimId!==claim||(!value.snapshot&&(value.canApprove||value.approvalId))||(value.snapshot&&new Set(value.snapshot.evidence.map(e=>e.recordId)).size!==value.snapshot.evidence.length))throw Error('Claim review response mismatch.');return value;}

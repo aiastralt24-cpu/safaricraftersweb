@@ -1,0 +1,21 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {randomUUID} from 'node:crypto';
+import {newPhotoExpedition} from '../lib/cms/photo-expeditions.ts';
+import {newGlobalSettings} from '../lib/cms/global-settings.ts';
+import {projectPublishedExpedition} from '../lib/cms/published-expedition.ts';
+import {publishedExpeditionMetadata,publishedExpeditionSitemapEntry,usesCmsExpedition} from '../lib/cms/expedition-route.ts';
+function fixture(){const site=randomUUID(),form=randomUUID(),revision=randomUUID(),image={assetId:'forest',alt:'Forest',decorative:false},base=newPhotoExpedition();return projectPublishedExpedition({websiteId:site,recordId:randomUUID(),revisionId:revision,type:'photoExpedition',locale:'en',payload:{...base,slug:'forest',title:'Forest expedition',category:'Photography',skill:'All',groupSize:'Six',duration:'Five days',description:'Editorial description',intro:'Explore',mentor:'Mentor',heroTitle:'Forest',heroCopy:'Morning',price:'INR 1,20,000 + tax',image,heroImage:image,enquiry:{...base.enquiry,form:{recordId:form}}}},site,'/photo-expeditions/forest','en',{specialists:[],form:{websiteId:site,recordId:form,publishedRevisionId:revision,type:'form',locale:'en'}},'2028-02-29');}
+test('expedition SEO resolves editorial defaults into absolute canonical and authorized image URLs',()=>{
+ const expedition=fixture(),metadata=publishedExpeditionMetadata(expedition,undefined,'https://site.test');assert.deepEqual(metadata.title,{absolute:'Forest expedition'});assert.equal(metadata.description,'Editorial description');assert.equal(metadata.alternates.canonical,'https://site.test/photo-expeditions/forest');assert.deepEqual(metadata.openGraph.images,[{url:'https://site.test/api/cms/published/media/forest',alt:'Forest'}]);assert.deepEqual(publishedExpeditionSitemapEntry(expedition,undefined,'https://site.test'),{url:'https://site.test/photo-expeditions/forest'});
+});
+test('expedition SEO preserves explicit overrides and enforces website indexing restrictions',()=>{
+ const expedition=fixture();expedition.content.seo={...expedition.content.seo,title:'Search title',description:'Search description',socialTitle:'Sharing title',socialDescription:'Sharing description',socialImage:{assetId:'social',alt:'Decorative',decorative:true},indexing:'index',following:'nofollow',sitemap:'include'};
+ const defaults={...newGlobalSettings().seo,indexing:'noindex'},metadata=publishedExpeditionMetadata(expedition,defaults,'https://site.test');assert.deepEqual(metadata.title,{absolute:'Search title'});assert.equal(metadata.description,'Search description');assert.equal(metadata.openGraph.title,'Sharing title');assert.equal(metadata.twitter.description,'Sharing description');assert.equal(metadata.openGraph.images[0].alt,'');assert.deepEqual(metadata.robots,{index:false,follow:false});assert.equal(publishedExpeditionSitemapEntry(expedition,defaults,'https://site.test'),null);
+});
+test('expedition sitemap excludes canonical overrides, explicit exclusions and noindex without invented timestamps',()=>{
+ for(const patch of [{canonical:'https://other.test/page'},{sitemap:'exclude'},{indexing:'noindex',sitemap:'include'}]){const expedition=fixture();Object.assign(expedition.content.seo,patch);assert.equal(publishedExpeditionSitemapEntry(expedition,undefined,'https://site.test'),null);}
+ const expedition=fixture(),defaults={...newGlobalSettings().seo,description:'Website description'};const metadata=publishedExpeditionMetadata(expedition,defaults,'https://site.test');assert.deepEqual(metadata.title,{absolute:'Forest expedition | Safari Crafters'});assert.equal(metadata.description,'Website description');assert.equal('lastModified' in publishedExpeditionSitemapEntry(expedition,defaults,'https://site.test'),false);
+ for(const origin of ['http://site.test','https://user:pass@site.test','https://site.test/path'])assert.throws(()=>publishedExpeditionMetadata(expedition,defaults,origin));
+});
+test('expedition rendering selection is explicitly opt-in',()=>{assert.equal(usesCmsExpedition({}),false);assert.equal(usesCmsExpedition({CMS_EXPEDITION_DELIVERY_ENABLED:'false'}),false);assert.equal(usesCmsExpedition({CMS_EXPEDITION_DELIVERY_ENABLED:'true'}),true);});

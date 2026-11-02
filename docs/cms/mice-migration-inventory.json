@@ -1,0 +1,786 @@
+{
+  "schemaVersion": 1,
+  "mode": "legacy-read-only",
+  "path": "/mice",
+  "capturedAt": "2026-10-28T12:17:53.639Z",
+  "origin": "http://localhost:3002",
+  "sources": [
+    {
+      "sourcePath": "app/mice/page.tsx",
+      "sha256": "7b4e6e5caf1368ad099ac90567818da77ccc6841a9d89560179395b3672d5513"
+    },
+    {
+      "sourcePath": "app/mice/LegacyMicePage.tsx",
+      "sha256": "3356e3696dc065a4d71c2457acd6e8627cb1e1ca0af5bedd3e1bc5c44f3b14d7"
+    },
+    {
+      "sourcePath": "app/mice/mice.css",
+      "sha256": "5f52d0d3324d8afeb9bb3d4e32304a9ca8051edb35a2697d6a18a2c88a62a073"
+    },
+    {
+      "sourcePath": "components/PageHero.tsx",
+      "sha256": "919596439b4989acf6334dc0a65b5f891f134addbf6fed5c67f17560bf15206c"
+    },
+    {
+      "sourcePath": "components/PageHero.css",
+      "sha256": "c4559c9f2789ba0be35172f7dfddacf57fee7edba5b7f4b9d018b5d4a8e13988"
+    },
+    {
+      "sourcePath": "components/Breadcrumbs.tsx",
+      "sha256": "61ceb5397fb34cfe49f7c98bea6d1b3e418cf2b83a39888abf83d6ee02d6be93"
+    },
+    {
+      "sourcePath": "components/ContactForm.tsx",
+      "sha256": "57f3ffe5c28715f1eb35c4ce26aae60c3a7b7a14579ca3842034370227ac07b6"
+    },
+    {
+      "sourcePath": "components/EnquiryHoneypot.tsx",
+      "sha256": "d9bed4400906c56e366c50cb12bcbb1079f913c9062800e63b941ccfbc07c5c0"
+    },
+    {
+      "sourcePath": "app/forms.css",
+      "sha256": "2c5537670ba2ec856e9553005010a6222e52cb7f5c80f2f461e27f6af62ea506"
+    },
+    {
+      "sourcePath": "lib/enquiry-client.ts",
+      "sha256": "755b8fbcf59472297dc80bcff99cd3c5ef724e4eadb05b0e15ac6ac7f96196e7"
+    },
+    {
+      "sourcePath": "lib/enquiry-service.ts",
+      "sha256": "5fd01808721264eb3906c310461cc64f97e39baa5abd71071322334f2bd5e2d8"
+    },
+    {
+      "sourcePath": "app/layout.tsx",
+      "sha256": "6873e2f183d17bb26dd3e84f732f700474fe81c1ed93729836e06833ca1c888c"
+    }
+  ],
+  "media": [
+    {
+      "sourcePath": "/assets/safari-crafters/golden-triangle-ae04a20e.jpg",
+      "sha256": "51256c6384ed2e27521d9da578d66e55908e6ed451ec38dfd42bc5c140935c52",
+      "bytes": 2580462
+    },
+    {
+      "sourcePath": "/assets/safari-crafters/kenya-f64a9aa8.jpg",
+      "sha256": "0b15e334cf4d849b429f02d4abac287e79790a4bd2646f3e6a2240f6859f6b97",
+      "bytes": 1959338
+    }
+  ],
+  "views": [
+    {
+      "width": 1280,
+      "h1Count": 1,
+      "overflow": false,
+      "data": [
+        {
+          "eyebrow": "India & International · MICE",
+          "heading": {
+            "lines": [
+              {
+                "runs": [
+                  {
+                    "text": "Together,",
+                    "emphasis": true
+                  },
+                  {
+                    "text": " beyond the everyday.",
+                    "emphasis": false
+                  }
+                ]
+              }
+            ]
+          },
+          "copy": "Corporate travel and incentive journeys for employees, dealers, distributors, channel partners and clients—across India and international destinations.",
+          "image": {
+            "sourcePath": "/assets/safari-crafters/golden-triangle-ae04a20e.jpg",
+            "alt": "Heritage architecture in India",
+            "focalPoint": {
+              "x": 50,
+              "y": 50
+            }
+          },
+          "credit": "Safari Crafters archive",
+          "breadcrumbs": [
+            {
+              "id": "crumb-1",
+              "label": "Home",
+              "href": "/"
+            },
+            {
+              "id": "crumb-2",
+              "label": "Corporate Journeys & MICE"
+            }
+          ]
+        },
+        {
+          "eyebrow": "Corporate travel with purpose",
+          "heading": {
+            "lines": [
+              {
+                "runs": [
+                  {
+                    "text": "Reward achievement.",
+                    "emphasis": false
+                  }
+                ]
+              },
+              {
+                "runs": [
+                  {
+                    "text": "Strengthen relationships.",
+                    "emphasis": true
+                  }
+                ]
+              }
+            ]
+          },
+          "paragraphs": [
+            {
+              "id": "paragraph-1",
+              "text": "From dealer incentive trips in India to international client hospitality, a meaningful corporate journey begins with a clear purpose. Reward performance, build partner relationships, thank your clients or bring employees together."
+            },
+            {
+              "id": "paragraph-2",
+              "text": "Our corporate travel and MICE planning starts with your brief. Tell us what you want to achieve, and we’ll explore destinations, accommodation and experiences around your group’s priorities. You don’t need a finished itinerary to begin."
+            }
+          ],
+          "button": {
+            "label": "Plan a corporate journey",
+            "href": "#corporate-enquiry"
+          }
+        },
+        {
+          "accessibleLabel": "Corporate travel formats",
+          "items": [
+            {
+              "id": "format-1",
+              "title": "Incentive travel",
+              "copy": "Recognise employees, dealers, distributors and channel partners with incentive travel in India or overseas. Shape each reward journey around the achievement and the people behind it."
+            },
+            {
+              "id": "format-2",
+              "title": "Retreats, offsites & partner meets",
+              "copy": "Bring employees, dealers or distributors together for a company offsite, leadership retreat or partner meet. Balance business conversations with shared experiences and time to recharge."
+            },
+            {
+              "id": "format-3",
+              "title": "Client hospitality & group travel",
+              "copy": "Strengthen relationships through client hospitality, customer appreciation trips and corporate group travel. Plan around your guests’ interests, business objectives and preferred destinations."
+            },
+            {
+              "id": "format-4",
+              "title": "Wildlife & cultural experiences",
+              "copy": "Connect employees, business partners and clients through safari experiences, photography and local culture. Choose activities that suit your guests’ interests, pace and access needs."
+            }
+          ]
+        },
+        {
+          "eyebrow": "India & International",
+          "heading": {
+            "lines": [
+              {
+                "runs": [
+                  {
+                    "text": "Exceptional journeys.",
+                    "emphasis": false
+                  }
+                ]
+              },
+              {
+                "runs": [
+                  {
+                    "text": "In India and beyond.",
+                    "emphasis": true
+                  }
+                ]
+              }
+            ]
+          },
+          "copy": "Choose a corporate journey close to home or an international retreat. The right destination depends on your guests’ starting points, available time, budget and interests.",
+          "items": [
+            {
+              "id": "destination-1",
+              "title": "Corporate journeys in India",
+              "copy": "Explore heritage settings, wildlife landscapes and cultural experiences for dealer incentive trips, distributor meets, leadership retreats and client experiences. Shape the programme around travel time, group interests and a balance of connection and downtime.",
+              "image": {
+                "sourcePath": "/assets/safari-crafters/golden-triangle-ae04a20e.jpg",
+                "alt": "Historic architecture and gardens in India",
+                "focalPoint": {
+                  "x": 50,
+                  "y": 50
+                }
+              },
+              "button": {
+                "label": "Plan a journey in India ↗",
+                "href": "#corporate-enquiry"
+              }
+            },
+            {
+              "id": "destination-2",
+              "title": "International corporate travel",
+              "copy": "Look beyond borders for an overseas incentive journey, partner retreat, client appreciation trip or curated group experience. Discuss safari and cultural destinations with us, factoring in flight connections, seasonality, entry requirements and the needs of your guests.",
+              "image": {
+                "sourcePath": "/assets/safari-crafters/kenya-f64a9aa8.jpg",
+                "alt": "Wildlife landscape in Kenya",
+                "focalPoint": {
+                  "x": 50,
+                  "y": 50
+                }
+              },
+              "button": {
+                "label": "Plan an international journey ↗",
+                "href": "#corporate-enquiry"
+              }
+            }
+          ]
+        },
+        {
+          "eyebrow": "From brief to journey",
+          "heading": {
+            "lines": [
+              {
+                "runs": [
+                  {
+                    "text": "Built around ",
+                    "emphasis": false
+                  },
+                  {
+                    "text": "your people.",
+                    "emphasis": true
+                  }
+                ]
+              }
+            ]
+          },
+          "items": [
+            {
+              "id": "step-1",
+              "title": "Share the purpose",
+              "copy": "Your objectives, people, preferred dates and budget."
+            },
+            {
+              "id": "step-2",
+              "title": "Shape the programme",
+              "copy": "Discuss destinations, accommodation, group time and experiences."
+            },
+            {
+              "id": "step-3",
+              "title": "Confirm the details",
+              "copy": "Review the proposal, availability, inclusions and booking conditions."
+            }
+          ]
+        },
+        {
+          "eyebrow": "Start with your brief",
+          "heading": {
+            "lines": [
+              {
+                "runs": [
+                  {
+                    "text": "Where could your people ",
+                    "emphasis": false
+                  },
+                  {
+                    "text": "go next?",
+                    "emphasis": true
+                  }
+                ]
+              }
+            ]
+          },
+          "copy": "India, international or still exploring? Share your name, email and phone number to start. If you already have dates, group size or a destination in mind, add them to your brief.",
+          "formNote": "Start with the essentials. We’ll work out the details together."
+        }
+      ],
+      "metadata": {
+        "title": "Corporate Travel & MICE | India & International | Safari Crafters",
+        "description": "Corporate travel and MICE in India and internationally: employee retreats, dealer incentives, distributor meets, channel partner journeys and client hospitality.",
+        "canonical": "https://safaricrafters.com/mice",
+        "tags": [
+          {
+            "name": "og:title",
+            "content": "Safari Crafters"
+          },
+          {
+            "name": "og:description",
+            "content": "Private safari journeys, photography tours and editorial field notes shaped by named specialists."
+          },
+          {
+            "name": "og:url",
+            "content": "https://safaricrafters.com"
+          },
+          {
+            "name": "og:site_name",
+            "content": "Safari Crafters"
+          },
+          {
+            "name": "og:image",
+            "content": "https://safaricrafters.com/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png"
+          },
+          {
+            "name": "og:image:width",
+            "content": "1261"
+          },
+          {
+            "name": "og:image:height",
+            "content": "1261"
+          },
+          {
+            "name": "og:image:alt",
+            "content": "Tiger family walking through Ranthambhore"
+          },
+          {
+            "name": "og:type",
+            "content": "website"
+          },
+          {
+            "name": "twitter:card",
+            "content": "summary_large_image"
+          },
+          {
+            "name": "twitter:title",
+            "content": "Safari Crafters"
+          },
+          {
+            "name": "twitter:description",
+            "content": "Private, photography-led safari journeys."
+          },
+          {
+            "name": "twitter:image",
+            "content": "https://safaricrafters.com/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png"
+          },
+          {
+            "name": "twitter:image:alt",
+            "content": "Tiger family walking through Ranthambhore"
+          },
+          {
+            "name": "twitter:image:width",
+            "content": "1261"
+          },
+          {
+            "name": "twitter:image:height",
+            "content": "1261"
+          }
+        ]
+      },
+      "form": {
+        "fields": [
+          {
+            "name": "name",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "email",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "phone",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "company",
+            "required": false,
+            "defaultValue": ""
+          },
+          {
+            "name": "destination",
+            "required": false,
+            "defaultValue": "Open to suggestions",
+            "options": [
+              {
+                "value": "Open to suggestions",
+                "label": "Open to suggestions"
+              },
+              {
+                "value": "India",
+                "label": "India"
+              },
+              {
+                "value": "International",
+                "label": "International"
+              },
+              {
+                "value": "India & International",
+                "label": "India & International"
+              }
+            ]
+          },
+          {
+            "name": "message",
+            "required": false,
+            "defaultValue": ""
+          },
+          {
+            "name": "consent",
+            "required": true,
+            "defaultValue": "on"
+          }
+        ],
+        "submitLabel": "Plan Our Corporate Journey"
+      }
+    },
+    {
+      "width": 390,
+      "h1Count": 1,
+      "overflow": false,
+      "data": [
+        {
+          "eyebrow": "India & International · MICE",
+          "heading": {
+            "lines": [
+              {
+                "runs": [
+                  {
+                    "text": "Together,",
+                    "emphasis": true
+                  },
+                  {
+                    "text": " beyond the everyday.",
+                    "emphasis": false
+                  }
+                ]
+              }
+            ]
+          },
+          "copy": "Corporate travel and incentive journeys for employees, dealers, distributors, channel partners and clients—across India and international destinations.",
+          "image": {
+            "sourcePath": "/assets/safari-crafters/golden-triangle-ae04a20e.jpg",
+            "alt": "Heritage architecture in India",
+            "focalPoint": {
+              "x": 50,
+              "y": 50
+            }
+          },
+          "credit": "Safari Crafters archive",
+          "breadcrumbs": [
+            {
+              "id": "crumb-1",
+              "label": "Home",
+              "href": "/"
+            },
+            {
+              "id": "crumb-2",
+              "label": "Corporate Journeys & MICE"
+            }
+          ]
+        },
+        {
+          "eyebrow": "Corporate travel with purpose",
+          "heading": {
+            "lines": [
+              {
+                "runs": [
+                  {
+                    "text": "Reward achievement.",
+                    "emphasis": false
+                  }
+                ]
+              },
+              {
+                "runs": [
+                  {
+                    "text": "Strengthen relationships.",
+                    "emphasis": true
+                  }
+                ]
+              }
+            ]
+          },
+          "paragraphs": [
+            {
+              "id": "paragraph-1",
+              "text": "From dealer incentive trips in India to international client hospitality, a meaningful corporate journey begins with a clear purpose. Reward performance, build partner relationships, thank your clients or bring employees together."
+            },
+            {
+              "id": "paragraph-2",
+              "text": "Our corporate travel and MICE planning starts with your brief. Tell us what you want to achieve, and we’ll explore destinations, accommodation and experiences around your group’s priorities. You don’t need a finished itinerary to begin."
+            }
+          ],
+          "button": {
+            "label": "Plan a corporate journey",
+            "href": "#corporate-enquiry"
+          }
+        },
+        {
+          "accessibleLabel": "Corporate travel formats",
+          "items": [
+            {
+              "id": "format-1",
+              "title": "Incentive travel",
+              "copy": "Recognise employees, dealers, distributors and channel partners with incentive travel in India or overseas. Shape each reward journey around the achievement and the people behind it."
+            },
+            {
+              "id": "format-2",
+              "title": "Retreats, offsites & partner meets",
+              "copy": "Bring employees, dealers or distributors together for a company offsite, leadership retreat or partner meet. Balance business conversations with shared experiences and time to recharge."
+            },
+            {
+              "id": "format-3",
+              "title": "Client hospitality & group travel",
+              "copy": "Strengthen relationships through client hospitality, customer appreciation trips and corporate group travel. Plan around your guests’ interests, business objectives and preferred destinations."
+            },
+            {
+              "id": "format-4",
+              "title": "Wildlife & cultural experiences",
+              "copy": "Connect employees, business partners and clients through safari experiences, photography and local culture. Choose activities that suit your guests’ interests, pace and access needs."
+            }
+          ]
+        },
+        {
+          "eyebrow": "India & International",
+          "heading": {
+            "lines": [
+              {
+                "runs": [
+                  {
+                    "text": "Exceptional journeys.",
+                    "emphasis": false
+                  }
+                ]
+              },
+              {
+                "runs": [
+                  {
+                    "text": "In India and beyond.",
+                    "emphasis": true
+                  }
+                ]
+              }
+            ]
+          },
+          "copy": "Choose a corporate journey close to home or an international retreat. The right destination depends on your guests’ starting points, available time, budget and interests.",
+          "items": [
+            {
+              "id": "destination-1",
+              "title": "Corporate journeys in India",
+              "copy": "Explore heritage settings, wildlife landscapes and cultural experiences for dealer incentive trips, distributor meets, leadership retreats and client experiences. Shape the programme around travel time, group interests and a balance of connection and downtime.",
+              "image": {
+                "sourcePath": "/assets/safari-crafters/golden-triangle-ae04a20e.jpg",
+                "alt": "Historic architecture and gardens in India",
+                "focalPoint": {
+                  "x": 50,
+                  "y": 50
+                }
+              },
+              "button": {
+                "label": "Plan a journey in India ↗",
+                "href": "#corporate-enquiry"
+              }
+            },
+            {
+              "id": "destination-2",
+              "title": "International corporate travel",
+              "copy": "Look beyond borders for an overseas incentive journey, partner retreat, client appreciation trip or curated group experience. Discuss safari and cultural destinations with us, factoring in flight connections, seasonality, entry requirements and the needs of your guests.",
+              "image": {
+                "sourcePath": "/assets/safari-crafters/kenya-f64a9aa8.jpg",
+                "alt": "Wildlife landscape in Kenya",
+                "focalPoint": {
+                  "x": 50,
+                  "y": 50
+                }
+              },
+              "button": {
+                "label": "Plan an international journey ↗",
+                "href": "#corporate-enquiry"
+              }
+            }
+          ]
+        },
+        {
+          "eyebrow": "From brief to journey",
+          "heading": {
+            "lines": [
+              {
+                "runs": [
+                  {
+                    "text": "Built around ",
+                    "emphasis": false
+                  },
+                  {
+                    "text": "your people.",
+                    "emphasis": true
+                  }
+                ]
+              }
+            ]
+          },
+          "items": [
+            {
+              "id": "step-1",
+              "title": "Share the purpose",
+              "copy": "Your objectives, people, preferred dates and budget."
+            },
+            {
+              "id": "step-2",
+              "title": "Shape the programme",
+              "copy": "Discuss destinations, accommodation, group time and experiences."
+            },
+            {
+              "id": "step-3",
+              "title": "Confirm the details",
+              "copy": "Review the proposal, availability, inclusions and booking conditions."
+            }
+          ]
+        },
+        {
+          "eyebrow": "Start with your brief",
+          "heading": {
+            "lines": [
+              {
+                "runs": [
+                  {
+                    "text": "Where could your people ",
+                    "emphasis": false
+                  },
+                  {
+                    "text": "go next?",
+                    "emphasis": true
+                  }
+                ]
+              }
+            ]
+          },
+          "copy": "India, international or still exploring? Share your name, email and phone number to start. If you already have dates, group size or a destination in mind, add them to your brief.",
+          "formNote": "Start with the essentials. We’ll work out the details together."
+        }
+      ],
+      "metadata": {
+        "title": "Corporate Travel & MICE | India & International | Safari Crafters",
+        "description": "Corporate travel and MICE in India and internationally: employee retreats, dealer incentives, distributor meets, channel partner journeys and client hospitality.",
+        "canonical": "https://safaricrafters.com/mice",
+        "tags": [
+          {
+            "name": "og:title",
+            "content": "Safari Crafters"
+          },
+          {
+            "name": "og:description",
+            "content": "Private safari journeys, photography tours and editorial field notes shaped by named specialists."
+          },
+          {
+            "name": "og:url",
+            "content": "https://safaricrafters.com"
+          },
+          {
+            "name": "og:site_name",
+            "content": "Safari Crafters"
+          },
+          {
+            "name": "og:image",
+            "content": "https://safaricrafters.com/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png"
+          },
+          {
+            "name": "og:image:width",
+            "content": "1261"
+          },
+          {
+            "name": "og:image:height",
+            "content": "1261"
+          },
+          {
+            "name": "og:image:alt",
+            "content": "Tiger family walking through Ranthambhore"
+          },
+          {
+            "name": "og:type",
+            "content": "website"
+          },
+          {
+            "name": "twitter:card",
+            "content": "summary_large_image"
+          },
+          {
+            "name": "twitter:title",
+            "content": "Safari Crafters"
+          },
+          {
+            "name": "twitter:description",
+            "content": "Private, photography-led safari journeys."
+          },
+          {
+            "name": "twitter:image",
+            "content": "https://safaricrafters.com/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png"
+          },
+          {
+            "name": "twitter:image:alt",
+            "content": "Tiger family walking through Ranthambhore"
+          },
+          {
+            "name": "twitter:image:width",
+            "content": "1261"
+          },
+          {
+            "name": "twitter:image:height",
+            "content": "1261"
+          }
+        ]
+      },
+      "form": {
+        "fields": [
+          {
+            "name": "name",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "email",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "phone",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "company",
+            "required": false,
+            "defaultValue": ""
+          },
+          {
+            "name": "destination",
+            "required": false,
+            "defaultValue": "Open to suggestions",
+            "options": [
+              {
+                "value": "Open to suggestions",
+                "label": "Open to suggestions"
+              },
+              {
+                "value": "India",
+                "label": "India"
+              },
+              {
+                "value": "International",
+                "label": "International"
+              },
+              {
+                "value": "India & International",
+                "label": "India & International"
+              }
+            ]
+          },
+          {
+            "name": "message",
+            "required": false,
+            "defaultValue": ""
+          },
+          {
+            "name": "consent",
+            "required": true,
+            "defaultValue": "on"
+          }
+        ],
+        "submitLabel": "Plan Our Corporate Journey"
+      }
+    }
+  ],
+  "limitations": [
+    "Browser content and media capture only; no enquiry submitted.",
+    "Existing contact-form migration retains the corporate form definition.",
+    "Source hashes are proof inputs, not media rights or publication approval."
+  ]
+}

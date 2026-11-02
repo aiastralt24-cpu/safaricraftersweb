@@ -1,17 +1,16 @@
 "use client";
 
+import type {GlobalSettings} from '@/lib/cms/global-settings';
+import {searchCategories} from '@/lib/cms/search-policy';
 import Link from "next/link";
 import { ArrowUpRight, Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
 
-export type SearchItem = {
-  title: string;
-  href: string;
-  type: "Journey" | "Destination" | "Photography Tours" | "Journal";
-  detail?: string;
-};
+export type {SiteSearchItem as SearchItem} from '@/lib/site-search';
+import type {SiteSearchItem as SearchItem} from '@/lib/site-search';
+import {filterSiteSearch} from '@/lib/site-search';
 
-const categories = ["All", "Journey", "Destination", "Photography Tours", "Journal"] as const;
+const categories = ["All", "Journey", "Destination", "Photography Tours", "Journal", "Page", "Project", "News", "Event", "Leadership", "Application", "Location", "Career", "Certification", "Partner", "Product category", "Product"] as const;
 type SearchCategory = (typeof categories)[number];
 
 const categoryLabels: Record<SearchCategory, string> = {
@@ -19,24 +18,24 @@ const categoryLabels: Record<SearchCategory, string> = {
   Journey: "Journeys",
   Destination: "Destinations",
   "Photography Tours": "Photography Tours",
-  Journal: "Journal"
+  Journal: "Journal",
+  Page: "Pages",
+  Project: "Projects",
+  News: "News",
+  Event: "Events", Leadership: "Leadership", Application: "Applications and industries", Location: "Locations", Career: "Careers", Certification: "Certifications", Partner: "Partners", "Product category": "Product categories", Product: "Products"
 };
 
 const initialVisible = 6;
 
-export function SearchIndex({ items }: { items: SearchItem[] }) {
+export function SearchIndex({ items,settings }: { items: SearchItem[];settings?:GlobalSettings['search'] }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<SearchCategory>("All");
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
-  const filtered = useMemo(() => {
-    const term = query.trim().toLocaleLowerCase();
-    return items.filter((item) => {
-      const matchesCategory = category === "All" || item.type === category;
-      const matchesQuery = !term || `${item.title} ${item.detail ?? ""} ${item.type}`.toLocaleLowerCase().includes(term);
-      return matchesCategory && matchesQuery;
-    });
-  }, [category, items, query]);
+  const allowed=settings?searchCategories(settings):undefined;
+  const visibleCategories=categories.filter(item=>item==='All'||((!allowed||allowed.includes(item))&&(!['Project','News','Event','Leadership','Application','Location','Career','Certification','Partner','Product category','Product'].includes(item)||items.some(row=>row.type===item))));
+  const effectiveCategory=visibleCategories.includes(category)?category:'All';
+  const filtered = filterSiteSearch(allowed?items.filter(item=>allowed.includes(item.type)):items,query,effectiveCategory);
 
   const groups = useMemo(() => categories.slice(1).map((type) => ({
     type,
@@ -49,6 +48,7 @@ export function SearchIndex({ items }: { items: SearchItem[] }) {
     setExpanded({});
   };
 
+  if(settings&&!settings.enabled)return null;
   return (
     <div className="search-library">
       <label className="search-field">
@@ -59,7 +59,7 @@ export function SearchIndex({ items }: { items: SearchItem[] }) {
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Tiger, Jawai, winter, photography..."
+            placeholder={settings?.placeholder??"Tiger, Jawai, winter, photography..."}
             autoComplete="off"
           />
           {query ? <button type="button" aria-label="Clear search" onClick={() => setQuery("")}><X aria-hidden="true" size={18} /></button> : null}
@@ -69,11 +69,11 @@ export function SearchIndex({ items }: { items: SearchItem[] }) {
       <div className="search-filter-block">
         <p>Browse by collection</p>
         <div className="search-filters" role="group" aria-label="Filter the Safari Crafters library">
-          {categories.map((item) => (
+          {visibleCategories.map((item) => (
             <button
               type="button"
-              className={category === item ? "is-active" : ""}
-              aria-pressed={category === item}
+              className={effectiveCategory === item ? "is-active" : ""}
+              aria-pressed={effectiveCategory === item}
               onClick={() => setCategory(item)}
               key={item}
             >
@@ -98,13 +98,13 @@ export function SearchIndex({ items }: { items: SearchItem[] }) {
               <span>{group.items.length}</span>
             </header>
             <div className="search-results">
-              {visibleItems.map((item) => <Link href={item.href} className="search-result" key={item.href}>
+              {visibleItems.map((item) => {const ResultLink=['Project','News','Event','Leadership','Application','Location','Career','Certification','Partner','Product category','Product'].includes(item.type)?'a':Link;return <ResultLink href={item.href} className="search-result" key={item.href}>
                 <span>
                   <small>{item.detail || item.type}</small>
                   <strong>{item.title}</strong>
                 </span>
                 <ArrowUpRight aria-hidden="true" size={19} />
-              </Link>)}
+              </ResultLink>;})}
             </div>
             {!query && group.items.length > initialVisible ? <button
               className="search-show-more"
@@ -118,7 +118,7 @@ export function SearchIndex({ items }: { items: SearchItem[] }) {
         })}
       </div> : <div className="search-empty">
         <p className="eyebrow">No exact match</p>
-        <h2>The right journey may not have a name yet.</h2>
+        <h2>{settings?.emptyMessage??"The right journey may not have a name yet."}</h2>
         <p>Try a broader place or wildlife term, or speak with us about what you hope to encounter.</p>
         <Link href="/plan">Begin planning <ArrowUpRight aria-hidden="true" size={17} /></Link>
       </div>}

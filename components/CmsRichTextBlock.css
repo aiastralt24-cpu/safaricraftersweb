@@ -1,0 +1,5 @@
+.cms-rich-table { width: 100%; border-collapse: collapse; text-align: left; }
+.cms-rich-table caption { text-align: left; font-weight: 600; padding-block: .75rem; }
+.cms-rich-table th, .cms-rich-table td { border-bottom: 1px solid currentColor; padding: .75rem; vertical-align: top; overflow-wrap: anywhere; min-width: 7rem; }
+.cms-rich-table th { font-weight: 700; }
+.cms-quote-attribution { font-size: .9em; }

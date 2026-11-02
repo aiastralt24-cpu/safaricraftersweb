@@ -122,3 +122,13 @@
   .aviation-hero-image video, .aviation-route::before { animation: none; }
   .aviation-aircraft-image img, .aviation-hero-aside a svg, .aviation-link svg, .aviation-cta a svg { transition: none; }
 }
+
+/* Compact headings and aligned supporting copy. */
+.aviation-hero-copy h1 { max-width:20ch; font-size:clamp(36px,3.6vw,60px); line-height:1.05; }
+.aviation-hero-copy { align-items:center; padding-top:clamp(40px,5vw,72px); padding-bottom:clamp(40px,5vw,72px); }
+.aviation-intro-grid, .aviation-section-heading { align-items:center; }
+.aviation-intro h2, .aviation-section-heading h2 { font-size:clamp(32px,3.6vw,54px); line-height:1.08; }
+.aviation-section-heading { margin-bottom:40px; }
+@media(max-width:760px) {
+  .aviation-hero-copy h1, .aviation-intro h2, .aviation-section-heading h2 { font-size:clamp(30px,7vw,42px); }
+}

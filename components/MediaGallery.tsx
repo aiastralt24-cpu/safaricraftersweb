@@ -7,11 +7,12 @@ import { createPortal } from "react-dom";
 import type { ImageAsset } from "@/lib/data";
 import "./MediaGallery.css";
 
-export function MediaGallery({ images, label = "Gallery", variant = "grid" }: { images: ImageAsset[]; label?: string; variant?: "grid" | "story" }) {
+export function MediaGallery({ images, label = "Gallery", variant = "grid", maxImages }: { images: ImageAsset[]; label?: string; variant?: "grid" | "story"; maxImages?: number }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const openedIndexRef = useRef<number | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerRefs = useRef<Array<HTMLButtonElement | null>>([]);
-  const visibleImages = images.slice(0, variant === "story" ? 12 : 9);
+  const visibleImages = images.slice(0, maxImages === undefined ? (variant === "story" ? 12 : 9) : Math.max(1, Math.min(30, Math.floor(maxImages))));
 
   useEffect(() => {
     if (activeIndex === null) return;
@@ -26,7 +27,7 @@ export function MediaGallery({ images, label = "Gallery", variant = "grid" }: { 
     });
     closeButtonRef.current?.focus();
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setActiveIndex(null);
+      if (event.key === "Escape") close();
       if (event.key === "ArrowRight") setActiveIndex((current) => current === null ? null : (current + 1) % visibleImages.length);
       if (event.key === "ArrowLeft") setActiveIndex((current) => current === null ? null : (current - 1 + visibleImages.length) % visibleImages.length);
       if (event.key === "Tab") {
@@ -51,7 +52,7 @@ export function MediaGallery({ images, label = "Gallery", variant = "grid" }: { 
   }, [activeIndex, visibleImages.length]);
 
   function close() {
-    const index = activeIndex;
+    const index = openedIndexRef.current;
     setActiveIndex(null);
     requestAnimationFrame(() => { if (index !== null) triggerRefs.current[index]?.focus(); });
   }
@@ -70,7 +71,7 @@ export function MediaGallery({ images, label = "Gallery", variant = "grid" }: { 
             type="button"
             key={`${image.src}-${index}`}
             ref={(element) => { triggerRefs.current[index] = element; }}
-            onClick={() => setActiveIndex(index)}
+            onClick={() => { openedIndexRef.current = index; setActiveIndex(index); }}
             aria-label={`Open image ${index + 1} of ${visibleImages.length}: ${image.alt}`}
           >
             <Image src={image.src} alt={image.alt} width={960} height={720} sizes="(max-width: 860px) 50vw, 33vw" loading="lazy" style={{ objectPosition: image.focalPoint || "center" }} />

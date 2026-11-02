@@ -1,0 +1,8 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readdir} from 'node:fs/promises';
+import {customPagePathStatus,isCustomPagePath} from '../lib/cms/custom-page-path.ts';import config from '../next.config.mjs';
+test('custom page namespaces exclude current app/public directories and redirect sources',async()=>{
+ for(const location of ['../app/','../public/'])for(const entry of await readdir(new URL(location,import.meta.url),{withFileTypes:true})){if(!entry.isDirectory()||entry.name.startsWith('.')||entry.name.startsWith('['))continue;const files=await readdir(new URL(location+entry.name+'/',import.meta.url),{recursive:true});if(!files.length||location==='../app/'&&!files.some(file=>/(^|\/)(page|route)\.(tsx?|jsx?|mjs)$/.test(file)))continue;assert.notEqual(customPagePathStatus('/'+entry.name),'available',`${location}${entry.name} needs an explicit ownership decision`);}
+ for(const redirect of await config.redirects())assert.equal(customPagePathStatus('/'+redirect.source.split('/')[1]),'reserved');
+ for(const value of ['/field-notes','/travel-resources/packing-list','/leadership-notes','/applications-guide','/industries-guide','/certificationsletter'])assert.equal(isCustomPagePath(value),true);
+ for(const value of [undefined,null,'/certifications','/certifications/example','/certifications/example/nested','/','/api','/cms/new','/news','/news/example','/events','/events/example','/applications','/applications/example','/applications/example/nested','/industries','/industries/example','/industries/example/nested','/leadership','/leadership/example','/leadership/example/nested','/_next','/sitemap.xml','/a/','/a--b','/a%2fb','/a/../b','/a?b','/a#b','/A','/a\n'])assert.equal(isCustomPagePath(value),false,String(value));
+});

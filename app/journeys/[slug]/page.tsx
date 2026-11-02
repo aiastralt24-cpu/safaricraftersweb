@@ -1,3 +1,12 @@
+import {readSeoDefaults} from '@/lib/cms/seo-settings';
+import {resolvedSeoMetadata} from '@/lib/cms/seo-metadata';
+import {newPageSeo} from '@/lib/cms/page-seo';
+import {cache} from 'react';
+import {CmsJourney} from '@/components/CmsJourney';
+import {readPublishedJourney} from '@/lib/cms/published-journey';
+import {publicPageConfig} from '@/lib/cms/public-page-runtime';
+import '../cms-journey.css';
+import { EditorialFilm } from "@/components/EditorialFilm";
 import { BookingConditions } from "@/components/BookingConditions";
 import { tourPriceLabel } from "@/lib/tour-pricing";
 import { Metadata } from "next";
@@ -8,6 +17,8 @@ import { EditorialProse } from "@/components/EditorialProse";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { MediaGallery } from "@/components/MediaGallery";
+import { JourneyExperience, hasJourneyExperience } from "@/components/JourneyExperience";
+import { BigCatsExperience } from "@/components/BigCatsExperience";
 import { JourneyItinerary } from "@/components/JourneyItinerary";
 import { getJourney, journeys } from "@/lib/data";
 import { getJourneyIntelligence } from "@/lib/luxury";
@@ -15,31 +26,46 @@ import { getJourneyFaqs, journeySeo } from "@/lib/content-intelligence";
 import { breadcrumbSchema, faqSchema, journeySchema, siteUrl } from "@/lib/structured-data";
 import "../../detail.css";
 
+export const dynamic='force-dynamic';
+const cmsEnabled=()=>process.env.CMS_JOURNEY_RENDERING_ENABLED==='true';
+const cmsJourney=cache((slug:string)=>readPublishedJourney(slug,publicPageConfig()));
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
+  if(cmsEnabled())return [];
   return journeys.map((journey) => ({ slug: journey.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  if(cmsEnabled()){
+    const journey=await cmsJourney(slug);if(!journey)return {title:'Journey unavailable',robots:{index:false,follow:false}};
+    const defaults=await readSeoDefaults();
+    if(defaults)return resolvedSeoMetadata({...newPageSeo(),title:journey.seoTitle||'',description:journey.seoDescription||''},defaults,{origin:siteUrl,path:`/journeys/${journey.slug}`,title:journey.title});
+    const title=journey.seoTitle||journey.title,description=journey.seoDescription||journey.description;
+    return {title,description,alternates:{canonical:`/journeys/${journey.slug}`},openGraph:{title,description,url:`/journeys/${journey.slug}`,images:[]},twitter:{title,description,images:[]}};
+  }
   const journey = getJourney(slug);
   if (!journey) return {};
   const seo = journeySeo(journey);
   return {
     ...seo,
     alternates: { canonical: `/journeys/${journey.slug}` },
-    openGraph: { ...seo, url: `${siteUrl}/journeys/${journey.slug}`, images: [{ url: journey.image.src, alt: journey.image.alt }] }
+    openGraph: { ...seo, url: `${siteUrl}/journeys/${journey.slug}`, images: [{ url: (journey.seo?.socialImage || journey.image).src, alt: (journey.seo?.socialImage || journey.image).alt }] }
   };
 }
 
 export default async function JourneyDetailPage({ params }: Props) {
   const { slug } = await params;
+  if(cmsEnabled()){const journey=await cmsJourney(slug);if(!journey)notFound();return <CmsJourney journey={journey}/>;}
   const journey = getJourney(slug);
   if (!journey) notFound();
-  const heroImage = journey.gallery.find((image, index) => index > 0 && image.src !== journey.image.src)
+  if (slug === "big-cats-of-india") return <BigCatsExperience journey={journey} />;
+  if (hasJourneyExperience(slug)) return <JourneyExperience journey={journey} />;
+  const heroImage = journey.heroImage || journey.gallery.find((image, index) => index > 0 && image.src !== journey.image.src)
     || journey.gallery.find((image) => image.src !== journey.image.src)
     || journey.image;
   const intelligence = getJourneyIntelligence(journey);
@@ -232,8 +258,9 @@ export default async function JourneyDetailPage({ params }: Props) {
               </details>
             ))}
           </div>
-          <p className="content-reviewed">Journey information reviewed {journey.seo?.reviewedAt || "July 2026"}.</p>
+          {journey.seo?.reviewedAt ? <p className="content-reviewed">Journey information reviewed {journey.seo.reviewedAt}.</p> : null}
         </section>
+      <EditorialFilm video={journey.video} />
         <BookingConditions />
         <div className="container specialist-callout" id="enquire">
           <p className="eyebrow">Specialist recommendation</p>

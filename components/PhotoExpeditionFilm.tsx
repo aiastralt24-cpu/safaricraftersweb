@@ -10,7 +10,7 @@ import { DepartureCalendar } from "@/components/DepartureCalendar";
 const showFeaturedExpeditions = false;
 
 function departure(expedition: Expedition) {
-  return departureLabel(upcomingDepartures(expedition)[0]);
+  return expedition.enquiryDeparture ? expedition.date : departureLabel(upcomingDepartures(expedition)[0]);
 }
 
 export function PhotoExpeditionFilm({ expeditions }: { expeditions: Expedition[] }) {
@@ -24,6 +24,7 @@ export function PhotoExpeditionFilm({ expeditions }: { expeditions: Expedition[]
     <main className="journey-atlas expedition-atlas" aria-label="Photography Tours">
       <PageHero
         title="Field craft, framed."
+        titleSize="compact"
         copy="Small groups, specialist mentorship and patient time in the field."
         image={expeditions[0].image}
         meta="Photography Tours"

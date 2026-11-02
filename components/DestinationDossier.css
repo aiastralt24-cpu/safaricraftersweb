@@ -293,3 +293,74 @@
   .destination-scoop.is-sticky-stack .destination-scoop-list { gap: 28px; }
   .destination-scoop.is-sticky-stack .destination-scoop-list details { position: relative; top: auto; }
 }
+
+/* Shared, restrained display scale for destination section introductions. */
+.destination-photo-heading.destination-editorial-heading h2,
+.destination-photo-journal.is-compact .destination-photo-heading h2,
+.destination-field-notes-heading.destination-editorial-heading h2,
+.destination-combos-heading h2 {
+  max-width:none;
+  font-size:clamp(38px,4.4vw,66px);
+  line-height:1.04;
+  white-space:normal;
+  text-wrap:initial;
+}
+.destination-photo-heading.destination-editorial-heading h2>span,
+.destination-photo-journal.is-compact .destination-photo-heading h2>span,
+.destination-field-notes-heading.destination-editorial-heading h2>span{display:block;white-space:normal}
+.destination-photo-journal.is-compact .destination-photo-heading h2>span+span::before{content:none}
+@media(max-width:760px){
+  .destination-photo-heading.destination-editorial-heading h2,
+  .destination-photo-journal.is-compact .destination-photo-heading h2,
+  .destination-field-notes-heading.destination-editorial-heading h2,
+  .destination-combos-heading h2{font-size:clamp(32px,8vw,50px)}
+}
+
+/* Keep the remaining dossier headings on the shared editorial scale. */
+.destination-opening h2,
+.destination-faq-section h2,
+.destination-plan h2,
+.destination-pairings .destination-editorial-heading h2 {
+  max-width: none;
+  font-size: clamp(38px, 4.4vw, 66px);
+  line-height: 1.04;
+  text-wrap: pretty;
+}
+.destination-opening {
+  align-items: center;
+  padding-top: clamp(40px, 4vw, 64px);
+  padding-bottom: clamp(40px, 4vw, 64px);
+}
+.destination-opening > .editorial-prose-expandable,
+.destination-opening-prose { align-self: center; }
+.destination-plan-inner { align-items: center; }
+.destination-plan { padding: clamp(64px, 7vw, 104px) 0; }
+.destination-faq-section {
+  padding-top: clamp(64px, 7vw, 104px);
+  padding-bottom: clamp(64px, 7vw, 104px);
+}
+@media (max-width:760px) {
+  .destination-opening h2,
+  .destination-faq-section h2,
+  .destination-plan h2,
+  .destination-pairings .destination-editorial-heading h2 {
+    font-size: clamp(32px, 8vw, 50px);
+  }
+}
+
+/* Avoid stacking two large section paddings around the introduction. */
+.destination-opening + .destination-field-notes {
+  padding-top: clamp(32px, 3vw, 48px);
+}
+@media (max-width:900px) {
+  .destination-opening { row-gap: 28px; }
+}
+
+/* Custom introduction copy uses the same compact treatment as default copy. */
+.destination-opening h2 {
+  font-size: clamp(32px, 3.6vw, 54px);
+  line-height: 1.08;
+}
+@media (max-width:760px) {
+  .destination-opening h2 { font-size: clamp(30px, 7vw, 42px); }
+}

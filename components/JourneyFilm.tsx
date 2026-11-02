@@ -20,10 +20,10 @@ function belongsTo(journey: Journey, filter: JourneyFilter) {
     .filter(Boolean).join(" ").toLowerCase();
   const title = journey.title.toLowerCase();
   if (filter === "Big cats") return /tiger|leopard|lion|big cat/.test(text);
-  if (filter === "Himalaya") return /himalaya|himalayan|firefox|red panda/.test(title);
+  if (filter === "Himalaya") return /himalaya|himalayan|firefox|red panda|ladakh|uttarakhand/.test(title);
   if (filter === "Culture & wildlife") return /palace|heritage|culture|architecture|royal/.test(editorialText);
   if (filter === "South India") return /southern|south india|western ghats|kabini|nagarhole/.test(text);
-  return /six-park|six park|multi|central india/.test(text);
+  return /six-park|six park|multi|central india|terrific terai|uttarakhand circuit|desert dune lions/.test(text);
 }
 
 function cleanDuration(duration: string) {
@@ -117,6 +117,7 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
     <main className="journey-atlas" aria-label="Private journey collection" ref={atlasRef}>
       <PageHero
         title="Journeys, designed."
+        titleSize="compact"
         copy="Private journeys shaped around your interests, season and preferred pace."
         image={heroJourney.image}
         meta="Private journey collection"
@@ -150,8 +151,8 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
         </article>
 
         <div className="journey-atlas-heading" data-journey-heading>
-          <div><p>The private collection</p><h2>Six ways into the <em className="editorial-accent">wild.</em></h2></div>
-          <p>Each route is a starting point—privately shaped around season, pace and the encounters that matter to you.</p>
+          <div><p>The private collection</p><h2>Find your <em className="editorial-accent">way.</em><br />Into the <em className="editorial-accent">wild.</em></h2></div>
+          <p>Each route is a starting point, privately shaped around season, pace and the encounters that matter to you.</p>
         </div>
 
         <div className="journey-atlas-grid">

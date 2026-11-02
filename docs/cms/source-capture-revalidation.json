@@ -1,0 +1,215 @@
+{
+  "date": "2026-10-28",
+  "scope": "Local fresh production-build captures; no provider writes or publication.",
+  "sourceChange": "Svalbard 2027 sold out / 2028 booking copy and optional enquiryDeparture type field.",
+  "comparisons": [
+    {
+      "inventory": "docs/cms/concept-migration-inventory.json",
+      "previousCapturedAt": "2026-10-23T09:56:07.814Z",
+      "capturedAt": "2026-10-28T04:53:26.131Z",
+      "sourceChanges": [
+        {
+          "path": "content/site-content.json",
+          "previous": "b6e4741bf087785c5651a35a2efcbba38a500975f93b28b957f544f7660647ec",
+          "current": "5511df488dcf2dd7195b8b938822c210765b1030a48c2cb76ec21b37f6255e65"
+        },
+        {
+          "path": "lib/cms/mice-content.ts",
+          "previous": null,
+          "current": "ae5db72238afa6b05c4eea95766994a2175695ede632d630061ff7eeed677081"
+        },
+        {
+          "path": "lib/data.ts",
+          "previous": "f4ae39db1cf0e404b16cfd751d588b85231d227914e50c476c8bb22495daced7",
+          "current": "a7657781655fe3c1803f37a6c8750b49fbb759490260770de9f95919f3e98a56"
+        }
+      ],
+      "contentComparison": "Nine generated CSS-module className differences only; all other captured fields identical."
+    },
+    {
+      "inventory": "docs/cms/guided-safaris-migration-inventory.json",
+      "previousCapturedAt": "2026-10-23T09:56:11.157Z",
+      "capturedAt": "2026-10-28T04:53:23.697Z",
+      "sourceChanges": [
+        {
+          "path": "content/site-content.json",
+          "previous": "b6e4741bf087785c5651a35a2efcbba38a500975f93b28b957f544f7660647ec",
+          "current": "5511df488dcf2dd7195b8b938822c210765b1030a48c2cb76ec21b37f6255e65"
+        },
+        {
+          "path": "lib/cms/mice-content.ts",
+          "previous": null,
+          "current": "ae5db72238afa6b05c4eea95766994a2175695ede632d630061ff7eeed677081"
+        },
+        {
+          "path": "lib/data.ts",
+          "previous": "f4ae39db1cf0e404b16cfd751d588b85231d227914e50c476c8bb22495daced7",
+          "current": "a7657781655fe3c1803f37a6c8750b49fbb759490260770de9f95919f3e98a56"
+        }
+      ],
+      "contentComparison": "All captured fields identical excluding timestamp, origin, source proof and previous contract-refresh annotation."
+    },
+    {
+      "inventory": "docs/cms/private-aviation-migration-inventory.json",
+      "previousCapturedAt": "2026-10-23T09:56:14.190Z",
+      "capturedAt": "2026-10-28T04:53:23.269Z",
+      "sourceChanges": [
+        {
+          "path": "content/site-content.json",
+          "previous": "b6e4741bf087785c5651a35a2efcbba38a500975f93b28b957f544f7660647ec",
+          "current": "5511df488dcf2dd7195b8b938822c210765b1030a48c2cb76ec21b37f6255e65"
+        },
+        {
+          "path": "lib/cms/mice-content.ts",
+          "previous": null,
+          "current": "ae5db72238afa6b05c4eea95766994a2175695ede632d630061ff7eeed677081"
+        },
+        {
+          "path": "lib/data.ts",
+          "previous": "f4ae39db1cf0e404b16cfd751d588b85231d227914e50c476c8bb22495daced7",
+          "current": "a7657781655fe3c1803f37a6c8750b49fbb759490260770de9f95919f3e98a56"
+        }
+      ],
+      "contentComparison": "All captured fields identical excluding timestamp, origin, source proof and previous contract-refresh annotation."
+    },
+    {
+      "inventory": "docs/cms/homepage-rendered-inventory.json",
+      "previousCapturedAt": "2026-10-22T21:08:37.406Z",
+      "capturedAt": "2026-10-28T04:53:18.128Z",
+      "sourceChanges": [
+        {
+          "path": "content/site-content.json",
+          "previous": "b6e4741bf087785c5651a35a2efcbba38a500975f93b28b957f544f7660647ec",
+          "current": "5511df488dcf2dd7195b8b938822c210765b1030a48c2cb76ec21b37f6255e65"
+        },
+        {
+          "path": "lib/data.ts",
+          "previous": "f4ae39db1cf0e404b16cfd751d588b85231d227914e50c476c8bb22495daced7",
+          "current": "a7657781655fe3c1803f37a6c8750b49fbb759490260770de9f95919f3e98a56"
+        }
+      ],
+      "contentComparison": "All captured fields identical excluding timestamp, origin, source proof and previous contract-refresh annotation."
+    }
+  ],
+  "followUpRevalidations": [
+    {
+      "source": "app/concept/ConceptExperience.tsx",
+      "previousSha256": "c528f762b8088255b01ee737ff55ded669f3c6561a6aeb8d0e15bf713d2d23db",
+      "currentSha256": "247644a1719d075aa1c7eaf593e447c62c77fcc31d10464610e5b1af107ac7c4",
+      "verifiedDelta": "One added sold-out / next-year booking label on the Svalbard departure card; removing only that line reproduces the previous hash.",
+      "captures": {
+        "concept": "2026-10-28T05:43:54.377Z",
+        "homepage": "2026-10-28T05:43:46.551Z"
+      },
+      "comparison": "Only the expected label addition in desktop/mobile departure-card text and link labels; all other captured content, interaction states, metadata and media unchanged.",
+      "remainingGap": "CMS departure cards do not yet render the new next-year booking label. Keep rollout disabled pending mapping and parity acceptance."
+    },
+    {
+      "reason": "Independent homepage departure booking note; unchanged legacy content verified by fresh production-build desktop/mobile captures.",
+      "captures": [
+        {
+          "inventory": "docs/cms/concept-migration-inventory.json",
+          "capturedAt": "2026-10-28T05:51:12.130Z",
+          "renderedContentUnchanged": true,
+          "sources": [
+            {
+              "path": "components/CmsHomepageDepartures.css",
+              "before": "a36eb8bfb932fd982965a1b5151dcfea2ce7658ea7299a17d7af4a99ebf48762",
+              "after": "eafd547fec80f3be493525bea4ec42bd79e2c1448c5cc747c4eef5ddded24e96"
+            },
+            {
+              "path": "components/CmsHomepageDepartures.tsx",
+              "before": "3a0448c6bdc30d87305b0e0248b86caf09cda974b402ca5b877970c59862aa58",
+              "after": "91249601a818ee8317fc40d63a06f8dce8eaa2794aab7c42d63e4a5305ee29bf"
+            },
+            {
+              "path": "lib/cms/photo-expeditions.ts",
+              "before": "d9b9c6109c470825dccc9240eca22ef47a69d2163255dafadf876655664c62ce",
+              "after": "27431ef249aa54e7cea6cba0d281c2e3aec3df3a090ef2d268b874a5c27200d9"
+            }
+          ]
+        },
+        {
+          "inventory": "docs/cms/guided-safaris-migration-inventory.json",
+          "capturedAt": "2026-10-28T05:51:11.654Z",
+          "renderedContentUnchanged": true,
+          "sources": [
+            {
+              "path": "lib/cms/photo-expeditions.ts",
+              "before": "d9b9c6109c470825dccc9240eca22ef47a69d2163255dafadf876655664c62ce",
+              "after": "27431ef249aa54e7cea6cba0d281c2e3aec3df3a090ef2d268b874a5c27200d9"
+            }
+          ]
+        },
+        {
+          "inventory": "docs/cms/private-aviation-migration-inventory.json",
+          "capturedAt": "2026-10-28T05:51:14.229Z",
+          "renderedContentUnchanged": true,
+          "sources": [
+            {
+              "path": "lib/cms/photo-expeditions.ts",
+              "before": "d9b9c6109c470825dccc9240eca22ef47a69d2163255dafadf876655664c62ce",
+              "after": "27431ef249aa54e7cea6cba0d281c2e3aec3df3a090ef2d268b874a5c27200d9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reason": "Shared/journal list formatting; fresh desktop/mobile legacy captures identical in all rendered fields.",
+      "captures": [
+        {
+          "inventory": "docs/cms/concept-migration-inventory.json",
+          "capturedAt": "2026-10-28T06:10:56.633Z",
+          "renderedContentUnchanged": true,
+          "sources": [
+            {
+              "path": "lib/cms/composition.ts",
+              "before": "49ea3987748de6c17d04fcf32117e47da9bae0ee5fa177d7ffb77b35a4b0a768",
+              "after": "dd7968dd5d5bba36a8d3e7bca99abfb9ee4ada19a0367926345ec205f74dce00"
+            },
+            {
+              "path": "lib/cms/journal.ts",
+              "before": "2716d57eb93db5e6331c5c116cc175f1ecf0db2ec3cca56946afc3abda36e898",
+              "after": "73430ccf8545c994f6594904895d4148ab454e93f04f2080757e33c2b2a5a9b8"
+            }
+          ]
+        },
+        {
+          "inventory": "docs/cms/guided-safaris-migration-inventory.json",
+          "capturedAt": "2026-10-28T06:10:52.786Z",
+          "renderedContentUnchanged": true,
+          "sources": [
+            {
+              "path": "lib/cms/composition.ts",
+              "before": "49ea3987748de6c17d04fcf32117e47da9bae0ee5fa177d7ffb77b35a4b0a768",
+              "after": "dd7968dd5d5bba36a8d3e7bca99abfb9ee4ada19a0367926345ec205f74dce00"
+            },
+            {
+              "path": "lib/cms/journal.ts",
+              "before": "2716d57eb93db5e6331c5c116cc175f1ecf0db2ec3cca56946afc3abda36e898",
+              "after": "73430ccf8545c994f6594904895d4148ab454e93f04f2080757e33c2b2a5a9b8"
+            }
+          ]
+        },
+        {
+          "inventory": "docs/cms/private-aviation-migration-inventory.json",
+          "capturedAt": "2026-10-28T06:10:54.007Z",
+          "renderedContentUnchanged": true,
+          "sources": [
+            {
+              "path": "lib/cms/composition.ts",
+              "before": "49ea3987748de6c17d04fcf32117e47da9bae0ee5fa177d7ffb77b35a4b0a768",
+              "after": "dd7968dd5d5bba36a8d3e7bca99abfb9ee4ada19a0367926345ec205f74dce00"
+            },
+            {
+              "path": "lib/cms/journal.ts",
+              "before": "2716d57eb93db5e6331c5c116cc175f1ecf0db2ec3cca56946afc3abda36e898",
+              "after": "73430ccf8545c994f6594904895d4148ab454e93f04f2080757e33c2b2a5a9b8"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

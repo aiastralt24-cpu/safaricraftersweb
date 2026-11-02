@@ -1,0 +1,9 @@
+# Journey media selection
+
+Journey drafts now expose the template-compatible media collection alongside itinerary and FAQs. Clients can add, remove and reorder entries, choose hero/mobile hero/gallery placement, select an existing library image, and edit page-specific alternative text, caption and credit. Replacement changes only the asset ID; it preserves page copy, stable item identity and unknown fields.
+
+The inline library supports search and 50-item cursor pagination through the existing authenticated media API. Archived, uninspected, unapproved and expired-rights images are disabled. Selection fetches current image metadata again before accepting it. This is usability guidance, not a security boundary: trusted validation and publication still enforce current catalog evidence. Selected images use the existing authenticated private preview endpoint. New uploads remain in the dedicated upload workflow.
+
+Collection mutations join explicit Save draft and the workspace dirty-state guard. Selecting an image does not publish content. The placement menu uses the import contract values. Duplicate hero placements and required copy remain validation findings rather than silently replacing another entry.
+
+Verification: ten workspace tests passed, including media replacement preservation and current-rights selection edge cases; TypeScript passed. An isolated synthetic browser fixture subsequently verified search, disabled pending-rights selection, rejection when rights were revoked after listing, successful selection, replacement opening and preview failure messaging. At 390px there was no horizontal overflow and no captured console warnings/errors. Evidence: `/private/tmp/cms-picker-mobile.png`. The temporary fixture was removed. Managed staging persistence remains unverified. Full CMS UAT remains incomplete.

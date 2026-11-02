@@ -1,0 +1,9 @@
+.cms-home-concierge{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(24px,5vw,80px);overflow-wrap:anywhere}
+.cms-home-concierge>h1,.cms-home-concierge>h2,.cms-home-concierge>h3{margin:0}
+.cms-home-concierge-card{border:1px solid currentColor;padding:clamp(20px,4vw,48px)}
+.cms-home-concierge-card ul{list-style:none;padding:0;display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}
+.cms-home-concierge-card li{max-width:100%}
+.cms-home-concierge-card a{display:inline-block;color:inherit;border:1px solid currentColor;border-radius:2px;padding:12px 16px;text-decoration:none}
+.cms-home-concierge-card a:focus-visible{outline:3px solid currentColor;outline-offset:4px}
+.cms-home-concierge-contact{font-weight:700}
+@media(max-width:760px){.cms-home-concierge{grid-template-columns:1fr}}

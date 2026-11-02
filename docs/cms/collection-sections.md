@@ -1,0 +1,7 @@
+# Cards, statistics, timelines and logos
+
+Four more section families now have editor forms and draft preview renderers. Cards expose title/copy, approved two/three/four-column layout, optional image and button. Statistics expose value, label, unit, source and disclaimer. Timelines expose date/period, milestone title/copy and optional image. Logo strips expose label, optional safe destination and required library image. All item arrays have schema-defined bounds and stable IDs, with add/remove/reorder controls. Image fields reuse the authenticated library picker and per-placement description/caption/credit editor.
+
+The preview renders responsive cards, definition-list statistics, ordered milestones and linked logo labels. Source/disclaimer text is displayed without alteration. No external content is fetched to substantiate entered statistics; editorial review remains necessary. These are draft previews, not live-site publication renderers.
+
+Verification: ten composition tests and TypeScript passed. Tests cover factory/schema compatibility and duplicate independence for all four families; logos remain invalid until a real asset reference and description are entered. A synthetic browser fixture verified statistic value/label/source/disclaimer editing and source display in preview, with no horizontal overflow at 390px and no captured console warnings/errors. Screenshot: /private/tmp/cms-statistics-preview-mobile.png. Fixture removed. Cards/timeline/logo browser flows and managed staging persistence remain unverified.

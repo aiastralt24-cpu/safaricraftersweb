@@ -1,3 +1,10 @@
+import {cache} from 'react';
+import {CmsExpedition} from '@/components/CmsExpedition';
+import {PublicEnquiryForm} from '@/components/PublicEnquiryForm';
+import {readPublishedExpedition,publicExpeditionConfig} from '@/lib/cms/public-expedition-runtime';
+import {usesCmsExpedition,publishedExpeditionMetadata} from '@/lib/cms/expedition-route';
+import {readSeoDefaults} from '@/lib/cms/seo-settings';
+import { EditorialFilm } from "@/components/EditorialFilm";
 import informationStyles from "@/components/TourInformation.module.css";
 import { BookingConditions } from "@/components/BookingConditions";
 import { tourPriceLabel } from "@/lib/tour-pricing";
@@ -15,26 +22,36 @@ import { breadcrumbSchema, expeditionSchema, faqSchema } from "@/lib/structured-
 import { expeditions, getDestination, getExpedition } from "@/lib/data";
 import "../../detail.css";
 
+const loadCmsExpedition=cache((slug:string)=>readPublishedExpedition(slug,publicExpeditionConfig()));
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
+  if(usesCmsExpedition())return [];
   return expeditions.map((expedition) => ({ slug: expedition.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  if(usesCmsExpedition()){const expedition=await loadCmsExpedition(slug);if(!expedition)notFound();return publishedExpeditionMetadata(expedition,await readSeoDefaults(),process.env.CMS_PUBLIC_SITE_ORIGIN??'https://safaricrafters.com');}
   const expedition = getExpedition(slug);
   if (!expedition) return {};
   return {
-    title: expedition.title,
-    description: expedition.description
+    title: expedition.seo?.title || expedition.title,
+    description: expedition.seo?.description || expedition.description,
+    alternates: {canonical: `/photo-expeditions/${expedition.slug}`},
+    openGraph: {title: expedition.seo?.title || expedition.title, description: expedition.seo?.description || expedition.description, images: [{url: (expedition.seo?.socialImage || expedition.image).src, alt: (expedition.seo?.socialImage || expedition.image).alt}]}
   };
 }
 
 export default async function ExpeditionDetailPage({ params }: Props) {
   const { slug } = await params;
+  if(usesCmsExpedition()){
+    const expedition=await loadCmsExpedition(slug);if(!expedition)notFound();
+    return <CmsExpedition expedition={expedition} enquiry={<PublicEnquiryForm formId={expedition.form.recordId} expedition={{recordId:expedition.recordId,revisionId:expedition.revisionId,slug:expedition.content.slug,formRevisionId:expedition.form.publishedRevisionId,departures:expedition.upcoming}}/>}/>;
+  }
   const expedition = getExpedition(slug);
   if (!expedition) notFound();
   const heroSummaries: Record<string, {title:string; copy:string}> = {
@@ -48,12 +65,24 @@ export default async function ExpeditionDetailPage({ params }: Props) {
   const heroImage = slug === "kaziranga-wildlife-photography-expedition" ? expedition.image : expedition.gallery.find((image, index) => index > 0 && image.src !== expedition.image.src)
     || expedition.gallery.find((image) => image.src !== expedition.image.src)
     || expedition.image;
-  const destinationGallery = expedition.slug === "kanha-wildlife-photography-expedition"
-    ? getDestination("kanha")?.gallery ?? []
+  const tourDestinations: Record<string, string> = {
+    "kanha-wildlife-photography-expedition": "kanha",
+    "laikipia-black-leopard-expedition": "laikipia",
+    "svalbard-expedition": "svalbard",
+    "the-pantanal-wetlands": "pantanal",
+    "bharatpur-photography-expedition": "bharatpur-keoladeo",
+    "panna-photography-expedition": "panna",
+    "ranthambhore-photography-expedition": "ranthambhore",
+    "kaziranga-wildlife-photography-expedition": "kaziranga"
+  };
+  const destinationSlug = tourDestinations[expedition.slug];
+  const destinationGallery = destinationSlug === "kaziranga"
+    ? (getDestination("kaziranga")?.gallery ?? []).filter((_, index) => [2, 3, 4, 6, 9].includes(index))
     : [];
   const seenImages = new Set<string>();
   const visualGallery = [expedition.image, ...expedition.gallery, ...destinationGallery]
     .filter((image) => image.src !== heroImage.src)
+    .filter((image) => !destinationSlug || (image.src.startsWith(`/assets/destinations/${destinationSlug}/`) || image.src.startsWith(`/assets/expeditions/${destinationSlug}/`)))
     .filter((image) => {
       if (seenImages.has(image.src)) return false;
       seenImages.add(image.src);
@@ -61,7 +90,8 @@ export default async function ExpeditionDetailPage({ params }: Props) {
     });
   const departures = upcomingDepartures(expedition);
   const formatDate = (date:string) => new Date(date).toLocaleDateString("en-GB", {day:"numeric", month:"long", year:"numeric", timeZone:"UTC"});
-  const departure = departures.length ? departureLabel(departures[0]) : undefined;
+  const bookableDepartures = departures.filter(item => item.status !== "Full");
+  const departure = expedition.enquiryDeparture || (bookableDepartures.length ? departureLabel(bookableDepartures[0]) : undefined);
   const faqs = [
     ...(expedition.faqs || []),
     { question: "When does this tour depart?", answer: departure ? `The next departure is ${departure}. See the departure list for other available dates.` : "New dates are being finalised. Send an enquiry to register your interest." },
@@ -83,8 +113,10 @@ export default async function ExpeditionDetailPage({ params }: Props) {
       <JsonLd data={breadcrumbSchema(breadcrumbs)} />
       <div className="expedition-hero"><PageHero
         variant="destination"
-        title={heroSummary?.title || expedition.title}
-        copy={heroSummary?.copy || expedition.description}
+        titleSize="compact"
+        accent={expedition.heroTitle || heroSummary?.title || expedition.title}
+        title={expedition.heroTitle || heroSummary?.title || expedition.title}
+        copy={expedition.heroCopy || expedition.description}
         image={heroImage}
         meta="Photography Tours"
         breadcrumbs={breadcrumbs.map((item, index) => ({ label: index === breadcrumbs.length - 1 ? heroSummary?.title || item.name : item.name, ...(index < breadcrumbs.length - 1 ? { href: item.path } : {}) }))}
@@ -133,7 +165,7 @@ export default async function ExpeditionDetailPage({ params }: Props) {
             {expedition.equipment && <details className="expedition-equipment"><summary>Camera equipment</summary><p>{expedition.equipment}</p></details>}
             <section className="expedition-departures" aria-label="Upcoming departures">
               <h2>Upcoming departures</h2>
-              {departures.length ? <ul>{departures.map(item => <li key={item.date}><time dateTime={item.date}>{formatDate(item.date)}{item.endDate ? " – " + formatDate(item.endDate) : ""}</time><span className={"departure-status departure-status-" + item.status.toLowerCase().replace(/ /g,"-")}>{item.availability && item.status === "Available" ? item.availability : item.status}</span></li>)}</ul> : <p>New dates being finalised. Enquire to register your interest.</p>}
+              {departures.length ? <ul>{departures.map(item => <li key={item.date}><span><time dateTime={item.date}>{formatDate(item.date)}{item.endDate ? " – " + formatDate(item.endDate) : ""}</time>{item.status === "Full" && expedition.enquiryDeparture && <span style={{ display: "block", marginTop: 8, fontSize: "0.875rem", fontWeight: 600 }}>Booking open for {expedition.enquiryDeparture.match(/20\d{2}/)?.[0]}</span>}</span><span className={"departure-status departure-status-" + item.status.toLowerCase().replace(/ /g,"-")}>{item.status === "Full" ? "Sold out" : item.availability && item.status === "Available" ? item.availability : item.status}</span></li>)}</ul> : <p>New dates being finalised. Enquire to register your interest.</p>}
             </section>
             <Link className="at-glance-action" href="#expedition-enquiry">Enquire about departures</Link>
           </aside>
@@ -172,16 +204,17 @@ export default async function ExpeditionDetailPage({ params }: Props) {
               </div>
               <p>Wildlife encounters sit within a larger story of weather, terrain, patience and place.</p>
             </header>
-            <MediaGallery images={visualGallery} label={`${expedition.title} complete photographic journal`} />
+            <MediaGallery images={visualGallery} maxImages={30} label={`${expedition.title} complete photographic journal`} />
           </section>
         ) : null}
         <section className={`container ${informationStyles.section}`} aria-labelledby="tour-faq-heading"><header className={informationStyles.intro}><p className="eyebrow">Photography tour questions</p><h2 id="tour-faq-heading">Before you <em className="editorial-accent">set out.</em></h2><p>Dates, equipment and what to expect on your photography tour.</p></header><div className={informationStyles.questions}>{faqs.map(faq => <details key={faq.question} name="photography-faq"><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
+        <EditorialFilm video={expedition.video} />
         <BookingConditions cancellationPolicy={expedition.cancellationPolicy} />
         <ExpeditionEnquiry
           title={expedition.title}
           slug={expedition.slug}
           departure={departure}
-          departureOptions={departures.map(item=>departureLabel(item))}
+          departureOptions={expedition.enquiryDeparture ? [expedition.enquiryDeparture] : bookableDepartures.map(item=>departureLabel(item))}
           mentor={expedition.mentor}
           region={expedition.category}
         />

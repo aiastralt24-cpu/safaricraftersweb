@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {verifiedPublicFaq} from '../lib/cms/public-faq.ts';
+const id=n=>`00000000-0000-4000-8000-${String(n).padStart(12,'0')}`,value={recordId:id(1),revisionId:id(2),locale:'en',question:'When to visit?',answer:[{kind:'paragraph',text:'Choose your season.'}]};
+test('public FAQ boundary accepts only the requested identity and public answer fields',()=>{assert.deepEqual(verifiedPublicFaq(value,id(1)),value);assert.equal(verifiedPublicFaq(null,id(1)),null);for(const v of [{...value,recordId:id(3)},{...value,internalNotes:'private'},{...value,relationships:{}},{...value,locale:'fr'},{...value,answer:[{kind:'html',html:'<script/>'}]}])assert.throws(()=>verifiedPublicFaq(v,id(1)));});

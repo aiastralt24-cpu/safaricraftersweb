@@ -1,0 +1,8 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {prepareMenuConflict} from '../lib/cms/menu-conflict.ts';
+import {resolveDraftConflict} from '../lib/cms/draft-conflict.ts';
+import {navigationItemSchema} from '../lib/cms/navigation.ts';
+const item=(id,parentId=null)=>navigationItemSchema.parse({id,parentId,label:id,target:{kind:'group'},visibility:{visible:true}});
+const base=()=>({id:'menu',type:'navigation',path:null,locale:'en',currentRevision:'first',payload:{schemaVersion:1,title:'Menu',items:[item('parent'),item('child','parent')]},permissions:{edit:true}});
+test('menu conflicts preserve complete trees and independent title changes',()=>{const original=base(),mine={...original.payload,items:[]},latest={...original,currentRevision:'second',payload:{...original.payload,title:'Remote title',items:[item('parent'),item('child','parent'),item('other')]}};const c=prepareMenuConflict(original,mine,latest);assert.throws(()=>resolveDraftConflict(c.base,c.mine,c.remote,{}),/items/);const merged=resolveDraftConflict(c.base,c.mine,c.remote,{items:'mine'});assert.deepEqual(merged.items,[]);assert.equal(merged.title,'Remote title');assert.deepEqual(resolveDraftConflict(c.base,c.mine,c.remote,{items:'latest'}).items,latest.payload.items);});
+test('menu reconciliation rejects foreign identity, lost access, changed locale and malformed tree',()=>{const original=base();for(const patch of [{id:'other'},{type:'page'},{path:'/menu'},{locale:'fr'},{permissions:{edit:false}},{currentRevision:'first'},{payload:{...original.payload,items:[item('orphan','missing')]}}])assert.throws(()=>prepareMenuConflict(original,original.payload,{...original,currentRevision:'second',...patch}));});

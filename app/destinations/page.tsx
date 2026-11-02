@@ -1,3 +1,7 @@
+import {CmsDestinationListing} from '@/components/CmsDestinationListing';
+import {destinationListReader,readPublishedDestinationList} from '@/lib/cms/published-destination-list';
+import {reservedDestinationSlugs} from '@/lib/cms/destination-reserved-routes';
+import './cms-destination.css';
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,21 +12,27 @@ import { destinations, getDestination, getRegionalAtlases } from "@/lib/data";
 import { breadcrumbSchema } from "@/lib/structured-data";
 import "../listing.css";
 
+export const dynamic='force-dynamic';
 export const metadata: Metadata = {
   title: "Luxury Safari Destinations",
   description: "Explore private safari destination guides for India, Africa and beyond, with field notes on season, wildlife, access and journey pairings.",
   alternates: { canonical: "/destinations" }
 };
 
-export default function DestinationsPage() {
+export default async function DestinationsPage() {
   const atlases = getRegionalAtlases();
+  if(process.env.CMS_DESTINATION_RENDERING_ENABLED==='true'){
+    const published=(await readPublishedDestinationList(destinationListReader())).filter(item=>!reservedDestinationSlugs.includes(item.slug));
+    return <CmsDestinationListing destinations={published} atlases={atlases.map(atlas=>({slug:atlas.slug,title:atlas.shortTitle,description:atlas.heroCopy}))}/>;
+  }
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Destinations", path: "/destinations" }])} />
       <PageHero
         title="The wild, considered."
+        titleSize="compact"
         copy="Private journeys shaped by habitat, season and the people who know a place intimately."
-        image={destinations[0].image}
+        image={getDestination("kanha")!.gallery.find(photo => photo.src.includes("7e01f2bddc64"))!}
         meta="Destinations"
         variant="destination"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Destinations" }]}
@@ -31,10 +41,10 @@ export default function DestinationsPage() {
         <div className="atlas-discovery">
           <div className="container atlas-intro">
             <p className="eyebrow">A private atlas</p>
-            <h2 className="h2">A few remarkable places, chosen with <em className="editorial-accent">intent.</em></h2>
+            <h2 className="h2">Remarkable <em className="editorial-accent">places.</em><br />Chosen with <em className="editorial-accent">intent.</em></h2>
             <p>
-              This is not an inventory of everywhere we can send you. It is a way into the
-              landscapes we know, guided by what you hope to witness and how you want to travel.
+              Explore the landscapes we know, chosen around what you hope to encounter
+              and how you want to travel.
             </p>
           </div>
           <div className="container atlas-region-cards" aria-label="Regional destination atlases">

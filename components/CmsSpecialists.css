@@ -1,0 +1,17 @@
+.cms-specialist-list { display: grid; gap: clamp(72px, 10vw, 132px); }
+.cms-specialist-list article { display: grid; grid-template-columns: minmax(280px, 380px) minmax(0, 1fr); gap: clamp(40px, 7vw, 88px); align-items: center; padding-top: 34px; border-top: var(--rule-fine); }
+.cms-specialist-portrait { margin: 0; min-width: 0; }
+.cms-specialist-portrait .image-frame { aspect-ratio: 3 / 4; }
+.cms-specialist-portrait img { width: 100%; height: 100%; object-fit: cover; }
+.cms-specialist-portrait figcaption { margin-top: 12px; font-size: .875rem; overflow-wrap: anywhere; }
+.cms-specialist-list article:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(280px, 380px); }
+.cms-specialist-list article:nth-child(even) .cms-specialist-portrait { order: 2; }
+.cms-specialist-copy { min-width: 0; max-width: 760px; overflow-wrap: anywhere; }
+.cms-specialist-copy h2, .cms-specialist-copy p { margin: 0 0 14px; }
+.cms-specialist-copy p, .cms-specialist-copy blockquote { white-space: pre-line; }
+.cms-specialist-copy blockquote { margin: 26px 0; border-left: 1px solid var(--brass); padding-left: 24px; color: var(--charcoal); font-family: var(--font-display); font-size: clamp(1.25rem, 2vw, 1.75rem); font-style: italic; line-height: 1.55; }
+.cms-specialist-copy .button { max-width: 100%; white-space: normal; }
+@media (max-width: 860px) {
+ .cms-specialist-list article, .cms-specialist-list article:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
+ .cms-specialist-list article:nth-child(even) .cms-specialist-portrait { order: 0; }
+}

@@ -1,0 +1,657 @@
+{
+  "schemaVersion": 1,
+  "mode": "legacy-read-only",
+  "sources": [
+    {
+      "sourcePath": "app/contact/LegacyContactPage.tsx",
+      "sha256": "a502ae7efe8f3fea8ae0749087b841ded038d7f663d011c84efd59d598843787"
+    },
+    {
+      "sourcePath": "app/contact/contact.module.css",
+      "sha256": "676ad0e9d7ee6bcec8453d53ced46fadf78f2658b984d7b61e82e743394f9d7d"
+    },
+    {
+      "sourcePath": "components/ContactForm.tsx",
+      "sha256": "57f3ffe5c28715f1eb35c4ce26aae60c3a7b7a14579ca3842034370227ac07b6"
+    },
+    {
+      "sourcePath": "app/mice/page.tsx",
+      "sha256": "7b4e6e5caf1368ad099ac90567818da77ccc6841a9d89560179395b3672d5513"
+    },
+    {
+      "sourcePath": "app/mice/LegacyMicePage.tsx",
+      "sha256": "3356e3696dc065a4d71c2457acd6e8627cb1e1ca0af5bedd3e1bc5c44f3b14d7"
+    },
+    {
+      "sourcePath": "app/forms.css",
+      "sha256": "2c5537670ba2ec856e9553005010a6222e52cb7f5c80f2f461e27f6af62ea506"
+    },
+    {
+      "sourcePath": "components/EnquiryHoneypot.tsx",
+      "sha256": "d9bed4400906c56e366c50cb12bcbb1079f913c9062800e63b941ccfbc07c5c0"
+    },
+    {
+      "sourcePath": "lib/enquiry-client.ts",
+      "sha256": "755b8fbcf59472297dc80bcff99cd3c5ef724e4eadb05b0e15ac6ac7f96196e7"
+    },
+    {
+      "sourcePath": "app/api/enquiry/route.ts",
+      "sha256": "c7265beddf4d65f8b772f48fceda51c6caf2f614b18828f486a3a810743fe367"
+    },
+    {
+      "sourcePath": "lib/enquiry-service.ts",
+      "sha256": "5fd01808721264eb3906c310461cc64f97e39baa5abd71071322334f2bd5e2d8"
+    },
+    {
+      "sourcePath": "app/layout.tsx",
+      "sha256": "6873e2f183d17bb26dd3e84f732f700474fe81c1ed93729836e06833ca1c888c"
+    },
+    {
+      "sourcePath": "lib/cms/root-seo-metadata.ts",
+      "sha256": "ab8e7f72269a4c5fce57c680ea42a3f41b68843e899e2eeaff09c9f109ac0f32"
+    },
+    {
+      "sourcePath": "lib/cms/seo-settings.ts",
+      "sha256": "b8a380962fc923ba300e2dc68d33c338fd82f2794ca8bbb6c6bd74d4dd5928d0"
+    },
+    {
+      "sourcePath": "lib/cms/brand-metadata.ts",
+      "sha256": "90b30edd5c345d33a200dafaec61524d3224f8567c6a8ffda532b267e3655a40"
+    },
+    {
+      "sourcePath": "lib/cms/brand-settings.ts",
+      "sha256": "1182eb44d908160fdf2a0fa05b1d1d8d8d3bc616fd8089c32578f366e95dee76"
+    }
+  ],
+  "media": [
+    {
+      "sourcePath": "/assets/destinations/kanha/field-photographs/8a6eba1b2e6a.webp",
+      "sha256": "ef53da1451673db297a241b938955cacced448a86bf355831d08365ca95d597f"
+    },
+    {
+      "sourcePath": "/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png",
+      "sha256": "fbb71844549dbd3119216f2c6d1e13228de17dff77a3c8cb9fcba600333625ce"
+    }
+  ],
+  "routes": [
+    {
+      "path": "/contact",
+      "metadata": {
+        "canonical": "https://safaricrafters.com/",
+        "robots": [],
+        "openGraph": [
+          {
+            "property": "og:title",
+            "content": "Safari Crafters"
+          },
+          {
+            "property": "og:description",
+            "content": "Private safari journeys, photography tours and editorial field notes shaped by named specialists."
+          },
+          {
+            "property": "og:url",
+            "content": "https://safaricrafters.com"
+          },
+          {
+            "property": "og:site_name",
+            "content": "Safari Crafters"
+          },
+          {
+            "property": "og:image",
+            "content": "https://safaricrafters.com/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png"
+          },
+          {
+            "property": "og:image:width",
+            "content": "1261"
+          },
+          {
+            "property": "og:image:height",
+            "content": "1261"
+          },
+          {
+            "property": "og:image:alt",
+            "content": "Tiger family walking through Ranthambhore"
+          },
+          {
+            "property": "og:type",
+            "content": "website"
+          }
+        ],
+        "twitter": [
+          {
+            "name": "twitter:card",
+            "content": "summary_large_image"
+          },
+          {
+            "name": "twitter:title",
+            "content": "Safari Crafters"
+          },
+          {
+            "name": "twitter:description",
+            "content": "Private, photography-led safari journeys."
+          },
+          {
+            "name": "twitter:image",
+            "content": "https://safaricrafters.com/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png"
+          },
+          {
+            "name": "twitter:image:alt",
+            "content": "Tiger family walking through Ranthambhore"
+          },
+          {
+            "name": "twitter:image:width",
+            "content": "1261"
+          },
+          {
+            "name": "twitter:image:height",
+            "content": "1261"
+          }
+        ]
+      },
+      "contactContent": {
+        "intro": {
+          "eyebrow": "A journey starts with a conversation",
+          "heading": {
+            "lines": [
+              {
+                "runs": [
+                  {
+                    "text": "Where would you",
+                    "emphasis": false
+                  }
+                ]
+              },
+              {
+                "runs": [
+                  {
+                    "text": "like to ",
+                    "emphasis": false
+                  },
+                  {
+                    "text": "go next?",
+                    "emphasis": true
+                  }
+                ]
+              }
+            ]
+          },
+          "lead": "A place you’ve always imagined. A wildlife encounter you’ve waited for. Tell us what draws you there, and we’ll help shape the journey.",
+          "scope": "Private journeys, bespoke safaris and photography tours across India and beyond.",
+          "image": {
+            "sourcePath": "/assets/destinations/kanha/field-photographs/8a6eba1b2e6a.webp",
+            "alt": "A safari vehicle on a sunlit forest trail in Kanha",
+            "caption": "Every journey begins with a little curiosity."
+          },
+          "focalPoint": {
+            "x": 50,
+            "y": 62
+          },
+          "showImageOnMobile": false,
+          "direct": {
+            "prompt": "Prefer to write directly?",
+            "label": "info@safaricrafters.com ↗",
+            "email": "info@safaricrafters.com"
+          },
+          "corporate": {
+            "copy": "Planning for your company, partners or clients? ",
+            "link": {
+              "label": "Explore corporate journeys ↗",
+              "href": "/mice#corporate-enquiry"
+            }
+          }
+        },
+        "enquiry": {
+          "eyebrow": "Your travel brief",
+          "heading": {
+            "lines": [
+              {
+                "runs": [
+                  {
+                    "text": "Let’s make a ",
+                    "emphasis": false
+                  },
+                  {
+                    "text": "beginning.",
+                    "emphasis": true
+                  }
+                ]
+              }
+            ]
+          },
+          "copy": "Start with what you know. We’ll work out the details together.",
+          "requiredHint": "Name, email, phone number and a short message are required.",
+          "privacy": {
+            "copy": "Your details help us respond to your enquiry. ",
+            "link": {
+              "label": "Privacy policy",
+              "href": "/legal/privacy"
+            }
+          }
+        }
+      },
+      "surroundingText": "A journey starts with a conversationWhere would youlike to go next?A place you’ve always imagined. A wildlife encounter you’ve waited for. Tell us what draws you there, and we’ll help shape the journey.Private journeys, bespoke safaris and photography tours across India and beyond.Every journey begins with a little curiosity.Prefer to write directly?info@safaricrafters.com ↗Planning for your company, partners or clients? Explore corporate journeys ↗Your travel briefLet’s make a beginning.Start with what you know. We’ll work out the details together.Name, email, phone number and a short message are required.Your details help us respond to your enquiry. Privacy policy",
+      "title": "Contact Us | Safari Crafters",
+      "description": "Plan private journeys, bespoke safaris, photography tours and corporate travel across India and international destinations with Safari Crafters.",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Where would youlike to go next?",
+          "html": "Where would you<br>like to <em>go next?</em>"
+        },
+        {
+          "level": "H2",
+          "text": "Let’s make a beginning.",
+          "html": "Let’s make a <em>beginning.</em>"
+        }
+      ],
+      "paragraphs": [
+        "A journey starts with a conversation",
+        "A place you’ve always imagined. A wildlife encounter you’ve waited for. Tell us what draws you there, and we’ll help shape the journey.",
+        "Private journeys, bespoke safaris and photography tours across India and beyond.",
+        "Every journey begins with a little curiosity.",
+        "Planning for your company, partners or clients? Explore corporate journeys ↗",
+        "Your travel brief",
+        "Start with what you know. We’ll work out the details together.",
+        "Name, email, phone number and a short message are required.",
+        "Your details help us respond to your enquiry. Privacy policy"
+      ],
+      "links": [
+        {
+          "label": "info@safaricrafters.com ↗",
+          "href": "mailto:info@safaricrafters.com"
+        },
+        {
+          "label": "Explore corporate journeys ↗",
+          "href": "/mice#corporate-enquiry"
+        },
+        {
+          "label": "Privacy policy",
+          "href": "/legal/privacy"
+        }
+      ],
+      "image": {
+        "sourcePath": "/assets/destinations/kanha/field-photographs/8a6eba1b2e6a.webp",
+        "alt": "A safari vehicle on a sunlit forest trail in Kanha",
+        "sha256": "ef53da1451673db297a241b938955cacced448a86bf355831d08365ca95d597f"
+      },
+      "form": {
+        "note": null,
+        "fields": [
+          {
+            "name": "name",
+            "tag": "input",
+            "type": "text",
+            "label": "Name",
+            "required": true,
+            "placeholder": null,
+            "minLength": null,
+            "maxLength": "120",
+            "autoComplete": "name",
+            "defaultValue": "",
+            "help": null
+          },
+          {
+            "name": "email",
+            "tag": "input",
+            "type": "email",
+            "label": "Email",
+            "required": true,
+            "placeholder": null,
+            "minLength": null,
+            "maxLength": null,
+            "autoComplete": "email",
+            "defaultValue": "",
+            "help": null
+          },
+          {
+            "name": "phone",
+            "tag": "input",
+            "type": "tel",
+            "label": "WhatsApp / phone",
+            "required": true,
+            "placeholder": null,
+            "minLength": "7",
+            "maxLength": "60",
+            "autoComplete": "tel",
+            "defaultValue": "",
+            "help": null
+          },
+          {
+            "name": "travelWindow",
+            "tag": "input",
+            "type": "text",
+            "label": "Travel dates (optional)",
+            "required": false,
+            "placeholder": "Month, season or flexible",
+            "minLength": null,
+            "maxLength": null,
+            "autoComplete": null,
+            "defaultValue": "",
+            "help": null
+          },
+          {
+            "name": "interest",
+            "tag": "input",
+            "type": "text",
+            "label": "Travel interests (optional)",
+            "required": false,
+            "placeholder": "e.g. Wildlife or photography",
+            "minLength": null,
+            "maxLength": null,
+            "autoComplete": null,
+            "defaultValue": "",
+            "help": null
+          },
+          {
+            "name": "accommodation",
+            "tag": "select",
+            "type": "select-one",
+            "label": "Stay preference (optional)",
+            "required": false,
+            "placeholder": null,
+            "minLength": null,
+            "maxLength": null,
+            "autoComplete": null,
+            "defaultValue": "Not decided yet",
+            "help": null,
+            "options": [
+              {
+                "value": "Not decided yet",
+                "label": "Not decided yet"
+              },
+              {
+                "value": "Quiet luxury",
+                "label": "Quiet luxury"
+              },
+              {
+                "value": "Classic safari camps",
+                "label": "Classic safari camps"
+              },
+              {
+                "value": "Design-led lodges",
+                "label": "Design-led lodges"
+              },
+              {
+                "value": "A considered mix",
+                "label": "A considered mix"
+              }
+            ]
+          },
+          {
+            "name": "message",
+            "tag": "textarea",
+            "type": "textarea",
+            "label": "Message",
+            "required": true,
+            "placeholder": "Where you want to go, who is travelling and what kind of safari you have in mind.",
+            "minLength": null,
+            "maxLength": null,
+            "autoComplete": null,
+            "defaultValue": "",
+            "help": null
+          },
+          {
+            "name": "consent",
+            "tag": "input",
+            "type": "checkbox",
+            "label": "",
+            "required": true,
+            "placeholder": null,
+            "minLength": null,
+            "maxLength": null,
+            "autoComplete": null,
+            "defaultValue": "on",
+            "help": null,
+            "consentText": "I consent to Safari Crafters using these details to respond to my travel brief."
+          }
+        ],
+        "submitLabel": "Plan My Journey"
+      },
+      "checks": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "viewports": [
+          {
+            "width": 1280,
+            "overflow": false
+          },
+          {
+            "width": 390,
+            "overflow": false
+          }
+        ],
+        "selectInteraction": true
+      }
+    },
+    {
+      "path": "/mice",
+      "metadata": {
+        "canonical": "https://safaricrafters.com/mice",
+        "robots": [],
+        "openGraph": [
+          {
+            "property": "og:title",
+            "content": "Safari Crafters"
+          },
+          {
+            "property": "og:description",
+            "content": "Private safari journeys, photography tours and editorial field notes shaped by named specialists."
+          },
+          {
+            "property": "og:url",
+            "content": "https://safaricrafters.com"
+          },
+          {
+            "property": "og:site_name",
+            "content": "Safari Crafters"
+          },
+          {
+            "property": "og:image",
+            "content": "https://safaricrafters.com/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png"
+          },
+          {
+            "property": "og:image:width",
+            "content": "1261"
+          },
+          {
+            "property": "og:image:height",
+            "content": "1261"
+          },
+          {
+            "property": "og:image:alt",
+            "content": "Tiger family walking through Ranthambhore"
+          },
+          {
+            "property": "og:type",
+            "content": "website"
+          }
+        ],
+        "twitter": [
+          {
+            "name": "twitter:card",
+            "content": "summary_large_image"
+          },
+          {
+            "name": "twitter:title",
+            "content": "Safari Crafters"
+          },
+          {
+            "name": "twitter:description",
+            "content": "Private, photography-led safari journeys."
+          },
+          {
+            "name": "twitter:image",
+            "content": "https://safaricrafters.com/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png"
+          },
+          {
+            "name": "twitter:image:alt",
+            "content": "Tiger family walking through Ranthambhore"
+          },
+          {
+            "name": "twitter:image:width",
+            "content": "1261"
+          },
+          {
+            "name": "twitter:image:height",
+            "content": "1261"
+          }
+        ]
+      },
+      "contactContent": null,
+      "surroundingText": "Start with your briefWhere could your people go next?India, international or still exploring? Share your name, email and phone number to start. If you already have dates, group size or a destination in mind, add them to your brief.",
+      "title": "Corporate Travel & MICE | India & International | Safari Crafters",
+      "description": "Corporate travel and MICE in India and internationally: employee retreats, dealer incentives, distributor meets, channel partner journeys and client hospitality.",
+      "headings": [
+        {
+          "level": "H2",
+          "text": "Where could your people go next?",
+          "html": "Where could your people <em class=\"editorial-accent\">go next?</em>"
+        }
+      ],
+      "paragraphs": [
+        "Start with your brief",
+        "India, international or still exploring? Share your name, email and phone number to start. If you already have dates, group size or a destination in mind, add them to your brief."
+      ],
+      "links": [],
+      "image": null,
+      "form": {
+        "note": "Start with the essentials. We’ll work out the details together.",
+        "fields": [
+          {
+            "name": "name",
+            "tag": "input",
+            "type": "text",
+            "label": "Name",
+            "required": true,
+            "placeholder": null,
+            "minLength": null,
+            "maxLength": "120",
+            "autoComplete": "name",
+            "defaultValue": "",
+            "help": null
+          },
+          {
+            "name": "email",
+            "tag": "input",
+            "type": "email",
+            "label": "Email",
+            "required": true,
+            "placeholder": null,
+            "minLength": null,
+            "maxLength": null,
+            "autoComplete": "email",
+            "defaultValue": "",
+            "help": null
+          },
+          {
+            "name": "phone",
+            "tag": "input",
+            "type": "tel",
+            "label": "WhatsApp / phone",
+            "required": true,
+            "placeholder": null,
+            "minLength": "7",
+            "maxLength": "60",
+            "autoComplete": "tel",
+            "defaultValue": "",
+            "help": null
+          },
+          {
+            "name": "company",
+            "tag": "input",
+            "type": "text",
+            "label": "Company (optional)",
+            "required": false,
+            "placeholder": null,
+            "minLength": null,
+            "maxLength": "160",
+            "autoComplete": "organization",
+            "defaultValue": "",
+            "help": null
+          },
+          {
+            "name": "destination",
+            "tag": "select",
+            "type": "select-one",
+            "label": "Destination preference",
+            "required": false,
+            "placeholder": null,
+            "minLength": null,
+            "maxLength": null,
+            "autoComplete": null,
+            "defaultValue": "Open to suggestions",
+            "help": null,
+            "options": [
+              {
+                "value": "Open to suggestions",
+                "label": "Open to suggestions"
+              },
+              {
+                "value": "India",
+                "label": "India"
+              },
+              {
+                "value": "International",
+                "label": "International"
+              },
+              {
+                "value": "India & International",
+                "label": "India & International"
+              }
+            ]
+          },
+          {
+            "name": "message",
+            "tag": "textarea",
+            "type": "textarea",
+            "label": "Your brief (optional)",
+            "required": false,
+            "placeholder": "e.g. An incentive trip for 30 dealers in March",
+            "minLength": null,
+            "maxLength": "4000",
+            "autoComplete": null,
+            "defaultValue": "",
+            "help": "Who is travelling? Add your purpose, dates or group size, if known."
+          },
+          {
+            "name": "consent",
+            "tag": "input",
+            "type": "checkbox",
+            "label": "",
+            "required": true,
+            "placeholder": null,
+            "minLength": null,
+            "maxLength": null,
+            "autoComplete": null,
+            "defaultValue": "on",
+            "help": null,
+            "consentText": "I consent to Safari Crafters using these details to respond to my travel brief."
+          }
+        ],
+        "submitLabel": "Plan Our Corporate Journey"
+      },
+      "checks": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "viewports": [
+          {
+            "width": 1280,
+            "overflow": false
+          },
+          {
+            "width": 390,
+            "overflow": false
+          }
+        ],
+        "selectInteraction": true
+      }
+    }
+  ],
+  "limitations": [
+    "No enquiry was submitted; API delivery, failure and success states require separate verification.",
+    "Header/footer/navigation are global inventory responsibilities.",
+    "Native field constraints are captured, not changed or assumed to match server validation.",
+    "Corporate form content shares ContactForm; changes must preserve both variants.",
+    "No CMS draft, deployment or configuration was changed."
+  ]
+}

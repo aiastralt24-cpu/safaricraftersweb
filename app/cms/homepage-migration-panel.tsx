@@ -1,0 +1,60 @@
+'use client';
+import {useEffect,useRef,useState} from 'react';
+import {PagePreviewPanel} from './page-preview-panel';
+import type {LoadMediaPreview} from './media-image';
+import type {HomepageMigrationManifest} from '../../lib/cms/homepage-migration-contracts';
+import {homepageRecoveryKey,readPendingHomepageMigration,makePendingHomepageMigration,homepageApplyCommand,verifyHomepageReceipt,verifyHomepageRecovery,readHomepageMappingFile,readHomepageMigrationReview} from '../../lib/cms/homepage-migration-client';
+import type {HomepageMigrationSelection,PendingHomepageMigration,HomepageMigrationReview} from '../../lib/cms/homepage-migration-client';
+type Props={loadPreview:LoadMediaPreview;loadVideoPreview?:LoadMediaPreview;site:string;actorId:string;onPending:(value:boolean)=>void;onApplied:(result:{recordId:string;revisionId:string})=>Promise<void>;record:{id:string;currentRevision:string;path:string;permissions:Record<string,boolean>}|null;disabled:boolean;api:(path:string,options?:RequestInit)=>Promise<any>};
+export function HomepageMigrationPanel({site,actorId,record,disabled,api,onPending,onApplied,loadPreview,loadVideoPreview}:Props){
+ const [mappings,setMappings]=useState<HomepageMigrationManifest|null>(null),[filename,setFilename]=useState(''),[review,setReview]=useState<HomepageMigrationReview|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState('');
+ const generation=useRef(0),alive=useRef(true),controller=useRef<AbortController|null>(null);
+ const [pending,setPending]=useState<PendingHomepageMigration|null>(null),[ready,setReady]=useState(false),[storageError,setStorageError]=useState(false),[ack,setAck]=useState(false),[message,setMessage]=useState(''),[reviewedSelection,setReviewedSelection]=useState<HomepageMigrationSelection|null>(null);
+ const working=useRef(false),key=homepageRecoveryKey(site,actorId);
+ useEffect(()=>{try{setPending(readPendingHomepageMigration(localStorage.getItem(key),site,actorId));}catch{setStorageError(true);setError('Recovery data could not be read. Ask an administrator to check this pending homepage migration.');}setReady(true);},[key,site,actorId]);
+ useEffect(()=>{onPending(!ready||busy||Boolean(review)||Boolean(pending)||storageError);},[ready,busy,review,pending,storageError,onPending]);
+ useEffect(()=>()=>onPending(false),[onPending]);
+ const identity=`${site}:${record?.id??'new'}:${record?.currentRevision??'new'}`;
+ const identityRef=useRef(identity);identityRef.current=identity;
+ useEffect(()=>{alive.current=true;return()=>{alive.current=false;generation.current++;controller.current?.abort();};},[]);
+ useEffect(()=>{generation.current++;if(controller.current){controller.current.abort();controller.current=null;working.current=false;setBusy(false);}setReview(null);setReviewedSelection(null);setAck(false);},[identity,disabled]);
+ const locked=disabled||busy||!ready||storageError||Boolean(pending)||Boolean(record&&!record.permissions.edit);
+ function clear(){if(pending||working.current)return;setAck(false);setReviewedSelection(null);setMessage('');generation.current++;controller.current?.abort();setMappings(null);setFilename('');setReview(null);setError('');setBusy(false);}
+ async function choose(file:File|undefined){
+  if(!file||locked)return;clear();const current=generation.current;
+  try{if(file.size>1_000_000)throw Error('The mapping file must be smaller than 1 MB.');const parsed=readHomepageMappingFile(await file.text());if(alive.current&&current===generation.current){setMappings(parsed);setFilename(file.name);}}
+  catch(reason){if(alive.current&&current===generation.current)setError(reason instanceof Error?reason.message:'The file could not be read.');}
+ }
+ async function execute(){
+  if(locked||working.current||!mappings)return;working.current=true;controller.current?.abort();const abort=new AbortController();controller.current=abort;
+  const current=++generation.current,selectedIdentity=identity;setBusy(true);setReview(null);setError('');
+  const selection={site,recordId:record?.id??null,expectedRevision:record?.currentRevision??null,mappings};
+  try{
+   const raw=await api('/api/cms/migrations/homepage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'review',...selection}),signal:abort.signal});
+   const checked=readHomepageMigrationReview(raw,selection);
+   if(alive.current&&current===generation.current&&identityRef.current===selectedIdentity){setReview(checked);setReviewedSelection({recordId:selection.recordId,expectedRevision:selection.expectedRevision,mappings:selection.mappings});setAck(false);}
+  }catch(reason){if(alive.current&&current===generation.current&&!abort.signal.aborted)setError(reason instanceof Error?reason.message:'Homepage review is unavailable.');}
+  finally{if(controller.current===abort){controller.current=null;working.current=false;}if(alive.current&&current===generation.current)setBusy(false);}
+ }
+ async function applyOrRecover(action:'apply'|'status'){
+  if(disabled||busy||working.current||!ready||storageError||action==='status'&&!pending||action==='apply'&&!pending&&(!review||!reviewedSelection||!ack||!review.applyAvailable))return;
+  working.current=true;setBusy(true);setError('');setMessage('');
+  try{
+   let request=pending;
+   if(!request){request=makePendingHomepageMigration(site,actorId,reviewedSelection!,review!,crypto.randomUUID());localStorage.setItem(key,JSON.stringify(request));setPending(request);}
+   const raw=await api('/api/cms/migrations/homepage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(action==='status'?{action,site,requestKey:request.requestKey}:homepageApplyCommand(request))});
+   if(!alive.current)return;
+   const result=action==='status'?verifyHomepageRecovery(raw,request):verifyHomepageReceipt(raw,request);
+   if(!result){setMessage('No completed result is visible yet. Keep this request and check again or retry the same request.');return;}
+   localStorage.removeItem(key);setPending(null);setReview(null);setReviewedSelection(null);setAck(false);setMessage('Homepage draft saved. Nothing was published.');
+   try{await onApplied(result);}catch{if(alive.current)setMessage('Homepage draft saved. Refresh the homepage list to see it.');}
+  }catch(reason){if(alive.current)setError(reason instanceof Error?reason.message:'Homepage migration is unavailable.');}
+  finally{working.current=false;if(alive.current)setBusy(false);}
+ }
+ return <details className='cms-destination-migration'><summary>Review existing homepage migration</summary><p>Use the prepared migration mapping file to compare the existing website with selected CMS content. This review does not change your draft or publish anything.</p><p>{record?'Review destination: selected homepage draft.':'Review destination: a new homepage draft.'}</p>{disabled&&<p>Save or discard unsaved changes and finish other operations before reviewing.</p>}{record&&!record.permissions.edit&&<p>You need permission to edit this homepage to review its migration.</p>}
+ <fieldset disabled={locked||Boolean(review)}><legend>Prepared migration mappings</legend><label>Homepage mapping file<input type='file' accept='.json,application/json' onChange={event=>{const file=event.target.files?.[0];event.target.value='';void choose(file);}}/></label>{mappings&&<p>{filename}: {mappings.media.length} media mappings and {mappings.records.length} content mappings.</p>}<button type='button' disabled={!mappings} onClick={()=>void execute()}>Compare homepage content</button><button type='button' disabled={!mappings&&!error&&!review} onClick={clear}>Clear migration review</button></fieldset>
+ {busy&&<p role='status'>Working…</p>}{message&&<p role='status'>{message}</p>}{error&&<p role='alert'>{error}</p>}
+ {review&&<section aria-label='Homepage migration comparison'><h3>{review.recordComparison.sourceMatches?'Mapped content matches the captured homepage':'Content differences need review'}</h3><p>{review.notice}</p><p>{review.proposal.composition.sections.length} proposed sections · {review.recordComparison.revisions.length} records checked</p>{review.recordComparison.findings.length>0&&<ul>{review.recordComparison.findings.map((finding,index)=><li key={index}><strong>{finding.field}</strong>: {finding.message}<small style={{display:'block',overflowWrap:'anywhere'}}>Source: {finding.sourceKey}</small></li>)}</ul>}<details><summary>Proposed section order</summary><ol>{review.proposal.composition.sections.map(section=><li key={section.id}>{section.controls.label}</li>)}</ol></details><h4>Proposed homepage</h4><PagePreviewPanel key={review.reviewDigest} value={review.proposal.composition} websiteId={site} locale='en' loadPreview={loadPreview} loadVideoPreview={loadVideoPreview} loadRecord={async(id,signal)=>(await api(`/api/cms/content?site=${site}&record=${id}`,{signal})).record}/><details><summary>Proposed SEO settings</summary><dl>{Object.entries(review.proposal.seo).filter(([key])=>key!=='schemaVersion').map(([key,value])=><div key={key}><dt>{({title:'Page title',description:'Description',canonical:'Canonical URL',indexing:'Search indexing',following:'Link following',socialTitle:'Sharing title',socialDescription:'Sharing description',socialImage:'Sharing image',breadcrumbLabel:'Breadcrumb label',sitemap:'Sitemap'} as Record<string,string>)[key]??key}</dt><dd>{typeof value==='object'?value.alt:String(value||'Automatic/default')}</dd></div>)}</dl></details><h4>Media checks</h4><p>{review.mediaVerification.images.filter(image=>image.available).length} of {review.mediaVerification.images.length} images passed source, processing and rights checks.</p>{review.mediaVerification.images.some(image=>!image.available)&&<ul>{review.mediaVerification.images.filter(image=>!image.available).map(image=><li key={image.assetId} style={{overflowWrap:'anywhere'}}>{image.sourcePath.split('/').at(-1)}: {image.sourceMatches?'Processing or current rights need review.':'The original source file does not match the mapped asset.'}</li>)}</ul>}<h4>Hero video checks</h4><p>{review.mediaVerification.videos.filter(video=>video.evidence?.available).length} of {review.mediaVerification.videos.length} hero videos passed source, processing and rights checks.</p><ul>{review.mediaVerification.videos.map(video=><li key={video.assetId} style={{overflowWrap:'anywhere'}}>{video.sourcePath.split('/').at(-1)}: {!video.evidence?'Source, processing and rights evidence is unavailable.':video.evidence.available?'Source, processing and rights checks passed.':!video.evidence.sourceMatches?'The original source file does not match the mapped video.':'Processing or current rights need review.'}</li>)}</ul><p>Public video delivery still needs validation. Passing these checks does not make the homepage ready to publish.</p><h4>Still required before migration</h4><ul>{review.findings.map((finding,index)=><li key={index}>{finding.message}</li>)}</ul><label><input type='checkbox' checked={ack} disabled={locked||!review.applyAvailable} onChange={event=>setAck(event.target.checked)}/>I reviewed the copy, media, layout, SEO and draft replacement. This saves a draft and does not publish it.</label><button type='button' disabled={locked||!ack||!review.applyAvailable} onClick={()=>void applyOrRecover('apply')}>Apply reviewed homepage draft</button><button type='button' disabled={locked} onClick={clear}>Discard homepage review</button><p>Re-run the comparison after changing any mapped record.</p></section>}
+ {pending&&<aside aria-label='Pending homepage migration'><p>Pending homepage migration: <code style={{overflowWrap:'anywhere'}}>{pending.requestKey}</code>. Recovery mappings and evidence are saved for this account and website. Page copy is not stored in the browser.</p><button type='button' disabled={disabled||busy||storageError} onClick={()=>void applyOrRecover('status')}>Check homepage migration result</button><button type='button' disabled={disabled||busy||storageError} onClick={()=>void applyOrRecover('apply')}>Retry same homepage migration</button></aside>}
+ </details>;
+}

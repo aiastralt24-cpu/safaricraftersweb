@@ -1,0 +1,21 @@
+.journey-experience .ce-hero h1{max-width:850px;font-size:clamp(40px,4.8vw,72px)}
+.journey-experience .ce-hero-description{max-width:590px}
+.journey-experience .ce-route ol{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.journey-experience .ce-mosaic-note>p{font-size:clamp(22px,2.3vw,32px)}
+.journey-experience .je-text-chapter{grid-template-columns:1fr}
+.je-route-panel{height:100%;padding:12%;display:flex;flex-direction:column;justify-content:center;gap:22px;background:radial-gradient(ellipse at top right,#495642,#17271e);color:#f7f1df}
+.je-route-panel>strong{font-family:var(--font-display);font-size:clamp(36px,4vw,64px);font-weight:400;line-height:1.1}
+.je-route-panel>span{font-size:12px;color:#d3b879}
+.je-route-panel ol{list-style:none;padding:0 0 0 20px;border-left:1px solid #708266;display:grid;gap:12px;font-size:13px;color:#adbba8}
+.je-route-panel li.active{color:#e6c67b}
+.journey-experience .je-route-panel+.ce-frame-caption{display:none}
+@media(max-width:600px){.journey-experience .ce-hero h1{font-size:36px}.journey-experience .ce-route ol{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-experience .ce-mosaic-note>p{font-size:25px}}
+.journey-experience .ce-section-heading{align-items:start}
+.journey-experience .ce-overview .ce-section-heading>p{margin-top:0;line-height:1.7}
+
+/* Match the deliberate two-line introduction used by Big Cats of India. */
+.journey-experience .ce-overview .ce-section-heading{align-items:end}
+.je-overview-line{display:block}
+.journey-experience .ce-overview .ce-section-heading>p{max-width:460px;line-height:1.75}
+@media(max-width:600px){.journey-experience .ce-overview .ce-section-heading{align-items:start}}
+

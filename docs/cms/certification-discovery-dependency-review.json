@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-30",
+  "reviews": [
+    {
+      "inventory": "concept-migration-inventory.json",
+      "sourcePath": "lib/cms/global-settings.ts",
+      "previousSha256": "c8a8752c4cd302b59860fd9699cbbc7bbed00a167c9704cf50a4fb8be5cbe7cd",
+      "sha256": "cd5492faf79069af33b4adef942a0b817dbbd82b13caf26041cbf4e12819c460",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "concept-migration-inventory.json",
+      "sourcePath": "lib/cms/search-policy.ts",
+      "previousSha256": "81ecb437b3d6fa59f5e0ef0c7ecf0c04c27a7d5dfb8a018111a2f10bb8a4328e",
+      "sha256": "42149357d686ac554be31d909349a0a81d9b7e4fe5508fbb8c4a8316d1e1a165",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "concept-migration-inventory.json",
+      "sourcePath": "lib/site-search.ts",
+      "previousSha256": "b7ae14718b1b9d18c9600e398e1d42bdb49f34c3f4eb8600a315f4878538ae98",
+      "sha256": "a52950a1a8f27a3a0b0171c3725be97e7bf2608d02c66f031418ff514f07a461",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "guided-safaris-migration-inventory.json",
+      "sourcePath": "lib/cms/global-settings.ts",
+      "previousSha256": "c8a8752c4cd302b59860fd9699cbbc7bbed00a167c9704cf50a4fb8be5cbe7cd",
+      "sha256": "cd5492faf79069af33b4adef942a0b817dbbd82b13caf26041cbf4e12819c460",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "guided-safaris-migration-inventory.json",
+      "sourcePath": "lib/cms/search-policy.ts",
+      "previousSha256": "81ecb437b3d6fa59f5e0ef0c7ecf0c04c27a7d5dfb8a018111a2f10bb8a4328e",
+      "sha256": "42149357d686ac554be31d909349a0a81d9b7e4fe5508fbb8c4a8316d1e1a165",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "guided-safaris-migration-inventory.json",
+      "sourcePath": "lib/site-search.ts",
+      "previousSha256": "b7ae14718b1b9d18c9600e398e1d42bdb49f34c3f4eb8600a315f4878538ae98",
+      "sha256": "a52950a1a8f27a3a0b0171c3725be97e7bf2608d02c66f031418ff514f07a461",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "kenya-source-inventory.json",
+      "sourcePath": "lib/cms/global-settings.ts",
+      "previousSha256": "c8a8752c4cd302b59860fd9699cbbc7bbed00a167c9704cf50a4fb8be5cbe7cd",
+      "sha256": "cd5492faf79069af33b4adef942a0b817dbbd82b13caf26041cbf4e12819c460",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "kenya-source-inventory.json",
+      "sourcePath": "lib/cms/search-policy.ts",
+      "previousSha256": "81ecb437b3d6fa59f5e0ef0c7ecf0c04c27a7d5dfb8a018111a2f10bb8a4328e",
+      "sha256": "42149357d686ac554be31d909349a0a81d9b7e4fe5508fbb8c4a8316d1e1a165",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "kenya-source-inventory.json",
+      "sourcePath": "lib/site-search.ts",
+      "previousSha256": "b7ae14718b1b9d18c9600e398e1d42bdb49f34c3f4eb8600a315f4878538ae98",
+      "sha256": "a52950a1a8f27a3a0b0171c3725be97e7bf2608d02c66f031418ff514f07a461",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "private-aviation-migration-inventory.json",
+      "sourcePath": "lib/cms/global-settings.ts",
+      "previousSha256": "c8a8752c4cd302b59860fd9699cbbc7bbed00a167c9704cf50a4fb8be5cbe7cd",
+      "sha256": "cd5492faf79069af33b4adef942a0b817dbbd82b13caf26041cbf4e12819c460",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "private-aviation-migration-inventory.json",
+      "sourcePath": "lib/cms/search-policy.ts",
+      "previousSha256": "81ecb437b3d6fa59f5e0ef0c7ecf0c04c27a7d5dfb8a018111a2f10bb8a4328e",
+      "sha256": "42149357d686ac554be31d909349a0a81d9b7e4fe5508fbb8c4a8316d1e1a165",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "private-aviation-migration-inventory.json",
+      "sourcePath": "lib/site-search.ts",
+      "previousSha256": "b7ae14718b1b9d18c9600e398e1d42bdb49f34c3f4eb8600a315f4878538ae98",
+      "sha256": "a52950a1a8f27a3a0b0171c3725be97e7bf2608d02c66f031418ff514f07a461",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "tanzania-source-inventory.json",
+      "sourcePath": "lib/cms/global-settings.ts",
+      "previousSha256": "c8a8752c4cd302b59860fd9699cbbc7bbed00a167c9704cf50a4fb8be5cbe7cd",
+      "sha256": "cd5492faf79069af33b4adef942a0b817dbbd82b13caf26041cbf4e12819c460",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "tanzania-source-inventory.json",
+      "sourcePath": "lib/cms/search-policy.ts",
+      "previousSha256": "81ecb437b3d6fa59f5e0ef0c7ecf0c04c27a7d5dfb8a018111a2f10bb8a4328e",
+      "sha256": "42149357d686ac554be31d909349a0a81d9b7e4fe5508fbb8c4a8316d1e1a165",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    },
+    {
+      "inventory": "tanzania-source-inventory.json",
+      "sourcePath": "lib/site-search.ts",
+      "previousSha256": "b7ae14718b1b9d18c9600e398e1d42bdb49f34c3f4eb8600a315f4878538ae98",
+      "sha256": "a52950a1a8f27a3a0b0171c3725be97e7bf2608d02c66f031418ff514f07a461",
+      "reason": "Add the optional certification discovery category; existing settings values and legacy page rendering are unchanged."
+    }
+  ]
+}

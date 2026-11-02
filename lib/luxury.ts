@@ -192,7 +192,7 @@ const fieldBySlug: Record<string, FieldIntelligence> = {
 };
 
 export function getFieldIntelligence(destination: Destination) {
-  return fieldBySlug[destination.slug] ?? defaultFieldIntelligence;
+  return { ...(fieldBySlug[destination.slug] ?? defaultFieldIntelligence), ...Object.fromEntries(Object.entries(destination.fieldIntelligence || {}).filter(([, value]) => value?.trim())) };
 }
 
 export function getJourneyIntelligence(journey: Journey): JourneyIntelligence {
@@ -206,9 +206,9 @@ export function getJourneyIntelligence(journey: Journey): JourneyIntelligence {
       : "Transfers are planned privately, with air routing considered when it protects time and comfort."),
     comfort: journey.accommodation ||
       "Lodges are selected for access, privacy, naturalist quality, food, rest time and the ability to keep the day unhurried.",
-    wildlifeExpectation:
+    wildlifeExpectation: journey.wildlifeExpectation ||
       "Sightings are never guaranteed. The route is designed to increase meaningful time in the right habitat, with honest guidance before departure.",
-    photography:
+    photography: journey.photography ||
       "Vehicle position, guide pairing, light, lens needs and patient field behaviour are considered before the itinerary is confirmed."
   };
 }

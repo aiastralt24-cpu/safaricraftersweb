@@ -1,0 +1,19 @@
+# Trusted validation requests
+
+Apply local migrations through 031 in order. An authorized editor, reviewer or publisher can request validation for the current saved revision using the user-token editor API (`request_validation`). Read-only users cannot request it. Requests never accept browser payloads, findings or pass/fail claims. Journeys and supported inbox-only forms currently have registered validator policies.
+
+`runValidationQueue` accepts a server-only RPC transport restricted to `claim_validations`, `get_validation_job_input` and `finish_validation_job`. Jobs are claimed with a 120-second lease, read from stored revisions, and checked with the same content validator as advisory checks. Completion writes the trusted receipt and acknowledges the job in one fenced transaction. Current revision, deployment policy and media rights are rechecked by the existing receipt function. Invalid content is a completed check with a failing receipt, rather than a transport retry.
+
+Input/transport failures use safe error codes and bounded exponential retry backoff (eight attempts). Lost acknowledgements never report certification. Claiming reaps expired final attempts and supersedes jobs whose revisions are no longer current. Repeated pending requests share a job. Completed jobs can be requested again after a 30-second cooldown, allowing expired receipts to be renewed. Permissions are required at request time; worker jobs carry no browser credentials.
+
+The CMS Request trusted check control queues work, while Check saved content refreshes the result. It does not imply a worker is running and never publishes. SQL/worker tests model service and user roles locally; managed staging, concurrent-session testing, scheduler/transport deployment and operational monitoring remain required. No worker has been deployed by this checkpoint.
+
+## Deployment entry point
+
+The Node route `/api/cms/workers/validation` now provides a concrete GET/POST consumer. It remains disabled by default. Configure `CMS_SUPABASE_URL`, server-only `CMS_SUPABASE_SERVICE_ROLE_KEY`, a separate random URL-safe `CMS_VALIDATION_WORKER_SECRET` (32–256 characters), and `CMS_VALIDATION_WORKER_ENABLED=true` only after migrations through 031 and staging checks. Never use a NEXT_PUBLIC variable for either secret.
+
+Configure the deployment scheduler to call the HTTPS route with an empty body, no query parameters and `Authorization: Bearer <worker secret>`. One call processes up to ten jobs concurrently. Requests with user session tokens are not authorized. The 60-second route duration accommodates three sequential database calls with ten-second timeouts; claimed jobs use a 120-second lease. Database responses are capped at 1.5 MB and parsed with strict UTF-8, and redirects cannot forward privileged headers.
+
+A 200 result reports processed/valid/invalid counts. Invalid means the check completed and found content errors, so editors must correct the saved draft. A 503 with retryPending/unacknowledged counts means some checks could not complete reliably; the scheduler should retry on its next interval. Configuration or database failures also return 503, with no tokens, payloads, record IDs or database errors exposed. No-work runs return zero counts. Monitor repeated failures and queue age; this endpoint does not install monitoring or a scheduler.
+
+Before enabling real scheduling, verify a staging draft through request → worker → current trusted receipt → separate approval → publication. Also test revoked editor access, expired worker leases, service outages and secrets rotation in the deployed environment. Local transport tests use synthetic responses and do not prove provider permissions or concurrent managed database behavior. No real scheduler, credential or migration has been configured by this implementation.

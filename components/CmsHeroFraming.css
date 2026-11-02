@@ -1,0 +1,4 @@
+.cms-hero-framing.cms-hero-framing img{width:100%;height:auto;max-height:none;aspect-ratio:var(--hero-ratio);object-fit:cover;object-position:var(--hero-position)}
+@media(max-width:860px){.cms-hero-framing.hero-breakpoint-860 img{aspect-ratio:var(--hero-mobile-ratio);object-position:var(--hero-mobile-position)}}
+@media(max-width:760px){.cms-hero-framing.hero-breakpoint-760 img{aspect-ratio:var(--hero-mobile-ratio);object-position:var(--hero-mobile-position)}}
+@media(max-width:700px){.cms-hero-framing.hero-breakpoint-700 img{aspect-ratio:var(--hero-mobile-ratio);object-position:var(--hero-mobile-position)}}

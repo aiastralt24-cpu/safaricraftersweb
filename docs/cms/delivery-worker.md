@@ -1,0 +1,11 @@
+# Publication delivery worker
+
+The protected `/api/cms/workers/delivery` GET/POST endpoint consumes durable publication and withdrawal jobs for `CMS_WEBSITE_ID`. Apply migration 129 after preceding migrations before enabling it.
+
+Configure `CMS_DELIVERY_WORKER_ENABLED=true`, a dedicated random 32–256 character URL-safe `CMS_DELIVERY_WORKER_SECRET`, the website ID, Supabase URL, and server-only service role key. Configure the deployment scheduler to send an empty request with `Authorization: Bearer <worker secret>` and no query parameters. Keep credentials in the deployment secret store. The endpoint is disabled by default; no scheduler has been provisioned by this implementation.
+
+Each invocation reaps exhausted expired leases for its website, claims up to ten jobs with sixty-second leases, requests Next.js root-layout cache invalidation, and acknowledges each exact lease. Root invalidation covers shared records used across the homepage, directories, navigation, search and sitemap without trusting a historical job payload as current content. Public readers fetch current published state. Changes become visible on subsequent page requests; this is not a prerender/warm-up service or proof that every visitor has fetched the new page.
+
+An invalidation callback failure records `invalidation_failed` and follows the database retry schedule. A failed acknowledgement is reported as unacknowledged and is recovered by lease expiry. Superseded publication jobs are handled by the database claim function. Requests return only counts, never job payloads or service credentials. HTTP 503 indicates configuration failure, a database error, a retry, an exhausted job or an unacknowledged result; alert on repeated failures and inspect the CMS delivery/audit records.
+
+Local tests cover authentication, website isolation, malformed claims, callback failures, retry/acknowledgement behavior and worker-role SQL privileges. Production acceptance still requires scheduler configuration, current deployed migrations, multi-instance cache behavior, failure recovery, and measurement of publication-to-visitor latency. Next.js cache invalidation is requested inside the route; an acknowledged queue job does not establish that a fresh page render has completed or that an external CDN/browser cache was purged. No external search index or CDN purge adapter is configured.

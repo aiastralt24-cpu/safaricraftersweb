@@ -1,0 +1,9 @@
+/* Tanzania places wrap the image in a captioned figure; order the whole figure. */
+@media(min-width:761px){
+.tanzania-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-media="start"] .kenya-place-body>.tanzania-place-figure{order:0}
+.tanzania-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-media="end"] .kenya-place-body>.tanzania-place-figure{order:2}
+}
+@media(max-width:760px){
+.tanzania-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-mobile="mediaFirst"] .kenya-place-body>.tanzania-place-figure{order:0}
+.tanzania-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-mobile="textFirst"] .kenya-place-body>.tanzania-place-figure{order:2}
+}

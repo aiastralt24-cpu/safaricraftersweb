@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "mode": "legacy-read-only",
+  "path": "/conservation-commitment",
+  "origin": "http://localhost:3001",
+  "sources": [
+    {
+      "sourcePath": "app/conservation-commitment/page.tsx",
+      "sha256": "529ca3b4170f6f97f01f81c4ea493ddfff3104d61f6a7053e12abd63580ee4b4"
+    },
+    {
+      "sourcePath": "app/conservation-commitment/LegacyConservationPage.tsx",
+      "sha256": "da26c416ad7fa2c66bf84cf8a123a434624d0cd88a64243dc0f69603a53d76e5"
+    },
+    {
+      "sourcePath": "app/conservation-commitment/ConservationMotion.tsx",
+      "sha256": "64378f0d11ba1936b3bb528170fe577838f5ab7e474c5a55f2f863d1ba0d3938"
+    },
+    {
+      "sourcePath": "app/conservation-commitment/conservation-commitment.css",
+      "sha256": "bfde05511c3deefb3744a1e0a79f50a22741b5d5c5b5d9d5f25dcc9ddffb2c0b"
+    }
+  ],
+  "media": [
+    {
+      "sourcePath": "/assets/destinations/ranthambhore/ranthambhore-02.jpg",
+      "sha256": "01f83112d982cb0f82c1cc7adedb2e8d9c6266eaf184f6b8a52ad41f3898a7d0"
+    },
+    {
+      "sourcePath": "/assets/conservation/solar-water-infrastructure.jpg",
+      "sha256": "c4170f86f24c9c5d51fdb8c7fd374bb444f0e0f16acca89281e8c706f95191ea"
+    },
+    {
+      "sourcePath": "/assets/conservation/gharial-field-research.jpg",
+      "sha256": "344bac96b82e8c49ed003e1a1d166b8f3bd27722e76ade90102ea9df03581a84"
+    },
+    {
+      "sourcePath": "/assets/conservation/wildlife-water-restoration.jpg",
+      "sha256": "bfac0be705cb428096403e5b96fb8111f7f26a299ef03ddf431f60b15c889b0c"
+    },
+    {
+      "sourcePath": "/assets/conservation/forest-patrol-vehicles.jpg",
+      "sha256": "6d2384793cf8ac0dba523bb5ab925d224b08c6edb6e717bed460085afe1d3aaf"
+    }
+  ],
+  "metadata": {
+    "title": "Conservation Commitment | Safari Crafters",
+    "description": "Safari Crafters and Astral Foundation support practical field infrastructure, habitat care, wildlife research and communities around India's wild landscapes.",
+    "canonical": "https://safaricrafters.com/conservation-commitment",
+    "openGraph": {
+      "title": "Conservation, carried quietly",
+      "description": "Practical support for wild landscapes through Astral Foundation.",
+      "image": "https://safaricrafters.com/assets/destinations/ranthambhore/ranthambhore-02.jpg"
+    }
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "Safari Crafters × Astral Foundation",
+      "heading": {
+        "lines": [
+          {
+            "runs": [
+              {
+                "text": "Conservation,",
+                "emphasis": false
+              },
+              {
+                "text": " ",
+                "emphasis": false
+              }
+            ]
+          },
+          {
+            "runs": [
+              {
+                "text": "carried quietly.",
+                "emphasis": true
+              }
+            ]
+          }
+        ]
+      },
+      "copy": "Practical support for the landscapes we travel through and the people who protect them.",
+      "image": {
+        "sourcePath": "/assets/destinations/ranthambhore/ranthambhore-02.jpg",
+        "alt": "Bengal tiger beside a lake in Ranthambhore"
+      },
+      "credit": "Safari Crafters archive · Ranthambhore"
+    },
+    "intro": {
+      "label": "Our position",
+      "heading": {
+        "lines": [
+          {
+            "runs": [
+              {
+                "text": "A responsibility that",
+                "emphasis": false
+              }
+            ]
+          },
+          {
+            "runs": [
+              {
+                "text": "continues ",
+                "emphasis": false
+              },
+              {
+                "text": "beyond the journey.",
+                "emphasis": true
+              }
+            ]
+          }
+        ]
+      },
+      "paragraphs": [
+        "Safari Crafters supports conservation through Astral Foundation as an ongoing commitment, funded independently and never presented as an obligation to our guests.",
+        "The focus is practical and long-term: strengthening field capacity, caring for habitat, supporting research and investing in the communities that share these wildlife landscapes."
+      ]
+    },
+    "impact": {
+      "eyebrow": "A decade in the field",
+      "heading": {
+        "lines": [
+          {
+            "runs": [
+              {
+                "text": "The measure of",
+                "emphasis": false
+              }
+            ]
+          },
+          {
+            "runs": [
+              {
+                "text": "long-term work.",
+                "emphasis": false
+              }
+            ]
+          }
+        ]
+      },
+      "copy": "Figures published by Astral Foundation across its forest conservation and climate-resilience programmes in India.",
+      "source": {
+        "label": "Explore Astral Foundation’s conservation projects ↗",
+        "href": "https://www.theastralfoundation.org/wildlife-conservation/",
+        "newWindow": true
+      },
+      "primaryLabel": "Headline conservation outcomes",
+      "secondaryLabel": "Additional conservation outcomes",
+      "metrics": [
+        {
+          "id": "impact-1",
+          "value": "10+",
+          "label": "years supporting forest conservation and climate resilience",
+          "tier": "primary"
+        },
+        {
+          "id": "impact-2",
+          "value": "20+",
+          "label": "protected parks and key wildlife landscapes across India",
+          "tier": "primary"
+        },
+        {
+          "id": "impact-3",
+          "value": "30,000+",
+          "label": "hectares improved through renewable energy and infrastructure",
+          "tier": "primary"
+        },
+        {
+          "id": "impact-4",
+          "value": "500+ kW",
+          "label": "of green power installed through Project GreenWater",
+          "tier": "secondary"
+        },
+        {
+          "id": "impact-5",
+          "value": "250+ km",
+          "label": "of solar-powered water distribution inside tiger reserves",
+          "tier": "secondary"
+        },
+        {
+          "id": "impact-6",
+          "value": "800+",
+          "label": "solar-powered water bodies restored across forest habitats",
+          "tier": "secondary"
+        },
+        {
+          "id": "impact-7",
+          "value": "100M+ L",
+          "label": "of rainwater harvested annually through sustainable systems",
+          "tier": "secondary"
+        },
+        {
+          "id": "impact-8",
+          "value": "4,000+",
+          "label": "forest guards supported across more than 700 camps",
+          "tier": "secondary"
+        }
+      ]
+    },
+    "fieldRecords": {
+      "eyebrow": "The field record",
+      "heading": {
+        "lines": [
+          {
+            "runs": [
+              {
+                "text": "Where support",
+                "emphasis": false
+              }
+            ]
+          },
+          {
+            "runs": [
+              {
+                "text": "becomes useful.",
+                "emphasis": false
+              }
+            ]
+          }
+        ]
+      },
+      "copy": "The work is often quiet by nature: infrastructure, training, monitoring and habitat care. Its value lies in what it enables over time.",
+      "items": [
+        {
+          "id": "record-1",
+          "place": "Ranthambhore · Water infrastructure",
+          "title": "Water where the forest needs it.",
+          "copy": "At Aamaghati, a hub-and-spoke pipeline system uses solar power to feed a freshwater point inside a non-tourism area of Ranthambhore Tiger Reserve—supporting wildlife beyond the familiar safari circuit.",
+          "image": {
+            "sourcePath": "/assets/conservation/solar-water-infrastructure.jpg",
+            "alt": "Astral Foundation field team beside a solar-powered water point in Ranthambhore"
+          }
+        },
+        {
+          "id": "record-2",
+          "place": "National Chambal Sanctuary · Research",
+          "title": "Knowledge built in the field.",
+          "copy": "Astral Foundation supported the Gharial Ecology Project, helping researchers monitor more than 45 radio-tagged gharials across over 400 kilometres of protected river habitat in Rajasthan, Madhya Pradesh and Uttar Pradesh.",
+          "image": {
+            "sourcePath": "/assets/conservation/gharial-field-research.jpg",
+            "alt": "A field researcher monitoring gharial activity beside the Chambal River"
+          }
+        },
+        {
+          "id": "record-3",
+          "place": "Ranthambhore · Dry-season water",
+          "title": "Following water uphill.",
+          "copy": "In Ranthambhore’s elevated Rann area, solar pumps and HDPE pipelines move water from Khemchakund to terrain more than 450 metres higher. The system helps retain prey and predators within the landscape through the driest months.",
+          "image": {
+            "sourcePath": "/assets/conservation/wildlife-water-restoration.jpg",
+            "alt": "Astral Foundation workers installing a wildlife water pipeline beside a forest water point"
+          }
+        },
+        {
+          "id": "record-4",
+          "place": "Ranthambhore · Forest protection",
+          "title": "Mobility for the front line.",
+          "copy": "Four patrol vehicles were provided to the Forest Department at Ranthambhore Tiger Reserve, strengthening everyday monitoring, wildlife protection and the response to human–wildlife conflict across the reserve.",
+          "image": {
+            "sourcePath": "/assets/conservation/forest-patrol-vehicles.jpg",
+            "alt": "Forest Department patrol vehicles provided for Ranthambhore Tiger Reserve"
+          }
+        }
+      ]
+    },
+    "footprint": {
+      "eyebrow": "A national footprint",
+      "heading": {
+        "lines": [
+          {
+            "runs": [
+              {
+                "text": "From tiger reserves",
+                "emphasis": false
+              }
+            ]
+          },
+          {
+            "runs": [
+              {
+                "text": "to migration corridors.",
+                "emphasis": false
+              }
+            ]
+          }
+        ]
+      },
+      "regions": [
+        {
+          "id": "region-1",
+          "title": "North & west",
+          "copy": "Ranthambhore · Sariska · Jhalana · Kutch · Gir · Kashmir markhor landscape"
+        },
+        {
+          "id": "region-2",
+          "title": "Central India",
+          "copy": "Panna · Kanha · Pench · Bandhavgarh · Satpura · Gandhisagar"
+        },
+        {
+          "id": "region-3",
+          "title": "South & east",
+          "copy": "Nagarhole · Bandipur · BRT · Sathyamangalam · Meghamalai · Brahmaputra landscape"
+        }
+      ],
+      "species": {
+        "label": "Species supported through these programmes",
+        "copy": "Asian elephant, tiger, lion, caracal, one-horned rhinoceros, markhor, otter, leopard, fishing cat, sloth bear, gharial, vulture, wolf, golden jackal, deer and great hornbill."
+      }
+    }
+  },
+  "limitations": [
+    "Source claims are preserved, not independently verified. Client/source-owner approval and current claim evidence are required before migration publication.",
+    "Header, footer and shared navigation are owned by the global inventory.",
+    "No CMS media mappings, draft writes, publication or rollout flags were changed."
+  ]
+}

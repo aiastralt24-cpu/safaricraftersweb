@@ -129,3 +129,16 @@
     grid-template-columns: 1fr;
   }
 }
+
+.cms-public-journal .cms-journal-block { margin: 28px 0; overflow-wrap: anywhere; }
+.cms-public-journal .cms-journal-block p,
+.cms-public-journal .cms-journal-block li,
+.cms-public-journal .article-cta p { white-space: pre-wrap; }
+.cms-public-journal figure { margin: 24px 0; }
+.cms-public-journal figure img { width: 100%; height: auto; display: block; }
+.cms-public-journal figcaption { margin-top: 10px; font-size: 14px; overflow-wrap: anywhere; }
+.cms-public-journal .cms-journal-block ul,
+.cms-public-journal .cms-journal-block ol { padding-left: 24px; }
+.cms-public-journal .cms-journal-block li { margin: 10px 0; }
+.cms-public-journal .cms-journal-block a { text-decoration: underline; }
+.cms-public-journal .cms-journal-block cite { font-size: 16px; }

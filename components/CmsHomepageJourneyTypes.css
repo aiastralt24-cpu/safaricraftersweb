@@ -1,0 +1,9 @@
+.cms-home-journey-types{overflow-wrap:anywhere}
+.cms-home-journey-types-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,48px)}
+.cms-home-journey-types-grid article{display:flex;flex-direction:column;align-items:start;min-width:0}
+.cms-home-journey-types-grid figure{margin:0;width:100%}
+.cms-home-journey-types-grid figure img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
+.cms-home-journey-types-grid figcaption small{display:block}
+.cms-home-journey-types-grid p{white-space:pre-wrap}
+.cms-home-journey-types-grid article>a{margin-top:auto}
+@media(max-width:720px){.cms-home-journey-types-grid{grid-template-columns:1fr}}

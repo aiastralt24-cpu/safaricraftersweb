@@ -2,6 +2,7 @@
 const nextConfig = {
   allowedDevOrigins: ["localhost", "127.0.0.1"],
   devIndicators: false,
+  images: { remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io", pathname: "/images/**" }] },
   async redirects() {
     return [
       { source: "/tours", destination: "/photo-expeditions", permanent: true },

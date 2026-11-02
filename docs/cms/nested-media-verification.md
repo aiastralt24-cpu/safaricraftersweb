@@ -1,0 +1,9 @@
+# Nested image checks
+
+Local migration 017 extends image evidence and publication checks from journey media arrays to nested `assetId` references in any record payload. This covers composed hero, image/text, gallery and other image sections, including hidden sections. Evidence stays website-scoped, deduplicates IDs and omits storage keys and licensing evidence. Malformed reference values fail availability checks. Existing journey shape checks remain in force.
+
+The publication trigger locks referenced images in deterministic order and checks inspection, current rights and archive status. Public CMS reads immediately return no page when a nested image becomes unavailable. The bounded withdrawal worker now handles all record types with unavailable nested images, retaining drafts/history and queuing an unpublish delivery job. Actual public website/cache cutover remains outstanding; the current website still uses its existing content source.
+
+The advisory validator now checks composed page structure and nested image evidence. Its `composition-draft-1` response always includes `publication_not_ready`; no page publication policy is enabled. The editor validation endpoint requests evidence for page/homepage revisions even without a journey media array. Pages UI display of these advisory findings is still pending.
+
+Verification: 44 PGlite database tests passed, including nested hidden/repeated images, website scoping, inaccessible records, publication trigger rejection, rights-loss public-read suppression, withdrawal and draft retention. The page fixture used a privileged direct publication-pointer update solely to test triggers, not an enabled page publishing workflow. Twenty-one validation/API/worker tests and TypeScript passed. Managed-provider execution, multiconnection concurrency, scheduler and live cache invalidation remain unverified. Migration 017 has not been applied remotely.

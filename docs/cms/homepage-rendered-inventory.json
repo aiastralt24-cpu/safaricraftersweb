@@ -1,0 +1,4560 @@
+{
+  "version": 1,
+  "mode": "legacy-read-only",
+  "route": "/",
+  "capturedAt": "2026-10-28T05:43:46.551Z",
+  "origin": "http://localhost:3002",
+  "sourceProof": [
+    {
+      "path": "app/page.tsx",
+      "sha256": "41022c4b059562bb7b15aeedbab556daedbe7a7201d8e9f2fd508adaa86a7dd2"
+    },
+    {
+      "path": "app/concept/ConceptExperience.tsx",
+      "sha256": "247644a1719d075aa1c7eaf593e447c62c77fcc31d10464610e5b1af107ac7c4"
+    },
+    {
+      "path": "app/concept/concept.css",
+      "sha256": "4f67aa8b2c8ea28f8f4c7a3b8d1afb8918681daf522303e42df7b7d09208a553"
+    },
+    {
+      "path": "app/concept/concept-harmony.css",
+      "sha256": "a9453074a1d9d5978ebcf93a2417082869f243ef29bf757622f97e6d7f75bcfa"
+    },
+    {
+      "path": "app/concept/journey-collection.css",
+      "sha256": "6dde611316a583b9069b5cfdaddef393f92b43fcab441a41001d4072549ec900"
+    },
+    {
+      "path": "components/MiceSection.tsx",
+      "sha256": "5e2b0829960f96cf8438f381629edf4d2e7f1fbcfb2de3cbb5f148f833473103"
+    },
+    {
+      "path": "components/MiceSection.module.css",
+      "sha256": "1b37fac3e6a1fe0aa117bf6c1d902a843af09f6811e44075cba25fd8b4654942"
+    },
+    {
+      "path": "components/PreferredPartners.tsx",
+      "sha256": "306ffabd38e1c862accad88587ed413fee4b2d7b5abd989c42a8fcbb2dee3ae5"
+    },
+    {
+      "path": "components/PreferredPartners.module.css",
+      "sha256": "9e7504c76a3704166e8bc1d014ad3c0e81825af1ce4d1bd8f428f9962cadd8aa"
+    },
+    {
+      "path": "components/GuestNotes.tsx",
+      "sha256": "e27ff49c84d99ab4b3395329343beb690eb255b7cd7098a97b538888263d6f8c"
+    },
+    {
+      "path": "components/GuestNotes.css",
+      "sha256": "b635067b328b47a74f1ff7bac9b8979b9e3f431dd2d48141edb93ecd1fb22c79"
+    },
+    {
+      "path": "lib/guest-notes.ts",
+      "sha256": "743ddfb20970c8faad3f6ca7eb3e1f45b48c39bf75fdc6dfa16f9c74582765b3"
+    },
+    {
+      "path": "lib/data.ts",
+      "sha256": "a7657781655fe3c1803f37a6c8750b49fbb759490260770de9f95919f3e98a56"
+    },
+    {
+      "path": "lib/departures.ts",
+      "sha256": "d11919fc9bf5950a7a759cdb746ebf455421082d66eb8830cbd493b9867fd9b1"
+    },
+    {
+      "path": "content/site-content.json",
+      "sha256": "5511df488dcf2dd7195b8b938822c210765b1030a48c2cb76ec21b37f6255e65"
+    },
+    {
+      "path": "content/preferred-partners.json",
+      "sha256": "4dcce2e7b5903d9c6b9fc12459c87922a5b2ab77eedb20d50686126f6e498c11"
+    }
+  ],
+  "metadata": {
+    "title": "Safari Crafters | Where the wild still breathes freely.",
+    "description": "Ultra-luxury, photography-led private safaris across India, Africa and the wild places between.",
+    "canonical": "https://safaricrafters.com"
+  },
+  "heroFrames": [
+    {
+      "lead": "In pursuit",
+      "rest": "of",
+      "accent": "Stillness."
+    },
+    {
+      "lead": "Where rare moments",
+      "rest": "unfold",
+      "accent": "Beautifully."
+    },
+    {
+      "lead": "For sightings",
+      "rest": "few ever",
+      "accent": "Frame."
+    },
+    {
+      "lead": "Luxury beyond",
+      "rest": "the",
+      "accent": "Trail."
+    },
+    {
+      "lead": "Crafted for",
+      "rest": "rare",
+      "accent": "Encounters."
+    }
+  ],
+  "heroVideoDeclaration": {
+    "poster": "/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png",
+    "label": "A tiger family walking through Ranthambhore at golden hour",
+    "autoplay": true,
+    "muted": true,
+    "loop": true,
+    "playsInline": true,
+    "sources": [
+      {
+        "sourcePath": "/assets/safari-crafters/safari-crafters-mobile.mp4",
+        "type": "video/mp4",
+        "media": "(max-width: 767px)"
+      },
+      {
+        "sourcePath": "/assets/safari-crafters/safari-crafters.mp4",
+        "type": "video/mp4",
+        "media": null
+      }
+    ]
+  },
+  "videoMedia": [
+    {
+      "sourcePath": "/assets/safari-crafters/safari-crafters-mobile.mp4",
+      "byteLength": 13504863,
+      "sha256": "83ceb496dcc7af6cb3022d1873e2d0dfe1ea0edddf2ae539b1f8cabbf0b9adb1"
+    },
+    {
+      "sourcePath": "/assets/safari-crafters/safari-crafters.mp4",
+      "byteLength": 35026252,
+      "sha256": "fd676b5d3630cc1d9e19c953a4b6f6c4f4ec908a0484d80f50a45ba8956b7553"
+    }
+  ],
+  "sections": [
+    {
+      "label": "The wild, considered",
+      "className": "concept-hero",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "In pursuitof Stillness.",
+          "parts": [
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "In pursuit"
+                }
+              ]
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "of"
+                }
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Stillness."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [],
+      "links": [],
+      "images": [
+        {
+          "sourcePath": "/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png",
+          "alt": "A tiger family walking through Ranthambhore at golden hour",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Our story",
+      "className": "concept-story-proof",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Informed by intention,guided by experience.",
+          "parts": [
+            {
+              "text": "Informed by "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "intention,"
+                }
+              ]
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "text": "guided by "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "experience."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Our story",
+          "parts": [
+            {
+              "text": "Our story"
+            }
+          ]
+        },
+        {
+          "text": "Safari Crafters brings together wildlife knowledge, photography and thoughtful travel planning—working with trusted naturalists and local partners across the places in which we operate.",
+          "parts": [
+            {
+              "text": "Safari Crafters brings together wildlife knowledge, photography and thoughtful travel planning—working with trusted naturalists and local partners across the places in which we operate."
+            }
+          ]
+        },
+        {
+          "text": "Our experience, measured quietly",
+          "parts": [
+            {
+              "text": "Our experience, measured quietly"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Discover our story",
+          "href": "/about"
+        }
+      ],
+      "images": [],
+      "figures": [],
+      "statistics": [
+        {
+          "term": "75+",
+          "description": "Years of combined expertise"
+        },
+        {
+          "term": "24+",
+          "description": "Countries across our network"
+        },
+        {
+          "term": "6,000+",
+          "description": "Guests hosted"
+        },
+        {
+          "term": "450+",
+          "description": "Journeys privately crafted"
+        }
+      ],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Ways to journey",
+      "className": "concept-journey-types",
+      "migration": {
+        "anchor": "ways-to-journey",
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Give your dream journeyswings and paws.",
+          "parts": [
+            {
+              "text": "Give your dream journeys"
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "wings"
+                }
+              ]
+            },
+            {
+              "text": " and "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "paws."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "PrivateJourneys",
+          "parts": [
+            {
+              "text": "Private"
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "text": "Journeys"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "BespokeSafaris",
+          "parts": [
+            {
+              "text": "Bespoke"
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "text": "Safaris"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "PhotographyTours",
+          "parts": [
+            {
+              "text": "Photography"
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "text": "Tours"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Tailored itineraries across India and select wildlife destinations across the world, designed around your interests, season, and preferred duration and pace.",
+          "parts": [
+            {
+              "text": "Tailored itineraries across India and select wildlife destinations across the world, designed around your interests, season, and preferred duration and pace."
+            }
+          ]
+        },
+        {
+          "text": "All the goodness of our private journeys, with the added benefit of a professional Safari Crafters guide for the ultimate informed experience.",
+          "parts": [
+            {
+              "text": "All the goodness of our private journeys, with the added benefit of a professional "
+            },
+            {
+              "tag": "strong",
+              "children": [
+                {
+                  "text": "Safari Crafters"
+                }
+              ]
+            },
+            {
+              "text": " guide for the ultimate informed experience."
+            }
+          ]
+        },
+        {
+          "text": "Fixed-date, specialist-led group departures for photographers who want time in the field, expert guidance and the pursuit of a clear photographic purpose.",
+          "parts": [
+            {
+              "text": "Fixed-date, specialist-led group departures for photographers who want time in the field, expert guidance and the pursuit of a clear photographic purpose."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Explore",
+          "href": "/journeys"
+        },
+        {
+          "label": "Explore",
+          "href": "/guided-bespoke-safaris"
+        },
+        {
+          "label": "Explore",
+          "href": "/photo-expeditions"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/safari-crafters/golden-triangle-ae04a20e.jpg",
+          "alt": "A private journey through India",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/safari-crafters/laipikia-001e24e7.jpg",
+          "alt": "A black leopard photographed on a guided safari",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/safari-crafters/the-pantanal-wetlands-af117fe5.jpg",
+          "alt": "A jaguar photographed during a specialist expedition",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Private journeys",
+      "className": "journey-collection",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [
+          {
+            "href": "/journeys/big-cats-of-india",
+            "kicker": "The signature journey",
+            "action": "Explore journey"
+          },
+          {
+            "href": "/journeys/heart-of-the-wildcentral-indias-six-park-safari",
+            "kicker": "Into the heart of India",
+            "action": "Explore journey"
+          },
+          {
+            "href": "/journeys/trail-of-the-himalayan-firefox-a-red-panda-rhino-expedition",
+            "kicker": "Beyond the familiar",
+            "action": "Explore journey"
+          }
+        ],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Journeys, designedaround you.",
+          "parts": [
+            {
+              "text": "Journeys, designed"
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "text": "around "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "you."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Big Cats of India",
+          "parts": [
+            {
+              "text": "Big Cats of India"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Central India’s Six-Park Safari",
+          "parts": [
+            {
+              "text": "Central India’s Six-Park Safari"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Trail of the Himalayan Firefox",
+          "parts": [
+            {
+              "text": "Trail of the Himalayan Firefox"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Private journey collection",
+          "parts": [
+            {
+              "text": "Private journey collection"
+            }
+          ]
+        },
+        {
+          "text": "A starting point for something personal. Find the landscape that calls to you; we’ll shape the journey around it.",
+          "parts": [
+            {
+              "text": "A starting point for something personal. Find the landscape that calls to you; we’ll shape the journey around it."
+            }
+          ]
+        },
+        {
+          "text": "21 days, customisable",
+          "parts": [
+            {
+              "text": "21 days, customisable"
+            }
+          ]
+        },
+        {
+          "text": "Delhi, Ladakh, Rajasthan, Gujarat",
+          "parts": [
+            {
+              "text": "Delhi, Ladakh, Rajasthan, Gujarat"
+            }
+          ]
+        },
+        {
+          "text": "22 days, customisable",
+          "parts": [
+            {
+              "text": "22 days, customisable"
+            }
+          ]
+        },
+        {
+          "text": "Madhya Pradesh, Maharashtra",
+          "parts": [
+            {
+              "text": "Madhya Pradesh, Maharashtra"
+            }
+          ]
+        },
+        {
+          "text": "12 days, customisable",
+          "parts": [
+            {
+              "text": "12 days, customisable"
+            }
+          ]
+        },
+        {
+          "text": "West Bengal, Assam",
+          "parts": [
+            {
+              "text": "West Bengal, Assam"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "View all journeys",
+          "href": "/journeys"
+        },
+        {
+          "label": "The signature journey21 days, customisableBig Cats of IndiaDelhi, Ladakh, Rajasthan, GujaratExplore journey",
+          "href": "/journeys/big-cats-of-india"
+        },
+        {
+          "label": "Into the heart of India22 days, customisableCentral India’s Six-Park SafariMadhya Pradesh, MaharashtraExplore journey",
+          "href": "/journeys/heart-of-the-wildcentral-indias-six-park-safari"
+        },
+        {
+          "label": "Beyond the familiar12 days, customisableTrail of the Himalayan FirefoxWest Bengal, AssamExplore journey",
+          "href": "/journeys/trail-of-the-himalayan-firefox-a-red-panda-rhino-expedition"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png",
+          "alt": "A tiger family walking through Ranthambhore at golden hour",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/safari-crafters/central-park-54034f7c.jpg",
+          "alt": "Central India’s Six-Park Safari",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/safari-crafters/red-panda-61dc9dd9.jpg",
+          "alt": "Trail of the Himalayan Firefox",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Photography Tours",
+      "className": "concept-field-notes concept-expedition-calendar concept-expedition-board-section",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": "Upcoming photography tours",
+        "departures": [
+          {
+            "href": "/photo-expeditions/kanha-wildlife-photography-expedition",
+            "title": "Kanha",
+            "metadata": "4 nights / 5 days · Kanha, India",
+            "action": "View expedition"
+          },
+          {
+            "href": "/photo-expeditions/bharatpur-photography-expedition",
+            "title": "Keoladeo",
+            "metadata": "4 days · Keoladeo, Rajasthan",
+            "action": "View expedition"
+          },
+          {
+            "href": "/photo-expeditions/panna-photography-expedition",
+            "title": "Panna",
+            "metadata": "5 days · Panna, Madhya Pradesh",
+            "action": "View expedition"
+          },
+          {
+            "href": "/photo-expeditions/ranthambhore-photography-expedition",
+            "title": "Ranthambhore",
+            "metadata": "4 days · Ranthambhore, Rajasthan",
+            "action": "View expedition"
+          },
+          {
+            "href": "/photo-expeditions/kaziranga-wildlife-photography-expedition",
+            "title": "Kaziranga",
+            "metadata": "4 nights / 5 days · Kaziranga",
+            "action": "View expedition"
+          },
+          {
+            "href": "/photo-expeditions/svalbard-expedition",
+            "title": "Svalbard",
+            "metadata": "10 days · Svalbard, Norway",
+            "action": "View expedition"
+          },
+          {
+            "href": "/photo-expeditions/the-pantanal-wetlands",
+            "title": "Pantanal",
+            "metadata": "11 days · Pantanal, Brazil",
+            "action": "View expedition"
+          }
+        ],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "The next group departures.",
+          "parts": [
+            {
+              "text": "The next group "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "departures."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Kanha",
+          "parts": [
+            {
+              "text": "Kanha"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Keoladeo",
+          "parts": [
+            {
+              "text": "Keoladeo"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Panna",
+          "parts": [
+            {
+              "text": "Panna"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Ranthambhore",
+          "parts": [
+            {
+              "text": "Ranthambhore"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Kaziranga",
+          "parts": [
+            {
+              "text": "Kaziranga"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Svalbard",
+          "parts": [
+            {
+              "text": "Svalbard"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Pantanal",
+          "parts": [
+            {
+              "text": "Pantanal"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Photography Tours",
+          "parts": [
+            {
+              "text": "Photography Tours"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "View all expeditions",
+          "href": "/photo-expeditions"
+        },
+        {
+          "label": "Kanha12 – 16 Dec 20264 nights / 5 days · Kanha, IndiaView expedition",
+          "href": "/photo-expeditions/kanha-wildlife-photography-expedition"
+        },
+        {
+          "label": "Keoladeo23 – 26 Jan 20274 days · Keoladeo, RajasthanView expedition",
+          "href": "/photo-expeditions/bharatpur-photography-expedition"
+        },
+        {
+          "label": "Panna10 – 14 Feb 20275 days · Panna, Madhya PradeshView expedition",
+          "href": "/photo-expeditions/panna-photography-expedition"
+        },
+        {
+          "label": "Ranthambhore18 – 21 Feb 20274 days · Ranthambhore, RajasthanView expedition",
+          "href": "/photo-expeditions/ranthambhore-photography-expedition"
+        },
+        {
+          "label": "Kaziranga24 – 28 Mar 20274 nights / 5 days · KazirangaView expedition",
+          "href": "/photo-expeditions/kaziranga-wildlife-photography-expedition"
+        },
+        {
+          "label": "Svalbard5 – 14 Jul 20272027 is sold outBooking open for 202810 days · Svalbard, NorwayView expedition",
+          "href": "/photo-expeditions/svalbard-expedition"
+        },
+        {
+          "label": "Pantanal11 – 21 Sept 202711 days · Pantanal, BrazilView expedition",
+          "href": "/photo-expeditions/the-pantanal-wetlands"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/destinations/kanha/field-photographs/7e97ab33488f.webp",
+          "alt": "Tiger walking along a misty forest track in Kanha",
+          "objectPosition": "52% 40%"
+        },
+        {
+          "sourcePath": "/assets/destinations/bharatpur-keoladeo/field-photographs/976f71ef5d58.webp",
+          "alt": "Sarus cranes together in Bharatpur grassland",
+          "objectPosition": "44% 35%"
+        },
+        {
+          "sourcePath": "/assets/destinations/panna/field-photographs/96f58b18cda7.webp",
+          "alt": "Tiger walking through Panna beneath a glowing sunset",
+          "objectPosition": "60% 40%"
+        },
+        {
+          "sourcePath": "/assets/destinations/ranthambhore/field-photographs/861288cdc556.webp",
+          "alt": "Bengal tiger walking beside a Ranthambhore lake at sunrise",
+          "objectPosition": "62% 50%"
+        },
+        {
+          "sourcePath": "/assets/expeditions/kaziranga/trikansh/rhino-sunset.webp",
+          "alt": "One-horned rhinoceros beside a wetland beneath a pink sunset",
+          "objectPosition": "64% 70%"
+        },
+        {
+          "sourcePath": "/assets/destinations/svalbard/field-photographs/a513430a84d8.webp",
+          "alt": "Polar bear and cub on a sea-ice floe in Svalbard",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/destinations/pantanal/field-photographs/e755e99797fb.webp",
+          "alt": "Jaguar at the water’s edge in Brazil’s Pantanal",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": [
+        {
+          "text": "12 – 16 Dec 2026",
+          "dateTime": "2026-12-12"
+        },
+        {
+          "text": "23 – 26 Jan 2027",
+          "dateTime": "2027-01-23"
+        },
+        {
+          "text": "10 – 14 Feb 2027",
+          "dateTime": "2027-02-10"
+        },
+        {
+          "text": "18 – 21 Feb 2027",
+          "dateTime": "2027-02-18"
+        },
+        {
+          "text": "24 – 28 Mar 2027",
+          "dateTime": "2027-03-24"
+        },
+        {
+          "text": "5 – 14 Jul 2027",
+          "dateTime": "2027-07-05"
+        },
+        {
+          "text": "11 – 21 Sept 2027",
+          "dateTime": "2027-09-11"
+        }
+      ]
+    },
+    {
+      "label": "Corporate journeys",
+      "className": "MiceSection-module__lf0JhW__mice-home",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [
+          "Employee, dealer & distributor incentives",
+          "Company retreats & partner meets",
+          "Client hospitality & group journeys"
+        ],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Out of the office.Into the extraordinary.",
+          "parts": [
+            {
+              "text": "Out of the office."
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "text": "Into the "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "extraordinary."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Reward the remarkable",
+          "parts": [
+            {
+              "text": "Reward the remarkable"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Make room for new ideas",
+          "parts": [
+            {
+              "text": "Make room for new ideas"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Bring your people together",
+          "parts": [
+            {
+              "text": "Bring your people together"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Corporate journeys · MICE",
+          "parts": [
+            {
+              "text": "Corporate journeys · MICE"
+            }
+          ]
+        },
+        {
+          "text": "Incentive travel, partner retreats and client hospitality across India and international destinations.",
+          "parts": [
+            {
+              "text": "Incentive travel, partner retreats and client hospitality across India and international destinations."
+            }
+          ]
+        },
+        {
+          "text": "Bring employees, dealers, distributors and clients together through journeys shaped around your purpose.",
+          "parts": [
+            {
+              "text": "Bring employees, dealers, distributors and clients together through journeys shaped around your purpose."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Employee, dealer & distributor incentivesReward the remarkable↗",
+          "href": "/mice"
+        },
+        {
+          "label": "Company retreats & partner meetsMake room for new ideas↗",
+          "href": "/mice"
+        },
+        {
+          "label": "Client hospitality & group journeysBring your people together↗",
+          "href": "/mice"
+        },
+        {
+          "label": "Discover corporate journeys ↗",
+          "href": "/mice"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/destinations/kanha/field-photographs/8a6eba1b2e6a.webp",
+          "alt": "A safari vehicle travelling through sunlit forest in Kanha, India",
+          "objectPosition": "50% 60%"
+        },
+        {
+          "sourcePath": "/assets/destinations/svalbard/field-photographs/eb87fa95c8f5.webp",
+          "alt": "Mountains and an Arctic fjord in Svalbard",
+          "objectPosition": "42% 50%"
+        }
+      ],
+      "figures": [
+        "India · Shared discoveries",
+        "International · Beyond borders"
+      ],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Private jet safaris",
+      "className": "concept-private-aviation is-visible",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": "Private jet safari benefits",
+        "benefits": [
+          "Private aircraft",
+          "Remote wilderness",
+          "Seamless routing"
+        ]
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "The wild, within reach.",
+          "parts": [
+            {
+              "text": "The wild, within "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "reach."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Private Jet Safaris",
+          "parts": [
+            {
+              "text": "Private Jet Safaris"
+            }
+          ]
+        },
+        {
+          "text": "Dedicated aircraft and seamless routing bring distant landscapes closer.",
+          "parts": [
+            {
+              "text": "Dedicated aircraft and seamless routing bring distant landscapes closer."
+            }
+          ]
+        },
+        {
+          "text": "Private aircraftRemote wildernessSeamless routing",
+          "parts": [
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Private aircraft"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Remote wilderness"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Seamless routing"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Explore private jet safaris",
+          "href": "/private-aviation"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/kairamya/aviation-concierge.jpg",
+          "alt": "Safari Crafters private aircraft prepared for a remote safari journey",
+          "objectPosition": "43% 50%"
+        }
+      ],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Preferred partners",
+      "className": "PreferredPartners-module__6U0yLG__section",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [
+          {
+            "label": "India"
+          },
+          {
+            "label": "Africa"
+          },
+          {
+            "label": "Indian Subcontinent"
+          }
+        ],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Preferred partners.",
+          "parts": [
+            {
+              "text": "Preferred "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "partners."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Exceptional places. Trusted connections.",
+          "parts": [
+            {
+              "text": "Exceptional places. Trusted connections."
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "images": [
+        {
+          "sourcePath": "/assets/partners/India-25.png",
+          "alt": "Six Senses",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-26.png",
+          "alt": "The Leela",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-27.png",
+          "alt": "The Bamboo Forest",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-28.png",
+          "alt": "The Postcard Hotel",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-29.png",
+          "alt": "CGH Earth",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-30.png",
+          "alt": "The Imperial New Delhi",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-31.png",
+          "alt": "Relais & Châteaux",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-32.png",
+          "alt": "Taj",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-33.png",
+          "alt": "Aramness",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-34.png",
+          "alt": "Pugdundee Safaris",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-35.png",
+          "alt": "SUJÁN",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-36.png",
+          "alt": "RAAS",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-37.png",
+          "alt": "Oberoi Hotels & Resorts",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-38.png",
+          "alt": "ITC Hotels",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-39.png",
+          "alt": "Aman",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-40.png",
+          "alt": "The Ultimate Travelling Camp",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-41.png",
+          "alt": "Jehan Numa Wilderness",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Guest Notes",
+      "className": "guest-notes-feature",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [
+          {
+            "label": "Previous guest note"
+          },
+          {
+            "label": "Next guest note"
+          }
+        ],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "The journey stays with you.",
+          "parts": [
+            {
+              "text": "The journey stays "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "with you."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Guest Notes",
+          "parts": [
+            {
+              "text": "Guest Notes"
+            }
+          ]
+        },
+        {
+          "text": "Private Journeys",
+          "parts": [
+            {
+              "text": "Private Journeys"
+            }
+          ]
+        },
+        {
+          "text": "Pallavi KhemkaRanthambhore",
+          "parts": [
+            {
+              "text": "Pallavi Khemka"
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Ranthambhore"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "All guest notes ↗",
+          "href": "/reviews"
+        },
+        {
+          "label": "Explore this journey ↗",
+          "href": "/destinations/ranthambhore"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/destinations/ranthambhore/ranthambhore-02.jpg",
+          "alt": "Bengal tiger in Ranthambhore",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [
+        "Ranthambhore"
+      ],
+      "statistics": [],
+      "quotes": [
+        "Thank you Gaurav and team for an amazing trip to the Ranthambore. Gaurav made our trip so very convenient. Extremely friendly and responsive and at the same time professional at work."
+      ],
+      "dates": []
+    },
+    {
+      "label": "Begin your journey",
+      "className": "concept-concierge is-visible",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Ready whenyou are.",
+          "parts": [
+            {
+              "text": "Ready when"
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "you are."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Where would you like to begin?",
+          "parts": [
+            {
+              "text": "Where would you like "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "to"
+                }
+              ]
+            },
+            {
+              "text": " begin?"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [],
+      "links": [
+        {
+          "label": "India",
+          "href": "/plan?region=India"
+        },
+        {
+          "label": "Africa",
+          "href": "/plan?region=Africa"
+        },
+        {
+          "label": "South & Central America",
+          "href": "/plan?region=South%20%26%20Central%20America"
+        },
+        {
+          "label": "Arctic & Beyond",
+          "href": "/plan?region=Arctic%20%26%20Beyond"
+        },
+        {
+          "label": "Surprise me",
+          "href": "/plan?region=Surprise%20me"
+        },
+        {
+          "label": "Plan My Journey",
+          "href": "/contact"
+        }
+      ],
+      "images": [],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    }
+  ],
+  "mobileSections": [
+    {
+      "label": "The wild, considered",
+      "className": "concept-hero",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "In pursuitof Stillness.",
+          "parts": [
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "In pursuit"
+                }
+              ]
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "of"
+                }
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Stillness."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [],
+      "links": [],
+      "images": [
+        {
+          "sourcePath": "/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png",
+          "alt": "A tiger family walking through Ranthambhore at golden hour",
+          "objectPosition": "62% 50%"
+        }
+      ],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Our story",
+      "className": "concept-story-proof",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Informed by intention,guided by experience.",
+          "parts": [
+            {
+              "text": "Informed by "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "intention,"
+                }
+              ]
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "text": "guided by "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "experience."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Our story",
+          "parts": [
+            {
+              "text": "Our story"
+            }
+          ]
+        },
+        {
+          "text": "Safari Crafters brings together wildlife knowledge, photography and thoughtful travel planning—working with trusted naturalists and local partners across the places in which we operate.",
+          "parts": [
+            {
+              "text": "Safari Crafters brings together wildlife knowledge, photography and thoughtful travel planning—working with trusted naturalists and local partners across the places in which we operate."
+            }
+          ]
+        },
+        {
+          "text": "Our experience, measured quietly",
+          "parts": [
+            {
+              "text": "Our experience, measured quietly"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Discover our story",
+          "href": "/about"
+        }
+      ],
+      "images": [],
+      "figures": [],
+      "statistics": [
+        {
+          "term": "75+",
+          "description": "Years of combined expertise"
+        },
+        {
+          "term": "24+",
+          "description": "Countries across our network"
+        },
+        {
+          "term": "6,000+",
+          "description": "Guests hosted"
+        },
+        {
+          "term": "450+",
+          "description": "Journeys privately crafted"
+        }
+      ],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Ways to journey",
+      "className": "concept-journey-types",
+      "migration": {
+        "anchor": "ways-to-journey",
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Give your dream journeyswings and paws.",
+          "parts": [
+            {
+              "text": "Give your dream journeys"
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "wings"
+                }
+              ]
+            },
+            {
+              "text": " and "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "paws."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "PrivateJourneys",
+          "parts": [
+            {
+              "text": "Private"
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "text": "Journeys"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "BespokeSafaris",
+          "parts": [
+            {
+              "text": "Bespoke"
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "text": "Safaris"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "PhotographyTours",
+          "parts": [
+            {
+              "text": "Photography"
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "text": "Tours"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Tailored itineraries across India and select wildlife destinations across the world, designed around your interests, season, and preferred duration and pace.",
+          "parts": [
+            {
+              "text": "Tailored itineraries across India and select wildlife destinations across the world, designed around your interests, season, and preferred duration and pace."
+            }
+          ]
+        },
+        {
+          "text": "All the goodness of our private journeys, with the added benefit of a professional Safari Crafters guide for the ultimate informed experience.",
+          "parts": [
+            {
+              "text": "All the goodness of our private journeys, with the added benefit of a professional "
+            },
+            {
+              "tag": "strong",
+              "children": [
+                {
+                  "text": "Safari Crafters"
+                }
+              ]
+            },
+            {
+              "text": " guide for the ultimate informed experience."
+            }
+          ]
+        },
+        {
+          "text": "Fixed-date, specialist-led group departures for photographers who want time in the field, expert guidance and the pursuit of a clear photographic purpose.",
+          "parts": [
+            {
+              "text": "Fixed-date, specialist-led group departures for photographers who want time in the field, expert guidance and the pursuit of a clear photographic purpose."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Explore",
+          "href": "/journeys"
+        },
+        {
+          "label": "Explore",
+          "href": "/guided-bespoke-safaris"
+        },
+        {
+          "label": "Explore",
+          "href": "/photo-expeditions"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/safari-crafters/golden-triangle-ae04a20e.jpg",
+          "alt": "A private journey through India",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/safari-crafters/laipikia-001e24e7.jpg",
+          "alt": "A black leopard photographed on a guided safari",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/safari-crafters/the-pantanal-wetlands-af117fe5.jpg",
+          "alt": "A jaguar photographed during a specialist expedition",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Private journeys",
+      "className": "journey-collection",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [
+          {
+            "href": "/journeys/big-cats-of-india",
+            "kicker": "The signature journey",
+            "action": "Explore journey"
+          },
+          {
+            "href": "/journeys/heart-of-the-wildcentral-indias-six-park-safari",
+            "kicker": "Into the heart of India",
+            "action": "Explore journey"
+          },
+          {
+            "href": "/journeys/trail-of-the-himalayan-firefox-a-red-panda-rhino-expedition",
+            "kicker": "Beyond the familiar",
+            "action": "Explore journey"
+          }
+        ],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Journeys, designedaround you.",
+          "parts": [
+            {
+              "text": "Journeys, designed"
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "text": "around "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "you."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Big Cats of India",
+          "parts": [
+            {
+              "text": "Big Cats of India"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Central India’s Six-Park Safari",
+          "parts": [
+            {
+              "text": "Central India’s Six-Park Safari"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Trail of the Himalayan Firefox",
+          "parts": [
+            {
+              "text": "Trail of the Himalayan Firefox"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Private journey collection",
+          "parts": [
+            {
+              "text": "Private journey collection"
+            }
+          ]
+        },
+        {
+          "text": "A starting point for something personal. Find the landscape that calls to you; we’ll shape the journey around it.",
+          "parts": [
+            {
+              "text": "A starting point for something personal. Find the landscape that calls to you; we’ll shape the journey around it."
+            }
+          ]
+        },
+        {
+          "text": "21 days, customisable",
+          "parts": [
+            {
+              "text": "21 days, customisable"
+            }
+          ]
+        },
+        {
+          "text": "Delhi, Ladakh, Rajasthan, Gujarat",
+          "parts": [
+            {
+              "text": "Delhi, Ladakh, Rajasthan, Gujarat"
+            }
+          ]
+        },
+        {
+          "text": "22 days, customisable",
+          "parts": [
+            {
+              "text": "22 days, customisable"
+            }
+          ]
+        },
+        {
+          "text": "Madhya Pradesh, Maharashtra",
+          "parts": [
+            {
+              "text": "Madhya Pradesh, Maharashtra"
+            }
+          ]
+        },
+        {
+          "text": "12 days, customisable",
+          "parts": [
+            {
+              "text": "12 days, customisable"
+            }
+          ]
+        },
+        {
+          "text": "West Bengal, Assam",
+          "parts": [
+            {
+              "text": "West Bengal, Assam"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "View all journeys",
+          "href": "/journeys"
+        },
+        {
+          "label": "The signature journey21 days, customisableBig Cats of IndiaDelhi, Ladakh, Rajasthan, GujaratExplore journey",
+          "href": "/journeys/big-cats-of-india"
+        },
+        {
+          "label": "Into the heart of India22 days, customisableCentral India’s Six-Park SafariMadhya Pradesh, MaharashtraExplore journey",
+          "href": "/journeys/heart-of-the-wildcentral-indias-six-park-safari"
+        },
+        {
+          "label": "Beyond the familiar12 days, customisableTrail of the Himalayan FirefoxWest Bengal, AssamExplore journey",
+          "href": "/journeys/trail-of-the-himalayan-firefox-a-red-panda-rhino-expedition"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png",
+          "alt": "A tiger family walking through Ranthambhore at golden hour",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/safari-crafters/central-park-54034f7c.jpg",
+          "alt": "Central India’s Six-Park Safari",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/safari-crafters/red-panda-61dc9dd9.jpg",
+          "alt": "Trail of the Himalayan Firefox",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Photography Tours",
+      "className": "concept-field-notes concept-expedition-calendar concept-expedition-board-section",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": "Upcoming photography tours",
+        "departures": [
+          {
+            "href": "/photo-expeditions/kanha-wildlife-photography-expedition",
+            "title": "Kanha",
+            "metadata": "4 nights / 5 days · Kanha, India",
+            "action": "View expedition"
+          },
+          {
+            "href": "/photo-expeditions/bharatpur-photography-expedition",
+            "title": "Keoladeo",
+            "metadata": "4 days · Keoladeo, Rajasthan",
+            "action": "View expedition"
+          },
+          {
+            "href": "/photo-expeditions/panna-photography-expedition",
+            "title": "Panna",
+            "metadata": "5 days · Panna, Madhya Pradesh",
+            "action": "View expedition"
+          },
+          {
+            "href": "/photo-expeditions/ranthambhore-photography-expedition",
+            "title": "Ranthambhore",
+            "metadata": "4 days · Ranthambhore, Rajasthan",
+            "action": "View expedition"
+          },
+          {
+            "href": "/photo-expeditions/kaziranga-wildlife-photography-expedition",
+            "title": "Kaziranga",
+            "metadata": "4 nights / 5 days · Kaziranga",
+            "action": "View expedition"
+          },
+          {
+            "href": "/photo-expeditions/svalbard-expedition",
+            "title": "Svalbard",
+            "metadata": "10 days · Svalbard, Norway",
+            "action": "View expedition"
+          },
+          {
+            "href": "/photo-expeditions/the-pantanal-wetlands",
+            "title": "Pantanal",
+            "metadata": "11 days · Pantanal, Brazil",
+            "action": "View expedition"
+          }
+        ],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "The next group departures.",
+          "parts": [
+            {
+              "text": "The next group "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "departures."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Kanha",
+          "parts": [
+            {
+              "text": "Kanha"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Keoladeo",
+          "parts": [
+            {
+              "text": "Keoladeo"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Panna",
+          "parts": [
+            {
+              "text": "Panna"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Ranthambhore",
+          "parts": [
+            {
+              "text": "Ranthambhore"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Kaziranga",
+          "parts": [
+            {
+              "text": "Kaziranga"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Svalbard",
+          "parts": [
+            {
+              "text": "Svalbard"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Pantanal",
+          "parts": [
+            {
+              "text": "Pantanal"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Photography Tours",
+          "parts": [
+            {
+              "text": "Photography Tours"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "View all expeditions",
+          "href": "/photo-expeditions"
+        },
+        {
+          "label": "Kanha12 – 16 Dec 20264 nights / 5 days · Kanha, IndiaView expedition",
+          "href": "/photo-expeditions/kanha-wildlife-photography-expedition"
+        },
+        {
+          "label": "Keoladeo23 – 26 Jan 20274 days · Keoladeo, RajasthanView expedition",
+          "href": "/photo-expeditions/bharatpur-photography-expedition"
+        },
+        {
+          "label": "Panna10 – 14 Feb 20275 days · Panna, Madhya PradeshView expedition",
+          "href": "/photo-expeditions/panna-photography-expedition"
+        },
+        {
+          "label": "Ranthambhore18 – 21 Feb 20274 days · Ranthambhore, RajasthanView expedition",
+          "href": "/photo-expeditions/ranthambhore-photography-expedition"
+        },
+        {
+          "label": "Kaziranga24 – 28 Mar 20274 nights / 5 days · KazirangaView expedition",
+          "href": "/photo-expeditions/kaziranga-wildlife-photography-expedition"
+        },
+        {
+          "label": "Svalbard5 – 14 Jul 20272027 is sold outBooking open for 202810 days · Svalbard, NorwayView expedition",
+          "href": "/photo-expeditions/svalbard-expedition"
+        },
+        {
+          "label": "Pantanal11 – 21 Sept 202711 days · Pantanal, BrazilView expedition",
+          "href": "/photo-expeditions/the-pantanal-wetlands"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/destinations/kanha/field-photographs/7e97ab33488f.webp",
+          "alt": "Tiger walking along a misty forest track in Kanha",
+          "objectPosition": "52% 40%"
+        },
+        {
+          "sourcePath": "/assets/destinations/bharatpur-keoladeo/field-photographs/976f71ef5d58.webp",
+          "alt": "Sarus cranes together in Bharatpur grassland",
+          "objectPosition": "44% 35%"
+        },
+        {
+          "sourcePath": "/assets/destinations/panna/field-photographs/96f58b18cda7.webp",
+          "alt": "Tiger walking through Panna beneath a glowing sunset",
+          "objectPosition": "60% 40%"
+        },
+        {
+          "sourcePath": "/assets/destinations/ranthambhore/field-photographs/861288cdc556.webp",
+          "alt": "Bengal tiger walking beside a Ranthambhore lake at sunrise",
+          "objectPosition": "62% 50%"
+        },
+        {
+          "sourcePath": "/assets/expeditions/kaziranga/trikansh/rhino-sunset.webp",
+          "alt": "One-horned rhinoceros beside a wetland beneath a pink sunset",
+          "objectPosition": "64% 70%"
+        },
+        {
+          "sourcePath": "/assets/destinations/svalbard/field-photographs/a513430a84d8.webp",
+          "alt": "Polar bear and cub on a sea-ice floe in Svalbard",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/destinations/pantanal/field-photographs/e755e99797fb.webp",
+          "alt": "Jaguar at the water’s edge in Brazil’s Pantanal",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": [
+        {
+          "text": "12 – 16 Dec 2026",
+          "dateTime": "2026-12-12"
+        },
+        {
+          "text": "23 – 26 Jan 2027",
+          "dateTime": "2027-01-23"
+        },
+        {
+          "text": "10 – 14 Feb 2027",
+          "dateTime": "2027-02-10"
+        },
+        {
+          "text": "18 – 21 Feb 2027",
+          "dateTime": "2027-02-18"
+        },
+        {
+          "text": "24 – 28 Mar 2027",
+          "dateTime": "2027-03-24"
+        },
+        {
+          "text": "5 – 14 Jul 2027",
+          "dateTime": "2027-07-05"
+        },
+        {
+          "text": "11 – 21 Sept 2027",
+          "dateTime": "2027-09-11"
+        }
+      ]
+    },
+    {
+      "label": "Corporate journeys",
+      "className": "MiceSection-module__lf0JhW__mice-home",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [
+          "Employee, dealer & distributor incentives",
+          "Company retreats & partner meets",
+          "Client hospitality & group journeys"
+        ],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Out of the office.Into the extraordinary.",
+          "parts": [
+            {
+              "text": "Out of the office."
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "text": "Into the "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "extraordinary."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Reward the remarkable",
+          "parts": [
+            {
+              "text": "Reward the remarkable"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Make room for new ideas",
+          "parts": [
+            {
+              "text": "Make room for new ideas"
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Bring your people together",
+          "parts": [
+            {
+              "text": "Bring your people together"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Corporate journeys · MICE",
+          "parts": [
+            {
+              "text": "Corporate journeys · MICE"
+            }
+          ]
+        },
+        {
+          "text": "Incentive travel, partner retreats and client hospitality across India and international destinations.",
+          "parts": [
+            {
+              "text": "Incentive travel, partner retreats and client hospitality across India and international destinations."
+            }
+          ]
+        },
+        {
+          "text": "Bring employees, dealers, distributors and clients together through journeys shaped around your purpose.",
+          "parts": [
+            {
+              "text": "Bring employees, dealers, distributors and clients together through journeys shaped around your purpose."
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Employee, dealer & distributor incentivesReward the remarkable↗",
+          "href": "/mice"
+        },
+        {
+          "label": "Company retreats & partner meetsMake room for new ideas↗",
+          "href": "/mice"
+        },
+        {
+          "label": "Client hospitality & group journeysBring your people together↗",
+          "href": "/mice"
+        },
+        {
+          "label": "Discover corporate journeys ↗",
+          "href": "/mice"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/destinations/kanha/field-photographs/8a6eba1b2e6a.webp",
+          "alt": "A safari vehicle travelling through sunlit forest in Kanha, India",
+          "objectPosition": "50% 60%"
+        },
+        {
+          "sourcePath": "/assets/destinations/svalbard/field-photographs/eb87fa95c8f5.webp",
+          "alt": "Mountains and an Arctic fjord in Svalbard",
+          "objectPosition": "42% 50%"
+        }
+      ],
+      "figures": [
+        "India · Shared discoveries",
+        "International · Beyond borders"
+      ],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Private jet safaris",
+      "className": "concept-private-aviation is-visible",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": "Private jet safari benefits",
+        "benefits": [
+          "Private aircraft",
+          "Remote wilderness",
+          "Seamless routing"
+        ]
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "The wild, within reach.",
+          "parts": [
+            {
+              "text": "The wild, within "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "reach."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Private Jet Safaris",
+          "parts": [
+            {
+              "text": "Private Jet Safaris"
+            }
+          ]
+        },
+        {
+          "text": "Dedicated aircraft and seamless routing bring distant landscapes closer.",
+          "parts": [
+            {
+              "text": "Dedicated aircraft and seamless routing bring distant landscapes closer."
+            }
+          ]
+        },
+        {
+          "text": "Private aircraftRemote wildernessSeamless routing",
+          "parts": [
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Private aircraft"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Remote wilderness"
+                }
+              ]
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Seamless routing"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Explore private jet safaris",
+          "href": "/private-aviation"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/kairamya/aviation-concierge.jpg",
+          "alt": "Safari Crafters private aircraft prepared for a remote safari journey",
+          "objectPosition": "43% 50%"
+        }
+      ],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Preferred partners",
+      "className": "PreferredPartners-module__6U0yLG__section",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [
+          {
+            "label": "India"
+          },
+          {
+            "label": "Africa"
+          },
+          {
+            "label": "Indian Subcontinent"
+          }
+        ],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Preferred partners.",
+          "parts": [
+            {
+              "text": "Preferred "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "partners."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Exceptional places. Trusted connections.",
+          "parts": [
+            {
+              "text": "Exceptional places. Trusted connections."
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "images": [
+        {
+          "sourcePath": "/assets/partners/India-25.png",
+          "alt": "Six Senses",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-26.png",
+          "alt": "The Leela",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-27.png",
+          "alt": "The Bamboo Forest",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-28.png",
+          "alt": "The Postcard Hotel",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-29.png",
+          "alt": "CGH Earth",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-30.png",
+          "alt": "The Imperial New Delhi",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-31.png",
+          "alt": "Relais & Châteaux",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-32.png",
+          "alt": "Taj",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-33.png",
+          "alt": "Aramness",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-34.png",
+          "alt": "Pugdundee Safaris",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-35.png",
+          "alt": "SUJÁN",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-36.png",
+          "alt": "RAAS",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-37.png",
+          "alt": "Oberoi Hotels & Resorts",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-38.png",
+          "alt": "ITC Hotels",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-39.png",
+          "alt": "Aman",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-40.png",
+          "alt": "The Ultimate Travelling Camp",
+          "objectPosition": "50% 50%"
+        },
+        {
+          "sourcePath": "/assets/partners/India-41.png",
+          "alt": "Jehan Numa Wilderness",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    },
+    {
+      "label": "Guest Notes",
+      "className": "guest-notes-feature",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [
+          {
+            "label": "Previous guest note"
+          },
+          {
+            "label": "Next guest note"
+          }
+        ],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "The journey stays with you.",
+          "parts": [
+            {
+              "text": "The journey stays "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "with you."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Guest Notes",
+          "parts": [
+            {
+              "text": "Guest Notes"
+            }
+          ]
+        },
+        {
+          "text": "Private Journeys",
+          "parts": [
+            {
+              "text": "Private Journeys"
+            }
+          ]
+        },
+        {
+          "text": "Pallavi KhemkaRanthambhore",
+          "parts": [
+            {
+              "text": "Pallavi Khemka"
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Ranthambhore"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "All guest notes ↗",
+          "href": "/reviews"
+        },
+        {
+          "label": "Explore this journey ↗",
+          "href": "/destinations/ranthambhore"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/destinations/ranthambhore/ranthambhore-02.jpg",
+          "alt": "Bengal tiger in Ranthambhore",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [
+        "Ranthambhore"
+      ],
+      "statistics": [],
+      "quotes": [
+        "Thank you Gaurav and team for an amazing trip to the Ranthambore. Gaurav made our trip so very convenient. Extremely friendly and responsive and at the same time professional at work."
+      ],
+      "dates": []
+    },
+    {
+      "label": "Begin your journey",
+      "className": "concept-concierge is-visible",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Ready whenyou are.",
+          "parts": [
+            {
+              "text": "Ready when"
+            },
+            {
+              "tag": "br",
+              "children": []
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "you are."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "h3",
+          "text": "Where would you like to begin?",
+          "parts": [
+            {
+              "text": "Where would you like "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "to"
+                }
+              ]
+            },
+            {
+              "text": " begin?"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [],
+      "links": [
+        {
+          "label": "India",
+          "href": "/plan?region=India"
+        },
+        {
+          "label": "Africa",
+          "href": "/plan?region=Africa"
+        },
+        {
+          "label": "South & Central America",
+          "href": "/plan?region=South%20%26%20Central%20America"
+        },
+        {
+          "label": "Arctic & Beyond",
+          "href": "/plan?region=Arctic%20%26%20Beyond"
+        },
+        {
+          "label": "Surprise me",
+          "href": "/plan?region=Surprise%20me"
+        },
+        {
+          "label": "Plan My Journey",
+          "href": "/contact"
+        }
+      ],
+      "images": [],
+      "figures": [],
+      "statistics": [],
+      "quotes": [],
+      "dates": []
+    }
+  ],
+  "partners": [
+    {
+      "region": "India",
+      "content": {
+        "label": "Preferred partners",
+        "className": "PreferredPartners-module__6U0yLG__section",
+        "migration": {
+          "anchor": null,
+          "smallLabels": [],
+          "buttons": [
+            {
+              "label": "India"
+            },
+            {
+              "label": "Africa"
+            },
+            {
+              "label": "Indian Subcontinent"
+            }
+          ],
+          "journeys": [],
+          "departureBoardLabel": null,
+          "departures": [],
+          "benefitsLabel": null,
+          "benefits": []
+        },
+        "headings": [
+          {
+            "tag": "h2",
+            "text": "Preferred partners.",
+            "parts": [
+              {
+                "text": "Preferred "
+              },
+              {
+                "tag": "em",
+                "children": [
+                  {
+                    "text": "partners."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "Exceptional places. Trusted connections.",
+            "parts": [
+              {
+                "text": "Exceptional places. Trusted connections."
+              }
+            ]
+          }
+        ],
+        "links": [],
+        "images": [
+          {
+            "sourcePath": "/assets/partners/India-25.png",
+            "alt": "Six Senses",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-26.png",
+            "alt": "The Leela",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-27.png",
+            "alt": "The Bamboo Forest",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-28.png",
+            "alt": "The Postcard Hotel",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-29.png",
+            "alt": "CGH Earth",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-30.png",
+            "alt": "The Imperial New Delhi",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-31.png",
+            "alt": "Relais & Châteaux",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-32.png",
+            "alt": "Taj",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-33.png",
+            "alt": "Aramness",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-34.png",
+            "alt": "Pugdundee Safaris",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-35.png",
+            "alt": "SUJÁN",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-36.png",
+            "alt": "RAAS",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-37.png",
+            "alt": "Oberoi Hotels & Resorts",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-38.png",
+            "alt": "ITC Hotels",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-39.png",
+            "alt": "Aman",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-40.png",
+            "alt": "The Ultimate Travelling Camp",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/India-41.png",
+            "alt": "Jehan Numa Wilderness",
+            "objectPosition": "50% 50%"
+          }
+        ],
+        "figures": [],
+        "statistics": [],
+        "quotes": [],
+        "dates": []
+      }
+    },
+    {
+      "region": "Africa",
+      "content": {
+        "label": "Preferred partners",
+        "className": "PreferredPartners-module__6U0yLG__section",
+        "migration": {
+          "anchor": null,
+          "smallLabels": [],
+          "buttons": [
+            {
+              "label": "India"
+            },
+            {
+              "label": "Africa"
+            },
+            {
+              "label": "Indian Subcontinent"
+            }
+          ],
+          "journeys": [],
+          "departureBoardLabel": null,
+          "departures": [],
+          "benefitsLabel": null,
+          "benefits": []
+        },
+        "headings": [
+          {
+            "tag": "h2",
+            "text": "Preferred partners.",
+            "parts": [
+              {
+                "text": "Preferred "
+              },
+              {
+                "tag": "em",
+                "children": [
+                  {
+                    "text": "partners."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "Exceptional places. Trusted connections.",
+            "parts": [
+              {
+                "text": "Exceptional places. Trusted connections."
+              }
+            ]
+          }
+        ],
+        "links": [],
+        "images": [
+          {
+            "sourcePath": "/assets/partners/Africa-42.png",
+            "alt": "Safarilink",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-43.png",
+            "alt": "Wilderness",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-44.png",
+            "alt": "Chiawa Safaris",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-45.png",
+            "alt": "Governors’ Camp Collection",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-46.png",
+            "alt": "Time + Tide",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-47.png",
+            "alt": "Royal Mansour Marrakech",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-48.png",
+            "alt": "Royal Chundu",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-49.png",
+            "alt": "Relais & Châteaux",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-50.png",
+            "alt": "Steenberg",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-51.png",
+            "alt": "Elewana Collection",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-52.png",
+            "alt": "Gondwana Collection Namibia",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-53.png",
+            "alt": "Londolozi",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-54.png",
+            "alt": "Al Moudira Hotel",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-55.png",
+            "alt": "Lalibela Wildlife Reserve",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-56.png",
+            "alt": "Cape Town Helicopters / Escape + Explore",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-58.png",
+            "alt": "Sabi Sabi",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-59.png",
+            "alt": "Great Plains",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-61.png",
+            "alt": "Delaire Graff Lodges & Spa",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-62.png",
+            "alt": "Airlink",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-63.png",
+            "alt": "Ellerman House",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-64.png",
+            "alt": "Singita",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-65.png",
+            "alt": "Escape + Explore",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-66.png",
+            "alt": "Epako Safari Lodge & Spa",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-67.png",
+            "alt": "Dorp",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-68.png",
+            "alt": "The Royal Portfolio",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-69.png",
+            "alt": "Cobra Experience",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-70.png",
+            "alt": "Anjajavy le Lodge",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-71.png",
+            "alt": "African Bush Camps",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-72.png",
+            "alt": "El Morocco Hotel",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-73.png",
+            "alt": "Xigera Safari Lodge",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-74.png",
+            "alt": "Jabulani",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-76.png",
+            "alt": "Cottar’s Safaris",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-77.png",
+            "alt": "The Red Carnation Hotel Collection",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-78.png",
+            "alt": "The Bushcamp Company",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-79.png",
+            "alt": "Ol Jogi Wildlife Conservancy",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-80.png",
+            "alt": "Sausage Tree Safari Camp",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-81.png",
+            "alt": "Gmundner Lodge",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Africa-82.png",
+            "alt": "Angama",
+            "objectPosition": "50% 50%"
+          }
+        ],
+        "figures": [],
+        "statistics": [],
+        "quotes": [],
+        "dates": []
+      }
+    },
+    {
+      "region": "Indian Subcontinent",
+      "content": {
+        "label": "Preferred partners",
+        "className": "PreferredPartners-module__6U0yLG__section",
+        "migration": {
+          "anchor": null,
+          "smallLabels": [],
+          "buttons": [
+            {
+              "label": "India"
+            },
+            {
+              "label": "Africa"
+            },
+            {
+              "label": "Indian Subcontinent"
+            }
+          ],
+          "journeys": [],
+          "departureBoardLabel": null,
+          "departures": [],
+          "benefitsLabel": null,
+          "benefits": []
+        },
+        "headings": [
+          {
+            "tag": "h2",
+            "text": "Preferred partners.",
+            "parts": [
+              {
+                "text": "Preferred "
+              },
+              {
+                "tag": "em",
+                "children": [
+                  {
+                    "text": "partners."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "Exceptional places. Trusted connections.",
+            "parts": [
+              {
+                "text": "Exceptional places. Trusted connections."
+              }
+            ]
+          }
+        ],
+        "links": [],
+        "images": [
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-01.png",
+            "alt": "&Beyond",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-02.png",
+            "alt": "Anantara",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-03.png",
+            "alt": "One&Only Reethi Rah",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-04.png",
+            "alt": "Resplendent Ceylon",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-05.png",
+            "alt": "Cheval Blanc",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-06.png",
+            "alt": "Six Senses Bhutan",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-07-1.png",
+            "alt": "The Ritz-Carlton Maldives",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-08.png",
+            "alt": "Velaa Private Island",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-10.png",
+            "alt": "JOALI Maldives",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-11.png",
+            "alt": "Shinta Mani Mustang",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-12.png",
+            "alt": "Dwarika’s Sanctuary",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-13.png",
+            "alt": "Bhutan Spirit Sanctuary",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-14.png",
+            "alt": "The Nautilus Maldives",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-15.png",
+            "alt": "Cinnamon Hotels & Resorts",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-16.png",
+            "alt": "Wild Coast Tented Lodge",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-17.png",
+            "alt": "Jetwing Hotels",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-19.png",
+            "alt": "Patina Maldives",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-20.png",
+            "alt": "Resplendent Ceylon",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-21.png",
+            "alt": "Relais & Châteaux",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-22.png",
+            "alt": "Soneva",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-23.png",
+            "alt": "Six Senses Laamu",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-24.png",
+            "alt": "Waldorf Astoria",
+            "objectPosition": "50% 50%"
+          },
+          {
+            "sourcePath": "/assets/partners/Whiteeye-Logos-09.png",
+            "alt": "Pemako",
+            "objectPosition": "50% 50%"
+          }
+        ],
+        "figures": [],
+        "statistics": [],
+        "quotes": [],
+        "dates": []
+      }
+    }
+  ],
+  "guestNotes": [
+    {
+      "label": "Guest Notes",
+      "className": "guest-notes-feature",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [
+          {
+            "label": "Previous guest note"
+          },
+          {
+            "label": "Next guest note"
+          }
+        ],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "The journey stays with you.",
+          "parts": [
+            {
+              "text": "The journey stays "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "with you."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Guest Notes",
+          "parts": [
+            {
+              "text": "Guest Notes"
+            }
+          ]
+        },
+        {
+          "text": "Private Journeys",
+          "parts": [
+            {
+              "text": "Private Journeys"
+            }
+          ]
+        },
+        {
+          "text": "Pallavi KhemkaRanthambhore",
+          "parts": [
+            {
+              "text": "Pallavi Khemka"
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Ranthambhore"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "All guest notes ↗",
+          "href": "/reviews"
+        },
+        {
+          "label": "Explore this journey ↗",
+          "href": "/destinations/ranthambhore"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/destinations/ranthambhore/ranthambhore-02.jpg",
+          "alt": "Bengal tiger in Ranthambhore",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [
+        "Ranthambhore"
+      ],
+      "statistics": [],
+      "quotes": [
+        "Thank you Gaurav and team for an amazing trip to the Ranthambore. Gaurav made our trip so very convenient. Extremely friendly and responsive and at the same time professional at work."
+      ],
+      "dates": []
+    },
+    {
+      "label": "Guest Notes",
+      "className": "guest-notes-feature",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [
+          {
+            "label": "Previous guest note"
+          },
+          {
+            "label": "Next guest note"
+          }
+        ],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "The journey stays with you.",
+          "parts": [
+            {
+              "text": "The journey stays "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "with you."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Guest Notes",
+          "parts": [
+            {
+              "text": "Guest Notes"
+            }
+          ]
+        },
+        {
+          "text": "Private Journeys",
+          "parts": [
+            {
+              "text": "Private Journeys"
+            }
+          ]
+        },
+        {
+          "text": "Hemil & Riddhi ShahIndia",
+          "parts": [
+            {
+              "text": "Hemil & Riddhi Shah"
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "India"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "All guest notes ↗",
+          "href": "/reviews"
+        },
+        {
+          "label": "Explore this journey ↗",
+          "href": "/journeys"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/destinations/jawai/jawai-03.jpg",
+          "alt": "Leopard country in Jawai",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [
+        "India"
+      ],
+      "statistics": [],
+      "quotes": [
+        "We started our journey with no expectations and every single recommendation from your end was worth it."
+      ],
+      "dates": []
+    },
+    {
+      "label": "Guest Notes",
+      "className": "guest-notes-feature",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [
+          {
+            "label": "Previous guest note"
+          },
+          {
+            "label": "Next guest note"
+          }
+        ],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "The journey stays with you.",
+          "parts": [
+            {
+              "text": "The journey stays "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "with you."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Guest Notes",
+          "parts": [
+            {
+              "text": "Guest Notes"
+            }
+          ]
+        },
+        {
+          "text": "Private Journeys",
+          "parts": [
+            {
+              "text": "Private Journeys"
+            }
+          ]
+        },
+        {
+          "text": "Masumi JhurmarvalaKabini",
+          "parts": [
+            {
+              "text": "Masumi Jhurmarvala"
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Kabini"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "All guest notes ↗",
+          "href": "/reviews"
+        },
+        {
+          "label": "Explore this journey ↗",
+          "href": "/destinations/kabini"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/destinations/kabini/kabini-02.jpg",
+          "alt": "Elephant in the forests of Kabini",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [
+        "Kabini"
+      ],
+      "statistics": [],
+      "quotes": [
+        "Sachin at safari crafters helped us a lot be it encouraging us to go to Kabini, booking the safaris, constant support, and ensuring all is done in a timely manner in spite of his remote access."
+      ],
+      "dates": []
+    },
+    {
+      "label": "Guest Notes",
+      "className": "guest-notes-feature",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [
+          {
+            "label": "Previous guest note"
+          },
+          {
+            "label": "Next guest note"
+          }
+        ],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "The journey stays with you.",
+          "parts": [
+            {
+              "text": "The journey stays "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "with you."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Guest Notes",
+          "parts": [
+            {
+              "text": "Guest Notes"
+            }
+          ]
+        },
+        {
+          "text": "Bespoke Safaris",
+          "parts": [
+            {
+              "text": "Bespoke Safaris"
+            }
+          ]
+        },
+        {
+          "text": "Chintan AminTiger country",
+          "parts": [
+            {
+              "text": "Chintan Amin"
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Tiger country"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "All guest notes ↗",
+          "href": "/reviews"
+        },
+        {
+          "label": "Explore this journey ↗",
+          "href": "/guided-bespoke-safaris"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/destinations/kanha/kanha-03.jpg",
+          "alt": "Tiger habitat in Kanha",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [
+        "Tiger country"
+      ],
+      "statistics": [],
+      "quotes": [
+        "Really professional and very experienced Guide and driver. The only reason we could experience tiger so up close was only because of the dedication and skills of the team."
+      ],
+      "dates": []
+    },
+    {
+      "label": "Guest Notes",
+      "className": "guest-notes-feature",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [
+          {
+            "label": "Previous guest note"
+          },
+          {
+            "label": "Next guest note"
+          }
+        ],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "The journey stays with you.",
+          "parts": [
+            {
+              "text": "The journey stays "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "with you."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Guest Notes",
+          "parts": [
+            {
+              "text": "Guest Notes"
+            }
+          ]
+        },
+        {
+          "text": "Photography Tours",
+          "parts": [
+            {
+              "text": "Photography Tours"
+            }
+          ]
+        },
+        {
+          "text": "Anonymous guestSnow Leopard country · Name withheld",
+          "parts": [
+            {
+              "text": "Anonymous guest"
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "Snow Leopard country"
+                },
+                {
+                  "text": " · Name withheld"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "All guest notes ↗",
+          "href": "/reviews"
+        },
+        {
+          "label": "Explore this journey ↗",
+          "href": "/photo-expeditions"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/destinations/spiti-valley/spiti-valley-01.jpg",
+          "alt": "Snow leopard country in the high Himalaya",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [
+        "Snow Leopard country"
+      ],
+      "statistics": [],
+      "quotes": [
+        "The preparation was as valuable as the sighting. The team made the mountains feel possible."
+      ],
+      "dates": []
+    },
+    {
+      "label": "Guest Notes",
+      "className": "guest-notes-feature",
+      "migration": {
+        "anchor": null,
+        "smallLabels": [],
+        "buttons": [
+          {
+            "label": "Previous guest note"
+          },
+          {
+            "label": "Next guest note"
+          }
+        ],
+        "journeys": [],
+        "departureBoardLabel": null,
+        "departures": [],
+        "benefitsLabel": null,
+        "benefits": []
+      },
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "The journey stays with you.",
+          "parts": [
+            {
+              "text": "The journey stays "
+            },
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "text": "with you."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "text": "Guest Notes",
+          "parts": [
+            {
+              "text": "Guest Notes"
+            }
+          ]
+        },
+        {
+          "text": "Private Journeys",
+          "parts": [
+            {
+              "text": "Private Journeys"
+            }
+          ]
+        },
+        {
+          "text": "Nirvaan HarichandraiIndia",
+          "parts": [
+            {
+              "text": "Nirvaan Harichandrai"
+            },
+            {
+              "tag": "span",
+              "children": [
+                {
+                  "text": "India"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "All guest notes ↗",
+          "href": "/reviews"
+        },
+        {
+          "label": "Explore this journey ↗",
+          "href": "/journeys"
+        }
+      ],
+      "images": [
+        {
+          "sourcePath": "/assets/destinations/pantanal/supplied/01.webp",
+          "alt": "Jaguar beside a riverbank in the Pantanal",
+          "objectPosition": "50% 50%"
+        }
+      ],
+      "figures": [
+        "India"
+      ],
+      "statistics": [],
+      "quotes": [
+        "I had one of the most magical experiences of my life. Safari Crafters made it happen."
+      ],
+      "dates": []
+    }
+  ],
+  "menu": {
+    "label": null,
+    "className": "concept-full-menu",
+    "migration": {
+      "anchor": "concept-full-menu",
+      "smallLabels": [],
+      "buttons": [
+        {
+          "label": "Close menu"
+        }
+      ],
+      "journeys": [],
+      "departureBoardLabel": null,
+      "departures": [],
+      "benefitsLabel": null,
+      "benefits": []
+    },
+    "headings": [
+      {
+        "tag": "h2",
+        "text": "Journeys",
+        "parts": [
+          {
+            "text": "Journeys"
+          }
+        ]
+      },
+      {
+        "tag": "h2",
+        "text": "Destinations",
+        "parts": [
+          {
+            "text": "Destinations"
+          }
+        ]
+      },
+      {
+        "tag": "h2",
+        "text": "Photography Tours",
+        "parts": [
+          {
+            "text": "Photography Tours"
+          }
+        ]
+      },
+      {
+        "tag": "h2",
+        "text": "Bespoke Safaris",
+        "parts": [
+          {
+            "text": "Bespoke Safaris"
+          }
+        ]
+      },
+      {
+        "tag": "h2",
+        "text": "Private Jet Safaris",
+        "parts": [
+          {
+            "text": "Private Jet Safaris"
+          }
+        ]
+      },
+      {
+        "tag": "h2",
+        "text": "Store",
+        "parts": [
+          {
+            "text": "Store"
+          }
+        ]
+      }
+    ],
+    "paragraphs": [],
+    "links": [
+      {
+        "label": "",
+        "href": "/"
+      },
+      {
+        "label": "Journeys",
+        "href": "/journeys"
+      },
+      {
+        "label": "Destinations",
+        "href": "/destinations"
+      },
+      {
+        "label": "Photography Tours",
+        "href": "/photo-expeditions"
+      },
+      {
+        "label": "Bespoke Safaris",
+        "href": "/guided-bespoke-safaris"
+      },
+      {
+        "label": "Private Jet Safaris",
+        "href": "/private-aviation"
+      },
+      {
+        "label": "Store",
+        "href": "/store"
+      },
+      {
+        "label": "Plan a Journey",
+        "href": "/plan"
+      },
+      {
+        "label": "Corporate Journeys",
+        "href": "/mice"
+      },
+      {
+        "label": "Journal",
+        "href": "/journal"
+      },
+      {
+        "label": "Guest Notes",
+        "href": "/reviews"
+      },
+      {
+        "label": "Conservation",
+        "href": "/conservation-commitment"
+      },
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ],
+    "images": [],
+    "figures": [],
+    "statistics": [],
+    "quotes": [],
+    "dates": []
+  },
+  "media": [
+    {
+      "sourcePath": "/assets/destinations/bharatpur-keoladeo/field-photographs/976f71ef5d58.webp",
+      "sha256": "e122803c5ad54eec2c5ae3281a69a63ff76d2271a3eba7693825de4947d24a61"
+    },
+    {
+      "sourcePath": "/assets/destinations/jawai/jawai-03.jpg",
+      "sha256": "57929edce073eb35e374c28ec9f35933fd78947fd6a4b9ef9a106a35515a390c"
+    },
+    {
+      "sourcePath": "/assets/destinations/kabini/kabini-02.jpg",
+      "sha256": "eb807ddbfbdbb3dabfdb9c7e1b4090608e949fa9f1f97f83d45e949045b040a3"
+    },
+    {
+      "sourcePath": "/assets/destinations/kanha/field-photographs/7e97ab33488f.webp",
+      "sha256": "047aca25eec6917b5af0a62397ada13a08f019f1e2c2ac0a488a52867ec9e015"
+    },
+    {
+      "sourcePath": "/assets/destinations/kanha/field-photographs/8a6eba1b2e6a.webp",
+      "sha256": "ef53da1451673db297a241b938955cacced448a86bf355831d08365ca95d597f"
+    },
+    {
+      "sourcePath": "/assets/destinations/kanha/kanha-03.jpg",
+      "sha256": "85d22db0d640fa8b89813a8aaaa7ca54482590b386d3e488a98c704aaa91992e"
+    },
+    {
+      "sourcePath": "/assets/destinations/panna/field-photographs/96f58b18cda7.webp",
+      "sha256": "594e9aeb2ac67a7783b4506a2f16ced078ec2df9b6d04ede88cc1520771c8ae9"
+    },
+    {
+      "sourcePath": "/assets/destinations/pantanal/field-photographs/e755e99797fb.webp",
+      "sha256": "b847190754ffb1e26b9257f9e6e0bdef7493d597a525659e33e46a3a062a90e5"
+    },
+    {
+      "sourcePath": "/assets/destinations/pantanal/supplied/01.webp",
+      "sha256": "a9541a2ce3a2455409fabc517e044ea5beee2cbbe7465a7ce1bf3c78be1541ed"
+    },
+    {
+      "sourcePath": "/assets/destinations/ranthambhore/field-photographs/861288cdc556.webp",
+      "sha256": "f18a79c1c38664b61ad5bcbe9736ef2a011ca246a0280542b2e09603c1b1b86d"
+    },
+    {
+      "sourcePath": "/assets/destinations/ranthambhore/ranthambhore-02.jpg",
+      "sha256": "01f83112d982cb0f82c1cc7adedb2e8d9c6266eaf184f6b8a52ad41f3898a7d0"
+    },
+    {
+      "sourcePath": "/assets/destinations/spiti-valley/spiti-valley-01.jpg",
+      "sha256": "aa6a864d85f73ea084c43b35ede5a40882eaeba1c13d8213450ce78010bae0f7"
+    },
+    {
+      "sourcePath": "/assets/destinations/svalbard/field-photographs/a513430a84d8.webp",
+      "sha256": "adc4eaedebef9048b1d552a6dadf94f3a8f5efd6b023b227bac7ee06197a8a49"
+    },
+    {
+      "sourcePath": "/assets/destinations/svalbard/field-photographs/eb87fa95c8f5.webp",
+      "sha256": "37c8784e08b7faff1235a7611a544e6efa8f1f4b916266daf4f5692377f7088d"
+    },
+    {
+      "sourcePath": "/assets/expeditions/kaziranga/trikansh/rhino-sunset.webp",
+      "sha256": "3b1a8b55279f4f096c128d54f3fd206b1b2f9bd6e72daf3a44a9ac079599e9a1"
+    },
+    {
+      "sourcePath": "/assets/kairamya/aviation-concierge.jpg",
+      "sha256": "4c0f67e58b8fdbf92bcce1b9304a8569983f88038766b2a7af7a0e8ae5aeda6b"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-42.png",
+      "sha256": "106496c3b38a3e487d4fc1c2227988690a4b7b7673732e23d513239576e273ca"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-43.png",
+      "sha256": "2149cccfb0e3faf71bc1e671697bac16ce63622e34687f3dd306520ac488d094"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-44.png",
+      "sha256": "83eda7e49e9a5b4f29fa1596638e0e0f6f6317462c633db6fd02d8fd3d494b49"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-45.png",
+      "sha256": "dfe1e97d0a5f1e1d0f667f9c6526ee2b362ede38f6d19993a9a7117464b12107"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-46.png",
+      "sha256": "0a011fd246bdcf78addb928257b7edc31a63f1b5c28ff2d06cfb05593b3b423c"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-47.png",
+      "sha256": "c899683725b83ca2dc43c3a73e9cfb7be897bf23cbe61ed69d9006846f99cfa9"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-48.png",
+      "sha256": "a1ba1365b4539a9b5ce04df62b1f6025ed712f21ba14ed34125a665d047bff97"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-49.png",
+      "sha256": "d9b12b887d9231c3dd5bd6044ece265ba97c4058c5708223e57fab6082bf6e69"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-50.png",
+      "sha256": "84d951baed02f86344c177baf45b4c3ba35e23f5ee7065b534fa35fb1133f513"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-51.png",
+      "sha256": "6d69f8c14af893ab8c69b80d3d97e3a42ef91680224c116e7ee8567dd143dc92"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-52.png",
+      "sha256": "daff17d219229eba393f5a08f4ee4be54351e9b8673c5b7c6673d90a63ebf6fa"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-53.png",
+      "sha256": "2c51f5bb09e04080ffdb714e45efe10d54a4d6b800876388ac1b116192ff1b00"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-54.png",
+      "sha256": "b769b2c7c61df51fda9c93d7fe71b86ea110014ff2d73f7ea4a9eb7faa131dde"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-55.png",
+      "sha256": "a96fc77a7548e0af7ea4de73e2cf399f143d8d4587862a2d9e468a1ae22c2349"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-56.png",
+      "sha256": "cae6b5256a59810cbc31e3080e992e586821b488174f048c6909de65cf77abdf"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-58.png",
+      "sha256": "0e0b95e0226f11fe0b78568902e0c02220df30a1a0f1377934c0794c842b594a"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-59.png",
+      "sha256": "b1270353ec48330e7300bb3e3a2fdb9a4520e2040e24cf086c88380801359ee9"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-61.png",
+      "sha256": "6f9049e81eee1a6dee4b76a3b3a690b7c3a709e4cf7324a20602b093e574a66b"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-62.png",
+      "sha256": "3003f02d57b2c077b2c4169a6172d2cd0220d7c683b9d45ff6d8d3ccd8297215"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-63.png",
+      "sha256": "af2eae800bf1b51c9f95d5ab0776085de45eea5934f698a42c0257fc1a630a48"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-64.png",
+      "sha256": "1cf64c0387ef701e58fe2e2f43b6a6db9ee4ba15dc990acc0f4d5882b2fb9538"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-65.png",
+      "sha256": "dbb0364301f14251a8ade903853e7efda991e4bf47fb38f42b12e5ecdebaa735"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-66.png",
+      "sha256": "b03898146a881dbd0ee8ca6d7eb44100a7465c0d2ba37cba8edb597624d08f3a"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-67.png",
+      "sha256": "d4e32a83e0e414741f430e8e4f8cac69427b3020c8023ce6a43d8031347324d5"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-68.png",
+      "sha256": "8baaa2ac00b49736d74abc51d3ff923ba0f710d86e840640df27f0704b606c3d"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-69.png",
+      "sha256": "040e0895165398a5876e454312b7c6d950a85faf35bab9312bb37795a60e3683"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-70.png",
+      "sha256": "1b941c702a060df82ed7bb14eaa075b431cbb79d1759f8149dacd7bd58dc8491"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-71.png",
+      "sha256": "ce7072927025cc8d84cddfaeb34661b58919e2b29f6b4793d9afc0be65c87fcc"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-72.png",
+      "sha256": "73f1d856f750cb63b7d480188a07a5c2d687d81d5139ce1047e61e56a58d6070"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-73.png",
+      "sha256": "d3dc35e3b14e250c56d34a0ea44535d4122f8a7527afbc29beb15397ad35bce9"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-74.png",
+      "sha256": "57d2d3459a86801ab0607342a426b2147ceb8f4f80f966328dcbd1fdcda7d3e3"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-76.png",
+      "sha256": "4609b1f377a798674415ff695b341d66f132bdb0df9e301a369ad303bd7a2e5a"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-77.png",
+      "sha256": "bce15f81d54d42d2756ead7734a3c7be05ecea82ff636b5a3da219e10b3426ef"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-78.png",
+      "sha256": "f3275bf7abbaf61211bbc7c7761d32cc981f4941a7332b1ce2681f75295ea6f8"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-79.png",
+      "sha256": "4ea629b8d870dfa7f2aaacdec86aa1c051bf1cf320262e47aa1886139e13a3a5"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-80.png",
+      "sha256": "a2f767516e5097116d20e6d6b610bb4c6ecbe680a16440dbff25732b650f403c"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-81.png",
+      "sha256": "0a2f15f05db29ec4f872326996817d03753737cab7558f09bfe0554e427b64f0"
+    },
+    {
+      "sourcePath": "/assets/partners/Africa-82.png",
+      "sha256": "4b8b6eec1b9cc7534c13aa51a8e53cc505ab036589fbff1185590f15f52b6243"
+    },
+    {
+      "sourcePath": "/assets/partners/India-25.png",
+      "sha256": "a0e7e4761d8835799fa1e30634c3dd593cd1817ba1f4698ef9755b897bf99fd3"
+    },
+    {
+      "sourcePath": "/assets/partners/India-26.png",
+      "sha256": "255f5999da9c586952c0a7d0afa1f0382576be4a29f102cc9b15bc20485766cf"
+    },
+    {
+      "sourcePath": "/assets/partners/India-27.png",
+      "sha256": "66b301305007d2687c6790c7fc47c2aa3bb879306afa776249a728c21eb483d7"
+    },
+    {
+      "sourcePath": "/assets/partners/India-28.png",
+      "sha256": "a89ae57d7bf22a4787f949b616178625863018141e0b0ee3c8579409bf0ad0b0"
+    },
+    {
+      "sourcePath": "/assets/partners/India-29.png",
+      "sha256": "adf81e1e731250429f9895c2011a1ff38b3bee6e696b1927257cd71bb2607cc0"
+    },
+    {
+      "sourcePath": "/assets/partners/India-30.png",
+      "sha256": "2c239edd101f205f188d7c45a53aa33840ba23a19957da191db70694d63bc1b5"
+    },
+    {
+      "sourcePath": "/assets/partners/India-31.png",
+      "sha256": "8b23f2a7ac9c198a0b88722841a75e9e60f6956e81f05b90fdc288aef9ae8837"
+    },
+    {
+      "sourcePath": "/assets/partners/India-32.png",
+      "sha256": "2063a80795ac5d2491fe0546a68d4180e7baaa43fdda8543301738bf28c71cf6"
+    },
+    {
+      "sourcePath": "/assets/partners/India-33.png",
+      "sha256": "72e8743b3394155f946d33239d1fe143a1ce32f6f7f665d11c3ee21efd45a419"
+    },
+    {
+      "sourcePath": "/assets/partners/India-34.png",
+      "sha256": "5018e5fd85119897f2059f17288105cbbb3dfe2673b574fc7b45b6f4adf7fa0d"
+    },
+    {
+      "sourcePath": "/assets/partners/India-35.png",
+      "sha256": "d3c18449f47da55ead8ac05278f307d09a4e3bb0edcd1525a80acd2976f4e96b"
+    },
+    {
+      "sourcePath": "/assets/partners/India-36.png",
+      "sha256": "57579486361d2d29b537abfdc5fea0bd219eeb554587f7f0df7cb136f09befcd"
+    },
+    {
+      "sourcePath": "/assets/partners/India-37.png",
+      "sha256": "0ad0b0d728433927b2139d1c736e621cb18d9e3c704570ae2d83d094f28d5494"
+    },
+    {
+      "sourcePath": "/assets/partners/India-38.png",
+      "sha256": "6d39337e75eea2b396cfcfb801e62e5c7a407aaa130c22e2a0b3978685791550"
+    },
+    {
+      "sourcePath": "/assets/partners/India-39.png",
+      "sha256": "0c655bbf71cb5e62f2c4d87f2fb2d95ad975650474bdd0ee7140aa0629220155"
+    },
+    {
+      "sourcePath": "/assets/partners/India-40.png",
+      "sha256": "828142ac325140f21023fc507ebec05e5b9c1f8377d1bcd73b6e03c5ff1fe414"
+    },
+    {
+      "sourcePath": "/assets/partners/India-41.png",
+      "sha256": "5466a84562fcd94e1b2482b6ec0a1563b7b61db143efa171b26660ff040b3111"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-01.png",
+      "sha256": "03675381330960a41d96ca70d7047ac7e957ca0c3d3e85b21abdb29d9a257be7"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-02.png",
+      "sha256": "e91473ceb2d6880e944e9be0f06690c81c23d5468f2afce78af396113136c326"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-03.png",
+      "sha256": "a45543988b38ea266ce9976f34c5c9533a32810c08e97b4c3cf2abdf987fba11"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-04.png",
+      "sha256": "403fca07d5f79a9485ff6d1b3005a2a6ce69690e01d4b9a33f7f578da011ec4b"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-05.png",
+      "sha256": "ec0f2241f5b56786908942941738ff0ce3b856a98b769659e1e193e1c1f6a4bb"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-06.png",
+      "sha256": "0fc992ec00c232e785756157d43224bf17b386af94e5126ba02b39132afd3b79"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-07-1.png",
+      "sha256": "4dc0b8486bb687520e2ef45b4935330fd514829be521f65d3fda209ad41fbc72"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-08.png",
+      "sha256": "25c8a8fcc48178fb10953b8a4d7dde6dfa5afd4c1bd3180b73f827572c3b6dc3"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-09.png",
+      "sha256": "e79d413f9d69669dc7c6e7378838068ea23c9d6734e71db6a805de12f383999f"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-10.png",
+      "sha256": "4d2686c9594093213ca95ff0a6e765b3453a6dfffda1083a7018ceb9f01e0348"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-11.png",
+      "sha256": "d9c139caaef877c735df364c5b9e7993866492322e173e2e5496d014fcccc1e7"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-12.png",
+      "sha256": "2d2e80abd8ab2b497d60dc025e91e9d88d9f3bc069aeab59d043894e3ce7b981"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-13.png",
+      "sha256": "2ce8f5419231d5a36dbf08097de1184073f725944ff86c60807826b2e82d1b6d"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-14.png",
+      "sha256": "39361f5db116945e27aa83e1792e280bb5f95ab08839e88fc802ad23f37997cd"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-15.png",
+      "sha256": "45b124803282d0a8bf3f0a04a41f827219fc85c88fc6eb9553d655fca3eb814e"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-16.png",
+      "sha256": "7bd936c2e46dca2f35d902487a4713a64c863b158adf8c39e98adc0a5861965a"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-17.png",
+      "sha256": "948e3d570cdacd82e10b23e643f1a5c3aa82d8a03438470f3949b58b813f8949"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-19.png",
+      "sha256": "1a5f5388f6d6a03433ee47621cb56ff6c4a98c55342c3259a031e292c9b76f57"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-20.png",
+      "sha256": "c2c36aded0ab598ac2534e419c6df75269a4b6a9366ab3fee82776bd9af2ee78"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-21.png",
+      "sha256": "ace588abf0dfef7950b452d78c987ce391ae987cea7e3dce789f3f442749cb5f"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-22.png",
+      "sha256": "83b3a108cd4a215b961fb34d3549871dd7bfc40ef94f6a4352b4dcf70993ebb7"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-23.png",
+      "sha256": "56de83306c2a70120b29e2f0f84208d2c48c281efc505b9f7e115ef851d95e88"
+    },
+    {
+      "sourcePath": "/assets/partners/Whiteeye-Logos-24.png",
+      "sha256": "f5bd0daeb74d5e70ac431b6fab3cd6198438f093a91fb78ff224a0e0f6402791"
+    },
+    {
+      "sourcePath": "/assets/safari-crafters/central-park-54034f7c.jpg",
+      "sha256": "b1df5cfdeb81800b23eef56f5c335d877058b2aab249d4eb97ede160091e4020"
+    },
+    {
+      "sourcePath": "/assets/safari-crafters/golden-triangle-ae04a20e.jpg",
+      "sha256": "51256c6384ed2e27521d9da578d66e55908e6ed451ec38dfd42bc5c140935c52"
+    },
+    {
+      "sourcePath": "/assets/safari-crafters/laipikia-001e24e7.jpg",
+      "sha256": "77781576052cec4269a4bb786cff05c994074117844c323f1b2db3c311202b2e"
+    },
+    {
+      "sourcePath": "/assets/safari-crafters/ranthambhore-tiger-family-restored-v2.png",
+      "sha256": "fbb71844549dbd3119216f2c6d1e13228de17dff77a3c8cb9fcba600333625ce"
+    },
+    {
+      "sourcePath": "/assets/safari-crafters/red-panda-61dc9dd9.jpg",
+      "sha256": "25a537336a5b610ba880a19663d27ba6b67bca51ff57a557bc37695c4b9fe30d"
+    },
+    {
+      "sourcePath": "/assets/safari-crafters/the-pantanal-wetlands-af117fe5.jpg",
+      "sha256": "c6407ed7898f28d66c6c4b16fa2cf8adbb689a455682ff9efec22604abdacd97"
+    }
+  ],
+  "limitations": [
+    "Browser capture shows the reduced-motion initial hero frame; heroFrames separately contains source-resolved text for every frame. Rotation and background video still require validation.",
+    "Disabled source sections are not rendered or captured.",
+    "Navigation image stack is decorative and excluded from image capture; source inventory still tracks its dependencies.",
+    "Normalized text is provided alongside text-node parts; automatic whitespace rewriting is not authorized.",
+    "Dates and upcoming departures reflect capture time; this is not a timeless departure inventory.",
+    "This captures content, not visual acceptance, consent, media rights or public-release approval.",
+    "Hashes declared hero video files, but not all transitive source files, guest films, fonts or styles. Video decoding/playback is not verified."
+  ]
+}

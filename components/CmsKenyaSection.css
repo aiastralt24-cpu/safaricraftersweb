@@ -1,0 +1,61 @@
+/* Scoped to CMS rendering; legacy country pages retain their existing styling. */
+.cms-kenya-page .cms-kenya-public-image{display:block;width:100%;height:100%;object-fit:cover}
+.cms-kenya-page .cms-kenya-hero-image img{filter:saturate(.74) contrast(1.08) brightness(.86)}
+.cms-kenya-page .itinerary-card>.cms-kenya-public-image{position:absolute;inset:0}
+.cms-kenya-preview .cms-media-image{margin:0;padding:0;border:0;border-radius:0;min-height:0;background:transparent;display:block;height:100%;width:100%}
+.cms-kenya-preview .cms-media-image img{display:block;width:100%;height:100%;max-height:none;object-fit:cover}
+.cms-kenya-hero-image{position:absolute;inset:0}.cms-kenya-hero-image img{object-position:var(--kenya-position,50% 50%)}
+.cms-kenya-preview .page-hero-content{position:relative;z-index:2}.cms-kenya-preview .page-hero{color:white}
+.cms-composition-preview .cms-kenya-preview :is(h1,h2,h3,h4){color:inherit}
+.cms-kenya-preview .itinerary-card>.cms-media-image{position:absolute;inset:0}
+.cms-kenya-preview .itinerary-copy{color:white}.cms-kenya-preview .gallery-trigger>.cms-media-image{height:100%}
+.cms-kenya-lightbox{width:min(960px,92vw);max-height:90vh;padding:20px;background:#18251d;color:white;border:0;overflow:auto}
+.cms-kenya-lightbox::backdrop{background:rgb(0 0 0 / .8)}.cms-kenya-lightbox figure{margin:16px 0}.cms-kenya-lightbox .cms-media-image{height:min(60vh,600px)}.cms-kenya-lightbox .cms-media-image img{object-fit:contain}.cms-kenya-lightbox button{margin:4px}.cms-kenya-lightbox figcaption{padding:12px}
+/* Defaults deliberately retain the captured editorial layout. These attributes
+   belong to the shared section root, so preview and public output use one rule set. */
+:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-align="center"],:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-align="center"] .page-hero-content{text-align:center}
+:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-align="center"] :is(.kenya-section-heading,.kenya-prose){margin-inline:auto}
+:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-align="center"] .breadcrumbs ol{justify-content:center}
+:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-align="center"] .kenya-gallery-heading{justify-content:center}
+:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-width="reading"].container,:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-width="reading"]>.container{width:calc(100% - 32px);max-width:780px;margin-inline:auto}
+:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-width="full"].container,:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-width="full"]>.container{width:calc(100% - 32px);max-width:none;margin-inline:auto}
+:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-spacing="compact"]{padding-block:32px}
+:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-spacing="generous"]{padding-block:96px}
+:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-spacing]:not([data-kenya-spacing="standard"])>:is(.kenya-space,.kenya-facts-grid){padding-block:0}
+/* Hero content needs top clearance for navigation regardless of its spacing. */
+:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-spacing="compact"]>.page-hero-content{padding-top:120px;padding-bottom:32px}
+:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-spacing="generous"]>.page-hero-content{padding-top:176px;padding-bottom:64px}
+@media(max-width:760px){:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-spacing="generous"]{padding-block:56px}}
+
+/* Match the original Kenya hero crop while retaining the author's focal point. */
+.cms-kenya-hero-image img{transform:scale(1.18);transform-origin:35% 90%}
+@media(max-width:760px){.cms-kenya-hero-image img{transform:none}}
+/* Explicit palettes apply to both page and card surfaces, with coordinated text
+   and button contrast. Without the attribute, original section colors win. */
+[data-kenya-background="paper"]{--kenya-bg:#f4f0e7;--kenya-fg:#19271f;--kenya-muted:#4f554c;--kenya-accent:#73603b}
+[data-kenya-background="white"]{--kenya-bg:#fff;--kenya-fg:#19271f;--kenya-muted:#4f554c;--kenya-accent:#73603b}
+[data-kenya-background="forest"]{--kenya-bg:#19271f;--kenya-fg:#f4f0e7;--kenya-muted:#d1d7cc;--kenya-accent:#d8c18a}
+[data-kenya-background="ink"]{--kenya-bg:#151b17;--kenya-fg:#f4f0e7;--kenya-muted:#d1d7cc;--kenya-accent:#d8c18a}
+.kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-background],.kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-background] .kenya-place{background:var(--kenya-bg);color:var(--kenya-fg)}
+.kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-background] :is(h1,h2,h3,h4,.kenya-lead){color:var(--kenya-fg)}
+.kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-background] :is(p,small,figcaption){color:var(--kenya-muted)}
+.kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-background] :is(.eyebrow,.kenya-number){color:var(--kenya-accent)}
+.kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-background] .button{background:var(--kenya-fg);color:var(--kenya-bg);border-color:var(--kenya-fg)}
+.kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-background] :is(a,summary):focus-visible{outline-color:var(--kenya-accent)}
+/* Image-overlay cards retain their own readable foreground. */
+.kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-background] .itinerary-copy,.kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-background] .itinerary-copy :is(h2,h3,h4){color:#fff}
+@media(min-width:761px){
+ .kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-media="start"] .kenya-place-body{grid-template-columns:1.2fr 1fr}
+ .kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-media="end"] .kenya-place-body{grid-template-columns:1fr 1.2fr}
+ .kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-media="start"] :is(.kenya-place-image,.kenya-luxury-grid>figure){order:0}
+ .kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-media="end"] :is(.kenya-place-image,.kenya-luxury-grid>figure){order:2}
+}
+@media(max-width:760px){
+ .kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-mobile="mediaFirst"] :is(.kenya-place-image,.kenya-luxury-grid>figure){order:0}
+ .kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-mobile="textFirst"] :is(.kenya-place-image,.kenya-luxury-grid>figure){order:2}
+}
+/* Explicit client choices outrank the site's #main editorial surface defaults. */
+#main .kenya-page:is(.cms-kenya-page,.cms-kenya-preview) section[data-kenya-background]{background:var(--kenya-bg);color:var(--kenya-fg)}
+.kenya-page:is(.cms-kenya-page,.cms-kenya-preview) [data-kenya-background] .kenya-plan p{color:var(--kenya-muted)}
+/* Container-based sections keep readable content widths while painting a full band. */
+.kenya-page:is(.cms-kenya-page,.cms-kenya-preview) section.container[data-kenya-background]{border-image:linear-gradient(var(--kenya-bg),var(--kenya-bg)) fill 0 / 0 / 0 100vw}

@@ -1,0 +1,67 @@
+.cms-homepage-section{padding:clamp(64px,7vw,112px) var(--concept-gutter,24px);overflow-wrap:anywhere}
+.cms-homepage-width{width:100%;max-width:1320px;margin-inline:auto}
+.cms-homepage-width.width-reading{max-width:840px}
+.cms-homepage-width.width-full{max-width:none}
+.cms-homepage-section.spacing-compact{padding-block:40px}
+.cms-homepage-section.spacing-generous{padding-block:clamp(96px,10vw,160px)}
+.cms-homepage-section.background-paper{background:var(--paper,#f4f0e7)}
+.cms-homepage-section.background-white{background:white}
+.cms-homepage-section.background-forest{background:#263c31;color:#f7f4eb}
+.cms-homepage-section.background-ink{background:#171b18;color:#f7f4eb}
+.cms-homepage-section.align-center{text-align:center}
+.cms-homepage-section.align-start{text-align:left}
+.cms-homepage-section img{max-width:100%}
+@media(max-width:760px){.cms-homepage-section{padding:56px 20px}.cms-homepage-section.spacing-compact{padding-block:28px}.cms-homepage-section.spacing-generous{padding-block:80px}}
+.cms-homepage-section.background-paper,.cms-homepage-section.background-white{color:var(--soil,#302d27)}
+.cms-homepage-section h2{font-family:var(--font-display);font-size:clamp(3rem,4.8vw,5.8rem);font-weight:300;letter-spacing:-.04em;line-height:1.02;text-wrap:balance;margin:0 0 24px}
+.cms-homepage-section h2 em{font-weight:300}
+.cms-homepage-section h3{font-family:var(--font-display);font-size:clamp(1.7rem,2.6vw,3rem);font-weight:400;line-height:1.15}
+.cms-homepage-section button{color:inherit;background:transparent;border:1px solid currentColor;border-radius:2px;font:inherit;cursor:pointer}
+.cms-homepage-section button:focus-visible,.cms-homepage-section a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+
+body:has(.cms-homepage) .cms-homepage > .site-header{display:grid}
+/* The composition controls apply to the media/copy pair, not the section header. */
+@media(min-width:761px){
+ .cms-homepage-section.media-start .cms-home-aviation{grid-template-columns:1.15fr .85fr}
+ .cms-homepage-section.media-start .cms-home-aviation>figure,.cms-homepage-section.media-start .cms-home-corporate-images,.cms-homepage-section.media-start .cms-home-guest-spread>figure{order:-1}
+ .cms-homepage-section.media-end .cms-home-aviation>figure,.cms-homepage-section.media-end .cms-home-corporate-images,.cms-homepage-section.media-end .cms-home-guest-spread>figure{order:1}
+ .cms-homepage-section.media-end .cms-home-guest-spread{grid-template-columns:1.2fr .8fr}
+}
+@media(max-width:760px){
+ .cms-homepage-section .cms-home-guest-spread{grid-template-columns:1fr}
+ .cms-homepage-section.mobile-mediaFirst .cms-home-aviation>figure,.cms-homepage-section.mobile-mediaFirst .cms-home-corporate-images,.cms-homepage-section.mobile-mediaFirst .cms-home-guest-spread>figure{order:-1}
+ .cms-homepage-section.mobile-textFirst .cms-home-aviation>figure,.cms-homepage-section.mobile-textFirst .cms-home-corporate-images,.cms-homepage-section.mobile-textFirst .cms-home-guest-spread>figure{order:1}
+}
+.cms-homepage-story.width-reading .concept-story-proof-intro,.cms-homepage-story.width-reading .concept-legacy-ledger{max-width:840px}
+.cms-homepage-story.width-reading .concept-story-proof-intro{grid-template-columns:1fr;gap:32px}
+.cms-homepage-story.width-content .concept-story-proof-intro,.cms-homepage-story.width-content .concept-legacy-ledger{max-width:1320px}
+.cms-homepage-story.width-full .concept-story-proof-intro,.cms-homepage-story.width-full .concept-legacy-ledger{width:100%;max-width:none}
+.cms-homepage-story.spacing-compact{padding-block:40px}
+.cms-homepage-story.spacing-generous{padding-block:clamp(96px,10vw,160px)}
+.cms-homepage-story.align-center{text-align:center}
+.cms-homepage-story.align-center .concept-story-proof-copy>p,.cms-homepage-story.align-center :is(h1,h2,h3){margin-inline:auto}
+.cms-homepage-story.background-paper{background:var(--paper,#f4f0e7)}
+.cms-homepage-story.background-white{background:white}
+.cms-homepage-story.background-forest{background:#263c31;color:#f7f4eb}
+.cms-homepage-story.background-ink{background:#171b18;color:#f7f4eb}
+.cms-homepage-story:is(.background-forest,.background-ink) :is(.concept-story-proof-copy>p,.concept-legacy-ledger>p,.concept-legacy-ledger dd){color:inherit}
+.cms-homepage-story:is(.background-forest,.background-ink) .concept-story-proof-copy>a{color:#d7b77c}
+.cms-homepage-story:is(.background-forest,.background-ink) .concept-legacy-ledger{border-top-color:#d7b77c66}
+.cms-homepage-story:is(.background-forest,.background-ink) .concept-legacy-ledger dl>div+div{border-left-color:#d7b77c66}
+.cms-homepage-hero.width-reading .concept-hero-grid{max-width:840px}
+.cms-homepage-hero.width-content .concept-hero-grid{max-width:1320px}
+.cms-homepage-hero.width-full .concept-hero-grid{max-width:none}
+.cms-homepage-hero.align-center .concept-hero-copy{text-align:center}
+.cms-homepage-hero.align-center .concept-hero-copy :is(h1,h2,h3,p){margin-inline:auto}
+.cms-homepage-hero.spacing-compact .concept-hero-grid{padding-block:36px 30px}
+.cms-homepage-hero.spacing-generous .concept-hero-grid{padding-block:108px 90px}
+.cms-homepage-hero.background-paper{background:var(--paper,#f4f0e7)}
+.cms-homepage-hero.background-white{background:white}
+.cms-homepage-hero.background-forest{background:#263c31}
+.cms-homepage-hero.background-ink{background:#171b18}
+@media(max-width:760px){.cms-homepage-story.spacing-compact{padding-block:28px}.cms-homepage-story.spacing-generous{padding-block:80px}.cms-homepage-hero.spacing-generous .concept-hero-grid{padding-block:96px 80px}}
+.cms-homepage-story .concept-story-proof-intro :is(h1,h3){max-width:900px;margin-block:0;font-family:var(--font-display);font-size:clamp(3.8rem,5.6vw,6.9rem);font-weight:300;letter-spacing:-.04em;line-height:.96;text-wrap:balance}
+@media(max-width:760px){.cms-homepage-story .concept-story-proof-intro :is(h1,h3){font-size:clamp(3rem,13.5vw,4.25rem)}}
+.cms-homepage-story:is(.background-forest,.background-ink) .concept-legacy-ledger{color:#f7f4eb}
+.cms-homepage-story:is(.background-forest,.background-ink) .concept-legacy-ledger dt{color:#d7b77c}
+.cms-homepage-story.align-center .concept-story-proof-copy>p{text-align:center}

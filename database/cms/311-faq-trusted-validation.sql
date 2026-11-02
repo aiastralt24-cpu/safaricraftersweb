@@ -1,0 +1,29 @@
+begin;
+create function cms.get_faq_validation_evidence(p_site uuid,p_record uuid,p_revision uuid)
+returns jsonb language plpgsql stable security definer set search_path='' as $$
+declare rec cms.records;payload jsonb;refs jsonb;links jsonb;
+begin
+ select * into rec from cms.records where website_id=p_site and id=p_record and content_type='faq' and current_revision_id=p_revision;
+ if not found then return null;end if;
+ select v.payload into payload from cms.revisions v where v.website_id=p_site and v.record_id=p_record and v.id=p_revision;
+ select coalesce(jsonb_agg(jsonb_build_object('type',t.kind,'recordId',ref->>'recordId','available',r.id is not null,'published',r.published_revision_id is not null,'locale',r.locale) order by t.kind,ref->>'recordId'),'[]') into refs
+ from (values('pages','page'),('products','product'),('destinations','destination'),('documents','document')) t(key,kind)
+ cross join lateral jsonb_array_elements(case when jsonb_typeof(payload#>array['relationships',t.key])='array' then payload#>array['relationships',t.key] else '[]'::jsonb end) ref
+ left join cms.records r on r.website_id=p_site and r.id=(ref->>'recordId')::uuid and r.content_type=t.kind and r.id<>p_record;
+ select coalesce(jsonb_agg(jsonb_build_object('href',href,'available',cms.tanzania_link_path(href) is not null and position('#' in href)=0 and (cms.tanzania_link_path(href)=rec.path or exists(select 1 from cms.navigation_public_paths where path=cms.tanzania_link_path(href)) or cms.concept_link_available(p_site,cms.tanzania_link_path(href),rec.locale))) order by href),'[]') into links
+ from (select distinct value#>>'{}' href from jsonb_path_query(payload,'$.**.href') value where jsonb_typeof(value)='string' and (value#>>'{}' like '/%' or value#>>'{}' like '#%')) x;
+ return jsonb_build_object('websiteId',p_site,'recordId',p_record,'revisionId',p_revision,'references',refs,'links',links);
+exception when invalid_text_representation then return null;
+end $$;
+revoke all on function cms.get_faq_validation_evidence(uuid,uuid,uuid) from public,anon,authenticated;
+grant execute on function cms.get_faq_validation_evidence(uuid,uuid,uuid) to service_role;
+alter function cms.get_validation_input(uuid,uuid,uuid) rename to get_validation_input_before_faqs;
+revoke all on function cms.get_validation_input_before_faqs(uuid,uuid,uuid) from public,anon,authenticated,service_role;
+create function cms.get_validation_input(p_site uuid,p_record uuid,p_revision uuid)
+returns jsonb language sql stable security definer set search_path='' as $$
+ select value||case when value->>'type'='faq' then jsonb_build_object('faqEvidence',cms.get_faq_validation_evidence(p_site,p_record,p_revision)) else '{}'::jsonb end from (select cms.get_validation_input_before_faqs(p_site,p_record,p_revision) value) x;
+$$;
+revoke all on function cms.get_validation_input(uuid,uuid,uuid) from public,anon,authenticated;
+grant execute on function cms.get_validation_input(uuid,uuid,uuid) to service_role;
+insert into cms.validation_policy(content_type,validator_version) values('faq','faq-1');
+commit;

@@ -1,0 +1,13 @@
+.cms-announcement{padding:120px 6vw 28px;background:#e8e1d3;color:#202b22;text-align:center;overflow-wrap:anywhere}
+.cms-announcement h2{margin:0 0 12px;font-size:clamp(1.2rem,3vw,1.8rem)}
+.cms-announcement p{max-width:70ch;margin:0 auto 16px;white-space:pre-wrap;line-height:1.6}
+.cms-announcement a{text-decoration:underline;text-underline-offset:4px}
+.cms-sticky-cta-space{height:calc(88px + env(safe-area-inset-bottom,0px))}
+.cms-sticky-cta{position:fixed;z-index:900;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));max-width:calc(100vw - 40px);padding:14px 24px;border:1px solid #e8e1d3;border-radius:4px;background:#243c2b;color:#fff;box-shadow:0 4px 20px #0003;text-align:center;overflow-wrap:anywhere}
+.cms-sticky-cta:focus-visible,.cms-announcement a:focus-visible{outline:3px solid #b17b35;outline-offset:4px}
+@media(max-width:700px){.cms-announcement{padding-top:100px}.cms-sticky-cta{font-size:14px}}
+/* Keep a covered promotional link out of keyboard navigation while an overlay is open. */
+body:has(.cookie-panel) .cms-sticky-cta,
+body:has(dialog[open]) .cms-sticky-cta{visibility:hidden}
+/* Leave the in-flow cookie preferences control above the fixed contact link. */
+body:has(.cms-sticky-cta) .cookie-preferences{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}

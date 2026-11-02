@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {paragraph} from '../lib/cms/composition.ts';import {emailHref} from '../lib/cms/inline-text.ts';
+test('paragraph links preserve exact visible text and reject conflicting fallback text',()=>{const value={kind:'paragraph',text:'Email us now.',spans:[{text:'Email '},{text:'us',href:'mailto:info@example.com'},{text:' now.'}]};assert.deepEqual(paragraph.parse(value),value);assert.equal(paragraph.safeParse({...value,text:'Hidden discrepancy'}).success,false);assert.equal(paragraph.safeParse({...value,spans:[]}).success,false);assert.equal(paragraph.safeParse({kind:'paragraph',text:'Plain text'}).success,true);});
+test('inline email links exclude message headers, multiple recipients and unsafe destinations',()=>{for(const href of ['mailto:info@example.com?subject=Injected','mailto:a@example.com,b@example.com','mailto:a@example.com%0abcc=x','mailto:a@example.com\n','javascript:alert(1)','mailto:bad']){assert.equal(emailHref.safeParse(href).success,false);assert.equal(paragraph.safeParse({kind:'paragraph',text:'Link',spans:[{text:'Link',href}]}).success,false);}for(const href of ['/contact','#choices','https://example.com','mailto:info@example.com'])assert.equal(paragraph.safeParse({kind:'paragraph',text:'Link',spans:[{text:'Link',href}]}).success,true);});
+
+test('approved inline formatting survives JSON round trips while arbitrary markup controls fail',()=>{
+ const value={kind:'paragraph',text:'CO2 and notes',spans:[{text:'CO',bold:true},{text:'2',script:'subscript'},{text:' and ',italic:true},{text:'notes',script:'superscript',href:'/contact',bold:true,italic:true}]};
+ assert.deepEqual(paragraph.parse(JSON.parse(JSON.stringify(value))),value);
+ for(const patch of [{bold:'true'},{italic:1},{script:'html'},{style:'color:red'},{html:'<b>notes</b>'},{onClick:'alert(1)'}])assert.equal(paragraph.safeParse({...value,spans:value.spans.map((span,i)=>i===3?{...span,...patch}:span)}).success,false);
+ assert.equal(paragraph.safeParse({...value,text:'Different fallback'}).success,false);
+});

@@ -440,3 +440,71 @@
   margin-inline: 0;
   padding-inline: max(var(--guided-gutter), calc((100% - var(--guided-canvas)) / 2));
 }
+
+/* Match the compact editorial typography used throughout destination pages. */
+.guided-page .guided-hero-copy h1 { font-size:clamp(36px,3.6vw,60px); line-height:1.05; max-width:20ch; }
+.guided-hero-copy > .eyebrow { color:var(--bone); }
+.guided-page .guided-introduction h2,
+.guided-page .guided-photography-copy h2,
+.guided-page .guided-field-heading h2,
+.guided-page .guided-person-copy h2,
+.guided-page .guided-paths > header h2,
+.guided-page .guided-faq > header h2 {
+  font-size:clamp(32px,3.6vw,54px); line-height:1.08; max-width:22ch; text-wrap:pretty;
+}
+.guided-person, .guided-field { padding-top:clamp(56px,6vw,88px); padding-bottom:clamp(56px,6vw,88px); }
+.guided-person-copy h2 { margin-bottom:24px; }
+.guided-faq { padding-top:clamp(56px,6vw,88px); padding-bottom:clamp(56px,6vw,88px); }
+@media(max-width:760px) {
+  .guided-page .guided-hero-copy h1 { font-size:clamp(30px,7vw,42px); }
+  .guided-page .guided-introduction h2,
+.guided-page .guided-photography-copy h2,
+.guided-page .guided-field-heading h2,
+  .guided-page .guided-person-copy h2,
+  .guided-page .guided-paths > header h2,
+  .guided-page .guided-faq > header h2 { font-size:clamp(30px,7vw,42px); }
+}
+
+/* Keep related copy together and align section headings with their photographs. */
+.guided-introduction { padding-block: clamp(48px, 5vw, 80px); }
+.guided-introduction-inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "label copy" "title copy";
+  column-gap: clamp(40px, 6vw, 96px);
+  row-gap: 18px;
+  align-items: start;
+}
+.guided-introduction-inner > .eyebrow { grid-area: label; margin: 0; }
+.guided-introduction h2 { grid-area: title; margin: 0; }
+.guided-introduction-copy { grid-area: copy; display: block; max-width: 56ch; align-self: center; }
+.guided-introduction-copy p { margin: 0 0 16px; }
+.guided-introduction-copy p:last-child { margin-bottom: 0; }
+.guided-field-heading { width: 100%; margin-bottom: 32px; row-gap: 18px; align-items: center; }
+.guided-field-heading > p:last-child { margin: 0; }
+.guided-field-image { margin-bottom: 22px; }
+.guided-field-grid h3 { font-size: clamp(26px, 2.3vw, 36px); line-height: 1.15; margin: 12px 0; }
+.guided-paths { padding-block: clamp(48px, 5vw, 80px); }
+.guided-paths > header {
+  display: grid;
+  max-width: none;
+  grid-template-columns: 1.2fr .8fr;
+  grid-template-areas: "label label" "title copy";
+  gap: 18px clamp(40px, 6vw, 96px);
+  align-items: center;
+  margin-bottom: 32px;
+}
+.guided-paths > header .eyebrow { grid-area: label; }
+.guided-page .guided-paths > header h2 { grid-area: title; max-width: none; }
+.guided-paths > header > p:last-child { grid-area: copy; margin: 0; color: rgba(var(--rgb-soil), .67); font-size: var(--type-body-lg); line-height: 1.75; max-width: 38ch; justify-self: end; }
+.guided-path-image { aspect-ratio: 16 / 9; margin-bottom: 22px; }
+.guided-paths-grid h3 { font-size: clamp(28px, 2.6vw, 40px); line-height: 1.1; min-height: 0; margin: 12px 0; }
+@media (max-width: 760px) {
+  .guided-introduction-inner { grid-template-columns: 1fr; grid-template-areas: "label" "title" "copy"; gap: 18px; }
+  .guided-introduction-copy { margin-top: 6px; }
+  .guided-field-heading { margin-bottom: 28px; }
+  .guided-paths > header { grid-template-columns: 1fr; grid-template-areas: "label" "title" "copy"; gap: 16px; margin-bottom: 28px; }
+  .guided-paths > header > p:last-child { justify-self: start; max-width: none; }
+  .guided-paths-grid { gap: 36px; }
+}

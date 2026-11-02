@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {legalSitemapItems} from '../lib/cms/legal-sitemap.ts';import {newPageSeo} from '../lib/cms/page-seo.ts';
+const content=()=>({page:{path:'/legal/privacy',title:'Privacy',seo:newPageSeo()},seoDefaults:{titleTemplate:'%s | Safari',description:'Default description',indexing:'index'}});
+test('legal sitemap includes only published indexable canonical pages without invented timestamps',()=>{const ready=content();assert.deepEqual(legalSitemapItems([null,ready],'https://example.test'),[{url:'https://example.test/legal/privacy'}]);for(const patch of [{indexing:'noindex'},{sitemap:'exclude'},{canonical:'https://example.test/elsewhere'}]){const item=content();Object.assign(item.page.seo,patch);assert.deepEqual(legalSitemapItems([item],'https://example.test'),[]);}const global=content();global.seoDefaults.indexing='noindex';assert.deepEqual(legalSitemapItems([global],'https://example.test'),[]);});

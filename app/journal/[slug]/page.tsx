@@ -1,3 +1,9 @@
+import {readSeoDefaults} from '@/lib/cms/seo-settings';
+import {cache} from 'react';
+import {CmsJournal} from '@/components/CmsJournal';
+import {readPublishedJournal,publicJournalConfig} from '@/lib/cms/public-journal-runtime';
+import {usesCmsJournal,publishedJournalMetadata,publishedJournalStructuredData} from '@/lib/cms/journal-route';
+import { EditorialFilm } from "@/components/EditorialFilm";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -8,35 +14,41 @@ import { getArticle, journal } from "@/lib/data";
 import { articleSchema, breadcrumbSchema, siteUrl } from "@/lib/structured-data";
 import "../../article.css";
 
+export const dynamic='force-dynamic';
+const loadCmsArticle=cache((slug:string)=>readPublishedJournal(slug,publicJournalConfig()));
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
+  if(usesCmsJournal())return [];
   return journal.map((article) => ({ slug: article.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  if(usesCmsJournal()){const article=await loadCmsArticle(slug);if(!article)notFound();return publishedJournalMetadata(article,await readSeoDefaults());}
   const article = getArticle(slug);
   if (!article) return {};
   return {
-    title: article.title,
-    description: article.description,
+    title: article.seo?.title || article.title,
+    description: article.seo?.description || article.description,
     alternates: { canonical: `/journal/${article.slug}` },
     openGraph: {
-      title: article.title,
-      description: article.description,
+      title: article.seo?.title || article.title,
+      description: article.seo?.description || article.description,
       type: "article",
       url: `${siteUrl}/journal/${article.slug}`,
       publishedTime: new Date(article.date).toISOString(),
-      images: [{ url: article.image.src, alt: article.image.alt }]
+      images: [{ url: (article.seo?.socialImage || article.image).src, alt: (article.seo?.socialImage || article.image).alt }]
     }
   };
 }
 
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
+  if(usesCmsJournal()){const article=await loadCmsArticle(slug);if(!article)notFound();return <><JsonLd data={publishedJournalStructuredData(article,siteUrl)}/><CmsJournal article={article}/></>;}
   const article = getArticle(slug);
   if (!article) notFound();
   const heroImage = article.gallery.find((image) => image.src !== article.image.src) || article.image;
@@ -72,6 +84,7 @@ export default async function ArticlePage({ params }: Props) {
           {article.gallery.length ? (
             <MediaGallery images={article.gallery.filter((image) => image.src !== heroImage.src && image.src !== article.image.src).slice(0, 4)} label={`${article.title} gallery`} />
           ) : null}
+      <EditorialFilm video={article.video} />
           <p className="caption">{article.image.credit}</p>
           <div className="article-cta">
             <h2 className="h3">Shape this field note into a journey.</h2>

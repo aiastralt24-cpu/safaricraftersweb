@@ -1,0 +1,5 @@
+/* Tanzania keeps its source hero crop rather than Kenya's enlarged image. */
+.tanzania-page.cms-kenya-preview .cms-kenya-hero-image img{transform:none}
+/* Static draft review keeps every place accessible without scroll choreography. */
+.tanzania-page.cms-kenya-preview .kenya-place{position:relative;top:auto!important;margin-top:0}
+.tanzania-page.cms-kenya-preview .kenya-places::after{display:none}

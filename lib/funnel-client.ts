@@ -1,6 +1,9 @@
+import {analyticsConsentGranted,clearFunnelSession} from './cookie-consent.ts';
 export type FunnelEvent = "trip_viewed" | "planner_started" | "enquiry_started" | "enquiry_failed";
-export function trackFunnel(event: FunnelEvent, path = location.pathname) {
-  if (process.env.NEXT_PUBLIC_FUNNEL_ENABLED !== "true" || navigator.doNotTrack === "1") return;
+export function trackFunnel(event: FunnelEvent, path?:string) {
+  if (typeof window==='undefined' || process.env.NEXT_PUBLIC_FUNNEL_ENABLED !== "true") return;
+  if (!analyticsConsentGranted()) {try{clearFunnelSession(window.sessionStorage);}catch{}return;}
+  path??=window.location.pathname;
   try {
     let visit=JSON.parse(sessionStorage.getItem("safari-visit") || "null");
     if (!visit || Date.now()-visit.at>1800000) {visit={id:crypto.randomUUID(),at:Date.now()};sessionStorage.setItem("safari-visit",JSON.stringify(visit));}

@@ -1,0 +1,16 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {tanzaniaSourceDraft} from '../lib/cms/tanzania-source-draft.ts';
+import {tanzaniaCountryContentSchema} from '../lib/cms/tanzania-country-content.ts';
+import {tanzaniaPlaces,tanzaniaCombinations,tanzaniaFaqs,tanzaniaDescription} from '../content/tanzania-editorial.ts';
+const asset=id=>({assetId:id,alt:'Reviewed field photograph',decorative:false}),assets={hero:asset('hero'),places:Object.fromEntries(tanzaniaPlaces.map(place=>[place.slug,asset(place.slug)])),gallery:[asset('gallery-1'),asset('gallery-2')],itineraries:Array.from({length:4},(_,i)=>asset('itinerary-'+i))};
+test('Tanzania source draft preserves nine groups, editorial text, captions, planner context and explicit media',()=>{
+ const result=tanzaniaSourceDraft(assets);assert.deepEqual(Object.keys(result).sort(),['schemaVersion','hero','facts','introduction','places','gallery','itineraries','faq','planner','related','seo'].sort());assert.equal(result.hero.copy,tanzaniaDescription);assert.deepEqual(result.hero.focalPoint,{x:58,y:90});assert.equal(result.facts.items.length,4);assert.equal(result.places.items.length,5);assert.equal(result.itineraries.items.length,4);assert.equal(result.faq.items.length,5);
+ for(const [index,place] of tanzaniaPlaces.entries()){assert.equal(result.places.items[index].copy,place.copy);assert.equal(result.places.items[index].image.assetId,place.slug);assert.equal(result.places.items[index].planner.interest,`${place.title}, Tanzania`);assert.equal(result.places.items[index].planner.label,'Start planning');}
+ assert.equal(result.places.items.filter(item=>item.imageCaption).length,1);assert.equal(result.places.items.find(item=>item.id==='ndutu').imageCaption,'From the wider Serengeti ecosystem · Safari Crafters archive');assert.deepEqual(result.gallery.images.map(row=>row.image.assetId),['gallery-1','gallery-2']);assert.deepEqual(result.faq.items.map(({id,...faq})=>faq),tanzaniaFaqs);assert.equal(result.itineraries.items[0].planner.interest,`${tanzaniaCombinations[0].title} — ${tanzaniaCombinations[0].duration}`);assert.equal(result.faq.heading.lines.length,2);assert.equal(result.related.items[1].button.href,'/destinations/uganda');assert.equal(result.hero.breadcrumbs.at(-1).href,undefined);
+ const again=tanzaniaSourceDraft(assets);result.hero.title='Edited';assert.equal(again.hero.title,'Tanzania');assert.equal(assets.hero.assetId,'hero');
+});
+test('Tanzania contract rejects missing/duplicate/oversized content and incomplete media bindings without inventing assets',()=>{
+ for(const value of [{...assets,gallery:[]},{...assets,itineraries:assets.itineraries.slice(1)},{...assets,places:{serengeti:asset('one')}},{...assets,hero:{...assets.hero,alt:''}},{...assets,unreviewed:'image'}])assert.throws(()=>tanzaniaSourceDraft(value));
+ const draft=tanzaniaSourceDraft(assets);
+ for(const change of [d=>d.places.items.push(d.places.items[0]),d=>d.places.items[0].planner.interest='',d=>d.planner.planner.closeLabel='',d=>d.related.items[0].button.href='https://external.test',d=>d.places.items[0].imageCaption='x'.repeat(2001),d=>d.hero.breadcrumbs.at(-1).href='/destinations/tanzania',d=>d.unknown=true]){const value=structuredClone(draft);change(value);assert.equal(tanzaniaCountryContentSchema.safeParse(value).success,false);}
+});

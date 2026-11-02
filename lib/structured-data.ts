@@ -59,7 +59,7 @@ export function destinationSchema(destination: Destination) {
     name: destination.title,
     description: destination.description,
     url: `${siteUrl}/destinations/${destination.slug}`,
-    image: isApprovedEditorialImage(destination.image) ? `${siteUrl}${destination.image.src}` : undefined,
+    image: isApprovedEditorialImage(destination.image) ? new URL(destination.image.src, siteUrl).href : undefined,
     containedInPlace: { "@type": "Country", name: destination.country },
     touristType: destination.bestFor
   };
@@ -72,7 +72,7 @@ export function journeySchema(journey: Journey) {
     name: journey.title,
     description: journey.description,
     url: `${siteUrl}/journeys/${journey.slug}`,
-    image: `${siteUrl}${journey.image.src}`,
+    image: new URL(journey.image.src, siteUrl).href,
     itinerary: journey.route || journey.destinations.join(" - "),
     provider: { "@id": `${siteUrl}/#organization` },
     touristType: journey.idealGuest || journey.category
@@ -86,7 +86,7 @@ export function expeditionSchema(expedition: Expedition) {
     name: expedition.title,
     description: expedition.description,
     url: `${siteUrl}/photo-expeditions/${expedition.slug}`,
-    image: `${siteUrl}${expedition.image.src}`,
+    image: new URL(expedition.image.src, siteUrl).href,
     itinerary: expedition.route,
     provider: { "@id": `${siteUrl}/#organization` },
     touristType: expedition.skill,
@@ -101,7 +101,7 @@ export function personSchema(specialist: Specialist) {
     name: specialist.name,
     jobTitle: specialist.role,
     description: specialist.bio,
-    image: `${siteUrl}${specialist.image.src}`,
+    image: new URL(specialist.image.src, siteUrl).href,
     worksFor: { "@id": `${siteUrl}/#organization` },
     knowsAbout: specialist.expertise
   };
@@ -114,7 +114,7 @@ export function articleSchema(article: JournalArticle) {
     headline: article.title,
     description: article.description,
     url: `${siteUrl}/journal/${article.slug}`,
-    image: `${siteUrl}${article.image.src}`,
+    image: new URL(article.image.src, siteUrl).href,
     datePublished: new Date(article.date).toISOString(),
     dateModified: new Date(article.date).toISOString(),
     author: { "@type": "Organization", name: article.author, url: siteUrl },

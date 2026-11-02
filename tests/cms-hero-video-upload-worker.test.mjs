@@ -1,0 +1,24 @@
+import test,{before} from 'node:test';import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';import {execFile} from 'node:child_process';import {promisify} from 'node:util';import {existsSync} from 'node:fs';import {mkdtemp,readFile,rm} from 'node:fs/promises';import {tmpdir} from 'node:os';import path from 'node:path';
+import {dispatchHeroVideos} from '../lib/cms/hero-video-dispatch.ts';
+import {processHeroVideoUpload} from '../lib/cms/hero-video-upload-worker.ts';
+const find=(env,name)=>env||[`/opt/homebrew/bin/${name}`,`/usr/local/bin/${name}`,`/usr/bin/${name}`].find(existsSync),runtime={ffmpeg:find(process.env.CMS_FFMPEG_PATH,'ffmpeg'),ffprobe:find(process.env.CMS_FFPROBE_PATH,'ffprobe')},available=Boolean(runtime.ffmpeg&&runtime.ffprobe);
+const site='00000000-0000-4000-8000-000000000001',id='00000000-0000-4000-8000-000000000002',lease='00000000-0000-4000-8000-000000000003';let bytes=Buffer.from('test input');
+before(async()=>{if(!available)return;const dir=await mkdtemp(path.join(tmpdir(),'cms-video-worker-test-'));try{const file=path.join(dir,'clip.mp4');await promisify(execFile)(runtime.ffmpeg,['-nostdin','-v','error','-f','lavfi','-i','color=c=green:size=160x90:rate=30','-t','0.5','-c:v','libx264','-pix_fmt','yuv420p','-movflags','+faststart',file]);bytes=await readFile(file);}finally{await rm(dir,{recursive:true,force:true});}});
+function fixture(){const events=[],job={site,id,filename:'clip.mp4',mime:'video/mp4',bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex'),storageKey:`${site}/${id}/original`,deliveryKey:`${site}/${id}/delivery.mp4`,leaseToken:lease};return {events,job,adapter:{claim:async()=>job,read:async()=>bytes,scan:async()=> 'clean',putVerified:async(key,data,sha,mime)=>{assert.equal(key,job.deliveryKey);assert.equal(mime,'video/mp4');assert.equal(createHash('sha256').update(data).digest('hex'),sha);events.push('stored');},finish:async(_job,result)=>{assert.equal(result.inspectionVersion,'hero-video-1');assert.equal(result.hasAudio,false);assert.equal(result.codec,'h264');assert.equal(result.pixelFormat,'yuv420p');events.push('finished');return id;},fail:async(_job,code,retryable)=>events.push({code,retryable})}};}
+test('video worker rejects changed source bytes before inspection or delivery writes',async()=>{const f=fixture();f.adapter.read=async()=>Buffer.from('changed');assert.equal((await processHeroVideoUpload(f.adapter,site,id,runtime)).status,'rejected');assert.deepEqual(f.events,[{code:'bytes_mismatch',retryable:false}]);});
+test('wrong tenant, job key, MIME and lease identity never read an object; empty claims do no work',async()=>{
+ for(const change of [j=>j.site=id,j=>j.deliveryKey=`${site}/${id}/delivery.webp`,j=>j.storageKey='foreign/object',j=>j.mime='image/png',j=>j.leaseToken='not-a-lease']){const f=fixture();change(f.job);f.adapter.read=async()=>{throw Error('Must not read');};await assert.rejects(processHeroVideoUpload(f.adapter,site,id,runtime),/identity mismatch/);assert.deepEqual(f.events,[]);}
+ const f=fixture();f.adapter.claim=async()=>null;assert.equal((await processHeroVideoUpload(f.adapter,site,id,runtime)).status,'not_claimed');
+});
+test('real video processing writes verified derivative before registering its exact asset identity',{skip:!available},async()=>{const f=fixture();assert.deepEqual(await processHeroVideoUpload(f.adapter,site,id,runtime),{status:'ready',assetId:id});assert.deepEqual(f.events,['stored','finished']);});
+test('scanner/storage outages retry without registering media; lost completion acknowledgements never record competing failures',{skip:!available},async()=>{
+ const scanner=fixture();scanner.adapter.scan=async()=> 'unavailable';assert.equal((await processHeroVideoUpload(scanner.adapter,site,id,runtime)).status,'retry_pending');assert.deepEqual(scanner.events,[{code:'scan_unavailable',retryable:true}]);
+ const storage=fixture();storage.adapter.putVerified=async()=>{throw Error('Private provider failure');};assert.equal((await processHeroVideoUpload(storage.adapter,site,id,runtime)).status,'retry_pending');assert.deepEqual(storage.events,[{code:'storage_unavailable',retryable:true}]);
+ for(const finish of [async()=>{throw Error('Lost acknowledgement');},async()=>site]){const f=fixture();f.adapter.finish=finish;assert.equal((await processHeroVideoUpload(f.adapter,site,id,runtime)).status,'unacknowledged');assert.deepEqual(f.events,['stored']);}
+});
+
+test('dispatcher runs confirmed work through the real decoder to verified completion',{skip:!available},async()=>{
+ const f=fixture();const adapter={...f.adapter,listWork:async()=>[{site,id}],confirmOriginal:async()=>{f.events.push('confirmed');return 'confirmed';}};
+ assert.deepEqual(await dispatchHeroVideos(adapter,runtime),[{site,id,status:'ready',assetId:id}]);assert.deepEqual(f.events,['confirmed','stored','finished']);
+});

@@ -37,8 +37,8 @@ export default function ReviewsPage() {
             <h2>Specific <em className="editorial-accent">memories.</em><br />Real names.</h2>
           </div>
           <div className="reviews-opening-copy">
-            <p>These notes were published by Safari Crafters guests after private journeys and guided wildlife travel. Names appear where guests were publicly identified.</p>
-            <p>One photography-led note remains anonymous because its original record did not include permission to publish a personal name.</p>
+            <p>Guest notes from private journeys and guided wildlife travel, shared in their own words.</p>
+            <p>Some guests choose to keep their names private.</p>
           </div>
         </div>
       </section>

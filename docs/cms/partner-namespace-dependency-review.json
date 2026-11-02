@@ -1,0 +1,64 @@
+{
+  "reviews": [
+    {
+      "inventory": "concept-migration-inventory.json",
+      "sourcePath": "lib/cms/custom-page-path.ts",
+      "reviews": [
+        {
+          "previousSha256": "19885240616f3c51cf6356de3efa2e0c4197adfb8ae67dbdd09e626d7e8b8c9e",
+          "sha256": "fdd43923aab53e266e2a99e408ae2dc4f6b635929cabc5a605eb796181eb5b53",
+          "date": "2026-10-30",
+          "reason": "Reviewed exact dependency delta: reserve partners alongside existing namespaces. No existing reserved root, source page, content, layout or asset changed."
+        }
+      ]
+    },
+    {
+      "inventory": "private-aviation-migration-inventory.json",
+      "sourcePath": "lib/cms/custom-page-path.ts",
+      "reviews": [
+        {
+          "previousSha256": "19885240616f3c51cf6356de3efa2e0c4197adfb8ae67dbdd09e626d7e8b8c9e",
+          "sha256": "fdd43923aab53e266e2a99e408ae2dc4f6b635929cabc5a605eb796181eb5b53",
+          "date": "2026-10-30",
+          "reason": "Reviewed exact dependency delta: reserve partners alongside existing namespaces. No existing reserved root, source page, content, layout or asset changed."
+        }
+      ]
+    },
+    {
+      "inventory": "tanzania-source-inventory.json",
+      "sourcePath": "lib/cms/custom-page-path.ts",
+      "reviews": [
+        {
+          "previousSha256": "19885240616f3c51cf6356de3efa2e0c4197adfb8ae67dbdd09e626d7e8b8c9e",
+          "sha256": "fdd43923aab53e266e2a99e408ae2dc4f6b635929cabc5a605eb796181eb5b53",
+          "date": "2026-10-30",
+          "reason": "Reviewed exact dependency delta: reserve partners alongside existing namespaces. No existing reserved root, source page, content, layout or asset changed."
+        }
+      ]
+    },
+    {
+      "inventory": "guided-safaris-migration-inventory.json",
+      "sourcePath": "lib/cms/custom-page-path.ts",
+      "reviews": [
+        {
+          "previousSha256": "19885240616f3c51cf6356de3efa2e0c4197adfb8ae67dbdd09e626d7e8b8c9e",
+          "sha256": "fdd43923aab53e266e2a99e408ae2dc4f6b635929cabc5a605eb796181eb5b53",
+          "date": "2026-10-30",
+          "reason": "Reviewed exact dependency delta: reserve partners alongside existing namespaces. No existing reserved root, source page, content, layout or asset changed."
+        }
+      ]
+    },
+    {
+      "inventory": "kenya-source-inventory.json",
+      "sourcePath": "lib/cms/custom-page-path.ts",
+      "reviews": [
+        {
+          "previousSha256": "19885240616f3c51cf6356de3efa2e0c4197adfb8ae67dbdd09e626d7e8b8c9e",
+          "sha256": "fdd43923aab53e266e2a99e408ae2dc4f6b635929cabc5a605eb796181eb5b53",
+          "date": "2026-10-30",
+          "reason": "Reviewed exact dependency delta: reserve partners alongside existing namespaces. No existing reserved root, source page, content, layout or asset changed."
+        }
+      ]
+    }
+  ]
+}

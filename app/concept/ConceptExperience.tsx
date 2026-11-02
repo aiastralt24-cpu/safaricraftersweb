@@ -1,5 +1,7 @@
 "use client";
 
+import { homepage } from "@/lib/data";
+
 import { GuestNotes } from "@/components/GuestNotes";
 import { guestStories } from "@/lib/guest-notes";
 import { PreferredPartners } from "@/components/PreferredPartners";
@@ -141,7 +143,7 @@ const storeMenuImage: ImageAsset = {
   credit: "Safari Crafters archive"
 };
 
-const heroLines = [
+const defaultHeroLines = [
   {
     lead: "In pursuit",
     rest: "of",
@@ -168,6 +170,9 @@ const heroLines = [
     accent: "Encounters."
   }
 ];
+const heroLines = homepage?.heroLines?.length ? homepage.heroLines : homepage ? [{lead: homepage.title, rest: "", accent: ""}] : defaultHeroLines;
+const homepageHeroImage = homepage?.heroMedia?.posterImage || heroJourney.image;
+
 
 const primaryMenuItems = [
   {
@@ -479,14 +484,14 @@ export function ConceptExperience() {
       <section className="concept-hero" aria-label="Safari Crafters luxury concept" data-nav-label="The wild, considered">
         <Image
           className="concept-hero-media concept-hero-poster"
-          src={heroJourney.image.src}
-          alt={heroJourney.image.alt}
+          src={homepageHeroImage.src}
+          alt={homepageHeroImage.alt}
           fill
           priority
           loading="eager"
           sizes="100vw"
         />
-        {canPlayHeroVideo ? (
+        {canPlayHeroVideo && (homepage ? homepage.heroMedia?.type === "video" && homepage.heroMedia.videoMp4 : true) ? (
           <video
             className="concept-hero-media"
             autoPlay
@@ -494,15 +499,15 @@ export function ConceptExperience() {
             loop
             playsInline
             preload="metadata"
-            poster={heroJourney.image.src}
-            aria-label={heroJourney.image.alt}
+            poster={homepageHeroImage.src}
+            aria-label={homepageHeroImage.alt}
           >
-            <source
+            {!homepage ? <source
               src="/assets/safari-crafters/safari-crafters-mobile.mp4"
               media="(max-width: 767px)"
               type="video/mp4"
-            />
-            <source src="/assets/safari-crafters/safari-crafters.mp4" type="video/mp4" />
+            /> : null}
+            <source src={homepage?.heroMedia?.videoMp4 || "/assets/safari-crafters/safari-crafters.mp4"} type="video/mp4" />
           </video>
         ) : null}
         <div className="concept-hero-shade" />
@@ -518,6 +523,7 @@ export function ConceptExperience() {
               {" "}
               <span className="concept-hero-line-accent">{heroLines[activeHeroLine].accent}</span>
             </h1>
+            {homepage?.copy ? <p>{homepage.copy}</p> : null}
           </div>
           <div className="concept-hero-dossier" hidden>
             <span>Featured route</span>
@@ -854,6 +860,7 @@ export function ConceptExperience() {
               <div className="concept-expedition-board-copy">
                 <h3>{place}</h3>
                 <time dateTime={nextDeparture.date}>{departureLabel(nextDeparture)}</time>
+                {nextDeparture.status === "Full" && expedition.enquiryDeparture && <span style={{ marginTop: 8, fontSize: "0.875rem", fontWeight: 600, lineHeight: 1.5 }}>{nextDeparture.date.slice(0, 4)} is sold out<br />Booking open for {expedition.enquiryDeparture.match(/20\d{2}/)?.[0]}</span>}
                 <span className="concept-expedition-board-meta">{expedition.duration || `${expedition.days.length} days`} · {expeditionLocations[expedition.slug] || expedition.route}</span>
                 <strong>View expedition <ArrowUpRight size={16} /></strong>
               </div>

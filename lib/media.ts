@@ -4,7 +4,7 @@ import heroImages from "@/content/destination-hero-images.json";
 const heroes: Record<string, ImageAsset> = heroImages;
 
 export function getDestinationHeroImage(destination: Destination): ImageAsset {
-  return heroes[destination.slug] || destination.image;
+  return destination.heroImage || heroes[destination.slug] || destination.image;
 }
 
 export function getCountryHeroImage(country: CountryAtlas): ImageAsset {

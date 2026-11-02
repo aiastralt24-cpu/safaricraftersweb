@@ -1,7 +1,14 @@
+import {cache} from 'react';
+import {notFound} from 'next/navigation';
+import {CmsLegalPage} from '@/components/CmsLegalPage';
+import {usesCmsLegalPages,loadLegalRoute} from '@/lib/cms/legal-page-runtime';
+import {legalPageMetadata} from '@/lib/cms/legal-page';
+const loadCmsPage=cache(()=>loadLegalRoute('/legal/privacy'));
+export async function generateMetadata():Promise<Metadata>{if(!usesCmsLegalPages())return legacyMetadata;const content=await loadCmsPage();return content?legalPageMetadata(content.page,content.seoDefaults):{robots:{index:false,follow:false}};}
 import type { Metadata } from "next";
 import "./privacy.css";
 
-export const metadata: Metadata = {
+const legacyMetadata: Metadata = {
   title: "Privacy Policy",
   description: "How Safari Crafters collects, uses, stores and protects personal data.",
   alternates: { canonical: "/legal/privacy" }
@@ -17,7 +24,8 @@ const dataCategories = [
   ["Marketing and communications data", "Your preferences for receiving marketing from us and your communication preferences."]
 ];
 
-export default function PrivacyPage() {
+export default async function PrivacyPage() {
+  if(usesCmsLegalPages()){const content=await loadCmsPage();if(!content)notFound();return <CmsLegalPage page={content.page}/>;}
   return (
     <main className="privacy-page">
       <header className="privacy-hero">

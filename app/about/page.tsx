@@ -1,3 +1,11 @@
+import {cache} from 'react';
+import {notFound} from 'next/navigation';
+import {CmsAboutPage} from '@/components/CmsAboutPage';
+import {usesCmsAbout,loadAboutRoute} from '@/lib/cms/about-page-runtime';
+import {aboutPageMetadata} from '@/lib/cms/about-page';
+export const dynamic='force-dynamic';
+const loadCmsPage=cache(()=>loadAboutRoute());
+export async function generateMetadata():Promise<Metadata>{if(!usesCmsAbout())return legacyMetadata;const content=await loadCmsPage();return content?aboutPageMetadata(content.page,content.seoDefaults):{robots:{index:false,follow:false}};}
 import { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
@@ -10,12 +18,13 @@ const aboutHeroImage = {
   credit: "Safari Crafters archive"
 };
 
-export const metadata: Metadata = {
+const legacyMetadata: Metadata = {
   title: "About",
   description: "The founder story, field specialists, photography philosophy and conservation values behind Safari Crafters."
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  if(usesCmsAbout()){const content=await loadCmsPage();if(!content)notFound();return <CmsAboutPage page={content.page} leadershipProfiles={content.leadershipProfiles}/>;}
   return (
     <>
       <AboutMotion />

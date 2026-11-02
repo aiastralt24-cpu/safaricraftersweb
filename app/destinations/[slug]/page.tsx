@@ -1,3 +1,17 @@
+import {CmsTanzaniaPage} from '@/components/CmsTanzaniaPage';
+import {readPublishedTanzania,usesCmsTanzania} from '@/lib/cms/published-tanzania';
+import {CmsKenyaPage} from '@/components/CmsKenyaPage';
+import {readPublishedKenya,usesCmsKenya} from '@/lib/cms/published-kenya';
+import {resolvedSeoMetadata} from '@/lib/cms/seo-metadata';
+import {readSeoDefaults} from '@/lib/cms/seo-settings';
+import {reservedDestinationSlugs} from '@/lib/cms/destination-reserved-routes';
+import {cache} from 'react';
+import {CmsDestination} from '@/components/CmsDestination';
+import {publicDestinationConfig,readPublishedDestination} from '@/lib/cms/public-destination-runtime';
+import {publishedDestinationMetadata,usesCmsDestination} from '@/lib/cms/destination-route';
+import '../cms-destination.css';
+import { siteContent } from "@/lib/data";
+import { EditorialFilm } from "@/components/EditorialFilm";
 import { BrazilCountryPage } from "@/components/BrazilCountryPage";
 import { brazilDescription } from "@/content/brazil-editorial";
 import { UgandaRwandaCountryPage } from "@/components/UgandaRwandaCountryPage";
@@ -28,6 +42,11 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamic='force-dynamic';
+const cmsTanzania=cache(()=>readPublishedTanzania());
+const cmsKenya=cache(()=>readPublishedKenya());
+const cmsDestination=cache((slug:string)=>readPublishedDestination(slug,publicDestinationConfig()));
+
 const heroIntroductions: Record<string, string> = {
   jawai: "Granite hills, wild leopards and Rabari herders: a landscape shaped by a remarkable coexistence.",
   kanha: "Tigers among tall sal trees, barasingha in golden meadows and patient mornings in the forest.",
@@ -38,7 +57,7 @@ const heroIntroductions: Record<string, string> = {
 };
 
 function destinationHeroCopy(slug: string, description: string) {
-  return heroIntroductions[slug] || description
+  return (siteContent.contentSource === "sanity" ? description : heroIntroductions[slug]) || description
     .replace(/, with private journeys planned around.*$/, ".")
     .replace(/ and best understood through a carefully paced stay\.$/, ".");
 }
@@ -49,7 +68,7 @@ function conciseCountryCopy(value: string, maxWords = 26) {
 }
 
 export function generateStaticParams() {
-  const destinationParams = destinations.map((destination) => ({ slug: destination.slug }));
+  const destinationParams = destinations.filter(destination=>!usesCmsDestination(destination.slug,reservedDestinationSlugs)).map((destination) => ({ slug: destination.slug }));
   const countryParams = getCountryAtlas().map((country) => ({ slug: country.slug }));
   const atlasParams = getRegionalAtlases().map((atlas) => ({ slug: atlas.slug }));
   return Array.from(new Map([...atlasParams, ...countryParams, ...destinationParams].map((item) => [item.slug, item])).values());
@@ -57,6 +76,22 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  if(slug==='tanzania'&&usesCmsTanzania()){
+    const published=await cmsTanzania();
+    if(!published)return {robots:{index:false,follow:false}};
+    const {content:{page},seoDefaults}=published;
+    return resolvedSeoMetadata(page.seo,seoDefaults,{origin:'https://safaricrafters.com',path:page.path,title:page.title});
+  }
+  if(slug==='kenya'&&usesCmsKenya()){
+    const published=await cmsKenya();
+    if(!published)return {robots:{index:false,follow:false}};
+    const {content:{page},seoDefaults}=published;
+    return resolvedSeoMetadata(page.seo,seoDefaults,{origin:'https://safaricrafters.com',path:page.path,title:page.title});
+  }
+  if(usesCmsDestination(slug,reservedDestinationSlugs)){
+    const destination=await cmsDestination(slug);
+    return destination?publishedDestinationMetadata(destination,await readSeoDefaults()):{title:'Destination unavailable',robots:{index:false,follow:false}};
+  }
   if (["uganda", "rwanda", "uganda-rwanda"].includes(slug)) return { title: "Uganda & Rwanda", description: ugandaDescription, alternates: { canonical: "/destinations/uganda" } };
   const atlas = getRegionalAtlas(slug);
   if (atlas) {
@@ -78,7 +113,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const destination = getDestination(slug);
   if (!destination) return {};
   const seo = destinationSeo(destination);
-  const socialImage = getDestinationHeroImage(destination);
+  const socialImage = destination.seo?.socialImage || getDestinationHeroImage(destination);
   const hasAccurateSocialImage = isApprovedEditorialImage(socialImage);
   return {
     ...seo,
@@ -93,6 +128,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DestinationDetailPage({ params }: Props) {
   const { slug } = await params;
+  if(slug==='tanzania'&&usesCmsTanzania()){
+    const published=await cmsTanzania();if(!published)notFound();
+    return <CmsTanzaniaPage page={published.content.page}/>;
+  }
+  if(slug==='kenya'&&usesCmsKenya()){
+    const published=await cmsKenya();if(!published)notFound();
+    return <CmsKenyaPage page={published.content.page}/>;
+  }
+  if(usesCmsDestination(slug,reservedDestinationSlugs)){
+    const destination=await cmsDestination(slug);if(!destination)notFound();
+    return <CmsDestination destination={destination}/>;
+  }
   if (slug === "rwanda" || slug === "uganda-rwanda") redirect("/destinations/uganda");
   if (slug === "uganda") return <UgandaRwandaCountryPage />;
   if (slug === "brazil") return <BrazilCountryPage />;
@@ -131,6 +178,7 @@ export default async function DestinationDetailPage({ params }: Props) {
       <JsonLd data={breadcrumbSchema(breadcrumbs)} />
       <JsonLd data={faqSchema(faqs)} />
       <PageHero
+        titleSize="compact"
         title={destination.title}
         accent={destination.title}
         copy={destinationHeroCopy(destination.slug, destination.description)}
@@ -142,6 +190,7 @@ export default async function DestinationDetailPage({ params }: Props) {
         showImage
         variant="destination"
       />
+      <EditorialFilm video={destination.video} />
       <DestinationDossier
         destination={{ ...destination, image: heroImage }}
         intelligence={intelligence}
@@ -181,6 +230,7 @@ function CountryDestinationPage({ country }: { country: NonNullable<ReturnType<t
     <>
       <JsonLd data={breadcrumbSchema(breadcrumbs)} />
       <PageHero
+        titleSize="compact"
         title={country.title}
         accent={country.title}
         copy={destinationHeroCopy(country.slug, countryOverview?.description || country.description)}
@@ -244,7 +294,7 @@ function CountryDestinationPage({ country }: { country: NonNullable<ReturnType<t
                 <h2 id={`${country.slug}-photographs`}>{country.title}, in frames.</h2>
                 <p>Moments from the field. Open a photograph to explore the collection.</p>
               </header>
-              <MediaGallery images={countryGallery} label={`${country.title} field photographs`} variant="story" />
+              <MediaGallery images={countryGallery} label={`${country.title} field photographs`} variant="story" maxImages={country.slug === "colombia" ? 30 : undefined} />
             </div>
           </section>
         )}

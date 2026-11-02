@@ -210,3 +210,55 @@
 .page-hero-destination .breadcrumbs-hero li { min-width:0; max-width:100%; }
 .page-hero-destination .breadcrumbs-hero a,
 .page-hero-destination .breadcrumbs-hero [aria-current="page"] { min-height:36px; max-width:100%; white-space:normal; overflow-wrap:anywhere; }
+
+/* Consistent compact headings across destination listings, atlases and guides. */
+.page-hero-destination.page-hero-title-compact .page-hero-content h1 {
+  font-size: clamp(2.2rem, 3.6vw, 3.8rem);
+  max-width: 20ch;
+  line-height: 1.05;
+}
+@media (max-width: 700px) {
+  .page-hero-destination.page-hero-title-compact .page-hero-content h1 {
+    font-size: clamp(1.425rem, 7vw, 2.05rem);
+  }
+}
+
+/* Keep the destination title and introduction on one shared top line. */
+@media (min-width: 901px) {
+  .page-hero-destination.page-hero-title-compact .page-hero-content {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(40px, 6vw, 96px);
+    grid-template-rows: auto min-content auto;
+    align-items: start;
+  }
+  .page-hero-destination.page-hero-title-compact .page-hero-meta {
+    grid-row: 1;
+  }
+  .page-hero-destination.page-hero-title-compact .page-hero-content h1 {
+    grid-row: 2;
+    align-self: start;
+  }
+  .page-hero-destination.page-hero-title-compact .page-hero-content .page-hero-description {
+    grid-row: 2 / span 2;
+    align-self: start;
+    justify-self: end;
+    width: 100%;
+    margin: 0;
+    max-width: 35ch;
+  }
+}
+
+.page-hero-destination.page-hero-title-compact .page-hero-meta {
+  color: #eee9df;
+}
+.page-hero-destination.page-hero-title-compact .breadcrumbs-hero {
+  margin-top: 16px;
+  padding-top: 0;
+}
+@media (min-width: 901px) {
+  .page-hero-destination.page-hero-title-compact .breadcrumbs-hero {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: start;
+  }
+}

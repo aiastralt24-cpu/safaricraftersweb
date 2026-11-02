@@ -1,0 +1,3303 @@
+{
+  "schemaVersion": 1,
+  "mode": "legacy-read-only",
+  "path": "/destinations/tanzania",
+  "origin": "http://localhost:3003",
+  "capturedAt": "2026-10-30T07:06:05.021Z",
+  "sources": [
+    {
+      "sourcePath": "app/destinations/[slug]/page.tsx",
+      "sha256": "c1269ef76f8e41f5ebfdf8ef1e1543aa40a3b51f1b1f1338d0be23e465af21c7"
+    },
+    {
+      "sourcePath": "app/destinations/cms-destination.css",
+      "sha256": "7ab8753456e030c1859e57aadab5be594a7d65f4b0b34ac4df5087157baf4d9a"
+    },
+    {
+      "sourcePath": "app/detail.css",
+      "sha256": "53873b9f5792b7aa27d23fe7c0563b78a046ee559805cae2c99e3e0b56e2ef3b"
+    },
+    {
+      "sourcePath": "app/editorial-surfaces.css",
+      "sha256": "142c8db2b0101320bf018b92aa99af10ac18c6241607ecabf7eb3c7f8cb0cad3"
+    },
+    {
+      "sourcePath": "app/forms.css",
+      "sha256": "2c5537670ba2ec856e9553005010a6222e52cb7f5c80f2f461e27f6af62ea506"
+    },
+    {
+      "sourcePath": "app/globals.css",
+      "sha256": "d1b95efb71e5b66a64a33e0f2f038571edb6834540b52b71e6ffd62ccb81a1ce"
+    },
+    {
+      "sourcePath": "app/layout.tsx",
+      "sha256": "6873e2f183d17bb26dd3e84f732f700474fe81c1ed93729836e06833ca1c888c"
+    },
+    {
+      "sourcePath": "app/listing.css",
+      "sha256": "716fac0ec8c06171df7ef312f040ba58eb33dc7a9a4a7a8015dd94280636ed96"
+    },
+    {
+      "sourcePath": "components/AtlasDepartures.css",
+      "sha256": "f2d77f355b1dc72534c9e3a0f61d650a71e8baff87c2b89950f53f9891ced558"
+    },
+    {
+      "sourcePath": "components/AtlasDepartures.tsx",
+      "sha256": "7662863b49de71e93bf23f846311d4fd0ce1532918c07f2f5d45bf4e7c393c45"
+    },
+    {
+      "sourcePath": "components/BrandMark.css",
+      "sha256": "c2563e2f2d4258c0739060b42e4b47485e26dc0556f3dec11cda87330cb41206"
+    },
+    {
+      "sourcePath": "components/BrandMark.tsx",
+      "sha256": "d18f3dc4c5a4fd64d01f3118720c204b39a63d06146a1c51352047c9145c5485"
+    },
+    {
+      "sourcePath": "components/BrazilCountryPage.tsx",
+      "sha256": "113f58b2db2b41479e8fb32e4e0d4550a543f40bb47f426970083cf4b3b4a341"
+    },
+    {
+      "sourcePath": "components/Breadcrumbs.css",
+      "sha256": "1df0a4d45447bfd0f629a9d5fbce4ccfa4f475df5fe53b28554e85b288f49a1b"
+    },
+    {
+      "sourcePath": "components/Breadcrumbs.tsx",
+      "sha256": "61ceb5397fb34cfe49f7c98bea6d1b3e418cf2b83a39888abf83d6ee02d6be93"
+    },
+    {
+      "sourcePath": "components/CmsBrandMark.tsx",
+      "sha256": "34116b7480b6c2dc74ce113f7f5c5ae92de1a8cb2bf293e7bc678bf80cdb9a57"
+    },
+    {
+      "sourcePath": "components/CmsDestination.tsx",
+      "sha256": "fbfc9795decb9ec13c67a9c898785e9ffddc988390436b0ad1975b1c80dffa54"
+    },
+    {
+      "sourcePath": "components/CmsEditorialHeading.tsx",
+      "sha256": "a7e4f9a499fd21445cff9691654616b0633a0db3605a3a9bdd65ceeba1002290"
+    },
+    {
+      "sourcePath": "components/CmsFooter.css",
+      "sha256": "ec7a302feb8c98215560a43e81d42c7c3273abc71c5c960cf94a4c2ac7fc6c69"
+    },
+    {
+      "sourcePath": "components/CmsFooter.tsx",
+      "sha256": "d0c88e22d786c774dcfc6e08d7fc11ab57a94f41835b38b322f7111624a21d1d"
+    },
+    {
+      "sourcePath": "components/CmsHeadingText.css",
+      "sha256": "ff5579d17486f769a4b520ded6550b6eff259677a260d922b4c0b6c9e3752ac9"
+    },
+    {
+      "sourcePath": "components/CmsKenyaMotion.tsx",
+      "sha256": "728d687851ebd12f324211a416d8adb1285084d512a1d4c4cf8e04a2d080fd4f"
+    },
+    {
+      "sourcePath": "components/CmsKenyaPage.tsx",
+      "sha256": "4f206c6d5d17e60337fccd76a3a3b378d27f89f6556797aa25097c7581a43062"
+    },
+    {
+      "sourcePath": "components/CmsKenyaSection.css",
+      "sha256": "86db9ede90aa924201402c063f9e216a8a6e578ef5158fa6ba674031d4a6a993"
+    },
+    {
+      "sourcePath": "components/CmsKenyaSection.tsx",
+      "sha256": "1aaa96b84f64b9de77f45b29c2b8c9712808881d59a99bba9b885da8f37a55ee"
+    },
+    {
+      "sourcePath": "components/CmsMessages.css",
+      "sha256": "9ebfdc07ce5554e8a46fa4ea2d0f43d1a69be26f3fc5bc3efa11bb5a9539b3d1"
+    },
+    {
+      "sourcePath": "components/CmsMessages.tsx",
+      "sha256": "424de179bccfa67b15d132ed93497457c4569d99427b07d76cf1770ce5b60d06"
+    },
+    {
+      "sourcePath": "components/CmsNavigationLinks.tsx",
+      "sha256": "1e3c0ce1e8fe5417199599f82c4548d76e9465f18c4706e5a2f62759cfe81bc8"
+    },
+    {
+      "sourcePath": "components/CmsTanzaniaMotion.tsx",
+      "sha256": "5471b08f00b6088b1c818269a2a680cbb74490f3adeb80ac7095a703b2262ddb"
+    },
+    {
+      "sourcePath": "components/CmsTanzaniaPage.css",
+      "sha256": "7b197a868aa3833298dd06a69c0f3f5d83c6915ee940c175cc4ce5879f7bc65e"
+    },
+    {
+      "sourcePath": "components/CmsTanzaniaPage.tsx",
+      "sha256": "60abc84632a8a8103972c4842905017fcff117100937dcd77fc3e78a24a249e2"
+    },
+    {
+      "sourcePath": "components/CmsTanzaniaSection.css",
+      "sha256": "000f3f9c06e0512a02c438e0a330163b7cda3512def66ffe66ec1d9d1bca726d"
+    },
+    {
+      "sourcePath": "components/CmsTanzaniaSection.tsx",
+      "sha256": "6c350280976acab402c5786c3d734cfe7549da411edd550a895b5a051e19955d"
+    },
+    {
+      "sourcePath": "components/CookiePreferences.css",
+      "sha256": "a9e3d8be9bbff370281e9089cb88339722d4b42fe1a3e1c7c5f634b1affd62bf"
+    },
+    {
+      "sourcePath": "components/CookiePreferences.tsx",
+      "sha256": "426b17e98bbb5aa3331eaf0e5b6d928db3248f0cb415f2f420f8c9c457182e8d"
+    },
+    {
+      "sourcePath": "components/CountryPlannerTrigger.css",
+      "sha256": "e5160aa3c6c8a0093778a17b97fdd9b304f3809a76807a5a006010ccd6287b1d"
+    },
+    {
+      "sourcePath": "components/CountryPlannerTrigger.tsx",
+      "sha256": "70a299cead3b8e558494168eb1756d24e23a8efac0f0f361231f1a9817a6e56d"
+    },
+    {
+      "sourcePath": "components/DestinationDossier.css",
+      "sha256": "cc05cdff86b0147444ef685ee8495af3a4701855992bf96a946088df85a40ceb"
+    },
+    {
+      "sourcePath": "components/DestinationDossier.tsx",
+      "sha256": "d174c52328ca0c2cf52ef8ed3447d2e722c43b4bc1ce7c106e7497b81f3c3149"
+    },
+    {
+      "sourcePath": "components/DestinationFieldNotes.tsx",
+      "sha256": "abef01e9a0af1c001fa17417dc64a96529786ec665826c0b7fd373745d82cb99"
+    },
+    {
+      "sourcePath": "components/DestinationMotion.tsx",
+      "sha256": "919550ab90de87c4cb80c61a730435f1b6fc423afc6e02badb9707f88ba51c7b"
+    },
+    {
+      "sourcePath": "components/EditorialFilm.tsx",
+      "sha256": "e0ecb5ad79b03556fb3e035da52f693c3c2b94a924075f9a2974362169e142b2"
+    },
+    {
+      "sourcePath": "components/EditorialProse.tsx",
+      "sha256": "add6ede3c3de5604d2fef414ed4deb310a2ff8140c7b2dcccdf63ea9136e5734"
+    },
+    {
+      "sourcePath": "components/EnquiryHoneypot.tsx",
+      "sha256": "d9bed4400906c56e366c50cb12bcbb1079f913c9062800e63b941ccfbc07c5c0"
+    },
+    {
+      "sourcePath": "components/ExpandableText.module.css",
+      "sha256": "1988055078386fd784f8aaa94b6f3feb697e248bc69a7d00e66ca75f3d1e96ef"
+    },
+    {
+      "sourcePath": "components/ExpandableText.tsx",
+      "sha256": "7fe11ddcee2f0ca1992f26fe9569fc06d04f815e8ab48e16c4224312502b2e25"
+    },
+    {
+      "sourcePath": "components/Footer.css",
+      "sha256": "e220d807887f9bed39d91502464218cb30298e527d07a77315ea64e40eaa1194"
+    },
+    {
+      "sourcePath": "components/Footer.tsx",
+      "sha256": "45858a48210ddde5a0edfc60735754d1ce711c99e72b04bd9adfdf5d3e69b3b6"
+    },
+    {
+      "sourcePath": "components/FunnelTracking.tsx",
+      "sha256": "c0064f7065b90185714f5e8015e9e33eeffe6efaee53992d9d8b51127b7f7901"
+    },
+    {
+      "sourcePath": "components/Header.css",
+      "sha256": "02412a5cecc753f96189ee6e1d69a8e6ccff05688788882f9b9d5d4bf45a23a5"
+    },
+    {
+      "sourcePath": "components/Header.tsx",
+      "sha256": "274af30000343678923182f13af53c194e926fdbb16356ab8cb4590977640031"
+    },
+    {
+      "sourcePath": "components/ItineraryBento.css",
+      "sha256": "754cfa5ed789e990045900fd9db48a60709d9e121d6a85e51297b49984ddd73a"
+    },
+    {
+      "sourcePath": "components/ItineraryBento.tsx",
+      "sha256": "92f10246b28fa16c56a6af5ea0869c895b6df8dd09cce2fa605d8a6636892938"
+    },
+    {
+      "sourcePath": "components/JsonLd.tsx",
+      "sha256": "c981e640f8203b6296640661fb6c34767d4b02abc359fbda43eb5eaba5dc9d3d"
+    },
+    {
+      "sourcePath": "components/KenyaCountryPage.css",
+      "sha256": "e41c4ba39535eb41526c1087cc94bb6e007e173bb97763a02086262adab856d7"
+    },
+    {
+      "sourcePath": "components/KenyaCountryPage.tsx",
+      "sha256": "97d67a3ac10cd519e730bdffcb2813896aa95887523c8ff4675a0b05679784c3"
+    },
+    {
+      "sourcePath": "components/LocalizedDocumentNavigation.tsx",
+      "sha256": "b5ca008c46933ad29647ca1096924aaf89bced7d745e340cdec09ec6ccb576bc"
+    },
+    {
+      "sourcePath": "components/MediaGallery.css",
+      "sha256": "09bcc8db44fb3459c14be57d120964d7895cbfcfc69108bc771f8a6646fe7760"
+    },
+    {
+      "sourcePath": "components/MediaGallery.tsx",
+      "sha256": "03f5dc598287956d9ab97a036bd18d9511b12d37c67f4e22fd30ca09a95a6695"
+    },
+    {
+      "sourcePath": "components/PageHero.css",
+      "sha256": "c4559c9f2789ba0be35172f7dfddacf57fee7edba5b7f4b9d018b5d4a8e13988"
+    },
+    {
+      "sourcePath": "components/PageHero.tsx",
+      "sha256": "919596439b4989acf6334dc0a65b5f891f134addbf6fed5c67f17560bf15206c"
+    },
+    {
+      "sourcePath": "components/PlannerForm.css",
+      "sha256": "59f0c698ccea8eec06452a0ee119d7c7b6cedaad63012a5a46adb9d01c05da4c"
+    },
+    {
+      "sourcePath": "components/PlannerForm.tsx",
+      "sha256": "02c5793396ac279567268c4e5df26016ddbb1b61ad2ad09587b933de5aa7b8e0"
+    },
+    {
+      "sourcePath": "components/RegionalAtlasMotion.tsx",
+      "sha256": "becb6b904364aa1326ef430a7a7b8162a01a28c38c7c68e5375415746faf34e9"
+    },
+    {
+      "sourcePath": "components/RegionalAtlasPage.css",
+      "sha256": "3cdca6fc96dff5fc11f9e5e8dc5672e1dc289911d4386597bd5a2648dd437918"
+    },
+    {
+      "sourcePath": "components/RegionalAtlasPage.tsx",
+      "sha256": "ac88eb53891f120e64d170555b3329dcb837a0b219d11c62cce2771667fa0601"
+    },
+    {
+      "sourcePath": "components/SiteCookiePreferences.tsx",
+      "sha256": "9e8a86418e0dce7a8cfb9cfcac726be5a0126dbbf89c1c02dea1d75fc9a785a9"
+    },
+    {
+      "sourcePath": "components/SiteFooter.tsx",
+      "sha256": "18756eb36a9d991a27894e4473d294ce562a973cd86fb8b410729c718d58d153"
+    },
+    {
+      "sourcePath": "components/SiteHeader.tsx",
+      "sha256": "fba9c3197a0e755b3db0f109d238de7e04170b8191986a354ec848246a69d1fa"
+    },
+    {
+      "sourcePath": "components/SiteMessages.tsx",
+      "sha256": "1e5be49687c07c7e3ce4d984ac20a2b8a89a0bc388c0aa3c0f9e18508052d6dc"
+    },
+    {
+      "sourcePath": "components/StoreCart.css",
+      "sha256": "613ebeada44014b20760642ec83b4f8724436f21bc16e7a18a4d311cbaf05d29"
+    },
+    {
+      "sourcePath": "components/StoreCart.tsx",
+      "sha256": "fc86b703ffcfaf80ee8821f0bfd05d1fdf36b14bc21aececbdbc60cf5ba00abc"
+    },
+    {
+      "sourcePath": "components/TanzaniaCountryPage.css",
+      "sha256": "858dbcaa7086eda1d0b6ba9f7df1c8ad5c7c6706ea384134004740a61c35a355"
+    },
+    {
+      "sourcePath": "components/TanzaniaCountryPage.tsx",
+      "sha256": "7c834422a17b4d5cbe907c5b9d3fc4031f38d41978b6beb7eb895eaab5aa7fef"
+    },
+    {
+      "sourcePath": "components/UgandaRwandaCountryPage.tsx",
+      "sha256": "73272981f7fef8c92b7bba614244934b1c83afd2c098ddf04bff0ce81b0a6e5f"
+    },
+    {
+      "sourcePath": "content/africa-atlas-images.json",
+      "sha256": "fef103450d3a8da0e3d6bd2bc81e0ad062728557460d2c2cfbb4d4b54aab3027"
+    },
+    {
+      "sourcePath": "content/brazil-editorial.ts",
+      "sha256": "2be9cdce1412f632b7a832cabd1c0d83187ba12d6a5dfec858c4b837e7ddf530"
+    },
+    {
+      "sourcePath": "content/destination-hero-images.json",
+      "sha256": "49e74e414ef2a3fc3d3b955f0146396c33ddfc06317278fc63e16e009498a181"
+    },
+    {
+      "sourcePath": "content/kenya-editorial.ts",
+      "sha256": "e6525a794dfff213ef812fcd07f67183b66181adbf9c9f99a5007f3640f80d92"
+    },
+    {
+      "sourcePath": "content/site-content.json",
+      "sha256": "5511df488dcf2dd7195b8b938822c210765b1030a48c2cb76ec21b37f6255e65"
+    },
+    {
+      "sourcePath": "content/tanzania-editorial.ts",
+      "sha256": "8bba33dbd54b3c8f50c5f18143488696439924bf58034e0183c8a7338f3a355c"
+    },
+    {
+      "sourcePath": "content/tanzania-page-copy.ts",
+      "sha256": "b7dcc15828a09cc594d61993c32d5295f2d1a3d8e2462f8466a3abb2e39e8a3e"
+    },
+    {
+      "sourcePath": "content/uganda-rwanda-editorial.ts",
+      "sha256": "eb1ef758ac8e394357fe07c1b4b209964395d8077dcee6eea32341ba68831bf2"
+    },
+    {
+      "sourcePath": "lib/cart-types.ts",
+      "sha256": "5eac3a192ba939dc95657ed96a3415fba77f56ecfd47965307483ce5452eab4e"
+    },
+    {
+      "sourcePath": "lib/cms/about-page.ts",
+      "sha256": "197ee6c3cb38d8d42c2e0af05f03ef3a0ed9e87ae9fe64bd66b845cdf77e63e8"
+    },
+    {
+      "sourcePath": "lib/cms/aviation-page-validation.ts",
+      "sha256": "b98204429930bde4242d873159a266566968d572fb2e4ccbd3dad991cfbcbe6f"
+    },
+    {
+      "sourcePath": "lib/cms/brand-metadata.ts",
+      "sha256": "90b30edd5c345d33a200dafaec61524d3224f8567c6a8ffda532b267e3655a40"
+    },
+    {
+      "sourcePath": "lib/cms/brand-settings.ts",
+      "sha256": "1182eb44d908160fdf2a0fa05b1d1d8d8d3bc616fd8089c32578f366e95dee76"
+    },
+    {
+      "sourcePath": "lib/cms/composition-media.ts",
+      "sha256": "ab3dafb00866b2c75597b768cdbb23a4c35ba9ed37aac1543f5f568dcfd79ffa"
+    },
+    {
+      "sourcePath": "lib/cms/composition.ts",
+      "sha256": "16ad329a6e6ed3f7115e26c477c2298ecbd8e315ccabde9e55f91094d8f3d044"
+    },
+    {
+      "sourcePath": "lib/cms/concept-editorial-validation.ts",
+      "sha256": "1dbf3d5b15c77190621e58542ab890c45168cee4f4049282984a7ab7437af0ba"
+    },
+    {
+      "sourcePath": "lib/cms/concept-navigation-validation.ts",
+      "sha256": "4b71bcaa2cba54f04e06bebe0afeacbe61d143f08287dd3442bdc8139a0a975c"
+    },
+    {
+      "sourcePath": "lib/cms/concept-navigation.ts",
+      "sha256": "4a8dfeca3d637aa55ba524a241463547a9af1bb600abb5bf3898d297db4831ab"
+    },
+    {
+      "sourcePath": "lib/cms/concept-page-validation.ts",
+      "sha256": "520230b15c0cb1649885effbc50067636e1eff65847fc887fadfe882386ff340"
+    },
+    {
+      "sourcePath": "lib/cms/concept-page.ts",
+      "sha256": "2280be1d40c675c34c35d8ca7cb332f43ea0e8d1b6d2e24d680bc1cc76f8a738"
+    },
+    {
+      "sourcePath": "lib/cms/conservation-content.ts",
+      "sha256": "acaf280ac2e62172e69fc6e1503b6a3f78bc0821aac381d5922611dc346f4d27"
+    },
+    {
+      "sourcePath": "lib/cms/conservation-page-validation.ts",
+      "sha256": "74157e21a3cd907883cdd01b5fbd0bde69809b1f864f7022056f2d0bbf9cf642"
+    },
+    {
+      "sourcePath": "lib/cms/contact-content.ts",
+      "sha256": "b8f4c456a23350f38799797726a54a8c85c12c225cc3ed1b5b6bccc091ea9f80"
+    },
+    {
+      "sourcePath": "lib/cms/contact-form-status.ts",
+      "sha256": "5771613e8f9ed5e0cd83a67e14852c854d5949fe8943060e43ce00674afcf2c4"
+    },
+    {
+      "sourcePath": "lib/cms/contact-page-validation.ts",
+      "sha256": "2591adad1dae0990f2c52ad7adf30e3c6b5defaced6735c4c70345f673928649"
+    },
+    {
+      "sourcePath": "lib/cms/contact-page.ts",
+      "sha256": "f639fd3402ab2a43095f57d3aeb3f56d95bb3211946446f72014b7e376d3f693"
+    },
+    {
+      "sourcePath": "lib/cms/content-validation.ts",
+      "sha256": "88d49b3773bd79e2eb77c9269786503de04744cc86ca51a9a2c5407defa76de2"
+    },
+    {
+      "sourcePath": "lib/cms/cookie-settings.ts",
+      "sha256": "4b048fbc92b9836f6aa4f871f78d4286375971292fedc2752ae300d81dffe77d"
+    },
+    {
+      "sourcePath": "lib/cms/custom-page-path.ts",
+      "sha256": "a802418cc982e4f990cb63fc3e641e4af207049d0e852348a6a3e6ab24b6e2e4"
+    },
+    {
+      "sourcePath": "lib/cms/custom-page.ts",
+      "sha256": "12dc6204c8fa1347965ed91bccde77bbc9abac18ad5df0d27c819ca32238435e"
+    },
+    {
+      "sourcePath": "lib/cms/destination-reserved-routes.ts",
+      "sha256": "945af80518e9c3f4cee19cf265f75968849e2c4ed3edfa2818d3c0318c6e266d"
+    },
+    {
+      "sourcePath": "lib/cms/destination-route-ownership.ts",
+      "sha256": "f3fc30b3b9985bebf09def92622cbf56b86256519dfe657405a300c32ace05a9"
+    },
+    {
+      "sourcePath": "lib/cms/destination-route.ts",
+      "sha256": "8cfc7f25e15b4f0fd54d94d919997f352053fd1e2e5f5c7a16886aa41ba66af6"
+    },
+    {
+      "sourcePath": "lib/cms/destinations.ts",
+      "sha256": "508c190b5864d960c74b303ba511b38315b6f69d1fa473694e9ba5847f0d1d92"
+    },
+    {
+      "sourcePath": "lib/cms/document-validation-status.ts",
+      "sha256": "4d9dd662da6924a79db09a8bff2c1be1846fb2655cae00bff99b085b5c9e7a72"
+    },
+    {
+      "sourcePath": "lib/cms/documents.ts",
+      "sha256": "a92e858586df479de8fd4e00f0432d0ecdc848feba807576ac670d7811c9a047"
+    },
+    {
+      "sourcePath": "lib/cms/download-reference-validation.ts",
+      "sha256": "ae8f03f4d5bdbc9059833b03338a377b41cb274bcc17375b2780883dfadb65cc"
+    },
+    {
+      "sourcePath": "lib/cms/editorial-copy.ts",
+      "sha256": "d54b585cf09e9b4b0a71c4c720db6e61e8a1697c92d5c96887e9ddbcd026db93"
+    },
+    {
+      "sourcePath": "lib/cms/editorial-heading.ts",
+      "sha256": "d22eeae5166460ad24a0a07b04bbcd39f5fa96e033a5c976bee5b89c49059ec9"
+    },
+    {
+      "sourcePath": "lib/cms/expedition-directory-section.ts",
+      "sha256": "513162281c858345f0ce421cb91c00ca647bda89f150ded4009504af644b952a"
+    },
+    {
+      "sourcePath": "lib/cms/expedition-page-validation.ts",
+      "sha256": "1b8b9d49cf2c5140cb1b5a1f95b586b81025bfcd3b4e3a67bb9a1b7c5bc29099"
+    },
+    {
+      "sourcePath": "lib/cms/expedition-page.ts",
+      "sha256": "a114cd1a5419752e86c4f2a9b0c34d75c315cd4ab0ff36ef01274c04c417670f"
+    },
+    {
+      "sourcePath": "lib/cms/expedition-reference-status.ts",
+      "sha256": "fbe4ce1ff3c46287ccb2d76cc4c2c79dfb9e957a330eece704a7e50f36cf1cb8"
+    },
+    {
+      "sourcePath": "lib/cms/footer-settings.ts",
+      "sha256": "6b20803691775788a139c1baa26b17ca02904e357ab860f6225daa6ba894da5d"
+    },
+    {
+      "sourcePath": "lib/cms/form-publication.ts",
+      "sha256": "755c3e740771787b292e5c887a05e0528685972184c797ce88dac42f21847493"
+    },
+    {
+      "sourcePath": "lib/cms/forms.ts",
+      "sha256": "678debefff68afb979e2c2deabc6fef7da5f21b49bedcb6f7f4a63533542a5f9"
+    },
+    {
+      "sourcePath": "lib/cms/gateway.ts",
+      "sha256": "24d208e1d61ddd83798c5654d163ef26322d987f01dae655ed62dfd49a438de3"
+    },
+    {
+      "sourcePath": "lib/cms/global-settings.ts",
+      "sha256": "9f0d1bda6c59e59df002c7bb7cc7b314c16fa100dedaf6a185a538357244ca94"
+    },
+    {
+      "sourcePath": "lib/cms/guided-page-validation.ts",
+      "sha256": "04f1cebea9e83e0b425aea85a1cf42801e8ab58a03efab8c7a299667a1ee794b"
+    },
+    {
+      "sourcePath": "lib/cms/guided-safaris-content.ts",
+      "sha256": "743b82086c38a6193e4e5b547858ffb1707907fbd0f701739bfdc576947610cf"
+    },
+    {
+      "sourcePath": "lib/cms/guided-safaris-page.ts",
+      "sha256": "657413b35c95da44f8a87beb2a193047bea400b642cb4ccb7839e5dfd331ace8"
+    },
+    {
+      "sourcePath": "lib/cms/header-navigation.ts",
+      "sha256": "6b1ca1b46591a7d346acb13ae6d5cf40c45566a322216ad8d91916c511c2c879"
+    },
+    {
+      "sourcePath": "lib/cms/heading-emphasis.ts",
+      "sha256": "b45b884c6e3e95c0403092ab57821860c921a7c071704adb312177436faddaad"
+    },
+    {
+      "sourcePath": "lib/cms/homepage-editorial-validation.ts",
+      "sha256": "59d2b6b4e5d3771e9e348e3dbacfd7b2cb6bb41f3c311f13a9cb7eaa0cf2a887"
+    },
+    {
+      "sourcePath": "lib/cms/homepage-header-validation.ts",
+      "sha256": "d5ce15a8f419e4ff4825006943b94edd72d716964a54488ddd24242055ec83a0"
+    },
+    {
+      "sourcePath": "lib/cms/homepage-hero.ts",
+      "sha256": "1d77f016ce94f1ff15e102397acd5f8e4a6ace84eae8bee3f67a479f58e21458"
+    },
+    {
+      "sourcePath": "lib/cms/homepage-projection.ts",
+      "sha256": "5443be40cce58536bee35118d1189dce779e56a2624c0aace9bf670adba6e0da"
+    },
+    {
+      "sourcePath": "lib/cms/homepage-reference-status.ts",
+      "sha256": "70048eb8236b72aa8e338ac60fbb57c5526aedc09e3c964e6cfa20afeb39b17b"
+    },
+    {
+      "sourcePath": "lib/cms/import-contract.ts",
+      "sha256": "262fd2f5fb5fb84fe068bf9f41f5066e82b55e7c64b9919c6e9790c1a367c6ca"
+    },
+    {
+      "sourcePath": "lib/cms/inline-text.ts",
+      "sha256": "ca17efb0450e4f08adff56218e96bf0877877582f4424ceddd8abc51bf43eeee"
+    },
+    {
+      "sourcePath": "lib/cms/interface-text.ts",
+      "sha256": "b639d13705925e441ed4a334f91a570ec0ea3fb4e7360752dcb36e6b7b97434e"
+    },
+    {
+      "sourcePath": "lib/cms/journal.ts",
+      "sha256": "73430ccf8545c994f6594904895d4148ab454e93f04f2080757e33c2b2a5a9b8"
+    },
+    {
+      "sourcePath": "lib/cms/kenya-country-sections.ts",
+      "sha256": "28ec17b4e7545a4ed1225d91b10b50a61596b8eaff908774384e7dbf35993760"
+    },
+    {
+      "sourcePath": "lib/cms/kenya-layout.ts",
+      "sha256": "e21fd74bc3fbbf78557e11cb843edf754fc105d106e5f86fb995b8529a0ae51d"
+    },
+    {
+      "sourcePath": "lib/cms/kenya-motion.ts",
+      "sha256": "e5f7c373f478d08f6111fac687619a8842c2e1c01f1fd2d06dee4ddffa9bb21f"
+    },
+    {
+      "sourcePath": "lib/cms/kenya-page.ts",
+      "sha256": "2650f95a039cc5cca42f812a6b57ae8c36e935b04ed48c614f984de3491c1c45"
+    },
+    {
+      "sourcePath": "lib/cms/legal-page.ts",
+      "sha256": "d1444d64faaf8c77aff7f31604fc6683cf77cc907e7f40f0b8e6005108197daf"
+    },
+    {
+      "sourcePath": "lib/cms/localized-navigation-link.ts",
+      "sha256": "323dba15caa0cf140d069843101de580baea3573d740f5f1b5611ad7d71d2e07"
+    },
+    {
+      "sourcePath": "lib/cms/localized-page-runtime.ts",
+      "sha256": "8d1c966a1c3cff09eaef36dab7d8cf8860cfeeedd446e65ee502944a442f5b39"
+    },
+    {
+      "sourcePath": "lib/cms/localized-request.ts",
+      "sha256": "714e6d00b908b7ce3e9c7e697c734c9de743324641cb869647edadfeb9a3a16b"
+    },
+    {
+      "sourcePath": "lib/cms/localized-routes.ts",
+      "sha256": "fa9839c57e4373def291315490665a133ded1b76600709e3a1b91b2e49ccf9d5"
+    },
+    {
+      "sourcePath": "lib/cms/localized-shell.ts",
+      "sha256": "292466d391e4958f543fb6704d14e7570e8480cb6fc34062057fb45cbf230d10"
+    },
+    {
+      "sourcePath": "lib/cms/localized-visitor.ts",
+      "sha256": "75349ac9bcf00bc8ad74d052c43763a543f5a007690ec8cc95823d65611e2423"
+    },
+    {
+      "sourcePath": "lib/cms/message-settings.ts",
+      "sha256": "b299f387e8b03d9f90582b5b9de52012e13348ee8482cb6c4bac5c99f531c967"
+    },
+    {
+      "sourcePath": "lib/cms/mice-content.ts",
+      "sha256": "ae5db72238afa6b05c4eea95766994a2175695ede632d630061ff7eeed677081"
+    },
+    {
+      "sourcePath": "lib/cms/navigation-record-path.ts",
+      "sha256": "6ea0e3d6d1b48e0da4f0728002ddb8af4e98a06aa86498ff5acdbb29e9871a2d"
+    },
+    {
+      "sourcePath": "lib/cms/navigation-routes.ts",
+      "sha256": "187335dbc68a4908601e19b10f75451ec4014b63376ca3a31ece2b6d904f4e2a"
+    },
+    {
+      "sourcePath": "lib/cms/navigation-validation.ts",
+      "sha256": "3d0bd9eef53db083d7a4cc77e4f359a386c3564be95020056e7ebfd1e03e4e99"
+    },
+    {
+      "sourcePath": "lib/cms/navigation.ts",
+      "sha256": "f9c0553845ab7c19a7c0134e2b3f604046f256c6e1146086502fc9360f4e2432"
+    },
+    {
+      "sourcePath": "lib/cms/page-seo.ts",
+      "sha256": "626c34fd27d8f9623a1c660934645935de982101a1351211062cc1b03ca9710a"
+    },
+    {
+      "sourcePath": "lib/cms/photo-expeditions.ts",
+      "sha256": "27431ef249aa54e7cea6cba0d281c2e3aec3df3a090ef2d268b874a5c27200d9"
+    },
+    {
+      "sourcePath": "lib/cms/private-aviation-content.ts",
+      "sha256": "9062407694bf0f058cc03a53f291ecdd7da7c253d8fb0df5ef965011f46ef60d"
+    },
+    {
+      "sourcePath": "lib/cms/private-aviation-page.ts",
+      "sha256": "83d884483f1f1ba1c54d0de8ef893a3390187ae30876be652c3f7efefdf01fca"
+    },
+    {
+      "sourcePath": "lib/cms/public-destination-runtime.ts",
+      "sha256": "3878e8c1adbb78170badbbd82294c991465559635238677ba877ac3191c3b1f0"
+    },
+    {
+      "sourcePath": "lib/cms/public-expedition-directory.ts",
+      "sha256": "d6abc714b88274e4e627907f5b5172059d0bedaa686449da2d19cfcb7e613290"
+    },
+    {
+      "sourcePath": "lib/cms/public-page.ts",
+      "sha256": "6089bf1c654652cb0547b8a915b87cd2853885d1ed2efac81475d7a08f8f3fa5"
+    },
+    {
+      "sourcePath": "lib/cms/public-seo-settings.ts",
+      "sha256": "dfa0b1fd9750f55a85f6a608ef35f2251780cd7dd8a53e503dbac6e44f054dd3"
+    },
+    {
+      "sourcePath": "lib/cms/public-settings.ts",
+      "sha256": "4fd3b3d3b7529669149f721087bc04084f33bffad75a39d8b1852c9b02c9e023"
+    },
+    {
+      "sourcePath": "lib/cms/public-specialists.ts",
+      "sha256": "ccea9bea5aa1cfada29b5863ffbc39c6990aea87b817af83446465e23e205eb2"
+    },
+    {
+      "sourcePath": "lib/cms/published-destination.ts",
+      "sha256": "28cb843b1e15b1b40cabcd132ba7d98f112b0c288db31b7ffc6a66ffd1d95561"
+    },
+    {
+      "sourcePath": "lib/cms/published-download-evidence.ts",
+      "sha256": "d03f3744ddedccf912372db8eefc6d56f9b81767bb7e65e538d79a7fed7e79ce"
+    },
+    {
+      "sourcePath": "lib/cms/published-header.ts",
+      "sha256": "d7c7e09fd915b8c9127951e65b3251f11b51c185f49c162b3fd986ea5c822a89"
+    },
+    {
+      "sourcePath": "lib/cms/published-journey.ts",
+      "sha256": "60b16fd6c2b200dfe330079f82e19be63221fcaafcd3695ec8f88f4df2bd4d06"
+    },
+    {
+      "sourcePath": "lib/cms/published-kenya.ts",
+      "sha256": "dab1483ebddefce953d62f61c913c07f8c833ffdc05cf1cb4e5c3cdecf8dd706"
+    },
+    {
+      "sourcePath": "lib/cms/published-navigation.ts",
+      "sha256": "4b7a27f1aa5670320e9f20be6bddd6e9a2fc61b540fe59bf7868cf455de3abe0"
+    },
+    {
+      "sourcePath": "lib/cms/published-tanzania.ts",
+      "sha256": "85b86ca446741a64d34004ba498530eb2824aeeb952a02f96a4e88cdce787d12"
+    },
+    {
+      "sourcePath": "lib/cms/root-seo-metadata.ts",
+      "sha256": "ab8e7f72269a4c5fce57c680ea42a3f41b68843e899e2eeaff09c9f109ac0f32"
+    },
+    {
+      "sourcePath": "lib/cms/search-policy.ts",
+      "sha256": "e5ace73e00f8e583eaf1c146c882de783e6f4ae91bcd42319ef68ba2b8840632"
+    },
+    {
+      "sourcePath": "lib/cms/seo-metadata.ts",
+      "sha256": "726eabcce82848dbc4d49d54cd258118b4bab148e0b426f713cd9bf27b991226"
+    },
+    {
+      "sourcePath": "lib/cms/seo-resolution.ts",
+      "sha256": "73aa1ae46cd24b1316c1c09aaa8a56f96f290895b6623f90a603b4b4767ab527"
+    },
+    {
+      "sourcePath": "lib/cms/seo-settings.ts",
+      "sha256": "b8a380962fc923ba300e2dc68d33c338fd82f2794ca8bbb6c6bd74d4dd5928d0"
+    },
+    {
+      "sourcePath": "lib/cms/settings-reference-status.ts",
+      "sha256": "bf50f835712aaddc8e29f27ffe92ab2dd7e20418c4e6d524592c569667958dae"
+    },
+    {
+      "sourcePath": "lib/cms/settings-validation.ts",
+      "sha256": "98a1319d39e11461b39a1bb8ce8c05802f2b217d5e15591b01db0b53f2edd88f"
+    },
+    {
+      "sourcePath": "lib/cms/specialist-page-validation.ts",
+      "sha256": "6b386c933cb187fb3630f83d4d42fead2ca38fb2f1ccf656d80a279d64e8859d"
+    },
+    {
+      "sourcePath": "lib/cms/specialist-page.ts",
+      "sha256": "6585de78f6fb1b196a17e7302caa1b7effa5c991933d74d92ae4ae0e8fc05dc8"
+    },
+    {
+      "sourcePath": "lib/cms/specialist-reference-status.ts",
+      "sha256": "d06138a1bfe8876eb2a7c1190ca7a317beee2d959ec522580b75b62c3d0bf6f2"
+    },
+    {
+      "sourcePath": "lib/cms/specialists.ts",
+      "sha256": "1c3ff2e023e987997c1483feec8446d3e171e4be6c67ec3b5b98791eec41de96"
+    },
+    {
+      "sourcePath": "lib/cms/tanzania-country-sections.ts",
+      "sha256": "bf88cb47490526fb9473f1ce55fd92f3d1f9192fa12c694a25d5e16fe59efcc1"
+    },
+    {
+      "sourcePath": "lib/cms/tanzania-layout.ts",
+      "sha256": "6da41935d863f41030b4828f628bae1e3104c354631bec641bc3ce87fca497f5"
+    },
+    {
+      "sourcePath": "lib/cms/tanzania-page.ts",
+      "sha256": "00716acae072ba256d43de1d1f205c7d2117b05f264f434329412589e4c36898"
+    },
+    {
+      "sourcePath": "lib/cms/testimonial-publication.ts",
+      "sha256": "a849c9f0cfa4b30ac38921310dbaff9b185d936ab9edef4b1705dd820be86fa2"
+    },
+    {
+      "sourcePath": "lib/cms/testimonials.ts",
+      "sha256": "f20700b85f4dfaef12daef4e2fd45f987ca492e92674857ec1176f94735ec68a"
+    },
+    {
+      "sourcePath": "lib/content-intelligence.ts",
+      "sha256": "3a7e82c090ee9f2e002c7c17e046ec415a34d691230f8e29a38cfbc111441b79"
+    },
+    {
+      "sourcePath": "lib/cookie-consent.ts",
+      "sha256": "a47c8a020ec12c04dff2b4dc6d8cbbca456273835c60ae3df6375bde0f86d5b8"
+    },
+    {
+      "sourcePath": "lib/data.ts",
+      "sha256": "a7657781655fe3c1803f37a6c8750b49fbb759490260770de9f95919f3e98a56"
+    },
+    {
+      "sourcePath": "lib/enquiry-client.ts",
+      "sha256": "755b8fbcf59472297dc80bcff99cd3c5ef724e4eadb05b0e15ac6ac7f96196e7"
+    },
+    {
+      "sourcePath": "lib/funnel-client.ts",
+      "sha256": "1395b055b5f94116561d5463bdcb114ce32a8ec9f6fa8c0506b5c5f313fd888d"
+    },
+    {
+      "sourcePath": "lib/luxury.ts",
+      "sha256": "3ff78060baeb3372c6f35ccc1ccf9084f1fba971853517d7b8c76a99419f2b67"
+    },
+    {
+      "sourcePath": "lib/media.ts",
+      "sha256": "f2a457b42808394dce49b1e02bbc94897e30a7455d71b630935518478934a336"
+    },
+    {
+      "sourcePath": "lib/site-search.ts",
+      "sha256": "3fa14d12029dec26acfb0aa3e9c93f945e71a2edd68083c2721be197571bb626"
+    },
+    {
+      "sourcePath": "lib/store.ts",
+      "sha256": "a5a5057a56be643791167bbed636bc559fb61f3b7571ac40595fce2f2e5816c8"
+    },
+    {
+      "sourcePath": "lib/structured-data.ts",
+      "sha256": "61e935b2ef9c8cfb317b71561a567c00924366fd566f8fc57ad90bb91d08b0b6"
+    }
+  ],
+  "views": [
+    {
+      "width": 1280,
+      "h1Count": 1,
+      "overflow": false,
+      "metadata": {
+        "title": "Tanzania | Safari Crafters",
+        "description": "Serengeti plains, Ngorongoro\u2019s ancient crater, Ndutu\u2019s seasonal herds and elephants beneath Tarangire\u2019s baobabs. Discover the many landscapes of northern Tanzania.",
+        "canonical": "https://safaricrafters.com/destinations/tanzania",
+        "structuredData": [
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://safaricrafters.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Destinations",
+                "item": "https://safaricrafters.com/destinations"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Africa",
+                "item": "https://safaricrafters.com/destinations/africa"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Tanzania",
+                "item": "https://safaricrafters.com/destinations/tanzania"
+              }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How should I choose my travel dates?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Match your dates to the regions and wildlife you want to experience. The dry season and green seasons offer different conditions; routing, camp access and the movement of the herds all matter."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I see the Great Migration?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The herds are always moving. We plan around likely seasonal movements and current conditions, without guaranteeing a particular sighting or river crossing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is the Serengeti worth visiting outside the Migration?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Resident predators and other wildlife make the Serengeti rewarding beyond the busiest Migration periods. Staying longer gives you time to observe behaviour and revisit promising areas."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What makes a Tanzania safari feel unhurried?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Choose fewer stops when time is limited. The balance between flights, road transfers and nights at each camp matters as much as the number of places visited."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you choose camps and guides?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We consider camp location, guiding, vehicles and time in the field together, selecting accommodation and routing around your safari priorities."
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "content": [
+        {
+          "className": "page-hero page-hero-destination",
+          "label": null,
+          "labelledBy": null,
+          "text": "Africa / East AfricaTanzaniaSerengeti plains, Ngorongoro\u2019s ancient crater, Ndutu\u2019s seasonal herds and elephants beneath Tarangire\u2019s baobabs. Discover the many landscapes of northern Tanzania.HomeDestinationsAfricaTanzaniaSafari Crafters archive",
+          "headings": [
+            {
+              "level": "h1",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Tanzania",
+                      "emphasis": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Africa / East Africa",
+            "Serengeti plains, Ngorongoro\u2019s ancient crater, Ndutu\u2019s seasonal herds and elephants beneath Tarangire\u2019s baobabs. Discover the many landscapes of northern Tanzania.",
+            "Safari Crafters archive"
+          ],
+          "small": [],
+          "captions": [],
+          "links": [
+            {
+              "label": "Home",
+              "href": "/",
+              "ariaLabel": null
+            },
+            {
+              "label": "Destinations",
+              "href": "/destinations",
+              "ariaLabel": null
+            },
+            {
+              "label": "Africa",
+              "href": "/destinations/africa",
+              "ariaLabel": null
+            }
+          ],
+          "buttons": [],
+          "images": [
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+              "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+              "objectPosition": "58% 90%"
+            }
+          ],
+          "faq": []
+        },
+        {
+          "className": "kenya-facts",
+          "label": "Tanzania at a glance",
+          "labelledBy": null,
+          "text": "Come forPredators, elephants & seasonal herdsPlains, crater country, baobabs and Rift Valley birdlife.Best time to visitJanuary\u2013MarchA year-round destination; choose the season around your region and wildlife priorities.Ideal duration8\u201312 nightsStay longer for a slower Serengeti journey or a fuller northern circuit.Getting thereKilimanjaro / ArushaLight aircraft and road transfers connect the principal safari regions.",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Come for",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Best time to visit",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Ideal duration",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Getting there",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Predators, elephants & seasonal herds",
+            "January\u2013March",
+            "8\u201312 nights",
+            "Kilimanjaro / Arusha"
+          ],
+          "small": [
+            "Plains, crater country, baobabs and Rift Valley birdlife.",
+            "A year-round destination; choose the season around your region and wildlife priorities.",
+            "Stay longer for a slower Serengeti journey or a fuller northern circuit.",
+            "Light aircraft and road transfers connect the principal safari regions."
+          ],
+          "captions": [],
+          "links": [],
+          "buttons": [],
+          "images": [],
+          "faq": []
+        },
+        {
+          "className": "kenya-opening-band",
+          "label": null,
+          "labelledBy": null,
+          "text": "East Africa on an epic scaleSee wildlife in lakes, craters and endless lands.Tanzania\u2019s greatest asset is scale.Exploring it well means choosing the right pace. Connect a few contrasting landscapes, allow time to settle into each and let the season guide your route.",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "See wildlife in lakes, craters and endless lands.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "East Africa on an epic scale",
+            "Tanzania\u2019s greatest asset is scale.",
+            "Exploring it well means choosing the right pace. Connect a few contrasting landscapes, allow time to settle into each and let the season guide your route."
+          ],
+          "small": [],
+          "captions": [],
+          "links": [],
+          "buttons": [],
+          "images": [],
+          "faq": []
+        },
+        {
+          "className": "container kenya-places",
+          "label": null,
+          "labelledBy": "tanzania-places",
+          "text": "Five places, chosen with purposeInto the great soul of East Africa.SerengetiPlains that defy boundariesEndless plains, extraordinary predators and the Great Migration make this one of the world\u2019s defining wildlife landscapes. Resident lions, cheetahs, leopards and vast herds reward time here beyond the Migration.Start planningNgorongoroA crater that cradles lifeA vast volcanic caldera holding grassland, woodland, wetlands and an extraordinary concentration of wildlife. Ngorongoro offers a dramatic counterpoint to the open plains.Start planningNdutuFrom the wider Serengeti ecosystem \u00b7 Safari Crafters archiveThe nursery of the SerengetiOn the southern Serengeti\u2019s short-grass plains, the seasonal arrival of wildebeest herds brings new life and intense predator activity. Timing follows the rains and the movement of the animals.Start planningTarangireAn earth embellished by elephantsBaobabs, dry woodland and the Tarangire River shape a distinctive elephant landscape. Look for birds, predators and extraordinary light in a quieter corner of northern Tanzania.Start planningLake ManyaraRift Valley birding oasisGroundwater forest, woodland, wetlands and the lake create a textured counterpoint to the plains. Come for elephants, hippos, birdlife and a slower pace beneath the Rift Valley escarpment.Start planning",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "tanzania-places",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Into the great soul of East Africa.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Serengeti",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Ngorongoro",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Ndutu",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Tarangire",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Lake Manyara",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Five places, chosen with purpose",
+            "Endless plains, extraordinary predators and the Great Migration make this one of the world\u2019s defining wildlife landscapes. Resident lions, cheetahs, leopards and vast herds reward time here beyond the Migration.",
+            "A vast volcanic caldera holding grassland, woodland, wetlands and an extraordinary concentration of wildlife. Ngorongoro offers a dramatic counterpoint to the open plains.",
+            "On the southern Serengeti\u2019s short-grass plains, the seasonal arrival of wildebeest herds brings new life and intense predator activity. Timing follows the rains and the movement of the animals.",
+            "Baobabs, dry woodland and the Tarangire River shape a distinctive elephant landscape. Look for birds, predators and extraordinary light in a quieter corner of northern Tanzania.",
+            "Groundwater forest, woodland, wetlands and the lake create a textured counterpoint to the plains. Come for elephants, hippos, birdlife and a slower pace beneath the Rift Valley escarpment."
+          ],
+          "small": [],
+          "captions": [
+            "From the wider Serengeti ecosystem \u00b7 Safari Crafters archive"
+          ],
+          "links": [],
+          "buttons": [
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            }
+          ],
+          "images": [
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+              "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/ngorongoro/field-photographs/83322d8861c8.webp",
+              "alt": "Elephant grazing beneath the Ngorongoro crater rim in Tanzania",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+              "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/africa-atlas-generated/tarangire.webp",
+              "alt": "AI-generated illustration: An African elephant beside a massive old baobab in Tarangire Tanzania, dry golden woodland in side-lit evening, elephant small compared with tree.",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/africa-atlas-generated/lake-manyara.webp",
+              "alt": "AI-generated illustration: A flock of flamingos in shallow Lake Manyara water beneath the green Rift Valley escarpment, soft hazy daylight, pale water reflections.",
+              "objectPosition": "50% 50%"
+            }
+          ],
+          "faq": []
+        },
+        {
+          "className": "kenya-gallery kenya-space",
+          "label": null,
+          "labelledBy": null,
+          "text": "A few moments in the wild.From the Serengeti plains and Ngorongoro crater.010203040506070809",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "A few moments in the wild.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "From the Serengeti plains and Ngorongoro crater."
+          ],
+          "small": [],
+          "captions": [],
+          "links": [],
+          "buttons": [
+            {
+              "label": "01",
+              "ariaLabel": "Open image 1 of 9: Elephant grazing beneath the Ngorongoro crater rim in Tanzania"
+            },
+            {
+              "label": "02",
+              "ariaLabel": "Open image 2 of 9: Lions resting below a granite kopje in the Serengeti"
+            },
+            {
+              "label": "03",
+              "ariaLabel": "Open image 3 of 9: Rhinoceros in Ngorongoro grassland"
+            },
+            {
+              "label": "04",
+              "ariaLabel": "Open image 4 of 9: Leopard standing on a tree branch in the Serengeti"
+            },
+            {
+              "label": "05",
+              "ariaLabel": "Open image 5 of 9: Wildebeest splashing through water in the Serengeti"
+            },
+            {
+              "label": "06",
+              "ariaLabel": "Open image 6 of 9: Hippopotamus beside water in Ngorongoro"
+            },
+            {
+              "label": "07",
+              "ariaLabel": "Open image 7 of 9: Colourful bird perched on a Serengeti tree"
+            },
+            {
+              "label": "08",
+              "ariaLabel": "Open image 8 of 9: Male lion resting on a Serengeti riverbank"
+            },
+            {
+              "label": "09",
+              "ariaLabel": "Open image 9 of 9: Acacia tree beneath dramatic clouds in the Serengeti"
+            }
+          ],
+          "images": [
+            {
+              "sourcePath": "/assets/destinations/ngorongoro/field-photographs/83322d8861c8.webp",
+              "alt": "Elephant grazing beneath the Ngorongoro crater rim in Tanzania",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/0fe01c44b503.webp",
+              "alt": "Lions resting below a granite kopje in the Serengeti",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/ngorongoro/field-photographs/26fdfdc5033e.webp",
+              "alt": "Rhinoceros in Ngorongoro grassland",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/ec57020b6dc1.webp",
+              "alt": "Leopard standing on a tree branch in the Serengeti",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/7babc943636f.webp",
+              "alt": "Wildebeest splashing through water in the Serengeti",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/ngorongoro/field-photographs/9138078c6fa7.webp",
+              "alt": "Hippopotamus beside water in Ngorongoro",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/fe84efb64e8a.webp",
+              "alt": "Colourful bird perched on a Serengeti tree",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/c09f16a8d05d.webp",
+              "alt": "Male lion resting on a Serengeti riverbank",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/71c08c0fc93d.webp",
+              "alt": "Acacia tree beneath dramatic clouds in the Serengeti",
+              "objectPosition": "50% 50%"
+            }
+          ],
+          "faq": []
+        },
+        {
+          "className": "container kenya-combinations kenya-space",
+          "label": null,
+          "labelledBy": null,
+          "text": "Suggested Tanzania itinerariesFour ways to explore Tanzania.8 nights / 9 daysNgorongoro, Ndutu & SerengetiStart planning7 nights / 8 daysTarangire, Manyara & SerengetiStart planning6 nights / 7 daysNdutu & SerengetiStart planning11 nights / 12 daysTarangire, Manyara, Ngorongoro, Ndutu & SerengetiStart planning",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Four ways to explore Tanzania.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Ngorongoro, Ndutu & Serengeti",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Tarangire, Manyara & Serengeti",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Ndutu & Serengeti",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Tarangire, Manyara, Ngorongoro, Ndutu & Serengeti",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Suggested Tanzania itineraries"
+          ],
+          "small": [],
+          "captions": [],
+          "links": [],
+          "buttons": [
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            }
+          ],
+          "images": [
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+              "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+              "objectPosition": "58% 50%"
+            },
+            {
+              "sourcePath": "/assets/africa-atlas-generated/tarangire.webp",
+              "alt": "AI-generated illustration: An African elephant beside a massive old baobab in Tarangire Tanzania, dry golden woodland in side-lit evening, elephant small compared with tree.",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+              "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/africa-atlas-generated/lake-manyara.webp",
+              "alt": "AI-generated illustration: A flock of flamingos in shallow Lake Manyara water beneath the green Rift Valley escarpment, soft hazy daylight, pale water reflections.",
+              "objectPosition": "50% 50%"
+            }
+          ],
+          "faq": []
+        },
+        {
+          "className": "kenya-faq",
+          "label": null,
+          "labelledBy": null,
+          "text": "Before you goQuestion,meet answer.How should I choose my travel dates?Match your dates to the regions and wildlife you want to experience. The dry season and green seasons offer different conditions; routing, camp access and the movement of the herds all matter.Can I see the Great Migration?The herds are always moving. We plan around likely seasonal movements and current conditions, without guaranteeing a particular sighting or river crossing.Is the Serengeti worth visiting outside the Migration?Yes. Resident predators and other wildlife make the Serengeti rewarding beyond the busiest Migration periods. Staying longer gives you time to observe behaviour and revisit promising areas.What makes a Tanzania safari feel unhurried?Choose fewer stops when time is limited. The balance between flights, road transfers and nights at each camp matters as much as the number of places visited.How do you choose camps and guides?We consider camp location, guiding, vehicles and time in the field together, selecting accommodation and routing around your safari priorities.",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Question,",
+                      "emphasis": false
+                    }
+                  ]
+                },
+                {
+                  "runs": [
+                    {
+                      "text": "meet answer.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Before you go",
+            "Match your dates to the regions and wildlife you want to experience. The dry season and green seasons offer different conditions; routing, camp access and the movement of the herds all matter.",
+            "The herds are always moving. We plan around likely seasonal movements and current conditions, without guaranteeing a particular sighting or river crossing.",
+            "Yes. Resident predators and other wildlife make the Serengeti rewarding beyond the busiest Migration periods. Staying longer gives you time to observe behaviour and revisit promising areas.",
+            "Choose fewer stops when time is limited. The balance between flights, road transfers and nights at each camp matters as much as the number of places visited.",
+            "We consider camp location, guiding, vehicles and time in the field together, selecting accommodation and routing around your safari priorities."
+          ],
+          "small": [],
+          "captions": [],
+          "links": [],
+          "buttons": [],
+          "images": [],
+          "faq": [
+            {
+              "question": "How should I choose my travel dates?",
+              "answer": "Match your dates to the regions and wildlife you want to experience. The dry season and green seasons offer different conditions; routing, camp access and the movement of the herds all matter."
+            },
+            {
+              "question": "Can I see the Great Migration?",
+              "answer": "The herds are always moving. We plan around likely seasonal movements and current conditions, without guaranteeing a particular sighting or river crossing."
+            },
+            {
+              "question": "Is the Serengeti worth visiting outside the Migration?",
+              "answer": "Yes. Resident predators and other wildlife make the Serengeti rewarding beyond the busiest Migration periods. Staying longer gives you time to observe behaviour and revisit promising areas."
+            },
+            {
+              "question": "What makes a Tanzania safari feel unhurried?",
+              "answer": "Choose fewer stops when time is limited. The balance between flights, road transfers and nights at each camp matters as much as the number of places visited."
+            },
+            {
+              "question": "How do you choose camps and guides?",
+              "answer": "We consider camp location, guiding, vehicles and time in the field together, selecting accommodation and routing around your safari priorities."
+            }
+          ]
+        },
+        {
+          "className": "kenya-plan-band",
+          "label": null,
+          "labelledBy": null,
+          "text": "Your Tanzania, thoughtfully composedTake to Tanzania.Tell us what brings you here, when you\u2019d like to travel and how you like to explore. We\u2019ll shape a journey around you.Start planning",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Take to Tanzania.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Your Tanzania, thoughtfully composed",
+            "Tell us what brings you here, when you\u2019d like to travel and how you like to explore. We\u2019ll shape a journey around you."
+          ],
+          "small": [],
+          "captions": [],
+          "links": [],
+          "buttons": [
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            }
+          ],
+          "images": [],
+          "faq": []
+        },
+        {
+          "className": "kenya-related",
+          "label": null,
+          "labelledBy": null,
+          "text": "Related countriesKeep exploring.KenyaBig cats, elephant country and the quiet conservancies of Laikipia.Explore KenyaUganda & RwandaForest trails, mountain gorillas and a different rhythm of wildlife encounters.Explore Uganda & Rwanda",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Keep exploring.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Kenya",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Uganda & Rwanda",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Related countries",
+            "Big cats, elephant country and the quiet conservancies of Laikipia.",
+            "Forest trails, mountain gorillas and a different rhythm of wildlife encounters."
+          ],
+          "small": [],
+          "captions": [],
+          "links": [
+            {
+              "label": "KenyaBig cats, elephant country and the quiet conservancies of Laikipia.Explore Kenya",
+              "href": "/destinations/kenya",
+              "ariaLabel": null
+            },
+            {
+              "label": "Uganda & RwandaForest trails, mountain gorillas and a different rhythm of wildlife encounters.Explore Uganda & Rwanda",
+              "href": "/destinations/uganda",
+              "ariaLabel": null
+            }
+          ],
+          "buttons": [],
+          "images": [],
+          "faq": []
+        }
+      ],
+      "heroPresentation": {
+        "transform": "none",
+        "objectPosition": "58% 90%",
+        "filter": "saturate(0.74) contrast(1.08) brightness(0.86)"
+      }
+    },
+    {
+      "width": 390,
+      "h1Count": 1,
+      "overflow": false,
+      "metadata": {
+        "title": "Tanzania | Safari Crafters",
+        "description": "Serengeti plains, Ngorongoro\u2019s ancient crater, Ndutu\u2019s seasonal herds and elephants beneath Tarangire\u2019s baobabs. Discover the many landscapes of northern Tanzania.",
+        "canonical": "https://safaricrafters.com/destinations/tanzania",
+        "structuredData": [
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://safaricrafters.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Destinations",
+                "item": "https://safaricrafters.com/destinations"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Africa",
+                "item": "https://safaricrafters.com/destinations/africa"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Tanzania",
+                "item": "https://safaricrafters.com/destinations/tanzania"
+              }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How should I choose my travel dates?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Match your dates to the regions and wildlife you want to experience. The dry season and green seasons offer different conditions; routing, camp access and the movement of the herds all matter."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I see the Great Migration?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The herds are always moving. We plan around likely seasonal movements and current conditions, without guaranteeing a particular sighting or river crossing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is the Serengeti worth visiting outside the Migration?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Resident predators and other wildlife make the Serengeti rewarding beyond the busiest Migration periods. Staying longer gives you time to observe behaviour and revisit promising areas."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What makes a Tanzania safari feel unhurried?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Choose fewer stops when time is limited. The balance between flights, road transfers and nights at each camp matters as much as the number of places visited."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you choose camps and guides?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We consider camp location, guiding, vehicles and time in the field together, selecting accommodation and routing around your safari priorities."
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "content": [
+        {
+          "className": "page-hero page-hero-destination",
+          "label": null,
+          "labelledBy": null,
+          "text": "Africa / East AfricaTanzaniaSerengeti plains, Ngorongoro\u2019s ancient crater, Ndutu\u2019s seasonal herds and elephants beneath Tarangire\u2019s baobabs. Discover the many landscapes of northern Tanzania.HomeDestinationsAfricaTanzaniaSafari Crafters archive",
+          "headings": [
+            {
+              "level": "h1",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Tanzania",
+                      "emphasis": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Africa / East Africa",
+            "Serengeti plains, Ngorongoro\u2019s ancient crater, Ndutu\u2019s seasonal herds and elephants beneath Tarangire\u2019s baobabs. Discover the many landscapes of northern Tanzania.",
+            "Safari Crafters archive"
+          ],
+          "small": [],
+          "captions": [],
+          "links": [
+            {
+              "label": "Home",
+              "href": "/",
+              "ariaLabel": null
+            },
+            {
+              "label": "Destinations",
+              "href": "/destinations",
+              "ariaLabel": null
+            },
+            {
+              "label": "Africa",
+              "href": "/destinations/africa",
+              "ariaLabel": null
+            }
+          ],
+          "buttons": [],
+          "images": [
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+              "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+              "objectPosition": "58% 90%"
+            }
+          ],
+          "faq": []
+        },
+        {
+          "className": "kenya-facts",
+          "label": "Tanzania at a glance",
+          "labelledBy": null,
+          "text": "Come forPredators, elephants & seasonal herdsPlains, crater country, baobabs and Rift Valley birdlife.Best time to visitJanuary\u2013MarchA year-round destination; choose the season around your region and wildlife priorities.Ideal duration8\u201312 nightsStay longer for a slower Serengeti journey or a fuller northern circuit.Getting thereKilimanjaro / ArushaLight aircraft and road transfers connect the principal safari regions.",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Come for",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Best time to visit",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Ideal duration",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Getting there",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Predators, elephants & seasonal herds",
+            "January\u2013March",
+            "8\u201312 nights",
+            "Kilimanjaro / Arusha"
+          ],
+          "small": [
+            "Plains, crater country, baobabs and Rift Valley birdlife.",
+            "A year-round destination; choose the season around your region and wildlife priorities.",
+            "Stay longer for a slower Serengeti journey or a fuller northern circuit.",
+            "Light aircraft and road transfers connect the principal safari regions."
+          ],
+          "captions": [],
+          "links": [],
+          "buttons": [],
+          "images": [],
+          "faq": []
+        },
+        {
+          "className": "kenya-opening-band",
+          "label": null,
+          "labelledBy": null,
+          "text": "East Africa on an epic scaleSee wildlife in lakes, craters and endless lands.Tanzania\u2019s greatest asset is scale.Exploring it well means choosing the right pace. Connect a few contrasting landscapes, allow time to settle into each and let the season guide your route.",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "See wildlife in lakes, craters and endless lands.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "East Africa on an epic scale",
+            "Tanzania\u2019s greatest asset is scale.",
+            "Exploring it well means choosing the right pace. Connect a few contrasting landscapes, allow time to settle into each and let the season guide your route."
+          ],
+          "small": [],
+          "captions": [],
+          "links": [],
+          "buttons": [],
+          "images": [],
+          "faq": []
+        },
+        {
+          "className": "container kenya-places",
+          "label": null,
+          "labelledBy": "tanzania-places",
+          "text": "Five places, chosen with purposeInto the great soul of East Africa.SerengetiPlains that defy boundariesEndless plains, extraordinary predators and the Great Migration make this one of the world\u2019s defining wildlife landscapes. Resident lions, cheetahs, leopards and vast herds reward time here beyond the Migration.Start planningNgorongoroA crater that cradles lifeA vast volcanic caldera holding grassland, woodland, wetlands and an extraordinary concentration of wildlife. Ngorongoro offers a dramatic counterpoint to the open plains.Start planningNdutuFrom the wider Serengeti ecosystem \u00b7 Safari Crafters archiveThe nursery of the SerengetiOn the southern Serengeti\u2019s short-grass plains, the seasonal arrival of wildebeest herds brings new life and intense predator activity. Timing follows the rains and the movement of the animals.Start planningTarangireAn earth embellished by elephantsBaobabs, dry woodland and the Tarangire River shape a distinctive elephant landscape. Look for birds, predators and extraordinary light in a quieter corner of northern Tanzania.Start planningLake ManyaraRift Valley birding oasisGroundwater forest, woodland, wetlands and the lake create a textured counterpoint to the plains. Come for elephants, hippos, birdlife and a slower pace beneath the Rift Valley escarpment.Start planning",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "tanzania-places",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Into the great soul of East Africa.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Serengeti",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Ngorongoro",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Ndutu",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Tarangire",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Lake Manyara",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Five places, chosen with purpose",
+            "Endless plains, extraordinary predators and the Great Migration make this one of the world\u2019s defining wildlife landscapes. Resident lions, cheetahs, leopards and vast herds reward time here beyond the Migration.",
+            "A vast volcanic caldera holding grassland, woodland, wetlands and an extraordinary concentration of wildlife. Ngorongoro offers a dramatic counterpoint to the open plains.",
+            "On the southern Serengeti\u2019s short-grass plains, the seasonal arrival of wildebeest herds brings new life and intense predator activity. Timing follows the rains and the movement of the animals.",
+            "Baobabs, dry woodland and the Tarangire River shape a distinctive elephant landscape. Look for birds, predators and extraordinary light in a quieter corner of northern Tanzania.",
+            "Groundwater forest, woodland, wetlands and the lake create a textured counterpoint to the plains. Come for elephants, hippos, birdlife and a slower pace beneath the Rift Valley escarpment."
+          ],
+          "small": [],
+          "captions": [
+            "From the wider Serengeti ecosystem \u00b7 Safari Crafters archive"
+          ],
+          "links": [],
+          "buttons": [
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            }
+          ],
+          "images": [
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+              "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/ngorongoro/field-photographs/83322d8861c8.webp",
+              "alt": "Elephant grazing beneath the Ngorongoro crater rim in Tanzania",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+              "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/africa-atlas-generated/tarangire.webp",
+              "alt": "AI-generated illustration: An African elephant beside a massive old baobab in Tarangire Tanzania, dry golden woodland in side-lit evening, elephant small compared with tree.",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/africa-atlas-generated/lake-manyara.webp",
+              "alt": "AI-generated illustration: A flock of flamingos in shallow Lake Manyara water beneath the green Rift Valley escarpment, soft hazy daylight, pale water reflections.",
+              "objectPosition": "50% 50%"
+            }
+          ],
+          "faq": []
+        },
+        {
+          "className": "kenya-gallery kenya-space",
+          "label": null,
+          "labelledBy": null,
+          "text": "A few moments in the wild.From the Serengeti plains and Ngorongoro crater.010203040506070809",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "A few moments in the wild.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "From the Serengeti plains and Ngorongoro crater."
+          ],
+          "small": [],
+          "captions": [],
+          "links": [],
+          "buttons": [
+            {
+              "label": "01",
+              "ariaLabel": "Open image 1 of 9: Elephant grazing beneath the Ngorongoro crater rim in Tanzania"
+            },
+            {
+              "label": "02",
+              "ariaLabel": "Open image 2 of 9: Lions resting below a granite kopje in the Serengeti"
+            },
+            {
+              "label": "03",
+              "ariaLabel": "Open image 3 of 9: Rhinoceros in Ngorongoro grassland"
+            },
+            {
+              "label": "04",
+              "ariaLabel": "Open image 4 of 9: Leopard standing on a tree branch in the Serengeti"
+            },
+            {
+              "label": "05",
+              "ariaLabel": "Open image 5 of 9: Wildebeest splashing through water in the Serengeti"
+            },
+            {
+              "label": "06",
+              "ariaLabel": "Open image 6 of 9: Hippopotamus beside water in Ngorongoro"
+            },
+            {
+              "label": "07",
+              "ariaLabel": "Open image 7 of 9: Colourful bird perched on a Serengeti tree"
+            },
+            {
+              "label": "08",
+              "ariaLabel": "Open image 8 of 9: Male lion resting on a Serengeti riverbank"
+            },
+            {
+              "label": "09",
+              "ariaLabel": "Open image 9 of 9: Acacia tree beneath dramatic clouds in the Serengeti"
+            }
+          ],
+          "images": [
+            {
+              "sourcePath": "/assets/destinations/ngorongoro/field-photographs/83322d8861c8.webp",
+              "alt": "Elephant grazing beneath the Ngorongoro crater rim in Tanzania",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/0fe01c44b503.webp",
+              "alt": "Lions resting below a granite kopje in the Serengeti",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/ngorongoro/field-photographs/26fdfdc5033e.webp",
+              "alt": "Rhinoceros in Ngorongoro grassland",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/ec57020b6dc1.webp",
+              "alt": "Leopard standing on a tree branch in the Serengeti",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/7babc943636f.webp",
+              "alt": "Wildebeest splashing through water in the Serengeti",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/ngorongoro/field-photographs/9138078c6fa7.webp",
+              "alt": "Hippopotamus beside water in Ngorongoro",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/fe84efb64e8a.webp",
+              "alt": "Colourful bird perched on a Serengeti tree",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/c09f16a8d05d.webp",
+              "alt": "Male lion resting on a Serengeti riverbank",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/71c08c0fc93d.webp",
+              "alt": "Acacia tree beneath dramatic clouds in the Serengeti",
+              "objectPosition": "50% 50%"
+            }
+          ],
+          "faq": []
+        },
+        {
+          "className": "container kenya-combinations kenya-space",
+          "label": null,
+          "labelledBy": null,
+          "text": "Suggested Tanzania itinerariesFour ways to explore Tanzania.8 nights / 9 daysNgorongoro, Ndutu & SerengetiStart planning7 nights / 8 daysTarangire, Manyara & SerengetiStart planning6 nights / 7 daysNdutu & SerengetiStart planning11 nights / 12 daysTarangire, Manyara, Ngorongoro, Ndutu & SerengetiStart planning",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Four ways to explore Tanzania.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Ngorongoro, Ndutu & Serengeti",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Tarangire, Manyara & Serengeti",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Ndutu & Serengeti",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Tarangire, Manyara, Ngorongoro, Ndutu & Serengeti",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Suggested Tanzania itineraries"
+          ],
+          "small": [],
+          "captions": [],
+          "links": [],
+          "buttons": [
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            },
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            }
+          ],
+          "images": [
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+              "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+              "objectPosition": "58% 50%"
+            },
+            {
+              "sourcePath": "/assets/africa-atlas-generated/tarangire.webp",
+              "alt": "AI-generated illustration: An African elephant beside a massive old baobab in Tarangire Tanzania, dry golden woodland in side-lit evening, elephant small compared with tree.",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+              "alt": "Wildebeest herd crossing the Serengeti plains in Tanzania",
+              "objectPosition": "50% 50%"
+            },
+            {
+              "sourcePath": "/assets/africa-atlas-generated/lake-manyara.webp",
+              "alt": "AI-generated illustration: A flock of flamingos in shallow Lake Manyara water beneath the green Rift Valley escarpment, soft hazy daylight, pale water reflections.",
+              "objectPosition": "50% 50%"
+            }
+          ],
+          "faq": []
+        },
+        {
+          "className": "kenya-faq",
+          "label": null,
+          "labelledBy": null,
+          "text": "Before you goQuestion,meet answer.How should I choose my travel dates?Match your dates to the regions and wildlife you want to experience. The dry season and green seasons offer different conditions; routing, camp access and the movement of the herds all matter.Can I see the Great Migration?The herds are always moving. We plan around likely seasonal movements and current conditions, without guaranteeing a particular sighting or river crossing.Is the Serengeti worth visiting outside the Migration?Yes. Resident predators and other wildlife make the Serengeti rewarding beyond the busiest Migration periods. Staying longer gives you time to observe behaviour and revisit promising areas.What makes a Tanzania safari feel unhurried?Choose fewer stops when time is limited. The balance between flights, road transfers and nights at each camp matters as much as the number of places visited.How do you choose camps and guides?We consider camp location, guiding, vehicles and time in the field together, selecting accommodation and routing around your safari priorities.",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Question,",
+                      "emphasis": false
+                    }
+                  ]
+                },
+                {
+                  "runs": [
+                    {
+                      "text": "meet answer.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Before you go",
+            "Match your dates to the regions and wildlife you want to experience. The dry season and green seasons offer different conditions; routing, camp access and the movement of the herds all matter.",
+            "The herds are always moving. We plan around likely seasonal movements and current conditions, without guaranteeing a particular sighting or river crossing.",
+            "Yes. Resident predators and other wildlife make the Serengeti rewarding beyond the busiest Migration periods. Staying longer gives you time to observe behaviour and revisit promising areas.",
+            "Choose fewer stops when time is limited. The balance between flights, road transfers and nights at each camp matters as much as the number of places visited.",
+            "We consider camp location, guiding, vehicles and time in the field together, selecting accommodation and routing around your safari priorities."
+          ],
+          "small": [],
+          "captions": [],
+          "links": [],
+          "buttons": [],
+          "images": [],
+          "faq": [
+            {
+              "question": "How should I choose my travel dates?",
+              "answer": "Match your dates to the regions and wildlife you want to experience. The dry season and green seasons offer different conditions; routing, camp access and the movement of the herds all matter."
+            },
+            {
+              "question": "Can I see the Great Migration?",
+              "answer": "The herds are always moving. We plan around likely seasonal movements and current conditions, without guaranteeing a particular sighting or river crossing."
+            },
+            {
+              "question": "Is the Serengeti worth visiting outside the Migration?",
+              "answer": "Yes. Resident predators and other wildlife make the Serengeti rewarding beyond the busiest Migration periods. Staying longer gives you time to observe behaviour and revisit promising areas."
+            },
+            {
+              "question": "What makes a Tanzania safari feel unhurried?",
+              "answer": "Choose fewer stops when time is limited. The balance between flights, road transfers and nights at each camp matters as much as the number of places visited."
+            },
+            {
+              "question": "How do you choose camps and guides?",
+              "answer": "We consider camp location, guiding, vehicles and time in the field together, selecting accommodation and routing around your safari priorities."
+            }
+          ]
+        },
+        {
+          "className": "kenya-plan-band",
+          "label": null,
+          "labelledBy": null,
+          "text": "Your Tanzania, thoughtfully composedTake to Tanzania.Tell us what brings you here, when you\u2019d like to travel and how you like to explore. We\u2019ll shape a journey around you.Start planning",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Take to Tanzania.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Your Tanzania, thoughtfully composed",
+            "Tell us what brings you here, when you\u2019d like to travel and how you like to explore. We\u2019ll shape a journey around you."
+          ],
+          "small": [],
+          "captions": [],
+          "links": [],
+          "buttons": [
+            {
+              "label": "Start planning",
+              "ariaLabel": null
+            }
+          ],
+          "images": [],
+          "faq": []
+        },
+        {
+          "className": "kenya-related",
+          "label": null,
+          "labelledBy": null,
+          "text": "Related countriesKeep exploring.KenyaBig cats, elephant country and the quiet conservancies of Laikipia.Explore KenyaUganda & RwandaForest trails, mountain gorillas and a different rhythm of wildlife encounters.Explore Uganda & Rwanda",
+          "headings": [
+            {
+              "level": "h2",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Keep exploring.",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Kenya",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level": "h3",
+              "id": "",
+              "lines": [
+                {
+                  "runs": [
+                    {
+                      "text": "Uganda & Rwanda",
+                      "emphasis": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "paragraphs": [
+            "Related countries",
+            "Big cats, elephant country and the quiet conservancies of Laikipia.",
+            "Forest trails, mountain gorillas and a different rhythm of wildlife encounters."
+          ],
+          "small": [],
+          "captions": [],
+          "links": [
+            {
+              "label": "KenyaBig cats, elephant country and the quiet conservancies of Laikipia.Explore Kenya",
+              "href": "/destinations/kenya",
+              "ariaLabel": null
+            },
+            {
+              "label": "Uganda & RwandaForest trails, mountain gorillas and a different rhythm of wildlife encounters.Explore Uganda & Rwanda",
+              "href": "/destinations/uganda",
+              "ariaLabel": null
+            }
+          ],
+          "buttons": [],
+          "images": [],
+          "faq": []
+        }
+      ],
+      "heroPresentation": {
+        "transform": "none",
+        "objectPosition": "58% 90%",
+        "filter": "saturate(0.74) contrast(1.08) brightness(0.86)"
+      }
+    }
+  ],
+  "states": [
+    {
+      "kind": "faq",
+      "width": 1280,
+      "index": 0,
+      "question": "How should I choose my travel dates?",
+      "answer": "Match your dates to the regions and wildlife you want to experience. The dry season and green seasons offer different conditions; routing, camp access and the movement of the herds all matter."
+    },
+    {
+      "kind": "faq",
+      "width": 1280,
+      "index": 1,
+      "question": "Can I see the Great Migration?",
+      "answer": "The herds are always moving. We plan around likely seasonal movements and current conditions, without guaranteeing a particular sighting or river crossing."
+    },
+    {
+      "kind": "faq",
+      "width": 1280,
+      "index": 2,
+      "question": "Is the Serengeti worth visiting outside the Migration?",
+      "answer": "Yes. Resident predators and other wildlife make the Serengeti rewarding beyond the busiest Migration periods. Staying longer gives you time to observe behaviour and revisit promising areas."
+    },
+    {
+      "kind": "faq",
+      "width": 1280,
+      "index": 3,
+      "question": "What makes a Tanzania safari feel unhurried?",
+      "answer": "Choose fewer stops when time is limited. The balance between flights, road transfers and nights at each camp matters as much as the number of places visited."
+    },
+    {
+      "kind": "faq",
+      "width": 1280,
+      "index": 4,
+      "question": "How do you choose camps and guides?",
+      "answer": "We consider camp location, guiding, vehicles and time in the field together, selecting accommodation and routing around your safari priorities."
+    },
+    {
+      "kind": "gallery",
+      "width": 1280,
+      "index": 0,
+      "caption": "Elephant grazing beneath the Ngorongoro crater rim in Tanzania\n\nSafari Crafters archive \u00b7 1 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 1280,
+      "index": 1,
+      "caption": "Lions resting below a granite kopje in the Serengeti\n\nSafari Crafters archive \u00b7 2 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 1280,
+      "index": 2,
+      "caption": "Rhinoceros in Ngorongoro grassland\n\nSafari Crafters archive \u00b7 3 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 1280,
+      "index": 3,
+      "caption": "Leopard standing on a tree branch in the Serengeti\n\nSafari Crafters archive \u00b7 4 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 1280,
+      "index": 4,
+      "caption": "Wildebeest splashing through water in the Serengeti\n\nSafari Crafters archive \u00b7 5 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 1280,
+      "index": 5,
+      "caption": "Hippopotamus beside water in Ngorongoro\n\nSafari Crafters archive \u00b7 6 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 1280,
+      "index": 6,
+      "caption": "Colourful bird perched on a Serengeti tree\n\nSafari Crafters archive \u00b7 7 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 1280,
+      "index": 7,
+      "caption": "Male lion resting on a Serengeti riverbank\n\nSafari Crafters archive \u00b7 8 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 1280,
+      "index": 8,
+      "caption": "Acacia tree beneath dramatic clouds in the Serengeti\n\nSafari Crafters archive \u00b7 9 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 1280,
+      "index": 0,
+      "label": "Start planning",
+      "dialogLabel": "Plan Serengeti, Tanzania",
+      "heading": "Serengeti, Tanzania",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 1280,
+      "index": 1,
+      "label": "Start planning",
+      "dialogLabel": "Plan Ngorongoro, Tanzania",
+      "heading": "Ngorongoro, Tanzania",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 1280,
+      "index": 2,
+      "label": "Start planning",
+      "dialogLabel": "Plan Ndutu, Tanzania",
+      "heading": "Ndutu, Tanzania",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 1280,
+      "index": 3,
+      "label": "Start planning",
+      "dialogLabel": "Plan Tarangire, Tanzania",
+      "heading": "Tarangire, Tanzania",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 1280,
+      "index": 4,
+      "label": "Start planning",
+      "dialogLabel": "Plan Lake Manyara, Tanzania",
+      "heading": "Lake Manyara, Tanzania",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 1280,
+      "index": 5,
+      "label": "Start planning",
+      "dialogLabel": "Plan Ngorongoro, Ndutu & Serengeti \u2014 8 nights / 9 days",
+      "heading": "Ngorongoro, Ndutu & Serengeti \u2014 8 nights / 9 days",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 1280,
+      "index": 6,
+      "label": "Start planning",
+      "dialogLabel": "Plan Tarangire, Manyara & Serengeti \u2014 7 nights / 8 days",
+      "heading": "Tarangire, Manyara & Serengeti \u2014 7 nights / 8 days",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 1280,
+      "index": 7,
+      "label": "Start planning",
+      "dialogLabel": "Plan Ndutu & Serengeti \u2014 6 nights / 7 days",
+      "heading": "Ndutu & Serengeti \u2014 6 nights / 7 days",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 1280,
+      "index": 8,
+      "label": "Start planning",
+      "dialogLabel": "Plan Tarangire, Manyara, Ngorongoro, Ndutu & Serengeti \u2014 11 nights / 12 days",
+      "heading": "Tarangire, Manyara, Ngorongoro, Ndutu & Serengeti \u2014 11 nights / 12 days",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 1280,
+      "index": 9,
+      "label": "Start planning",
+      "dialogLabel": "Plan Tanzania",
+      "heading": "Tanzania",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "faq",
+      "width": 390,
+      "index": 0,
+      "question": "How should I choose my travel dates?",
+      "answer": "Match your dates to the regions and wildlife you want to experience. The dry season and green seasons offer different conditions; routing, camp access and the movement of the herds all matter."
+    },
+    {
+      "kind": "faq",
+      "width": 390,
+      "index": 1,
+      "question": "Can I see the Great Migration?",
+      "answer": "The herds are always moving. We plan around likely seasonal movements and current conditions, without guaranteeing a particular sighting or river crossing."
+    },
+    {
+      "kind": "faq",
+      "width": 390,
+      "index": 2,
+      "question": "Is the Serengeti worth visiting outside the Migration?",
+      "answer": "Yes. Resident predators and other wildlife make the Serengeti rewarding beyond the busiest Migration periods. Staying longer gives you time to observe behaviour and revisit promising areas."
+    },
+    {
+      "kind": "faq",
+      "width": 390,
+      "index": 3,
+      "question": "What makes a Tanzania safari feel unhurried?",
+      "answer": "Choose fewer stops when time is limited. The balance between flights, road transfers and nights at each camp matters as much as the number of places visited."
+    },
+    {
+      "kind": "faq",
+      "width": 390,
+      "index": 4,
+      "question": "How do you choose camps and guides?",
+      "answer": "We consider camp location, guiding, vehicles and time in the field together, selecting accommodation and routing around your safari priorities."
+    },
+    {
+      "kind": "gallery",
+      "width": 390,
+      "index": 0,
+      "caption": "Elephant grazing beneath the Ngorongoro crater rim in Tanzania\n\nSafari Crafters archive \u00b7 1 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 390,
+      "index": 1,
+      "caption": "Lions resting below a granite kopje in the Serengeti\n\nSafari Crafters archive \u00b7 2 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 390,
+      "index": 2,
+      "caption": "Rhinoceros in Ngorongoro grassland\n\nSafari Crafters archive \u00b7 3 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 390,
+      "index": 3,
+      "caption": "Leopard standing on a tree branch in the Serengeti\n\nSafari Crafters archive \u00b7 4 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 390,
+      "index": 4,
+      "caption": "Wildebeest splashing through water in the Serengeti\n\nSafari Crafters archive \u00b7 5 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 390,
+      "index": 5,
+      "caption": "Hippopotamus beside water in Ngorongoro\n\nSafari Crafters archive \u00b7 6 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 390,
+      "index": 6,
+      "caption": "Colourful bird perched on a Serengeti tree\n\nSafari Crafters archive \u00b7 7 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 390,
+      "index": 7,
+      "caption": "Male lion resting on a Serengeti riverbank\n\nSafari Crafters archive \u00b7 8 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "gallery",
+      "width": 390,
+      "index": 8,
+      "caption": "Acacia tree beneath dramatic clouds in the Serengeti\n\nSafari Crafters archive \u00b7 9 / 9",
+      "controls": [
+        {
+          "label": "Close",
+          "ariaLabel": "Close image viewer"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Previous image"
+        },
+        {
+          "label": "",
+          "ariaLabel": "Next image"
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 390,
+      "index": 0,
+      "label": "Start planning",
+      "dialogLabel": "Plan Serengeti, Tanzania",
+      "heading": "Serengeti, Tanzania",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 390,
+      "index": 1,
+      "label": "Start planning",
+      "dialogLabel": "Plan Ngorongoro, Tanzania",
+      "heading": "Ngorongoro, Tanzania",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 390,
+      "index": 2,
+      "label": "Start planning",
+      "dialogLabel": "Plan Ndutu, Tanzania",
+      "heading": "Ndutu, Tanzania",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 390,
+      "index": 3,
+      "label": "Start planning",
+      "dialogLabel": "Plan Tarangire, Tanzania",
+      "heading": "Tarangire, Tanzania",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 390,
+      "index": 4,
+      "label": "Start planning",
+      "dialogLabel": "Plan Lake Manyara, Tanzania",
+      "heading": "Lake Manyara, Tanzania",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 390,
+      "index": 5,
+      "label": "Start planning",
+      "dialogLabel": "Plan Ngorongoro, Ndutu & Serengeti \u2014 8 nights / 9 days",
+      "heading": "Ngorongoro, Ndutu & Serengeti \u2014 8 nights / 9 days",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 390,
+      "index": 6,
+      "label": "Start planning",
+      "dialogLabel": "Plan Tarangire, Manyara & Serengeti \u2014 7 nights / 8 days",
+      "heading": "Tarangire, Manyara & Serengeti \u2014 7 nights / 8 days",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 390,
+      "index": 7,
+      "label": "Start planning",
+      "dialogLabel": "Plan Ndutu & Serengeti \u2014 6 nights / 7 days",
+      "heading": "Ndutu & Serengeti \u2014 6 nights / 7 days",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 390,
+      "index": 8,
+      "label": "Start planning",
+      "dialogLabel": "Plan Tarangire, Manyara, Ngorongoro, Ndutu & Serengeti \u2014 11 nights / 12 days",
+      "heading": "Tarangire, Manyara, Ngorongoro, Ndutu & Serengeti \u2014 11 nights / 12 days",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "kind": "planner",
+      "width": 390,
+      "index": 9,
+      "label": "Start planning",
+      "dialogLabel": "Plan Tanzania",
+      "heading": "Tanzania",
+      "eyebrow": "Your private journey",
+      "closeLabel": "Close planner",
+      "fields": [
+        {
+          "name": "website",
+          "type": null,
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "media": [
+    {
+      "sourcePath": "/assets/africa-atlas-generated/lake-manyara.webp",
+      "sha256": "0683dcba8245bb52caa3a18b100cea0d20666b461fdfa65d4d2b890e67e8c22a",
+      "bytes": 205582
+    },
+    {
+      "sourcePath": "/assets/africa-atlas-generated/tarangire.webp",
+      "sha256": "7601cb1869eac778baf82763302fe20ff25f0a4a4ee13647589918aa657b9b24",
+      "bytes": 405334
+    },
+    {
+      "sourcePath": "/assets/destinations/ngorongoro/field-photographs/26fdfdc5033e.webp",
+      "sha256": "31848e17130070cbc47ce1879afb5995bdda90869e1e1a9bf187fcef1c812dd6",
+      "bytes": 374710
+    },
+    {
+      "sourcePath": "/assets/destinations/ngorongoro/field-photographs/83322d8861c8.webp",
+      "sha256": "32b01715c76147118799d265f33ca64d198f3cd5bb0574f5003b05fdc18a0549",
+      "bytes": 874868
+    },
+    {
+      "sourcePath": "/assets/destinations/ngorongoro/field-photographs/9138078c6fa7.webp",
+      "sha256": "9391536acfc930cd96c0093c69f00acfc35dfd13b62dae99bfbbdbd230e76ea1",
+      "bytes": 909862
+    },
+    {
+      "sourcePath": "/assets/destinations/serengeti/field-photographs/0fe01c44b503.webp",
+      "sha256": "bdfcfb13cf5a4f3dd0dbdee01986faa7bb5fc33cf9beee8ef19f01ce117aac76",
+      "bytes": 372500
+    },
+    {
+      "sourcePath": "/assets/destinations/serengeti/field-photographs/71c08c0fc93d.webp",
+      "sha256": "53a32fbd3e5a2e4a24a0d157c69bd16bfdf868a3accfe14ccf5273be657932c4",
+      "bytes": 501096
+    },
+    {
+      "sourcePath": "/assets/destinations/serengeti/field-photographs/7babc943636f.webp",
+      "sha256": "d46a3bbf4294486d4ae0afd305e0238d06a5987e7ab19d8ad882848dfb76aac5",
+      "bytes": 329360
+    },
+    {
+      "sourcePath": "/assets/destinations/serengeti/field-photographs/a6d88d5f4539.webp",
+      "sha256": "046aeeef619dc1a104b062b4ea5b5c3a43286c39542ccd9c959047605db95f53",
+      "bytes": 827084
+    },
+    {
+      "sourcePath": "/assets/destinations/serengeti/field-photographs/c09f16a8d05d.webp",
+      "sha256": "906648f73cff53f3b8e17b31e22256cdf5b02749de2d799541f8c313a777f898",
+      "bytes": 210358
+    },
+    {
+      "sourcePath": "/assets/destinations/serengeti/field-photographs/ec57020b6dc1.webp",
+      "sha256": "528ecfa781998cee9728d46a5a7c3e4cc8f3fc880202e8972a96b300a20dd23d",
+      "bytes": 790654
+    },
+    {
+      "sourcePath": "/assets/destinations/serengeti/field-photographs/fe84efb64e8a.webp",
+      "sha256": "88114036b7c5b4552ed7feefebf0ad83eb82ced9decf16ce8d9d24783e9f2547",
+      "bytes": 176714
+    }
+  ],
+  "limitations": [
+    "Country-owned layout only; global header/footer remain separate.",
+    "Media hashes identify source files; they do not prove publishing rights.",
+    "Planner dialogs were opened read-only; all non-GET/HEAD requests were blocked and no enquiry was submitted.",
+    "Draft editor and static previews exist; migration review/application and publication remain separate."
+  ]
+}

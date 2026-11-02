@@ -1,16 +1,3 @@
-import Link from "next/link";
-
-export default function NotFound() {
-  return (
-    <section className="section" style={{ minHeight: "70vh", paddingTop: 150, textAlign: "center" }}>
-      <div className="container">
-        <p className="eyebrow">404</p>
-        <h1 className="h1">This track has gone quiet.</h1>
-        <p className="intro">Return to the main trail and begin again.</p>
-        <Link className="button button-solid" href="/">
-          Return Home
-        </Link>
-      </div>
-    </section>
-  );
-}
+import {MissingPage} from '@/components/MissingPage';
+import {readErrorMessage} from '@/lib/cms/error-settings';
+export default async function NotFound(){return <MissingPage message={await readErrorMessage('notFound')}/>;}

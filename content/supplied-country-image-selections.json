@@ -126,44 +126,60 @@
   "colombia": {
     "images": [
       {
-        "file": "drive-download-20260928T131021Z-1-001/Colombia/_DSC1928-2.jpg",
-        "alt": "Red-and-black bird perched in Colombia’s cloud forest"
+        "file": "Colombia-2/_DSC1928-2.jpg",
+        "alt": "Andean cock-of-the-rock perched on a branch in Colombia"
       },
       {
-        "file": "drive-download-20260928T131021Z-1-001/Colombia/_DSC0252.jpg",
-        "alt": "Mountain toucan on a mossy branch in Colombia"
+        "file": "Colombia-2/_DSC0252.jpg",
+        "alt": "Mountain toucan perched on a mossy branch in Colombia"
       },
       {
-        "file": "drive-download-20260928T131021Z-1-001/Colombia/_DSC0683.jpg",
-        "alt": "Blue-and-yellow bird on a moss-covered branch in Colombia"
+        "file": "Colombia-2/_DSC0683.jpg",
+        "alt": "Blue-and-yellow bird on a mossy branch in Colombia"
       },
       {
-        "file": "drive-download-20260928T131021Z-1-001/Colombia/_DSC0711 copyap.jpg",
-        "alt": "Green-and-yellow bird in Colombia’s forest"
+        "file": "Colombia-2/_DSC0711 copyap.jpg",
+        "alt": "Multicoloured tanager perched in Colombia"
       },
       {
-        "file": "drive-download-20260928T131021Z-1-001/Colombia/_DSC1900.jpg",
-        "alt": "Hummingbird feeding at a hanging flower in Colombia"
+        "file": "Colombia-2/_DSC1356.jpg",
+        "alt": "Small spotted wild cat standing on moss in Colombia"
       },
       {
-        "file": "drive-download-20260928T131021Z-1-001/Colombia/_DSC2509.jpg",
-        "alt": "Small spotted wild cat resting in Colombia"
+        "file": "Colombia-2/_DSC1900.jpg",
+        "alt": "Hummingbird feeding beneath hanging red flowers in Colombia"
       },
       {
-        "file": "drive-download-20260928T131021Z-1-001/Colombia/_DSC2606.jpg",
-        "alt": "Colourful bird portrait in Colombia’s forest"
+        "file": "Colombia-2/_DSC2043.jpg",
+        "alt": "Andean cock-of-the-rock among forest branches in Colombia"
       },
       {
-        "file": "drive-download-20260928T131021Z-1-001/Colombia/_DSC2671.jpg",
-        "alt": "Bird perched on a branch in Colombia"
+        "file": "Colombia-2/_DSC2509.jpg",
+        "alt": "Small spotted wild cat resting on a branch in Colombia"
       },
       {
-        "file": "drive-download-20260928T131021Z-1-001/Colombia/_DSC9082.jpg",
-        "alt": "Green bird against a forest backdrop in Colombia"
+        "file": "Colombia-2/_DSC2606.jpg",
+        "alt": "Close portrait of a colourful bird in Colombia"
       },
       {
-        "file": "drive-download-20260928T131021Z-1-001/Colombia/_DSC9533.jpg",
-        "alt": "Small spotted wild cat on a branch in Colombia"
+        "file": "Colombia-2/_DSC2671.jpg",
+        "alt": "Colourful bird perched against green forest in Colombia"
+      },
+      {
+        "file": "Colombia-2/_DSC8782.jpg",
+        "alt": "Brown forest bird standing among moss in Colombia"
+      },
+      {
+        "file": "Colombia-2/_DSC9082.jpg",
+        "alt": "Green bird perched on a mossy branch in Colombia"
+      },
+      {
+        "file": "Colombia-2/_DSC9247.jpg",
+        "alt": "Small streaked forest bird in Colombia"
+      },
+      {
+        "file": "Colombia-2/_DSC9533.jpg",
+        "alt": "Spotted wild cat standing on a fallen tree in Colombia"
       }
     ]
   },
@@ -1594,6 +1610,194 @@
       {
         "file": "Bandipur/Santosh/mongoose-bandipura.jpg",
         "alt": "Mongoose standing upright in Bandipur grassland"
+      }
+    ]
+  },
+  "amboseli": {
+    "images": [
+      {
+        "file": "amboseli/DSC_1347-1.jpg",
+        "alt": "Lone elephant crossing the Amboseli plains beneath dramatic storm clouds"
+      },
+      {
+        "file": "amboseli/_DSC1095-Enhanced-NR-1-2.jpg",
+        "alt": "Elephant grazing beneath Mount Kilimanjaro in Amboseli"
+      },
+      {
+        "file": "amboseli/_T704198-1.jpg",
+        "alt": "Flamingos lined across an Amboseli lake in black and white"
+      },
+      {
+        "file": "amboseli/_T700974-1.jpg",
+        "alt": "Elephant family approaching across open Amboseli grassland"
+      },
+      {
+        "file": "amboseli/ST4_3194-1.jpg",
+        "alt": "Flamingos taking flight across an Amboseli wetland"
+      },
+      {
+        "file": "amboseli/ST4_3026-1.jpg",
+        "alt": "Flamingos reflected in still water in Amboseli"
+      },
+      {
+        "file": "amboseli/_DSC3570-1-2.jpg",
+        "alt": "Two zebras in warm evening light in Amboseli"
+      },
+      {
+        "file": "amboseli/ST4_3041-1.jpg",
+        "alt": "Elephant facing the camera on Amboseli grassland"
+      },
+      {
+        "file": "amboseli/_DSC0859-1-2.jpg",
+        "alt": "Elephant family crossing the Amboseli plains in black and white"
+      },
+      {
+        "file": "amboseli/ST4_5004-1.jpg",
+        "alt": "Two zebras running across the Amboseli plains"
+      },
+      {
+        "file": "amboseli/_T704179-1.jpg",
+        "alt": "Lone flamingo reflected beneath an expansive Amboseli sky in black and white"
+      },
+      {
+        "file": "amboseli/_T704371-1.jpg",
+        "alt": "Elephant walking beneath a cloud-streaked sky in Amboseli in black and white"
+      },
+      {
+        "file": "amboseli/_DSC0782-1-2.jpg",
+        "alt": "Black-and-white portrait of an elephant beneath clouds in Amboseli"
+      }
+    ]
+  },
+  "laikipia": {
+    "images": [
+      {
+        "file": "Laikipia/_DSC0504.JPG",
+        "alt": "Black leopard crossing a woodland track in Laikipia"
+      },
+      {
+        "file": "Laikipia/_DSC0149.JPG",
+        "alt": "Black leopard moving through green grass in Laikipia"
+      },
+      {
+        "file": "Laikipia/_DSC2565-2.JPG",
+        "alt": "Black leopard leaping between rocks in Laikipia"
+      },
+      {
+        "file": "Laikipia/_DSC1459.JPG",
+        "alt": "Spotted leopard standing beside a track in Laikipia"
+      },
+      {
+        "file": "Laikipia/_DSC2196.JPG",
+        "alt": "Spotted hyena sitting in Laikipia scrub"
+      },
+      {
+        "file": "Laikipia/_DSC0217.JPG",
+        "alt": "Black leopard approaching through woodland in Laikipia"
+      },
+      {
+        "file": "Laikipia/_DSC3563.JPG",
+        "alt": "Black leopard holding prey at night in Laikipia"
+      },
+      {
+        "file": "Laikipia/_DSC4814.JPG",
+        "alt": "Black leopard carrying prey through the night in Laikipia"
+      }
+    ]
+  },
+  "masai-mara": {
+    "images": [
+      {
+        "file": "masai mara/Trikansh-2/_DSC0875-1-2.jpg",
+        "alt": "Wildebeest on the Masai Mara plains beneath a golden sky"
+      },
+      {
+        "file": "masai mara/Gaurav/_DSC4977.JPG",
+        "alt": "Two cheetahs surveying the Masai Mara plains"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC1372-1-2.jpg",
+        "alt": "Lions resting on a green hillside beneath storm clouds in the Masai Mara"
+      },
+      {
+        "file": "masai mara/Gaurav/_DSC9832 copy.JPG",
+        "alt": "Cheetah resting with cubs in Masai Mara grassland"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC4378-1-2.jpg",
+        "alt": "Giraffe herd beneath a pink evening sky in the Masai Mara"
+      },
+      {
+        "file": "masai mara/Gaurav/_DSC2057.JPG",
+        "alt": "Serval standing in green Masai Mara grassland"
+      },
+      {
+        "file": "masai mara/Gaurav/_DSC6053.JPG",
+        "alt": "Leopard looking out from the grass in the Masai Mara"
+      },
+      {
+        "file": "masai mara/Gaurav/_DSC7728.JPG",
+        "alt": "Cheetah cub reaching up to an adult on a Masai Mara mound"
+      },
+      {
+        "file": "masai mara/Gaurav/_DSC8144.JPG",
+        "alt": "Male lion and cub together in the Masai Mara"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC1672-1-2.jpg",
+        "alt": "Giraffe family beneath a cloudy Masai Mara sky in black and white"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC3639-1-2.jpg",
+        "alt": "Ostriches beneath towering clouds in the Masai Mara in black and white"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC3667-1-2.jpg",
+        "alt": "Lone animal on the distant Masai Mara plains beneath storm clouds in black and white"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC3872-1-2.jpg",
+        "alt": "Backlit lion cub in the Masai Mara"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC4291-1-2.jpg",
+        "alt": "Giraffes silhouetted against a golden Masai Mara sunset"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC4518-1.jpg",
+        "alt": "Long-tailed bird flying over Masai Mara grassland"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC4567-1-2.jpg",
+        "alt": "Two male lions resting in the Masai Mara"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC4667-1-2.jpg",
+        "alt": "Lion cub sitting in warm light in the Masai Mara"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC4969-Enhanced-NR-1-2.jpg",
+        "alt": "Male lion resting beneath an orange Masai Mara sky"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC4984-1-2.jpg",
+        "alt": "Lion cub running through Masai Mara grassland"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC5003-1-2.jpg",
+        "alt": "Lion cub approaching along a Masai Mara track"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC5173-1-2.jpg",
+        "alt": "Lion cubs walking together along a Masai Mara track"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC5348-1-2.jpg",
+        "alt": "Antelope silhouetted against the setting sun in the Masai Mara"
+      },
+      {
+        "file": "masai mara/Trikansh-2/_DSC5854-Enhanced-NR-1-2.jpg",
+        "alt": "Antelope standing in orange sunset light in the Masai Mara"
       }
     ]
   }

@@ -1,0 +1,35 @@
+import {z} from 'zod';
+import inventory from '../../docs/cms/tanzania-source-inventory.json' with {type:'json'};
+import {tanzaniaSourceDraft} from './tanzania-source-draft.ts';
+import {tanzaniaContentDraft} from './tanzania-page-draft.ts';
+const hash=z.string().regex(/^[a-f0-9]{64}$/);
+const proofSchema=z.array(z.object({sourcePath:z.string(),sha256:hash}).strict()).max(500);
+const bindingSchema=z.array(z.object({sourcePath:z.string(),sourceSha256:hash,assetId:z.string().regex(/^[a-zA-Z0-9][a-zA-Z0-9_-]{0,127}$/).refine(id=>!id.startsWith('review-only-'))}).strict()).max(100);
+export const tanzaniaMigrationDependencies=[...inventory.sources,...inventory.media.map(m=>({sourcePath:`public${m.sourcePath}`,sha256:m.sha256}))];
+/** Review artifact only. Caller-supplied hashes and asset IDs are not trusted rights/access evidence. */
+export function planTanzaniaMigration(currentHashes:unknown,mediaBindings:unknown=[]){
+ const proof=proofSchema.parse(currentHashes),bindings=bindingSchema.parse(mediaBindings);
+ if(proof.length!==tanzaniaMigrationDependencies.length||new Set(proof.map(p=>p.sourcePath)).size!==proof.length||tanzaniaMigrationDependencies.some(e=>!proof.some(p=>p.sourcePath===e.sourcePath&&p.sha256===e.sha256)))throw Error('Tanzania source changed. Recapture and review before migration.');
+ if(new Set(bindings.map(b=>b.sourcePath)).size!==bindings.length)throw Error('Duplicate Tanzania media binding.');
+ for(const b of bindings){if(!inventory.media.some(m=>m.sourcePath===b.sourcePath&&m.sha256===b.sourceSha256))throw Error('Unknown or stale Tanzania media binding.');if(bindings.some(other=>other.assetId===b.assetId&&other.sourceSha256!==b.sourceSha256))throw Error('Different source images need distinct processed assets.');}
+ const desktop=inventory.views.find(v=>v.width===1280),mobile=inventory.views.find(v=>v.width===390);
+ if(!desktop||!mobile||desktop.content.length!==9||JSON.stringify(desktop.content)!==JSON.stringify(mobile.content)||JSON.stringify(desktop.metadata)!==JSON.stringify(mobile.metadata))throw Error('Review changed Tanzania responsive content before migration.');
+ const [hero,facts,introduction,places,gallery,itineraries,faq,planner,related]=desktop.content;
+ const image=(m:typeof hero.images[number],credit?:string)=>{if(!m)throw Error('Missing captured Tanzania image.');const index=inventory.media.findIndex(entry=>entry.sourcePath===m.sourcePath);if(index<0)throw Error('Uncaptured Tanzania image.');return {assetId:bindings.find(b=>b.sourcePath===m.sourcePath)?.assetId??`review-only-tanzania-${index+1}`,alt:m.alt,decorative:false,...(credit?{credit}:{})};};
+ const content=tanzaniaSourceDraft({hero:image(hero.images[0],hero.paragraphs[2]),places:Object.fromEntries(['serengeti','ngorongoro','ndutu','tarangire','lake-manyara'].map((slug,index)=>[slug,image(places.images[index])])),gallery:gallery.images.map((m,index)=>{const state=inventory.states.find(s=>s.kind==='gallery'&&s.width===1280&&s.index===index);const credit=state?.caption?.split('\n\n')[1]?.replace(/ · \d+ \/ \d+$/,'');return image(m,credit);}),itineraries:itineraries.images.map(m=>image(m))});
+ const text=(h:typeof hero.headings[number])=>h.lines.map(l=>l.runs.map(r=>r.text).join('')).join(' ');
+ const equal=(a:unknown,b:unknown)=>JSON.stringify(a)===JSON.stringify(b);
+ const headings=[content.introduction.heading,content.places.heading,content.gallery.heading,content.itineraries.heading,content.faq.heading,content.planner.heading,content.related.heading];
+ const captured=[introduction,places,gallery,itineraries,faq,planner,related];
+ const agrees=hero.paragraphs[0]===content.hero.meta&&hero.paragraphs[1]===content.hero.copy&&text(hero.headings[0])===content.hero.title&&hero.images[0].objectPosition===`${content.hero.focalPoint.x}% ${content.hero.focalPoint.y}%`&&equal(hero.links.map(l=>({label:l.label,href:l.href})),content.hero.breadcrumbs.filter(b=>b.href).map(b=>({label:b.label,href:b.href})))&&headings.every((h,i)=>equal(h.lines,captured[i].headings[0].lines))&&facts.label===content.facts.accessibleLabel&&equal(facts.headings.map(text),content.facts.items.map(f=>f.label))&&equal(facts.paragraphs,content.facts.items.map(f=>f.value))&&equal(facts.small,content.facts.items.map(f=>f.note))&&equal(introduction.paragraphs,[content.introduction.eyebrow,content.introduction.lead,...content.introduction.paragraphs.map(p=>p.text)])&&places.images.length===content.places.items.length&&content.places.items.every((p,i)=>p.title===text(places.headings[i+1])&&p.copy===places.paragraphs[i+1]&&places.text.includes(p.subtitle))&&equal(places.captions,content.places.items.map(p=>p.imageCaption).filter(Boolean))&&equal(gallery.paragraphs,[content.gallery.copy])&&content.itineraries.items.every((item,i)=>item.title===text(itineraries.headings[i+1])&&itineraries.text.includes(item.label))&&equal(faq.faq,content.faq.items.map(({question,answer})=>({question,answer})))&&equal(planner.paragraphs,[content.planner.eyebrow,content.planner.copy])&&content.related.items.every((item,i)=>item.title===text(related.headings[i+1])&&item.copy===related.paragraphs[i+1]&&related.links[i].href===item.button.href&&related.links[i].label.endsWith(item.button.label));
+ if(!agrees)throw Error('Tanzania editorial source and captured content disagree.');
+ const actions=[...content.places.items.map(p=>p.planner),...content.itineraries.items.map(p=>p.planner),content.planner.planner];
+ for(const width of [1280,390]){const states=inventory.states.filter(s=>s.kind==='planner'&&s.width===width);if(states.length!==actions.length||!actions.every((action,i)=>states[i].index===i&&states[i].label===action.label&&states[i].dialogLabel===action.dialogLabel&&states[i].heading===action.interest&&states[i].eyebrow?.toLowerCase()===action.dialogEyebrow.toLowerCase()&&states[i].closeLabel===action.closeLabel))throw Error('Tanzania captured planner context changed.');}
+ const previewPayload=tanzaniaContentDraft(content);previewPayload.seo={...previewPayload.seo,title:desktop.metadata.title,description:desktop.metadata.description,canonical:desktop.metadata.canonical};
+ return {mode:'review-only' as const,readyToApply:false as const,path:inventory.path,sourceProof:proof,previewPayload,mediaBindings:bindings,missingMedia:inventory.media.filter(m=>!bindings.some(b=>b.sourcePath===m.sourcePath)),metadata:structuredClone(desktop.metadata),findings:[
+ {code:'media_review',message:'Verify processed media, same-site access, rights and availability through the trusted backend. Source hashes do not prove rights.'},
+ {code:'retained_itinerary_copy',message:'Itinerary descriptions are retained from the hashed source module; the current website omits them from card faces.'},
+ {code:'planner_review',message:'Captured planner dialogs were opened without submitting. Full enquiry-form delivery and permission checks remain separate.'},
+ {code:'delivery_pending',message:'No draft was saved. Authenticated migration review, recoverable application and publication remain pending.'},
+ ]};
+}

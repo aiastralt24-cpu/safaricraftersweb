@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "mode": "review-only",
+  "path": "/about",
+  "readyToApply": false,
+  "sourceProof": [
+    {
+      "sourcePath": "app/about/page.tsx",
+      "sha256": "fa5d866b42d3ee28f27acc770f7db48b5f17e13ca9984cbbcf639825fa12967a"
+    },
+    {
+      "sourcePath": "app/about/AboutMotion.tsx",
+      "sha256": "90ee179a87a576f05ac3081bb6895159e493c8ab504a0be915e6181a9a2c4e33"
+    },
+    {
+      "sourcePath": "app/simple.css",
+      "sha256": "fb7f3882579aa737b41f5312fe4c44d46fa091677578171a083edca503db90bf"
+    },
+    {
+      "sourcePath": "components/PageHero.tsx",
+      "sha256": "919596439b4989acf6334dc0a65b5f891f134addbf6fed5c67f17560bf15206c"
+    },
+    {
+      "sourcePath": "components/PageHero.css",
+      "sha256": "c4559c9f2789ba0be35172f7dfddacf57fee7edba5b7f4b9d018b5d4a8e13988"
+    },
+    {
+      "sourcePath": "public/assets/destinations/ranthambhore/ranthambhore-03.jpg",
+      "sha256": "0f461aeb0eedba16db44658c80dfa91a36eb4a1e8fdbd38ecf073932b6b8e408"
+    },
+    {
+      "sourcePath": "public/assets/founders/kairav-engineer.jpg",
+      "sha256": "d7d4ac5ff6d433917fdb090b2d16016dfbe6c7feffd1ada9e4e55d865d130613"
+    },
+    {
+      "sourcePath": "public/assets/founders/gaurav-ramnarayanan.jpg",
+      "sha256": "a9603e1fe5accba0eaf2e5fa253fac1f5935457b4fdc392223629df47666887b"
+    },
+    {
+      "sourcePath": "public/assets/founders/trikansh-sharma.jpg",
+      "sha256": "8a41520fcfce532f815920232688af42a15ab87dd1a8482ed55b10c968e697ea"
+    }
+  ],
+  "mediaBindings": [],
+  "missingMedia": [
+    {
+      "sourcePath": "/assets/destinations/ranthambhore/ranthambhore-03.jpg",
+      "sha256": "0f461aeb0eedba16db44658c80dfa91a36eb4a1e8fdbd38ecf073932b6b8e408"
+    },
+    {
+      "sourcePath": "/assets/founders/kairav-engineer.jpg",
+      "sha256": "d7d4ac5ff6d433917fdb090b2d16016dfbe6c7feffd1ada9e4e55d865d130613"
+    },
+    {
+      "sourcePath": "/assets/founders/gaurav-ramnarayanan.jpg",
+      "sha256": "a9603e1fe5accba0eaf2e5fa253fac1f5935457b4fdc392223629df47666887b"
+    },
+    {
+      "sourcePath": "/assets/founders/trikansh-sharma.jpg",
+      "sha256": "8a41520fcfce532f815920232688af42a15ab87dd1a8482ed55b10c968e697ea"
+    }
+  ],
+  "findings": [
+    {
+      "code": "media_unmapped",
+      "message": "Preview-only image IDs must be replaced with verified processed assets before draft application."
+    },
+    {
+      "code": "media_provider_unverified",
+      "message": "Asset mappings are proposals; availability, rights and processed bytes require backend verification."
+    },
+    {
+      "code": "full_page_review",
+      "message": "Compare complete desktop/mobile layout and motion, including visible mobile hero credits, before applying."
+    },
+    {
+      "code": "apply_workflow_pending",
+      "message": "About migration draft application and recovery are not connected. This artifact cannot publish content."
+    }
+  ],
+  "previewPayload": {
+    "composition": {
+      "schemaVersion": 1,
+      "title": "About",
+      "sections": [
+        {
+          "id": "about-hero",
+          "kind": "hero",
+          "controls": {
+            "label": "About hero",
+            "visible": true,
+            "background": "ink",
+            "width": "full",
+            "spacing": "standard",
+            "textAlign": "start",
+            "mediaAlign": "end",
+            "mobileOrder": "textFirst",
+            "headingLevel": "h1",
+            "animation": "reveal",
+            "locales": [],
+            "regions": []
+          },
+          "data": {
+            "layout": "overlay",
+            "eyebrow": "About",
+            "title": "Founded in the field.",
+            "titleAccent": "field.",
+            "copy": "Founded in 2018, Safari Crafters curates immersive wildlife and photography journeys guided by professionals who understand wildlife and refined hospitality.",
+            "desktop": {
+              "assetId": "review-only-about-1",
+              "alt": "A tiger walking beside a forest lake at sunrise",
+              "decorative": false,
+              "credit": "Safari Crafters archive"
+            },
+            "desktopFraming": {
+              "x": 50,
+              "y": 58,
+              "shape": "natural"
+            },
+            "buttons": []
+          }
+        },
+        {
+          "id": "about-story",
+          "kind": "text",
+          "controls": {
+            "label": "Our story",
+            "visible": true,
+            "background": "paper",
+            "width": "content",
+            "spacing": "standard",
+            "textAlign": "start",
+            "mediaAlign": "end",
+            "mobileOrder": "textFirst",
+            "headingLevel": "h2",
+            "animation": "reveal",
+            "locales": [],
+            "regions": []
+          },
+          "data": {
+            "layout": "split",
+            "eyebrow": "Our story",
+            "title": "Immersive wildlife and photography journeys, crafted with intent.",
+            "titleAccent": "intent.",
+            "body": [
+              {
+                "kind": "paragraph",
+                "text": "Safari Crafters was founded in 2018 and shaped by a passion for wildlife. The company curates immersive wildlife and photography journeys that place travellers close to nature in its unfiltered form."
+              },
+              {
+                "kind": "paragraph",
+                "text": "Each itinerary is designed around the traveller's expectations, preferred accommodation and the natural rhythm of the wilderness, while leaving room for unscripted moments shaped by light, silence, patience and presence."
+              },
+              {
+                "kind": "link",
+                "label": "Plan a journey",
+                "href": "/contact",
+                "style": "button"
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-leadership",
+          "kind": "cards",
+          "controls": {
+            "label": "Founder and field leadership",
+            "visible": true,
+            "background": "paper",
+            "width": "content",
+            "spacing": "standard",
+            "textAlign": "start",
+            "mediaAlign": "end",
+            "mobileOrder": "textFirst",
+            "headingLevel": "h2",
+            "animation": "reveal",
+            "locales": [],
+            "regions": []
+          },
+          "data": {
+            "layout": "leadership",
+            "introduction": "Together, we bring field knowledge, thoughtful operations and visual storytelling to every journey we create.",
+            "eyebrow": "Founder and field leadership",
+            "title": "The wild shaped each of us differently.",
+            "items": [
+              {
+                "id": "about-profile-1",
+                "portrait": {
+                  "shape": "tall",
+                  "x": 58,
+                  "y": 42
+                },
+                "eyebrow": "Kairav Engineer",
+                "title": "Founder",
+                "copy": "Kairav Engineer is an Executive Director at Astral Limited, an author, and a wildlife photographer. His long-term work in landscapes such as Ranthambore and Jawai is shaped by years of observation and an evolving understanding of animal behaviour.\n\nHis conservation work includes habitat strengthening, water restoration, anti-poaching preparedness and improved infrastructure for forest guards in landscapes including Ranthambore, Bandhavgarh, Pench, Satpura, Kanha and Kaziranga.",
+                "image": {
+                  "assetId": "review-only-about-2",
+                  "alt": "Kairav Engineer in Safari Crafters field gear",
+                  "decorative": false
+                }
+              },
+              {
+                "id": "about-profile-2",
+                "portrait": {
+                  "shape": "tall",
+                  "x": 50,
+                  "y": 38
+                },
+                "eyebrow": "Gaurav Ramnarayanan",
+                "title": "Chief Operating Officer",
+                "copy": "Introduced to photography at age three through a camera gifted by his father, Gaurav Ramnarayanan spent much of his childhood near a tiger reserve in South India. He has travelled extensively across India and around the world, documenting wildlife, cultures and environments.\n\nAs Chief Operating Officer, he translates this experience into carefully curated journeys that balance operational excellence with authenticity. He is the recipient of five international photography awards from institutions in the United Kingdom and the United States.",
+                "image": {
+                  "assetId": "review-only-about-3",
+                  "alt": "Gaurav Ramnarayanan in the field at sunset",
+                  "decorative": false
+                }
+              },
+              {
+                "id": "about-profile-3",
+                "portrait": {
+                  "shape": "square",
+                  "x": 50,
+                  "y": 45
+                },
+                "eyebrow": "Trikansh Sharma",
+                "title": "Chief Marketing Officer",
+                "copy": "Trikansh is a nature, wildlife and travel photographer whose relationship with the camera began through his father. Over more than a decade, he has led hundreds of expeditions, photography tours and workshops across India and abroad, helping thousands of enthusiasts develop their own way of seeing the natural world.\n\nHis work has received a National Geographic Award, and his association with Nikon India has contributed to wider conversations around photography and imaging technology. At Safari Crafters, he brings field experience, visual storytelling and a close understanding of travellers to the creation of distinctive, deeply personal journeys.",
+                "image": {
+                  "assetId": "review-only-about-4",
+                  "alt": "Trikansh Sharma photographing in the mountains of Ladakh",
+                  "decorative": false
+                }
+              }
+            ],
+            "columns": 2
+          }
+        },
+        {
+          "id": "about-principles",
+          "kind": "cards",
+          "controls": {
+            "label": "What guides us",
+            "visible": true,
+            "background": "forest",
+            "width": "content",
+            "spacing": "standard",
+            "textAlign": "start",
+            "mediaAlign": "end",
+            "mobileOrder": "textFirst",
+            "headingLevel": "h2",
+            "animation": "reveal",
+            "locales": [],
+            "regions": []
+          },
+          "data": {
+            "layout": "numbered",
+            "introduction": "Better journeys begin with restraint: knowing when to move closer, when to wait and when to leave a place exactly as it was found.",
+            "eyebrow": "What guides us",
+            "title": "The field sets the terms.",
+            "titleAccent": "terms.",
+            "items": [
+              {
+                "id": "about-principle-1",
+                "eyebrow": "Photography philosophy",
+                "title": "The camera never outranks the animal.",
+                "copy": "Our photo-led work is built around distance, behaviour and patience. We choose reserves, guides and vehicles that allow better images without forcing the field to perform."
+              },
+              {
+                "id": "about-principle-2",
+                "eyebrow": "Conservation",
+                "title": "Travel must help the landscape remain whole.",
+                "copy": "We prioritise responsible operators, private conservancies, thoughtful park access and partnerships that support habitat, guides and local communities.",
+                "link": {
+                  "label": "Our conservation commitment",
+                  "href": "/conservation-commitment",
+                  "newWindow": false
+                }
+              }
+            ],
+            "columns": 2
+          }
+        }
+      ]
+    },
+    "seo": {
+      "schemaVersion": 1,
+      "title": "About",
+      "description": "The founder story, field specialists, photography philosophy and conservation values behind Safari Crafters.",
+      "canonical": "",
+      "indexing": "inherit",
+      "following": "inherit",
+      "socialTitle": "",
+      "socialDescription": "",
+      "breadcrumbLabel": "",
+      "sitemap": "inherit"
+    }
+  }
+}

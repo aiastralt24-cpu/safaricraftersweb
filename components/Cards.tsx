@@ -104,7 +104,7 @@ export function CountryCard({ country }: { country: CountryAtlas }) {
 export function ExpeditionCard({ expedition }: { expedition: Expedition }) {
   const parsedDeparture = expedition.date ? new Date(expedition.date) : null;
   const hasCurrentDeparture = Boolean(parsedDeparture && !Number.isNaN(parsedDeparture.valueOf()) && parsedDeparture >= new Date());
-  const departureLabel = hasCurrentDeparture && expedition.date ? expedition.date : "New dates being finalised";
+  const departureLabel = expedition.enquiryDeparture ? expedition.date : hasCurrentDeparture && expedition.date ? expedition.date : "New dates being finalised";
   return (
     <EditorialCard
       href={`/photo-expeditions/${expedition.slug}`}

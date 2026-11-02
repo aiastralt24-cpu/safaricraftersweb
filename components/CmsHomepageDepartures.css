@@ -1,0 +1,11 @@
+.cms-home-departures{overflow-wrap:anywhere;min-width:0}
+.cms-home-departures header{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cms-home-departure-board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,34%);gap:24px;overflow-x:auto;scroll-snap-type:x proximity;padding:20px 0}
+.cms-home-departure-board>a{display:block;scroll-snap-align:start;color:inherit;text-decoration:none;border:1px solid #88704355;padding:16px}
+.cms-home-departure-board figure{margin:0}
+.cms-home-departure-board img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.cms-home-departure-board figcaption small{display:block}
+.cms-home-departure-board:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+@media(max-width:760px){.cms-home-departure-board{grid-auto-columns:82%;gap:16px}}
+
+.cms-home-departure-board .cms-home-departure-availability{white-space:pre-line;font-size:.875rem;font-weight:600;line-height:1.5;overflow-wrap:anywhere}

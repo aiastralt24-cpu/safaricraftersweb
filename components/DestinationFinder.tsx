@@ -46,7 +46,7 @@ export function DestinationFinder({ destinations }: { destinations: Destination[
         ))}
       </div>
       <div className="destination-finder-heading">
-        <div><p className="eyebrow">Find the right landscape</p><h2 id="destination-finder-title">What would you like to encounter?</h2></div>
+        <div><p className="eyebrow">Find the right landscape</p><h2 id="destination-finder-title">What calls<br />to your <em className="editorial-accent">curiosity?</em></h2></div>
         <Link href="/plan?source=destination-finder" className="destination-finder-guidance">
           Let us guide you <ArrowUpRight size={15} strokeWidth={1.5} />
         </Link>

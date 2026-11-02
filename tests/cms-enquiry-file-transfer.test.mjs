@@ -1,0 +1,16 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
+import {transferEnquiryFile} from '../lib/cms/enquiry-file-transfer.ts';
+const id=n=>`00000000-0000-4000-8000-${String(n).padStart(12,'0')}`,identity={site:id(1),form:id(2),revision:id(3),request:id(4),session:id(5),upload:id(6)},token='a'.repeat(64),bytes=Buffer.from('private resume'),sha256=createHash('sha256').update(bytes).digest('hex');
+const base=`${identity.site}/enquiries/${identity.request}/${identity.upload}`,receipt={id:identity.upload,site:identity.site,form:identity.form,revision:identity.revision,request:identity.request,field:'cv',filename:'cv.pdf',mime:'application/pdf',bytes:bytes.length,maxBytes:5000000,sha256,state:'reserved',storageKey:`${base}/original`,deliveryKey:`${base}/delivery.pdf`};
+function fixture(){const calls=[];return {calls,adapter:{authorize:async(i,hash)=>{calls.push('authorize');assert.deepEqual(i,identity);assert.equal(hash,createHash('sha256').update(token).digest('hex'));return receipt;},put:async(r,b)=>{calls.push('put');assert.deepEqual(b,bytes);},confirm:async(i,hash,digest,size)=>{calls.push('confirm');assert.equal(digest,sha256);assert.equal(size,bytes.length);return {...receipt,state:'uploaded'};}}};}
+test('original transfer checks identity and bytes, hashes credentials and waits for confirmation',async()=>{const f=fixture();assert.deepEqual(await transferEnquiryFile(f.adapter,identity,token,bytes,'application/pdf'),{uploadId:identity.upload,status:'awaiting_verification'});assert.deepEqual(f.calls,['authorize','put','confirm']);});
+test('scope, path, rejected state, credentials and byte mismatches prevent storage',async()=>{
+ for(const patch of [{id:id(9)},{site:id(9)},{form:id(9)},{revision:id(9)},{request:id(9)},{storageKey:'elsewhere'},{deliveryKey:'elsewhere'},{maxBytes:1},{state:'rejected'}]){const f=fixture();f.adapter.authorize=async()=>({...receipt,...patch});await assert.rejects(()=>transferEnquiryFile(f.adapter,identity,token,bytes,'application/pdf'));assert.deepEqual(f.calls,[]);}
+ for(const [body,mime] of [[Buffer.from('changed'),'application/pdf'],[bytes,'image/png']]){const f=fixture();await assert.rejects(()=>transferEnquiryFile(f.adapter,identity,token,body,mime));assert.deepEqual(f.calls,['authorize']);}
+ const f=fixture();await assert.rejects(()=>transferEnquiryFile(f.adapter,identity,'bad',bytes,'application/pdf'));assert.deepEqual(f.calls,[]);
+});
+test('uncertain writes and invalid or lost confirmations never report receipt',async()=>{
+ const f=fixture();f.adapter.put=async()=>{throw Error('lost write');};await assert.rejects(()=>transferEnquiryFile(f.adapter,identity,token,bytes,'application/pdf'));assert.deepEqual(f.calls,['authorize']);
+ for(const patch of [{state:'reserved'},{state:'rejected'},{sha256:'b'.repeat(64)},{filename:'different.pdf'},{field:'other'}]){const f=fixture();f.adapter.confirm=async()=>({...receipt,...patch});await assert.rejects(()=>transferEnquiryFile(f.adapter,identity,token,bytes,'application/pdf'));}
+ const lost=fixture();lost.adapter.confirm=async()=>{throw Error('lost receipt');};await assert.rejects(()=>transferEnquiryFile(lost.adapter,identity,token,bytes,'application/pdf'));
+});

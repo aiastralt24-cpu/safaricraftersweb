@@ -180,3 +180,6 @@
   .regional-atlas-place-card { aspect-ratio: 5 / 4; }
   .regional-atlas-related > div a { margin: 0 !important; }
 }
+
+.regional-atlas-heading .atlas-signature-title{max-width:none;font-size:clamp(38px,4.4vw,66px);line-height:1.04}
+@media(max-width:760px){.regional-atlas-heading .atlas-signature-title{font-size:clamp(32px,8vw,50px)}}

@@ -1,0 +1,31 @@
+begin;
+-- Canonical owned links are converted to exact paths only; never normalize a
+-- dot segment, query, fragment, percent escape or unsupported authority.
+create function cms.guided_link_path(p_href text)
+returns text language plpgsql immutable set search_path='' as $$
+declare candidate text;
+begin
+ if p_href is null then return null; end if;
+ candidate:=p_href;
+ if p_href ~* '^https://' then
+  if p_href !~* '^https://(www\.)?safaricrafters\.com\.?(:443)?(/|$)' then return null; end if;
+  candidate:=regexp_replace(p_href,'^https://(www\.)?safaricrafters\.com\.?(:443)?','', 'i');
+  if candidate='' then candidate:='/'; end if;
+ end if;
+ if candidate !~ '^/([a-z0-9]+(-[a-z0-9]+)*/?)*$' then return null; end if;
+ return candidate;
+end $$;
+revoke all on function cms.guided_link_path(text) from public;
+create or replace function cms.get_validation_input(p_site uuid,p_record uuid,p_revision uuid)
+returns jsonb language sql stable security definer set search_path='' as $$
+ select jsonb_build_object('site',r.website_id,'record',r.id,'revision',v.id,'type',r.content_type,'path',r.path,'payload',v.payload,
+  'locale',r.locale,'mediaStatus',cms.get_record_media_status(p_site,p_record,p_revision))
+  ||case when r.content_type='page' and r.path='/concept' then jsonb_build_object('conceptPublishedPaths',coalesce((select jsonb_agg(href order by href) from (select distinct value #>> '{}' as href from jsonb_path_query(v.payload,'$.**.href') value where jsonb_typeof(value)='string') links where href like '/%' and href !~ '[?#]' and cms.concept_link_available(r.website_id,href,r.locale)),'[]'::jsonb),'conceptStatus',coalesce(cms.get_concept_reference_status(p_site,p_record,p_revision),'[]'::jsonb)) else '{}'::jsonb end
+  ||case when r.content_type='page' and r.path='/guided-bespoke-safaris' then jsonb_build_object('guidedPublishedPaths',coalesce((select jsonb_agg(path order by path) from (select distinct cms.guided_link_path(value #>> '{}') as path from jsonb_path_query(v.payload,'$.**.href') value where jsonb_typeof(value)='string') links where path is not null and cms.concept_link_available(r.website_id,path,r.locale)),'[]'::jsonb)) else '{}'::jsonb end
+  ||case when r.content_type='page' and r.path='/contact' then jsonb_build_object('contactFormStatus',cms.get_contact_form_status(p_site,p_record,p_revision)) else '{}'::jsonb end
+  ||case when r.content_type in ('page','homepage') then jsonb_build_object('downloadStatus',cms.get_download_reference_status(p_site,p_record,p_revision)) else '{}'::jsonb end
+  ||case when r.content_type='destination' then jsonb_build_object('referenceStatus',cms.get_destination_reference_status(p_site,p_record,p_revision)) when r.content_type='navigation' then jsonb_build_object('navigationStatus',cms.get_navigation_reference_status(p_site,p_record,p_revision)) when r.content_type='settings' then jsonb_build_object('settingsStatus',cms.get_settings_reference_status(p_site,p_record,p_revision)) when r.content_type='specialist' then jsonb_build_object('specialistStatus',coalesce(cms.get_specialist_reference_status(p_site,p_record,p_revision),'[]'::jsonb)) when r.content_type='photoExpedition' then jsonb_build_object('expeditionStatus',coalesce(cms.get_expedition_reference_status(p_site,p_record,p_revision),'[]'::jsonb)) when r.content_type='homepage' then jsonb_build_object('homepageHeader',cms.get_public_header(r.website_id,r.locale),'homepageStatus',coalesce(cms.get_homepage_reference_status(p_site,p_record,p_revision),'[]'::jsonb),'homepagePublishedPaths',coalesce((select jsonb_agg(href order by href) from (select distinct value #>> '{}' as href from jsonb_path_query(v.payload,'$.**.href') value where jsonb_typeof(value)='string') links where href like '/%' and cms.get_public_page(r.website_id,href,r.locale) is not null),'[]'::jsonb)) when r.content_type='document' then jsonb_build_object('documentStatus',cms.get_document_validation_status(p_site,p_record,p_revision)) else '{}'::jsonb end
+ from cms.records r join cms.revisions v on v.website_id=r.website_id and v.record_id=r.id and v.id=r.current_revision_id
+ where r.website_id=p_site and r.id=p_record and v.id=p_revision;
+$$;
+commit;
