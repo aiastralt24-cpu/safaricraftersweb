@@ -197,6 +197,7 @@ export type ExpeditionDeparture = {
 };
 
 export type Expedition = {
+  paymentTerms?: string;
   enquiryDeparture?: string;
   seo?: SeoFields;
   heroTitle?: string;

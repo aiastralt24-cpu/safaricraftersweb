@@ -2,17 +2,21 @@
 
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ImageAsset } from "@/lib/data";
 import "./MediaGallery.css";
 
-export function MediaGallery({ images, label = "Gallery", variant = "grid", maxImages }: { images: ImageAsset[]; label?: string; variant?: "grid" | "story"; maxImages?: number }) {
+export function MediaGallery({ images, label = "Gallery", variant = "grid", maxImages, initialCount }: { images: ImageAsset[]; label?: string; variant?: "grid" | "story"; maxImages?: number; initialCount?: number }) {
+  const galleryId = useId();
+  const [expanded, setExpanded] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const openedIndexRef = useRef<number | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerRefs = useRef<Array<HTMLButtonElement | null>>([]);
-  const visibleImages = images.slice(0, maxImages === undefined ? (variant === "story" ? 12 : 9) : Math.max(1, Math.min(30, Math.floor(maxImages))));
+  const galleryImages = images.slice(0, maxImages === undefined ? (variant === "story" ? 12 : 9) : Math.max(1, Math.min(30, Math.floor(maxImages))));
+
+  const visibleImages = initialCount && !expanded ? galleryImages.slice(0, initialCount) : galleryImages;
 
   useEffect(() => {
     if (activeIndex === null) return;
@@ -64,7 +68,7 @@ export function MediaGallery({ images, label = "Gallery", variant = "grid", maxI
   if (!visibleImages.length) return null;
   return (
     <>
-      <div className={`${variant === "story" ? "gallery-grid destination-story-gallery" : "gallery-grid"} gallery-count-${visibleImages.length}`} aria-label={label}>
+      <div id={galleryId} className={`${variant === "story" ? "gallery-grid destination-story-gallery" : "gallery-grid"} gallery-count-${visibleImages.length}`} aria-label={label}>
         {visibleImages.map((image, index) => (
           <button
             className={`gallery-trigger${variant === "story" ? ` destination-story-frame frame-${index + 1}` : ""}`}
@@ -79,6 +83,7 @@ export function MediaGallery({ images, label = "Gallery", variant = "grid", maxI
           </button>
         ))}
       </div>
+      {initialCount && galleryImages.length > initialCount ? <button type="button" className="gallery-view-more" aria-expanded={expanded} aria-controls={galleryId} onClick={(event) => { const button = event.currentTarget; setExpanded(!expanded); if (expanded) requestAnimationFrame(() => button.scrollIntoView({block: "end", behavior: "instant"})); }}>{expanded ? "View less" : "View more"}<span aria-hidden="true">{expanded ? " −" : " +"}</span></button> : null}
       {activeIndex !== null ? createPortal((
         <div className="media-lightbox" role="dialog" aria-modal="true" aria-label={`${label} image viewer`} onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
           <button ref={closeButtonRef} className="media-lightbox-close" type="button" onClick={close} aria-label="Close image viewer"><X aria-hidden="true" size={22} /><span>Close</span></button>

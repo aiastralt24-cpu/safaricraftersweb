@@ -12550,7 +12550,9 @@
       "wildlife": "Brown bears, Pacific salmon, Steller’s sea eagles, sea otters, Steller sea lions, whales, wolverines, reindeer, sable and Kamchatka snow sheep.",
       "photography": "Pair a long lens for wildlife with a wider lens for bears within the landscape. Waterproof protection and spare batteries are useful on coastal days. Keep distance and let the guide determine every approach.",
       "journeys": [],
-      "expeditions": [],
+      "expeditions": [
+        "kamchatka-wildlife-photography-expedition"
+      ],
       "highlights": [
         "Brown-bear observation shaped around seasonal salmon movement",
         "Volcanic lakes, mountain silhouettes and open wilderness",
@@ -13943,12 +13945,12 @@
       "category": "Photography Tours",
       "skill": "Photography-led private or small-group safari",
       "groupSize": "2 spots available",
-      "duration": "11 days",
-      "bestMonths": "Sep 11, 2027",
-      "species": "Wildlife and landscape focus shaped by destination",
+      "duration": "10 nights / 11 days",
+      "bestMonths": "August–September",
+      "species": "Jaguars, giant anteaters, ocelots, tapirs and birdlife",
       "equipment": "A tailored packing and camera note is shared before departure",
-      "description": "Explore the Pantanal wetlands of Brazil, the world’s largest tropical wetland and South America’s most celebrated wildlife realms.",
-      "intro": "Explore the Pantanal wetlands of Brazil, the world’s largest tropical wetland and South America’s most celebrated wildlife realms. This sojourn offers privileged access to one of the planet’s most life-rich landscapes, where Jaguars patrol riverbanks, Giant Anteaters roam open plains, Capybaras gather at the water’s edge, and Hyacinth Macaws streak the sky in vivid colours.\n\nGuided by expert naturalists, experience a seamless blend of private boat safaris and thoughtfully curated land excursions, designed for exceptional wildlife encounters. The Pantanal wetlands, stretching across central Brazil, are a paradise for wildlife enthusiasts and photographers. Unlike dense rainforests, the open landscapes here make animal viewing easy and rewarding.\n\nOur journey begins in Campo Grande, traveling through Aguapé Lodge’s grasslands where Giant Anteaters and Armadillos roam. We continue to Bonito for a spectacular encounter with Hyacinth Macaws before flying north to Cuiabá and onward to Porto Jofre , the heart of Jaguar country.\n\nFor four full days, explore the river channels by boat, where sightings of Jaguars hunting along the banks are common. The adventure ends at South Wild Pantanal Lodge, offering an unforgettable evening with the elusive Ocelot.\n\nExpert guides, small groups, and prime locations make this Brazil wildlife tour the ultimate way to experience the Pantanal’s raw beauty and unmatched biodiversity.",
+      "description": "Explore Bonito and Brazil’s Pantanal from 28 August to 7 September 2027, with anteater outings, sinkhole visits, an ocelot hide session and four full days of jaguar safaris.",
+      "intro": "Begin in Campo Grande and travel to Bonito for sinkhole visits and outings in search of giant anteaters and other wildlife. Return to Campo Grande and fly to Cuiabá before continuing along the Transpantaneira.\n\nAn afternoon boat trip focuses on birds, tapirs and other wildlife, followed by an evening ocelot hide session at the lodge. Then travel to the river for jaguar safaris, with four full days dedicated to exploring the waterways.\n\nA final morning safari on 7 September is followed by a transfer to Cuiabá Airport. The domestic flight from Campo Grande to Cuiabá is not included.",
       "image": {
         "src": "/assets/destinations/pantanal/field-photographs/e755e99797fb.webp",
         "alt": "Jaguar at the water’s edge in Brazil’s Pantanal",
@@ -14098,29 +14100,25 @@
       ],
       "mentor": "Gaurav Ramnarayanan",
       "guide": "Gaurav Ramnarayanan",
-      "date": "Sep 11, 2027",
+      "date": "28 August – 7 September 2027",
       "price": "$6500",
-      "route": "Aguapé (2 nights), Bonito (1 night), Cuiabá (1 night), Porto Jofre (5 nights), Transpantaneira (1 night)",
+      "route": "Campo Grande → Bonito → Campo Grande → Cuiabá → Transpantaneira → Porto Jofre → Cuiabá",
       "highlights": [
-        "Four full days of jaguar boat safaris",
-        "Wetland wildlife and exceptional birding",
-        "River and land-based photography",
-        "Macaw photography near Bonito"
+        "Anteater outings and two sinkhole visits around Bonito",
+        "Afternoon boat trip for birds, tapirs and other wildlife",
+        "Evening ocelot hide session before the jaguar safaris",
+        "Four full days of jaguar safaris, followed by a final morning safari"
       ],
       "inclusions": [
-        "2 nights at Pousada Aguapé Lodge with all meals.",
-        "1 night in Bonito with breakfast only.",
-        "1 night in Cuiabá / Campo Grande (depending on domestic flight timing) with breakfast only.",
         "5 nights at Santa Rosa Hotel with all meals.",
         "1 night at SouthWild Pantanal Lodge with access to their ocelot hides and all meals.",
         "Local transfers by private van.",
         "Boat safaris as per the itinerary.",
-        "4 land safaris in Aguapé.",
         "2 sessions with macaws.",
         "English-speaking guide."
       ],
       "exclusions": [
-        "International and domestic flights.",
+        "International and domestic flights, including the Campo Grande–Cuiabá flight on 31 August.",
         "Brazil visa, if required.",
         "Yellow fever vaccine.",
         "Alcohol and beverages.",
@@ -14131,62 +14129,60 @@
       ],
       "days": [
         {
-          "title": "Arrival in Campo Grande",
-          "copy": "Arrive in Campo Grande and transfer to Aguapé Lodge, set within a private ranch renowned for its rich wildlife.",
-          "label": "Day 01"
+          "label": "Day 01 · 28 August",
+          "title": "Arrival in Brazil",
+          "copy": "Arrive in Campo Grande and drive to Bonito. Time permitting, head out in search of anteaters and other wildlife."
         },
         {
-          "title": "Exploring Aguapé Lodge",
-          "copy": "Morning and evening land safaris unfold across the lodge’s expansive wetlands.",
-          "label": "Day 02"
+          "label": "Day 02 · 29 August",
+          "title": "Bonito: sinkhole & wildlife",
+          "copy": "Visit the sinkhole in the morning, then spend the afternoon looking for anteaters."
         },
         {
-          "title": "Aguapé to Bonito",
-          "copy": "After a final morning safari, drive to Bonito, celebrated for its limestone sinkholes and crystal-clear waters.",
-          "label": "Day 03"
+          "label": "Day 03 · 30 August",
+          "title": "A second day in Bonito",
+          "copy": "Look for anteaters in the morning and return to the sinkhole in the evening."
         },
         {
-          "title": "Macaws & Return to Campo Grande",
-          "copy": "Spend the morning photographing Hyacinth Macaws in flight before returning to Campo Grande for an overnight stay.",
-          "label": "Day 04"
+          "label": "Day 04 · 31 August",
+          "title": "Travel to Cuiabá",
+          "copy": "Transfer to Campo Grande and fly to Cuiabá. This domestic flight is not included in the tour price."
         },
         {
-          "title": "Fly to Cuiabá & Transfer to Porto Jofre",
-          "copy": "Take a short flight to Cuiabá (not included; approximately USD 90), then travel along the legendary Transpantaneira Road to Porto Jofre.",
-          "label": "Day 05"
+          "label": "Day 05 · 1 September",
+          "title": "Along the Transpantaneira",
+          "copy": "Travel along the Transpantaneira to the lodge. Take an afternoon boat trip in search of birds, tapirs and other wildlife, followed by an evening ocelot hide session."
         },
         {
-          "title": "Jaguar Territory: Porto Jofre",
-          "copy": "Four full days devoted to exploring the river channels by boat.",
-          "label": "Days 06–09"
+          "label": "Day 06 · 2 September",
+          "title": "Into jaguar country",
+          "copy": "Transfer to the river and begin the jaguar safari part of the journey."
         },
         {
-          "title": "To SouthWild Pantanal Lodge",
-          "copy": "Enjoy a final morning on the river before transferring to SouthWild Pantanal Lodge.",
-          "label": "Day 10"
+          "label": "Days 07–10 · 3–6 September",
+          "title": "On the river",
+          "copy": "Spend four full days exploring the river channels on jaguar safaris, with time to observe and photograph wildlife along the waterways."
         },
         {
-          "title": "Morning Boat Safari & Departure",
-          "copy": "Begin the day with a relaxed morning boat ride, focusing on birdlife and the gentle rhythms of the wetland.",
-          "label": "Day 11"
+          "label": "Day 11 · 7 September",
+          "title": "Final safari & departure",
+          "copy": "Enjoy a final morning safari before your transfer to Cuiabá Airport."
         }
       ],
       "body": [
-        "The Pantanal wetlands, stretching across central Brazil, are a paradise for wildlife enthusiasts and photographers. Unlike dense rainforests, the open landscapes here make animal viewing easy and rewarding. Our journey begins in Campo Grande, traveling through Aguapé Lodge’s grasslands where Giant Anteaters and Armadillos roam.",
-        "We continue to Bonito for a spectacular encounter with Hyacinth Macaws before flying north to Cuiabá and onward to Porto Jofre , the heart of Jaguar country. For four full days, explore the river channels by boat, where sightings of Jaguars hunting along the banks are common. The adventure ends at South Wild Pantanal Lodge, offering an unforgettable evening with the elusive Ocelot.",
-        "Arrive in Campo Grande and transfer to Aguapé Lodge, set within a private ranch renowned for its rich wildlife. As dusk settles, set out on your first safari in search of Giant Anteaters, Armadillos, Capybaras, and other nocturnal species that thrive across the open savannas.",
-        "Morning and evening land safaris unfold across the lodge’s expansive wetlands. In the soft glow of early and late light, the Pantanal reveals itself, Giant Anteaters on the move, Marsh Deer emerging from cover, and a vibrant chorus of birdlife animating the landscape.",
-        "After a final morning safari, drive to Bonito, celebrated for its limestone sinkholes and crystal-clear waters. In the evening, visit the Macaw Sinkhole for a remarkable spectacle as Hyacinth Macaws return to roost, filling the sky with flashes of brilliant blue.",
-        "Spend the morning photographing Hyacinth Macaws in flight before returning to Campo Grande for an overnight stay. The afternoon is at leisure, time to rest and prepare for the northern chapter of your Pantanal journey.",
-        "Take a short flight to Cuiabá (not included; approximately USD 90), then travel along the legendary Transpantaneira Road to Porto Jofre. In the afternoon, embark on your first boat safari, scanning the riverbanks where Jaguars are often seen resting or on the hunt.",
-        "Four full days devoted to exploring the river channels by boat. Early mornings and late afternoons offer prime conditions to observe Jaguars, Giant Otters, Caimans, and an exceptional diversity of birdlife. With expert guides who know the most productive stretches of river, each outing presents outstanding photographic opportunities.",
-        "Enjoy a final morning on the river before transferring to SouthWild Pantanal Lodge. After nightfall, visit the Ocelot Hide for an intimate and memorable encounter with the elusive Ocelot, ideal for low-light photography.",
-        "Begin the day with a relaxed morning boat ride, focusing on birdlife and the gentle rhythms of the wetland. After breakfast and checkout, transfer to Cuiabá Airport for your onward journey."
+        "Arrive in Campo Grande and drive to Bonito. Time permitting, head out in search of anteaters and other wildlife.",
+        "Visit the sinkhole in the morning, then spend the afternoon looking for anteaters.",
+        "Look for anteaters in the morning and return to the sinkhole in the evening.",
+        "Transfer to Campo Grande and fly to Cuiabá. This domestic flight is not included in the tour price.",
+        "Travel along the Transpantaneira to the lodge. Take an afternoon boat trip in search of birds, tapirs and other wildlife, followed by an evening ocelot hide session.",
+        "Transfer to the river and begin the jaguar safari part of the journey.",
+        "Spend four full days exploring the river channels on jaguar safaris, with time to observe and photograph wildlife along the waterways.",
+        "Enjoy a final morning safari before your transfer to Cuiabá Airport."
       ],
       "departures": [
         {
-          "date": "2027-09-11",
-          "endDate": "2027-09-21",
+          "date": "2027-08-28",
+          "endDate": "2027-09-07",
           "status": "Available",
           "availability": "2 spots available"
         }
@@ -14864,6 +14860,131 @@
         }
       ],
       "cancellationPolicy": "Cancellation 150 days or more before departure: 50% of the expedition fee will be retained. Cancellation between 120 and 150 days before departure: 70% will be retained. Cancellation 120 days or less before departure: 100% will be retained. Charges are based on the date the cancellation request is formally received. Confirm the applicable charge with Safari Crafters before booking, including cancellations exactly 120 or 150 days before departure."
+    },
+    {
+      "slug": "kamchatka-wildlife-photography-expedition",
+      "geography": "International",
+      "publicationStatus": "published",
+      "title": "Kamchatka Wildlife Photography Expedition",
+      "heroTitle": "Kamchatka",
+      "heroCopy": "Photograph fishing brown bears at Lake Kuril, with helicopter access and a stay at Grassy Point. 9–14 August 2027.",
+      "category": "Photography Tours",
+      "skill": "Wildlife photography on guided walks and boat outings",
+      "groupSize": "Enquire for group size",
+      "duration": "5 nights / 6 days",
+      "bestMonths": "August",
+      "species": "Brown bears fishing for salmon",
+      "equipment": "Share your camera and lens setup when enquiring for the recommended equipment and packing list.",
+      "description": "Photograph Kamchatka’s brown bears at Lake Kuril, 9–14 August 2027. Five nights, return MI-8 helicopter flights, guided walks and boat outings. €6,600 + 5% GST.",
+      "intro": "Spend six days in Kamchatka, with Lake Kuril and its fishing brown bears at the heart of the journey. Fly by MI-8 helicopter to Grassy Point and explore the lake shores on guided walks and boat outings.\n\nWith no fixed schedule on the two full days at the lake, head out twice daily to observe and photograph bears around the salmon hotspots. The journey begins and ends in Petropavlovsk-Kamchatsky.",
+      "image": {
+        "src": "/assets/destinations/kamchatka/field-photographs/fd2f68b9b549.webp",
+        "alt": "Brown bear reflected in water beneath a Kamchatka volcano",
+        "credit": "Safari Crafters archive"
+      },
+      "gallery": [
+        {
+          "src": "/assets/destinations/kamchatka/field-photographs/e7fda5a7037b.webp",
+          "alt": "Brown bear family beside a mountain lake in Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/field-photographs/ff7e235a4a29.webp",
+          "alt": "Brown bear splashing through water in Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/field-photographs/17b23f52aa40.webp",
+          "alt": "Brown bear and cubs walking beside a Kamchatka lake",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/field-photographs/2a1e7259db8f.webp",
+          "alt": "Volcano reflected across a Kamchatka lake",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/field-photographs/88950cf0be39.webp",
+          "alt": "Night sky above mountains and a lake in Kamchatka",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/kamchatka/field-photographs/270feef1d288.webp",
+          "alt": "Crater lake surrounded by volcanic slopes in Kamchatka",
+          "credit": "Safari Crafters archive"
+        }
+      ],
+      "mentor": "Team Safari Crafters",
+      "price": "€6,600 + 5% GST",
+      "route": "Petropavlovsk-Kamchatsky → Lake Kuril / Grassy Point → Petropavlovsk-Kamchatsky",
+      "departures": [
+        {
+          "date": "2027-08-09",
+          "endDate": "2027-08-14",
+          "status": "Available",
+          "availability": "Check availability"
+        }
+      ],
+      "highlights": [
+        "Photograph brown bears fishing along the shores of Lake Kuril",
+        "Return MI-8 helicopter flights to Grassy Point",
+        "Twice-daily outings on the two full days at the lake",
+        "Guided walks and boat trips to salmon hotspots"
+      ],
+      "inclusions": [
+        "Five nights’ accommodation with all meals",
+        "Return helicopter flights to Lake Kuril",
+        "Guided walks and boat tours on Lake Kuril"
+      ],
+      "exclusions": [
+        "Flights to and from Petropavlovsk-Kamchatsky",
+        "Russia visa",
+        "Any extra nights in Moscow or other cities",
+        "5% GST and 2% TCS",
+        "Anything not mentioned under inclusions"
+      ],
+      "paymentTerms": "€1,600 to confirm your place. The balance is due 60 days before departure.",
+      "days": [
+        {
+          "label": "Day 01 · 9 August",
+          "title": "Arrival in Petropavlovsk-Kamchatsky",
+          "copy": "Arrive in Petropavlovsk-Kamchatsky, check in at a hotel near the airport and rest after the long flight."
+        },
+        {
+          "label": "Day 02 · 10 August",
+          "title": "Helicopter to Lake Kuril",
+          "copy": "Board the MI-8 helicopter for Lake Kuril and land at Grassy Point, your base for the next four days. After lunch, head out along the lake shores to watch and photograph fishing brown bears."
+        },
+        {
+          "label": "Days 03–04 · 11–12 August",
+          "title": "Brown bears and salmon hotspots",
+          "copy": "There is no fixed schedule over these two days. Head out twice daily, exploring on guided walks and travelling by boat across Lake Kuril to the salmon hotspots."
+        },
+        {
+          "label": "Day 05 · 13 August",
+          "title": "Final lake outing and return flight",
+          "copy": "Spend the morning at the lake before breakfast and checkout from the lodge. Take the MI-8 helicopter back to Petropavlovsk-Kamchatsky and stay overnight in the city."
+        },
+        {
+          "label": "Day 06 · 14 August",
+          "title": "Departure",
+          "copy": "Transfer to the airport for your flight home."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do we reach Lake Kuril?",
+          "answer": "Return MI-8 helicopter flights between Petropavlovsk-Kamchatsky and Lake Kuril are included. The lake stay is based at Grassy Point."
+        },
+        {
+          "question": "What are the tour price and additional taxes?",
+          "answer": "The tour costs €6,600 + 5% GST. The exclusions also list 2% TCS. Request a written quote confirming the total payable before booking."
+        }
+      ],
+      "seo": {
+        "title": "Kamchatka Photo Tour | 9–14 August 2027",
+        "description": "Photograph fishing brown bears at Lake Kuril with Safari Crafters. Five nights, return helicopter flights, guided walks and boat outings. €6,600 + 5% GST."
+      }
     }
   ],
   "journal": [

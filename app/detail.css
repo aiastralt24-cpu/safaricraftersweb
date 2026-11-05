@@ -878,7 +878,7 @@
 .expedition-detail .timeline > h2 { margin-bottom:22px; font-size:clamp(28px,3vw,38px); }
 .expedition-detail .timeline-item { padding:20px 0; }
 .expedition-detail .timeline-item summary { grid-template-columns:110px minmax(0,1fr) 36px; gap:20px; }
-.expedition-detail .timeline-day-label { white-space:nowrap; }
+.expedition-detail .timeline-day-label { white-space:normal; min-width:0; overflow-wrap:anywhere; line-height:1.5; }
 .expedition-detail .timeline-copy { margin-left:130px; }
 .expedition-detail .split-lists { margin-top:36px; }
 .expedition-detail .expedition-field-notes { margin-top:48px; }
@@ -888,7 +888,10 @@
 @media(max-width:760px) {
  .expedition-detail .detail-grid { grid-template-columns:1fr; gap:28px; }
  .expedition-detail .at-glance { padding:20px; }
- .expedition-detail .timeline-item summary { grid-template-columns:85px minmax(0,1fr) 28px; gap:12px; }
+ .expedition-detail .timeline-item summary { grid-template-columns:minmax(0,1fr) 28px; gap:10px 16px; }
+ .expedition-detail .timeline-day-label { grid-column:1; grid-row:1; margin-bottom:0; }
+ .expedition-detail .timeline-item summary .h3 { grid-column:1; grid-row:2; min-width:0; }
+ .expedition-detail .timeline-toggle { grid-column:2; grid-row:1 / span 2; }
  .expedition-detail .timeline-day-label { font-size:9px; letter-spacing:.08em; }
  .expedition-detail .timeline-copy { margin-left:0; }
  .expedition-detail .timeline,.expedition-detail .expedition-field-notes,.expedition-detail .expedition-enquiry { margin-top:36px; }

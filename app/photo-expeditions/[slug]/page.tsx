@@ -62,10 +62,11 @@ export default async function ExpeditionDetailPage({ params }: Props) {
     "the-pantanal-wetlands": {title:"The Pantanal", copy:"Jaguar encounters, river safaris and remarkable birdlife in Brazil’s vast wetlands."}
   };
   const heroSummary = heroSummaries[slug] || {title:expedition.title.replace(/ Photography Expedition$/, ""), copy:expedition.description};
-  const heroImage = slug === "kaziranga-wildlife-photography-expedition" ? expedition.image : expedition.gallery.find((image, index) => index > 0 && image.src !== expedition.image.src)
+  const heroImage = (slug === "kaziranga-wildlife-photography-expedition" || slug === "kamchatka-wildlife-photography-expedition") ? expedition.image : expedition.gallery.find((image, index) => index > 0 && image.src !== expedition.image.src)
     || expedition.gallery.find((image) => image.src !== expedition.image.src)
     || expedition.image;
   const tourDestinations: Record<string, string> = {
+    "kamchatka-wildlife-photography-expedition": "kamchatka",
     "kanha-wildlife-photography-expedition": "kanha",
     "laikipia-black-leopard-expedition": "laikipia",
     "svalbard-expedition": "svalbard",
@@ -204,12 +205,12 @@ export default async function ExpeditionDetailPage({ params }: Props) {
               </div>
               <p>Wildlife encounters sit within a larger story of weather, terrain, patience and place.</p>
             </header>
-            <MediaGallery images={visualGallery} maxImages={30} label={`${expedition.title} complete photographic journal`} />
+            <MediaGallery images={visualGallery} maxImages={30} initialCount={6} label={`${expedition.title} complete photographic journal`} />
           </section>
         ) : null}
         <section className={`container ${informationStyles.section}`} aria-labelledby="tour-faq-heading"><header className={informationStyles.intro}><p className="eyebrow">Photography tour questions</p><h2 id="tour-faq-heading">Before you <em className="editorial-accent">set out.</em></h2><p>Dates, equipment and what to expect on your photography tour.</p></header><div className={informationStyles.questions}>{faqs.map(faq => <details key={faq.question} name="photography-faq"><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
         <EditorialFilm video={expedition.video} />
-        <BookingConditions cancellationPolicy={expedition.cancellationPolicy} />
+        <BookingConditions cancellationPolicy={expedition.cancellationPolicy} paymentTerms={expedition.paymentTerms} />
         <ExpeditionEnquiry
           title={expedition.title}
           slug={expedition.slug}
