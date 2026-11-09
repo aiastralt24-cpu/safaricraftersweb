@@ -13946,11 +13946,11 @@
       "skill": "Photography-led private or small-group safari",
       "groupSize": "Maximum 6 guests",
       "duration": "10 nights / 11 days",
-      "bestMonths": "September",
+      "bestMonths": "August–September",
       "species": "Jaguars, giant anteaters, ocelots, tapirs and birdlife",
       "equipment": "A tailored packing and camera note is shared before departure",
-      "description": "An 11-day wildlife photography journey through Brazil’s Pantanal, from giant anteaters at Aguapé and macaws near Bonito to four full days of jaguar boat safaris. Maximum 6 guests.",
-      "intro": "A jaguar appears at the river’s edge. Your boat slows, the cameras rise, and the next few moments belong to the wild. In Brazil’s Pantanal, open riverbanks and winding waterways offer a remarkable setting for wildlife photography, with time to watch an encounter unfold.\n\nThis 11-day journey follows the landscape from the grasslands around Aguapé to the rivers of Porto Jofre. Search for giant anteaters and armadillos on land safaris, photograph macaws near Bonito, then spend four full days exploring jaguar country by boat. Giant otters, caimans, capybaras and abundant birdlife bring the waterways into focus, before a final stay at SouthWild Pantanal Lodge adds an evening at the ocelot hide.\n\nWith a maximum of six guests and Gaurav Ramnarayanan leading the expedition, the journey is built around patient observation and photography. Early starts, changing light and repeated time on the river give you room to work with the wildlife and conditions each day brings.\n\nArrive in Campo Grande on 11 September. Depart from Cuiabá on 21 September. The journey starts and ends in different cities. International flights and the domestic flight from Campo Grande to Cuiabá are not included in the tour price.",
+      "description": "An 11-day wildlife photography journey through Brazil’s Pantanal, from anteater outings and sinkhole visits near Bonito to an ocelot hide session and four full days of jaguar safaris. Maximum 6 guests.",
+      "intro": "A jaguar appears at the river’s edge. Your boat slows, the cameras rise, and the next few moments belong to the wild. In Brazil’s Pantanal, open riverbanks and winding waterways offer a remarkable setting for wildlife photography, with time to watch an encounter unfold.\n\nFrom 28 August to 7 September 2027, follow a route from Bonito’s sinkholes and anteater country to the rivers of the northern Pantanal. Begin with wildlife outings around Bonito, then fly from Campo Grande to Cuiabá. Travel along the Transpantaneira for an afternoon boat trip in search of birds, tapirs and other wildlife, followed by an evening at an ocelot hide.\n\nOn 2 September, transfer to the river to begin your jaguar safaris. Four full days on the waterways follow, with time to watch animal behaviour and work with the changing light. A final morning safari on 7 September brings the journey to a close before your transfer to Cuiabá Airport.\n\nWith a maximum of six guests and Gaurav Ramnarayanan leading the expedition, the journey is built around patient observation and photography.\n\nArrive in Campo Grande on 28 August 2027 and depart from Cuiabá on 7 September 2027. International and domestic flights are not included, including the Campo Grande–Cuiabá flight on 31 August.",
       "image": {
         "src": "/assets/destinations/pantanal/field-photographs/e755e99797fb.webp",
         "alt": "Jaguar at the water’s edge in Brazil’s Pantanal",
@@ -14100,31 +14100,27 @@
       ],
       "mentor": "Gaurav Ramnarayanan",
       "guide": "Gaurav Ramnarayanan",
-      "date": "11–21 September 2027",
+      "date": "28 August – 7 September 2027",
       "price": "$6500",
-      "route": "Campo Grande → Aguapé → Bonito → Campo Grande → Cuiabá → Porto Jofre → SouthWild Pantanal Lodge → Cuiabá",
+      "route": "Campo Grande → Bonito → Campo Grande → Cuiabá → Transpantaneira → Porto Jofre → Cuiabá",
       "highlights": [
-        "Four full days of jaguar boat safaris",
-        "Wetland wildlife and exceptional birding",
-        "River and land-based photography",
-        "Macaw photography near Bonito",
-        "Giant anteater and armadillo searches around Aguapé",
-        "An evening at the SouthWild ocelot hide"
+        "Anteater outings and two sinkhole visits around Bonito",
+        "Afternoon boat trip for birds, tapirs and other wildlife",
+        "An evening ocelot hide session along the Transpantaneira",
+        "Four full days of jaguar safaris from 3–6 September",
+        "A final morning safari before departure from Cuiabá",
+        "Maximum 6 guests with Gaurav Ramnarayanan"
       ],
       "inclusions": [
-        "2 nights at Pousada Aguapé Lodge with all meals.",
-        "1 night in Bonito with breakfast only.",
-        "1 night in Cuiabá / Campo Grande (depending on domestic flight timing) with breakfast only.",
         "5 nights at Santa Rosa Hotel with all meals.",
         "1 night at SouthWild Pantanal Lodge with access to their ocelot hides and all meals.",
         "Local transfers by private van.",
         "Boat safaris as per the itinerary.",
-        "4 land safaris in Aguapé.",
         "2 sessions with macaws.",
         "English-speaking guide."
       ],
       "exclusions": [
-        "International flights and all domestic flights, including Campo Grande to Cuiabá.",
+        "International and domestic flights, including the Campo Grande–Cuiabá flight on 31 August.",
         "Brazil visa, if required.",
         "Yellow fever vaccine.",
         "Alcohol and beverages.",
@@ -14135,70 +14131,65 @@
       ],
       "days": [
         {
-          "title": "Arrival in Campo Grande",
-          "copy": "Arrive in Campo Grande and transfer to Aguapé Lodge, set within a private ranch renowned for its rich wildlife. As dusk settles, set out on your first safari in search of Giant Anteaters, Armadillos, Capybaras, and other nocturnal species that thrive across the open savannas.",
-          "label": "Day 01",
-          "stay": "Pousada Aguapé Lodge"
+          "label": "Day 01 · 28 August",
+          "title": "Arrival in Campo Grande and transfer to Bonito",
+          "copy": "Arrive in Campo Grande and drive to Bonito. Time permitting, head out in search of giant anteaters and other wildlife."
         },
         {
-          "title": "Exploring Aguapé Lodge",
-          "copy": "Morning and evening land safaris unfold across the lodge’s expansive wetlands. In the soft glow of early and late light, the Pantanal reveals itself, Giant Anteaters on the move, Marsh Deer emerging from cover, and a vibrant chorus of birdlife animating the landscape.",
-          "label": "Day 02",
-          "stay": "Pousada Aguapé Lodge"
+          "label": "Day 02 · 29 August",
+          "title": "Sinkhole and anteater outings",
+          "copy": "Visit the sinkhole in the morning, then spend the afternoon looking for giant anteaters."
         },
         {
-          "title": "Aguapé to Bonito",
-          "copy": "After a final morning safari, drive to Bonito, celebrated for its limestone sinkholes and clear waters. In the evening, visit the Macaw Sinkhole for a session photographing macaws around the sinkhole.",
-          "label": "Day 03",
-          "stay": "Bonito"
+          "label": "Day 03 · 30 August",
+          "title": "Anteaters and an evening at the sinkhole",
+          "copy": "Spend the morning looking for giant anteaters and return to the sinkhole in the evening."
         },
         {
-          "title": "Macaws & Return to Campo Grande",
-          "copy": "Spend the morning photographing macaws before returning to Campo Grande for an overnight stay. The afternoon is at leisure, with time to rest and prepare for the northern chapter of the journey.",
-          "label": "Day 04",
-          "stay": "Campo Grande or Cuiabá, depending on domestic flight timing"
+          "label": "Day 04 · 31 August",
+          "title": "Fly from Campo Grande to Cuiabá",
+          "copy": "Transfer to Campo Grande and fly to Cuiabá. This domestic flight is not included in the tour price."
         },
         {
-          "title": "Fly to Cuiabá & Transfer to Porto Jofre",
-          "copy": "Fly from Campo Grande to Cuiabá, then travel along the Transpantaneira Road to Porto Jofre. The domestic flight is not included in the tour price. In the afternoon, embark on your first boat safari, scanning the riverbanks for jaguars.",
-          "label": "Day 05",
-          "stay": "Santa Rosa Hotel, Porto Jofre"
+          "label": "Day 05 · 1 September",
+          "title": "Transpantaneira and the ocelot hide",
+          "copy": "Travel along the Transpantaneira to the lodge. Take an afternoon boat trip in search of birds, tapirs and other wildlife, followed by an evening ocelot hide session."
         },
         {
-          "title": "Jaguar Territory: Porto Jofre",
-          "copy": "Four full days devoted to exploring the river channels by boat. Early mornings and late afternoons offer prime conditions to observe Jaguars, Giant Otters, Caimans, and an exceptional diversity of birdlife. With expert guides who know the most productive stretches of river, each outing presents outstanding photographic opportunities.",
-          "label": "Days 06–09",
-          "stay": "Santa Rosa Hotel, Porto Jofre"
+          "label": "Day 06 · 2 September",
+          "title": "Into jaguar country",
+          "copy": "Transfer to the river and begin the jaguar safari part of the journey."
         },
         {
-          "title": "To SouthWild Pantanal Lodge",
-          "copy": "Enjoy a final morning on the river before transferring to SouthWild Pantanal Lodge. After nightfall, visit the Ocelot Hide for an intimate and memorable encounter with the elusive Ocelot, ideal for low-light photography.",
-          "label": "Day 10",
-          "stay": "SouthWild Pantanal Lodge"
+          "label": "Days 07–10 · 3–6 September",
+          "title": "Four full days of jaguar safaris",
+          "copy": "Spend four full days exploring the river channels on jaguar safaris, with time to observe and photograph wildlife along the waterways."
         },
         {
-          "title": "Morning Boat Safari & Departure",
-          "copy": "Begin the day with a relaxed morning boat ride, focusing on birdlife and the gentle rhythms of the wetland. After breakfast and checkout, transfer to Cuiabá Airport for your onward journey.",
-          "label": "Day 11"
+          "label": "Day 11 · 7 September",
+          "title": "Morning safari and departure",
+          "copy": "Enjoy a final morning safari before your transfer to Cuiabá Airport for departure."
         }
       ],
       "body": [
         "A jaguar appears at the river’s edge. Your boat slows, the cameras rise, and the next few moments belong to the wild. In Brazil’s Pantanal, open riverbanks and winding waterways offer a remarkable setting for wildlife photography, with time to watch an encounter unfold.",
-        "This 11-day journey follows the landscape from the grasslands around Aguapé to the rivers of Porto Jofre. Search for giant anteaters and armadillos on land safaris, photograph macaws near Bonito, then spend four full days exploring jaguar country by boat. Giant otters, caimans, capybaras and abundant birdlife bring the waterways into focus, before a final stay at SouthWild Pantanal Lodge adds an evening at the ocelot hide.",
-        "With a maximum of six guests and Gaurav Ramnarayanan leading the expedition, the journey is built around patient observation and photography. Early starts, changing light and repeated time on the river give you room to work with the wildlife and conditions each day brings.",
-        "Arrive in Campo Grande and transfer to Aguapé Lodge, set within a private ranch renowned for its rich wildlife. As dusk settles, set out on your first safari in search of Giant Anteaters, Armadillos, Capybaras, and other nocturnal species that thrive across the open savannas.",
-        "Morning and evening land safaris unfold across the lodge’s expansive wetlands. In the soft glow of early and late light, the Pantanal reveals itself, Giant Anteaters on the move, Marsh Deer emerging from cover, and a vibrant chorus of birdlife animating the landscape.",
-        "After a final morning safari, drive to Bonito, celebrated for its limestone sinkholes and clear waters. In the evening, visit the Macaw Sinkhole for a session photographing macaws around the sinkhole.",
-        "Spend the morning photographing macaws before returning to Campo Grande for an overnight stay. The afternoon is at leisure, with time to rest and prepare for the northern chapter of the journey.",
-        "Fly from Campo Grande to Cuiabá, then travel along the Transpantaneira Road to Porto Jofre. The domestic flight is not included in the tour price. In the afternoon, embark on your first boat safari, scanning the riverbanks for jaguars.",
-        "Four full days devoted to exploring the river channels by boat. Early mornings and late afternoons offer prime conditions to observe Jaguars, Giant Otters, Caimans, and an exceptional diversity of birdlife. With expert guides who know the most productive stretches of river, each outing presents outstanding photographic opportunities.",
-        "Enjoy a final morning on the river before transferring to SouthWild Pantanal Lodge. After nightfall, visit the Ocelot Hide for an intimate and memorable encounter with the elusive Ocelot, ideal for low-light photography.",
-        "Begin the day with a relaxed morning boat ride, focusing on birdlife and the gentle rhythms of the wetland. After breakfast and checkout, transfer to Cuiabá Airport for your onward journey."
+        "From 28 August to 7 September 2027, follow a route from Bonito’s sinkholes and anteater country to the rivers of the northern Pantanal. Begin with wildlife outings around Bonito, then fly from Campo Grande to Cuiabá. Travel along the Transpantaneira for an afternoon boat trip in search of birds, tapirs and other wildlife, followed by an evening at an ocelot hide.",
+        "On 2 September, transfer to the river to begin your jaguar safaris. Four full days on the waterways follow, with time to watch animal behaviour and work with the changing light. A final morning safari on 7 September brings the journey to a close before your transfer to Cuiabá Airport.",
+        "With a maximum of six guests and Gaurav Ramnarayanan leading the expedition, the journey is built around patient observation and photography.",
+        "Arrive in Campo Grande on 28 August 2027 and depart from Cuiabá on 7 September 2027. International and domestic flights are not included, including the Campo Grande–Cuiabá flight on 31 August.",
+        "Arrive in Campo Grande and drive to Bonito. Time permitting, head out in search of giant anteaters and other wildlife.",
+        "Visit the sinkhole in the morning, then spend the afternoon looking for giant anteaters.",
+        "Spend the morning looking for giant anteaters and return to the sinkhole in the evening.",
+        "Transfer to Campo Grande and fly to Cuiabá. This domestic flight is not included in the tour price.",
+        "Travel along the Transpantaneira to the lodge. Take an afternoon boat trip in search of birds, tapirs and other wildlife, followed by an evening ocelot hide session.",
+        "Transfer to the river and begin the jaguar safari part of the journey.",
+        "Spend four full days exploring the river channels on jaguar safaris, with time to observe and photograph wildlife along the waterways.",
+        "Enjoy a final morning safari before your transfer to Cuiabá Airport for departure."
       ],
       "departures": [
         {
-          "date": "2027-09-11",
-          "endDate": "2027-09-21",
+          "date": "2027-08-28",
+          "endDate": "2027-09-07",
           "status": "Available",
           "availability": "Bookings open"
         }
@@ -14207,11 +14198,11 @@
       "faqs": [
         {
           "question": "Where should I arrive for the tour?",
-          "answer": "Arrive in Campo Grande on 11 September 2027. This is the starting point for the transfer to Aguapé Lodge. Confirm the required arrival time with Safari Crafters before booking your flight."
+          "answer": "Arrive in Campo Grande on 28 August 2027 for the drive to Bonito. Wildlife outings on arrival day depend on the time available. Confirm the required arrival time with Safari Crafters before booking your flight."
         },
         {
           "question": "Where does the tour finish?",
-          "answer": "The tour ends in Cuiabá on 21 September 2027. After the final morning activity, breakfast and checkout, the itinerary includes a transfer to Cuiabá Airport. Confirm a suitable onward flight time before booking."
+          "answer": "The tour ends in Cuiabá on 7 September 2027. Enjoy a final morning safari before the transfer to Cuiabá Airport. Confirm a suitable onward flight time before booking."
         },
         {
           "question": "Should I book return flights from the same city?",
@@ -14219,7 +14210,7 @@
         },
         {
           "question": "Are domestic flights included?",
-          "answer": "No. International and domestic flights are excluded. You will need a separate domestic ticket from Campo Grande to Cuiabá during the tour. The itinerary schedules this flight on Day 5; confirm the final flight and timing with Safari Crafters before purchasing."
+          "answer": "No. International and domestic flights are excluded. You will need a separate domestic ticket from Campo Grande to Cuiabá on 31 August, Day 4. Confirm the flight and timing with Safari Crafters before purchasing."
         },
         {
           "question": "What is the maximum group size?",
@@ -14227,15 +14218,15 @@
         },
         {
           "question": "How much time do we spend looking for jaguars?",
-          "answer": "Four full days, Days 6–9, are dedicated to boat safaris around Porto Jofre. The itinerary also includes an afternoon boat safari on Day 5 and a final morning river safari on Day 10. Wildlife sightings depend on conditions and animal movement."
+          "answer": "Jaguar safaris begin on 2 September after the transfer to the river. Four full days, 3–6 September, are dedicated to jaguar safaris, followed by a final morning safari on 7 September. Sightings depend on conditions and animal movement."
         },
         {
           "question": "What other wildlife can we photograph?",
-          "answer": "The route offers opportunities to look for giant anteaters, armadillos, capybaras, marsh deer, macaws and other birds, as well as giant otters and caimans along the rivers. The SouthWild stay includes access to the ocelot hide. Sightings are not guaranteed."
+          "answer": "Look for giant anteaters and other wildlife around Bonito, with two sinkhole visits for bird photography. The afternoon boat trip on 1 September focuses on birds, tapirs and other wildlife, followed by an evening ocelot hide session. Sightings are not guaranteed."
         },
         {
           "question": "Are meals and local transfers included?",
-          "answer": "All meals are included at Aguapé, Santa Rosa Hotel and SouthWild Pantanal Lodge. The Bonito and Campo Grande or Cuiabá transit stays include breakfast only. Local transfers by private van are included; flights, beverages and other excluded items are additional."
+          "answer": "Local transfers by private van are included. The listed stays at Santa Rosa Hotel and SouthWild Pantanal Lodge include all meals. Confirm the accommodation and meal arrangements for Bonito and Cuiabá with Safari Crafters before booking. Flights, beverages and other excluded items are additional."
         },
         {
           "question": "Who leads the expedition and what equipment should I bring?",
