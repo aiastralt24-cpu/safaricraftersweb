@@ -115,6 +115,8 @@ const homepageSpeciesStories = ["jawai", "bandhavgarh", "singalila"]
   .filter((destination): destination is (typeof destinations)[number] => Boolean(destination));
 
 const expeditionRegions: Record<string, string> = {
+  "corbett-wildlife-photography-expedition": "India",
+  "tadoba-wildlife-photography-expedition": "India",
   "kanha-wildlife-photography-expedition": "India",
   "laikipia-black-leopard-expedition": "Africa",
   "svalbard-expedition": "Polar",
@@ -122,6 +124,8 @@ const expeditionRegions: Record<string, string> = {
 };
 
 const expeditionLocations: Record<string, string> = {
+  "corbett-wildlife-photography-expedition": "Corbett, Uttarakhand",
+  "tadoba-wildlife-photography-expedition": "Tadoba, Maharashtra",
   "kanha-wildlife-photography-expedition": "Kanha, India",
   "bharatpur-photography-expedition": "Keoladeo, Rajasthan",
   "panna-photography-expedition": "Panna, Madhya Pradesh",
