@@ -46,7 +46,7 @@
       }
     ],
     "wildlifeFocus": "Asiatic lion · Leopard · Blackbuck · Indian wolf · Asiatic wild ass · Desert wildlife",
-    "coverageNotes": "No verified Desert National Park image selected. Photographs show the named Gir, Velavadar, Rann of Kutch and Jawai stops only.",
+    "coverageNotes": "Current page layouts include licensed Desert National Park landscape imagery as well as Gir, Velavadar, Rann of Kutch and Jawai archive photographs. See journey-photo-sources.json for provenance.",
     "tagline": "From lion country to the Thar."
   },
   "phantoms-of-the-wild-indias-elusive-small-cats-safari": {
@@ -79,7 +79,7 @@
       }
     ],
     "wildlifeFocus": "Fishing cat · Jungle cat · Rusty-spotted cat · Desert cat",
-    "coverageNotes": "Only verified Velavadar wildlife and habitat photos are used. Kolkata fishing-cat, Jawai rusty-spotted-cat and Desert National Park photo locations remain unverified. No unrelated cat photographs substituted.",
+    "coverageNotes": "Current layouts include Kolkata wetlands, Jawai and Desert National Park habitat images, plus Velavadar jungle-cat photographs. Dedicated fishing-cat, rusty-spotted-cat and desert-cat photographs still need location-confirmed sources.",
     "tagline": "Four habitats. Four elusive cats."
   },
   "where-rivers-forests-tigers-thriveterrific-terai": {
@@ -123,7 +123,7 @@
       }
     ],
     "wildlifeFocus": "Tiger · Leopard · Elephant · Swamp deer · Wetland birds",
-    "coverageNotes": "Pilibhit photo omitted: the old destination record pointed to Ranthambhore. Other images retain Corbett, Rajaji and Dudhwa location labels.",
+    "coverageNotes": "Current layouts include a licensed Pilibhit forest image alongside Corbett, Rajaji and Dudhwa photographs. The previous unrelated Ranthambhore fallback is not used.",
     "tagline": "Follow the forests of the Terai."
   },
   "roar-trumpet-wingbeat-uttarakhands-wilderness-circuit": {
@@ -223,10 +223,10 @@
       }
     ],
     "wildlifeFocus": "Snow leopard · Pallas’ cat · Blue sheep · Ibex · High-altitude birds",
-    "coverageNotes": "All photographs come from the supplied Ladakh collection; regional labels retained without asserting a precise lake or valley. No verified Hanle Pallas’ cat photograph available.",
+    "coverageNotes": "Current layouts combine regional Ladakh archive photographs with licensed Pangong Tso imagery. A location-confirmed Hanle Pallas’ cat photograph remains to be sourced.",
     "tagline": "Into the snow leopard’s mountain world."
   },
-  "royal-rajasthan-safari": {
+  "palaces-and-tigers": {
     "hero": {
       "src": "/assets/destinations/ranthambhore/field-photographs/2b4793d79ff4.webp",
       "alt": "Tiger resting beside an old stone doorway in Ranthambhore",

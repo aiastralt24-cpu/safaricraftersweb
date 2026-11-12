@@ -1,0 +1,819 @@
+{
+  "big-cats-of-india": {
+    "difficulty": "Moderate to challenging in Ladakh, with high altitude, cold conditions and uneven terrain; gentler vehicle-based safaris elsewhere.",
+    "days": [
+      {
+        "label": "Day 1",
+        "title": "Arrival in Delhi",
+        "copy": "Arrive in India’s vibrant capital, where centuries-old heritage meets the energy of a modern metropolis. Settle into your hotel, meet your expedition team, and prepare for an extraordinary journey across some of India’s most remarkable wildlife landscapes."
+      },
+      {
+        "label": "Day 2",
+        "title": "Fly to Ladakh",
+        "copy": "Take a domestic flight from Delhi to Leh, gateway to the high-altitude wilderness of Ladakh. On arrival, transfer to your hotel and begin acclimatising to the altitude. The remainder of the day is at leisure, allowing you to rest and adjust to your new surroundings."
+      },
+      {
+        "label": "Day 3",
+        "title": "Acclimatisation in Ladakh",
+        "copy": "Reserve this day for rest and acclimatisation in Leh. At least 48 hours must elapse after arrival before travelling to higher-altitude areas; the departure time on Day 4 will be set accordingly. Any gentle local activity depends on how you are feeling and advice from the local team."
+      },
+      {
+        "label": "Day 4",
+        "title": "Into Snow Leopard Country",
+        "copy": "After completing at least 48 hours of acclimatisation in Leh, travel towards your mountain camp. Departure time and the route depend on conditions and the team’s assessment. On arrival, settle in and meet the trackers before the following days of wildlife observation."
+      },
+      {
+        "label": "Days 5-9",
+        "title": "Tracking Snow Leopards",
+        "copy": "Spend five full days exploring the rugged valleys and high ridgelines of Ladakh in search of the elusive snow leopard. Our expert spotters will patiently scan the landscape for movement, tracks and other signs of these remarkable cats. When a snow leopard is located, you will be escorted to a suitable vantage point for observation and photography. Hot breakfast and lunch will be served in the field, allowing you to make the most of every daylight hour. Return to camp as the mountains fall into the evening light."
+      },
+      {
+        "label": "Day 10",
+        "title": "Return to Delhi & Drive to Ranthambhore",
+        "copy": "Return from camp to Leh for the confirmed flight connection to Delhi, then continue towards Ranthambhore. This is a substantial travel day. The final proposal will allow realistic transfer and flight buffers; an overnight stop or a revised safari schedule may be needed if connections do not align."
+      },
+      {
+        "label": "Days 11-14",
+        "title": "Tigers of Ranthambhore",
+        "copy": "Over four days, explore different zones of Ranthambhore National Park in search of tigers and the diverse wildlife that shares their domain. Few tiger habitats are as evocative as Ranthambhore. Ancient ruins and monumental structures dating back centuries rise from the landscape, remnants of the historic fort complex woven into forests, lakes and open grasslands. The setting offers a remarkable sense of wilderness shaped by both nature and history. Each day includes two safaris, offering ample time to explore the park and follow the lives of its wildlife."
+      },
+      {
+        "label": "Day 15",
+        "title": "Journey to Jawai",
+        "copy": "Continue overland to Jawai, a striking landscape of volcanic granite, open pastures and scattered scrub, where leopards have adapted to life alongside the region’s pastoral communities. As you travel west, the landscape changes dramatically – from the forests of Ranthambhore to expansive agricultural country punctuated by enormous granite outcrops. This is a very different India, and one of the most unusual habitats in which to encounter a leopard."
+      },
+      {
+        "label": "Days 16-17",
+        "title": "Leopards of Jawai",
+        "copy": "Spend two full days exploring Jawai in search of its celebrated leopards. The region’s open terrain and dramatic granite formations offer exceptional opportunities for both observation and photography. Set out on morning and afternoon safaris, watching for leopards emerging from their rocky dens and moving across the boulder-strewn landscape. Between safaris, return to the lodge for meals and time to relax. As evening descends, the granite hills glow in shades of pink and amber, creating an atmospheric backdrop to one of India’s most distinctive wildlife experiences."
+      },
+      {
+        "label": "Day 18",
+        "title": "Journey to Gir",
+        "copy": "Travel from Jawai towards Gir using the road and flight connections confirmed for your dates. Airport choice and any connecting flight will be agreed before booking; a direct Jodhpur–Diu service is not assumed. Settle into your lodge on arrival, ready for the following days of safaris."
+      },
+      {
+        "label": "Days 19-20",
+        "title": "Gir, Last Home of the Asiatic Lion",
+        "copy": "Explore Gir, the last refuge of the Asiatic lion and the only place on Earth where this extraordinary big cat can be seen in the wild. Across teak forests, dry deciduous woodland and open scrub, search for lions moving through their ancestral range, along with the rich diversity of wildlife that inhabits this remarkable ecosystem. As with Ranthambhore and Jawai, each day includes two safaris, allowing you to experience Gir at its most active – through the coolness of the early morning and the softer light of late afternoon."
+      },
+      {
+        "label": "Day 21",
+        "title": "Departure",
+        "copy": "Your journey concludes with a flight back to Delhi. From the high valleys of Ladakh to the forests of Ranthambhore, the granite hills of Jawai and the dry woodlands of Gir, you leave with memories of four extraordinary landscapes – and encounters with four of India’s most iconic big-cat realms."
+      }
+    ],
+    "seo": {
+      "title": "Big Cats of India | Private Journeys",
+      "description": "From the high Himalaya to the last home of the Asiatic lion, a private journey through the landscapes that have always belonged to India’s big cats.",
+      "reviewedAt": "November 2026"
+    },
+    "planningNote": "This is a private journey framework. Your proposal confirms nightly stays, transfers, safari permits, park opening days and any changes needed for your travel dates. Book flights only after the connections have been confirmed.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "countries": [
+      "India"
+    ],
+    "highlights": [
+      "Explore four wildlife regions over 21 days: Ladakh, Ranthambhore, Jawai and Gir.",
+      "Search for snow leopards, Bengal tigers, Indian leopards and Asiatic lions with local field teams.",
+      "Allow time for acclimatisation in Leh before mountain wildlife observation.",
+      "Cultural extensions and private aviation can be discussed separately, subject to time and availability."
+    ]
+  },
+  "heart-of-the-wildcentral-indias-six-park-safari": {
+    "region": "Delhi, Maharashtra, Madhya Pradesh",
+    "statesOrRegions": [
+      "Delhi",
+      "Maharashtra",
+      "Madhya Pradesh"
+    ],
+    "days": [
+      {
+        "label": "Day 1",
+        "title": "Arrive in Delhi",
+        "copy": "Arrive in India’s dynamic capital, an ancient city, and settle into your hotel near the airport. Take the evening to relax and recover from your journey, with a restful night before setting out for the forests of Central India."
+      },
+      {
+        "label": "Day 2",
+        "title": "Delhi to Tadoba",
+        "copy": "Take an early morning flight from Delhi to Nagpur. On arrival, collect your luggage and begin the comfortable three-hour private drive to Tadoba. Check into your lodge and enjoy a leisurely lunch before heading into the forest for your first safari. Return to the lodge for dinner and a relaxed evening."
+      },
+      {
+        "label": "Days 3-5",
+        "title": "Safaris in Tadoba",
+        "copy": "Over the next three days, explore Tadoba’s rich forest, meadow and lakes on morning and afternoon safaris. The reserve is home to thriving populations of tigers, leopards, sloth bears and wild dogs, with each outing offering a different perspective on this extraordinary wilderness. Breakfast is carried into the park, allowing you to remain immersed in the forest through the morning before returning to the lodge for lunch and a little time to rest. In the afternoon, head out once again, remaining in the field through the golden hours before returning for dinner."
+      },
+      {
+        "label": "Day 6",
+        "title": "Tadoba to Pench",
+        "copy": "Depart early and travel overland to Pench, the forest that has inspired many a popular wild tale. Arrive at your lodge, settle into the surroundings and, after lunch, head out on your first safari through this very different landscape."
+      },
+      {
+        "label": "Days 7-8",
+        "title": "Safaris in Pench",
+        "copy": "Spend two full days exploring different areas of Pench and discovering its distinctive forest character. Each day includes two carefully paced safaris, with breakfast enjoyed in the park before returning to the lodge for lunch and a period of relaxation. Later in the afternoon, return to the forest and remain out through sunset, when the changing light and cooling temperatures bring a different rhythm to the wilderness."
+      },
+      {
+        "label": "Day 9",
+        "title": "Transfer to Kanha",
+        "copy": "Following an early breakfast, travel overland to Kanha, one of Central India’s most beautiful wilderness landscapes. Vast sal forests and open grasslands are home to barasingha, gaur, leopards and tigers, with the landscape itself becoming an integral part of the experience. Check into your lodge and head out for your first safari."
+      },
+      {
+        "label": "Days 10-11",
+        "title": "Safaris in Kanha",
+        "copy": "Spend two days exploring Kanha’s varied habitats, including its stunning open grasslands throbbing with wildlife. Each day brings two safaris, beginning with an early morning outing and breakfast in the park, followed by a return to the lodge for lunch and time to unwind.\n\nThe afternoon safari begins later in the day and continues through sunset, offering the opportunity to experience Kanha as the forest changes character with the fading light."
+      },
+      {
+        "label": "Day 12",
+        "title": "Transfer to Bandhavgarh",
+        "copy": "After breakfast, travel onwards to Bandhavgarh, much sought-after for its tigers and ancient fort-topped hills. Arrive at your lodge, settle in and, after lunch, venture into the park for your first safari amid this dramatic landscape."
+      },
+      {
+        "label": "Days 13-14",
+        "title": "Safaris in Bandhavgarh",
+        "copy": "Spend two days exploring Bandhavgarh, renowned for its exceptional tiger habitat and the striking terrain surrounding its fabled ancient fort. Safaris take you through forest and open country, where every outing brings the possibility of a memorable encounter against a landscape rich in history and atmosphere."
+      },
+      {
+        "label": "Day 15",
+        "title": "Bandhavgarh to Panna",
+        "copy": "Begin with a final morning safari in Bandhavgarh before returning to the lodge for breakfast. Check out and continue overland to Panna, arriving in the late afternoon. Settle into your lodge and enjoy a quiet evening at leisure."
+      },
+      {
+        "label": "Days 16-18",
+        "title": "Safaris in Panna Tiger Reserve",
+        "copy": "Enter Panna’s dramatic wilderness, where sandstone gorges, waterfalls and the pristine Ken River shape an extraordinary Tiger landscape. Explore the reserve by jeep and boat, with opportunities to encounter tigers, leopards, crocodiles, raptors and a rich diversity of other wildlife. The character of Panna is markedly different from the forests encountered earlier in the journey: more expansive, sculpted and riverine, with the gorgeous Ken adding another dimension to the safari experience."
+      },
+      {
+        "label": "Day 19",
+        "title": "Transfer to Satpura",
+        "copy": "Leave Panna for the long overland journey to Satpura. Reserve the day for travel and settling into your lodge; no arrival-day safari is assumed. The final route will include suitable breaks and may be adjusted around road conditions."
+      },
+      {
+        "label": "Days 20-21",
+        "title": "Safaris in Satpura",
+        "copy": "Spend your final two days exploring different parts of Satpura, with two safaris each day and ample time to experience the reserve at an unhurried pace. Enjoy breakfast in the park before returning to the lodge for lunch and a period of rest. Later, venture out again in the afternoon and remain in the forest through sunset, when Satpura’s hills, valleys and woodland take on an especially atmospheric character."
+      },
+      {
+        "label": "Day 22",
+        "title": "Departure",
+        "copy": "After breakfast, depart Satpura for Bhopal Airport for your return flight to Delhi, bringing your journey through six of Central India’s great Tiger landscapes to a close."
+      }
+    ],
+    "seo": {
+      "title": "Central India’s Six-Park Safari | Private Journeys",
+      "description": "Follow the striped big cat through the wild heart of India—in six forests, discover a hundred ways to experience the tiger.",
+      "reviewedAt": "November 2026"
+    },
+    "planningNote": "This is a private journey framework. Your proposal confirms nightly stays, transfers, safari permits, park opening days and any changes needed for your travel dates. Book flights only after the connections have been confirmed. Morning and afternoon safaris are a proposed rhythm, subject to each reserve’s weekly closures, permit availability and operating hours.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "countries": [
+      "India"
+    ],
+    "highlights": [
+      "Explore six reserves over 22 days: Tadoba, Pench, Kanha, Bandhavgarh, Panna and Satpura.",
+      "Combine tiger-focused outings with opportunities to observe leopards, sloth bears, wild dogs and birdlife.",
+      "Travel by road between the reserves, with domestic flights connecting the Delhi gateway."
+    ]
+  },
+  "deserts-lions-dunesan-expedition-into-indias-wild-heart": {
+    "region": "Maharashtra, Gujarat, Rajasthan",
+    "bestMonths": "November–February is a suggested planning window; the final route depends on reserve access and local conditions.",
+    "statesOrRegions": [
+      "Maharashtra",
+      "Gujarat",
+      "Rajasthan"
+    ],
+    "planningNote": "This is a private journey framework. Your proposal confirms nightly stays, transfers, safari permits, park opening days and any changes needed for your travel dates. Book flights only after the connections have been confirmed. The first five days combine arrival, transfer and Gir. The proposal will specify each overnight stay. The wild-ass-focused Rann sector and access arrangements will be confirmed before booking.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "countries": [
+      "India"
+    ],
+    "highlights": [
+      "Explore five wildlife habitats across Gujarat and Rajasthan in 16 days.",
+      "Look for Asiatic lions in Gir, blackbuck in Velavadar, wild ass in the Rann, leopards in Jawai and desert wildlife near Jaisalmer.",
+      "Accommodation, outings and transfers are specified in your personalised quotation."
+    ]
+  },
+  "history-majesty-the-wildgolden-triangle-safari": {
+    "duration": "Flexible duration, agreed with your itinerary",
+    "bestMonths": "October–March for cultural visits and wildlife outings; final dates depend on local access.",
+    "description": "Explore India’s most iconic travel circuit, the Golden Triangle, enhanced by the quiet thrill of a tiger safari in Ranthambore National Park.",
+    "intro": "Explore India’s most iconic travel circuit, the Golden Triangle, enhanced by the quiet thrill of a tiger safari in Ranthambore National Park. This journey weaves architectural grandeur, cultural depth, and evocative wildlife encounters into a seamless introduction to the heritage and diversity of North India.\n\nExperience Delhi’s vibrant interplay of history and modern life as you travel through India’s legendary Golden Triangle. Witness the timeless beauty of the Taj Mahal, enjoy immersive tiger safaris in Ranthambore National Park, and explore Jaipur’s colourful bazaars and regal monuments.\n\nWith flexible accommodation options, optional private jet upgrades, and fully customisable routing, this journey is thoughtfully crafted for comfort, cultural depth, and unforgettable wildlife encounters.",
+    "route": "Delhi – Agra – Ranthambhore – Jaipur",
+    "locations": [
+      "Delhi",
+      "Agra",
+      "Ranthambhore",
+      "Jaipur"
+    ],
+    "inclusions": [
+      "Services are confirmed in your personalised quotation. Accommodation, meals, transfers, guiding, entry tickets and safaris are included only where expressly listed."
+    ],
+    "exclusions": [
+      "Flights, visas, insurance, personal expenses and optional activities are additional unless expressly included in your quotation."
+    ],
+    "destinations": [
+      "Delhi",
+      "Agra",
+      "Ranthambhore",
+      "Jaipur"
+    ],
+    "days": [
+      {
+        "title": "Delhi",
+        "copy": "Arrive in India’s capital and explore the contrasts of Old and New Delhi.",
+        "label": "Stage 1"
+      },
+      {
+        "title": "Agra",
+        "copy": "Travel to Agra to experience the magnificence of the Taj Mahal.",
+        "label": "Stage 2"
+      },
+      {
+        "title": "Ranthambhore",
+        "copy": "Continue to Ranthambhore National Park for two days of wildlife exploration.",
+        "label": "Stage 3"
+      },
+      {
+        "title": "Jaipur",
+        "copy": "Journey to Jaipur, the Pink City known for its vibrant markets and regal heritage.",
+        "label": "Stage 4"
+      },
+      {
+        "title": "Departure",
+        "copy": "After a leisurely morning in Jaipur, transfer to the airport for your onward journey.",
+        "label": "Stage 5"
+      }
+    ],
+    "seo": {
+      "title": "Golden Triangle & Tiger Safari | Private Journeys",
+      "description": "Explore India’s most iconic travel circuit, the Golden Triangle, enhanced by the quiet thrill of a tiger safari in Ranthambore National Park.",
+      "reviewedAt": "November 2026"
+    },
+    "planningNote": "These are route stages, not numbered travel days. A personalised proposal confirms duration, nightly stays, transfers, sightseeing and safari arrangements before booking.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "itineraryKind": "stages",
+    "accommodation": "Hotels and lodges are selected after the route, dates and preferred level of comfort are agreed. Named properties and room categories are confirmed in your proposal.",
+    "pace": "Flexible, with travel and sightseeing time agreed before booking.",
+    "faqs": [
+      {
+        "question": "How long is this journey?",
+        "answer": "The route is presented as flexible stages, not a fixed number of days. We agree the duration and nightly stays around your dates and interests."
+      },
+      {
+        "question": "What is included in the price?",
+        "answer": "Request a written quotation for your dates. It specifies accommodation, meals, transport, guiding, entry fees, safari permits, taxes and any additional costs."
+      },
+      {
+        "question": "Are wildlife sightings guaranteed?",
+        "answer": "No. Safari access depends on permits and local conditions, and wildlife sightings depend on the animals’ natural movements."
+      }
+    ],
+    "countries": [
+      "India"
+    ]
+  },
+  "whiskers-stripes-and-roarssafari-adventures-with-indias-big-cats": {
+    "region": "Delhi, Assam, Rajasthan, Gujarat, Maharashtra",
+    "intro": "This journey focuses on five iconic mammals: the one-horned rhino, Asian elephant, Bengal tiger, Asiatic lion and Indian leopard. Travel through three contrasting reserves — Kaziranga, Ranthambhore and Gir — with time to explore their distinct habitats.\n\nBegin in Delhi, continue to Assam’s floodplains, then travel through Rajasthan to Gujarat. Wildlife sightings depend on natural conditions; the itinerary allows repeated outings without promising a particular encounter.",
+    "route": "Delhi – Kaziranga – Jaipur – Ranthambhore – Gir – Mumbai",
+    "days": [
+      {
+        "label": "Day 1",
+        "title": "Delhi",
+        "copy": "Arrive in India’s dynamic capital, where ancient Mughal grandeur mingles with today’s modern life. Settle into your hotel and ease into the journey ahead, or spend the day exploring Delhi’s manifold heritage, vibrant markets and celebrated culinary scene at your own pace."
+      },
+      {
+        "label": "Day 2",
+        "title": "Fly to Guwahati · Drive to Kaziranga",
+        "copy": "This morning, take a domestic flight to Guwahati, followed by a private road transfer to Kaziranga. Settle into your lodge and, time permitting, venture out on your first afternoon safari."
+      },
+      {
+        "label": "Days 3-4",
+        "title": "Safaris in Kaziranga",
+        "copy": "Enter the verdant wilderness of Assam and explore Kaziranga, a UNESCO World Heritage Site and one of India’s great strongholds for the magnificent one-horned rhino. Dawn- and dusk-safaris unfold across vast floodplains, where elephants, water buffalo and deer move through tall grasslands alive with birdlife. At times, the elephant grass can part and open up something magically rare: the golden tiger, a striking colour morph that has captivated wildlife enthusiasts in recent years. The scale of the Brahmaputra frames this immense wilderness, lending stunning scale, atmosphere and constantly changing light to the experience."
+      },
+      {
+        "label": "Day 5",
+        "title": "Last Safari · Drive to Guwahati · Fly to Jaipur",
+        "copy": "Return from Kaziranga to Guwahati for the confirmed flight connection towards Jaipur. A final morning safari is included only if the transfer and flight times allow. The route may require a connection, and the overnight arrangement will be confirmed before booking."
+      },
+      {
+        "label": "Day 6",
+        "title": "Transfer to Ranthambhore",
+        "copy": "After a leisurely breakfast, check out and drive to Ranthambhore, a journey of approximately three hours. Arrive at your lodge, settle into your surroundings and enjoy lunch before heading out for your first safari in this remarkable landscape."
+      },
+      {
+        "label": "Days 7-10",
+        "title": "Ranthambhore National Park",
+        "copy": "Ranthambhore brings together wilderness, human history and the unmistakable atmosphere of Rajasthan enveloping its wilderness. Safaris take you through dry forest, lakes and open country, with ancient temples and the imposing thousand-year-old fort providing a dramatic backdrop to encounters with royal Bengal tigers. Leopards, sloth bears, jackals and an exceptional diversity of birdlife add depth to the experience. Days here are deliberately unhurried, balancing time in the field with the attentive hospitality, privacy and comfort of your lodge."
+      },
+      {
+        "label": "Day 11",
+        "title": "Transfer to Gir",
+        "copy": "Travel from Ranthambhore towards Gir using the airport, flight connections and road transfers confirmed for your dates. This is a substantial travel day; the proposal will allow realistic buffers and identify any necessary overnight stop. Do not assume a same-day sequence through Delhi and Rajkot until the schedule has been confirmed."
+      },
+      {
+        "label": "Days 12-14",
+        "title": "Safaris in Gir National Park",
+        "copy": "The final chapter is planned in the dry forests of western Gujarat – the only place on Earth where Asiatic lions continue to roam in the wild. Encountering them here is more than a remarkable wildlife experience; it offers an intimate perspective on a species whose story is one of extraordinary survival and conservation. Alongside the lions, Gir is home to leopards, hyenas and diverse herbivores moving through teak and acacia woodland. These final safaris complete a journey through three very different wildernesses, bringing together India’s great cats in a way few journeys can."
+      },
+      {
+        "label": "Day 15",
+        "title": "Travel to Mumbai · Departure",
+        "copy": "After breakfast, travel to Mumbai for your onward journey, bringing this extraordinary passage through India’s great wildlife landscapes to a close."
+      }
+    ],
+    "body": [
+      "This journey focuses on five iconic mammals: the one-horned rhino, Asian elephant, Bengal tiger, Asiatic lion and Indian leopard. Travel through three contrasting reserves — Kaziranga, Ranthambhore and Gir — with time to explore their distinct habitats.\n\nBegin in Delhi, continue to Assam’s floodplains, then travel through Rajasthan to Gujarat. Wildlife sightings depend on natural conditions; the itinerary allows repeated outings without promising a particular encounter.",
+      "Travel through four distinct wilderness regions as you follow the trails of India’s Big Five across celebrated national parks, including a UNESCO World Heritage Site shaped by centuries of natural evolution. Rare but much sought-after animals such as the golden tiger lend this Journey its singular allure, while more than 400 rich bird species animate each landscape."
+    ],
+    "seo": {
+      "title": "India’s Big Five Safari | Private Journeys",
+      "description": "India’s most remarkable large mammals brought together across UNESCO-listed floodplains, tiger forest and the last wild home of the Asiatic lion.",
+      "reviewedAt": "November 2026"
+    },
+    "tagline": "Five icons. Three reserves. One India.",
+    "planningNote": "This is a private journey framework. Your proposal confirms nightly stays, transfers, safari permits, park opening days and any changes needed for your travel dates. Book flights only after the connections have been confirmed.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "countries": [
+      "India"
+    ],
+    "highlights": [
+      "Seek five iconic mammals across three reserves: Kaziranga, Ranthambhore and Gir.",
+      "Focus on the one-horned rhino, Asian elephant, Bengal tiger, Asiatic lion and Indian leopard.",
+      "Combine floodplains, tiger forest and western Gujarat’s dry woodland over 15 days."
+    ]
+  },
+  "phantoms-of-the-wild-indias-elusive-small-cats-safari": {
+    "bestMonths": "November–February is a suggested planning window; specialist tracking dates and local access must be confirmed.",
+    "accessApproach": "Private transfers and travel arrangements are planned around Kolkata, Velavadar, Jawai and Desert National Park, concluding in Jaisalmer. Optional travel aboard privately chartered aircraft, subject to availability can be explored to make the route more seamless, subject to operational feasibility.",
+    "faqs": [
+      {
+        "question": "Is this a fixed itinerary?",
+        "answer": "No. This Journey is a blueprint. Dates, accommodation, transfers, field priorities and the pace of the experience can be refined around your interests and preferences before confirmation."
+      },
+      {
+        "question": "Why spend several days in each destination?",
+        "answer": "Small cats are often elusive, and finding them requires time, patience and an understanding of their habitats. Extended stays allow for repeated field excursions, closer attention to behaviour and a more considered photographic approach."
+      },
+      {
+        "question": "Is this journey suitable for wildlife photographers?",
+        "answer": "Yes. The Journey is designed with naturalists and photographers in mind, with varied habitats, nocturnal field excursions and extended time in each destination. Photographic opportunities depend on conditions and the natural movements of wildlife."
+      },
+      {
+        "question": "Are small-cat sightings guaranteed?",
+        "answer": "No. These species are elusive, and sightings cannot be promised. The aim is to spend meaningful time in relevant habitats with specialist trackers and naturalists, allowing the best possible opportunity to observe wildlife without compromising its natural behaviour."
+      },
+      {
+        "question": "Can the journey be extended to include other wild cats?",
+        "answer": "Yes. Extensions to destinations such as Ranthambhore for Tigers, Gir for Asiatic Lions and Ladakh for Snow Leopards can be considered, subject to timing, availability and the overall route."
+      },
+      {
+        "question": "Can private aviation be included?",
+        "answer": "The option of travel aboard privately chartered aircraft, subject to availability can be discussed during planning. Routing and operational feasibility will determine which legs can be covered."
+      }
+    ],
+    "planningNote": "This is a private journey framework. Your proposal confirms nightly stays, transfers, safari permits, park opening days and any changes needed for your travel dates. Book flights only after the connections have been confirmed. Small-cat outings use sites agreed with the local field team. Nocturnal observation is included only where access and local permissions allow; protected-area night drives are not assumed.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "countries": [
+      "India"
+    ],
+    "highlights": [
+      "Search for fishing cats around Kolkata, jungle cats in Velavadar, rusty-spotted cats around Jawai and desert cats near Desert National Park.",
+      "Spend 21 days exploring four habitats with specialist local field teams.",
+      "Nocturnal outings depend on permissions and local access; sightings are never guaranteed."
+    ]
+  },
+  "where-sky-meets-earthladakh-realm-of-the-snow-leopard": {
+    "bestMonths": "November–April for winter snow-leopard tracking; Pangong and Hanle depend on road access, permits and weather.",
+    "intro": "Ladakh is a world of immense scale and stark contrasts. Colossal mountains, wind-shaped valleys, stark plateaus and sapphire lakes form the setting for an expedition into one of the most remote wildlife landscapes in India. Here, the search for the snow leopard leads into the rugged terrain of Hemis National Park, while the isolated plateaus around Hanle offer the possibility of encountering the elusive Pallas’ cat.\n\nAfter arrival in Delhi, the journey continues to Leh, where Tibetan-influenced culture, ancient monasteries and bustling bazaars provide an introduction to life in the high Himalaya. Two days are set aside for acclimatisation, allowing time to adjust to the altitude while exploring the region’s cultural heritage before venturing deeper into the mountains.\n\nFive days in Hemis National Park bring the focus to the snow leopard and the wildlife that shares its habitat. Working with experienced local trackers, the expedition follows ridgelines and valleys in search of signs of the ‘Grey Ghost’. Blue sheep, ibex, red fox and high-altitude birds add to the wildlife experience, while the vastness of the terrain calls for patience and a flexible approach to each day.",
+    "days": [
+      {
+        "label": "Day 1",
+        "title": "Arrival in Delhi",
+        "copy": "Arrive in India’s capital and transfer to your hotel. The remainder of the day is at leisure, allowing time to rest and prepare for the flight to Leh the following morning."
+      },
+      {
+        "label": "Days 2–3",
+        "title": "Acclimatisation in Leh",
+        "copy": "Fly from Delhi to Leh and begin a period of rest and acclimatisation. Allow at least 48 hours after arrival before proceeding to higher-altitude areas. Departure into the wildlife region is timed around this requirement, how you are feeling and local guidance; cultural visits are secondary to acclimatisation."
+      },
+      {
+        "label": "Days 4–8",
+        "title": "Hemis National Park",
+        "copy": "Travel into Hemis National Park for five days of wildlife exploration focused on the snow leopard. Accompanied by experienced trackers, search the ridgelines and valleys for signs of the ‘Grey Ghost’, with time to scan slopes and observe the mountain ecosystem. The region’s wildlife includes blue sheep, ibex, red fox and numerous high-altitude birds. Each day is shaped by field conditions, wildlife activity and the weather. Nights are spent in warm, comfortable lodges or homestays suited to the extreme climate."
+      },
+      {
+        "label": "Days 9–12",
+        "title": "Pangong Lake and Hanle",
+        "copy": "Continue towards Pangong Lake, where the turquoise waters contrast with the stark mountain landscape. This visit is seasonal and will be planned according to prevailing conditions. Proceed to Hanle, an isolated plateau renowned for its high-altitude environment and the possibility of observing Pallas’ cat. The region also supports wildlife such as the black-necked crane. Time here is devoted to exploring the landscape, searching for wildlife and experiencing the remarkable stillness of the trans-Himalayan plateau. The final proposal will specify the overnight stops and schedule a return to Leh with sufficient time before the departure flight. Pangong and Hanle may need to be modified or omitted if conditions prevent safe access."
+      },
+      {
+        "label": "Day 13",
+        "title": "Departure",
+        "copy": "Depart from Leh on the confirmed flight to Delhi. The preceding stage will be arranged to allow a suitable return to Leh before departure; a same-morning road connection from Hanle is not assumed. Weather disruption may require additional time, which should be considered when booking onward flights."
+      }
+    ],
+    "body": [
+      "Ladakh is a world of immense scale and stark contrasts. Colossal mountains, wind-shaped valleys, stark plateaus and sapphire lakes form the setting for an expedition into one of the most remote wildlife landscapes in India. Here, the search for the snow leopard leads into the rugged terrain of Hemis National Park, while the isolated plateaus around Hanle offer the possibility of encountering the elusive Pallas’ cat.",
+      "After arrival in Delhi, the journey continues to Leh, where Tibetan-influenced culture, ancient monasteries and bustling bazaars provide an introduction to life in the high Himalaya. Two days are set aside for acclimatisation, allowing time to adjust to the altitude while exploring the region’s cultural heritage before venturing deeper into the mountains.",
+      "Five days in Hemis National Park bring the focus to the snow leopard and the wildlife that shares its habitat. Working with experienced local trackers, the expedition follows ridgelines and valleys in search of signs of the ‘Grey Ghost’. Blue sheep, ibex, red fox and high-altitude birds add to the wildlife experience, while the vastness of the terrain calls for patience and a flexible approach to each day.",
+      "The route then continues towards Pangong Lake and Hanle, where the landscape opens into a stark trans-Himalayan plateau. Pangong’s shifting turquoise waters provide a dramatic contrast to the surrounding mountains, while Hanle offers the prospect of searching for Pallas’ cat and observing high-altitude species such as the black-necked crane. The journey brings together wildlife, landscape and cultural discovery in a part of the Himalaya where silence and scale are integral to the experience.",
+      "The journey begins in India’s capital, with time to settle into the hotel and prepare for the transition to Ladakh’s high altitude. The following day brings a flight north, with sweeping views of snow-bound peaks offering a first glimpse of the mountain world ahead.",
+      "Leh: Acclimatisation and Tibetan Culture – Set among the mountains, Leh provides the first sustained encounter with Ladakh’s distinctive landscape and cultural heritage. Two days are devoted to acclimatisation, with gentle walks and guided visits to monasteries, markets and places that reflect the region’s Tibetan influences. This measured beginning is essential before travelling into the higher and more remote terrain.",
+      "Hemis National Park: In Search of the Snow Leopard – The expedition moves into Hemis National Park, a vast mountain wilderness known for its snow leopard habitat. With experienced trackers, the days are shaped around searching ridgelines, scanning distant slopes and following signs of wildlife across valleys and rocky terrain. The snow leopard’s elusive nature makes patience indispensable. Sightings may require long periods of observation, and conditions can change quickly in the mountains.",
+      "Blue sheep and ibex are among the key prey species of the region, while the red fox and high-altitude birds offer further opportunities to observe the ecology of this cold, rugged landscape. Evenings are spent in warm, comfortable lodges or homestays adapted to the demands of the climate. The experience is as much about understanding the terrain and the rhythms of mountain wildlife as it is about encountering the ‘Grey Ghost’ itself.",
+      "Pangong Lake and Hanle: The Trans-Himalayan Plateau – Beyond Hemis, the landscape opens towards Pangong Lake and the remote plateau around Hanle. Pangong’s changing turquoise hues stand out against the stark mountains, creating one of Ladakh’s most distinctive landscapes. The lake visit is seasonal, with access planned according to conditions.",
+      "The journey continues to Hanle, where the expansive plateau offers a different wildlife focus. The search turns to the Pallas’ cat, a secretive species associated with open, high-altitude terrain. The region is also known for high-altitude birdlife, including the black-necked crane.",
+      "Remote, quiet and far removed from the din of urban life, Hanle offers an opportunity to experience Ladakh at its most expansive. The vast skies, isolated settlements and ancient cultural traditions add depth to the wildlife expedition.",
+      "A Landscape of Nature and Devotion – Throughout the journey, Ladakh’s wildlife and cultural heritage remain closely connected. Monasteries, prayer traditions and settlements shaped by the mountains provide a human context for the expedition, while the terrain itself demands humility and patience. By the time the journey returns to Leh, the experience extends beyond the search for two elusive cats: it offers a deeper encounter with the natural and cultural character of the high Himalayas."
+    ],
+    "planningNote": "This is a private journey framework. Your proposal confirms nightly stays, transfers, safari permits, park opening days and any changes needed for your travel dates. Book flights only after the connections have been confirmed.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "countries": [
+      "India"
+    ],
+    "accessApproach": "The journey begins in Delhi, with onward air travel to Leh. Transfers between Leh, Hemis National Park, Pangong Lake and Hanle are arranged as part of the expedition. Private aviation may be considered for suitable sectors, subject to operational feasibility and final arrangements."
+  },
+  "royal-rajasthan-safari": {
+    "days": [
+      {
+        "label": "Day 1",
+        "title": "Arrive in Delhi",
+        "copy": "Arrive in India’s capital and settle into your hotel. Explore the city at leisure or simply unwind before your Rajasthan adventure begins."
+      },
+      {
+        "label": "Day 2",
+        "title": "Transfer to Ranthambhore",
+        "copy": "Travel by private road from Delhi to Ranthambhore, allowing time for traffic and rest stops. On arrival, settle into your lodge. An afternoon safari can be included only if the confirmed arrival time and park permits allow; the following days provide dedicated time in the forest."
+      },
+      {
+        "label": "Days 3-4",
+        "title": "Ranthambhore",
+        "copy": "Spend two safaris each day exploring Ranthambhore in search of tigers, leopards, sloth bears and abundant birdlife. Return to your lodge between drives for leisurely meals, quiet relaxation and conversations with experienced naturalists about the day’s encounters."
+      },
+      {
+        "label": "Day 5",
+        "title": "Last Morning in Ranthambhore and Transfer to Jaipur",
+        "copy": "Enjoy one final morning safari before travelling to Jaipur, the celebrated Pink City, where vibrant bazaars, grand palaces and intricate architecture offer an elegant introduction to Rajasthan’s regal heritage."
+      },
+      {
+        "label": "Day 6",
+        "title": "Full Day of Sightseeing in Jaipur",
+        "copy": "Discover Jaipur’s architectural treasures, including Amber Fort, City Palace and Hawa Mahal, or browse its lively bazaars for exquisite textiles, jewellery and traditional crafts. The city’s distinctive blend of artistry, history and colour captures the grandeur of Rajasthan."
+      },
+      {
+        "label": "Day 7",
+        "title": "Travel to Jaisalmer",
+        "copy": "Continue from Jaipur to Jaisalmer using the flight or road arrangements confirmed for your travel dates. Flight availability is seasonal and a direct service is not assumed. The final itinerary will allow appropriate transfer time before exploring the golden city."
+      },
+      {
+        "label": "Day 8",
+        "title": "Full Day of Sightseeing in Jaisalmer",
+        "copy": "Explore Jaisalmer’s magnificent sandstone architecture, from ornate havelis to the imposing desert fort. Wander through its intricately carved interiors and historic quarters before watching the dunes take on a warm golden glow as the sun begins to set."
+      },
+      {
+        "label": "Day 9",
+        "title": "Overland Transfer to Jodhpur",
+        "copy": "Enjoy a relaxed morning before travelling to Jodhpur, the Blue City, dominated by the magnificent Mehrangarh Fort. Explore its imposing ramparts and palatial interiors, then wander through the old city’s distinctive blue-hued lanes."
+      },
+      {
+        "label": "Day 10",
+        "title": "Morning in Jodhpur, Transfer to Jawai",
+        "copy": "Visit Jaswant Thada and the museum at Umaid Bhawan Palace before departing for Jawai. Arrive among its extraordinary granite hills, where Leopards share this ancient landscape with pastoral communities in one of India’s most remarkable examples of coexistence."
+      },
+      {
+        "label": "Days 11-12",
+        "title": "Safaris in Jawai",
+        "copy": "Spend these days exploring Jawai’s granite outcrops and tracking its elusive leopards. Between safaris, retreat to your lodge and enjoy the extraordinary tranquillity of a landscape where wildlife and pastoral life continue to exist side by side."
+      },
+      {
+        "label": "Day 13",
+        "title": "Jawai to Udaipur",
+        "copy": "Depart Jawai for Udaipur, pausing at the grand Jain temples of Ranakpur en route. Arrive in the City of Lakes and spend the afternoon at leisure, perhaps over an elegant dinner overlooking the shimmering waters of Lake Pichola."
+      },
+      {
+        "label": "Day 14",
+        "title": "Udaipur",
+        "copy": "Cruise across Lake Pichola, explore the magnificent City Palace and relax in your lakeside retreat, framed by the Aravalli hills. Take in the enduring legacy of the Maharanas of Mewar as this journey through Rajasthan’s royal heart draws to a close."
+      },
+      {
+        "label": "Day 15",
+        "title": "Departure from Udaipur",
+        "copy": "Depart Udaipur with a deeper appreciation of Rajasthan’s extraordinary cultural legacy, architectural splendour and wild landscapes."
+      }
+    ],
+    "seo": {
+      "title": "Royal Rajasthan Safari | Private Journeys",
+      "description": "India in its most royal expression—from palatial Rajasthan to tiger forest, leopard country and the shimmering lakes of Udaipur.",
+      "reviewedAt": "November 2026"
+    },
+    "planningNote": "This is a private journey framework. Your proposal confirms nightly stays, transfers, safari permits, park opening days and any changes needed for your travel dates. Book flights only after the connections have been confirmed.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "countries": [
+      "India"
+    ]
+  },
+  "pink-city-panther-trails-jaipurs-regal-heritage-and-wild-heart": {
+    "region": "Delhi, Rajasthan",
+    "duration": "Flexible duration, agreed with your itinerary",
+    "bestMonths": "October–March for cultural visits and wildlife outings; final dates depend on local access.",
+    "route": "Delhi – Jaipur – Jhalana – Delhi or onward travel",
+    "locations": [
+      "Delhi",
+      "Jaipur",
+      "Jhalana"
+    ],
+    "statesOrRegions": [
+      "Delhi",
+      "Rajasthan"
+    ],
+    "inclusions": [
+      "Services are confirmed in your personalised quotation. Accommodation, meals, transfers, guiding, entry tickets and safaris are included only where expressly listed."
+    ],
+    "exclusions": [
+      "Flights, visas, insurance, personal expenses and optional activities are additional unless expressly included in your quotation."
+    ],
+    "destinations": [
+      "Delhi",
+      "Jaipur",
+      "Jhalana"
+    ],
+    "days": [
+      {
+        "title": "Delhi",
+        "copy": "Arrive in India’s capital and settle in before your journey to Rajasthan.",
+        "label": "Stage 1"
+      },
+      {
+        "title": "Jaipur City Exploration",
+        "copy": "Travel to Jaipur and immerse yourself in the Pink City’s regal charm.",
+        "label": "Stage 2"
+      },
+      {
+        "title": "Jhalana Safaris",
+        "copy": "Venture into Jhalana Forest Reserve for morning and evening safaris in search of Leopards, Jungle Cats, and other wildlife.",
+        "label": "Stage 3"
+      },
+      {
+        "title": "Departure",
+        "copy": "Return to Delhi or continue onward to another destination in Rajasthan.",
+        "label": "Stage 4"
+      }
+    ],
+    "seo": {
+      "title": "Pink City with Pink Panthers | Private Journeys",
+      "description": "Jaipur is a symphony of heritage and lineage, of grandeur and simple tidings.",
+      "reviewedAt": "November 2026"
+    },
+    "planningNote": "These are route stages, not numbered travel days. A personalised proposal confirms duration, nightly stays, transfers, sightseeing and safari arrangements before booking.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "itineraryKind": "stages",
+    "accommodation": "Hotels and lodges are selected after the route, dates and preferred level of comfort are agreed. Named properties and room categories are confirmed in your proposal.",
+    "pace": "Flexible, with travel and sightseeing time agreed before booking.",
+    "faqs": [
+      {
+        "question": "How long is this journey?",
+        "answer": "The route is presented as flexible stages, not a fixed number of days. We agree the duration and nightly stays around your dates and interests."
+      },
+      {
+        "question": "What is included in the price?",
+        "answer": "Request a written quotation for your dates. It specifies accommodation, meals, transport, guiding, entry fees, safari permits, taxes and any additional costs."
+      },
+      {
+        "question": "Are wildlife sightings guaranteed?",
+        "answer": "No. Safari access depends on permits and local conditions, and wildlife sightings depend on the animals’ natural movements."
+      }
+    ],
+    "countries": [
+      "India"
+    ]
+  },
+  "palaces-and-tigers": {
+    "region": "Delhi, Rajasthan, Uttar Pradesh",
+    "bestMonths": "October–March for heritage and safari travel; park access and dates are confirmed during planning.",
+    "statesOrRegions": [
+      "Delhi",
+      "Rajasthan",
+      "Uttar Pradesh"
+    ],
+    "planningNote": "This is a private journey framework. Your proposal confirms nightly stays, transfers, safari permits, park opening days and any changes needed for your travel dates. Book flights only after the connections have been confirmed.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "countries": [
+      "India"
+    ]
+  },
+  "southern-splendourwhere-forests-hills-wildlife-converge": {
+    "bestMonths": "April–May for the full route, subject to park access. February–March travel requires an alternative to Eravikulam during its calving closure.",
+    "inclusions": [
+      "All accommodations and meals as per the itinerary",
+      "Safari and wildlife activities listed above",
+      "Comfortable road transfers",
+      "English speaking guides for all sightseeing and entry tickets"
+    ],
+    "exclusions": [
+      "International flights",
+      "Domestic flights, unless expressly included in the confirmed proposal",
+      "Indian visa",
+      "Excess baggage on domestic flights",
+      "Tips, gratuities",
+      "Laundry",
+      "Alcohol, soft drinks",
+      "Any extra nights before or after the trip or during the trip",
+      "5% GST on the total cost of the tour",
+      "Anything else not mentioned under inclusions"
+    ],
+    "days": [
+      {
+        "label": "Day 1",
+        "title": "Bengaluru",
+        "copy": "Arrive in Bengaluru, the starting point of this Journey. Settle into your hotel before an introductory briefing with your naturalist, covering the landscapes ahead, wildlife behaviour, photography discussion and the logistics of the expedition."
+      },
+      {
+        "label": "Days 2-4",
+        "title": "Kabini",
+        "copy": "Travel by private road to Kabini, where tranquil backwaters, riverine forests and open grasslands create one of South India’s most rewarding wildlife landscapes. The region is renowned for its elephant gatherings, alongside opportunities to encounter tigers, leopards and wild dogs. Alternate between boat and jeep safaris, experiencing the wilderness from contrasting perspectives and gaining a deeper understanding of how wildlife lives in this water-rich habitat. Evenings are for quiet and leisure, and conversations with your naturalist on animal behaviour, tracking and the ecology of Kabini."
+      },
+      {
+        "label": "Days 5-7",
+        "title": "Bandipur",
+        "copy": "Continue to Bandipur National Park, an important part of the Nilgiri Biosphere Reserve, where dry deciduous forests, rolling hills and seasonal streams create a rich mosaic of habitats. Tigers, leopards, elephants and gaur inhabit these forests, alongside an impressive diversity of birdlife. Early morning safaris make the most of the gentle light and cooler hours, while afternoon drives offer the possibility of predators becoming active as the day begins to soften. Throughout, your naturalist brings context to tracks, calls and behaviour, transforming each safari into a more informed and rewarding experience."
+      },
+      {
+        "label": "Days 8-9",
+        "title": "Coimbatore & Anamalais",
+        "copy": "Travel onwards to Anamalai, a dramatic world of deep valleys, forested slopes and great endemism. Explore its evergreen forests in search of the elusive lion-tailed macaque, while discovering a remarkable diversity of reptiles, amphibians and birds found nowhere else. Here, altitude, rainfall and terrain combine to create one of the Western Ghats’ most distinctive ecosystems, offering a fascinating counterpoint to the forests encountered earlier in the journey."
+      },
+      {
+        "label": "Days 10-11",
+        "title": "Eravikulam & Departure",
+        "copy": "The final chapter takes you into the highlands of Eravikulam National Park, where expansive grasslands meet mist-covered mountains and ancient shola forests. Explore designated trails in search of the endemic Nilgiri tahr, with sweeping views extending across the surrounding peaks and tea estates. Montane birds, rare amphibians and specialised high-altitude flora add further depth to this remarkable biodiversity hotspot. Depart from Kochi with a Journey that has made you traverse the forests, waterways and mountain landscapes of South India, witnessing a memorable variety. Eravikulam normally closes during February and March for the Nilgiri tahr calving season. A visit is subject to the announced opening dates; travel during closure requires an agreed alternative, not a promised park visit."
+      }
+    ],
+    "seo": {
+      "title": "The Southern Arc | Private Journeys",
+      "description": "A verdant passage through South India’s forests, waterways and highlands, where exceptional richness is revealed one ecosystem at a time.",
+      "reviewedAt": "November 2026"
+    },
+    "planningNote": "This is a private journey framework. Your proposal confirms nightly stays, transfers, safari permits, park opening days and any changes needed for your travel dates. Book flights only after the connections have been confirmed.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "countries": [
+      "India"
+    ],
+    "highlights": [
+      "Explore Kabini, Bandipur, the Anamalais and Eravikulam over an 11-day route.",
+      "Combine vehicle-based safaris with opportunities to observe Western Ghats wildlife and mountain habitats.",
+      "Eravikulam access is seasonal; February–March departures require an agreed alternative during the calving closure."
+    ]
+  },
+  "where-rivers-forests-tigers-thriveterrific-terai": {
+    "bestMonths": "Late November–March is a suggested planning window; each reserve’s opening dates and access are checked before confirmation.",
+    "days": [
+      {
+        "label": "Day 1",
+        "title": "Arrive in Delhi",
+        "copy": "Arrive in India’s capital and settle into your hotel before the journey into the Terai begins. Take time to rest after your travels, with an orientation from your naturalist covering the landscapes, wildlife and practical details of the expedition ahead."
+      },
+      {
+        "label": "Day 2",
+        "title": "Travel to Corbett",
+        "copy": "Leave Delhi and travel towards Jim Corbett National Park, India’s oldest national park and one of the defining wilderness landscapes of the Terai. On arrival, settle into your lodge and become acquainted with the surroundings. Depending on arrival time and safari arrangements, the first exploration of the forest may begin this afternoon."
+      },
+      {
+        "label": "Days 3–5",
+        "title": "Safaris in Corbett",
+        "copy": "Spend the next three days exploring Corbett’s varied habitats through guided jeep safaris. Riverine belts, dense sal forests and open grasslands provide the setting for the search for Bengal tigers, leopards and elephants, while the park’s rivers and woodland support a rich diversity of birds and other wildlife. Each outing offers a different way of experiencing the forest. Alarm calls, tracks, movement along a riverbank and changes in bird activity can all help build a picture of what is happening beyond the immediate view. Between safaris, return to the lodge for meals and time to rest before heading back into the field."
+      },
+      {
+        "label": "Day 6",
+        "title": "Transfer to Rajaji",
+        "copy": "Continue to Rajaji National Park, where the Shivalik foothills meet broad grasslands and forested valleys. After arriving and settling into your lodge, prepare for the next chapter of the Journey. The shift in landscape brings a different perspective on the wildlife of the Himalayan foothills."
+      },
+      {
+        "label": "Days 7–8",
+        "title": "Safaris in Rajaji",
+        "copy": "Explore Rajaji through guided safaris across its sal forests, riverine habitats and open grasslands. The park supports tigers, leopards and elephants, alongside herbivores such as sambar, chital and wild boar. Its varied terrain also offers rewarding opportunities to observe birdlife, including hornbills, woodpeckers and raptors. Time in Rajaji is an opportunity to look beyond individual sightings and understand how the landscape shapes wildlife movement. Open areas, forest edges and river valleys each offer a different field experience, while the changing light and sounds of the foothills give the safaris their own character."
+      },
+      {
+        "label": "Day 9",
+        "title": "Transfer to Pilibhit",
+        "copy": "Travel onward to Pilibhit Tiger Reserve, entering a quieter stretch of the Terai wilderness. After arriving at your lodge, settle in and prepare to explore a landscape where forest, agricultural fields and wildlife habitats meet. The days ahead place particular emphasis on patient observation and the subtle signs that reveal animal activity."
+      },
+      {
+        "label": "Days 10–11",
+        "title": "Safaris in Pilibhit",
+        "copy": "Spend two days exploring Pilibhit’s forests and surrounding landscapes with experienced naturalists. The reserve is associated with tigers and leopards, while the wider habitat supports other mammals and a diverse bird community. The experience is centred on tracking, observing behaviour and understanding the rhythms of a landscape where people and wildlife share the same region.\n\nThe quieter pace allows time to notice details that can be missed when attention is fixed on a single sighting: a track along a forest trail, a bird’s alarm call or movement at the edge of a field. For nature photographers and keen observers, these hours in the field can be as rewarding as a close encounter."
+      },
+      {
+        "label": "Day 12",
+        "title": "Transfer to Dudhwa",
+        "copy": "Continue to Dudhwa National Park, whose wetlands, tall grasslands and extensive sal forests provide a fitting final chapter to the Journey. Arrive at your lodge and settle in before the next round of exploration. The landscape here is shaped by water and seasonal change, offering a distinct contrast to the reserves visited earlier."
+      },
+      {
+        "label": "Days 13–14",
+        "title": "Dudhwa safaris and onward departure",
+        "copy": "Explore Dudhwa’s varied habitats through guided safaris, with opportunities to look for swamp deer, crocodilians and the rich birdlife associated with its wetlands and river systems. Its dense forests and tall grasslands also provide habitat for Tigers and Leopards, though sightings depend on the conditions and the natural movements of wildlife. The final days bring the Journey’s different landscapes into perspective. Spend time observing the wetland edges, grasslands and forest trails, with naturalists helping interpret the ecology of this remarkable region. Evenings offer time to reflect on the experience, enjoy the lodge and prepare for onward travel. The final safari and onward transfer will be scheduled around your confirmed departure gateway and flight time. Both days are not promised as full safari days; an extra night can be quoted if more field time is preferred."
+      }
+    ],
+    "planningNote": "This is a private journey framework. Your proposal confirms nightly stays, transfers, safari permits, park opening days and any changes needed for your travel dates. Book flights only after the connections have been confirmed. Days 13–14 combine Dudhwa exploration with departure preparation. Your final proposal specifies the last safari, departure gateway and transfer time within the agreed duration; an extra night is quoted separately if required.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "countries": [
+      "India"
+    ]
+  },
+  "trail-of-the-himalayan-firefox-a-red-panda-rhino-expedition": {
+    "region": "Delhi, West Bengal, Nepal, Assam",
+    "description": "A private journey through India’s Eastern Himalaya and Assam, with a Nepal-side lodge stay for red-panda tracking before Kaziranga’s rhino country.",
+    "route": "Delhi – Bagdogra – Singalila border region (Nepal stay) – Guwahati – Kaziranga – Delhi",
+    "locations": [
+      "Delhi",
+      "Bagdogra",
+      "Singalila border region",
+      "Nepal",
+      "Guwahati",
+      "Kaziranga"
+    ],
+    "statesOrRegions": [
+      "Delhi",
+      "West Bengal",
+      "Nepal",
+      "Assam"
+    ],
+    "destinations": [
+      "Delhi",
+      "Bagdogra",
+      "Singalila border region",
+      "Nepal",
+      "Guwahati",
+      "Kaziranga"
+    ],
+    "days": [
+      {
+        "label": "Day 1",
+        "title": "Delhi",
+        "copy": "Arrive in India’s vibrant capital and settle into your hotel before the journey eastwards begins. Depending on your arrival time, explore Delhi’s celebrated old markets and historic quarters, or simply relax and ease into the expedition ahead."
+      },
+      {
+        "label": "Day 2",
+        "title": "Bagdogra & Siliguri",
+        "copy": "Fly to Bagdogra and continue to Siliguri, the gateway to the Eastern Himalaya. Spend the evening at leisure, preparing for the ascent into the high-altitude forests of Singalila the following morning."
+      },
+      {
+        "label": "Days 3-6",
+        "title": "Singalila Ridge",
+        "copy": "Ascend to the spectacular Singalila Ridge, renowned for its panoramic views of the world’s highest peaks and exceptional opportunities to encounter the elusive red panda. The proposed lodge is on the Nepal side of the border. The exact property, authorised crossing and passport-specific entry arrangements must be confirmed before departure. Each day begins at sunrise, with breakfast followed by dedicated bird photography and patient searches for red pandas alongside expert trackers. When a red panda is located, the group moves quietly into position, with porters assisting with photographic equipment and ensuring the experience remains comfortable and unobtrusive. Afternoons return to the forest and surrounding trails, offering further opportunities for Himalayan birdlife and occasional encounters with other mammals."
+      },
+      {
+        "label": "Day 7",
+        "title": "Bagdogra to Guwahati",
+        "copy": "Depart early from the lodge for Bagdogra Airport and board your afternoon flight to Guwahati. Settle into your hotel for the evening, with time to rest before continuing into Assam’s great wilderness."
+      },
+      {
+        "label": "Day 8",
+        "title": "Kaziranga National Park",
+        "copy": "Travel by private road to Kaziranga National Park, a UNESCO World Heritage Site and one of India’s most important strongholds for the Indian one-horned rhino. Arrive and settle into your wilderness lodge before beginning your exploration of this extraordinary floodplain landscape."
+      },
+      {
+        "label": "Days 9-11",
+        "title": "Kaziranga Safaris & Gibbon Sanctuary",
+        "copy": "Explore Kaziranga on morning and afternoon jeep safaris, moving through expansive grasslands, wetlands and woodland patches in search of elephants, wild water buffalo, tigers, rhinos and an exceptional diversity of birdlife. A separate gibbon-watching excursion may be included if the confirmed sanctuary, transfer time and overnight arrangements fit the programme. The final proposal names the site; it is not assumed to be part of Kaziranga itself. With expert naturalists accompanying each exploration, every outing brings greater insight into the ecology and wildlife of Assam."
+      },
+      {
+        "label": "Day 12",
+        "title": "Departure to Delhi",
+        "copy": "Return to Guwahati for your flight to Delhi, bringing this journey through the Eastern Himalaya and Assam to a close. For those wishing to continue, the journey can be extended into India’s renowned tiger country for a further chapter of wildlife exploration."
+      }
+    ],
+    "accessApproach": "The Singalila section includes a lodge stay in Nepal. Your proposal confirms the lodge, authorised border crossing, visa and entry requirements for your passport, and the return to India before onward travel to Assam. Confirm these arrangements before booking flights.",
+    "seo": {
+      "title": "Trail of the Himalayan Firefox | Private Journeys",
+      "description": "A private journey through India’s Eastern Himalaya and Assam, with a Nepal-side lodge stay for red-panda tracking before Kaziranga’s rhino country.",
+      "reviewedAt": "November 2026"
+    },
+    "planningNote": "This is a private journey framework. Your proposal confirms nightly stays, transfers, safari permits, park opening days and any changes needed for your travel dates. Book flights only after the connections have been confirmed. The quoted 12-day framework includes travel days. If a separate gibbon excursion requires more time, agree the adjustment or extension before booking.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "countries": [
+      "India",
+      "Nepal"
+    ],
+    "highlights": [
+      "Combine red-panda tracking in the Singalila border region with Kaziranga’s rhino habitat over 12 days.",
+      "The mountain section includes a Nepal-side lodge stay, with border arrangements confirmed before booking.",
+      "A separate gibbon excursion is subject to a confirmed site and sufficient transfer time."
+    ]
+  },
+  "roar-trumpet-wingbeat-uttarakhands-wilderness-circuit": {
+    "region": "Delhi, Uttarakhand",
+    "bestMonths": "March–May is a suggested window for the combined forest and mountain route; snow, trail conditions and reserve access affect the final plan.",
+    "statesOrRegions": [
+      "Delhi",
+      "Uttarakhand"
+    ],
+    "planningNote": "This is a private journey framework. Your proposal confirms nightly stays, transfers, safari permits, park opening days and any changes needed for your travel dates. Book flights only after the connections have been confirmed. Days 9–13 are a flexible mountain stage. The final proposal allocates nights among Chopta, Pangot and Sattal and identifies the walks, treks and transfer days.",
+    "priceNote": "Guide price only. Your written quotation confirms the currency, room occupancy, travel dates, taxes, park fees and all included services.",
+    "countries": [
+      "India"
+    ]
+  }
+}

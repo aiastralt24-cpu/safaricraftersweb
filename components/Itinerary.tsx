@@ -7,7 +7,7 @@ export function Itinerary({ days, title = "Day by day" }: { days: DayPlan[]; tit
       {days.map((day, index) => (
         <details className="timeline-item" key={`${day.title}-${index}`} open={index === 0}>
           <summary><span className="timeline-day-label">{day.label ?? `Day ${index + 1}`}</span><span className="h3">{day.title}</span><span className="timeline-toggle" aria-hidden="true" /></summary>
-          <div className="timeline-copy"><p>{day.copy}</p>{day.stay ? <p className="muted">Stay: {day.stay}</p> : null}</div>
+          <div className="timeline-copy">{day.copy.split(/\n\s*\n/).map((paragraph, i) => <p key={i}>{paragraph}</p>)}{day.stay ? <p className="muted">Stay: {day.stay}</p> : null}{day.meals ? <p className="muted">Meals: {day.meals}</p> : null}</div>
         </details>
       ))}
     </div>

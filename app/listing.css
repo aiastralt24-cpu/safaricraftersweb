@@ -553,3 +553,26 @@
 .atlas-intro h2.h2{font-size:clamp(42px,5vw,74px);line-height:1.04;letter-spacing:-.035em}
 .atlas-intro>p:not(.eyebrow){max-width:46ch;line-height:1.75}
 @media(max-width:760px){.atlas-intro h2.h2{font-size:clamp(34px,8.5vw,52px)}}
+
+/* Country collections fit their actual card count. */
+.country-guide-featured.is-single { max-width:none; }
+@media(min-width:761px){
+  .country-guide-featured.has-two { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .country-guide-featured.is-single article { grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); column-gap:clamp(32px,5vw,80px); align-content:center; }
+  .country-guide-featured.is-single .country-guide-card-image { grid-column:1; grid-row:1 / 5; height:100%; min-height:400px; aspect-ratio:auto; }
+  .country-guide-featured.is-single article>p,.country-guide-featured.is-single article>h3,.country-guide-featured.is-single article>span,.country-guide-featured.is-single .country-guide-card-link { grid-column:2; }
+  .country-guide-featured.is-single article>p { align-self:end; }
+  .country-guide-featured.is-single .country-guide-card-link { align-self:start; justify-self:start; }
+}
+.journal-listing-grid:has(> :only-child) { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 761px) {
+  .journal-listing-grid:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .journal-listing-grid > :last-child:nth-child(3n + 1) { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); grid-template-rows: 1fr auto auto 1fr; column-gap: 40px; }
+  .journal-listing-grid > :last-child:nth-child(3n + 1) .editorial-card-image { grid-column: 1; grid-row: 1 / 5; height: 100%; min-height: 320px; aspect-ratio: auto; margin-bottom: 0; }
+  .journal-listing-grid > :last-child:nth-child(3n + 1) > :not(.editorial-card-image) { grid-column: 2; }
+}
+
+@media (min-width: 761px) {
+  .journal-listing-grid > :last-child:nth-child(3n + 1) > .eyebrow { align-self: end; }
+  .journal-listing-grid > :last-child:nth-child(3n + 1) > .brass-link { align-self: start; justify-self: start; }
+}

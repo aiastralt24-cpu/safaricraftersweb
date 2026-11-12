@@ -1,3 +1,4 @@
+import { uniqueTourCopy } from '@/lib/tour-content';
 import {readSeoDefaults} from '@/lib/cms/seo-settings';
 import {resolvedSeoMetadata} from '@/lib/cms/seo-metadata';
 import {newPageSeo} from '@/lib/cms/page-seo';
@@ -68,6 +69,9 @@ export default async function JourneyDetailPage({ params }: Props) {
   const heroImage = journey.heroImage || journey.gallery.find((image, index) => index > 0 && image.src !== journey.image.src)
     || journey.gallery.find((image) => image.src !== journey.image.src)
     || journey.image;
+  const gallery = [...new Map(journey.gallery.filter(image => image.src !== heroImage.src).map(image => [image.src, image])).values()];
+  const intro = uniqueTourCopy(journey.intro.split(/\n\s*\n/), [journey.description]).join('\n\n');
+  const body = uniqueTourCopy((journey.body || []).slice(3), [journey.description, ...journey.intro.split(/\n\s*\n/)]);
   const intelligence = getJourneyIntelligence(journey);
   const faqs = getJourneyFaqs(journey);
   const breadcrumbs = [
@@ -80,7 +84,7 @@ export default async function JourneyDetailPage({ params }: Props) {
     <>
       <JsonLd data={journeySchema(journey)} />
       <JsonLd data={breadcrumbSchema(breadcrumbs)} />
-      <JsonLd data={faqSchema(faqs)} />
+      {faqs.length > 0 && <JsonLd data={faqSchema(faqs)} />}
       <section className="journey-detail-hero">
         <Image
           src={heroImage.src}
@@ -119,7 +123,7 @@ export default async function JourneyDetailPage({ params }: Props) {
           <div>
             <p className="eyebrow">The journey</p>
             {journey.tagline ? <h2 className="journey-signature-line">{journey.tagline}</h2> : null}
-            <EditorialProse text={journey.intro} className="intro editorial-prose" collapsible />
+            <EditorialProse text={intro} className="intro editorial-prose" collapsible />
           </div>
           <aside className="at-glance">
             <h2>At a glance</h2>
@@ -203,14 +207,14 @@ export default async function JourneyDetailPage({ params }: Props) {
             </div>
           </dl>
         </div>
-        {journey.body && journey.body.length > 3 ? (
+        {body.length > 0 ? (
           <section className="container journey-worlds" aria-labelledby="journey-worlds-title">
             <header>
               <p className="eyebrow">The worlds within</p>
               <h2 className="h2" id="journey-worlds-title">Each landscape changes the story.</h2>
             </header>
             <div>
-              {journey.body.slice(3).map((paragraph) => (
+              {body.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
@@ -241,13 +245,13 @@ export default async function JourneyDetailPage({ params }: Props) {
             ) : null}
           </div>
         ) : null}
-        {journey.gallery.length ? (
+        {gallery.length ? (
           <div className="container detail-section detail-gallery" id="gallery">
             <p className="eyebrow">Gallery</p>
-            <MediaGallery images={journey.gallery.filter((image) => image.src !== heroImage.src)} label={`${journey.title} gallery`} />
+            <MediaGallery images={gallery} label={`${journey.title} gallery`} />
           </div>
         ) : null}
-        <section className="container faq-section">
+        {faqs.length > 0 && <section data-tour-faq className="container faq-section">
           <p className="eyebrow">Private journey questions</p>
           <h2 className="h2">Before we refine the route</h2>
           <div>
@@ -259,7 +263,7 @@ export default async function JourneyDetailPage({ params }: Props) {
             ))}
           </div>
           {journey.seo?.reviewedAt ? <p className="content-reviewed">Journey information reviewed {journey.seo.reviewedAt}.</p> : null}
-        </section>
+        </section>}
       <EditorialFilm video={journey.video} />
         <BookingConditions />
         <div className="container specialist-callout" id="enquire">

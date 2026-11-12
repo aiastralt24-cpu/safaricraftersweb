@@ -14,7 +14,7 @@ export function MediaGallery({ images, label = "Gallery", variant = "grid", maxI
   const openedIndexRef = useRef<number | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerRefs = useRef<Array<HTMLButtonElement | null>>([]);
-  const galleryImages = images.slice(0, maxImages === undefined ? (variant === "story" ? 12 : 9) : Math.max(1, Math.min(30, Math.floor(maxImages))));
+  const galleryImages = [...new Map(images.map(image => [image.src, image])).values()].slice(0, maxImages === undefined ? (variant === "story" ? 12 : 9) : Math.max(1, Math.min(30, Math.floor(maxImages))));
 
   const visibleImages = initialCount && !expanded ? galleryImages.slice(0, initialCount) : galleryImages;
 

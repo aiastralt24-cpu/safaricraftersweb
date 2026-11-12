@@ -75,7 +75,7 @@ const destinationWildlife = {
 const routeRegions = {
   "big-cats-of-india": ["Delhi", "Ladakh", "Ranthambhore", "Jawai", "Gir"],
   "palaces-and-tigers": ["Delhi", "Jaipur", "Ranthambhore", "Agra"],
-  "royal-rajasthan-safari": ["Jaipur", "Ranthambhore", "Jawai", "Udaipur"],
+  "royal-rajasthan-safari": ["Delhi", "Ranthambhore", "Jaipur", "Jaisalmer", "Jodhpur", "Jawai", "Udaipur"],
   "southern-splendourwhere-forests-hills-wildlife-converge": ["Bengaluru", "Kabini", "Bandipur", "Nagarhole", "Western Ghats"],
   "phantoms-of-the-wild-indias-elusive-small-cats-safari": ["Rajasthan", "Gujarat", "Central India"],
   "roar-trumpet-wingbeat-uttarakhands-wilderness-circuit": ["Uttarakhand", "Corbett", "Rajaji", "Terai"],
@@ -92,7 +92,7 @@ const routeRegions = {
 const stateRegions = {
   "big-cats-of-india": ["Delhi", "Ladakh", "Rajasthan", "Gujarat"],
   "palaces-and-tigers": ["Delhi", "Rajasthan", "Uttar Pradesh"],
-  "royal-rajasthan-safari": ["Rajasthan"],
+  "royal-rajasthan-safari": ["Delhi", "Rajasthan"],
   "southern-splendourwhere-forests-hills-wildlife-converge": ["Karnataka", "Tamil Nadu", "Kerala"],
   "phantoms-of-the-wild-indias-elusive-small-cats-safari": ["Rajasthan", "Gujarat", "Madhya Pradesh"],
   "roar-trumpet-wingbeat-uttarakhands-wilderness-circuit": ["Uttarakhand"],

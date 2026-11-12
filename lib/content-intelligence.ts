@@ -1,10 +1,12 @@
+import { distinctTourFaqs } from './tour-content';
+import { distinctDestinationFaqs } from './destination-content';
 import { destinations, journeys, slugifyAtlasValue, type Destination, type FAQItem, type Journey } from "@/lib/data";
 import { getFieldIntelligence, getJourneyIntelligence } from "@/lib/luxury";
 
 export function getDestinationFaqs(destination: Destination): FAQItem[] {
-  if (destination.faqs?.length) return destination.faqs;
+  if (destination.faqs?.length) return distinctDestinationFaqs(destination, destination.faqs);
   const field = getFieldIntelligence(destination);
-  return [
+  return distinctDestinationFaqs(destination, [
     {
       question: `When is the best time to visit ${destination.title}?`,
       answer: `${destination.bestMonths} is the planning window currently used for ${destination.title}. Final timing should be checked against local conditions, access and the wildlife priorities in your private brief.`
@@ -21,11 +23,11 @@ export function getDestinationFaqs(destination: Destination): FAQItem[] {
       question: `How do I reach ${destination.title}?`,
       answer: destination.access || `${field.airport} is the practical starting point currently used in our planning notes. ${field.transfer}`
     }
-  ];
+  ]);
 }
 
 export function getJourneyFaqs(journey: Journey): FAQItem[] {
-  if (journey.faqs?.length) return journey.faqs;
+  if (journey.faqs?.length) return distinctTourFaqs(journey.faqs);
   const intelligence = getJourneyIntelligence(journey);
   return [
     {
@@ -55,7 +57,7 @@ export function getDestinationPairings(destination: Destination) {
     .map((item) => ({
       slug: item.slug,
       title: item.title,
-      reason: `A considered pairing within ${destination.country}, subject to season and route design.`
+      reason: item.description
     }));
 }
 

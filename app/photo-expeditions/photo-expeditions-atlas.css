@@ -158,3 +158,6 @@
 .departure-calendar-filters button:focus-visible { outline:2px solid var(--bone); outline-offset:4px; }
 @media(hover:hover) { .departure-calendar-filters button:hover { border-color:#d1ad65; } }
 .departure-calendar-count { margin:16px 0; color:#c5cbbf; font-size:13px; }
+
+.departure-calendar-statuses { display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+@media(max-width:760px) { .departure-calendar-statuses { grid-column:1 / -1; flex-direction:row; flex-wrap:wrap; } }

@@ -35,7 +35,7 @@ export function JournalIndex({ articles, categories }: { articles: JournalArticl
       <p className="container journal-result-count" aria-live="polite">
         {visibleArticles.length} {visibleArticles.length === 1 ? "story" : "stories"} · {activeCategory}
       </p>
-      <div className="container grid-3 listing-grid">
+      <div className="container grid-3 listing-grid journal-listing-grid">
         {visibleArticles.map((article) => (
           <JournalCard key={article.slug} article={article} />
         ))}

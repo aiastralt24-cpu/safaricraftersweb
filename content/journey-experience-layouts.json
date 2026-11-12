@@ -2,6 +2,15 @@
   "heart-of-the-wildcentral-indias-six-park-safari": {
     "chapters": [
       {
+        "place": "Delhi",
+        "photoPlace": "Delhi",
+        "destination": "",
+        "indexes": [
+          0
+        ],
+        "photos": []
+      },
+      {
         "place": "Tadoba",
         "photoPlace": "Tadoba",
         "destination": "tadoba",
@@ -206,7 +215,6 @@
       }
     ],
     "bookends": [
-      0,
       13
     ],
     "hero": {
@@ -416,6 +424,15 @@
   "history-majesty-the-wildgolden-triangle-safari": {
     "chapters": [
       {
+        "place": "Delhi",
+        "photoPlace": "Delhi",
+        "destination": "",
+        "indexes": [
+          0
+        ],
+        "photos": []
+      },
+      {
         "place": "Agra",
         "photoPlace": "Agra",
         "destination": "",
@@ -478,7 +495,6 @@
       }
     ],
     "bookends": [
-      0,
       4
     ],
     "hero": {
@@ -503,6 +519,15 @@
   },
   "whiskers-stripes-and-roarssafari-adventures-with-indias-big-cats": {
     "chapters": [
+      {
+        "place": "Delhi",
+        "photoPlace": "Delhi",
+        "destination": "",
+        "indexes": [
+          0
+        ],
+        "photos": []
+      },
       {
         "place": "Kaziranga",
         "photoPlace": "Kaziranga",
@@ -613,7 +638,6 @@
       }
     ],
     "bookends": [
-      0,
       8
     ],
     "hero": {
@@ -639,6 +663,15 @@
   },
   "phantoms-of-the-wild-indias-elusive-small-cats-safari": {
     "chapters": [
+      {
+        "place": "Kolkata",
+        "photoPlace": "Kolkata",
+        "destination": "",
+        "indexes": [
+          0
+        ],
+        "photos": []
+      },
       {
         "place": "Kolkata wetlands",
         "photoPlace": "Kolkata wetlands",
@@ -725,7 +758,6 @@
       }
     ],
     "bookends": [
-      0,
       8
     ],
     "hero": {
@@ -751,6 +783,15 @@
   },
   "where-sky-meets-earthladakh-realm-of-the-snow-leopard": {
     "chapters": [
+      {
+        "place": "Delhi",
+        "photoPlace": "Delhi",
+        "destination": "",
+        "indexes": [
+          0
+        ],
+        "photos": []
+      },
       {
         "place": "Leh",
         "photoPlace": "Leh",
@@ -808,7 +849,6 @@
       }
     ],
     "bookends": [
-      0,
       4
     ],
     "hero": {
@@ -831,8 +871,17 @@
       "copy": "Begin slowly in Leh, then venture into snow leopard country. Continue towards Pangong and Hanle, with time for the vast landscapes of Ladakh."
     }
   },
-  "palaces-and-tigers": {
+  "royal-rajasthan-safari": {
     "chapters": [
+      {
+        "place": "Delhi",
+        "photoPlace": "Delhi",
+        "destination": "",
+        "indexes": [
+          0
+        ],
+        "photos": []
+      },
       {
         "place": "Ranthambhore",
         "photoPlace": "Ranthambhore",
@@ -967,7 +1016,6 @@
       }
     ],
     "bookends": [
-      0,
       12
     ],
     "hero": {
@@ -993,6 +1041,15 @@
   },
   "pink-city-panther-trails-jaipurs-regal-heritage-and-wild-heart": {
     "chapters": [
+      {
+        "place": "Delhi",
+        "photoPlace": "Delhi",
+        "destination": "",
+        "indexes": [
+          0
+        ],
+        "photos": []
+      },
       {
         "place": "Jaipur",
         "photoPlace": "Jaipur",
@@ -1046,7 +1103,6 @@
       }
     ],
     "bookends": [
-      0,
       3
     ],
     "hero": {
@@ -1069,8 +1125,17 @@
       "copy": "Explore Jaipur’s palaces, forts and historic quarters, then head into Jhalana. City discoveries and leopard safaris share one private journey."
     }
   },
-  "royal-rajasthan-safari": {
+  "palaces-and-tigers": {
     "chapters": [
+      {
+        "place": "Delhi",
+        "photoPlace": "Delhi",
+        "destination": "",
+        "indexes": [
+          0
+        ],
+        "photos": []
+      },
       {
         "place": "Jaipur",
         "photoPlace": "Jaipur",
@@ -1135,9 +1200,7 @@
         ]
       }
     ],
-    "bookends": [
-      0
-    ],
+    "bookends": [],
     "hero": {
       "src": "/assets/destinations/ranthambhore/field-photographs/2b4793d79ff4.webp",
       "alt": "Tiger resting beside an old stone doorway in Ranthambhore",
@@ -1161,6 +1224,15 @@
   },
   "southern-splendourwhere-forests-hills-wildlife-converge": {
     "chapters": [
+      {
+        "place": "Bengaluru",
+        "photoPlace": "Bengaluru",
+        "destination": "",
+        "indexes": [
+          0
+        ],
+        "photos": []
+      },
       {
         "place": "Kabini",
         "photoPlace": "Kabini",
@@ -1264,9 +1336,7 @@
         ]
       }
     ],
-    "bookends": [
-      0
-    ],
+    "bookends": [],
     "hero": {
       "src": "/assets/destinations/kabini/field-photographs/239a6ddf5dc2.webp",
       "alt": "Asian elephants together beside the Kabini backwaters · Kabini",
@@ -1290,6 +1360,15 @@
   },
   "where-rivers-forests-tigers-thriveterrific-terai": {
     "chapters": [
+      {
+        "place": "Delhi",
+        "photoPlace": "Delhi",
+        "destination": "",
+        "indexes": [
+          0
+        ],
+        "photos": []
+      },
       {
         "place": "Corbett",
         "photoPlace": "Corbett",
@@ -1397,9 +1476,7 @@
         ]
       }
     ],
-    "bookends": [
-      0
-    ],
+    "bookends": [],
     "hero": {
       "src": "/assets/destinations/dudhwa/field-photographs/2c8f5cacf45e.webp",
       "alt": "Tiger approaching along a misty forest track in Dudhwa",
@@ -1424,7 +1501,16 @@
   "trail-of-the-himalayan-firefox-a-red-panda-rhino-expedition": {
     "chapters": [
       {
-        "place": "Singalila",
+        "place": "Delhi",
+        "photoPlace": "Delhi",
+        "destination": "",
+        "indexes": [
+          0
+        ],
+        "photos": []
+      },
+      {
+        "place": "Bagdogra & Singalila (Nepal stay)",
         "photoPlace": "Singalila",
         "destination": "singalila",
         "indexes": [
@@ -1461,7 +1547,7 @@
         ]
       },
       {
-        "place": "Kaziranga & Gibbon Sanctuary",
+        "place": "Guwahati & Kaziranga",
         "photoPlace": "Kaziranga",
         "destination": "kaziranga",
         "indexes": [
@@ -1500,7 +1586,6 @@
       }
     ],
     "bookends": [
-      0,
       6
     ],
     "hero": {
@@ -1510,7 +1595,7 @@
       "focalPoint": "30% 50%"
     },
     "overview": {
-      "eyebrow": "An eastern passage, from ridge to river.",
+      "eyebrow": "India and Nepal, from mountain forests to floodplains.",
       "lines": [
         {
           "text": "Cloud ",
@@ -1521,11 +1606,20 @@
           "accent": "floodplains."
         }
       ],
-      "copy": "Search for red pandas in Singalila’s mountain forests, then continue to Kaziranga’s rhino country. Two contrasting habitats shape this eastern journey."
+      "copy": "Search for red pandas in the Singalila border region with a Nepal-side lodge stay, then continue through Guwahati to Kaziranga’s rhino country. The final proposal confirms border arrangements and any separate gibbon excursion."
     }
   },
   "roar-trumpet-wingbeat-uttarakhands-wilderness-circuit": {
     "chapters": [
+      {
+        "place": "Delhi",
+        "photoPlace": "Delhi",
+        "destination": "",
+        "indexes": [
+          0
+        ],
+        "photos": []
+      },
       {
         "place": "Corbett",
         "photoPlace": "Corbett",
@@ -1614,7 +1708,6 @@
       }
     ],
     "bookends": [
-      0,
       4
     ],
     "hero": {

@@ -19,3 +19,6 @@
 .journey-experience .ce-overview .ce-section-heading>p{max-width:460px;line-height:1.75}
 @media(max-width:600px){.journey-experience .ce-overview .ce-section-heading{align-items:start}}
 
+
+.je-planning-note{max-width:850px;line-height:1.75;margin:24px 0;color:var(--ink-muted,#596153)}
+.cats-expedition.journey-experience[data-story=animated] .ce-chapter.je-text-chapter{min-height:0}

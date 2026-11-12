@@ -1,3 +1,4 @@
+import { distinctTourFaqs } from '@/lib/tour-content';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getDestination, type Journey } from '@/lib/data';
@@ -34,11 +35,12 @@ function supportingPhotos(slug: string) {
 }
 
 export function BigCatsExperience({ journey }: { journey: Journey }) {
+  const faqs = distinctTourFaqs(journey.faqs || []);
   const enquiry=`/plan?journey=${journey.slug}`;
   const crumbs=[{name:'Home',path:'/'},{name:'Journeys',path:'/journeys'},{name:journey.title,path:`/journeys/${journey.slug}`}];
   const gallery=chapters.flatMap(c=>[{src:c.landscape,alt:c.landscapeAlt,credit:'Safari Crafters archive'},{src:c.image,alt:c.alt,credit:'Safari Crafters archive',focalPoint:c.position},...supportingPhotos(c.slug)]);
   return <article className="cats-expedition" id="cats-expedition">
-    <JsonLd data={journeySchema(journey)} /><JsonLd data={breadcrumbSchema(crumbs)} /><JsonLd data={faqSchema(journey.faqs || [])} />
+    <JsonLd data={journeySchema(journey)} /><JsonLd data={breadcrumbSchema(crumbs)} /><JsonLd data={faqSchema(faqs)} />
     <PageHero title="Big Cats of India" accent="of India" titleSize="compact" variant="destination" copy="From Himalayan snow leopard country to the forests of Gir, a private safari across four remarkable landscapes." image={{src:photo('ladakh','4e42c5499d7a'),alt:'A snow leopard resting on a rocky slope in Ladakh',credit:'Ladakh · Safari Crafters archive',focalPoint:'70% 50%'}} meta="A private journey · India" breadcrumbs={[{label:'Home',href:'/'},{label:'Journeys',href:'/journeys'}]} />
     <nav className="ce-navigation" aria-label="Journey sections"><a href="#overview">The experience</a><a href="#itinerary">Four chapters</a><a href="#planning">Planning details</a><a href="#gallery">Gallery</a><Link href={enquiry}>Plan this journey ↗</Link></nav>
     <section className="ce-overview ce-wrap" id="overview">
@@ -52,6 +54,7 @@ export function BigCatsExperience({ journey }: { journey: Journey }) {
     </section>
     <section id="itinerary" className="ce-story">
       <div className="ce-story-heading ce-wrap"><p className="ce-label">The journey unfolds</p><h2>Four <em className="ce-word-accent">cats.</em><br />Four ways to see <em className="ce-word-accent">India.</em></h2><BigCatsMotion /></div>
+      <div className="ce-bookends ce-wrap"><details open><summary><span className="ce-label">{journey.days[0].label}</span>{journey.days[0].title}<span aria-hidden="true">+</span></summary><p>{journey.days[0].copy}</p></details></div>
       <div className="ce-story-layout">
         <div className="ce-stage" aria-hidden="true">{chapters.map((c,i)=><div className={`ce-frame ${i===0?'is-current':''}`} key={c.slug} data-frame={i}><Image src={c.image} alt="" fill sizes="60vw" style={{objectPosition:c.position}} /><div className="ce-frame-caption"><span>0{i+1} / 04</span><strong>{c.place}</strong><span>{c.animal}</span></div></div>)}<div className="ce-stage-progress"><span /></div></div>
         <div className="ce-chapters">{chapters.map((c,i)=><section className="ce-chapter" id={`chapter-${c.slug}`} key={c.slug} data-chapter={i}>
@@ -60,22 +63,23 @@ export function BigCatsExperience({ journey }: { journey: Journey }) {
           <details className="ce-day-plan"><summary>Explore the daily plan <span aria-hidden="true">+</span></summary><div>{journey.days.filter(d=>c.labels.includes(d.label || '')).map(d=><div className="ce-day" key={d.label}><h4>{d.label} · {d.title}</h4><p>{d.copy}</p></div>)}</div></details><div className="ce-chapter-photos"><MediaGallery images={supportingPhotos(c.slug).slice(0, 2)} label={`${c.place} field photographs`} maxImages={2} /></div><Link className="ce-destination-link" href={`/destinations/${c.slug}`}>Discover {c.place} ↗</Link></div>
         </section>)}</div>
       </div>
-      <div className="ce-bookends ce-wrap">{[journey.days[0],journey.days[journey.days.length-1]].map(d=><details key={d.label}><summary><span className="ce-label">{d.label}</span>{d.title}<span aria-hidden="true">+</span></summary><p>{d.copy}</p></details>)}</div>
+      <div className="ce-bookends ce-wrap">{[journey.days[journey.days.length-1]].map(d=><details key={d.label}><summary><span className="ce-label">{d.label}</span>{d.title}<span aria-hidden="true">+</span></summary><p>{d.copy}</p></details>)}</div>
     </section>
-    <section className="ce-planning ce-wrap" id="planning"><header className="ce-section-heading"><div><p className="ce-label">The details, considered</p><h2>Room for the <em className="ce-word-accent">wild.</em><br />A <em className="ce-word-accent">plan</em> for everything else.</h2></div><div className="ce-price"><span className="ce-label">Journey guide price</span><p>{tourPriceLabel(journey.price)}</p><small>Confirm currency, occupancy, travel dates and applicable taxes in your personalised quote.</small><Link href={enquiry} className="ce-button">Plan this journey ↗</Link></div></header>
+    <section className="ce-planning ce-wrap" id="planning"><header className="ce-section-heading"><div><p className="ce-label">The details, considered</p><h2>Room for the <em className="ce-word-accent">wild.</em><br />A <em className="ce-word-accent">plan</em> for everything else.</h2></div><div className="ce-price"><span className="ce-label">Journey guide price</span><p>{tourPriceLabel(journey.price)}</p><small>{journey.priceNote}</small><Link href={enquiry} className="ce-button">Plan this journey ↗</Link></div></header>
       <div className="ce-planning-facts">
         <div><h3>Private journey</h3><p>21 days, tailored to you.</p></div>
         <div><h3>Ladakh</h3><p>Two days reserved for acclimatisation.</p></div>
         <div><h3>Stays</h3><p>Lodges selected for your itinerary.</p></div>
       </div>
+      <p className="je-planning-note">{journey.planningNote}</p>
       <div className="ce-planning-accordions ce-planning-topics">
         <details name="cats-planning"><summary>Inclusions &amp; additional costs <span aria-hidden="true">+</span></summary><div className="ce-topic-columns"><div><h3>Included</h3><ul>{journey.inclusions?.map(x=><li key={x}>{x}</li>)}</ul></div><div><h3>Additional costs</h3><ul>{journey.exclusions?.map(x=><li key={x}>{x}</li>)}</ul></div></div></details>
-        <details name="cats-planning"><summary>Travel &amp; altitude <span aria-hidden="true">+</span></summary><div className="ce-topic-copy"><h3>Getting there</h3><p>The route starts and finishes in Delhi. Domestic flights and road transfers connect the four wildlife chapters. International flights are additional. Allow time for your domestic connection or an extra night before flying home. Share your departure airport and time zone when enquiring.</p><h3>Acclimatisation in Ladakh</h3><p>The first two days in Leh are set aside for acclimatisation. Discuss altitude, cold conditions and walking requirements before confirming Ladakh.</p>{journey.faqs?.filter(f=>f.question==='Are the big cats guaranteed?').map(f=><div key={f.question}><h3>{f.question}</h3><p>{f.answer}</p></div>)}</div></details>
+        <details name="cats-planning"><summary>Travel &amp; altitude <span aria-hidden="true">+</span></summary><div className="ce-topic-copy"><h3>Getting there</h3><p>The route starts and finishes in Delhi. Domestic flights and road transfers connect the four wildlife chapters. International flights are additional. Allow time for your domestic connection or an extra night before flying home. Share your departure airport and time zone when enquiring.</p><h3>Physical demands</h3><p>{journey.difficulty}</p><h3>Acclimatisation in Ladakh</h3><p>Allow at least 48 hours after arrival in Leh before travelling to higher-altitude areas. The onward departure time is set around this requirement. Discuss altitude, cold conditions and walking requirements before confirming Ladakh.</p></div></details>
         <details name="cats-planning"><summary>Accommodation <span aria-hidden="true">+</span></summary><div className="ce-topic-copy"><p>{journey.accommodation} Named stays and room categories are confirmed with your proposal.</p></div></details>
-        <details name="cats-planning"><summary>Customising your journey <span aria-hidden="true">+</span></summary><div className="ce-topic-copy">{journey.faqs?.filter(f=>f.question!=='Are the big cats guaranteed?').map(f=><div key={f.question}><h3>{f.question}</h3><p>{f.answer}</p></div>)}</div></details>
         <details name="cats-planning"><summary>Booking &amp; payment <span aria-hidden="true">+</span></summary><div className="ce-topic-copy"><p>Your proposal is subject to lodge availability, permits and flight schedules. Request the deposit amount, balance due date, cancellation conditions and any non-refundable costs before making a payment.</p></div></details>
       </div>
     </section>
+    {faqs.length > 0 && <section className="ce-wrap ce-faq" data-tour-faq aria-labelledby="journey-faq-title"><h2 id="journey-faq-title">Journey questions</h2><div className="ce-planning-accordions">{faqs.map(f => <details key={f.question} name="journey-faq"><summary>{f.question}<span aria-hidden="true">+</span></summary><p>{f.answer}</p></details>)}</div></section>}
     <section className="ce-gallery ce-wrap" id="gallery"><header><p className="ce-label">A few moments from these worlds</p><h2>Look a little <em className="ce-word-accent">closer.</em></h2></header><MediaGallery images={gallery} label="Big Cats field photographs" maxImages={20} /></section>
     <section className="ce-enquiry" id="enquire"><Image src={chapters[2].landscape} alt={chapters[2].landscapeAlt} fill sizes="100vw" /><div className="ce-enquiry-shade" /><div><p className="ce-label">The next chapter is yours</p><h2>Where does your<br /><em>curiosity lead?</em></h2><p>Tell us which landscapes call to you, when you would like to travel and who is coming along. We’ll shape the journey from there.</p><Link className="ce-button" href={enquiry}>Plan this journey ↗</Link></div></section>
   </article>;

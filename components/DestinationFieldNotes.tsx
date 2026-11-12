@@ -42,7 +42,7 @@ export function DestinationFieldNotes({ destination, notes }: { destination: str
       </div>
 
       <div className="destination-field-notes-content">
-        <div className="destination-field-notes-tabs" role="tablist" aria-label={`${destination} field notes`}>
+        {notes.length > 1 && <div className="destination-field-notes-tabs" role="tablist" aria-label={`${destination} field notes`}>
           {notes.map((note, index) => <button
             id={`field-note-tab-${index}`}
             key={note.label}
@@ -58,13 +58,13 @@ export function DestinationFieldNotes({ destination, notes }: { destination: str
             <span>{String(index + 1).padStart(2, "0")}</span>
             {note.label}
           </button>)}
-        </div>
+        </div>}
 
         <article
           className="destination-field-note-panel"
           id={`field-note-panel-${activeIndex}`}
-          role="tabpanel"
-          aria-labelledby={`field-note-tab-${activeIndex}`}
+          role={notes.length > 1 ? "tabpanel" : undefined}
+          aria-labelledby={notes.length > 1 ? `field-note-tab-${activeIndex}` : undefined}
           key={active.label}
         >
           <p className="eyebrow">{active.label}</p>

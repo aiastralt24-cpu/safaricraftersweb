@@ -1,5 +1,6 @@
 "use client";
 
+import { listingHeroImage } from "@/lib/listing-content";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -36,7 +37,7 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
   const [activeSlug, setActiveSlug] = useState(journeys[0]?.slug ?? "");
   const heroJourney = journeys[0];
   const filteredJourneys = useMemo(() => journeys.filter((journey) => belongsTo(journey, filter)), [filter, journeys]);
-  const activeJourney = filteredJourneys.find((journey) => journey.slug === activeSlug) ?? filteredJourneys[0] ?? journeys[0];
+  const activeJourney = filteredJourneys.find((journey) => journey.slug === activeSlug) ?? filteredJourneys[0];
 
   useEffect(() => {
     if (!atlasRef.current || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -105,7 +106,9 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
     return () => context.revert();
   }, [filter]);
 
-  if (!heroJourney || !activeJourney) return null;
+  if (!heroJourney) return null;
+  const remainingJourneys = filteredJourneys.filter(journey => journey.slug !== activeJourney?.slug);
+  const heroImage = listingHeroImage(heroJourney.heroImage || heroJourney.image, heroJourney.gallery, journeys.map(journey => journey.image));
 
   const chooseFilter = (nextFilter: JourneyFilter) => {
     setFilter(nextFilter);
@@ -119,7 +122,7 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
         title="Journeys, designed."
         titleSize="compact"
         copy="Private journeys shaped around your interests, season and preferred pace."
-        image={heroJourney.image}
+        image={heroImage}
         meta="Private journey collection"
         variant="destination"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Private Journeys" }]}
@@ -133,7 +136,7 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
           <span>{filteredJourneys.length} {filteredJourneys.length === 1 ? "journey" : "journeys"}</span>
         </nav>
 
-        <article className="journey-atlas-feature" aria-live="polite" data-journey-feature>
+        {activeJourney && <article className="journey-atlas-feature" aria-live="polite" data-journey-feature>
           <Link className="journey-atlas-feature-image" href={`/journeys/${activeJourney.slug}`} aria-label={`View ${activeJourney.title}`}>
             <Image key={activeJourney.slug} src={activeJourney.image.src} alt={activeJourney.image.alt} fill loading="eager" sizes="(max-width: 780px) 100vw, 64vw" />
           </Link>
@@ -148,15 +151,15 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
             <p className="journey-atlas-description">{activeJourney.description}</p>
             <Link href={`/journeys/${activeJourney.slug}`}>Explore the journey <ArrowRight size={17} strokeWidth={1.25} /></Link>
           </div>
-        </article>
+        </article>}
 
-        <div className="journey-atlas-heading" data-journey-heading>
+        {remainingJourneys.length > 0 && <><div className="journey-atlas-heading" data-journey-heading>
           <div><p>The private collection</p><h2>Find your <em className="editorial-accent">way.</em><br />Into the <em className="editorial-accent">wild.</em></h2></div>
-          <p>Each route is a starting point, privately shaped around season, pace and the encounters that matter to you.</p>
+          <p>Explore the rest of the collection, from Himalayan wildlife to Rajasthan’s palaces and the forests of southern India.</p>
         </div>
 
         <div className="journey-atlas-grid">
-          {filteredJourneys.map((journey, index) => (
+          {remainingJourneys.map((journey, index) => (
             <article className={`journey-atlas-card journey-atlas-card-${index % 3}`} data-journey-card key={journey.slug}>
               <Link className="journey-atlas-card-link" href={`/journeys/${journey.slug}`} aria-label={`View ${journey.title}`}>
                 <span className="journey-atlas-card-image"><Image src={journey.image.src} alt={journey.image.alt} fill sizes="(max-width: 760px) 100vw, 50vw" /></span>
@@ -174,6 +177,7 @@ export function JourneyFilm({ journeys }: { journeys: Journey[] }) {
           ))}
         </div>
 
+        </>}
         {filteredJourneys.length === 0 ? <p className="journey-atlas-empty">No journeys match this view yet. Speak with us and we will compose one privately.</p> : null}
       </section>
     </main>

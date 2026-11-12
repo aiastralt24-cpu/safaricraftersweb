@@ -11,7 +11,7 @@ import "./store.css";
 import StorePrice from "./StorePrice";
 
 export const metadata: Metadata = {
-  title: "Store | Safari Crafters",
+  title: "Store",
   description:
     "Books, fine-art prints and objects created through time in the field by Safari Crafters.",
   alternates: { canonical: "/store" },

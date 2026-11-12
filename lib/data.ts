@@ -21,6 +21,7 @@ export type DayPlan = {
   title: string;
   copy: string;
   stay?: string;
+  meals?: string;
 };
 
 export type FAQItem = {
@@ -56,6 +57,10 @@ export type ResearchSource = {
 };
 
 export type Journey = {
+  countries?: string[];
+  itineraryKind?: "stages";
+  planningNote?: string;
+  priceNote?: string;
   heroImage?: ImageAsset;
   wildlifeExpectation?: string;
   photography?: string;
@@ -197,6 +202,7 @@ export type ExpeditionDeparture = {
 };
 
 export type Expedition = {
+  nextSeasonAvailability?: string;
   paymentTerms?: string;
   enquiryDeparture?: string;
   seo?: SeoFields;
@@ -377,7 +383,7 @@ const dedicatedDestinationCombos: Record<string, DestinationCombo[]> = {
     { title: "Laikipia & Samburu", description: "Go all out on rare species and rarer experiences.", imageSlug: "samburu", href: "/plan?destination=laikipia&combo=samburu" }
   ],
   ranthambhore: [
-    { title: "Big Cats of India", description: "A grand feline journey through three breathtaking habitats in search of India's apex cats.", imageSlug: "ladakh", href: "/journeys/big-cats-of-india" },
+    { title: "Big Cats of India", description: "A grand feline journey through four contrasting habitats in search of India's iconic big cats.", imageSlug: "ladakh", href: "/journeys/big-cats-of-india" },
     { title: "Golden Triangle & Tiger Safari", description: "Add a dash of human heritage to the natural splendour with monuments and monumental cats.", imageSlug: "jawai", href: "/journeys/history-majesty-the-wildgolden-triangle-safari" },
     { title: "India’s Big Five Safari", description: "Go beyond big cats to encounter the other great mammals of the Indian subcontinent.", imageSlug: "kaziranga", href: "/journeys/whiskers-stripes-and-roarssafari-adventures-with-indias-big-cats" }
   ],

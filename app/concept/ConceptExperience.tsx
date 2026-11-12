@@ -38,7 +38,8 @@ const homepageJourneySlugs = [
 
 const homepageJourneys = homepageJourneySlugs
   .map((slug) => journeys.find((journey) => journey.slug === slug))
-  .filter((journey): journey is (typeof journeys)[number] => Boolean(journey));
+  .filter((journey): journey is (typeof journeys)[number] => Boolean(journey))
+  .map(journey => ({...journey, image: journey.slug === "big-cats-of-india" && journey.heroImage ? {...journey.heroImage, focalPoint: "35% 50%"} : journey.heroImage || journey.image}));
 
 const destinationStoryCopy: Record<string, { headline: string; description: string; landscape: string }> = {
   jawai: {

@@ -364,3 +364,17 @@
 @media (max-width:760px) {
   .destination-opening h2 { font-size: clamp(30px, 7vw, 42px); }
 }
+
+/* A lone recommendation uses the full row instead of an empty three-card grid. */
+.destination-card-grid.is-single { grid-template-columns: minmax(0,1fr); }
+@media (min-width:761px) {
+  .destination-card-grid.is-single .destination-related-card { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); grid-template-rows:auto auto auto auto; column-gap:clamp(32px,5vw,80px); align-content:center; }
+  .destination-card-grid.is-single .destination-related-image { grid-column:1; grid-row:1 / 5; min-height:400px; height:100%; aspect-ratio:auto; }
+  .destination-card-grid.is-single .destination-related-card>p,
+  .destination-card-grid.is-single .destination-related-card>h3,
+  .destination-card-grid.is-single .destination-related-link { grid-column:2; }
+  .destination-card-grid.is-single .destination-related-card>p:first-of-type { align-self:end; margin-top:24px; }
+  .destination-card-grid.is-single .destination-related-link { justify-self:start; align-self:start; margin-bottom:24px; }
+}
+
+@media(min-width:761px){.destination-card-grid.has-two{grid-template-columns:repeat(2,minmax(0,1fr));}}

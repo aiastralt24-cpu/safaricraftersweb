@@ -8,7 +8,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { JsonLd } from "@/components/JsonLd";
-import { expeditions, journeys, specialists } from "@/lib/data";
+import { expeditions, journeys, specialists, getDestination } from "@/lib/data";
 import { personSchema,siteUrl } from "@/lib/structured-data";
 import "../simple.css";
 
@@ -38,7 +38,7 @@ export default async function SpecialistsPage() {
       <PageHero
         title="Named specialists, not anonymous enquiry desks."
         copy="Each journey is shaped by a person who understands the landscape, the season and the guest's reason for travelling."
-        image={(specialists[1] || specialists[0]).image}
+        image={getDestination("jawai")!.gallery[0]}
         meta="Specialists"
       />
       <section className="section surface-white">

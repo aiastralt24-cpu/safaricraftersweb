@@ -426,3 +426,14 @@
   .journey-atlas-feature-image img,
   .journey-atlas-card-image img { transition: none; }
 }
+.journey-atlas-grid:has(> :only-child) { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 761px) and (max-width: 1100px) {
+  .journey-atlas-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: center; }
+  .journey-atlas-grid > :last-child:nth-child(odd) .journey-atlas-card-copy { min-height: 0; padding-top: 0; }
+}
+@media (min-width: 1101px) {
+  .journey-atlas-grid:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .journey-atlas-grid > :last-child:nth-child(3n + 1) { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+  .journey-atlas-grid > :last-child:nth-child(3n + 1) .journey-atlas-card-copy { min-height: 0; padding-top: 0; }
+  .journey-atlas-grid > :last-child:nth-child(3n + 1) .journey-atlas-card-image { aspect-ratio: 4 / 3; }
+}

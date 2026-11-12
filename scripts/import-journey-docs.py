@@ -5,6 +5,7 @@ import re
 from pathlib import Path
 
 from docx import Document
+from journey_editorial import apply_editorial_corrections
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -47,13 +48,13 @@ SOURCES = {
         "tagline": "Water, forest and mountain—South India in one arc.",
         "wildlife": "Tiger · Leopard · Asian elephant · Wild dog · Lion-tailed macaque · Nilgiri tahr",
     },
-    "palaces-and-tigers": {
+    "royal-rajasthan-safari": {
         "path": Path("/Users/bunny/Downloads/Journeys/Safari Crafters Journey – Palaces and Tigers.docx"),
-        "title": "Palaces and Tigers",
-        "region": "Delhi, Rajasthan, Uttar Pradesh",
+        "title": "Royal Rajasthan Safari",
+        "region": "Delhi, Rajasthan",
         "duration": "15 days, customisable",
         "route": "Delhi – Ranthambhore – Jaipur – Jaisalmer – Jodhpur – Jawai – Udaipur",
-        "states": ["Delhi", "Rajasthan", "Uttar Pradesh"],
+        "states": ["Delhi", "Rajasthan"],
         "locations": ["Delhi", "Ranthambhore", "Jaipur", "Jaisalmer", "Jodhpur", "Jawai", "Udaipur"],
         "description": "India in its most royal expression—from palatial Rajasthan to tiger forest, leopard country and the shimmering lakes of Udaipur.",
         "tagline": "The royalty of India. The royalty of the wild.",
@@ -191,6 +192,7 @@ def main() -> None:
     records = {record["slug"]: record for record in content["journeys"]}
     for slug, config in SOURCES.items():
         update_record(records[slug], config)
+        apply_editorial_corrections(records[slug])
     CONTENT_PATH.write_text(json.dumps(content, ensure_ascii=False, indent=2) + "\n")
     print(f"Updated {len(SOURCES)} journey records in {CONTENT_PATH}")
 

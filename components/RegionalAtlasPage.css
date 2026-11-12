@@ -183,3 +183,20 @@
 
 .regional-atlas-heading .atlas-signature-title{max-width:none;font-size:clamp(38px,4.4vw,66px);line-height:1.04}
 @media(max-width:760px){.regional-atlas-heading .atlas-signature-title{font-size:clamp(32px,8vw,50px)}}
+.regional-atlas-featured.is-single { max-width: none; }
+@media (min-width: 761px) and (max-width: 900px) {
+  .regional-atlas-index > :last-child:nth-child(odd) { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
+}
+@media (min-width: 761px) {
+  .regional-atlas-featured > :last-child:nth-child(odd) { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); column-gap: 40px; grid-template-rows: 1fr auto auto 1fr; align-content: center; }
+  .regional-atlas-featured > :last-child:nth-child(odd) .regional-atlas-featured-image { grid-column: 1; grid-row: 1 / 5; height: 100%; min-height: 340px; aspect-ratio: auto; margin-bottom: 0; }
+  .regional-atlas-featured > :last-child:nth-child(odd) > :not(.regional-atlas-featured-image) { grid-column: 2; }
+}
+@media (min-width: 901px) {
+  .regional-atlas-index > :last-child:nth-child(3n + 1) { grid-column: 1 / -1; aspect-ratio: 3 / 1; }
+}
+
+@media (min-width: 761px) {
+  .regional-atlas-featured > :last-child:nth-child(odd) > p { align-self: end; }
+  .regional-atlas-featured > :last-child:nth-child(odd) > .regional-atlas-explore { align-self: start; }
+}

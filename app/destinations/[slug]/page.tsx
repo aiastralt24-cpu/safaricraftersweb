@@ -176,7 +176,7 @@ export default async function DestinationDetailPage({ params }: Props) {
     <>
       <JsonLd data={destinationSchema(destination)} />
       <JsonLd data={breadcrumbSchema(breadcrumbs)} />
-      <JsonLd data={faqSchema(faqs)} />
+      {faqs.length > 0 && <JsonLd data={faqSchema(faqs)} />}
       <PageHero
         titleSize="compact"
         title={destination.title}
@@ -193,6 +193,7 @@ export default async function DestinationDetailPage({ params }: Props) {
       <EditorialFilm video={destination.video} />
       <DestinationDossier
         destination={{ ...destination, image: heroImage }}
+        heroCopy={destinationHeroCopy(destination.slug, destination.description)}
         intelligence={intelligence}
         faqs={faqs}
         pairings={pairings}
@@ -249,13 +250,13 @@ function CountryDestinationPage({ country }: { country: NonNullable<ReturnType<t
           </header>
 
           {featured.length > 0 && (
-            <div className={`country-guide-featured${featured.length === 1 ? " is-single" : ""}`}>
+            <div className={`country-guide-featured${featured.length === 1 ? " is-single" : featured.length === 2 ? " has-two" : ""}`}>
               {featured.map((destination, index) => {
                 const image = getDestinationHeroImage(destination);
                 return (
                   <article key={destination.slug}>
                     <Link className="country-guide-card-image" href={`/destinations/${destination.slug}`}>
-                      <Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 100vw, 33vw" priority={index === 0} />
+                      <Image src={image.src} alt={image.alt} fill sizes={featured.length === 1 ? "(max-width: 760px) 100vw, 55vw" : "(max-width: 760px) 100vw, 33vw"} priority={index === 0} />
                     </Link>
                     <p>{destination.parentRegion || destination.region}</p>
                     <h3><Link href={`/destinations/${destination.slug}`}>{destination.title}</Link></h3>

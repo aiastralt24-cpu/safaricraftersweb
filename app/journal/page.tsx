@@ -1,3 +1,4 @@
+import { distinctListingImages, listingHeroImage } from "@/lib/listing-content";
 import {CmsJournalListing} from '@/components/CmsJournalListing';
 import {usesCmsJournal} from '@/lib/cms/journal-route';
 import {journalListReader,readPublishedJournalList} from '@/lib/cms/published-journal-list';
@@ -18,19 +19,21 @@ export const metadata: Metadata = {
 
 export default async function JournalPage() {
   if(usesCmsJournal()){const articles=await readPublishedJournalList(journalListReader());return <><JsonLd data={breadcrumbSchema([{name:"Home",path:"/"},{name:"The Journal",path:"/journal"}])}/><CmsJournalListing articles={articles}/></>;}
+  const articles = distinctListingImages(journal);
+  const heroImage = listingHeroImage(journal[0].image, journal[0].gallery, articles.map(article => article.image));
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "The Journal", path: "/journal" }])} />
       <PageHero
         title="The Journal"
         copy="Field notes, photographic essays, conservation thinking and practical safari intelligence, written with the care of a magazine rather than a blog."
-        image={journal[0].image}
+        image={heroImage}
         meta="Field Notes · Photography · Conservation"
         variant="destination"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "The Journal" }]}
       />
       <section className="section surface-white">
-        <JournalIndex articles={journal} categories={journalCategories} />
+        <JournalIndex articles={articles} categories={journalCategories} />
       </section>
     </>
   );

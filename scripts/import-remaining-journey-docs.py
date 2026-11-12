@@ -9,6 +9,7 @@ import json
 import re
 import sys
 from docx import Document
+from journey_editorial import apply_editorial_corrections
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = Path(sys.argv[1]) if len(sys.argv) > 1 else Path.home() / 'Downloads/Journeys-2'
@@ -18,7 +19,7 @@ CONFIG = {
  'where-rivers-forests-tigers-thriveterrific-terai': ('Terrific Terai', 'Safari Crafters Journey – Terrific Terai.docx', ['Delhi','Corbett','Rajaji','Pilibhit','Dudhwa']),
  'roar-trumpet-wingbeat-uttarakhands-wilderness-circuit': ('Uttarakhand Circuit', 'Safari Crafters Journey – Uttarakhand Circuit.docx', ['Delhi','Corbett','Rajaji','Chopta','Pangot','Sattal']),
  'where-sky-meets-earthladakh-realm-of-the-snow-leopard': ('Wildlife of Ladakh', 'Safari Crafters Journey – Wildlife of Ladakh.docx', ['Delhi','Leh','Hemis National Park','Pangong Lake','Hanle']),
- 'royal-rajasthan-safari': ('Royal Rajasthan Safari', 'Safari Crafters Journey – .docx', ['Delhi','Jaipur','Ranthambhore','Agra']),
+ 'palaces-and-tigers': ('Palaces and Tigers', 'Safari Crafters Journey – .docx', ['Delhi','Jaipur','Ranthambhore','Agra']),
 }
 
 def between(items, start, end):
@@ -74,7 +75,10 @@ def main():
         # Retain the supplied destination chapters as well as the introduction.
         extra = between(items, 'HIGHLIGHTS', 'Day by Day')[1:]
         body = narrative + extra
-        desc = following(items, title)
+        # The source document used the old, swapped journey name.
+        source_title = 'Royal Rajasthan Safari' if slug == 'palaces-and-tigers' else title
+        desc = following(items, source_title)
+        body = [text.replace('Royal Rajasthan Safari', title).replace('Royal Rajasthan', title) for text in body]
         duration = int(re.match(r'\d+', following(items, 'Duration'))[0])
         days = days_from(items)
         covered = []
@@ -88,7 +92,7 @@ def main():
             assert (ROOT / 'public' / image['src'].lstrip('/')).is_file(), image['src']
             assert 'generated' not in json.dumps(image).lower(), 'Generated image selected'
         difficulty = following(items, 'Difficulty Level')
-        if slug == 'royal-rajasthan-safari':
+        if slug == 'palaces-and-tigers':
             difficulty = 'Gentle to moderate, with jeep safaris and guided cultural exploration'
         # Correct a source counting typo (five habitats are listed, not four).
         if slug.startswith('deserts-'):
@@ -119,6 +123,7 @@ def main():
         })
         # Old embedded films can depict the previous route.
         record.pop('video', None)
+        apply_editorial_corrections(record)
         print(f'{title}: {duration} days, {len(days)} stages, {len(record["faqs"])} FAQs, {len(images)} photographs')
     file.write_text(json.dumps(content, ensure_ascii=False, indent=2) + '\n')
 

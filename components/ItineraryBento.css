@@ -31,3 +31,6 @@
  .itinerary-bento-4 .itinerary-card:last-child { grid-column:auto; min-height:360px; }
 }
 @media(prefers-reduced-motion:reduce) { .itinerary-card > img { transition:none; } }
+
+.itinerary-bento-1 {grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(400px,auto)}
+.itinerary-bento-1 .itinerary-card:first-child{grid-row:auto}

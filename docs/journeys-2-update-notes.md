@@ -15,16 +15,17 @@ Source: `/Users/bunny/Downloads/Journeys-2/`. The unnamed `Safari Crafters Journ
 
 Reimport with the bundled Python runtime and `scripts/import-remaining-journey-docs.py`. The script validates continuous day coverage, nonempty itinerary entries and FAQs, and local image availability before writing. It modifies only these six journey records. `content/journey-photo-selections.json` records selected photos and location coverage; it also contains the short editorial headings used on the pages.
 
-## Photo coverage still to source
+## Naming correction — 12 November 2026
 
-- Small Cats: verified imagery currently covers Velavadar. Obtain location-confirmed fishing cat photographs from Kolkata, rusty-spotted cat photographs from Jawai and desert cat photographs from Desert National Park.
-- Desert Dune Lions: obtain verified Desert National Park photographs. Current images cover the other named wildlife stops.
-- Terrific Terai: obtain verified Pilibhit photographs. Its previous destination fallback used a Ranthambhore photograph, which was excluded from this journey.
-- Uttarakhand: obtain verified Chopta photographs. Corbett, Rajaji and Sattal/Pangot are represented.
-- Ladakh: obtain a verified Hanle Pallas’ cat photograph. Existing Ladakh landscape photographs retain regional captions instead of unverified lake/valley names.
-- Royal Rajasthan: Jaipur, Ranthambhore and Agra are represented.
+Client feedback corrects the source documents’ swapped names: the 8-day Delhi–Jaipur–Ranthambhore–Agra itinerary is **Palaces and Tigers**, and the 15-day Delhi–Ranthambhore–Jaipur–Jaisalmer–Jodhpur–Jawai–Udaipur itinerary is **Royal Rajasthan Safari**. The existing URL names now serve their matching itineraries. Layouts, stage definitions, photo selections and importer mappings follow the corrected names. Delhi is the first visible chapter on both pages, rather than an arrival accordion after the other chapters. The table above records the original import.
 
-No generated images or geographically unrelated substitutes were added. No unrelated destination records were changed to fill photo gaps.
+Verified both corrected routes locally at desktop (1440px) and mobile (390px): title, duration, Delhi Day 1 expansion, no horizontal overflow, and no browser errors. TypeScript passed. Both itineraries have continuous day coverage, and all 13 experience layouts include every itinerary entry exactly once. No deployment performed.
+
+## Current photo coverage — 12 November 2026
+
+The current page layouts supplement the original selection manifest with licensed Desert National Park, Kolkata wetlands, Jawai habitat, Pilibhit forest and Pangong Tso images. Their provenance is recorded in `content/journey-photo-sources.json`.
+
+Remaining useful additions are location-confirmed fishing-cat, rusty-spotted-cat and desert-cat photographs for Small Cats; a Chopta-specific photograph for Uttarakhand; and a Hanle Pallas’ cat photograph for Ladakh. Regional photographs retain their documented location captions.
 
 ## Editorial normalization
 

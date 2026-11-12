@@ -1,3 +1,4 @@
+import { listingHeroImage } from "@/lib/listing-content";
 import { departureLabel, upcomingDepartures, isFeaturedExpedition } from "@/lib/departures";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,7 +27,7 @@ export function PhotoExpeditionFilm({ expeditions }: { expeditions: Expedition[]
         title="Field craft, framed."
         titleSize="compact"
         copy="Small groups, specialist mentorship and patient time in the field."
-        image={expeditions[0].image}
+        image={listingHeroImage(expeditions[0].image, expeditions[0].gallery, expeditions.map(item => item.image))}
         meta="Photography Tours"
         variant="destination"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Photography Tours" }]}

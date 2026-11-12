@@ -1,3 +1,4 @@
+import { distinctListingImages, distinctLocationLabel } from "@/lib/listing-content";
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
@@ -48,10 +49,15 @@ export function RegionalAtlasPage({ atlas }: { atlas: RegionalAtlas }) {
     const place = countries.find((country) => country.slug === slug) || getDestination(slug);
     return place ? [{ slug: place.slug, title: place.title, image: atlasImages[slug] || place.image }] : [];
   });
-  const collection = isIndia ? regionDestinations : selectedCountries || countries;
+  const collection = isIndia ? regionDestinations.filter(place => !atlas.featuredDestinationSlugs.includes(place.slug)) : selectedCountries || countries;
   const showCountryIndex = false;
   const heroDestination = getDestination(atlas.heroDestinationSlug) || regionDestinations[0] || destinations[0];
-  const featured = atlas.featuredDestinationSlugs.map(getDestination).filter(Boolean) as Destination[];
+  const heroImage = getAtlasHeroImage(atlas, heroDestination);
+  const featured = distinctListingImages(
+    (atlas.featuredDestinationSlugs.map(getDestination).filter(Boolean) as Destination[]).map(place => ({...place, image: atlasImage(place, "featured")})),
+    [heroImage.src]
+  );
+  const collectionCards = distinctListingImages(collection.map(place => ({...place, gallery: getDestination(place.slug)?.gallery || []})), [heroImage.src, ...featured.map(place => place.image.src)]);
   const destinationTitles = new Set(regionDestinations.map((item) => item.title.toLowerCase()));
   const relatedJourneys = journeys.filter((journey) => journey.destinations.some((name) => destinationTitles.has(name.toLowerCase())));
   const relatedExpeditions = expeditions.filter((expedition) => regionDestinations.some((destination) =>
@@ -83,7 +89,7 @@ export function RegionalAtlasPage({ atlas }: { atlas: RegionalAtlas }) {
   return (
     <>
       <JsonLd data={breadcrumbSchema(breadcrumbItems.map((item) => ({ name: item.label, path: item.href ?? `/destinations/${atlas.slug}` })))} />
-      <PageHero titleSize="compact" title={atlas.heroTitle} copy={atlas.heroCopy} image={getAtlasHeroImage(atlas, heroDestination)} meta={atlas.meta} variant="destination" breadcrumbs={breadcrumbItems} />
+      <PageHero titleSize="compact" title={atlas.heroTitle} copy={atlas.heroCopy} image={heroImage} meta={atlas.meta} variant="destination" breadcrumbs={breadcrumbItems} />
       <div className={`regional-atlas${isSingleDestination ? " is-single-destination" : ""}`}>
         <RegionalAtlasMotion />
 
@@ -137,16 +143,16 @@ export function RegionalAtlasPage({ atlas }: { atlas: RegionalAtlas }) {
             {featured.map((destination, index) => (
               <article key={destination.slug} data-atlas-reveal style={{ "--atlas-delay": `${(index % 2) * 70}ms` } as CSSProperties}>
                 <Link className="regional-atlas-featured-image" href={`/destinations/${destination.slug}`}>
-                  <Image src={atlasImage(destination, "featured").src} alt={atlasImage(destination, "featured").alt} fill sizes="(max-width: 760px) 100vw, 50vw" />
+                  <Image src={destination.image.src} alt={destination.image.alt} fill sizes="(max-width: 760px) 100vw, 50vw" />
                 </Link>
-                <p>{isArcticBeyond && destination.slug === "kamchatka" ? "Russian Far East" : destination.region}</p>
+                <p>{isArcticBeyond && destination.slug === "kamchatka" ? "Russian Far East" : distinctLocationLabel(destination.region)}</p>
                 <h3><Link href={`/destinations/${destination.slug}`}>{destination.title}</Link></h3>
                 <span>{isArcticBeyond
                   ? destination.slug === "svalbard"
                     ? "Glaciers, sea ice and Arctic wildlife, explored through private and small-group journeys shaped around the season."
                     : "Brown bears, salmon waters and volcanic landscapes, with a Pacific coast shaped by weather and confirmed access."
                   : concise(destination.description)}</span>
-                {isArcticBeyond && <Link className="regional-atlas-explore" href={`/destinations/${destination.slug}`}>Explore {destination.title} <ArrowUpRight size={17} aria-hidden="true" /></Link>}
+                {<Link className="regional-atlas-explore" href={`/destinations/${destination.slug}`}>Explore {destination.title} <ArrowUpRight size={17} aria-hidden="true" /></Link>}
               </article>
             ))}
           </div>
@@ -179,14 +185,14 @@ export function RegionalAtlasPage({ atlas }: { atlas: RegionalAtlas }) {
           </section>
         )}
 
-        {!isSingleDestination && !isArcticBeyond && <section className="container regional-atlas-section" aria-labelledby={`${atlas.slug}-collection`}>
+        {!isSingleDestination && !isArcticBeyond && collectionCards.length > 0 && <section className="container regional-atlas-section" aria-labelledby={`${atlas.slug}-collection`}>
           <header className="regional-atlas-heading" data-atlas-reveal>
-            <p className="eyebrow">The complete collection</p>
-            <h2 id={`${atlas.slug}-collection`}>{isIndia ? "Explore India’s wild places." : `Explore ${atlas.shortTitle} by country.`}</h2>
+            <p className="eyebrow">{isIndia ? "More places to explore" : "The country collection"}</p>
+            <h2 id={`${atlas.slug}-collection`}>{isIndia ? "Beyond the signature places." : `Explore ${atlas.shortTitle} by country.`}</h2>
             <p>{isIndia ? "Choose a destination to discover its wildlife, landscapes and field brief." : "Choose a country to discover its landscapes, wildlife and places to explore."}</p>
           </header>
           <div className="regional-atlas-index">
-            {collection.map((place, index) => (
+            {collectionCards.map((place, index) => (
               <Link
                 className="regional-atlas-place-card"
                 key={place.slug}

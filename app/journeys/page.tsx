@@ -12,7 +12,7 @@ import "./journeys-atlas.css";
 export const dynamic='force-dynamic';
 export const metadata: Metadata = {
   title: "Private Safari Journey Blueprints",
-  description: "Private safari journey blueprints for India and Africa, refined around wildlife, season, photography, comfort and unhurried pacing.",
+  description: "Private wildlife and cultural journeys across India, including an Eastern Himalayan route with a Nepal stay, tailored around your interests and season.",
   alternates: { canonical: "/journeys" }
 };
 
@@ -38,6 +38,6 @@ export default async function JourneysPage() {
 
   return <>
     <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Private Journeys", path: "/journeys" }])} />
-    <JourneyFilm journeys={featuredJourneys} />
+    <JourneyFilm journeys={[...featuredJourneys, ...journeys.filter(journey => !featuredSlugs.includes(journey.slug))]} />
   </>;
 }

@@ -28,7 +28,7 @@ export function DepartureCalendar({ upcoming }: { upcoming: Departure[] }) {
             <div className="departure-calendar-image"><Image src={item.expedition.image.src} alt={item.expedition.image.alt} fill sizes="(max-width:760px) 76px, 112px"/></div>
             <div className="departure-calendar-place"><h3>{item.expedition.title.replace(/ Wildlife Photography Expedition$| Photography Expedition$| Expedition$/, "")}</h3><p>{item.expedition.duration} · {item.expedition.publicationStatus === "preview" ? "Programme being finalised" : "Photography Tours"}</p>{item.expedition.enquiryDeparture && <p>{item.expedition.date}</p>}</div>
             <div className="departure-calendar-date"><span>Departure</span><time dateTime={item.date}>{departureLabel(item)}</time></div>
-            <span className={"departure-calendar-status status-"+item.status.toLowerCase().replace(/ /g,"-")}>{item.status === "Full" ? "Sold out" : item.availability && item.status === "Available" ? item.availability : item.status}</span>
+            <div className="departure-calendar-statuses"><span className={"departure-calendar-status status-"+item.status.toLowerCase().replace(/ /g,"-")}>{item.status === "Full" ? `${item.date.slice(0, 4)} sold out` : item.availability && item.status === "Available" ? item.availability : item.status}</span>{item.expedition.nextSeasonAvailability && <span className="departure-calendar-status status-available">{item.expedition.nextSeasonAvailability}</span>}</div>
             <span className="departure-calendar-arrow" aria-hidden="true"><ArrowRight size={20}/></span>
           </Link>)}</div>
           {!visible.length && <p>No upcoming departures{filter !== "All" ? ` for ${filter}` : ""}. Contact us to register your interest.</p>}

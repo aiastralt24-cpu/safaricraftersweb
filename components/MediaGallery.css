@@ -29,3 +29,8 @@
 
 .gallery-view-more { display: block; margin: 28px auto 0; padding: 12px 4px; border: 0; border-bottom: 1px solid var(--gold, #b58b43); background: transparent; color: inherit; font: inherit; cursor: pointer; }
 .gallery-view-more:focus-visible { outline: 2px solid var(--gold, #b58b43); outline-offset: 5px; }
+
+.gallery-grid:not(.destination-story-gallery).gallery-count-1 { grid-template-columns: minmax(0,1fr); }
+@media (min-width: 861px) {
+  .gallery-grid:not(.destination-story-gallery).gallery-count-2 { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}

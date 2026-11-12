@@ -1,3 +1,4 @@
+import { photoTourFaqs, uniqueTourCopy } from '@/lib/tour-content';
 import {cache} from 'react';
 import {CmsExpedition} from '@/components/CmsExpedition';
 import {PublicEnquiryForm} from '@/components/PublicEnquiryForm';
@@ -56,6 +57,7 @@ export default async function ExpeditionDetailPage({ params }: Props) {
   if (!expedition) notFound();
   const heroSummaries: Record<string, {title:string; copy:string}> = {
     "kaziranga-wildlife-photography-expedition": {title:"Kaziranga", copy:"Six wildlife safaris, grassland encounters and a Gibbon Sanctuary visit, with photography mentoring from Team Safari Crafters."},
+    "kamchatka-wildlife-photography-expedition": {title:"Kamchatka", copy:"Brown bears, salmon waters and photography on the shores of Lake Kuril."},
     "kanha-wildlife-photography-expedition": {title:"Kanha", copy:"Five days of wildlife photography, winter light and expert mentoring in Kanha’s forests and meadows."},
     "laikipia-black-leopard-expedition": {title:"Laikipia", copy:"Black leopard tracking and patient photography in Kenya’s private conservancies."},
     "svalbard-expedition": {title:"Svalbard", copy:"An intimate Arctic voyage shaped by sea ice, wildlife and extraordinary light."},
@@ -95,14 +97,9 @@ export default async function ExpeditionDetailPage({ params }: Props) {
   const formatDate = (date:string) => new Date(date).toLocaleDateString("en-GB", {day:"numeric", month:"long", year:"numeric", timeZone:"UTC"});
   const bookableDepartures = departures.filter(item => item.status !== "Full");
   const departure = expedition.enquiryDeparture || (bookableDepartures.length ? departureLabel(bookableDepartures[0]) : undefined);
-  const faqs = [
-    ...(expedition.faqs || []),
-    { question: "When does this tour depart?", answer: departure ? `The next departure is ${departure}. See the departure list for other available dates.` : "New dates are being finalised. Send an enquiry to register your interest." },
-    { question: "What photography experience do I need?", answer: expedition.skill ? `${expedition.skill}. Share your experience and goals with the team so they can confirm whether this tour is suitable for you.` : "Tell the team about your photography experience and interests when enquiring so they can confirm suitability." },
-    { question: "What equipment should I bring?", answer: expedition.equipment || "Ask for a recommended equipment list for your departure before booking. Share your camera and lens setup with the team." },
-    { question: "Are wildlife sightings guaranteed?", answer: "Wildlife moves freely. Sightings depend on animal behaviour, weather and conditions in the field and cannot be guaranteed." },
-    { question: "How do I check availability and book?", answer: "Use the tour enquiry form with your preferred dates and group size. Request a confirmed quote, inclusions and booking conditions before making payment." }
-  ];
+  const faqs = photoTourFaqs(expedition);
+  const intro = uniqueTourCopy(expedition.intro.split(/\n\s*\n/), [expedition.heroCopy || expedition.description]).join('\n\n');
+  const highlights = uniqueTourCopy(expedition.highlights, expedition.intro.split(/\n\s*\n/));
   const breadcrumbs = [
     { name: "Home", path: "/" },
     { name: "Photography Tours", path: "/photo-expeditions" },
@@ -130,15 +127,15 @@ export default async function ExpeditionDetailPage({ params }: Props) {
           <div>
             <h2 className="expedition-section-title">Photographer-led</h2>
             <EditorialProse
-              text={expedition.intro}
+              text={intro}
               className="intro editorial-prose"
               collapsible
             />
-        {expedition.highlights.length ? (
+        {highlights.length ? (
           <div className="expedition-opening-highlights">
             <h3 className="expedition-highlights-title">Highlights</h3>
             <ul className="highlight-list">
-              {expedition.highlights.map((highlight) => (
+              {highlights.map((highlight) => (
                 <li key={highlight}>{highlight}</li>
               ))}
             </ul>
@@ -210,7 +207,7 @@ export default async function ExpeditionDetailPage({ params }: Props) {
             <MediaGallery images={visualGallery} maxImages={30} initialCount={6} label={`${expedition.title} complete photographic journal`} />
           </section>
         ) : null}
-        <section className={`container ${informationStyles.section}`} aria-labelledby="tour-faq-heading"><header className={informationStyles.intro}><p className="eyebrow">Photography tour questions</p><h2 id="tour-faq-heading">Before you <em className="editorial-accent">set out.</em></h2><p>Dates, equipment and what to expect on your photography tour.</p></header><div className={informationStyles.questions}>{faqs.map(faq => <details key={faq.question} name="photography-faq"><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
+        <section data-tour-faq className={`container ${informationStyles.section}`} aria-labelledby="tour-faq-heading"><header className={informationStyles.intro}><p className="eyebrow">Photography tour questions</p><h2 id="tour-faq-heading">Before you <em className="editorial-accent">set out.</em></h2><p>Practical answers to help you prepare for your photography tour.</p></header><div className={informationStyles.questions}>{faqs.map(faq => <details key={faq.question} name="photography-faq"><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
         <EditorialFilm video={expedition.video} />
         <BookingConditions cancellationPolicy={expedition.cancellationPolicy} paymentTerms={expedition.paymentTerms} />
         <ExpeditionEnquiry
