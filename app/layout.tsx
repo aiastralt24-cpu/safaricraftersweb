@@ -1,4 +1,5 @@
 import {headers} from 'next/headers';
+import {QuickActions} from '@/components/QuickActions';
 import {cmsPathHeader,localizedRequest} from '@/lib/cms/localized-request';
 import {loadLocalizedVisitor} from '@/lib/cms/localized-visitor';
 import {LocalizedDocumentNavigation} from '@/components/LocalizedDocumentNavigation';
@@ -93,6 +94,7 @@ export default async function RootLayout({
         <main id="main"><SiteMessages>{children}</SiteMessages></main>
         <SiteFooter />
         <SiteCookiePreferences />
+        <QuickActions />
         </StoreCartProvider>
       </body>
     </html>

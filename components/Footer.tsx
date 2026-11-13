@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { socialLinks } from '@/lib/quick-actions';
 import { Facebook, Instagram, Mail, MessageCircle } from "lucide-react";
 import { BrandMark } from "@/components/BrandMark";
 import "./Footer.css";
@@ -58,7 +59,7 @@ export function Footer() {
               <MessageCircle size={18} />
             </Link>
             <a
-              href="https://www.instagram.com/safaricrafters/?hl=en"
+              href={socialLinks.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Safari Crafters on Instagram (opens in a new tab)"
@@ -66,7 +67,7 @@ export function Footer() {
               <Instagram size={18} />
             </a>
             <a
-              href="https://www.facebook.com/profile.php?id=61574511053895"
+              href={socialLinks.facebook}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Safari Crafters on Facebook (opens in a new tab)"
