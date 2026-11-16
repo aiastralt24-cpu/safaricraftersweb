@@ -14113,7 +14113,7 @@
         }
       ],
       "publicationStatus": "published",
-      "nextSeasonAvailability": "2028 available",
+      "nextSeasonAvailability": "Check availability for 2028",
       "faqs": [
         {
           "question": "Can I book the 2027 departure?",
@@ -14402,7 +14402,7 @@
           "date": "2027-08-28",
           "endDate": "2027-09-07",
           "status": "Available",
-          "availability": "Bookings open"
+          "availability": "Check availability"
         }
       ],
       "publicationStatus": "published",
@@ -15513,7 +15513,7 @@
           "date": "2027-05-21",
           "endDate": "2027-05-25",
           "status": "Available",
-          "availability": "Enquire to book"
+          "availability": "Check availability"
         }
       ],
       "image": {
@@ -15690,7 +15690,7 @@
           "date": "2027-05-15",
           "endDate": "2027-05-18",
           "status": "Available",
-          "availability": "Enquire to book"
+          "availability": "Check availability"
         }
       ],
       "image": {
