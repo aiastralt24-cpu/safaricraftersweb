@@ -1025,7 +1025,6 @@
   color:var(--brass);
 }
 
-.expedition-preview-note { margin:0; padding:18px max(24px,calc((100vw - 1200px)/2)); background:var(--bone); color:var(--ink); font-size:14px; position:relative; z-index:1; }
 
 /* Compact stage overview shared by private journeys. */
 .journey-stages-heading { grid-column:1; grid-row:1; }

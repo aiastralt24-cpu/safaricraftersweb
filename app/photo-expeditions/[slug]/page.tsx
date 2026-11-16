@@ -122,7 +122,6 @@ export default async function ExpeditionDetailPage({ params }: Props) {
         meta="Photography Tours"
         breadcrumbs={breadcrumbs.map((item, index) => ({ label: index === breadcrumbs.length - 1 ? heroSummary?.title || item.name : item.name, ...(index < breadcrumbs.length - 1 ? { href: item.path } : {}) }))}
       /></div>
-      {expedition.publicationStatus === "preview" && <p className="expedition-preview-note" role="note">Departure preview · The programme, accommodation and pricing are being finalised. Enquire to receive confirmed details.</p>}
       <article className="section detail expedition-detail">
         <div className="container detail-grid">
           <div>
