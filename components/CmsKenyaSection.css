@@ -1,6 +1,6 @@
 /* Scoped to CMS rendering; legacy country pages retain their existing styling. */
 .cms-kenya-page .cms-kenya-public-image{display:block;width:100%;height:100%;object-fit:cover}
-.cms-kenya-page .cms-kenya-hero-image img{filter:saturate(.74) contrast(1.08) brightness(.86)}
+.cms-kenya-page .cms-kenya-hero-image img{filter:saturate(.74) contrast(1.08) brightness(0.94)}
 .cms-kenya-page .itinerary-card>.cms-kenya-public-image{position:absolute;inset:0}
 .cms-kenya-preview .cms-media-image{margin:0;padding:0;border:0;border-radius:0;min-height:0;background:transparent;display:block;height:100%;width:100%}
 .cms-kenya-preview .cms-media-image img{display:block;width:100%;height:100%;max-height:none;object-fit:cover}

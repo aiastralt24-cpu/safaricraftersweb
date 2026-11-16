@@ -1739,7 +1739,7 @@ body:has(.store-home) .footer-journey-cta {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(180deg, transparent 67%, rgba(7, 8, 6, 0.55));
+  background: linear-gradient(180deg, transparent 67%, rgba(7, 8, 6, 0.47));
   pointer-events: none;
 }
 

@@ -35,7 +35,7 @@
   position: absolute;
   inset: 0;
   z-index: -2;
-  background: linear-gradient(90deg, rgba(9,8,6,.88) 0%, rgba(9,8,6,.62) 43%, rgba(9,8,6,.12) 76%), linear-gradient(0deg, rgba(9,8,6,.9) 0%, transparent 48%);
+  background: linear-gradient(90deg, rgba(9,8,6,0.75) 0%, rgba(9,8,6,0.53) 43%, rgba(9,8,6,0.1) 76%), linear-gradient(0deg, rgba(9,8,6,0.77) 0%, transparent 48%);
 }
 
 .journey-detail-hero-content {
@@ -234,7 +234,7 @@
   }
 
   .journey-detail-hero { min-height: 780px; }
-  .journey-detail-hero-shade { background: linear-gradient(0deg, rgba(9,8,6,.96) 0%, rgba(9,8,6,.45) 68%, rgba(9,8,6,.2) 100%); }
+  .journey-detail-hero-shade { background: linear-gradient(0deg, rgba(9,8,6,0.82) 0%, rgba(9,8,6,0.38) 68%, rgba(9,8,6,0.17) 100%); }
   .journey-detail-hero-content { width: min(var(--max), calc(100% - 28px)); padding-bottom: 318px; }
   .journey-detail-hero h1 { max-width: 10ch; margin-top: 12px; font-size: clamp(3.25rem, 16vw, 5rem); line-height: .9; }
   .journey-detail-dek { font-size: .96rem; }
@@ -1059,7 +1059,7 @@
 
 /* Big Cats: a quieter, two-column hero following the destination atlas. */
 .journey-hero-editorial { min-height: min(760px, 88svh); }
-.journey-hero-editorial .journey-detail-hero-shade { background: linear-gradient(90deg,rgba(12,15,10,.7),rgba(12,15,10,.28) 52%,rgba(12,15,10,.6)),linear-gradient(0deg,rgba(12,15,10,.68),transparent 70%); }
+.journey-hero-editorial .journey-detail-hero-shade { background: linear-gradient(90deg,rgba(12,15,10,0.59),rgba(12,15,10,0.24) 52%,rgba(12,15,10,0.51)),linear-gradient(0deg,rgba(12,15,10,0.58),transparent 70%); }
 .journey-editorial-content { padding-top: 190px; padding-bottom: 65px; }
 .journey-editorial-content > .eyebrow { color: #d1a85d; margin: 0 0 25px; }
 .journey-editorial-heading { display: grid; grid-template-columns: 1.3fr .8fr; gap: 12%; align-items: end; }

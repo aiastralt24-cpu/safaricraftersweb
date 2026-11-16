@@ -3176,7 +3176,9 @@
       ],
       "highlights": [],
       "journeys": [],
-      "expeditions": [],
+      "expeditions": [
+        "snow-leopard-photography-expedition"
+      ],
       "category": "Destination guide",
       "continent": "India",
       "country": "India",
@@ -15198,35 +15200,35 @@
       "category": "Photography Tours",
       "skill": "Suitable for beginners, experienced photographers and accompanying wildlife enthusiasts",
       "groupSize": "Maximum 7 participants",
-      "duration": "3 nights / 4 days",
+      "duration": "4 nights / 5 days",
       "bestMonths": "May",
       "mentor": "Team Safari Crafters",
       "guide": "Team Safari Crafters",
       "price": "On request",
       "publicationStatus": "published",
       "equipment": "A 24–70mm lens is useful for landscapes and habitat, 70–200mm for environmental portraits, and 400–600mm for distant wildlife. You do not need every focal length. Bring an empty bean bag, dust cover, spare batteries, memory cards, a cleaning kit and chargers.",
-      "cancellationPolicy": "Cancellation charges range from 50% to 100% of the expedition fee, depending on how far ahead of departure the cancellation is received. Request the written cancellation schedule and the applicable date boundaries before paying. A booking transfer may be considered at least five months before departure, subject to permits, availability, operational feasibility and any cost difference.",
+      "cancellationPolicy": "The supplied cancellation schedule retains 50% of the expedition fee for cancellations 150 days or more before departure, 70% between 120 and 150 days, and 100% at 120 days or less. The source overlaps at the 120- and 150-day boundaries; request written confirmation of the applicable charge at those boundaries before paying. Charges are calculated using the date the cancellation request is formally received.",
       "slug": "corbett-wildlife-photography-expedition",
       "title": "Corbett Wildlife Photography Expedition",
       "heroTitle": "Corbett",
-      "date": "22–25 May 2027",
+      "date": "21–25 May 2027",
       "route": "Ramnagar → Dhikala, Corbett Tiger Reserve → Ramnagar",
       "species": "Bengal tiger, Asian elephant, leopard, deer and forest birds",
-      "description": "Six safaris through Dhikala’s grasslands and sal forests, three nights inside Corbett and photography mentoring with Team Safari Crafters. 22–25 May 2027.",
-      "intro": "An elephant moves through the grasslands, framed by forest and distant hills. In Dhikala, the landscape is part of the photograph: sal trees, riverbeds and open country give every wildlife encounter a setting.\n\nSpend 22–25 May 2027 inside Corbett Tiger Reserve, with three nights at Dhikala Forest Rest House and six morning and afternoon safaris. Look for tigers, elephants, deer and birdlife while learning to read behaviour, anticipate movement and work with changing light.\n\nTeam Safari Crafters provides photography mentoring in the field, with image reviews planned on all three evenings. The group is limited to seven participants, with a maximum of four photographers per vehicle and a pilot and naturalist in each vehicle. Beginners, experienced photographers and accompanying wildlife enthusiasts are welcome.\n\nPlan to reach Ramnagar on 21 May for an additional overnight stay before the expedition. Dhikala accommodation is basic and twin sharing, with vegetarian meals. Wait for official permit confirmation before booking non-refundable flights.",
+      "description": "Six safaris in Dhikala, one night in Ramnagar and three nights inside Corbett, with photography mentoring from Team Safari Crafters. 21–25 May 2027.",
+      "intro": "An elephant moves through the grasslands, framed by forest and distant hills. In Dhikala, the landscape is part of the photograph: sal trees, riverbeds and open country give every wildlife encounter a setting.\n\nTravel from 21–25 May 2027, beginning with a night at a resort in Ramnagar before three nights at Dhikala Forest Rest House. Six morning and afternoon safaris explore Corbett’s grasslands, sal forests and riverine habitats, with opportunities to photograph tigers, elephants, deer and birdlife in their surroundings.\n\nTeam Safari Crafters provides photography mentoring in the field, with image reviews planned on all three evenings. The group is limited to seven participants, with a maximum of four photographers per vehicle and a pilot and naturalist in each vehicle. Beginners, experienced photographers and accompanying wildlife enthusiasts are welcome.\n\nArrive in Ramnagar on 21 May for check-in, a tour briefing and photography guidance from your host. Dhikala accommodation is basic and twin sharing, with vegetarian meals. Single occupancy may be arranged only for the first night in Ramnagar. Wait for official permit confirmation before booking non-refundable flights.",
       "highlights": [
         "Six wildlife safaris in the Dhikala landscape",
-        "Three nights at Dhikala Forest Rest House",
+        "One night at a Ramnagar resort and three nights at Dhikala Forest Rest House",
         "Maximum 7 participants and 4 photographers per vehicle",
         "Photography mentoring and three planned evening image reviews",
         "Wildlife portraits, behaviour and environmental photography",
-        "Vegetarian meals and filtered drinking water included"
+        "Meals on applicable days, vegetarian at Dhikala, and filtered drinking water"
       ],
       "inclusions": [
-        "Three nights at Dhikala Forest Rest House on a twin-sharing basis.",
+        "Four nights of twin-sharing accommodation: one at a resort in Ramnagar and three at Dhikala Forest Rest House.",
         "Six wildlife safaris, safari permits and applicable forest charges.",
         "Safari vehicles with one pilot and one naturalist per vehicle.",
-        "Vegetarian breakfast, lunch and dinner on applicable days.",
+        "Breakfast, lunch and dinner on applicable days; vegetarian meals at Dhikala (Day 1 is the exception).",
         "Tea, coffee, snacks and filtered drinking water.",
         "Local transfers between accommodation and safari operations where applicable.",
         "On-field photography mentoring and evening image reviews.",
@@ -15235,7 +15237,6 @@
       "exclusions": [
         "Flights and train tickets.",
         "Airport transfers, home-to-airport transfers and return travel home.",
-        "Additional overnight stay in Ramnagar on 21 May.",
         "Travel insurance and personal expenses.",
         "Alcoholic beverages, laundry and personal shopping.",
         "Camera equipment.",
@@ -15245,34 +15246,40 @@
       ],
       "days": [
         {
-          "label": "Day 01 · 22 May",
+          "label": "Day 01 · 21 May",
+          "title": "Arrival in Ramnagar and tour briefing",
+          "copy": "Arrive and check in at a resort in Ramnagar at your convenient time. Meet your host for a tour briefing and photography guidance before entering Dhikala the following day.",
+          "stay": "Ramnagar resort"
+        },
+        {
+          "label": "Day 02 · 22 May",
           "title": "Enter Dhikala and the first safari",
           "copy": "Meet for group entry towards Dhikala at approximately 11:00 AM. Expected arrival is around 12:30 PM, subject to forest procedures, road conditions and entry formalities. Have lunch, check in and settle into the forest rest house before the first afternoon safari. Dinner is followed by an image review, subject to operational timing.",
           "stay": "Dhikala Forest Rest House"
         },
         {
-          "label": "Day 02 · 23 May",
+          "label": "Day 03 · 23 May",
           "title": "Morning light and forest encounters",
           "copy": "Head out on an early morning safari through Dhikala. Return for breakfast, with lunch and time to rest or review photographs before the afternoon safari. Practise reading behaviour, composition and exposure in changing conditions. Dinner is followed by an image review and photography discussion.",
           "stay": "Dhikala Forest Rest House"
         },
         {
-          "label": "Day 03 · 24 May",
+          "label": "Day 04 · 24 May",
           "title": "Another day in the wilderness",
           "copy": "Explore the grasslands, forests and riverine habitats on morning and afternoon safaris. Use the day to refine your approach to wildlife portraits, behaviour and habitat photographs. Meals are served at Dhikala, with an evening image review planned after dinner.",
           "stay": "Dhikala Forest Rest House"
         },
         {
-          "label": "Day 04 · 25 May",
+          "label": "Day 05 · 25 May",
           "title": "Final safari and departure",
           "copy": "Take the sixth and final safari in the morning. Return to Dhikala for breakfast, then check out and depart. Confirm your onward travel timing with the team before booking."
         }
       ],
-      "paymentTerms": "The supplied booking schedule requires 50% of the expedition fee approximately six months before departure and the balance 150 days before departure. Ask the team to confirm payment due dates and the quote before paying. Payment acknowledgement and forest permit confirmation are separate processes.",
+      "paymentTerms": "50% of the expedition fee is payable approximately six months before departure. The remaining 50% is payable 150 days before departure. Your booking is confirmed once the applicable payment has been received and acknowledged by Safari Crafters. Payment acknowledgement and forest permit confirmation are separate processes. Request your quote and exact payment due dates before paying. Customised dates and requirements can be discussed, subject to availability and permit confirmation.",
       "faqs": [
         {
           "question": "When should I arrive in Ramnagar?",
-          "answer": "Arrive in Ramnagar on 21 May 2027, one night before the tour starts on 22 May. Travelling from Delhi on the same morning is not recommended. The additional Ramnagar night can be arranged at extra cost. Group entry towards Dhikala is planned for approximately 11:00 AM on Day 1; confirm meeting details with the team."
+          "answer": "Arrive on 21 May 2027, the first day of the expedition. Your Ramnagar resort night is included. Check in at your convenient time and join the host’s tour briefing and photography guidance. Group entry towards Dhikala is planned for approximately 11:00 AM on 22 May; confirm meeting details with the team."
         },
         {
           "question": "Should I book flights before my permit is confirmed?",
@@ -15284,15 +15291,15 @@
         },
         {
           "question": "Where do we stay and is single occupancy available?",
-          "answer": "The tour includes three nights at Dhikala Forest Rest House in twin-sharing accommodation. The facilities are relatively basic. Single occupancy is not available on this group tour. Bring your own toiletries and bath towel."
+          "answer": "Stay one night at a resort in Ramnagar and three nights at Dhikala Forest Rest House. Accommodation is twin sharing. Single occupancy is not available at Dhikala on the group tour; it can be discussed for Day 1 in Ramnagar only. Dhikala facilities are relatively basic, so bring your own toiletries and bath towel."
         },
         {
           "question": "How many safaris and photographers per vehicle are included?",
-          "answer": "Six safaris are included: one on the first afternoon, morning and afternoon safaris on Days 2 and 3, and a final morning safari on Day 4. The expedition has a maximum of seven participants and four photographers per vehicle, with one pilot and one naturalist in each vehicle."
+          "answer": "Six safaris are included: one afternoon safari on Day 2, morning and afternoon safaris on Days 3 and 4, and a final morning safari on Day 5. The expedition has a maximum of seven participants and four photographers per vehicle, with one pilot and one naturalist in each vehicle."
         },
         {
           "question": "Are meals and drinking water included?",
-          "answer": "Vegetarian breakfast, lunch and dinner are included on applicable days, together with tea, coffee, snacks and filtered drinking water. Mineral water and the additional Ramnagar overnight stay are not included."
+          "answer": "Breakfast, lunch and dinner are included on applicable days, together with tea, coffee, snacks and filtered drinking water. Meals at Dhikala are vegetarian; Day 1 in Ramnagar is the exception. Mineral water is excluded."
         },
         {
           "question": "Is photography mentoring included?",
@@ -15308,12 +15315,12 @@
         },
         {
           "question": "When is the expedition briefing?",
-          "answer": "A briefing is planned on 21 May if participants arrive the night before. Otherwise it takes place on Day 1 before or while entering Dhikala. It covers the schedule, safari protocols, photography approach, wildlife ethics, safety and equipment preparation."
+          "answer": "The host leads a tour briefing and photography guidance session at the Ramnagar resort on Day 1, 21 May 2027. Confirm the session time with the team when arranging your arrival."
         }
       ],
       "departures": [
         {
-          "date": "2027-05-22",
+          "date": "2027-05-21",
           "endDate": "2027-05-25",
           "status": "Available",
           "availability": "Enquire to book"
@@ -15353,17 +15360,18 @@
       ],
       "body": [
         "An elephant moves through the grasslands, framed by forest and distant hills. In Dhikala, the landscape is part of the photograph: sal trees, riverbeds and open country give every wildlife encounter a setting.",
-        "Spend 22–25 May 2027 inside Corbett Tiger Reserve, with three nights at Dhikala Forest Rest House and six morning and afternoon safaris. Look for tigers, elephants, deer and birdlife while learning to read behaviour, anticipate movement and work with changing light.",
+        "Travel from 21–25 May 2027, beginning with a night at a resort in Ramnagar before three nights at Dhikala Forest Rest House. Six morning and afternoon safaris explore Corbett’s grasslands, sal forests and riverine habitats, with opportunities to photograph tigers, elephants, deer and birdlife in their surroundings.",
         "Team Safari Crafters provides photography mentoring in the field, with image reviews planned on all three evenings. The group is limited to seven participants, with a maximum of four photographers per vehicle and a pilot and naturalist in each vehicle. Beginners, experienced photographers and accompanying wildlife enthusiasts are welcome.",
-        "Plan to reach Ramnagar on 21 May for an additional overnight stay before the expedition. Dhikala accommodation is basic and twin sharing, with vegetarian meals. Wait for official permit confirmation before booking non-refundable flights.",
+        "Arrive in Ramnagar on 21 May for check-in, a tour briefing and photography guidance from your host. Dhikala accommodation is basic and twin sharing, with vegetarian meals. Single occupancy may be arranged only for the first night in Ramnagar. Wait for official permit confirmation before booking non-refundable flights.",
+        "Arrive and check in at a resort in Ramnagar at your convenient time. Meet your host for a tour briefing and photography guidance before entering Dhikala the following day.",
         "Meet for group entry towards Dhikala at approximately 11:00 AM. Expected arrival is around 12:30 PM, subject to forest procedures, road conditions and entry formalities. Have lunch, check in and settle into the forest rest house before the first afternoon safari. Dinner is followed by an image review, subject to operational timing.",
         "Head out on an early morning safari through Dhikala. Return for breakfast, with lunch and time to rest or review photographs before the afternoon safari. Practise reading behaviour, composition and exposure in changing conditions. Dinner is followed by an image review and photography discussion.",
         "Explore the grasslands, forests and riverine habitats on morning and afternoon safaris. Use the day to refine your approach to wildlife portraits, behaviour and habitat photographs. Meals are served at Dhikala, with an evening image review planned after dinner.",
         "Take the sixth and final safari in the morning. Return to Dhikala for breakfast, then check out and depart. Confirm your onward travel timing with the team before booking."
       ],
       "seo": {
-        "title": "Corbett Wildlife Photography Expedition | 22–25 May 2027",
-        "description": "Six safaris through Dhikala’s grasslands and sal forests, three nights inside Corbett and photography mentoring with Team Safari Crafters. 22–25 May 2027."
+        "title": "Corbett Wildlife Photography Expedition | 21–25 May 2027",
+        "description": "Six safaris in Dhikala, one night in Ramnagar and three nights inside Corbett, with photography mentoring from Team Safari Crafters. 21–25 May 2027."
       }
     },
     {
@@ -15565,6 +15573,189 @@
       "seo": {
         "title": "Tadoba Wildlife Photography Expedition | 15–18 May 2027",
         "description": "Four days in Tadoba’s tiger country, with wildlife safaris, field mentoring and evening image reviews led by Team Safari Crafters. 15–18 May 2027."
+      }
+    },
+    {
+      "slug": "snow-leopard-photography-expedition",
+      "title": "Snow Leopard Photography Expedition",
+      "heroTitle": "Snow Leopard",
+      "category": "Photography Tours",
+      "geography": "India",
+      "publicationStatus": "published",
+      "skill": "Discuss photography experience and suitability for winter travel at altitude with the team",
+      "groupSize": "To be confirmed",
+      "duration": "10 nights / 11 days",
+      "bestMonths": "March",
+      "species": "Snow leopard, blue sheep, Asiatic ibex, red fox, Tibetan wolf and mountain birds",
+      "equipment": "Request the expedition’s winter clothing and camera equipment checklist before travel. Share your camera and lens setup with the team.",
+      "mentor": "Safari Crafters",
+      "date": "1–11 March 2027",
+      "price": "$4,450 per person + 5% GST",
+      "route": "Chandigarh → Rampur Bushahr → Tabo → Kibber → Kaza → Rampur Bushahr → Chandigarh",
+      "description": "Six days of snow leopard tracking around Kibber, with ten nights in the Himalayas and transfers from Chandigarh. 1–11 March 2027.",
+      "intro": "Journey into Spiti Valley to search for snow leopards around Kibber Wildlife Sanctuary, where snow-covered slopes, deep gorges and mountain villages form the setting for winter wildlife photography.\n\nThe 1–11 March 2027 expedition begins and ends in Chandigarh. Travel through Rampur Bushahr and Tabo to Kibber, with six full days devoted to tracking and photography. Local scanners search ahead of the group, helping direct each day’s observations towards promising vantage points.\n\nAlongside snow leopards, look for blue sheep, Asiatic ibex, red fox, mountain birds and, with luck, Tibetan wolf. Time is also set aside for landscape photography, including an early start for first light. Wildlife sightings depend on animal movement and conditions and cannot be guaranteed.",
+      "image": {
+        "src": "/assets/destinations/spiti-valley/field-photographs/0de6df82937a.webp",
+        "alt": "Snow leopard crossing a snow-covered slope in Spiti Valley",
+        "credit": "Safari Crafters archive",
+        "focalPoint": "68% 50%"
+      },
+      "gallery": [
+        {
+          "src": "/assets/destinations/spiti-valley/field-photographs/da4352a0f129.webp",
+          "alt": "Snow-covered mountains and river valley in Spiti",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/spiti-valley/field-photographs/ce229758af13.webp",
+          "alt": "Snow leopard resting against a rocky cliff in Spiti Valley",
+          "credit": "Safari Crafters archive",
+          "focalPoint": "65% 55%"
+        },
+        {
+          "src": "/assets/destinations/spiti-valley/field-photographs/fc8d6ce9e635.webp",
+          "alt": "Two snow leopards rearing up in the snow in Spiti Valley",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/spiti-valley/field-photographs/b534837c2020.webp",
+          "alt": "Snow leopard standing below a snowy hillside in Spiti Valley",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/spiti-valley/field-photographs/54f7f04310da.webp",
+          "alt": "Snow leopard stepping onto a rock amid Spiti’s snow",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/spiti-valley/field-photographs/cbca12c977ad.webp",
+          "alt": "Snow leopard climbing a rocky slope in Spiti Valley",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/spiti-valley/field-photographs/938ff12a98a5.webp",
+          "alt": "Snow leopard seen from above on a snowy Spiti slope",
+          "credit": "Safari Crafters archive"
+        },
+        {
+          "src": "/assets/destinations/spiti-valley/field-photographs/f7ead5cd3000.webp",
+          "alt": "Snow-covered hillside below a settlement in Spiti Valley",
+          "credit": "Safari Crafters archive"
+        }
+      ],
+      "highlights": [
+        "Six full days of tracking around Kibber Wildlife Sanctuary",
+        "Local snow leopard scanners and a personal porter for each guest",
+        "Seven nights at Snow Leopard Homestay in Kibber",
+        "Mountain wildlife and first-light landscape photography"
+      ],
+      "days": [
+        {
+          "label": "Day 01 · 1 March",
+          "title": "Chandigarh to Rampur Bushahr",
+          "copy": "Depart Chandigarh at 8:00 AM for a drive of approximately six to seven hours through Shimla, Kufri and Narkanda. Arrive at Nau Nabh Heritage Hotel, within the palace complex of the Maharaja of Rampur.",
+          "stay": "Nau Nabh Heritage Hotel, Rampur Bushahr",
+          "meals": "Dinner"
+        },
+        {
+          "label": "Day 02 · 2 March",
+          "title": "Into Spiti Valley and on to Tabo",
+          "copy": "Leave at dawn towards Spiti Valley. Complete the required permit formalities and continue to Tabo. Stop along the route for landscapes and any wildlife encountered, including mountain ungulates, red fox and birds.",
+          "stay": "Dewachen Hotel, Tabo"
+        },
+        {
+          "label": "Day 03 · 3 March",
+          "title": "Tabo to Kibber",
+          "copy": "After breakfast, drive towards Kibber, with an expected journey of around two hours, subject to conditions. Settle into Snow Leopard Homestay and rest before lunch. Head out later for bird and landscape photography.",
+          "stay": "Snow Leopard Homestay, Kibber"
+        },
+        {
+          "label": "Days 04–09 · 4–9 March",
+          "title": "Six days of snow leopard tracking",
+          "copy": "Head out after breakfast to vantage points identified by scanners who begin their search earlier in the day. Patient observation shapes the programme as the team searches for snow leopards. Between sightings, photograph blue sheep, Asiatic ibex, red fox, birds and, with luck, Tibetan wolf. One morning includes an early start for first-light landscape photography. Daily plans respond to sightings, weather and access.",
+          "stay": "Snow Leopard Homestay, Kibber"
+        },
+        {
+          "label": "Day 10 · 10 March",
+          "title": "Kibber to Rampur Bushahr",
+          "copy": "After breakfast, leave Kibber via Kaza and continue to Rampur Bushahr. Return to Nau Nabh Heritage Hotel for the final night.",
+          "stay": "Nau Nabh Heritage Hotel, Rampur Bushahr"
+        },
+        {
+          "label": "Day 11 · 11 March",
+          "title": "Return to Chandigarh",
+          "copy": "Depart early for Chandigarh, with arrival planned around noon for an evening onward flight. Mountain road and weather conditions can affect travel times; confirm onward arrangements with the team. The expedition ends in Chandigarh.",
+          "meals": "Breakfast"
+        }
+      ],
+      "inclusions": [
+        "Two nights at Nau Nabh Heritage Hotel in Rampur Bushahr, on Days 1 and 10.",
+        "One night at Dewachen Hotel in Tabo, on Day 2.",
+        "Seven nights at Snow Leopard Homestay in Kibber. Room occupancy must be confirmed in your quote.",
+        "Room heating.",
+        "All meals from dinner on Day 1 to breakfast on Day 11.",
+        "Toyota Innova transfers up to Kaza and 4×4 off-roader/SUV transport during the expedition.",
+        "Snow leopard tracking and a personal porter for each guest.",
+        "Park entry and camera fees, subject to changes for 2027.",
+        "Inner line permit."
+      ],
+      "exclusions": [
+        "Airfare to Chandigarh and back.",
+        "Optional pre-expedition night in Chandigarh, charged at actual extra cost.",
+        "Packaged water, drinks and alcohol.",
+        "Phone calls, internet and WiFi.",
+        "Tips and gratuities.",
+        "Personal expenses and laundry; laundry is not available in Spiti Valley.",
+        "Extra porters.",
+        "Extra nights required because of bad weather or road closures.",
+        "Travel insurance covering trip disruption, emergency evacuation and cancellation.",
+        "5% GST on the total tour cost.",
+        "Anything not specifically listed under inclusions."
+      ],
+      "departures": [
+        {
+          "date": "2027-03-01",
+          "endDate": "2027-03-11",
+          "status": "Available",
+          "availability": "Check availability"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "When and where should I join the expedition?",
+          "answer": "The group departs Chandigarh at 8:00 AM on 1 March 2027. Plan your arrival to meet that departure. A night in Chandigarh before the tour can be arranged at actual extra cost. Airfare to and from Chandigarh is excluded."
+        },
+        {
+          "question": "What room occupancy does the price include?",
+          "answer": "The supplied itinerary does not specify room occupancy. Ask for the room-sharing arrangement and any single-room supplement in writing before booking."
+        },
+        {
+          "question": "How demanding is the expedition?",
+          "answer": "The itinerary involves winter conditions, mountain road journeys and time outdoors at altitude. Discuss mobility, fitness and acclimatisation arrangements with the team before booking, and obtain individual medical advice about travel at altitude."
+        },
+        {
+          "question": "Does the itinerary include altitude medication?",
+          "answer": "The supplied itinerary lists one dose of altitude-sickness prevention medication. Ask the organiser to clarify this provision and discuss any medication with your own clinician before travel; it is not a substitute for an individual medical and acclimatisation plan."
+        },
+        {
+          "question": "What happens if roads close or weather delays travel?",
+          "answer": "The daily programme and onward travel may change with conditions. Extra accommodation caused by weather or road closures is excluded. Travel insurance with disruption, evacuation and cancellation cover is also excluded from the price."
+        }
+      ],
+      "body": [
+        "Journey into Spiti Valley to search for snow leopards around Kibber Wildlife Sanctuary, where snow-covered slopes, deep gorges and mountain villages form the setting for winter wildlife photography.",
+        "The 1–11 March 2027 expedition begins and ends in Chandigarh. Travel through Rampur Bushahr and Tabo to Kibber, with six full days devoted to tracking and photography. Local scanners search ahead of the group, helping direct each day’s observations towards promising vantage points.",
+        "Alongside snow leopards, look for blue sheep, Asiatic ibex, red fox, mountain birds and, with luck, Tibetan wolf. Time is also set aside for landscape photography, including an early start for first light. Wildlife sightings depend on animal movement and conditions and cannot be guaranteed.",
+        "Depart Chandigarh at 8:00 AM for a drive of approximately six to seven hours through Shimla, Kufri and Narkanda. Arrive at Nau Nabh Heritage Hotel, within the palace complex of the Maharaja of Rampur.",
+        "Leave at dawn towards Spiti Valley. Complete the required permit formalities and continue to Tabo. Stop along the route for landscapes and any wildlife encountered, including mountain ungulates, red fox and birds.",
+        "After breakfast, drive towards Kibber, with an expected journey of around two hours, subject to conditions. Settle into Snow Leopard Homestay and rest before lunch. Head out later for bird and landscape photography.",
+        "Head out after breakfast to vantage points identified by scanners who begin their search earlier in the day. Patient observation shapes the programme as the team searches for snow leopards. Between sightings, photograph blue sheep, Asiatic ibex, red fox, birds and, with luck, Tibetan wolf. One morning includes an early start for first-light landscape photography. Daily plans respond to sightings, weather and access.",
+        "After breakfast, leave Kibber via Kaza and continue to Rampur Bushahr. Return to Nau Nabh Heritage Hotel for the final night.",
+        "Depart early for Chandigarh, with arrival planned around noon for an evening onward flight. Mountain road and weather conditions can affect travel times; confirm onward arrangements with the team. The expedition ends in Chandigarh."
+      ],
+      "seo": {
+        "title": "Snow Leopard Photography Expedition | 1–11 March 2027",
+        "description": "Track snow leopards in Spiti Valley on an 11-day expedition from Chandigarh, with six tracking days around Kibber. $4,450 per person plus 5% GST."
       }
     }
   ],

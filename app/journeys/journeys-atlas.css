@@ -23,7 +23,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(var(--rgb-night), .48);
+  background: rgba(var(--rgb-night), 0.41);
 }
 
 .journey-atlas-hero-copy {
@@ -383,7 +383,7 @@
 @media (max-width: 760px) {
   .journey-atlas-hero { min-height: 720px; }
   .journey-atlas-hero-image { object-position: 58% center; }
-  .journey-atlas-hero-shade { background: rgba(var(--rgb-night), .58); }
+  .journey-atlas-hero-shade { background: rgba(var(--rgb-night), 0.49); }
   .journey-atlas-hero-copy { width: calc(100% - 40px); min-height: 720px; padding: 150px 0 58px; }
   .journey-atlas-hero-copy h1 { max-width: 9ch; font-size: clamp(3.6rem, 16vw, 5rem); }
   .journey-atlas-hero-copy > span { max-width: 28ch; font-size: 1rem; line-height: 1.5; }

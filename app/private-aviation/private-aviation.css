@@ -11,7 +11,7 @@
 .aviation-hero-aside a svg, .aviation-link svg, .aviation-cta a svg { transition: transform 240ms var(--ease); }
 .aviation-hero-aside a:hover svg, .aviation-link:hover svg, .aviation-cta a:hover svg { transform: translate(3px, -3px); }
 .aviation-hero-image { position: relative; width: min(1600px, 100%); aspect-ratio: 1920 / 745; margin: 0 auto; overflow: hidden; background: #bac4c8; }
-.aviation-hero-image video { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.72) contrast(1.04) brightness(.76); animation: aviation-hero-arrive 900ms cubic-bezier(.2,0,0,1) both; }
+.aviation-hero-image video { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.72) contrast(1.04) brightness(0.84); animation: aviation-hero-arrive 900ms cubic-bezier(.2,0,0,1) both; }
 .aviation-hero-image figcaption { position: absolute; right: 0; bottom: 0; left: 0; display: flex; justify-content: space-between; gap: 24px; padding: 18px 22px; background: linear-gradient(0deg, rgba(var(--rgb-night), .62), transparent); color: rgba(var(--rgb-bone), .82); font-size: var(--type-small); }
 .aviation-hero-image figcaption span:first-child { color: var(--brass-light); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
 .aviation-intro { background: var(--aviation-paper); }

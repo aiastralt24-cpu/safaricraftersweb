@@ -39,7 +39,7 @@ body:has(.concept-page) .site-header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.82) contrast(1.04) brightness(0.9);
+  filter: saturate(0.82) contrast(1.04) brightness(0.98);
 }
 
 .concept-hero-shade {
@@ -48,7 +48,7 @@ body:has(.concept-page) .site-header {
   z-index: 1;
   background:
     radial-gradient(circle at 70% 24%, rgba(var(--rgb-brass-light), 0.08), transparent 30%),
-    linear-gradient(90deg, rgba(var(--rgb-night), 0.62), rgba(var(--rgb-night), 0.12) 48%, rgba(var(--rgb-night), 0.26));
+    linear-gradient(90deg, rgba(var(--rgb-night), 0.53), rgba(var(--rgb-night), 0.1) 48%, rgba(var(--rgb-night), 0.22));
 }
 
 .concept-hero-nav {

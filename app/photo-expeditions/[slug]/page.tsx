@@ -68,6 +68,7 @@ export default async function ExpeditionDetailPage({ params }: Props) {
     || expedition.gallery.find((image) => image.src !== expedition.image.src)
     || expedition.image;
   const tourDestinations: Record<string, string> = {
+    "snow-leopard-photography-expedition": "spiti-valley",
     "corbett-wildlife-photography-expedition": "corbett",
     "tadoba-wildlife-photography-expedition": "tadoba",
     "kamchatka-wildlife-photography-expedition": "kamchatka",
