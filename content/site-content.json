@@ -13548,7 +13548,7 @@
       "skill": "Wildlife photography mentoring in the field",
       "groupSize": "Small-group expedition",
       "duration": "4 nights / 5 days",
-      "bestMonths": "12-16 December 2026",
+      "bestMonths": "December departure",
       "species": "Wildlife, behaviour and atmospheric forest landscapes",
       "equipment": "24-70mm for landscapes, 70-200mm for environmental wildlife images, 400-600mm as the primary wildlife range, plus a bean bag, spare batteries, memory cards and a lens-cleaning kit",
       "description": "A premium wildlife photography journey through Kanha's meadows, sal forests and remarkable wildlife, shaped around winter light, fieldcraft and thoughtful mentoring.",
@@ -13767,7 +13767,29 @@
           "availability": "Check availability"
         }
       ],
-      "publicationStatus": "published"
+      "publicationStatus": "published",
+      "faqs": [
+        {
+          "question": "When should I arrive and depart?",
+          "answer": "The programme lists check-in after 1:00 PM on Day 1 and departure after 12:00 PM on Day 5, following the final safari and breakfast. Confirm transfer times before booking onward travel."
+        },
+        {
+          "question": "How are the seven safaris scheduled?",
+          "answer": "The itinerary has morning and afternoon drives on Days 2–4 and a final morning drive on Day 5. Day 1 is for arrival, briefing and orientation."
+        },
+        {
+          "question": "Can beginners and non-photographers join?",
+          "answer": "Yes. The programme welcomes beginners, experienced photographers, wildlife enthusiasts and accompanying non-photographers. Tell the team about your interests and any support needs."
+        },
+        {
+          "question": "Which lodge will we stay at?",
+          "answer": "The inclusions list Tathastu, Jungle Camps or similar. Ask for the confirmed property and room arrangement in your written proposal."
+        },
+        {
+          "question": "Are airport transfers included?",
+          "answer": "No. Flights, train tickets and airport transfers are excluded. Local transfers between the accommodation and safari gates are included."
+        }
+      ]
     },
     {
       "slug": "laikipia-black-leopard-expedition",
@@ -13778,7 +13800,7 @@
       "groupSize": "Last spot available",
       "duration": "5 days",
       "bestMonths": "Seasonal departure",
-      "species": "Wildlife and landscape focus shaped by destination",
+      "species": "Black leopard and other wildlife of Laikipia",
       "equipment": "A tailored packing and camera note is shared before departure",
       "description": "Track and photograph the legendary Black Leopard of Laikipia, Kenya, on an exceptionally rare photo safari set within private wilderness landscapes.",
       "intro": "Track and photograph the legendary Black Leopard of Laikipia, Kenya, on an exceptionally rare photo safari set within private wilderness landscapes.\n\nThis is a once-in-a-lifetime opportunity, among the rarest wildlife encounters on Earth, to witness and document a bold Black Leopard against dramatic savannahs and river valleys, capturing close-up portraits, powerful hunts, and intimate natural behaviour rarely seen anywhere in the world.\n\nAlong the way, encounter elephants, wild dogs, and elusive striped hyenas, all framed by Laikipia’s striking light and open terrain. Led by expert guides, this all-inclusive photography tour offers day and night safaris, placing you at the heart of one of the most coveted and cherished wildlife photography journeys globally.\n\nIf you seek an off-beat African safari far removed from the crowds, join us in Northern Kenya for an all-inclusive photographic journey through the wild heart of Laikipia. This rugged plateau, where rolling savannahs dissolve into rocky escarpments and riverine forests, hosts a remarkable diversity of wildlife.\n\nElephants, Grevy’s zebras, and antelopes move through the open plains, while elusive predators such as leopards, wild dogs, and striped hyenas lend the landscape its raw, untamed edge.",
@@ -13827,7 +13849,7 @@
       "mentor": "Gaurav Ramnarayanan",
       "guide": "Gaurav Ramnarayanan",
       "price": "$4700",
-      "route": "Designed around season, access and wildlife movement",
+      "route": "Nairobi → Laikipia → Nairobi",
       "highlights": [
         "Private conservancy access in Laikipia",
         "Black leopard and nocturnal wildlife tracking",
@@ -13879,7 +13901,29 @@
         "As the sun rises, we will be out on safari until mid day, returning briefly just to have lunch and back on safari once again. We will conclude our evening safari just before dinner. On of the days, we will also enjoy a bush dinner in the middle of the wilderness and under the stars, an experience entirely worth it.",
         "Today, will be our last morning on safari. Soon after we return from the morning drive, we will check-out and proceed to Nairobi arriving in the Jomo Kenyatta International Airport by 4 pm. Tour concludes"
       ],
-      "publicationStatus": "published"
+      "publicationStatus": "published",
+      "faqs": [
+        {
+          "question": "Can a black leopard sighting be guaranteed?",
+          "answer": "No. A black leopard is a wild animal whose movement cannot be scheduled. The programme focuses on searching and observation, with other wildlife providing photographic interest along the way."
+        },
+        {
+          "question": "Are night safaris included?",
+          "answer": "Day and night safaris are listed in the inclusions. Confirm the daily arrangements and photographic guidance with the team, and follow the guides’ instructions when working after dark."
+        },
+        {
+          "question": "How do we get to Laikipia?",
+          "answer": "Return ground transfers from Nairobi to Laikipia are included. International flights to Nairobi are excluded. Confirm the pickup location and timing before booking flights."
+        },
+        {
+          "question": "Is the quoted price the total payable?",
+          "answer": "The published price is $4,700. The exclusions also list 5% GST and TCS, so request a written quote showing the applicable taxes and total before paying."
+        },
+        {
+          "question": "Which dates and rooms are available?",
+          "answer": "No dated departure is currently listed on this page. Accommodation is quoted on double occupancy; ask the team for the current departure, room options and availability."
+        }
+      ]
     },
     {
       "slug": "svalbard-expedition",
@@ -13890,9 +13934,9 @@
       "groupSize": "12 guests",
       "duration": "10 days",
       "bestMonths": "2027 sold out · Bookings open for 2028",
-      "species": "Wildlife and landscape focus shaped by destination",
+      "species": "Polar bears, walrus, seals and seabirds",
       "equipment": "A tailored packing and camera note is shared before departure",
-      "description": "2027 is sold out. We are now taking bookings for 2028. Join our exclusive Svalbard expedition, a once-in-a-lifetime voyage to one of Earth’s last true frontiers, where towering glaciers meet the profound silence of the High.",
+      "description": "Our 2027 Svalbard voyage is sold out; enquiries are open for 2028, with dates to be confirmed. Photograph Arctic wildlife, fjords and ice on a small-ship expedition.",
       "intro": "Our 2027 expedition is sold out. We are now taking bookings for 2028; departure dates will be confirmed.\n\nJoin our exclusive Svalbard expedition, a once-in-a-lifetime voyage to one of Earth’s last true frontiers, where towering glaciers meet the profound silence of the High Arctic. Sail through ice-filled fjords as light dances across sculpted snow and drifting pack ice, in quiet search of Polar Bears, Walrus, Seals, and seabirds.\n\nEach encounter introduces you to the raw, elemental power of Mother Earth. Guided by expert photographers and naturalists, this intimate small-ship journey offers rare access to the jewels of the Arctic, revealing the planet at its most pristine, powerful, and humbling accents, a living marvel few will ever witness.\n\nSvalbard, a Norwegian archipelago set between mainland Norway and the North Pole, stands among the planet’s most spectacular Arctic frontiers. Discovered by Willem Barentsz in 1596, it lies approximately 965 km from the Pole and 644 km north of Norway.\n\nWith nearly 60% of its 39,784 km² landmass blanketed in ice, Svalbard remains Europe’s largest true wilderness, vast and elemental, and profoundly untouched.",
       "image": {
         "src": "/assets/destinations/svalbard/field-photographs/a513430a84d8.webp",
@@ -14011,7 +14055,7 @@
       "date": "2027 sold out · Bookings open for 2028",
       "enquiryDeparture": "2028 — dates to be confirmed",
       "price": "On request",
-      "route": "Designed around season, access and wildlife movement",
+      "route": "Longyearbyen → Svalbard archipelago → Longyearbyen",
       "highlights": [
         "Just 12 guests aboard M/V Virgo",
         "Remote fjords, ice edges and Arctic wildlife",
@@ -14069,7 +14113,29 @@
         }
       ],
       "publicationStatus": "published",
-      "nextSeasonAvailability": "2028 available"
+      "nextSeasonAvailability": "2028 available",
+      "faqs": [
+        {
+          "question": "Can I book the 2027 departure?",
+          "answer": "The listed 5–14 July 2027 departure is sold out. Enquiries are open for 2028; ask for confirmed dates, pricing and cabin availability."
+        },
+        {
+          "question": "Is there a fixed sailing route?",
+          "answer": "No. The expedition itinerary is shaped by ice, weather and wildlife activity. The expedition leader adjusts the programme to conditions rather than promising specific locations or encounters."
+        },
+        {
+          "question": "Are Zodiac outings and landings included?",
+          "answer": "Zodiac cruises, shore landings and hikes are listed as expedition activities. Whether an individual outing can operate depends on conditions and the expedition team’s decisions."
+        },
+        {
+          "question": "Where does the voyage start and finish?",
+          "answer": "The published programme starts and finishes in Longyearbyen. Travel to and from Longyearbyen is excluded. Confirm the arrangements for your selected departure before booking flights."
+        },
+        {
+          "question": "What clothing and camera protection should I bring?",
+          "answer": "Request the expedition packing list, including guidance for wet conditions and boat outings. Personal expedition clothing is excluded from the price. Ask about luggage limits before finalising your camera bag."
+        }
+      ]
     },
     {
       "slug": "the-pantanal-wetlands",
@@ -14403,14 +14469,14 @@
       "geography": "India",
       "title": "Bharatpur Photography Expedition",
       "category": "Photography Tours",
-      "skill": "",
+      "skill": "Bird photographers and wildlife enthusiasts; discuss your experience and support needs with the team",
       "groupSize": "To be confirmed",
       "duration": "4 days",
-      "bestMonths": "",
-      "species": "",
-      "equipment": "",
-      "description": "Join our fixed photography departure to Bharatpur, 23 January 2027.",
-      "intro": "Our Bharatpur fixed departure runs from 23 January 2027 to 26 January 2027. Contact the team for the detailed programme, accommodation, pricing and availability.",
+      "bestMonths": "January departure",
+      "species": "Resident and migratory waterbirds, storks, herons, ducks and woodland birds",
+      "equipment": "A telephoto lens helps with birds at a distance, while a wider lens can capture wetland scenes and groups. Bring spare batteries, memory cards and a lens cloth. Ask which camera supports are practical for the confirmed walking and transport arrangements before packing a tripod.",
+      "description": "Explore bird photography in the wetlands and woodland of Keoladeo National Park, Bharatpur. A four-day departure planned for 23–26 January 2027.",
+      "intro": "Bharatpur rewards time spent watching. At Keoladeo National Park, wetland edges, open water and wooded paths create different settings for photographing birds. Resident species and winter visitors offer subjects ranging from quiet portraits to feeding behaviour and flight.\n\nOur 23–26 January 2027 departure focuses on building a varied bird portfolio. Reflections, silhouettes, groups of birds and wider habitat compositions offer alternatives to filling every frame with a single subject. Water levels, light and bird movement influence which areas are most productive.\n\nThe daily programme, accommodation, group size, transport within the park and price are being finalised. Request the confirmed proposal before booking travel; particular species and photographic conditions cannot be promised.",
       "image": {
         "src": "/assets/destinations/bharatpur-keoladeo/field-photographs/976f71ef5d58.webp",
         "alt": "Sarus cranes together in Bharatpur grassland",
@@ -14566,9 +14632,14 @@
         }
       ],
       "mentor": "Team Safari Crafters",
-      "date": "23 January 2027",
+      "date": "23–26 January 2027",
       "route": "Bharatpur & Keoladeo",
-      "highlights": [],
+      "highlights": [
+        "Waterbird behaviour, flight and environmental portraits",
+        "Reflections and silhouettes around wetland habitats",
+        "Woodland birds alongside open-water subjects",
+        "Time to practise framing, backgrounds and anticipating movement"
+      ],
       "days": [],
       "departures": [
         {
@@ -14578,21 +14649,52 @@
           "availability": "Check availability"
         }
       ],
-      "publicationStatus": "preview"
+      "publicationStatus": "preview",
+      "faqs": [
+        {
+          "question": "How will we move around Keoladeo?",
+          "answer": "The park visit arrangements are still being finalised. Ask the team to confirm walking distances, any cycle-rickshaw provision, equipment transport and accessibility before booking."
+        },
+        {
+          "question": "Which birds will we photograph?",
+          "answer": "The focus is on the resident and winter-visiting birdlife present during the departure. The species mix and concentration of birds depend on water levels, seasonal movement and conditions. No individual species is guaranteed."
+        },
+        {
+          "question": "Do I need experience photographing birds in flight?",
+          "answer": "Tell the team what you currently photograph and the camera system you use. Ask about the planned guidance and group pace so you can decide whether the departure suits your experience."
+        },
+        {
+          "question": "What should I pack for January?",
+          "answer": "Bring layers for early starts, comfortable walking shoes, sun protection and camera essentials. Request a final packing list once the programme and transport are confirmed."
+        },
+        {
+          "question": "What is included in the departure?",
+          "answer": "Accommodation, meals, park visits, local transport, guiding and any transfers will be itemised in the final quote. These arrangements and the price are not yet confirmed on this preview page."
+        }
+      ],
+      "body": [
+        "Bharatpur rewards time spent watching. At Keoladeo National Park, wetland edges, open water and wooded paths create different settings for photographing birds. Resident species and winter visitors offer subjects ranging from quiet portraits to feeding behaviour and flight.",
+        "Our 23–26 January 2027 departure focuses on building a varied bird portfolio. Reflections, silhouettes, groups of birds and wider habitat compositions offer alternatives to filling every frame with a single subject. Water levels, light and bird movement influence which areas are most productive.",
+        "The daily programme, accommodation, group size, transport within the park and price are being finalised. Request the confirmed proposal before booking travel; particular species and photographic conditions cannot be promised."
+      ],
+      "seo": {
+        "title": "Bharatpur Photography Expedition | 23–26 January 2027",
+        "description": "Explore bird photography in the wetlands and woodland of Keoladeo National Park, Bharatpur. A four-day departure planned for 23–26 January 2027."
+      }
     },
     {
       "slug": "panna-photography-expedition",
       "geography": "India",
       "title": "Panna Photography Expedition",
       "category": "Photography Tours",
-      "skill": "",
+      "skill": "Photographers and wildlife enthusiasts; discuss your experience and support needs with the team",
       "groupSize": "To be confirmed",
       "duration": "5 days",
-      "bestMonths": "",
-      "species": "",
-      "equipment": "",
-      "description": "Join our fixed photography departure to Panna, 10 February 2027.",
-      "intro": "Our Panna fixed departure runs from 10 February 2027 to 14 February 2027. Contact the team for the detailed programme, accommodation, pricing and availability.",
+      "bestMonths": "February departure",
+      "species": "Bengal tiger, vultures, forest birds and riverine birdlife",
+      "equipment": "A telephoto lens is useful for wildlife and birds; a wider lens helps capture the river, forest and rocky landscape. Bring spare batteries, memory cards and protection against dust. Share your existing kit with the team before buying or hiring equipment.",
+      "description": "Photograph tiger country, the Ken River landscape and cliff-dwelling vultures in Panna, Madhya Pradesh. A five-day departure planned for 10–14 February 2027.",
+      "intro": "Panna offers more than a close-up of a tiger. Dry deciduous forest opens onto rocky slopes and river valleys, while the Ken River gives the landscape its distinctive shape. These varied settings offer scope for wildlife portraits, birds in flight and wider photographs that place an animal within its habitat.\n\nOur photography departure is planned for 10–14 February 2027. The photographic focus is on patient observation: watching behaviour, finding clean backgrounds and using changing light to build a varied set of images. Between big-cat encounters, look to the cliffs for vultures and to the woodland and river margins for birdlife.\n\nThe detailed safari programme, accommodation, group size and price are being finalised. Contact Team Safari Crafters for the confirmed itinerary and inclusions before booking travel.",
       "image": {
         "src": "/assets/destinations/panna/field-photographs/96f58b18cda7.webp",
         "alt": "Tiger walking through Panna beneath a glowing sunset",
@@ -14714,9 +14816,13 @@
         }
       ],
       "mentor": "Team Safari Crafters",
-      "date": "10 February 2027",
-      "route": "Panna",
-      "highlights": [],
+      "date": "10–14 February 2027",
+      "route": "Panna Tiger Reserve, Madhya Pradesh",
+      "highlights": [
+        "Wildlife portraits and animals within the wider landscape",
+        "Vultures and bird photography alongside the search for tigers",
+        "Ken River scenery, rocky cliffs and dry deciduous forest"
+      ],
       "days": [],
       "departures": [
         {
@@ -14726,21 +14832,52 @@
           "availability": "Check availability"
         }
       ],
-      "publicationStatus": "preview"
+      "publicationStatus": "preview",
+      "faqs": [
+        {
+          "question": "Is the safari programme confirmed?",
+          "answer": "The 10–14 February 2027 departure is currently a preview. Safari numbers, zones, accommodation, transfers, group size, pricing and inclusions will be provided in the confirmed proposal. Do not assume a river outing or a specific safari zone is included."
+        },
+        {
+          "question": "Are tiger sightings guaranteed?",
+          "answer": "No. Tigers and other wildlife move freely. Sightings depend on animal movement, access and conditions on the day. Birdlife and landscape photography provide other subjects while the team searches for wildlife."
+        },
+        {
+          "question": "What photography experience do I need?",
+          "answer": "Tell the team about your photography experience, camera equipment and interests when enquiring. They can confirm the level of guidance available and whether the final programme suits you."
+        },
+        {
+          "question": "What should I bring for the February departure?",
+          "answer": "Bring layers for early starts, comfortable clothing and closed shoes, sun protection and personal essentials. Request the final packing list and luggage guidance once your transport and accommodation are confirmed."
+        },
+        {
+          "question": "Where should I arrive for the tour?",
+          "answer": "Ask the team to confirm the meeting point, arrival time and transfer arrangements before booking tickets. Khajuraho is a nearby gateway, but airport or railway transfers should only be treated as included if stated in your proposal."
+        }
+      ],
+      "body": [
+        "Panna offers more than a close-up of a tiger. Dry deciduous forest opens onto rocky slopes and river valleys, while the Ken River gives the landscape its distinctive shape. These varied settings offer scope for wildlife portraits, birds in flight and wider photographs that place an animal within its habitat.",
+        "Our photography departure is planned for 10–14 February 2027. The photographic focus is on patient observation: watching behaviour, finding clean backgrounds and using changing light to build a varied set of images. Between big-cat encounters, look to the cliffs for vultures and to the woodland and river margins for birdlife.",
+        "The detailed safari programme, accommodation, group size and price are being finalised. Contact Team Safari Crafters for the confirmed itinerary and inclusions before booking travel."
+      ],
+      "seo": {
+        "title": "Panna Photography Expedition | 10–14 February 2027",
+        "description": "Photograph tiger country, the Ken River landscape and cliff-dwelling vultures in Panna, Madhya Pradesh. A five-day departure planned for 10–14 February 2027."
+      }
     },
     {
       "slug": "ranthambhore-photography-expedition",
       "geography": "India",
       "title": "Ranthambhore Photography Expedition",
       "category": "Photography Tours",
-      "skill": "",
+      "skill": "Wildlife photographers and enthusiasts; discuss experience and guidance needs with the team",
       "groupSize": "To be confirmed",
       "duration": "4 days",
-      "bestMonths": "",
-      "species": "",
-      "equipment": "",
-      "description": "Join our fixed photography departure to Ranthambhore, 18 February 2027.",
-      "intro": "Our Ranthambhore fixed departure runs from 18 February 2027 to 21 February 2027. Contact the team for the detailed programme, accommodation, pricing and availability.",
+      "bestMonths": "February departure",
+      "species": "Bengal tiger, deer and forest birdlife",
+      "equipment": "A telephoto zoom offers flexibility when wildlife appears at different distances. A wider lens can show the animal within its habitat. Bring spare batteries, memory cards, dust protection and a cleaning cloth. Confirm the vehicle setup and suitable camera support before travel.",
+      "description": "Photograph tigers and their forest surroundings in Ranthambhore, Rajasthan. A four-day departure planned for 18–21 February 2027.",
+      "intro": "A tiger photograph is often shaped by everything around the animal: the direction of its gaze, a clear patch of background, a curve in the track or the light falling through trees. Ranthambhore provides a setting for exploring these choices while watching wildlife in its natural surroundings.\n\nOur 18–21 February 2027 departure is planned around wildlife photography in Ranthambhore. The photographic approach combines portraits with behaviour and habitat images, while deer and birdlife offer subjects between big-cat encounters. Patience and readiness matter as much as the length of a lens.\n\nThe final safari count, zone allocation, vehicle arrangements, accommodation and price are being confirmed. Each outing will follow the permitted route and park timings. A particular tiger, zone or sighting cannot be promised.",
       "image": {
         "src": "/assets/destinations/ranthambhore/field-photographs/2e257fb21a8f.webp",
         "alt": "Tiger family walking along a forest track in Ranthambhore",
@@ -14896,9 +15033,14 @@
         }
       ],
       "mentor": "Team Safari Crafters",
-      "date": "18 February 2027",
-      "route": "Ranthambhore",
-      "highlights": [],
+      "date": "18–21 February 2027",
+      "route": "Ranthambhore, Sawai Madhopur, Rajasthan",
+      "highlights": [
+        "Tiger portraits with attention to light and background",
+        "Behaviour and habitat images alongside close views",
+        "Deer and birdlife as additional photographic subjects",
+        "A patient approach to wildlife observation"
+      ],
       "days": [],
       "departures": [
         {
@@ -14908,7 +15050,42 @@
           "availability": "Check availability"
         }
       ],
-      "publicationStatus": "preview"
+      "publicationStatus": "preview",
+      "faqs": [
+        {
+          "question": "Can I choose a particular safari zone?",
+          "answer": "Zone requests depend on permits and availability. The final proposal will explain the planned bookings; no particular zone or tiger territory is guaranteed."
+        },
+        {
+          "question": "How many safaris are included?",
+          "answer": "The safari count and vehicle arrangements are still being finalised. Request the confirmed day-by-day programme before booking; the four-day duration alone does not specify the number of drives."
+        },
+        {
+          "question": "Are tiger sightings guaranteed?",
+          "answer": "No. Wildlife moves freely, and sightings depend on animal movement, permitted access and conditions. The photographic approach also makes room for deer, birds and habitat subjects."
+        },
+        {
+          "question": "Is the tour suitable for beginner photographers?",
+          "answer": "Share your experience, equipment and learning goals with the team. They can explain the planned guidance and confirm whether the final programme is a good fit."
+        },
+        {
+          "question": "Where should I arrive?",
+          "answer": "Ranthambhore is near Sawai Madhopur. Confirm the meeting point, arrival time and whether station or airport transfers are included before purchasing tickets."
+        },
+        {
+          "question": "What should I wear in February?",
+          "answer": "Bring layers for early starts, comfortable clothing and closed shoes, along with sun and dust protection. Request the final departure packing list when your booking arrangements are confirmed."
+        }
+      ],
+      "body": [
+        "A tiger photograph is often shaped by everything around the animal: the direction of its gaze, a clear patch of background, a curve in the track or the light falling through trees. Ranthambhore provides a setting for exploring these choices while watching wildlife in its natural surroundings.",
+        "Our 18–21 February 2027 departure is planned around wildlife photography in Ranthambhore. The photographic approach combines portraits with behaviour and habitat images, while deer and birdlife offer subjects between big-cat encounters. Patience and readiness matter as much as the length of a lens.",
+        "The final safari count, zone allocation, vehicle arrangements, accommodation and price are being confirmed. Each outing will follow the permitted route and park timings. A particular tiger, zone or sighting cannot be promised."
+      ],
+      "seo": {
+        "title": "Ranthambhore Photography Expedition | 18–21 February 2027",
+        "description": "Photograph tigers and their forest surroundings in Ranthambhore, Rajasthan. A four-day departure planned for 18–21 February 2027."
+      }
     },
     {
       "slug": "kaziranga-wildlife-photography-expedition",
@@ -15189,6 +15366,18 @@
         {
           "question": "What are the tour price and additional taxes?",
           "answer": "The tour costs €6,600 + 5% GST. The exclusions also list 2% TCS. Request a written quote confirming the total payable before booking."
+        },
+        {
+          "question": "What kinds of photography outings are planned?",
+          "answer": "The programme combines guided walks along the lake shores with boat trips to salmon hotspots. Two full days at the lake have twice-daily outings, with the exact timing shaped by the programme on the ground."
+        },
+        {
+          "question": "What should I confirm before booking flights?",
+          "answer": "Ask the team to confirm arrival and departure arrangements, helicopter baggage limits and the plan for weather-related changes. International travel and any extra nights outside the listed programme are not included."
+        },
+        {
+          "question": "How should I prepare my camera equipment?",
+          "answer": "Share your camera and lens setup with the team for the departure-specific packing list. Confirm baggage allowances and arrangements for protecting equipment during boat outings before packing."
         }
       ],
       "seo": {
